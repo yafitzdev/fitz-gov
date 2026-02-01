@@ -156,30 +156,36 @@ def bootstrap_from_beir(
     datasets: list[str] | None = None,
     llm_client: "LLMClient" = None,
     cases_per_category: int = 30,
-    max_docs_per_dataset: int = 500,
+    max_docs_per_dataset: int | None = None,
     data_dir: Path | str | None = None,
     output_dir: Path | str | None = None,
-) -> list:
+) -> dict[str, Any]:
     """
     Bootstrap FITZ-GOV benchmark from BEIR corpus.
+
+    Produces:
+    - corpus/: Full document corpus for Mode B (full pipeline evaluation)
+    - cases/: Test cases with injected contexts for Mode A
+    - queries/: Query + expected_mode pairs for Mode B
 
     Args:
         datasets: BEIR datasets to use. Defaults to recommended set.
         llm_client: LLM client for generation.
         cases_per_category: Number of cases per governance category.
-        max_docs_per_dataset: Max docs to sample from each dataset.
+        max_docs_per_dataset: Max docs to sample from each dataset. None = all docs.
         data_dir: Directory for BEIR data cache.
-        output_dir: Directory to save generated cases.
+        output_dir: Directory to save generated benchmark.
 
     Returns:
-        List of generated FitzGovCase objects.
+        Dict with 'corpus', 'cases', 'queries' lists.
     """
-    from .generator import FitzGovGenerator, save_cases
+    from .generator import FitzGovGenerator
 
     if llm_client is None:
         raise ValueError("llm_client is required for generation")
 
     datasets = datasets or RECOMMENDED_DATASETS
+    output_path = Path(output_dir) if output_dir else Path("./data")
 
     # Collect corpus documents from all datasets
     all_docs = []
@@ -194,8 +200,11 @@ def bootstrap_from_beir(
 
     print(f"\nTotal corpus: {len(all_docs)} documents")
 
+    # Save corpus for Mode B
+    save_corpus(all_docs, output_path / "corpus", datasets)
+
     # Convert to chunk-like format for generator
-    chunks = [{"text": doc["text"], "source": doc["source"]} for doc in all_docs]
+    chunks = [{"text": doc["text"], "source": doc["source"], "id": doc["id"]} for doc in all_docs]
 
     # Generate cases
     print(f"\nGenerating FITZ-GOV cases ({cases_per_category} per category)...")
@@ -204,11 +213,119 @@ def bootstrap_from_beir(
 
     print(f"Generated {len(cases)} total cases")
 
-    # Save if output_dir specified
-    if output_dir:
-        save_cases(cases, output_dir)
+    # Save cases (Mode A) and queries (Mode B)
+    save_cases_and_queries(cases, output_path)
 
-    return cases
+    return {
+        "corpus": all_docs,
+        "cases": cases,
+        "datasets": datasets,
+    }
+
+
+def save_corpus(
+    docs: list[dict[str, Any]],
+    output_dir: Path,
+    datasets: list[str],
+) -> None:
+    """Save corpus documents for Mode B evaluation."""
+    import json
+    from datetime import datetime, timezone
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Save documents as JSONL
+    docs_file = output_dir / "documents.jsonl"
+    with open(docs_file, "w", encoding="utf-8") as f:
+        for doc in docs:
+            f.write(json.dumps(doc, ensure_ascii=False) + "\n")
+
+    print(f"Saved {len(docs)} documents to {docs_file}")
+
+    # Save manifest
+    manifest = {
+        "version": "1.0.0",
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "source_datasets": datasets,
+        "document_count": len(docs),
+        "description": "FITZ-GOV evaluation corpus derived from BEIR datasets",
+    }
+    manifest_file = output_dir / "manifest.json"
+    with open(manifest_file, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2)
+
+    print(f"Saved manifest to {manifest_file}")
+
+
+def save_cases_and_queries(cases: list, output_dir: Path) -> None:
+    """Save test cases (Mode A) and queries (Mode B)."""
+    import json
+
+    from .schema import FitzGovCategory
+
+    # Save cases organized by category (Mode A)
+    cases_dir = output_dir / "cases"
+    by_category: dict[str, list] = {}
+
+    for case in cases:
+        cat = case.category.value
+        if cat not in by_category:
+            by_category[cat] = []
+        by_category[cat].append(case)
+
+    for cat, cat_cases in by_category.items():
+        cat_dir = cases_dir / cat
+        cat_dir.mkdir(parents=True, exist_ok=True)
+
+        # Group by subcategory
+        by_subcat: dict[str, list] = {}
+        for case in cat_cases:
+            subcat = case.subcategory
+            if subcat not in by_subcat:
+                by_subcat[subcat] = []
+            by_subcat[subcat].append(case)
+
+        for subcat, subcat_cases in by_subcat.items():
+            output_file = cat_dir / f"{subcat}.json"
+            data = {
+                "category": cat,
+                "subcategory": subcat,
+                "description": f"FITZ-GOV {cat} cases - {subcat}",
+                "cases": [c.to_dict() for c in subcat_cases],
+            }
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+
+    print(f"Saved {len(cases)} cases to {cases_dir}")
+
+    # Save queries for Mode B (query + expected + relevant_doc_ids, no contexts)
+    queries_dir = output_dir / "queries"
+    queries_dir.mkdir(parents=True, exist_ok=True)
+
+    queries_file = queries_dir / "all_queries.jsonl"
+    with open(queries_file, "w", encoding="utf-8") as f:
+        for case in cases:
+            query_record = {
+                "id": case.id,
+                "query": case.query,
+                "category": case.category.value,
+                "subcategory": case.subcategory,
+                "expected_mode": case.expected_mode.value,
+                "description": case.description,
+                "rationale": case.rationale,
+            }
+            # Include answer quality fields if present
+            if case.forbidden_claims:
+                query_record["forbidden_claims"] = case.forbidden_claims
+            if case.required_elements:
+                query_record["required_elements"] = case.required_elements
+            # Include relevant doc IDs for Mode B retrieval evaluation
+            if case.relevant_doc_ids:
+                query_record["relevant_doc_ids"] = case.relevant_doc_ids
+
+            f.write(json.dumps(query_record, ensure_ascii=False) + "\n")
+
+    print(f"Saved {len(cases)} queries to {queries_file}")
 
 
 def list_available_datasets() -> dict[str, dict]:

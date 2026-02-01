@@ -197,7 +197,6 @@ def cmd_bootstrap(args: argparse.Namespace) -> int:
 
 def cmd_package(args: argparse.Namespace) -> int:
     """Package data for GitHub release."""
-    import shutil
     import zipfile
 
     data_dir = Path(args.data_dir) if args.data_dir else Path(__file__).parent.parent / "data"
@@ -207,14 +206,33 @@ def cmd_package(args: argparse.Namespace) -> int:
         print(f"Error: Data directory not found: {data_dir}")
         return 1
 
-    # Create zip file
-    with zipfile.ZipFile(output_file, "w", zipfile.ZIP_DEFLATED) as zf:
-        for file_path in data_dir.rglob("*.json"):
-            arcname = file_path.relative_to(data_dir.parent)
-            zf.write(file_path, arcname)
-            print(f"  Added: {arcname}")
+    # Verify expected structure
+    expected_dirs = ["corpus", "cases", "queries"]
+    missing = [d for d in expected_dirs if not (data_dir / d).exists()]
+    if missing:
+        print(f"Warning: Missing directories: {missing}")
+        print("Run 'fitz-gov bootstrap' first to generate data.")
 
-    print(f"Created: {output_file}")
+    # Create zip file
+    file_count = 0
+    with zipfile.ZipFile(output_file, "w", zipfile.ZIP_DEFLATED) as zf:
+        for file_path in data_dir.rglob("*"):
+            if file_path.is_file() and not file_path.name.startswith("."):
+                # Archive path: data/corpus/..., data/cases/..., etc.
+                arcname = Path("data") / file_path.relative_to(data_dir)
+                zf.write(file_path, arcname)
+                file_count += 1
+
+    print(f"Packaged {file_count} files into: {output_file}")
+
+    # Show structure
+    print("\nPackage structure:")
+    print("  data/")
+    print("    corpus/documents.jsonl    # Full corpus for Mode B")
+    print("    corpus/manifest.json      # Corpus metadata")
+    print("    cases/<category>/*.json   # Test cases for Mode A")
+    print("    queries/all_queries.jsonl # Queries for Mode B")
+
     return 0
 
 

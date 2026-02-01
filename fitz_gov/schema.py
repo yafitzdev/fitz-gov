@@ -88,6 +88,10 @@ class FitzGovCase:
     required_elements: list[str] = field(default_factory=list)
     """For RELEVANCE: Elements that MUST appear in the answer."""
 
+    # Corpus references (for Mode B full pipeline evaluation)
+    relevant_doc_ids: list[str] = field(default_factory=list)
+    """Document IDs from corpus that are relevant to this query (for Mode B)."""
+
     metadata: dict[str, Any] = field(default_factory=dict)
     """Additional test case metadata."""
 
@@ -108,6 +112,8 @@ class FitzGovCase:
             result["forbidden_claims"] = self.forbidden_claims
         if self.required_elements:
             result["required_elements"] = self.required_elements
+        if self.relevant_doc_ids:
+            result["relevant_doc_ids"] = self.relevant_doc_ids
         return result
 
     @classmethod
@@ -124,6 +130,7 @@ class FitzGovCase:
             rationale=data["rationale"],
             forbidden_claims=data.get("forbidden_claims", []),
             required_elements=data.get("required_elements", []),
+            relevant_doc_ids=data.get("relevant_doc_ids", []),
             metadata=data.get("metadata", {}),
         )
 

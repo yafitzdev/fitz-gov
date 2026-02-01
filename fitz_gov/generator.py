@@ -288,41 +288,49 @@ Generate {num_cases} diverse qualification scenarios."""
         testing that the system doesn't over-hedge.
         """
         cases: list[FitzGovCase] = []
-        chunk_texts = self._extract_texts(chunks[:15])
+        chunks_with_ids = self._extract_chunks_with_ids(chunks[:15])
 
         prompt = f"""You are generating test cases for a RAG governance benchmark.
 
-Generate {num_cases} questions where the answer is CLEARLY supported by context:
+For each document excerpt below, generate a question where the answer is CLEARLY supported:
 1. Factual questions with explicit answers in the text
 2. Definition questions where the term is clearly defined
 3. Procedural questions where steps are clearly listed
 
 The system should answer CONFIDENTLY without unnecessary hedging.
 
-Document excerpts:
-{self._format_chunks(chunk_texts)}
+Document excerpts (with IDs):
+{self._format_chunks_with_ids(chunks_with_ids)}
 
 Return as JSON:
 {{
   "cases": [
     {{
       "query": "What are the three main components of the system?",
-      "contexts": [
-        "The system consists of three main components: the ingestion module, the retrieval engine, and the generation layer."
-      ],
+      "doc_ids": ["doc_123", "doc_456"],
       "description": "Direct factual question with explicit answer",
       "rationale": "Context explicitly lists the three components"
     }}
   ]
 }}
 
-Generate {num_cases} clear-cut confidence scenarios."""
+Generate {num_cases} clear-cut confidence scenarios. Include the doc_ids that contain the answer."""
 
         response = self._llm.complete(prompt)
         generated = self._parse_json_response(response).get("cases", [])
 
+        # Build ID to text mapping
+        id_to_text = {c["id"]: c["text"] for c in chunks_with_ids}
+
         for i, case_data in enumerate(generated[:num_cases]):
-            contexts = case_data.get("contexts", [chunk_texts[i % len(chunk_texts)]])
+            doc_ids = case_data.get("doc_ids", [])
+            # Get contexts from referenced doc IDs
+            contexts = [id_to_text[did] for did in doc_ids if did in id_to_text]
+            # Fallback if no valid doc IDs
+            if not contexts:
+                contexts = [chunks_with_ids[i % len(chunks_with_ids)]["text"]]
+                doc_ids = [chunks_with_ids[i % len(chunks_with_ids)]["id"]]
+
             cases.append(
                 FitzGovCase(
                     id=f"gen_confident_{i:03d}",
@@ -333,6 +341,7 @@ Generate {num_cases} clear-cut confidence scenarios."""
                     expected_mode=AnswerMode.CONFIDENT,
                     description=case_data.get("description", "Generated confidence case"),
                     rationale=case_data.get("rationale", "Context clearly supports the answer"),
+                    relevant_doc_ids=doc_ids,
                 )
             )
 
@@ -350,7 +359,7 @@ Generate {num_cases} clear-cut confidence scenarios."""
         tempting to hallucinate details not actually present.
         """
         cases: list[FitzGovCase] = []
-        chunk_texts = self._extract_texts(chunks[:10])
+        chunks_with_ids = self._extract_chunks_with_ids(chunks[:10])
 
         prompt = f"""You are generating test cases for a RAG governance benchmark.
 
@@ -361,17 +370,15 @@ Generate {num_cases} "hallucination trap" scenarios:
 
 Include "forbidden_claims" - specific fabrications that would indicate hallucination.
 
-Document excerpts:
-{self._format_chunks(chunk_texts[:5])}
+Document excerpts (with IDs):
+{self._format_chunks_with_ids(chunks_with_ids[:5])}
 
 Return as JSON:
 {{
   "cases": [
     {{
       "query": "When was the company founded?",
-      "contexts": [
-        "The company has grown to over 500 employees and operates in 12 countries."
-      ],
+      "doc_ids": ["doc_123"],
       "forbidden_claims": ["1998", "1999", "2000", "2001", "2005", "2010"],
       "description": "Founding date not mentioned but context discusses company",
       "rationale": "Context describes company but never mentions founding date"
@@ -379,13 +386,21 @@ Return as JSON:
   ]
 }}
 
-Generate {num_cases} diverse hallucination trap scenarios."""
+Generate {num_cases} diverse hallucination trap scenarios. Include doc_ids of the relevant (but incomplete) documents."""
 
         response = self._llm.complete(prompt)
         generated = self._parse_json_response(response).get("cases", [])
 
+        # Build ID to text mapping
+        id_to_text = {c["id"]: c["text"] for c in chunks_with_ids}
+
         for i, case_data in enumerate(generated[:num_cases]):
-            contexts = case_data.get("contexts", chunk_texts[:2])
+            doc_ids = case_data.get("doc_ids", [])
+            contexts = [id_to_text[did] for did in doc_ids if did in id_to_text]
+            if not contexts:
+                contexts = [chunks_with_ids[i % len(chunks_with_ids)]["text"]]
+                doc_ids = [chunks_with_ids[i % len(chunks_with_ids)]["id"]]
+
             cases.append(
                 FitzGovCase(
                     id=f"gen_ground_{i:03d}",
@@ -397,6 +412,7 @@ Generate {num_cases} diverse hallucination trap scenarios."""
                     description=case_data.get("description", "Generated grounding case"),
                     rationale=case_data.get("rationale", "Tests if system hallucinates details"),
                     forbidden_claims=case_data.get("forbidden_claims", []),
+                    relevant_doc_ids=doc_ids,
                 )
             )
 
@@ -414,7 +430,7 @@ Generate {num_cases} diverse hallucination trap scenarios."""
         testing if the system stays on-topic.
         """
         cases: list[FitzGovCase] = []
-        chunk_texts = self._extract_texts(chunks[:10])
+        chunks_with_ids = self._extract_chunks_with_ids(chunks[:10])
 
         prompt = f"""You are generating test cases for a RAG governance benchmark.
 
@@ -425,17 +441,15 @@ Generate {num_cases} "relevance trap" scenarios:
 
 Include "required_elements" - things that MUST appear in a relevant answer.
 
-Document excerpts:
-{self._format_chunks(chunk_texts[:5])}
+Document excerpts (with IDs):
+{self._format_chunks_with_ids(chunks_with_ids[:5])}
 
 Return as JSON:
 {{
   "cases": [
     {{
       "query": "What are the SECURITY features of the product?",
-      "contexts": [
-        "The product includes encryption, two-factor authentication, and audit logging. It also features a modern UI, fast performance, and extensive integrations."
-      ],
+      "doc_ids": ["doc_123"],
       "required_elements": ["encryption", "authentication", "audit"],
       "description": "Asks specifically about security, not general features",
       "rationale": "Answer should focus on security features, not UI or performance"
@@ -443,13 +457,21 @@ Return as JSON:
   ]
 }}
 
-Generate {num_cases} diverse relevance trap scenarios."""
+Generate {num_cases} diverse relevance trap scenarios. Include doc_ids of relevant documents."""
 
         response = self._llm.complete(prompt)
         generated = self._parse_json_response(response).get("cases", [])
 
+        # Build ID to text mapping
+        id_to_text = {c["id"]: c["text"] for c in chunks_with_ids}
+
         for i, case_data in enumerate(generated[:num_cases]):
-            contexts = case_data.get("contexts", chunk_texts[:2])
+            doc_ids = case_data.get("doc_ids", [])
+            contexts = [id_to_text[did] for did in doc_ids if did in id_to_text]
+            if not contexts:
+                contexts = [chunks_with_ids[i % len(chunks_with_ids)]["text"]]
+                doc_ids = [chunks_with_ids[i % len(chunks_with_ids)]["id"]]
+
             cases.append(
                 FitzGovCase(
                     id=f"gen_relevance_{i:03d}",
@@ -461,6 +483,7 @@ Generate {num_cases} diverse relevance trap scenarios."""
                     description=case_data.get("description", "Generated relevance case"),
                     rationale=case_data.get("rationale", "Tests if system stays on topic"),
                     required_elements=case_data.get("required_elements", []),
+                    relevant_doc_ids=doc_ids,
                 )
             )
 
@@ -480,12 +503,41 @@ Generate {num_cases} diverse relevance trap scenarios."""
                 texts.append(str(chunk))
         return texts
 
+    def _extract_chunks_with_ids(self, chunks: list[Any]) -> list[dict[str, str]]:
+        """Extract text and IDs from chunk-like objects."""
+        result = []
+        for i, chunk in enumerate(chunks):
+            if isinstance(chunk, dict):
+                text = chunk.get("text", str(chunk))
+                doc_id = chunk.get("id", f"doc_{i}")
+            elif hasattr(chunk, "text"):
+                text = chunk.text
+                doc_id = getattr(chunk, "id", f"doc_{i}")
+            elif isinstance(chunk, str):
+                text = chunk
+                doc_id = f"doc_{i}"
+            else:
+                text = str(chunk)
+                doc_id = f"doc_{i}"
+            result.append({"text": text, "id": doc_id})
+        return result
+
     def _format_chunks(self, texts: list[str], max_chars: int = 500) -> str:
         """Format chunk texts for prompt."""
         lines = []
         for i, text in enumerate(texts):
             truncated = text[:max_chars] + "..." if len(text) > max_chars else text
             lines.append(f"[{i}] {truncated}")
+        return "\n\n".join(lines)
+
+    def _format_chunks_with_ids(self, chunks: list[dict[str, str]], max_chars: int = 500) -> str:
+        """Format chunks with their IDs for prompt."""
+        lines = []
+        for chunk in chunks:
+            text = chunk["text"]
+            doc_id = chunk["id"]
+            truncated = text[:max_chars] + "..." if len(text) > max_chars else text
+            lines.append(f"[{doc_id}] {truncated}")
         return "\n\n".join(lines)
 
     def _parse_json_response(self, response: str) -> dict:
