@@ -61,6 +61,7 @@ class FitzGovGenerator:
         self,
         chunks: list[Any],
         cases_per_category: int = 20,
+        output_dir: str | None = None,
     ) -> list[FitzGovCase]:
         """
         Generate test cases for all categories.
@@ -68,23 +69,63 @@ class FitzGovGenerator:
         Args:
             chunks: Corpus chunks to generate cases from.
             cases_per_category: Number of cases per category.
+            output_dir: If provided, saves each category incrementally.
 
         Returns:
             List of generated FitzGovCase objects.
         """
         all_cases: list[FitzGovCase] = []
 
-        # Governance mode categories
-        all_cases.extend(self.generate_abstention_cases(chunks, cases_per_category))
-        all_cases.extend(self.generate_dispute_cases(chunks, cases_per_category))
-        all_cases.extend(self.generate_qualification_cases(chunks, cases_per_category))
-        all_cases.extend(self.generate_confidence_cases(chunks, cases_per_category))
+        categories = [
+            ("abstention", self.generate_abstention_cases),
+            ("dispute", self.generate_dispute_cases),
+            ("qualification", self.generate_qualification_cases),
+            ("confidence", self.generate_confidence_cases),
+            ("grounding", self.generate_grounding_cases),
+            ("relevance", self.generate_relevance_cases),
+        ]
 
-        # Answer quality categories
-        all_cases.extend(self.generate_grounding_cases(chunks, cases_per_category))
-        all_cases.extend(self.generate_relevance_cases(chunks, cases_per_category))
+        for i, (name, gen_func) in enumerate(categories, 1):
+            print(f"[{i}/6] Generating {name} cases...", flush=True)
+            cases = gen_func(chunks, cases_per_category)
+            all_cases.extend(cases)
+            print(f"       Generated {len(cases)} {name} cases", flush=True)
+
+            # Save incrementally if output_dir provided
+            if output_dir:
+                self._save_category(cases, name, output_dir)
 
         return all_cases
+
+    def _save_category(self, cases: list[FitzGovCase], category: str, output_dir: str) -> None:
+        """Save a single category to disk."""
+        import json
+        from pathlib import Path
+
+        output_path = Path(output_dir)
+        cat_dir = output_path / "cases" / category
+        cat_dir.mkdir(parents=True, exist_ok=True)
+
+        # Group by subcategory
+        by_subcat: dict[str, list[FitzGovCase]] = {}
+        for case in cases:
+            subcat = case.subcategory
+            if subcat not in by_subcat:
+                by_subcat[subcat] = []
+            by_subcat[subcat].append(case)
+
+        for subcat, subcat_cases in by_subcat.items():
+            output_file = cat_dir / f"{subcat}.json"
+            data = {
+                "category": category,
+                "subcategory": subcat,
+                "description": f"FITZ-GOV {category} cases - {subcat}",
+                "cases": [c.to_dict() for c in subcat_cases],
+            }
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+
+        print(f"       Saved to {cat_dir}/", flush=True)
 
     def generate_abstention_cases(
         self,

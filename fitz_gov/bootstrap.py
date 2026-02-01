@@ -206,12 +206,16 @@ def bootstrap_from_beir(
     # Convert to chunk-like format for generator
     chunks = [{"text": doc["text"], "source": doc["source"], "id": doc["id"]} for doc in all_docs]
 
-    # Generate cases
-    print(f"\nGenerating FITZ-GOV cases ({cases_per_category} per category)...")
+    # Generate cases (saves incrementally per category)
+    print(f"\nGenerating FITZ-GOV cases ({cases_per_category} per category)...", flush=True)
     generator = FitzGovGenerator(llm_client=llm_client)
-    cases = generator.generate_all(chunks, cases_per_category=cases_per_category)
+    cases = generator.generate_all(
+        chunks,
+        cases_per_category=cases_per_category,
+        output_dir=str(output_path),  # Save incrementally
+    )
 
-    print(f"Generated {len(cases)} total cases")
+    print(f"\nGenerated {len(cases)} total cases", flush=True)
 
     # Save cases (Mode A) and queries (Mode B)
     save_cases_and_queries(cases, output_path)

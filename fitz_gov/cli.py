@@ -255,7 +255,7 @@ def _create_llm_client(args: argparse.Namespace):
                 resp = requests.post(
                     f"{base_url}/api/generate",
                     json={"model": model, "prompt": prompt, "stream": False},
-                    timeout=300,
+                    timeout=1800,  # 30 min - local LLMs can be slow
                 )
                 resp.raise_for_status()
                 return resp.json().get("response", "")
