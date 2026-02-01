@@ -276,18 +276,18 @@ def _create_llm_client(args: argparse.Namespace):
             print("Error: COHERE_API_KEY not set")
             return None
 
-        model = args.llm_model or "command-r-plus"
+        model = args.llm_model or "command-r-08-2024"
 
         class CohereClient:
             def complete(self, prompt: str) -> str:
                 resp = requests.post(
                     "https://api.cohere.com/v1/chat",
                     headers={
-                        "Authorization": f"Bearer {api_key}",
+                        "Authorization": f"bearer {api_key}",
                         "Content-Type": "application/json",
                     },
                     json={"model": model, "message": prompt},
-                    timeout=120,
+                    timeout=300,
                 )
                 resp.raise_for_status()
                 return resp.json().get("text", "")
