@@ -69,6 +69,31 @@ for case in cases:
     passed = your_mode == case.expected_mode
 ```
 
+## Bootstrapping from BEIR
+
+The recommended way to generate FITZ-GOV benchmark data is to bootstrap from BEIR corpora:
+
+```bash
+# Install with generator dependencies
+pip install fitz-gov[generator]
+
+# See available BEIR datasets
+fitz-gov bootstrap --list-datasets
+
+# Bootstrap from recommended datasets (scifact, nfcorpus, fiqa)
+export OPENAI_API_KEY=your_key
+fitz-gov bootstrap --output ./data --num-cases 50
+
+# Or use specific datasets
+fitz-gov bootstrap --datasets scifact,hotpotqa --output ./data
+
+# Use Anthropic instead
+export ANTHROPIC_API_KEY=your_key
+fitz-gov bootstrap --llm-provider anthropic --output ./data
+```
+
+This downloads BEIR corpus documents and uses an LLM to generate governance test cases.
+
 ## Generating Custom Test Cases
 
 Generate benchmark cases from your own corpus:

@@ -152,6 +152,49 @@ def cmd_generate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_bootstrap(args: argparse.Namespace) -> int:
+    """Bootstrap FITZ-GOV from BEIR corpus."""
+    try:
+        from .bootstrap import bootstrap_from_beir, list_available_datasets
+    except ImportError as e:
+        print(f"Error: {e}")
+        print("Install with: pip install fitz-gov[generator] beir")
+        return 1
+
+    # Show available datasets if requested
+    if args.list_datasets:
+        datasets = list_available_datasets()
+        print("Available BEIR datasets:")
+        for name, info in datasets.items():
+            print(f"  {name}: {info['description']} ({info['corpus_size']})")
+        return 0
+
+    # Create LLM client
+    llm_client = _create_llm_client(args)
+    if not llm_client:
+        return 1
+
+    # Parse datasets
+    datasets = args.datasets.split(",") if args.datasets else None
+
+    print("=" * 50)
+    print("FITZ-GOV Bootstrap from BEIR")
+    print("=" * 50)
+
+    cases = bootstrap_from_beir(
+        datasets=datasets,
+        llm_client=llm_client,
+        cases_per_category=args.num_cases,
+        max_docs_per_dataset=args.max_docs,
+        output_dir=args.output,
+    )
+
+    print(f"\nBootstrap complete! Generated {len(cases)} cases")
+    print(f"Output saved to: {args.output}")
+
+    return 0
+
+
 def cmd_package(args: argparse.Namespace) -> int:
     """Package data for GitHub release."""
     import shutil
@@ -250,6 +293,16 @@ def main() -> int:
     gen_parser.add_argument("--llm-provider", choices=["openai", "anthropic"], default="openai", help="LLM provider")
     gen_parser.add_argument("--llm-model", help="LLM model name")
 
+    # bootstrap command
+    boot_parser = subparsers.add_parser("bootstrap", help="Bootstrap from BEIR corpus")
+    boot_parser.add_argument("--datasets", help="Comma-separated BEIR datasets (default: scifact,nfcorpus,fiqa)")
+    boot_parser.add_argument("--list-datasets", action="store_true", help="List available datasets")
+    boot_parser.add_argument("--output", default="./data", help="Output directory")
+    boot_parser.add_argument("--num-cases", type=int, default=30, help="Cases per category")
+    boot_parser.add_argument("--max-docs", type=int, default=500, help="Max docs per dataset")
+    boot_parser.add_argument("--llm-provider", choices=["openai", "anthropic"], default="openai", help="LLM provider")
+    boot_parser.add_argument("--llm-model", help="LLM model name")
+
     # package command
     pkg_parser = subparsers.add_parser("package", help="Package data for release")
     pkg_parser.add_argument("--data-dir", help="Data directory to package")
@@ -263,6 +316,8 @@ def main() -> int:
         return cmd_stats(args)
     elif args.command == "generate":
         return cmd_generate(args)
+    elif args.command == "bootstrap":
+        return cmd_bootstrap(args)
     elif args.command == "package":
         return cmd_package(args)
     else:

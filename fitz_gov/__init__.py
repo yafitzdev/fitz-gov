@@ -28,6 +28,8 @@ __all__ = [
     "get_data_dir",
     # Generator (requires [generator] extra)
     "FitzGovGenerator",
+    # Bootstrap (requires [generator] extra + beir)
+    "bootstrap_from_beir",
 ]
 
 
@@ -53,5 +55,10 @@ def __getattr__(name: str):
         from .generator import FitzGovGenerator
 
         return FitzGovGenerator
+
+    if name == "bootstrap_from_beir":
+        from .bootstrap import bootstrap_from_beir
+
+        return bootstrap_from_beir
 
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
