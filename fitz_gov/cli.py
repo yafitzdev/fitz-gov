@@ -239,106 +239,119 @@ def cmd_package(args: argparse.Namespace) -> int:
 
 
 def _create_llm_client(args: argparse.Namespace):
-    """Create LLM client based on args."""
+    """Create LLM client based on args. Uses direct HTTP - no SDK packages needed."""
     import os
+
+    import requests
 
     provider = args.llm_provider
 
     if provider == "ollama":
-        # Local LLM via Ollama (free!)
+        base_url = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+        model = args.llm_model or "llama3.1"
+
+        class OllamaClient:
+            def complete(self, prompt: str) -> str:
+                resp = requests.post(
+                    f"{base_url}/api/generate",
+                    json={"model": model, "prompt": prompt, "stream": False},
+                    timeout=300,
+                )
+                resp.raise_for_status()
+                return resp.json().get("response", "")
+
+        # Test connection
         try:
-            import requests
-
-            base_url = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
-            model = args.llm_model or "llama3.1"
-
-            class OllamaWrapper:
-                def complete(self, prompt: str) -> str:
-                    response = requests.post(
-                        f"{base_url}/api/generate",
-                        json={"model": model, "prompt": prompt, "stream": False},
-                        timeout=300,
-                    )
-                    response.raise_for_status()
-                    return response.json().get("response", "")
-
-            # Test connection
-            try:
-                requests.get(f"{base_url}/api/tags", timeout=5)
-                print(f"Using Ollama ({model}) at {base_url}")
-                return OllamaWrapper()
-            except requests.exceptions.ConnectionError:
-                print(f"Error: Cannot connect to Ollama at {base_url}")
-                print("Make sure Ollama is running: ollama serve")
-                return None
-        except ImportError:
-            print("Error: requests package not installed")
+            requests.get(f"{base_url}/api/tags", timeout=5)
+            print(f"Using Ollama ({model}) at {base_url}")
+            return OllamaClient()
+        except requests.exceptions.ConnectionError:
+            print(f"Error: Cannot connect to Ollama at {base_url}")
+            print("Make sure Ollama is running: ollama serve")
             return None
 
     elif provider == "cohere":
-        try:
-            import cohere
-
-            client = cohere.Client(api_key=os.environ.get("COHERE_API_KEY"))
-            model = args.llm_model or "command-r-plus"
-
-            class CohereWrapper:
-                def complete(self, prompt: str) -> str:
-                    response = client.chat(
-                        model=model,
-                        message=prompt,
-                    )
-                    return response.text
-
-            print(f"Using Cohere ({model})")
-            return CohereWrapper()
-        except ImportError:
-            print("Error: cohere package not installed")
-            print("Install with: pip install cohere")
+        api_key = os.environ.get("COHERE_API_KEY")
+        if not api_key:
+            print("Error: COHERE_API_KEY not set")
             return None
+
+        model = args.llm_model or "command-r-plus"
+
+        class CohereClient:
+            def complete(self, prompt: str) -> str:
+                resp = requests.post(
+                    "https://api.cohere.com/v1/chat",
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    json={"model": model, "message": prompt},
+                    timeout=120,
+                )
+                resp.raise_for_status()
+                return resp.json().get("text", "")
+
+        print(f"Using Cohere ({model})")
+        return CohereClient()
 
     elif provider == "openai":
-        try:
-            from openai import OpenAI
-
-            client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-            model = args.llm_model or "gpt-4o"
-
-            class OpenAIWrapper:
-                def complete(self, prompt: str) -> str:
-                    response = client.chat.completions.create(
-                        model=model,
-                        messages=[{"role": "user", "content": prompt}],
-                    )
-                    return response.choices[0].message.content or ""
-
-            print(f"Using OpenAI ({model})")
-            return OpenAIWrapper()
-        except ImportError:
-            print("Error: openai package not installed")
+        api_key = os.environ.get("OPENAI_API_KEY")
+        if not api_key:
+            print("Error: OPENAI_API_KEY not set")
             return None
+
+        model = args.llm_model or "gpt-4o"
+
+        class OpenAIClient:
+            def complete(self, prompt: str) -> str:
+                resp = requests.post(
+                    "https://api.openai.com/v1/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    json={
+                        "model": model,
+                        "messages": [{"role": "user", "content": prompt}],
+                    },
+                    timeout=120,
+                )
+                resp.raise_for_status()
+                return resp.json()["choices"][0]["message"]["content"]
+
+        print(f"Using OpenAI ({model})")
+        return OpenAIClient()
 
     elif provider == "anthropic":
-        try:
-            import anthropic
-
-            client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
-            model = args.llm_model or "claude-sonnet-4-20250514"
-
-            class AnthropicWrapper:
-                def complete(self, prompt: str) -> str:
-                    response = client.messages.create(
-                        model=model,
-                        max_tokens=4096,
-                        messages=[{"role": "user", "content": prompt}],
-                    )
-                    return response.content[0].text
-
-            print(f"Using Anthropic ({model})")
-            return AnthropicWrapper()
-        except ImportError:
-            print("Error: anthropic package not installed")
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            print("Error: ANTHROPIC_API_KEY not set")
             return None
+
+        model = args.llm_model or "claude-sonnet-4-20250514"
+
+        class AnthropicClient:
+            def complete(self, prompt: str) -> str:
+                resp = requests.post(
+                    "https://api.anthropic.com/v1/messages",
+                    headers={
+                        "x-api-key": api_key,
+                        "Content-Type": "application/json",
+                        "anthropic-version": "2023-06-01",
+                    },
+                    json={
+                        "model": model,
+                        "max_tokens": 4096,
+                        "messages": [{"role": "user", "content": prompt}],
+                    },
+                    timeout=120,
+                )
+                resp.raise_for_status()
+                return resp.json()["content"][0]["text"]
+
+        print(f"Using Anthropic ({model})")
+        return AnthropicClient()
 
     else:
         print(f"Error: Unknown LLM provider: {provider}")
