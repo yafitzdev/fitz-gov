@@ -60,20 +60,6 @@
       "metadata": {}
     },
     {
-      "id": "gen_qualify_004",
-      "category": "qualification",
-      "subcategory": "uncertain_evidence",
-      "query": "Why does BC1 RNA prime its own reverse transcription?",
-      "contexts": [
-        "BC1 RNA gene is a master for ID element amplification.",
-        "Reverse transcription process involves priming."
-      ],
-      "expected_mode": "qualified",
-      "description": "Causal question with correlational data",
-      "rationale": "Context provides information on the role of BC1 but no direct evidence explaining WHY",
-      "metadata": {}
-    },
-    {
       "id": "gen_qualify_005",
       "category": "qualification",
       "subcategory": "uncertain_evidence",
@@ -270,20 +256,6 @@
       "metadata": {}
     },
     {
-      "id": "gen_qualify_019",
-      "category": "qualification",
-      "subcategory": "uncertain_evidence",
-      "query": "Why does BC1 RNA have a high copy number in rodent genomes?",
-      "contexts": [
-        "ID elements, related to BC1 RNA, are found in high numbers.",
-        "Evolutionary mechanisms remain unclear."
-      ],
-      "expected_mode": "qualified",
-      "description": "Causal question with correlational data",
-      "rationale": "Lack of causal evidence for copy number variation",
-      "metadata": {}
-    },
-    {
       "id": "gen_qualify_020",
       "category": "qualification",
       "subcategory": "uncertain_evidence",
@@ -365,20 +337,6 @@
       "expected_mode": "qualified",
       "description": "Causal question with correlational data",
       "rationale": "Insufficient causal explanation for individual cases",
-      "metadata": {}
-    },
-    {
-      "id": "gen_qualify_026",
-      "category": "qualification",
-      "subcategory": "uncertain_evidence",
-      "query": "What will be the next breakthrough in DNA methylation studies?",
-      "contexts": [
-        "Technological advances enable whole-genome analysis.",
-        "Future discoveries are speculative."
-      ],
-      "expected_mode": "qualified",
-      "description": "Prediction question with limited data",
-      "rationale": "No clear indication of upcoming breakthroughs",
       "metadata": {}
     },
     {

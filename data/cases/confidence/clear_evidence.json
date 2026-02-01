@@ -132,22 +132,6 @@
       ]
     },
     {
-      "id": "gen_confident_008",
-      "category": "confidence",
-      "subcategory": "clear_evidence",
-      "query": "What are the methods reported for efficient genetic modification in hESCs and iPSCs?",
-      "contexts": [
-        "Efficient targeting of expressed and silent genes in human ESCs and iPSCs using zinc-finger nucleases\n\nRealizing the full potential of human embryonic stem cells (hESCs) and induced pluripotent stem cells (hiPSCs) requires efficient methods for genetic modification. However, techniques to generate cell type–specific lineage reporters, as well as reliable tools to disrupt, repair or overexpress genes by gene targeting, are inefficient at best and thus are not routinely used. Here we report the highly efficient targeting of three genes in human pluripotent cells using zinc-finger nuclease (ZFN)–mediated genome editing. First, using ZFNs specific for the OCT4 (POU5F1) locus, we generated OCT4-eGFP reporter cells to monitor the pluripotent state of hESCs. Second, we inserted a transgene into the AAVS1 locus to generate a robust drug-inducible overexpression system in hESCs. Finally, we targeted the PITX3 gene, demonstrating that ZFNs can be used to generate reporter cells by targeting non-expressed genes in hESCs and hiPSCs."
-      ],
-      "expected_mode": "confident",
-      "description": "Procedural question",
-      "rationale": "The text describes using zinc-finger nucleases as a method.",
-      "metadata": {},
-      "relevant_doc_ids": [
-        "36474"
-      ]
-    },
-    {
       "id": "gen_confident_009",
       "category": "confidence",
       "subcategory": "clear_evidence",
@@ -356,22 +340,6 @@
       ]
     },
     {
-      "id": "gen_confident_022",
-      "category": "confidence",
-      "subcategory": "clear_evidence",
-      "query": "What is the process for efficient genetic modification in hESCs and iPSCs?",
-      "contexts": [
-        "Efficient targeting of expressed and silent genes in human ESCs and iPSCs using zinc-finger nucleases\n\nRealizing the full potential of human embryonic stem cells (hESCs) and induced pluripotent stem cells (hiPSCs) requires efficient methods for genetic modification. However, techniques to generate cell type–specific lineage reporters, as well as reliable tools to disrupt, repair or overexpress genes by gene targeting, are inefficient at best and thus are not routinely used. Here we report the highly efficient targeting of three genes in human pluripotent cells using zinc-finger nuclease (ZFN)–mediated genome editing. First, using ZFNs specific for the OCT4 (POU5F1) locus, we generated OCT4-eGFP reporter cells to monitor the pluripotent state of hESCs. Second, we inserted a transgene into the AAVS1 locus to generate a robust drug-inducible overexpression system in hESCs. Finally, we targeted the PITX3 gene, demonstrating that ZFNs can be used to generate reporter cells by targeting non-expressed genes in hESCs and hiPSCs."
-      ],
-      "expected_mode": "confident",
-      "description": "Procedural question",
-      "rationale": "The text provides a method using zinc-finger nucleases.",
-      "metadata": {},
-      "relevant_doc_ids": [
-        "36474"
-      ]
-    },
-    {
       "id": "gen_confident_023",
       "category": "confidence",
       "subcategory": "clear_evidence",
@@ -404,38 +372,6 @@
       ]
     },
     {
-      "id": "gen_confident_025",
-      "category": "confidence",
-      "subcategory": "clear_evidence",
-      "query": "What is the correlation between ABPI and local atherosclerotic burden?",
-      "contexts": [
-        "Common Carotid Intima Media Thickness and Ankle-Brachial Pressure Index Correlate with Local but Not Global Atheroma Burden: A Cross Sectional Study Using Whole Body Magnetic Resonance Angiography\n\nBACKGROUND Common carotid intima media thickness (CIMT) and ankle brachial pressure index (ABPI) are used as surrogate marker of atherosclerosis, and have been shown to correlate with arterial stiffness, however their correlation with global atherosclerotic burden has not been previously assessed. We compare CIMT and ABPI with atheroma burden as measured by whole body magnetic resonance angiography (WB-MRA). METHODS 50 patients with symptomatic peripheral arterial disease were recruited. CIMT was measured using ultrasound while rest and exercise ABPI were performed. WB-MRA was performed in a 1.5T MRI scanner using 4 volume acquisitions with a divided dose of intravenous gadolinium gadoterate meglumine (Dotarem, Guerbet, FR). The WB-MRA data was divided into 31 anatomical arterial segments with each scored according to degree of luminal narrowing: 0 = normal, 1 = <50%, 2 = 50-70%, 3 = 70-99%, 4 = vessel occlusion. The segment scores were summed and from this a standardized atheroma score was calculated. RESULTS The atherosclerotic burden was high with a standardised atheroma score of 39.5±11. Common CIMT showed a positive correlation with the whole body atheroma score (β 0.32, p = 0.045), however this was due to its strong correlation with the neck and thoracic segments (β 0.42 p = 0.01) with no correlation with the rest of the body. ABPI correlated with the whole body atheroma score (β -0.39, p = 0.012), which was due to a strong correlation with the ilio-femoral vessels with no correlation with the thoracic or neck vessels. On multiple linear regression, no correlation between CIMT and global atheroma burden was present (β 0.13 p = 0.45), while the correlation between ABPI and atheroma burden persisted (β -0.45 p = 0.005). CONCLUSION ABPI but not CIMT correlates with global atheroma burden as measured by whole body contrast enhanced magnetic resonance angiography in a population with symptomatic peripheral arterial disease. However this is primarily due to a strong correlation with ilio-femoral atheroma burden."
-      ],
-      "expected_mode": "confident",
-      "description": "Factual question with explicit answer",
-      "rationale": "The document states that it correlates locally but not globally.",
-      "metadata": {},
-      "relevant_doc_ids": [
-        "87758"
-      ]
-    },
-    {
-      "id": "gen_confident_026",
-      "category": "confidence",
-      "subcategory": "clear_evidence",
-      "query": "What is the impact of immune escape mutations on HCV transmission in pregnant women?",
-      "contexts": [
-        "Loss of immune escape mutations during persistent HCV infection in pregnancy enhances replication of vertically transmitted viruses\n\nGlobally, about 1% of pregnant women are persistently infected with the hepatitis C virus (HCV). Mother-to-child transmission of HCV occurs in 3-5% of pregnancies and accounts for most new childhood infections. HCV-specific CD8(+) cytotoxic T lymphocytes (CTLs) are vital in the clearance of acute HCV infections, but in the 60-80% of infections that persist, these cells become functionally exhausted or select for mutant viruses that escape T cell recognition. Increased HCV replication during pregnancy suggests that maternofetal immune tolerance mechanisms may further impair HCV-specific CTLs, limiting their selective pressure on persistent viruses. To assess this possibility, we characterized circulating viral quasispecies during and after consecutive pregnancies in two women. This revealed a loss of some escape mutations in HLA class I epitopes during pregnancy that was associated with emergence of more fit viruses. CTL selective pressure was reimposed after childbirth, at which point escape mutations in these epitopes again predominated in the quasispecies and viral load dropped sharply. Importantly, the viruses transmitted perinatally were those with enhanced fitness due to reversion of escape mutations. Our findings indicate that the immunoregulatory changes of pregnancy reduce CTL selective pressure on HCV class I epitopes, thereby facilitating vertical transmission of viruses with optimized replicative fitness."
-      ],
-      "expected_mode": "confident",
-      "description": "Factual question with explicit answer",
-      "rationale": "The text explains that loss enhances replication in vertically transmitted viruses.",
-      "metadata": {},
-      "relevant_doc_ids": [
-        "92308"
-      ]
-    },
-    {
       "id": "gen_confident_027",
       "category": "confidence",
       "subcategory": "clear_evidence",
@@ -465,22 +401,6 @@
       "metadata": {},
       "relevant_doc_ids": [
         "70490"
-      ]
-    },
-    {
-      "id": "gen_confident_029",
-      "category": "confidence",
-      "subcategory": "clear_evidence",
-      "query": "What is the purpose of molecular serotyping microarrays in infectious disease diagnostics?",
-      "contexts": [
-        "Empirical Bayesian models for analysing molecular serotyping microarrays\n\nBACKGROUND Microarrays offer great potential as a platform for molecular diagnostics, testing clinical samples for the presence of numerous biomarkers in highly multiplexed assays. In this study applied to infectious diseases, data from a microarray designed for molecular serotyping of Streptococcus pneumoniae was used, identifying the presence of any one of 91 known pneumococcal serotypes from DNA extracts. This microarray incorporated oligonucleotide probes for all known capsular polysaccharide synthesis genes and required a statistical analysis of the microarray intensity data to determine which serotype, or combination of serotypes, were present within a sample based on the combination of genes detected. RESULTS We propose an empirical Bayesian model for calculating the probabilities of combinations of serotypes from the microarray data. The model takes into consideration the dependencies between serotypes, induced by genes they have in common, and by homologous genes which, although not identical, are similar to each other in sequence. For serotypes which are very similar in capsular gene composition, extra probes are included on the microarray, providing additional information which is integrated into the Bayesian model. For each serotype combination with high probability, a second model, a Bayesian random effects model is applied to determine the relative abundance of each serotype. CONCLUSIONS To assess the accuracy of the proposed analysis we applied our methods to experimental data from samples containing individual serotypes and samples containing combinations of serotypes with known levels of abundance. All but two of the known serotypes of S. pneumoniae that were tested as individual samples could be uniquely determined by the Bayesian model. The model also enabled the presence of combinations of serotypes within samples to be determined. Serotypes with very low abundance within a combination of serotypes can be detected (down to 2% abundance in this study). As well as detecting the presence of serotype combinations, an approximate measure of the percentage abundance of the serotypes within the combination can be obtained."
-      ],
-      "expected_mode": "confident",
-      "description": "Factual question with explicit answer",
-      "rationale": "The text specifies its use for identifying biomarkers.",
-      "metadata": {},
-      "relevant_doc_ids": [
-        "54440"
       ]
     }
   ]

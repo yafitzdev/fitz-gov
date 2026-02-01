@@ -18,26 +18,24 @@ from pathlib import Path
 
 
 def cmd_validate(args: argparse.Namespace) -> int:
-    """Validate benchmark data."""
-    from .loader import load_cases, validate_cases
+    """Validate and clean benchmark data."""
+    from .validate import validate_and_clean
 
-    data_dir = Path(args.data_dir) if args.data_dir else None
+    result = validate_and_clean(
+        args.data_dir,
+        similarity_threshold=args.threshold,
+        dry_run=not args.apply,
+    )
 
-    try:
-        cases = load_cases(data_dir=data_dir)
-    except FileNotFoundError as e:
-        print(f"Error: {e}")
-        return 1
+    if args.show_issues and result.issues:
+        print("\n=== All Issues ===")
+        for issue in result.issues:
+            print(f"  - {issue}")
 
-    errors = validate_cases(cases)
+    if result.duplicates_removed or result.low_quality_removed:
+        return 1 if not args.apply else 0
 
-    if errors:
-        print(f"Validation FAILED with {len(errors)} errors:")
-        for error in errors:
-            print(f"  - {error}")
-        return 1
-
-    print(f"Validation PASSED: {len(cases)} cases are valid")
+    print("Validation PASSED - no issues found")
     return 0
 
 
@@ -400,8 +398,11 @@ def main() -> int:
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
 
     # validate command
-    validate_parser = subparsers.add_parser("validate", help="Validate benchmark data")
-    validate_parser.add_argument("--data-dir", help="Data directory to validate")
+    validate_parser = subparsers.add_parser("validate", help="Validate and clean benchmark data")
+    validate_parser.add_argument("--data-dir", default="./data", help="Data directory to validate")
+    validate_parser.add_argument("--threshold", type=float, default=0.9, help="Similarity threshold for duplicates")
+    validate_parser.add_argument("--apply", action="store_true", help="Apply changes (remove duplicates/low quality)")
+    validate_parser.add_argument("--show-issues", action="store_true", help="Show all issues found")
 
     # stats command
     stats_parser = subparsers.add_parser("stats", help="Show benchmark statistics")

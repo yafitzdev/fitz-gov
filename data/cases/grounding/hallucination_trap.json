@@ -4,30 +4,6 @@
   "description": "FITZ-GOV grounding cases - hallucination_trap",
   "cases": [
     {
-      "id": "gen_ground_000",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the exact number of copies of BC1 RNA in rodent genomes?",
-      "contexts": [
-        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
-      ],
-      "expected_mode": "confident",
-      "description": "Exact copy number not specified",
-      "rationale": "Document discusses BC1 RNA but does not specify exact copy numbers",
-      "metadata": {},
-      "forbidden_claims": [
-        "500",
-        "1000",
-        "2000",
-        "3000",
-        "5000",
-        "10000"
-      ],
-      "relevant_doc_ids": [
-        "7912"
-      ]
-    },
-    {
       "id": "gen_ground_001",
       "category": "grounding",
       "subcategory": "hallucination_trap",
@@ -49,30 +25,6 @@
       ],
       "relevant_doc_ids": [
         "4983"
-      ]
-    },
-    {
-      "id": "gen_ground_002",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the exact percentage of methylome coverage in human peripheral blood mononuclear cells?",
-      "contexts": [
-        "The DNA Methylome of Human Peripheral Blood Mononuclear Cells\n\nDNA methylation plays an important role in biological processes in human health and disease. Recent technological advances allow unbiased whole-genome DNA methylation (methylome) analysis to be carried out on human cells. Using whole-genome bisulfite sequencing at 24.7-fold coverage (12.3-fold per strand), we report a comprehensive (92.62%) methylome and analysis of the unique sequences in human peripheral blood mononuclear cells (PBMC) from the same Asian individual whose genome was deciphered in the YH project. PBMC constitute an important source for clinical blood tests world-wide. We found that 68.4% of CpG sites and <0.2% of non-CpG sites were methylated, demonstrating that non-CpG cytosine methylation is minor in human PBMC. Analysis of the PBMC methylome revealed a rich epigenomic landscape for 20 distinct genomic features, including regulatory, protein-coding, non-coding, RNA-coding, and repeat sequences. Integration of our methylome data with the YH genome sequence enabled a first comprehensive assessment of allele-specific methylation (ASM) between the two haploid methylomes of any individual and allowed the identification of 599 haploid differentially methylated regions (hDMRs) covering 287 genes. Of these, 76 genes had hDMRs within 2 kb of their transcriptional start sites of which >80% displayed allele-specific expression (ASE). These data demonstrate that ASM is a recurrent phenomenon and is highly correlated with ASE in human PBMCs. Together with recently reported similar studies, our study provides a comprehensive resource for future epigenomic research and confirms new sequencing technology as a paradigm for large-scale epigenomics studies."
-      ],
-      "expected_mode": "confident",
-      "description": "Coverage percentage not specified",
-      "rationale": "Document mentions coverage but does not specify exact percentage",
-      "metadata": {},
-      "forbidden_claims": [
-        "95%",
-        "97%",
-        "98%",
-        "99.9%",
-        "102%",
-        "103%"
-      ],
-      "relevant_doc_ids": [
-        "18670"
       ]
     },
     {
@@ -340,30 +292,6 @@
       ]
     },
     {
-      "id": "gen_ground_014",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the exact number of copies of ID elements in rodent genomes?",
-      "contexts": [
-        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
-      ],
-      "expected_mode": "confident",
-      "description": "Copy number not specified",
-      "rationale": "Document discusses ID elements but does not specify the exact copy numbers",
-      "metadata": {},
-      "forbidden_claims": [
-        "50",
-        "100",
-        "200",
-        "300",
-        "400",
-        "500"
-      ],
-      "relevant_doc_ids": [
-        "7912"
-      ]
-    },
-    {
       "id": "gen_ground_015",
       "category": "grounding",
       "subcategory": "hallucination_trap",
@@ -385,30 +313,6 @@
       ],
       "relevant_doc_ids": [
         "5836"
-      ]
-    },
-    {
-      "id": "gen_ground_016",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the exact percentage of methylome coverage in human PBMCs?",
-      "contexts": [
-        "The DNA Methylome of Human Peripheral Blood Mononuclear Cells\n\nDNA methylation plays an important role in biological processes in human health and disease. Recent technological advances allow unbiased whole-genome DNA methylation (methylome) analysis to be carried out on human cells. Using whole-genome bisulfite sequencing at 24.7-fold coverage (12.3-fold per strand), we report a comprehensive (92.62%) methylome and analysis of the unique sequences in human peripheral blood mononuclear cells (PBMC) from the same Asian individual whose genome was deciphered in the YH project. PBMC constitute an important source for clinical blood tests world-wide. We found that 68.4% of CpG sites and <0.2% of non-CpG sites were methylated, demonstrating that non-CpG cytosine methylation is minor in human PBMC. Analysis of the PBMC methylome revealed a rich epigenomic landscape for 20 distinct genomic features, including regulatory, protein-coding, non-coding, RNA-coding, and repeat sequences. Integration of our methylome data with the YH genome sequence enabled a first comprehensive assessment of allele-specific methylation (ASM) between the two haploid methylomes of any individual and allowed the identification of 599 haploid differentially methylated regions (hDMRs) covering 287 genes. Of these, 76 genes had hDMRs within 2 kb of their transcriptional start sites of which >80% displayed allele-specific expression (ASE). These data demonstrate that ASM is a recurrent phenomenon and is highly correlated with ASE in human PBMCs. Together with recently reported similar studies, our study provides a comprehensive resource for future epigenomic research and confirms new sequencing technology as a paradigm for large-scale epigenomics studies."
-      ],
-      "expected_mode": "confident",
-      "description": "Coverage percentage not specified",
-      "rationale": "Document discusses PBMC methylome but does not specify exact coverage percentage",
-      "metadata": {},
-      "forbidden_claims": [
-        "93%",
-        "95%",
-        "97%",
-        "99.5%",
-        "102%",
-        "104%"
-      ],
-      "relevant_doc_ids": [
-        "18670"
       ]
     },
     {
@@ -484,78 +388,6 @@
       ]
     },
     {
-      "id": "gen_ground_020",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the exact number of copies of ID-related elements in rodent genomes?",
-      "contexts": [
-        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
-      ],
-      "expected_mode": "confident",
-      "description": "Copy number not specified",
-      "rationale": "Document discusses ID-related elements but does not specify the exact copy numbers",
-      "metadata": {},
-      "forbidden_claims": [
-        "50",
-        "100",
-        "200",
-        "300",
-        "400",
-        "500"
-      ],
-      "relevant_doc_ids": [
-        "7912"
-      ]
-    },
-    {
-      "id": "gen_ground_021",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the name of the researcher who first discovered the human myelin basic protein gene?",
-      "contexts": [
-        "The human myelin basic protein gene is included within a 179-kilobase transcription unit: expression in the immune and central nervous systems.\n\nTwo human Golli (for gene expressed in the oligodendrocyte lineage)-MBP (for myelin basic protein) cDNAs have been isolated from a human oligodendroglioma cell line. Analysis of these cDNAs has enabled us to determine the entire structure of the human Golli-MBP gene. The Golli-MBP gene, which encompasses the MBP transcription unit, is approximately 179 kb in length and consists of 10 exons, seven of which constitute the MBP gene. The human Golli-MBP gene contains two transcription start sites, each of which gives rise to a family of alternatively spliced transcripts. At least two Golli-MBP transcripts, containing the first three exons of the gene and one or more MBP exons, are produced from the first transcription start site. The second family of transcripts contains only MBP exons and produces the well-known MBPs. In humans, RNA blot analysis revealed that Golli-MBP transcripts were expressed in fetal thymus, spleen, and human B-cell and macrophage cell lines, as well as in fetal spinal cord. These findings clearly link the expression of exons encoding the autoimmunogen/encephalitogen MBP in the central nervous system to cells and tissues of the immune system through normal expression of the Golli-MBP gene. They also establish that this genetic locus, which includes the MBP gene, is conserved among species, providing further evidence that the MBP transcription unit is an integral part of the Golli transcription unit and suggest that this structural arrangement is important for the genetic function and/or regulation of these genes."
-      ],
-      "expected_mode": "confident",
-      "description": "Researcher name not mentioned",
-      "rationale": "Document discusses human myelin basic protein gene but does not mention the discoverer's full name",
-      "metadata": {},
-      "forbidden_claims": [
-        "Dr. Jane Smith",
-        "Prof. John Doe",
-        "Dr. Emily Brown",
-        "Dr. Michael Johnson",
-        "Alice Lee, PhD",
-        "Bob Wilson, MD"
-      ],
-      "relevant_doc_ids": [
-        "19238"
-      ]
-    },
-    {
-      "id": "gen_ground_022",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the specific location of BC1 RNA in rodent genomes?",
-      "contexts": [
-        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
-      ],
-      "expected_mode": "confident",
-      "description": "Location not specified",
-      "rationale": "Document discusses BC1 RNA but does not specify its genomic location",
-      "metadata": {},
-      "forbidden_claims": [
-        "Chromosome 1",
-        "Chromosome 2",
-        "Chromosome X",
-        "Locus A2345678",
-        "Locus C9012345",
-        "Region D5678901"
-      ],
-      "relevant_doc_ids": [
-        "7912"
-      ]
-    },
-    {
       "id": "gen_ground_023",
       "category": "grounding",
       "subcategory": "hallucination_trap",
@@ -598,102 +430,6 @@
         "15 ng/mL",
         "20 ng/mL",
         "30 ng/mL"
-      ],
-      "relevant_doc_ids": [
-        "7912"
-      ]
-    },
-    {
-      "id": "gen_ground_025",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the exact number of myeloid-derived suppressor cells found in human blood?",
-      "contexts": [
-        "Induction of myelodysplasia by myeloid-derived suppressor cells.\n\nMyelodysplastic syndromes (MDS) are age-dependent stem cell malignancies that share biological features of activated adaptive immune response and ineffective hematopoiesis. Here we report that myeloid-derived suppressor cells (MDSC), which are classically linked to immunosuppression, inflammation, and cancer, were markedly expanded in the bone marrow of MDS patients and played a pathogenetic role in the development of ineffective hematopoiesis. These clonally distinct MDSC overproduce hematopoietic suppressive cytokines and function as potent apoptotic effectors targeting autologous hematopoietic progenitors. Using multiple transfected cell models, we found that MDSC expansion is driven by the interaction of the proinflammatory molecule S100A9 with CD33. These 2 proteins formed a functional ligand/receptor pair that recruited components to CD33’s immunoreceptor tyrosine-based inhibition motif (ITIM), inducing secretion of the suppressive cytokines IL-10 and TGF-β by immature myeloid cells. S100A9 transgenic mice displayed bone marrow accumulation of MDSC accompanied by development of progressive multilineage cytopenias and cytological dysplasia. Importantly, early forced maturation of MDSC by either all-trans-retinoic acid treatment or active immunoreceptor tyrosine-based activation motif–bearing (ITAM-bearing) adapter protein (DAP12) interruption of CD33 signaling rescued the hematologic phenotype. These findings indicate that primary bone marrow expansion of MDSC driven by the S100A9/CD33 pathway perturbs hematopoiesis and contributes to the development of MDS."
-      ],
-      "expected_mode": "confident",
-      "description": "Cell count not specified",
-      "rationale": "Document discusses myeloid-derived suppressor cells but does not specify exact number",
-      "metadata": {},
-      "forbidden_claims": [
-        "20,000",
-        "30,000",
-        "40,000",
-        "50,000",
-        "60,000",
-        "70,000"
-      ],
-      "relevant_doc_ids": [
-        "5836"
-      ]
-    },
-    {
-      "id": "gen_ground_026",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the specific name of the protein that activates ID elements?",
-      "contexts": [
-        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
-      ],
-      "expected_mode": "confident",
-      "description": "Activating protein name not mentioned",
-      "rationale": "Document discusses ID elements but does not specify the activating protein's name",
-      "metadata": {},
-      "forbidden_claims": [
-        "Protein A",
-        "B-Protein",
-        "C-Protein",
-        "D-Protein",
-        "E-Protein",
-        "F-Protein"
-      ],
-      "relevant_doc_ids": [
-        "7912"
-      ]
-    },
-    {
-      "id": "gen_ground_027",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the exact percentage of methylome coverage in human cells?",
-      "contexts": [
-        "The DNA Methylome of Human Peripheral Blood Mononuclear Cells\n\nDNA methylation plays an important role in biological processes in human health and disease. Recent technological advances allow unbiased whole-genome DNA methylation (methylome) analysis to be carried out on human cells. Using whole-genome bisulfite sequencing at 24.7-fold coverage (12.3-fold per strand), we report a comprehensive (92.62%) methylome and analysis of the unique sequences in human peripheral blood mononuclear cells (PBMC) from the same Asian individual whose genome was deciphered in the YH project. PBMC constitute an important source for clinical blood tests world-wide. We found that 68.4% of CpG sites and <0.2% of non-CpG sites were methylated, demonstrating that non-CpG cytosine methylation is minor in human PBMC. Analysis of the PBMC methylome revealed a rich epigenomic landscape for 20 distinct genomic features, including regulatory, protein-coding, non-coding, RNA-coding, and repeat sequences. Integration of our methylome data with the YH genome sequence enabled a first comprehensive assessment of allele-specific methylation (ASM) between the two haploid methylomes of any individual and allowed the identification of 599 haploid differentially methylated regions (hDMRs) covering 287 genes. Of these, 76 genes had hDMRs within 2 kb of their transcriptional start sites of which >80% displayed allele-specific expression (ASE). These data demonstrate that ASM is a recurrent phenomenon and is highly correlated with ASE in human PBMCs. Together with recently reported similar studies, our study provides a comprehensive resource for future epigenomic research and confirms new sequencing technology as a paradigm for large-scale epigenomics studies."
-      ],
-      "expected_mode": "confident",
-      "description": "Coverage percentage not specified",
-      "rationale": "Document discusses human methylome but does not specify exact coverage percentage",
-      "metadata": {},
-      "forbidden_claims": [
-        "93%",
-        "95%",
-        "97%",
-        "99.5%",
-        "102%",
-        "104%"
-      ],
-      "relevant_doc_ids": [
-        "18670"
-      ]
-    },
-    {
-      "id": "gen_ground_028",
-      "category": "grounding",
-      "subcategory": "hallucination_trap",
-      "query": "What is the specific name of the protein that activates BC1 RNA in rodent cells?",
-      "contexts": [
-        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
-      ],
-      "expected_mode": "confident",
-      "description": "Activating protein name not mentioned",
-      "rationale": "Document discusses BC1 RNA in rodent cells but does not specify the activating protein's name",
-      "metadata": {},
-      "forbidden_claims": [
-        "Protein A",
-        "B-Protein",
-        "C-Protein",
-        "D-Protein",
-        "E-Protein",
-        "F-Protein"
       ],
       "relevant_doc_ids": [
         "7912"

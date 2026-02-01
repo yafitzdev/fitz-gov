@@ -184,36 +184,6 @@
       "metadata": {}
     },
     {
-      "id": "gen_dispute_012",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "What is the role of myeloid-derived suppressor cells (MDSC) in the immune system?",
-      "contexts": [
-        "MDSC are primarily involved in immunosuppression and inflammation.",
-        "They play a role in immune activation and response, especially in certain disease states.",
-        "Some research suggests MDSC have a minimal impact on overall immune function."
-      ],
-      "expected_mode": "disputed",
-      "description": "Conflicting roles of MDSC in immunity",
-      "rationale": "Different studies highlight diverse aspects of MDSC's immune function.",
-      "metadata": {}
-    },
-    {
-      "id": "gen_dispute_013",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "How does DNA methylation analysis contribute to our understanding of human health?",
-      "contexts": [
-        "DNA methylation analysis provides crucial insights into biological processes and disease mechanisms.",
-        "It has limited clinical utility and is primarily a research tool.",
-        "The impact of DNA methylation analysis on our understanding of health is still being established."
-      ],
-      "expected_mode": "disputed",
-      "description": "Uncertain clinical utility of DNA methylation analysis",
-      "rationale": "Experts disagree on the immediate clinical applications and long-term impact.",
-      "metadata": {}
-    },
-    {
       "id": "gen_dispute_014",
       "category": "dispute",
       "subcategory": "contradicting_facts",
@@ -226,21 +196,6 @@
       "expected_mode": "disputed",
       "description": "Conflicting dosage recommendations",
       "rationale": "Different guidelines and studies propose varying optimal dosages.",
-      "metadata": {}
-    },
-    {
-      "id": "gen_dispute_015",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "How does the architecture of cerebral white matter change during development?",
-      "contexts": [
-        "Cerebral white matter architecture undergoes significant changes during development, impacting function.",
-        "The changes are minimal and do not significantly affect cortical development.",
-        "Some studies suggest the architecture remains relatively stable, with minor variations."
-      ],
-      "expected_mode": "disputed",
-      "description": "Disagreement on white matter development",
-      "rationale": "Experts have differing opinions on the extent and impact of developmental changes.",
       "metadata": {}
     },
     {
@@ -289,66 +244,6 @@
       "metadata": {}
     },
     {
-      "id": "gen_dispute_019",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "How does BC1 RNA gene expression contribute to ID element amplification?",
-      "contexts": [
-        "BC1 RNA gene expression is crucial for initiating and regulating ID element amplification.",
-        "Recent studies suggest its role is minimal, and other factors are more significant.",
-        "The exact contribution of BC1 RNA gene expression is still under investigation."
-      ],
-      "expected_mode": "disputed",
-      "description": "Unclear contribution of BC1 RNA gene expression",
-      "rationale": "Conflicting findings and ongoing research lead to this dispute.",
-      "metadata": {}
-    },
-    {
-      "id": "gen_dispute_020",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "What is the role of myeloid-derived suppressor cells (MDSC) in cancer?",
-      "contexts": [
-        "MDSC are primarily involved in promoting cancer progression and metastasis.",
-        "They play a role in suppressing tumor growth and immune response, especially in certain cancers.",
-        "Some research suggests MDSC have a minimal impact on overall cancer development."
-      ],
-      "expected_mode": "disputed",
-      "description": "Conflicting roles of MDSC in cancer",
-      "rationale": "Different studies highlight diverse aspects of MDSC's function in cancer.",
-      "metadata": {}
-    },
-    {
-      "id": "gen_dispute_021",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "How does DNA methylation analysis contribute to personalized medicine?",
-      "contexts": [
-        "DNA methylation analysis provides crucial insights for personalized treatment strategies.",
-        "It has limited clinical utility in personalized medicine and is primarily a research tool.",
-        "The impact of DNA methylation analysis on personalized medicine is still being established."
-      ],
-      "expected_mode": "disputed",
-      "description": "Uncertain role in personalized medicine",
-      "rationale": "Experts disagree on the immediate applications and long-term impact in this field.",
-      "metadata": {}
-    },
-    {
-      "id": "gen_dispute_022",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "What is the optimal imaging technique for assessing cerebral white matter in newborns?",
-      "contexts": [
-        "Diffusion tensor MRI is the preferred method, providing detailed microstructural information.",
-        "Advanced MRI sequences like diffusion-weighted imaging offer better resolution, especially in newborns.",
-        "Some experts argue that traditional MRI techniques are sufficient for newborn assessments."
-      ],
-      "expected_mode": "disputed",
-      "description": "Disagreement on imaging techniques for newborns",
-      "rationale": "Different experts have varying preferences for newborn imaging.",
-      "metadata": {}
-    },
-    {
       "id": "gen_dispute_023",
       "category": "dispute",
       "subcategory": "contradicting_facts",
@@ -379,21 +274,6 @@
       "metadata": {}
     },
     {
-      "id": "gen_dispute_025",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "How does the size of the Golli-MBP gene transcription unit impact its regulation?",
-      "contexts": [
-        "The large size of the transcription unit enables complex regulatory mechanisms.",
-        "Size is not a significant factor, and its regulation is primarily determined by sequence elements.",
-        "Some studies suggest a smaller transcription unit would result in more efficient regulation."
-      ],
-      "expected_mode": "disputed",
-      "description": "Controversy over transcription unit size and regulation",
-      "rationale": "Different interpretations of the gene's structure and function lead to this dispute.",
-      "metadata": {}
-    },
-    {
       "id": "gen_dispute_026",
       "category": "dispute",
       "subcategory": "contradicting_facts",
@@ -421,36 +301,6 @@
       "expected_mode": "disputed",
       "description": "Unclear impact on overall gene expression",
       "rationale": "Conflicting findings and ongoing research lead to this dispute.",
-      "metadata": {}
-    },
-    {
-      "id": "gen_dispute_028",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "What is the role of myeloid-derived suppressor cells (MDSC) in inflammation?",
-      "contexts": [
-        "MDSC are primarily involved in promoting inflammation and immune response.",
-        "They play a role in suppressing inflammation, especially in certain disease states.",
-        "Some research suggests MDSC have a minimal impact on overall inflammatory processes."
-      ],
-      "expected_mode": "disputed",
-      "description": "Conflicting roles of MDSC in inflammation",
-      "rationale": "Different studies highlight diverse aspects of MDSC's function in inflammation.",
-      "metadata": {}
-    },
-    {
-      "id": "gen_dispute_029",
-      "category": "dispute",
-      "subcategory": "contradicting_facts",
-      "query": "How does DNA methylation analysis contribute to our understanding of disease mechanisms?",
-      "contexts": [
-        "DNA methylation analysis provides crucial insights into disease mechanisms and pathogenesis.",
-        "It has limited clinical utility in understanding disease mechanisms and is primarily a research tool.",
-        "The impact of DNA methylation analysis on disease mechanism understanding is still being established."
-      ],
-      "expected_mode": "disputed",
-      "description": "Uncertain role in disease mechanism research",
-      "rationale": "Experts disagree on the immediate applications and long-term impact in this field.",
       "metadata": {}
     }
   ]
