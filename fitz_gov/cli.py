@@ -181,6 +181,38 @@ def cmd_build(args: argparse.Namespace) -> int:
     print("FITZ-GOV Benchmark Builder")
     print("=" * 50)
 
+    # Single category mode (for retries)
+    if args.category:
+        from .generator import FitzGovGenerator
+        from pathlib import Path
+        import json
+
+        output_path = Path(args.output)
+        corpus_file = output_path / "corpus" / "documents.jsonl"
+
+        if not corpus_file.exists():
+            print(f"Error: Corpus not found at {corpus_file}")
+            print("Run full build first to download corpus.")
+            return 1
+
+        print(f"Loading corpus from {corpus_file}...")
+        chunks = []
+        with open(corpus_file, encoding="utf-8") as f:
+            for line in f:
+                chunks.append(json.loads(line))
+        print(f"Loaded {len(chunks)} documents")
+
+        print(f"\nGenerating {args.category} cases only...")
+        generator = FitzGovGenerator(llm_client=llm_client)
+        cases = generator.generate_category(
+            args.category,
+            chunks,
+            args.num_cases,
+            str(output_path),
+        )
+        print(f"\nGenerated {len(cases)} {args.category} cases")
+        return 0
+
     result = bootstrap_from_beir(
         datasets=datasets,
         llm_client=llm_client,
@@ -287,7 +319,7 @@ def _create_llm_client(args: argparse.Namespace):
                         "Content-Type": "application/json",
                     },
                     json={"model": model, "message": prompt},
-                    timeout=300,
+                    timeout=600,  # 10 min for complex prompts
                 )
                 resp.raise_for_status()
                 return resp.json().get("text", "")
@@ -398,6 +430,11 @@ def main() -> int:
         help="LLM provider (default: ollama for free local generation)",
     )
     build_parser.add_argument("--llm-model", help="LLM model name (default depends on provider)")
+    build_parser.add_argument(
+        "--category",
+        choices=["abstention", "dispute", "qualification", "confidence", "grounding", "relevance"],
+        help="Generate only this category (for retries)",
+    )
 
     # package command
     pkg_parser = subparsers.add_parser("package", help="Package data for release")

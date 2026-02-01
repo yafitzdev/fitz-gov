@@ -1,0 +1,399 @@
+{
+  "category": "qualification",
+  "subcategory": "uncertain_evidence",
+  "description": "FITZ-GOV qualification cases - uncertain_evidence",
+  "cases": [
+    {
+      "id": "gen_qualify_000",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why do users prefer feature X over feature Y?",
+      "contexts": [
+        "Survey shows 60% of users selected feature X.",
+        "Feature X was released 6 months before feature Y."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with only correlational data",
+      "rationale": "Context shows preference data but no causal evidence for WHY",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_001",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What will be the impact of the next update on user engagement?",
+      "contexts": [
+        "The last two updates did not significantly change user behavior.",
+        "No specific details about upcoming features are available."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction with limited data",
+      "rationale": "Lack of detailed information about the nature of changes in the next update",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_002",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Are all myelodysplastic syndromes caused by MDSCs?",
+      "contexts": [
+        "Myeloid-derived suppressor cells (MDSC) were markedly expanded in MDS patients.",
+        "The exact role of MDSCs in the pathogenesis remains to be elucidated."
+      ],
+      "expected_mode": "qualified",
+      "description": "Generalization question with few examples",
+      "rationale": "Insufficient evidence to generalize about all cases",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_003",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What will be the next trend in white matter development research?",
+      "contexts": [
+        "Recent studies have focused on diffusion tensor MRI for assessing microstructural changes.",
+        "Little is known about future research directions."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "No information provided about upcoming trends or hypotheses",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_004",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why does BC1 RNA prime its own reverse transcription?",
+      "contexts": [
+        "BC1 RNA gene is a master for ID element amplification.",
+        "Reverse transcription process involves priming."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with correlational data",
+      "rationale": "Context provides information on the role of BC1 but no direct evidence explaining WHY",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_005",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "How will DNA methylation patterns change in future generations?",
+      "contexts": [
+        "Recent advances allow whole-genome analysis.",
+        "Long-term studies tracking changes across generations are not yet available."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with insufficient data",
+      "rationale": "No longitudinal data to predict trends over multiple generations",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_006",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What is the primary function of Golli-MBP gene in immune responses?",
+      "contexts": [
+        "The human Golli-MBP gene is expressed in both immune and CNS systems.",
+        "Specific functions are yet to be fully elucidated."
+      ],
+      "expected_mode": "qualified",
+      "description": "Generalization question with limited examples",
+      "rationale": "Context provides expression information but lacks detailed functional insights",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_007",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why do some users report lower satisfaction despite new features?",
+      "contexts": [
+        "New features were added in the last update.",
+        "Customer feedback shows mixed results."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with correlational data",
+      "rationale": "Lack of causal evidence for user dissatisfaction",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_008",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What will be the long-term effects of MDSCs on bone marrow?",
+      "contexts": [
+        "MDSC expansion is linked to ineffective hematopoiesis.",
+        "Longitudinal studies are needed for conclusive evidence."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "Insufficient longitudinal data to predict long-term impacts",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_009",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "How will diffusion tensor MRI evolve in the next decade?",
+      "contexts": [
+        "Current research focuses on microstructural assessments.",
+        "Future technological advancements are speculative."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "No concrete information about future technological developments",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_010",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why does white matter development correlate with cortical growth?",
+      "contexts": [
+        "Alterations in white matter architecture can affect brain development.",
+        "Correlation between developmental stages is observed."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with correlational data",
+      "rationale": "Lack of evidence explaining the causal mechanism",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_011",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What are the potential applications of BC1 RNA in medical research?",
+      "contexts": [
+        "BC1 RNA plays a role in ID element amplification.",
+        "Current studies are limited to basic understanding."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with insufficient data",
+      "rationale": "Insufficient information about practical applications",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_012",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "How will DNA methylation patterns vary across different tissues?",
+      "contexts": [
+        "Methylome analysis is conducted on human peripheral blood mononuclear cells.",
+        "Comparative studies in other tissues are yet to be performed."
+      ],
+      "expected_mode": "qualified",
+      "description": "Generalization question with limited examples",
+      "rationale": "Lack of data for various tissue types",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_013",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why do users frequently switch between features X and Y?",
+      "contexts": [
+        "Usage patterns indicate frequent switching.",
+        "User motivations are not fully understood."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with correlational data",
+      "rationale": "Insufficient causal explanation for user behavior",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_014",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What will be the impact of BC1 RNA on cellular functions?",
+      "contexts": [
+        "BC1 RNA is involved in retroposition.",
+        "Specific effects are still under investigation."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "Insufficient information about specific functional impacts",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_015",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "How will the Golli-MBP gene influence central nervous system development?",
+      "contexts": [
+        "The gene is expressed in both immune and CNS systems.",
+        "Specific developmental roles are not fully characterized."
+      ],
+      "expected_mode": "qualified",
+      "description": "Generalization question with limited examples",
+      "rationale": "Lack of detailed functional insights for CNS",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_016",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why do some MDS patients respond better to treatment?",
+      "contexts": [
+        "MDSCs play a role in the pathogenesis.",
+        "Patient responses vary widely."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with correlational data",
+      "rationale": "Insufficient causal explanation for individual differences",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_017",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What will be the future trends in DNA methylation research?",
+      "contexts": [
+        "Recent studies have advanced whole-genome analysis.",
+        "Future directions are speculative."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "No concrete information about upcoming research trends",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_018",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "How will diffusion tensor MRI improve clinical diagnosis?",
+      "contexts": [
+        "Current applications assess microstructural changes.",
+        "Future advancements are uncertain."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "Insufficient information about future diagnostic improvements",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_019",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why does BC1 RNA have a high copy number in rodent genomes?",
+      "contexts": [
+        "ID elements, related to BC1 RNA, are found in high numbers.",
+        "Evolutionary mechanisms remain unclear."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with correlational data",
+      "rationale": "Lack of causal evidence for copy number variation",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_020",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What will be the role of myelodysplasia in future research?",
+      "contexts": [
+        "MDSCs are linked to MDS pathogenesis.",
+        "Research focus areas remain speculative."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "No clear indication of future research priorities",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_021",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "How will the Golli-MBP gene affect immune system function?",
+      "contexts": [
+        "The gene is expressed in both immune and CNS systems.",
+        "Immune-related functions are not fully elucidated."
+      ],
+      "expected_mode": "qualified",
+      "description": "Generalization question with limited examples",
+      "rationale": "Lack of detailed functional insights for the immune system",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_022",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why do some users prefer older versions over new ones?",
+      "contexts": [
+        "Recent updates introduced changes.",
+        "User preferences vary."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with correlational data",
+      "rationale": "Insufficient causal explanation for user preference",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_023",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What will be the impact of DNA methylation on aging?",
+      "contexts": [
+        "Methylome analysis provides insights into biological processes.",
+        "Long-term effects are not fully understood."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "Insufficient longitudinal data to predict aging impacts",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_024",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "How will BC1 RNA influence ID element amplification?",
+      "contexts": [
+        "BC1 RNA gene acts as a master for ID elements.",
+        "Mechanisms of amplification are still under investigation."
+      ],
+      "expected_mode": "qualified",
+      "description": "Generalization question with limited examples",
+      "rationale": "Lack of detailed mechanisms explaining amplification",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_025",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "Why do some MDS patients show no MDSC expansion?",
+      "contexts": [
+        "MDSCs are typically expanded in MDS.",
+        "Individual variations exist."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal question with correlational data",
+      "rationale": "Insufficient causal explanation for individual cases",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_026",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "What will be the next breakthrough in DNA methylation studies?",
+      "contexts": [
+        "Technological advances enable whole-genome analysis.",
+        "Future discoveries are speculative."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with limited data",
+      "rationale": "No clear indication of upcoming breakthroughs",
+      "metadata": {}
+    },
+    {
+      "id": "gen_qualify_027",
+      "category": "qualification",
+      "subcategory": "uncertain_evidence",
+      "query": "How will the Golli-MBP gene affect myelination processes?",
+      "contexts": [
+        "The gene is expressed in both immune and CNS systems.",
+        "Specific impacts on myelination are not fully characterized."
+      ],
+      "expected_mode": "qualified",
+      "description": "Generalization question with limited examples",
+      "rationale": "Lack of detailed insights into myelination effects",
+      "metadata": {}
+    }
+  ]
+}

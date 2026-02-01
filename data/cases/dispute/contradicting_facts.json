@@ -1,0 +1,457 @@
+{
+  "category": "dispute",
+  "subcategory": "contradicting_facts",
+  "description": "FITZ-GOV dispute cases - contradicting_facts",
+  "cases": [
+    {
+      "id": "gen_dispute_000",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the primary function of BC1 RNA?",
+      "contexts": [
+        "BC1 RNA is involved in the amplification of ID elements, acting as a master gene.",
+        "Recent studies suggest BC1 RNA primarily regulates gene expression in specific tissues.",
+        "Some research indicates BC1 RNA's main role is in the immune response, not amplification."
+      ],
+      "expected_mode": "disputed",
+      "description": "Conflicting roles of BC1 RNA",
+      "rationale": "Different studies propose varying primary functions for BC1 RNA.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_001",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does myelodysplasia develop?",
+      "contexts": [
+        "Myelodysplasia is caused by the expansion of myeloid-derived suppressor cells (MDSC) in bone marrow.",
+        "It is a result of genetic mutations in hematopoietic stem cells, leading to ineffective hematopoiesis.",
+        "Environmental factors and inflammation also play a significant role in its development."
+      ],
+      "expected_mode": "disputed",
+      "description": "Multiple causes of myelodysplasia",
+      "rationale": "Various factors, including cellular and genetic changes, contribute to the disorder.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_002",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the optimal imaging technique for assessing cerebral white matter?",
+      "contexts": [
+        "Diffusion tensor MRI is the preferred method, providing detailed microstructural information.",
+        "Advanced MRI sequences like diffusion-weighted imaging offer better resolution.",
+        "Some experts argue that traditional MRI techniques are sufficient for most assessments."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on imaging techniques",
+      "rationale": "There is a debate among experts regarding the most suitable imaging approach.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_003",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does DNA methylation impact human health?",
+      "contexts": [
+        "DNA methylation is crucial for normal biological processes and its dysregulation leads to diseases.",
+        "Recent studies suggest DNA methylation has a minimal impact on overall health.",
+        "The role of DNA methylation in health and disease is still not fully understood."
+      ],
+      "expected_mode": "disputed",
+      "description": "Controversy over DNA methylation's role",
+      "rationale": "Conflicting research findings and limited understanding lead to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_004",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the function of the Golli-MBP gene?",
+      "contexts": [
+        "The Golli-MBP gene is responsible for the expression of myelin basic protein (MBP) in the central nervous system.",
+        "Its primary function is to regulate immune responses in peripheral tissues.",
+        "Some research indicates it plays a role in cellular differentiation during development."
+      ],
+      "expected_mode": "disputed",
+      "description": "Multiple proposed functions for Golli-MBP",
+      "rationale": "Different studies highlight diverse aspects of the gene's function.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_005",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does the architecture of cerebral white matter affect cortical development?",
+      "contexts": [
+        "Alterations in white matter architecture directly impact cortical development and function.",
+        "The relationship is complex and not solely dependent on white matter structure.",
+        "Some studies suggest the impact is minimal and other factors play a more significant role."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on white matter's influence",
+      "rationale": "Experts debate the extent of white matter's influence on cortical development.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_006",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the mechanism of ID element amplification?",
+      "contexts": [
+        "ID element amplification occurs through retroposition, facilitated by BC1 RNA.",
+        "Recent research suggests a different mechanism involving transposable elements.",
+        "The exact mechanism is still under investigation and not fully understood."
+      ],
+      "expected_mode": "disputed",
+      "description": "Unclear amplification mechanism",
+      "rationale": "Conflicting findings and ongoing research lead to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_007",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does myeloid-derived suppressor cell (MDSC) expansion contribute to myelodysplasia?",
+      "contexts": [
+        "MDSC expansion directly leads to ineffective hematopoiesis, causing myelodysplasia.",
+        "It is a secondary effect, with primary causes being genetic mutations.",
+        "The role of MDSC expansion is still being investigated and is not yet fully established."
+      ],
+      "expected_mode": "disputed",
+      "description": "Uncertain role of MDSC expansion",
+      "rationale": "Experts disagree on the primary causative factor, leading to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_008",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the recommended imaging protocol for assessing DNA methylation?",
+      "contexts": [
+        "Whole-genome bisulfite sequencing is the gold standard for DNA methylation analysis.",
+        "Advanced techniques like single-cell sequencing offer more detailed insights.",
+        "Some researchers argue that traditional methods are sufficient for most studies."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on imaging protocols",
+      "rationale": "Different experts have varying preferences and opinions on the best approach.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_009",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does the size of the Golli-MBP gene transcription unit impact its function?",
+      "contexts": [
+        "The large size (179 kb) of the transcription unit enables complex regulation and expression.",
+        "Size is not a significant factor, and its function is primarily determined by sequence elements.",
+        "Some studies suggest a smaller transcription unit would be more efficient."
+      ],
+      "expected_mode": "disputed",
+      "description": "Controversy over transcription unit size",
+      "rationale": "Different interpretations of the gene's structure and function lead to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_010",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the primary cause of functional disabilities in the developing brain?",
+      "contexts": [
+        "Alterations in cerebral white matter architecture are the primary cause of functional disabilities.",
+        "Other factors, such as genetic mutations and environmental influences, play a more significant role.",
+        "The cause is multifactorial and cannot be attributed to a single factor."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on primary cause of disabilities",
+      "rationale": "Experts have varying opinions on the most critical factor leading to disabilities.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_011",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does BC1 RNA prime its own reverse transcription?",
+      "contexts": [
+        "BC1 RNA utilizes a specific mechanism to initiate its own reverse transcription.",
+        "Recent studies suggest it does not prime its own reverse transcription but rather relies on other factors.",
+        "The exact process is still under investigation and not fully understood."
+      ],
+      "expected_mode": "disputed",
+      "description": "Unclear self-priming mechanism",
+      "rationale": "Conflicting findings and ongoing research lead to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_012",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the role of myeloid-derived suppressor cells (MDSC) in the immune system?",
+      "contexts": [
+        "MDSC are primarily involved in immunosuppression and inflammation.",
+        "They play a role in immune activation and response, especially in certain disease states.",
+        "Some research suggests MDSC have a minimal impact on overall immune function."
+      ],
+      "expected_mode": "disputed",
+      "description": "Conflicting roles of MDSC in immunity",
+      "rationale": "Different studies highlight diverse aspects of MDSC's immune function.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_013",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does DNA methylation analysis contribute to our understanding of human health?",
+      "contexts": [
+        "DNA methylation analysis provides crucial insights into biological processes and disease mechanisms.",
+        "It has limited clinical utility and is primarily a research tool.",
+        "The impact of DNA methylation analysis on our understanding of health is still being established."
+      ],
+      "expected_mode": "disputed",
+      "description": "Uncertain clinical utility of DNA methylation analysis",
+      "rationale": "Experts disagree on the immediate clinical applications and long-term impact.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_014",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the optimal dosage for treating myelodysplasia?",
+      "contexts": [
+        "A dosage of 10mg twice daily is recommended for effective treatment.",
+        "Lower dosages, such as 5mg once daily, are suggested for specific patient populations.",
+        "Some guidelines recommend flexible dosing, with 15mg as needed, based on individual response."
+      ],
+      "expected_mode": "disputed",
+      "description": "Conflicting dosage recommendations",
+      "rationale": "Different guidelines and studies propose varying optimal dosages.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_015",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does the architecture of cerebral white matter change during development?",
+      "contexts": [
+        "Cerebral white matter architecture undergoes significant changes during development, impacting function.",
+        "The changes are minimal and do not significantly affect cortical development.",
+        "Some studies suggest the architecture remains relatively stable, with minor variations."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on white matter development",
+      "rationale": "Experts have differing opinions on the extent and impact of developmental changes.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_016",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the function of ID elements in rodent genomes?",
+      "contexts": [
+        "ID elements are short interspersed elements that play a role in genome stability and evolution.",
+        "Their primary function is in gene regulation and expression, especially in specific tissues.",
+        "Some research suggests ID elements have a minimal impact on overall genome function."
+      ],
+      "expected_mode": "disputed",
+      "description": "Conflicting roles of ID elements",
+      "rationale": "Different studies highlight diverse aspects of ID elements' function.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_017",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does the size of the Golli-MBP gene impact its expression?",
+      "contexts": [
+        "The large size of the Golli-MBP gene enables complex regulation and expression patterns.",
+        "Size is not a significant factor, and its expression is primarily determined by sequence elements.",
+        "Some studies suggest a smaller gene size would result in more efficient expression."
+      ],
+      "expected_mode": "disputed",
+      "description": "Controversy over gene size and expression",
+      "rationale": "Different interpretations of the gene's structure and function lead to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_018",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the primary cause of ineffective hematopoiesis in myelodysplasia?",
+      "contexts": [
+        "Ineffective hematopoiesis is primarily caused by the expansion of myeloid-derived suppressor cells (MDSC).",
+        "It is a result of genetic mutations in hematopoietic stem cells, independent of MDSC expansion.",
+        "The cause is multifactorial and cannot be attributed to a single factor."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on primary cause of ineffective hematopoiesis",
+      "rationale": "Experts have varying opinions on the most critical factor leading to this condition.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_019",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does BC1 RNA gene expression contribute to ID element amplification?",
+      "contexts": [
+        "BC1 RNA gene expression is crucial for initiating and regulating ID element amplification.",
+        "Recent studies suggest its role is minimal, and other factors are more significant.",
+        "The exact contribution of BC1 RNA gene expression is still under investigation."
+      ],
+      "expected_mode": "disputed",
+      "description": "Unclear contribution of BC1 RNA gene expression",
+      "rationale": "Conflicting findings and ongoing research lead to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_020",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the role of myeloid-derived suppressor cells (MDSC) in cancer?",
+      "contexts": [
+        "MDSC are primarily involved in promoting cancer progression and metastasis.",
+        "They play a role in suppressing tumor growth and immune response, especially in certain cancers.",
+        "Some research suggests MDSC have a minimal impact on overall cancer development."
+      ],
+      "expected_mode": "disputed",
+      "description": "Conflicting roles of MDSC in cancer",
+      "rationale": "Different studies highlight diverse aspects of MDSC's function in cancer.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_021",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does DNA methylation analysis contribute to personalized medicine?",
+      "contexts": [
+        "DNA methylation analysis provides crucial insights for personalized treatment strategies.",
+        "It has limited clinical utility in personalized medicine and is primarily a research tool.",
+        "The impact of DNA methylation analysis on personalized medicine is still being established."
+      ],
+      "expected_mode": "disputed",
+      "description": "Uncertain role in personalized medicine",
+      "rationale": "Experts disagree on the immediate applications and long-term impact in this field.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_022",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the optimal imaging technique for assessing cerebral white matter in newborns?",
+      "contexts": [
+        "Diffusion tensor MRI is the preferred method, providing detailed microstructural information.",
+        "Advanced MRI sequences like diffusion-weighted imaging offer better resolution, especially in newborns.",
+        "Some experts argue that traditional MRI techniques are sufficient for newborn assessments."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on imaging techniques for newborns",
+      "rationale": "Different experts have varying preferences for newborn imaging.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_023",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does the architecture of cerebral white matter impact functional connectivity?",
+      "contexts": [
+        "Cerebral white matter architecture directly influences functional connectivity and brain function.",
+        "The impact is minimal, and other factors, such as gray matter structure, play a more significant role.",
+        "Some studies suggest the relationship is complex and not solely dependent on white matter."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on white matter's impact on connectivity",
+      "rationale": "Experts debate the extent of white matter's influence on functional connectivity.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_024",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the function of ID elements in genome evolution?",
+      "contexts": [
+        "ID elements contribute to genome stability and evolution through their amplification and dispersion.",
+        "Their primary function is in gene regulation and expression, especially during development.",
+        "Some research suggests ID elements have a minimal impact on overall genome evolution."
+      ],
+      "expected_mode": "disputed",
+      "description": "Conflicting roles of ID elements in evolution",
+      "rationale": "Different studies highlight diverse aspects of ID elements' function in genome evolution.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_025",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does the size of the Golli-MBP gene transcription unit impact its regulation?",
+      "contexts": [
+        "The large size of the transcription unit enables complex regulatory mechanisms.",
+        "Size is not a significant factor, and its regulation is primarily determined by sequence elements.",
+        "Some studies suggest a smaller transcription unit would result in more efficient regulation."
+      ],
+      "expected_mode": "disputed",
+      "description": "Controversy over transcription unit size and regulation",
+      "rationale": "Different interpretations of the gene's structure and function lead to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_026",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the primary cause of functional disabilities in myelodysplasia patients?",
+      "contexts": [
+        "Functional disabilities are primarily caused by ineffective hematopoiesis and its consequences.",
+        "Other factors, such as immune dysregulation and inflammation, play a more significant role.",
+        "The cause is multifactorial and cannot be attributed to a single factor."
+      ],
+      "expected_mode": "disputed",
+      "description": "Disagreement on primary cause of disabilities in myelodysplasia",
+      "rationale": "Experts have varying opinions on the most critical factor leading to disabilities.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_027",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does BC1 RNA gene expression impact overall gene expression?",
+      "contexts": [
+        "BC1 RNA gene expression has a significant impact on overall gene expression patterns.",
+        "Its impact is minimal and primarily localized to specific tissues.",
+        "Some studies suggest its role in gene expression is still not fully understood."
+      ],
+      "expected_mode": "disputed",
+      "description": "Unclear impact on overall gene expression",
+      "rationale": "Conflicting findings and ongoing research lead to this dispute.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_028",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "What is the role of myeloid-derived suppressor cells (MDSC) in inflammation?",
+      "contexts": [
+        "MDSC are primarily involved in promoting inflammation and immune response.",
+        "They play a role in suppressing inflammation, especially in certain disease states.",
+        "Some research suggests MDSC have a minimal impact on overall inflammatory processes."
+      ],
+      "expected_mode": "disputed",
+      "description": "Conflicting roles of MDSC in inflammation",
+      "rationale": "Different studies highlight diverse aspects of MDSC's function in inflammation.",
+      "metadata": {}
+    },
+    {
+      "id": "gen_dispute_029",
+      "category": "dispute",
+      "subcategory": "contradicting_facts",
+      "query": "How does DNA methylation analysis contribute to our understanding of disease mechanisms?",
+      "contexts": [
+        "DNA methylation analysis provides crucial insights into disease mechanisms and pathogenesis.",
+        "It has limited clinical utility in understanding disease mechanisms and is primarily a research tool.",
+        "The impact of DNA methylation analysis on disease mechanism understanding is still being established."
+      ],
+      "expected_mode": "disputed",
+      "description": "Uncertain role in disease mechanism research",
+      "rationale": "Experts disagree on the immediate applications and long-term impact in this field.",
+      "metadata": {}
+    }
+  ]
+}

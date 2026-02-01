@@ -1,0 +1,487 @@
+{
+  "category": "confidence",
+  "subcategory": "clear_evidence",
+  "description": "FITZ-GOV confidence cases - clear_evidence",
+  "cases": [
+    {
+      "id": "gen_confident_000",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the purpose of using diffusion tensor magnetic resonance imaging in assessing human newborn cerebral white matter?",
+      "contexts": [
+        "Microstructural development of human newborn cerebral white matter assessed in vivo by diffusion tensor magnetic resonance imaging.\n\nAlterations of the architecture of cerebral white matter in the developing human brain can affect cortical development and result in functional disabilities. A line scan diffusion-weighted magnetic resonance imaging (MRI) sequence with diffusion tensor analysis was applied to measure the apparent diffusion coefficient, to calculate relative anisotropy, and to delineate three-dimensional fiber architecture in cerebral white matter in preterm (n = 17) and full-term infants (n = 7). To assess effects of prematurity on cerebral white matter development, early gestation preterm infants (n = 10) were studied a second time at term. In the central white matter the mean apparent diffusion coefficient at 28 wk was high, 1.8 microm2/ms, and decreased toward term to 1.2 microm2/ms. In the posterior limb of the internal capsule, the mean apparent diffusion coefficients at both times were similar (1.2 versus 1.1 microm2/ms). Relative anisotropy was higher the closer birth was to term with greater absolute values in the internal capsule than in the central white matter. Preterm infants at term showed higher mean diffusion coefficients in the central white matter (1.4 +/- 0.24 versus 1.15 +/- 0.09 microm2/ms, p = 0.016) and lower relative anisotropy in both areas compared with full-term infants (white matter, 10.9 +/- 0.6 versus 22.9 +/- 3.0%, p = 0.001; internal capsule, 24.0 +/- 4.44 versus 33.1 +/- 0.6% p = 0.006). Nonmyelinated fibers in the corpus callosum were visible by diffusion tensor MRI as early as 28 wk; full-term and preterm infants at term showed marked differences in white matter fiber organization. The data indicate that quantitative assessment of water diffusion by diffusion tensor MRI provides insight into microstructural development in cerebral white matter in living infants."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text clearly states that it assesses alterations in architecture and measures parameters related to development.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "4983"
+      ]
+    },
+    {
+      "id": "gen_confident_001",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What are myelodysplastic syndromes (MDS) characterized by?",
+      "contexts": [
+        "Induction of myelodysplasia by myeloid-derived suppressor cells.\n\nMyelodysplastic syndromes (MDS) are age-dependent stem cell malignancies that share biological features of activated adaptive immune response and ineffective hematopoiesis. Here we report that myeloid-derived suppressor cells (MDSC), which are classically linked to immunosuppression, inflammation, and cancer, were markedly expanded in the bone marrow of MDS patients and played a pathogenetic role in the development of ineffective hematopoiesis. These clonally distinct MDSC overproduce hematopoietic suppressive cytokines and function as potent apoptotic effectors targeting autologous hematopoietic progenitors. Using multiple transfected cell models, we found that MDSC expansion is driven by the interaction of the proinflammatory molecule S100A9 with CD33. These 2 proteins formed a functional ligand/receptor pair that recruited components to CD33’s immunoreceptor tyrosine-based inhibition motif (ITIM), inducing secretion of the suppressive cytokines IL-10 and TGF-β by immature myeloid cells. S100A9 transgenic mice displayed bone marrow accumulation of MDSC accompanied by development of progressive multilineage cytopenias and cytological dysplasia. Importantly, early forced maturation of MDSC by either all-trans-retinoic acid treatment or active immunoreceptor tyrosine-based activation motif–bearing (ITAM-bearing) adapter protein (DAP12) interruption of CD33 signaling rescued the hematologic phenotype. These findings indicate that primary bone marrow expansion of MDSC driven by the S100A9/CD33 pathway perturbs hematopoiesis and contributes to the development of MDS."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document defines MDS as age-dependent stem cell malignancies linked to immune responses and ineffective hematopoiesis.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "5836"
+      ]
+    },
+    {
+      "id": "gen_confident_002",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the term for short interspersed elements (SINEs) in rodent genomes?",
+      "contexts": [
+        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
+      ],
+      "expected_mode": "confident",
+      "description": "Definition question",
+      "rationale": "ID elements are clearly defined as SINEs found in high copy numbers.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "7912"
+      ]
+    },
+    {
+      "id": "gen_confident_003",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "How is the methylome of human peripheral blood mononuclear cells analyzed?",
+      "contexts": [
+        "The DNA Methylome of Human Peripheral Blood Mononuclear Cells\n\nDNA methylation plays an important role in biological processes in human health and disease. Recent technological advances allow unbiased whole-genome DNA methylation (methylome) analysis to be carried out on human cells. Using whole-genome bisulfite sequencing at 24.7-fold coverage (12.3-fold per strand), we report a comprehensive (92.62%) methylome and analysis of the unique sequences in human peripheral blood mononuclear cells (PBMC) from the same Asian individual whose genome was deciphered in the YH project. PBMC constitute an important source for clinical blood tests world-wide. We found that 68.4% of CpG sites and <0.2% of non-CpG sites were methylated, demonstrating that non-CpG cytosine methylation is minor in human PBMC. Analysis of the PBMC methylome revealed a rich epigenomic landscape for 20 distinct genomic features, including regulatory, protein-coding, non-coding, RNA-coding, and repeat sequences. Integration of our methylome data with the YH genome sequence enabled a first comprehensive assessment of allele-specific methylation (ASM) between the two haploid methylomes of any individual and allowed the identification of 599 haploid differentially methylated regions (hDMRs) covering 287 genes. Of these, 76 genes had hDMRs within 2 kb of their transcriptional start sites of which >80% displayed allele-specific expression (ASE). These data demonstrate that ASM is a recurrent phenomenon and is highly correlated with ASE in human PBMCs. Together with recently reported similar studies, our study provides a comprehensive resource for future epigenomic research and confirms new sequencing technology as a paradigm for large-scale epigenomics studies."
+      ],
+      "expected_mode": "confident",
+      "description": "Procedural question",
+      "rationale": "The text explains the use of whole-genome bisulfite sequencing at specified coverage.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "18670"
+      ]
+    },
+    {
+      "id": "gen_confident_004",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What does BC1 RNA's master gene do in rodent genomes?",
+      "contexts": [
+        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document states that it amplifies ID elements through retroposition.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "7912"
+      ]
+    },
+    {
+      "id": "gen_confident_005",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the role of myeloid-derived suppressor cells in MDS patients?",
+      "contexts": [
+        "Induction of myelodysplasia by myeloid-derived suppressor cells.\n\nMyelodysplastic syndromes (MDS) are age-dependent stem cell malignancies that share biological features of activated adaptive immune response and ineffective hematopoiesis. Here we report that myeloid-derived suppressor cells (MDSC), which are classically linked to immunosuppression, inflammation, and cancer, were markedly expanded in the bone marrow of MDS patients and played a pathogenetic role in the development of ineffective hematopoiesis. These clonally distinct MDSC overproduce hematopoietic suppressive cytokines and function as potent apoptotic effectors targeting autologous hematopoietic progenitors. Using multiple transfected cell models, we found that MDSC expansion is driven by the interaction of the proinflammatory molecule S100A9 with CD33. These 2 proteins formed a functional ligand/receptor pair that recruited components to CD33’s immunoreceptor tyrosine-based inhibition motif (ITIM), inducing secretion of the suppressive cytokines IL-10 and TGF-β by immature myeloid cells. S100A9 transgenic mice displayed bone marrow accumulation of MDSC accompanied by development of progressive multilineage cytopenias and cytological dysplasia. Importantly, early forced maturation of MDSC by either all-trans-retinoic acid treatment or active immunoreceptor tyrosine-based activation motif–bearing (ITAM-bearing) adapter protein (DAP12) interruption of CD33 signaling rescued the hematologic phenotype. These findings indicate that primary bone marrow expansion of MDSC driven by the S100A9/CD33 pathway perturbs hematopoiesis and contributes to the development of MDS."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text mentions that MDSCs play a pathogenetic role and are expanded in bone marrow.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "5836"
+      ]
+    },
+    {
+      "id": "gen_confident_006",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the size of the Golli-MBP gene that includes the human myelin basic protein transcription unit?",
+      "contexts": [
+        "The human myelin basic protein gene is included within a 179-kilobase transcription unit: expression in the immune and central nervous systems.\n\nTwo human Golli (for gene expressed in the oligodendrocyte lineage)-MBP (for myelin basic protein) cDNAs have been isolated from a human oligodendroglioma cell line. Analysis of these cDNAs has enabled us to determine the entire structure of the human Golli-MBP gene. The Golli-MBP gene, which encompasses the MBP transcription unit, is approximately 179 kb in length and consists of 10 exons, seven of which constitute the MBP gene. The human Golli-MBP gene contains two transcription start sites, each of which gives rise to a family of alternatively spliced transcripts. At least two Golli-MBP transcripts, containing the first three exons of the gene and one or more MBP exons, are produced from the first transcription start site. The second family of transcripts contains only MBP exons and produces the well-known MBPs. In humans, RNA blot analysis revealed that Golli-MBP transcripts were expressed in fetal thymus, spleen, and human B-cell and macrophage cell lines, as well as in fetal spinal cord. These findings clearly link the expression of exons encoding the autoimmunogen/encephalitogen MBP in the central nervous system to cells and tissues of the immune system through normal expression of the Golli-MBP gene. They also establish that this genetic locus, which includes the MBP gene, is conserved among species, providing further evidence that the MBP transcription unit is an integral part of the Golli transcription unit and suggest that this structural arrangement is important for the genetic function and/or regulation of these genes."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text specifies that it encompasses approximately 179 kilobases.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "19238"
+      ]
+    },
+    {
+      "id": "gen_confident_007",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is A20, and how does it affect glioma stem cell survival?",
+      "contexts": [
+        "Targeting A20 Decreases Glioma Stem Cell Survival and Tumor Growth\n\nGlioblastomas are deadly cancers that display a functional cellular hierarchy maintained by self-renewing glioblastoma stem cells (GSCs). GSCs are regulated by molecular pathways distinct from the bulk tumor that may be useful therapeutic targets. We determined that A20 (TNFAIP3), a regulator of cell survival and the NF-kappaB pathway, is overexpressed in GSCs relative to non-stem glioblastoma cells at both the mRNA and protein levels. To determine the functional significance of A20 in GSCs, we targeted A20 expression with lentiviral-mediated delivery of short hairpin RNA (shRNA). Inhibiting A20 expression decreased GSC growth and survival through mechanisms associated with decreased cell-cycle progression and decreased phosphorylation of p65/RelA. Elevated levels of A20 in GSCs contributed to apoptotic resistance: GSCs were less susceptible to TNFalpha-induced cell death than matched non-stem glioma cells, but A20 knockdown sensitized GSCs to TNFalpha-mediated apoptosis. The decreased survival of GSCs upon A20 knockdown contributed to the reduced ability of these cells to self-renew in primary and secondary neurosphere formation assays. The tumorigenic potential of GSCs was decreased with A20 targeting, resulting in increased survival of mice bearing human glioma xenografts. In silico analysis of a glioma patient genomic database indicates that A20 overexpression and amplification is inversely correlated with survival. Together these data indicate that A20 contributes to glioma maintenance through effects on the glioma stem cell subpopulation. Although inactivating mutations in A20 in lymphoma suggest A20 can act as a tumor suppressor, similar point mutations have not been identified through glioma genomic sequencing: in fact, our data suggest A20 may function as a tumor enhancer in glioma through promotion of GSC survival. A20 anticancer therapies should therefore be viewed with caution as effects will likely differ depending on the tumor type."
+      ],
+      "expected_mode": "confident",
+      "description": "Definition question",
+      "rationale": "A20 is defined as a regulator of cell survival and NF-kappaB pathway that is overexpressed in GSCs.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "33370"
+      ]
+    },
+    {
+      "id": "gen_confident_008",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What are the methods reported for efficient genetic modification in hESCs and iPSCs?",
+      "contexts": [
+        "Efficient targeting of expressed and silent genes in human ESCs and iPSCs using zinc-finger nucleases\n\nRealizing the full potential of human embryonic stem cells (hESCs) and induced pluripotent stem cells (hiPSCs) requires efficient methods for genetic modification. However, techniques to generate cell type–specific lineage reporters, as well as reliable tools to disrupt, repair or overexpress genes by gene targeting, are inefficient at best and thus are not routinely used. Here we report the highly efficient targeting of three genes in human pluripotent cells using zinc-finger nuclease (ZFN)–mediated genome editing. First, using ZFNs specific for the OCT4 (POU5F1) locus, we generated OCT4-eGFP reporter cells to monitor the pluripotent state of hESCs. Second, we inserted a transgene into the AAVS1 locus to generate a robust drug-inducible overexpression system in hESCs. Finally, we targeted the PITX3 gene, demonstrating that ZFNs can be used to generate reporter cells by targeting non-expressed genes in hESCs and hiPSCs."
+      ],
+      "expected_mode": "confident",
+      "description": "Procedural question",
+      "rationale": "The text describes using zinc-finger nucleases as a method.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "36474"
+      ]
+    },
+    {
+      "id": "gen_confident_009",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the purpose of molecular serotyping microarrays in infectious diseases?",
+      "contexts": [
+        "Empirical Bayesian models for analysing molecular serotyping microarrays\n\nBACKGROUND Microarrays offer great potential as a platform for molecular diagnostics, testing clinical samples for the presence of numerous biomarkers in highly multiplexed assays. In this study applied to infectious diseases, data from a microarray designed for molecular serotyping of Streptococcus pneumoniae was used, identifying the presence of any one of 91 known pneumococcal serotypes from DNA extracts. This microarray incorporated oligonucleotide probes for all known capsular polysaccharide synthesis genes and required a statistical analysis of the microarray intensity data to determine which serotype, or combination of serotypes, were present within a sample based on the combination of genes detected. RESULTS We propose an empirical Bayesian model for calculating the probabilities of combinations of serotypes from the microarray data. The model takes into consideration the dependencies between serotypes, induced by genes they have in common, and by homologous genes which, although not identical, are similar to each other in sequence. For serotypes which are very similar in capsular gene composition, extra probes are included on the microarray, providing additional information which is integrated into the Bayesian model. For each serotype combination with high probability, a second model, a Bayesian random effects model is applied to determine the relative abundance of each serotype. CONCLUSIONS To assess the accuracy of the proposed analysis we applied our methods to experimental data from samples containing individual serotypes and samples containing combinations of serotypes with known levels of abundance. All but two of the known serotypes of S. pneumoniae that were tested as individual samples could be uniquely determined by the Bayesian model. The model also enabled the presence of combinations of serotypes within samples to be determined. Serotypes with very low abundance within a combination of serotypes can be detected (down to 2% abundance in this study). As well as detecting the presence of serotype combinations, an approximate measure of the percentage abundance of the serotypes within the combination can be obtained."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document explains that it identifies biomarkers from DNA extracts.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "54440"
+      ]
+    },
+    {
+      "id": "gen_confident_010",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the measure pD derived for in complex hierarchical models?",
+      "contexts": [
+        "Bayesian measures of model complexity and fit\n\nSummary. We consider the problem of comparing complex hierarchical models in which the number of parameters is not clearly defined. Using an information theoretic argument we derive a measure pD for the effective number of parameters in a model as the difference between the posterior mean of the deviance and the deviance at the posterior means of the parameters of interest. In general pD approximately corresponds to the trace of the product of Fisher's information and the posterior covariance, which in normal models is the trace of the ‘hat’ matrix projecting observations onto fitted values. Its properties in exponential families are explored. The posterior mean deviance is suggested as a Bayesian measure of fit or adequacy, and the contributions of individual observations to the fit and complexity can give rise to a diagnostic plot of deviance residuals against leverages. Adding pD to the posterior mean deviance gives a deviance information criterion for comparing models, which is related to other information criteria and has an approximate decision theoretic justification. The procedure is illustrated in some examples, and comparisons are drawn with alternative Bayesian and classical proposals. Throughout it is emphasized that the quantities required are trivial to compute in a Markov chain Monte Carlo analysis."
+      ],
+      "expected_mode": "confident",
+      "description": "Definition question",
+      "rationale": "pD is defined as a measure for effective number of parameters in a model, calculated from deviance.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "70115"
+      ]
+    },
+    {
+      "id": "gen_confident_011",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "How can clinicians interpret likelihood ratios without calculators?",
+      "contexts": [
+        "Simplifying likelihood ratios\n\nLikelihood ratios are one of the best measures of diagnostic accuracy, although they are seldom used, because interpreting them requires a calculator to convert back and forth between “probability” and “odds” of disease. This article describes a simpler method of interpreting likelihood ratios, one that avoids calculators, nomograms, and conversions to “odds” of disease. Several examples illustrate how the clinician can use this method to refine diagnostic decisions at the bedside."
+      ],
+      "expected_mode": "confident",
+      "description": "Procedural question",
+      "rationale": "The text provides a simpler method for interpreting likelihood ratios.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "70490"
+      ]
+    },
+    {
+      "id": "gen_confident_012",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the significance of plasmacytoid dendritic cells in influenza virus recognition?",
+      "contexts": [
+        "induction of early IFN-inducible genes in the absence of type\n\nOn recognition of influenza virus (Flu) by TLR7, plasmacytoid dendritic cells (pDCs) produce type I IFN in significant amounts. Synthetic TLR7 ligands induce the maturation of pDCs, as evidenced by the expression of costimulatory molecules and the production of proinflammatory cytokines; however, they induce only low-level production of IFN-alpha. To dissect the TLR7 signaling in pDCs and how these different profiles are induced, we studied the effects of 2 TLR7 ligands (Flu and CL097) on the activation of blood-isolated pDCs and the human GEN2.2 pDC cell line. Type I IFN production by pDCs correlates with differential interferon regulatory factor 7 (IRF7) translocation into the nucleus induced by the 2 TLR7 ligands. Surprisingly, with both activators we nevertheless observed the rapid expression of the IFN-inducible genes mxa, cxcl10, and trail within 4 hours of stimulation. This expression, controlled by STAT1 phosphorylation, was independent of type I IFN. STAT1 activation was found to be strictly dependent on the PI3K-p38MAPK pathway, showing a new signaling pathway leading to rapid expression of IFN-inducible genes after TLR7 triggering. Thus, pDCs, through this unusual TLR7 signaling, have the capacity to promptly respond to viral infection during the early phases of the innate immune response."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document states that pDCs produce significant amounts of type I IFN upon recognizing Flu by TLR7.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "72159"
+      ]
+    },
+    {
+      "id": "gen_confident_013",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the relationship between adipose tissue phenotype and depot-specific microvascular function?",
+      "contexts": [
+        "Arteriolar function in visceral adipose tissue is impaired in human obesity.\n\nOBJECTIVE The purpose of this study was to characterize the relationship between adipose tissue phenotype and depot-specific microvascular function in fat. METHODS AND RESULTS In 30 obese subjects (age 42±11 years, body mass index 46±11 kg/m(2)) undergoing bariatric surgery, we intraoperatively collected visceral and subcutaneous adipose tissue and characterized depot-specific adipose phenotypes. We assessed vasomotor function of the adipose microvasculature using videomicroscopy of small arterioles (75-250 μm) isolated from different fat compartments. Endothelium-dependent, acetylcholine-mediated vasodilation was severely impaired in visceral arterioles, compared to the subcutaneous depot (P<0.001 by ANOVA). Nonendothelium dependent responses to papaverine and nitroprusside were similar. Endothelial nitric oxide synthase inhibition with N(ω)-nitro-l-arginine methyl ester reduced subcutaneous vasodilation but had no effect on severely blunted visceral arteriolar responses. Visceral fat exhibited greater expression of proinflammatory, oxidative stress-related, hypoxia-induced, and proangiogenic genes; increased activated macrophage populations; and had a higher capacity for cytokine production ex vivo. CONCLUSIONS Our findings provide clinical evidence that the visceral microenvironment may be intrinsically toxic to arterial health providing a potential mechanism by which visceral adiposity burden is linked to atherosclerotic vascular disease. Our findings also support the evolving concept that both adipose tissue quality and quantity may play significant roles in shaping cardiovascular phenotypes in human obesity."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text describes characterizing relationships in obese subjects.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "79447"
+      ]
+    },
+    {
+      "id": "gen_confident_014",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the correlation of CIMT and ABPI with atherosclerotic burden?",
+      "contexts": [
+        "Common Carotid Intima Media Thickness and Ankle-Brachial Pressure Index Correlate with Local but Not Global Atheroma Burden: A Cross Sectional Study Using Whole Body Magnetic Resonance Angiography\n\nBACKGROUND Common carotid intima media thickness (CIMT) and ankle brachial pressure index (ABPI) are used as surrogate marker of atherosclerosis, and have been shown to correlate with arterial stiffness, however their correlation with global atherosclerotic burden has not been previously assessed. We compare CIMT and ABPI with atheroma burden as measured by whole body magnetic resonance angiography (WB-MRA). METHODS 50 patients with symptomatic peripheral arterial disease were recruited. CIMT was measured using ultrasound while rest and exercise ABPI were performed. WB-MRA was performed in a 1.5T MRI scanner using 4 volume acquisitions with a divided dose of intravenous gadolinium gadoterate meglumine (Dotarem, Guerbet, FR). The WB-MRA data was divided into 31 anatomical arterial segments with each scored according to degree of luminal narrowing: 0 = normal, 1 = <50%, 2 = 50-70%, 3 = 70-99%, 4 = vessel occlusion. The segment scores were summed and from this a standardized atheroma score was calculated. RESULTS The atherosclerotic burden was high with a standardised atheroma score of 39.5±11. Common CIMT showed a positive correlation with the whole body atheroma score (β 0.32, p = 0.045), however this was due to its strong correlation with the neck and thoracic segments (β 0.42 p = 0.01) with no correlation with the rest of the body. ABPI correlated with the whole body atheroma score (β -0.39, p = 0.012), which was due to a strong correlation with the ilio-femoral vessels with no correlation with the thoracic or neck vessels. On multiple linear regression, no correlation between CIMT and global atheroma burden was present (β 0.13 p = 0.45), while the correlation between ABPI and atheroma burden persisted (β -0.45 p = 0.005). CONCLUSION ABPI but not CIMT correlates with global atheroma burden as measured by whole body contrast enhanced magnetic resonance angiography in a population with symptomatic peripheral arterial disease. However this is primarily due to a strong correlation with ilio-femoral atheroma burden."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document states that they correlate locally but not globally.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "87758"
+      ]
+    },
+    {
+      "id": "gen_confident_015",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the impact of immune escape mutations on HCV replication during pregnancy?",
+      "contexts": [
+        "Loss of immune escape mutations during persistent HCV infection in pregnancy enhances replication of vertically transmitted viruses\n\nGlobally, about 1% of pregnant women are persistently infected with the hepatitis C virus (HCV). Mother-to-child transmission of HCV occurs in 3-5% of pregnancies and accounts for most new childhood infections. HCV-specific CD8(+) cytotoxic T lymphocytes (CTLs) are vital in the clearance of acute HCV infections, but in the 60-80% of infections that persist, these cells become functionally exhausted or select for mutant viruses that escape T cell recognition. Increased HCV replication during pregnancy suggests that maternofetal immune tolerance mechanisms may further impair HCV-specific CTLs, limiting their selective pressure on persistent viruses. To assess this possibility, we characterized circulating viral quasispecies during and after consecutive pregnancies in two women. This revealed a loss of some escape mutations in HLA class I epitopes during pregnancy that was associated with emergence of more fit viruses. CTL selective pressure was reimposed after childbirth, at which point escape mutations in these epitopes again predominated in the quasispecies and viral load dropped sharply. Importantly, the viruses transmitted perinatally were those with enhanced fitness due to reversion of escape mutations. Our findings indicate that the immunoregulatory changes of pregnancy reduce CTL selective pressure on HCV class I epitopes, thereby facilitating vertical transmission of viruses with optimized replicative fitness."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text mentions loss of these mutations enhances replication in vertically transmitted viruses.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "92308"
+      ]
+    },
+    {
+      "id": "gen_confident_016",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the process involved in developing hematopoietic stem cells?",
+      "contexts": [
+        "The journey of developing hematopoietic stem cells.\n\nHematopoietic stem cells (HSCs) develop during embryogenesis in a complex process that involves multiple anatomical sites. Once HSC precursors have been specified from mesoderm, they have to mature into functional HSCs and undergo self-renewing divisions to generate a pool of HSCs. During this process, developing HSCs migrate through various embryonic niches, which provide signals for their establishment and the conservation of their self-renewal ability. These processes have to be recapitulated to generate HSCs from embryonic stem cells. Elucidating the interactions between developing HSCs and their niches should facilitate the generation and expansion of HSCs in vitro to exploit their clinical potential."
+      ],
+      "expected_mode": "confident",
+      "description": "Procedural question",
+      "rationale": "The document outlines a complex process involving anatomical sites and self-renewing divisions.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "92499"
+      ]
+    },
+    {
+      "id": "gen_confident_017",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "How does the BC1 RNA gene relate to ID element amplification?",
+      "contexts": [
+        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text states that it is a master gene for ID element amplification.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "7912"
+      ]
+    },
+    {
+      "id": "gen_confident_018",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What are the characteristics of type I IFN production in plasmacytoid dendritic cells?",
+      "contexts": [
+        "induction of early IFN-inducible genes in the absence of type\n\nOn recognition of influenza virus (Flu) by TLR7, plasmacytoid dendritic cells (pDCs) produce type I IFN in significant amounts. Synthetic TLR7 ligands induce the maturation of pDCs, as evidenced by the expression of costimulatory molecules and the production of proinflammatory cytokines; however, they induce only low-level production of IFN-alpha. To dissect the TLR7 signaling in pDCs and how these different profiles are induced, we studied the effects of 2 TLR7 ligands (Flu and CL097) on the activation of blood-isolated pDCs and the human GEN2.2 pDC cell line. Type I IFN production by pDCs correlates with differential interferon regulatory factor 7 (IRF7) translocation into the nucleus induced by the 2 TLR7 ligands. Surprisingly, with both activators we nevertheless observed the rapid expression of the IFN-inducible genes mxa, cxcl10, and trail within 4 hours of stimulation. This expression, controlled by STAT1 phosphorylation, was independent of type I IFN. STAT1 activation was found to be strictly dependent on the PI3K-p38MAPK pathway, showing a new signaling pathway leading to rapid expression of IFN-inducible genes after TLR7 triggering. Thus, pDCs, through this unusual TLR7 signaling, have the capacity to promptly respond to viral infection during the early phases of the innate immune response."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document describes significant amounts produced upon recognition by TLR7.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "72159"
+      ]
+    },
+    {
+      "id": "gen_confident_019",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the definition of HSCs and their developmental process?",
+      "contexts": [
+        "The journey of developing hematopoietic stem cells.\n\nHematopoietic stem cells (HSCs) develop during embryogenesis in a complex process that involves multiple anatomical sites. Once HSC precursors have been specified from mesoderm, they have to mature into functional HSCs and undergo self-renewing divisions to generate a pool of HSCs. During this process, developing HSCs migrate through various embryonic niches, which provide signals for their establishment and the conservation of their self-renewal ability. These processes have to be recapitulated to generate HSCs from embryonic stem cells. Elucidating the interactions between developing HSCs and their niches should facilitate the generation and expansion of HSCs in vitro to exploit their clinical potential."
+      ],
+      "expected_mode": "confident",
+      "description": "Definition question",
+      "rationale": "HSCs are defined as stem cells developing in embryogenesis with a specified development process.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "92499"
+      ]
+    },
+    {
+      "id": "gen_confident_020",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the significance of using empirical Bayesian models for molecular serotyping microarrays?",
+      "contexts": [
+        "Empirical Bayesian models for analysing molecular serotyping microarrays\n\nBACKGROUND Microarrays offer great potential as a platform for molecular diagnostics, testing clinical samples for the presence of numerous biomarkers in highly multiplexed assays. In this study applied to infectious diseases, data from a microarray designed for molecular serotyping of Streptococcus pneumoniae was used, identifying the presence of any one of 91 known pneumococcal serotypes from DNA extracts. This microarray incorporated oligonucleotide probes for all known capsular polysaccharide synthesis genes and required a statistical analysis of the microarray intensity data to determine which serotype, or combination of serotypes, were present within a sample based on the combination of genes detected. RESULTS We propose an empirical Bayesian model for calculating the probabilities of combinations of serotypes from the microarray data. The model takes into consideration the dependencies between serotypes, induced by genes they have in common, and by homologous genes which, although not identical, are similar to each other in sequence. For serotypes which are very similar in capsular gene composition, extra probes are included on the microarray, providing additional information which is integrated into the Bayesian model. For each serotype combination with high probability, a second model, a Bayesian random effects model is applied to determine the relative abundance of each serotype. CONCLUSIONS To assess the accuracy of the proposed analysis we applied our methods to experimental data from samples containing individual serotypes and samples containing combinations of serotypes with known levels of abundance. All but two of the known serotypes of S. pneumoniae that were tested as individual samples could be uniquely determined by the Bayesian model. The model also enabled the presence of combinations of serotypes within samples to be determined. Serotypes with very low abundance within a combination of serotypes can be detected (down to 2% abundance in this study). As well as detecting the presence of serotype combinations, an approximate measure of the percentage abundance of the serotypes within the combination can be obtained."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text explains its application in identifying biomarkers.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "54440"
+      ]
+    },
+    {
+      "id": "gen_confident_021",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the role of pDCs upon recognizing influenza virus by TLR7?",
+      "contexts": [
+        "induction of early IFN-inducible genes in the absence of type\n\nOn recognition of influenza virus (Flu) by TLR7, plasmacytoid dendritic cells (pDCs) produce type I IFN in significant amounts. Synthetic TLR7 ligands induce the maturation of pDCs, as evidenced by the expression of costimulatory molecules and the production of proinflammatory cytokines; however, they induce only low-level production of IFN-alpha. To dissect the TLR7 signaling in pDCs and how these different profiles are induced, we studied the effects of 2 TLR7 ligands (Flu and CL097) on the activation of blood-isolated pDCs and the human GEN2.2 pDC cell line. Type I IFN production by pDCs correlates with differential interferon regulatory factor 7 (IRF7) translocation into the nucleus induced by the 2 TLR7 ligands. Surprisingly, with both activators we nevertheless observed the rapid expression of the IFN-inducible genes mxa, cxcl10, and trail within 4 hours of stimulation. This expression, controlled by STAT1 phosphorylation, was independent of type I IFN. STAT1 activation was found to be strictly dependent on the PI3K-p38MAPK pathway, showing a new signaling pathway leading to rapid expression of IFN-inducible genes after TLR7 triggering. Thus, pDCs, through this unusual TLR7 signaling, have the capacity to promptly respond to viral infection during the early phases of the innate immune response."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document outlines production of type I IFN and maturation.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "72159"
+      ]
+    },
+    {
+      "id": "gen_confident_022",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the process for efficient genetic modification in hESCs and iPSCs?",
+      "contexts": [
+        "Efficient targeting of expressed and silent genes in human ESCs and iPSCs using zinc-finger nucleases\n\nRealizing the full potential of human embryonic stem cells (hESCs) and induced pluripotent stem cells (hiPSCs) requires efficient methods for genetic modification. However, techniques to generate cell type–specific lineage reporters, as well as reliable tools to disrupt, repair or overexpress genes by gene targeting, are inefficient at best and thus are not routinely used. Here we report the highly efficient targeting of three genes in human pluripotent cells using zinc-finger nuclease (ZFN)–mediated genome editing. First, using ZFNs specific for the OCT4 (POU5F1) locus, we generated OCT4-eGFP reporter cells to monitor the pluripotent state of hESCs. Second, we inserted a transgene into the AAVS1 locus to generate a robust drug-inducible overexpression system in hESCs. Finally, we targeted the PITX3 gene, demonstrating that ZFNs can be used to generate reporter cells by targeting non-expressed genes in hESCs and hiPSCs."
+      ],
+      "expected_mode": "confident",
+      "description": "Procedural question",
+      "rationale": "The text provides a method using zinc-finger nucleases.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "36474"
+      ]
+    },
+    {
+      "id": "gen_confident_023",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the purpose of methylome analysis in human PBMCs?",
+      "contexts": [
+        "The DNA Methylome of Human Peripheral Blood Mononuclear Cells\n\nDNA methylation plays an important role in biological processes in human health and disease. Recent technological advances allow unbiased whole-genome DNA methylation (methylome) analysis to be carried out on human cells. Using whole-genome bisulfite sequencing at 24.7-fold coverage (12.3-fold per strand), we report a comprehensive (92.62%) methylome and analysis of the unique sequences in human peripheral blood mononuclear cells (PBMC) from the same Asian individual whose genome was deciphered in the YH project. PBMC constitute an important source for clinical blood tests world-wide. We found that 68.4% of CpG sites and <0.2% of non-CpG sites were methylated, demonstrating that non-CpG cytosine methylation is minor in human PBMC. Analysis of the PBMC methylome revealed a rich epigenomic landscape for 20 distinct genomic features, including regulatory, protein-coding, non-coding, RNA-coding, and repeat sequences. Integration of our methylome data with the YH genome sequence enabled a first comprehensive assessment of allele-specific methylation (ASM) between the two haploid methylomes of any individual and allowed the identification of 599 haploid differentially methylated regions (hDMRs) covering 287 genes. Of these, 76 genes had hDMRs within 2 kb of their transcriptional start sites of which >80% displayed allele-specific expression (ASE). These data demonstrate that ASM is a recurrent phenomenon and is highly correlated with ASE in human PBMCs. Together with recently reported similar studies, our study provides a comprehensive resource for future epigenomic research and confirms new sequencing technology as a paradigm for large-scale epigenomics studies."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document discusses analyzing DNA methylation roles and patterns.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "18670"
+      ]
+    },
+    {
+      "id": "gen_confident_024",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "How does BC1 RNA prime its own reverse transcription in rodent genomes?",
+      "contexts": [
+        "BC1 RNA, the transcript from a master gene for ID element amplification, is able to prime its own reverse transcription.\n\nID elements are short interspersed elements (SINEs) found in high copy number in many rodent genomes. BC1 RNA, an ID-related transcript, is derived from the single copy BC1 RNA gene. The BC1 RNA gene has been shown to be a master gene for ID element amplification in rodent genomes. ID elements are dispersed through a process termed retroposition. The retroposition process involves a number of potential regulatory steps. These regulatory steps may include transcription in the appropriate tissue, transcript stability, priming of the RNA transcript for reverse transcription and integration. This study focuses on priming of the RNA transcript for reverse transcription. BC1 RNA gene transcripts are shown to be able to prime their own reverse transcription in an efficient intramolecular and site-specific fashion. This self-priming ability is a consequence of the secondary structure of the 3'-unique region. The observation that a gene actively amplified throughout rodent evolution makes a RNA capable of efficient self-primed reverse transcription strongly suggests that self-priming is at least one feature establishing the BC1 RNA gene as a master gene for amplification of ID elements."
+      ],
+      "expected_mode": "confident",
+      "description": "Procedural question",
+      "rationale": "The text describes the process of retroposition dispersal.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "7912"
+      ]
+    },
+    {
+      "id": "gen_confident_025",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the correlation between ABPI and local atherosclerotic burden?",
+      "contexts": [
+        "Common Carotid Intima Media Thickness and Ankle-Brachial Pressure Index Correlate with Local but Not Global Atheroma Burden: A Cross Sectional Study Using Whole Body Magnetic Resonance Angiography\n\nBACKGROUND Common carotid intima media thickness (CIMT) and ankle brachial pressure index (ABPI) are used as surrogate marker of atherosclerosis, and have been shown to correlate with arterial stiffness, however their correlation with global atherosclerotic burden has not been previously assessed. We compare CIMT and ABPI with atheroma burden as measured by whole body magnetic resonance angiography (WB-MRA). METHODS 50 patients with symptomatic peripheral arterial disease were recruited. CIMT was measured using ultrasound while rest and exercise ABPI were performed. WB-MRA was performed in a 1.5T MRI scanner using 4 volume acquisitions with a divided dose of intravenous gadolinium gadoterate meglumine (Dotarem, Guerbet, FR). The WB-MRA data was divided into 31 anatomical arterial segments with each scored according to degree of luminal narrowing: 0 = normal, 1 = <50%, 2 = 50-70%, 3 = 70-99%, 4 = vessel occlusion. The segment scores were summed and from this a standardized atheroma score was calculated. RESULTS The atherosclerotic burden was high with a standardised atheroma score of 39.5±11. Common CIMT showed a positive correlation with the whole body atheroma score (β 0.32, p = 0.045), however this was due to its strong correlation with the neck and thoracic segments (β 0.42 p = 0.01) with no correlation with the rest of the body. ABPI correlated with the whole body atheroma score (β -0.39, p = 0.012), which was due to a strong correlation with the ilio-femoral vessels with no correlation with the thoracic or neck vessels. On multiple linear regression, no correlation between CIMT and global atheroma burden was present (β 0.13 p = 0.45), while the correlation between ABPI and atheroma burden persisted (β -0.45 p = 0.005). CONCLUSION ABPI but not CIMT correlates with global atheroma burden as measured by whole body contrast enhanced magnetic resonance angiography in a population with symptomatic peripheral arterial disease. However this is primarily due to a strong correlation with ilio-femoral atheroma burden."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document states that it correlates locally but not globally.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "87758"
+      ]
+    },
+    {
+      "id": "gen_confident_026",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the impact of immune escape mutations on HCV transmission in pregnant women?",
+      "contexts": [
+        "Loss of immune escape mutations during persistent HCV infection in pregnancy enhances replication of vertically transmitted viruses\n\nGlobally, about 1% of pregnant women are persistently infected with the hepatitis C virus (HCV). Mother-to-child transmission of HCV occurs in 3-5% of pregnancies and accounts for most new childhood infections. HCV-specific CD8(+) cytotoxic T lymphocytes (CTLs) are vital in the clearance of acute HCV infections, but in the 60-80% of infections that persist, these cells become functionally exhausted or select for mutant viruses that escape T cell recognition. Increased HCV replication during pregnancy suggests that maternofetal immune tolerance mechanisms may further impair HCV-specific CTLs, limiting their selective pressure on persistent viruses. To assess this possibility, we characterized circulating viral quasispecies during and after consecutive pregnancies in two women. This revealed a loss of some escape mutations in HLA class I epitopes during pregnancy that was associated with emergence of more fit viruses. CTL selective pressure was reimposed after childbirth, at which point escape mutations in these epitopes again predominated in the quasispecies and viral load dropped sharply. Importantly, the viruses transmitted perinatally were those with enhanced fitness due to reversion of escape mutations. Our findings indicate that the immunoregulatory changes of pregnancy reduce CTL selective pressure on HCV class I epitopes, thereby facilitating vertical transmission of viruses with optimized replicative fitness."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text explains that loss enhances replication in vertically transmitted viruses.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "92308"
+      ]
+    },
+    {
+      "id": "gen_confident_027",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What are the anatomical sites involved in HSC development during embryogenesis?",
+      "contexts": [
+        "The journey of developing hematopoietic stem cells.\n\nHematopoietic stem cells (HSCs) develop during embryogenesis in a complex process that involves multiple anatomical sites. Once HSC precursors have been specified from mesoderm, they have to mature into functional HSCs and undergo self-renewing divisions to generate a pool of HSCs. During this process, developing HSCs migrate through various embryonic niches, which provide signals for their establishment and the conservation of their self-renewal ability. These processes have to be recapitulated to generate HSCs from embryonic stem cells. Elucidating the interactions between developing HSCs and their niches should facilitate the generation and expansion of HSCs in vitro to exploit their clinical potential."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The document describes multiple anatomical niches for maturation.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "92499"
+      ]
+    },
+    {
+      "id": "gen_confident_028",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the role of likelihood ratios in diagnostic accuracy?",
+      "contexts": [
+        "Simplifying likelihood ratios\n\nLikelihood ratios are one of the best measures of diagnostic accuracy, although they are seldom used, because interpreting them requires a calculator to convert back and forth between “probability” and “odds” of disease. This article describes a simpler method of interpreting likelihood ratios, one that avoids calculators, nomograms, and conversions to “odds” of disease. Several examples illustrate how the clinician can use this method to refine diagnostic decisions at the bedside."
+      ],
+      "expected_mode": "confident",
+      "description": "Definition question",
+      "rationale": "Likelihood ratios are defined as measures of diagnostic accuracy.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "70490"
+      ]
+    },
+    {
+      "id": "gen_confident_029",
+      "category": "confidence",
+      "subcategory": "clear_evidence",
+      "query": "What is the purpose of molecular serotyping microarrays in infectious disease diagnostics?",
+      "contexts": [
+        "Empirical Bayesian models for analysing molecular serotyping microarrays\n\nBACKGROUND Microarrays offer great potential as a platform for molecular diagnostics, testing clinical samples for the presence of numerous biomarkers in highly multiplexed assays. In this study applied to infectious diseases, data from a microarray designed for molecular serotyping of Streptococcus pneumoniae was used, identifying the presence of any one of 91 known pneumococcal serotypes from DNA extracts. This microarray incorporated oligonucleotide probes for all known capsular polysaccharide synthesis genes and required a statistical analysis of the microarray intensity data to determine which serotype, or combination of serotypes, were present within a sample based on the combination of genes detected. RESULTS We propose an empirical Bayesian model for calculating the probabilities of combinations of serotypes from the microarray data. The model takes into consideration the dependencies between serotypes, induced by genes they have in common, and by homologous genes which, although not identical, are similar to each other in sequence. For serotypes which are very similar in capsular gene composition, extra probes are included on the microarray, providing additional information which is integrated into the Bayesian model. For each serotype combination with high probability, a second model, a Bayesian random effects model is applied to determine the relative abundance of each serotype. CONCLUSIONS To assess the accuracy of the proposed analysis we applied our methods to experimental data from samples containing individual serotypes and samples containing combinations of serotypes with known levels of abundance. All but two of the known serotypes of S. pneumoniae that were tested as individual samples could be uniquely determined by the Bayesian model. The model also enabled the presence of combinations of serotypes within samples to be determined. Serotypes with very low abundance within a combination of serotypes can be detected (down to 2% abundance in this study). As well as detecting the presence of serotype combinations, an approximate measure of the percentage abundance of the serotypes within the combination can be obtained."
+      ],
+      "expected_mode": "confident",
+      "description": "Factual question with explicit answer",
+      "rationale": "The text specifies its use for identifying biomarkers.",
+      "metadata": {},
+      "relevant_doc_ids": [
+        "54440"
+      ]
+    }
+  ]
+}

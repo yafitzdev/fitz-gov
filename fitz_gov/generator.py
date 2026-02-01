@@ -97,6 +97,36 @@ class FitzGovGenerator:
 
         return all_cases
 
+    def generate_category(
+        self,
+        category: str,
+        chunks: list[Any],
+        num_cases: int,
+        output_dir: str,
+    ) -> list[FitzGovCase]:
+        """Generate just one category (for retries)."""
+        gen_funcs = {
+            "abstention": self.generate_abstention_cases,
+            "dispute": self.generate_dispute_cases,
+            "qualification": self.generate_qualification_cases,
+            "confidence": self.generate_confidence_cases,
+            "grounding": self.generate_grounding_cases,
+            "relevance": self.generate_relevance_cases,
+        }
+
+        gen_func = gen_funcs.get(category)
+        if not gen_func:
+            raise ValueError(f"Unknown category: {category}")
+
+        print(f"Generating {category} cases...", flush=True)
+        cases = gen_func(chunks, num_cases)
+        print(f"Generated {len(cases)} cases", flush=True)
+
+        if cases:
+            self._save_category(cases, category, output_dir)
+
+        return cases
+
     def _save_category(self, cases: list[FitzGovCase], category: str, output_dir: str) -> None:
         """Save a single category to disk."""
         import json
