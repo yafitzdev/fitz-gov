@@ -152,13 +152,13 @@ def cmd_generate(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_bootstrap(args: argparse.Namespace) -> int:
-    """Bootstrap FITZ-GOV from BEIR corpus."""
+def cmd_build(args: argparse.Namespace) -> int:
+    """Build FITZ-GOV benchmark from BEIR corpus."""
     try:
         from .bootstrap import bootstrap_from_beir, list_available_datasets
     except ImportError as e:
         print(f"Error: {e}")
-        print("Install with: pip install fitz-gov[generator] beir")
+        print("Install with: pip install fitz-gov[generator]")
         return 1
 
     # Show available datasets if requested
@@ -178,10 +178,10 @@ def cmd_bootstrap(args: argparse.Namespace) -> int:
     datasets = args.datasets.split(",") if args.datasets else None
 
     print("=" * 50)
-    print("FITZ-GOV Bootstrap from BEIR")
+    print("FITZ-GOV Benchmark Builder")
     print("=" * 50)
 
-    cases = bootstrap_from_beir(
+    result = bootstrap_from_beir(
         datasets=datasets,
         llm_client=llm_client,
         cases_per_category=args.num_cases,
@@ -189,8 +189,10 @@ def cmd_bootstrap(args: argparse.Namespace) -> int:
         output_dir=args.output,
     )
 
-    print(f"\nBootstrap complete! Generated {len(cases)} cases")
-    print(f"Output saved to: {args.output}")
+    print(f"\nBuild complete!")
+    print(f"  Corpus: {len(result['corpus'])} documents")
+    print(f"  Cases: {len(result['cases'])} test cases")
+    print(f"  Output: {args.output}")
 
     return 0
 
@@ -242,20 +244,75 @@ def _create_llm_client(args: argparse.Namespace):
 
     provider = args.llm_provider
 
-    if provider == "openai":
+    if provider == "ollama":
+        # Local LLM via Ollama (free!)
+        try:
+            import requests
+
+            base_url = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+            model = args.llm_model or "llama3.1"
+
+            class OllamaWrapper:
+                def complete(self, prompt: str) -> str:
+                    response = requests.post(
+                        f"{base_url}/api/generate",
+                        json={"model": model, "prompt": prompt, "stream": False},
+                        timeout=300,
+                    )
+                    response.raise_for_status()
+                    return response.json().get("response", "")
+
+            # Test connection
+            try:
+                requests.get(f"{base_url}/api/tags", timeout=5)
+                print(f"Using Ollama ({model}) at {base_url}")
+                return OllamaWrapper()
+            except requests.exceptions.ConnectionError:
+                print(f"Error: Cannot connect to Ollama at {base_url}")
+                print("Make sure Ollama is running: ollama serve")
+                return None
+        except ImportError:
+            print("Error: requests package not installed")
+            return None
+
+    elif provider == "cohere":
+        try:
+            import cohere
+
+            client = cohere.Client(api_key=os.environ.get("COHERE_API_KEY"))
+            model = args.llm_model or "command-r-plus"
+
+            class CohereWrapper:
+                def complete(self, prompt: str) -> str:
+                    response = client.chat(
+                        model=model,
+                        message=prompt,
+                    )
+                    return response.text
+
+            print(f"Using Cohere ({model})")
+            return CohereWrapper()
+        except ImportError:
+            print("Error: cohere package not installed")
+            print("Install with: pip install cohere")
+            return None
+
+    elif provider == "openai":
         try:
             from openai import OpenAI
 
             client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+            model = args.llm_model or "gpt-4o"
 
             class OpenAIWrapper:
                 def complete(self, prompt: str) -> str:
                     response = client.chat.completions.create(
-                        model=args.llm_model or "gpt-4o",
+                        model=model,
                         messages=[{"role": "user", "content": prompt}],
                     )
                     return response.choices[0].message.content or ""
 
+            print(f"Using OpenAI ({model})")
             return OpenAIWrapper()
         except ImportError:
             print("Error: openai package not installed")
@@ -266,16 +323,18 @@ def _create_llm_client(args: argparse.Namespace):
             import anthropic
 
             client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+            model = args.llm_model or "claude-sonnet-4-20250514"
 
             class AnthropicWrapper:
                 def complete(self, prompt: str) -> str:
                     response = client.messages.create(
-                        model=args.llm_model or "claude-sonnet-4-20250514",
+                        model=model,
                         max_tokens=4096,
                         messages=[{"role": "user", "content": prompt}],
                     )
                     return response.content[0].text
 
+            print(f"Using Anthropic ({model})")
             return AnthropicWrapper()
         except ImportError:
             print("Error: anthropic package not installed")
@@ -283,6 +342,7 @@ def _create_llm_client(args: argparse.Namespace):
 
     else:
         print(f"Error: Unknown LLM provider: {provider}")
+        print("Available: ollama, cohere, openai, anthropic")
         return None
 
 
@@ -311,15 +371,20 @@ def main() -> int:
     gen_parser.add_argument("--llm-provider", choices=["openai", "anthropic"], default="openai", help="LLM provider")
     gen_parser.add_argument("--llm-model", help="LLM model name")
 
-    # bootstrap command
-    boot_parser = subparsers.add_parser("bootstrap", help="Bootstrap from BEIR corpus")
-    boot_parser.add_argument("--datasets", help="Comma-separated BEIR datasets (default: scifact,nfcorpus,fiqa)")
-    boot_parser.add_argument("--list-datasets", action="store_true", help="List available datasets")
-    boot_parser.add_argument("--output", default="./data", help="Output directory")
-    boot_parser.add_argument("--num-cases", type=int, default=30, help="Cases per category")
-    boot_parser.add_argument("--max-docs", type=int, default=500, help="Max docs per dataset")
-    boot_parser.add_argument("--llm-provider", choices=["openai", "anthropic"], default="openai", help="LLM provider")
-    boot_parser.add_argument("--llm-model", help="LLM model name")
+    # build command (was "bootstrap")
+    build_parser = subparsers.add_parser("build", help="Build benchmark from BEIR corpus")
+    build_parser.add_argument("--datasets", help="Comma-separated BEIR datasets (default: scifact,nfcorpus,fiqa)")
+    build_parser.add_argument("--list-datasets", action="store_true", help="List available datasets")
+    build_parser.add_argument("--output", default="./data", help="Output directory")
+    build_parser.add_argument("--num-cases", type=int, default=30, help="Cases per category")
+    build_parser.add_argument("--max-docs", type=int, default=None, help="Max docs per dataset (default: all)")
+    build_parser.add_argument(
+        "--llm-provider",
+        choices=["ollama", "cohere", "openai", "anthropic"],
+        default="ollama",
+        help="LLM provider (default: ollama for free local generation)",
+    )
+    build_parser.add_argument("--llm-model", help="LLM model name (default depends on provider)")
 
     # package command
     pkg_parser = subparsers.add_parser("package", help="Package data for release")
@@ -334,8 +399,8 @@ def main() -> int:
         return cmd_stats(args)
     elif args.command == "generate":
         return cmd_generate(args)
-    elif args.command == "bootstrap":
-        return cmd_bootstrap(args)
+    elif args.command == "build":
+        return cmd_build(args)
     elif args.command == "package":
         return cmd_package(args)
     else:
