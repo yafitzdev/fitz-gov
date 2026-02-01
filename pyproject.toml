@@ -1,0 +1,68 @@
+# fitz-gov/pyproject.toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fitz-gov"
+version = "0.1.0"
+description = "FITZ-GOV: Comprehensive RAG Governance Benchmark"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Fitz AI", email = "dev@fitz.ai" }]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["rag", "benchmark", "governance", "evaluation", "llm"]
+
+dependencies = []
+
+[project.optional-dependencies]
+generator = [
+    "openai>=1.0.0",
+    "anthropic>=0.18.0",
+    "tiktoken>=0.5.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "black>=24.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+fitz-gov = "fitz_gov.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yafitzdev/fitz-gov"
+Documentation = "https://github.com/yafitzdev/fitz-gov#readme"
+Repository = "https://github.com/yafitzdev/fitz-gov"
+Issues = "https://github.com/yafitzdev/fitz-gov/issues"
+
+[tool.hatch.build.targets.sdist]
+include = ["/fitz_gov", "/data"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["fitz_gov"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true

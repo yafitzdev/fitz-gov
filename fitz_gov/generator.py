@@ -1,0 +1,544 @@
+# fitz_gov/generator.py
+"""
+Synthetic test case generator for FITZ-GOV benchmark.
+
+Generates governance test cases from an existing corpus using LLM.
+This enables creating custom benchmark suites for specific domains.
+
+Usage:
+    from fitz_gov.generator import FitzGovGenerator
+
+    generator = FitzGovGenerator(llm_client=your_client)
+    cases = generator.generate_all(your_chunks, cases_per_category=50)
+"""
+
+from __future__ import annotations
+
+import json
+import re
+from dataclasses import dataclass
+from typing import Any, Protocol
+
+from .schema import AnswerMode, FitzGovCase, FitzGovCategory
+
+
+class LLMClient(Protocol):
+    """Protocol for LLM client compatibility."""
+
+    def complete(self, prompt: str) -> str:
+        """Generate completion for prompt."""
+        ...
+
+
+@dataclass
+class ChunkLike:
+    """Minimal chunk interface for generator."""
+
+    text: str
+    source: str = ""
+    metadata: dict[str, Any] | None = None
+
+
+class FitzGovGenerator:
+    """
+    Generate FITZ-GOV test cases from an existing corpus.
+
+    Uses LLM to identify scenarios that should trigger different
+    governance modes, creating a custom test suite for your data.
+    """
+
+    def __init__(self, llm_client: LLMClient):
+        """
+        Initialize generator.
+
+        Args:
+            llm_client: LLM client with a complete(prompt) method.
+                       Works with OpenAI, Anthropic, or any compatible client.
+        """
+        self._llm = llm_client
+
+    def generate_all(
+        self,
+        chunks: list[Any],
+        cases_per_category: int = 20,
+    ) -> list[FitzGovCase]:
+        """
+        Generate test cases for all categories.
+
+        Args:
+            chunks: Corpus chunks to generate cases from.
+            cases_per_category: Number of cases per category.
+
+        Returns:
+            List of generated FitzGovCase objects.
+        """
+        all_cases: list[FitzGovCase] = []
+
+        # Governance mode categories
+        all_cases.extend(self.generate_abstention_cases(chunks, cases_per_category))
+        all_cases.extend(self.generate_dispute_cases(chunks, cases_per_category))
+        all_cases.extend(self.generate_qualification_cases(chunks, cases_per_category))
+        all_cases.extend(self.generate_confidence_cases(chunks, cases_per_category))
+
+        # Answer quality categories
+        all_cases.extend(self.generate_grounding_cases(chunks, cases_per_category))
+        all_cases.extend(self.generate_relevance_cases(chunks, cases_per_category))
+
+        return all_cases
+
+    def generate_abstention_cases(
+        self,
+        chunks: list[Any],
+        num_cases: int = 20,
+    ) -> list[FitzGovCase]:
+        """
+        Generate abstention test cases.
+
+        Creates questions that the corpus cannot answer, paired with
+        chunks that are tangentially related but insufficient.
+        """
+        cases: list[FitzGovCase] = []
+        chunk_texts = self._extract_texts(chunks[:10])
+
+        prompt = f"""You are generating test cases for a RAG governance benchmark.
+
+Given these document excerpts, generate {num_cases} questions that:
+1. Are related to the general topic/domain
+2. CANNOT be answered from the provided information
+3. Would require external knowledge or data not present
+
+The goal is to test if a RAG system correctly ABSTAINS when it lacks sufficient context.
+
+Document excerpts:
+{self._format_chunks(chunk_texts)}
+
+Return as JSON:
+{{
+  "cases": [
+    {{
+      "query": "What was the company's Q4 2024 revenue?",
+      "description": "Financial data not present in context",
+      "rationale": "Context discusses company history but contains no financial figures"
+    }}
+  ]
+}}
+
+Generate {num_cases} diverse cases covering different types of missing information."""
+
+        response = self._llm.complete(prompt)
+        generated = self._parse_json_response(response).get("cases", [])
+
+        for i, case_data in enumerate(generated[:num_cases]):
+            # Pair with chunks that are related but won't answer the question
+            contexts = chunk_texts[:3]
+            cases.append(
+                FitzGovCase(
+                    id=f"gen_abstain_{i:03d}",
+                    category=FitzGovCategory.ABSTENTION,
+                    subcategory="out_of_scope",
+                    query=case_data["query"],
+                    contexts=contexts,
+                    expected_mode=AnswerMode.ABSTAIN,
+                    description=case_data.get("description", "Generated abstention case"),
+                    rationale=case_data.get("rationale", "Information not in context"),
+                )
+            )
+
+        return cases
+
+    def generate_dispute_cases(
+        self,
+        chunks: list[Any],
+        num_cases: int = 20,
+    ) -> list[FitzGovCase]:
+        """
+        Generate dispute test cases.
+
+        Creates questions where context contains conflicting information,
+        testing if the system correctly flags the dispute.
+        """
+        cases: list[FitzGovCase] = []
+        chunk_texts = self._extract_texts(chunks[:15])
+
+        prompt = f"""You are generating test cases for a RAG governance benchmark.
+
+Analyze these document excerpts and generate {num_cases} scenarios where you:
+1. Create a question that could have multiple answers
+2. Provide 2-3 context passages with CONTRADICTING information
+3. The system should flag the DISPUTE rather than picking one answer
+
+Document excerpts (for topic inspiration):
+{self._format_chunks(chunk_texts[:5])}
+
+Return as JSON:
+{{
+  "cases": [
+    {{
+      "query": "What is the recommended dosage?",
+      "contexts": [
+        "The recommended dosage is 10mg twice daily.",
+        "Studies show 5mg once daily is optimal.",
+        "Clinical guidelines suggest 15mg as needed."
+      ],
+      "description": "Conflicting dosage recommendations",
+      "rationale": "Three sources provide different dosage recommendations"
+    }}
+  ]
+}}
+
+Generate {num_cases} diverse conflict scenarios."""
+
+        response = self._llm.complete(prompt)
+        generated = self._parse_json_response(response).get("cases", [])
+
+        for i, case_data in enumerate(generated[:num_cases]):
+            contexts = case_data.get("contexts", chunk_texts[:2])
+            cases.append(
+                FitzGovCase(
+                    id=f"gen_dispute_{i:03d}",
+                    category=FitzGovCategory.DISPUTE,
+                    subcategory="contradicting_facts",
+                    query=case_data["query"],
+                    contexts=contexts,
+                    expected_mode=AnswerMode.DISPUTED,
+                    description=case_data.get("description", "Generated dispute case"),
+                    rationale=case_data.get("rationale", "Sources provide conflicting information"),
+                )
+            )
+
+        return cases
+
+    def generate_qualification_cases(
+        self,
+        chunks: list[Any],
+        num_cases: int = 20,
+    ) -> list[FitzGovCase]:
+        """
+        Generate qualification test cases.
+
+        Creates questions where the answer requires hedging, such as:
+        - Causal claims without evidence
+        - Predictions without certainty
+        - Generalizations from limited data
+        """
+        cases: list[FitzGovCase] = []
+        chunk_texts = self._extract_texts(chunks[:10])
+
+        prompt = f"""You are generating test cases for a RAG governance benchmark.
+
+Generate {num_cases} questions that should receive QUALIFIED/HEDGED answers:
+1. "Why" questions that imply causation but context only shows correlation
+2. Prediction questions where data is limited
+3. Generalization questions where context has few examples
+
+The context should provide SOME relevant information, but not enough
+for a confident answer. The system should QUALIFY its response.
+
+Document excerpts (for topic inspiration):
+{self._format_chunks(chunk_texts[:5])}
+
+Return as JSON:
+{{
+  "cases": [
+    {{
+      "query": "Why do users prefer feature X over feature Y?",
+      "contexts": [
+        "Survey shows 60% of users selected feature X.",
+        "Feature X was released 6 months before feature Y."
+      ],
+      "description": "Causal question with only correlational data",
+      "rationale": "Context shows preference data but no causal evidence for WHY"
+    }}
+  ]
+}}
+
+Generate {num_cases} diverse qualification scenarios."""
+
+        response = self._llm.complete(prompt)
+        generated = self._parse_json_response(response).get("cases", [])
+
+        for i, case_data in enumerate(generated[:num_cases]):
+            contexts = case_data.get("contexts", chunk_texts[:2])
+            cases.append(
+                FitzGovCase(
+                    id=f"gen_qualify_{i:03d}",
+                    category=FitzGovCategory.QUALIFICATION,
+                    subcategory="uncertain_evidence",
+                    query=case_data["query"],
+                    contexts=contexts,
+                    expected_mode=AnswerMode.QUALIFIED,
+                    description=case_data.get("description", "Generated qualification case"),
+                    rationale=case_data.get(
+                        "rationale", "Evidence is insufficient for confident answer"
+                    ),
+                )
+            )
+
+        return cases
+
+    def generate_confidence_cases(
+        self,
+        chunks: list[Any],
+        num_cases: int = 20,
+    ) -> list[FitzGovCase]:
+        """
+        Generate confidence test cases.
+
+        Creates questions where context clearly supports a confident answer,
+        testing that the system doesn't over-hedge.
+        """
+        cases: list[FitzGovCase] = []
+        chunk_texts = self._extract_texts(chunks[:15])
+
+        prompt = f"""You are generating test cases for a RAG governance benchmark.
+
+Generate {num_cases} questions where the answer is CLEARLY supported by context:
+1. Factual questions with explicit answers in the text
+2. Definition questions where the term is clearly defined
+3. Procedural questions where steps are clearly listed
+
+The system should answer CONFIDENTLY without unnecessary hedging.
+
+Document excerpts:
+{self._format_chunks(chunk_texts)}
+
+Return as JSON:
+{{
+  "cases": [
+    {{
+      "query": "What are the three main components of the system?",
+      "contexts": [
+        "The system consists of three main components: the ingestion module, the retrieval engine, and the generation layer."
+      ],
+      "description": "Direct factual question with explicit answer",
+      "rationale": "Context explicitly lists the three components"
+    }}
+  ]
+}}
+
+Generate {num_cases} clear-cut confidence scenarios."""
+
+        response = self._llm.complete(prompt)
+        generated = self._parse_json_response(response).get("cases", [])
+
+        for i, case_data in enumerate(generated[:num_cases]):
+            contexts = case_data.get("contexts", [chunk_texts[i % len(chunk_texts)]])
+            cases.append(
+                FitzGovCase(
+                    id=f"gen_confident_{i:03d}",
+                    category=FitzGovCategory.CONFIDENCE,
+                    subcategory="clear_evidence",
+                    query=case_data["query"],
+                    contexts=contexts,
+                    expected_mode=AnswerMode.CONFIDENT,
+                    description=case_data.get("description", "Generated confidence case"),
+                    rationale=case_data.get("rationale", "Context clearly supports the answer"),
+                )
+            )
+
+        return cases
+
+    def generate_grounding_cases(
+        self,
+        chunks: list[Any],
+        num_cases: int = 20,
+    ) -> list[FitzGovCase]:
+        """
+        Generate grounding test cases (hallucination traps).
+
+        Creates questions where context is partially relevant, making it
+        tempting to hallucinate details not actually present.
+        """
+        cases: list[FitzGovCase] = []
+        chunk_texts = self._extract_texts(chunks[:10])
+
+        prompt = f"""You are generating test cases for a RAG governance benchmark.
+
+Generate {num_cases} "hallucination trap" scenarios:
+1. Question asks for specific detail (number, date, name)
+2. Context discusses the topic but LACKS that specific detail
+3. A hallucinating system might make up a plausible-sounding answer
+
+Include "forbidden_claims" - specific fabrications that would indicate hallucination.
+
+Document excerpts:
+{self._format_chunks(chunk_texts[:5])}
+
+Return as JSON:
+{{
+  "cases": [
+    {{
+      "query": "When was the company founded?",
+      "contexts": [
+        "The company has grown to over 500 employees and operates in 12 countries."
+      ],
+      "forbidden_claims": ["1998", "1999", "2000", "2001", "2005", "2010"],
+      "description": "Founding date not mentioned but context discusses company",
+      "rationale": "Context describes company but never mentions founding date"
+    }}
+  ]
+}}
+
+Generate {num_cases} diverse hallucination trap scenarios."""
+
+        response = self._llm.complete(prompt)
+        generated = self._parse_json_response(response).get("cases", [])
+
+        for i, case_data in enumerate(generated[:num_cases]):
+            contexts = case_data.get("contexts", chunk_texts[:2])
+            cases.append(
+                FitzGovCase(
+                    id=f"gen_ground_{i:03d}",
+                    category=FitzGovCategory.GROUNDING,
+                    subcategory="hallucination_trap",
+                    query=case_data["query"],
+                    contexts=contexts,
+                    expected_mode=AnswerMode.CONFIDENT,  # Should answer but stay grounded
+                    description=case_data.get("description", "Generated grounding case"),
+                    rationale=case_data.get("rationale", "Tests if system hallucinates details"),
+                    forbidden_claims=case_data.get("forbidden_claims", []),
+                )
+            )
+
+        return cases
+
+    def generate_relevance_cases(
+        self,
+        chunks: list[Any],
+        num_cases: int = 20,
+    ) -> list[FitzGovCase]:
+        """
+        Generate relevance test cases (off-topic traps).
+
+        Creates questions where the answer must address specific aspects,
+        testing if the system stays on-topic.
+        """
+        cases: list[FitzGovCase] = []
+        chunk_texts = self._extract_texts(chunks[:10])
+
+        prompt = f"""You are generating test cases for a RAG governance benchmark.
+
+Generate {num_cases} "relevance trap" scenarios:
+1. Question asks about specific aspect A
+2. Context contains information about both A and related aspects B, C
+3. A poor system might discuss B or C instead of directly answering about A
+
+Include "required_elements" - things that MUST appear in a relevant answer.
+
+Document excerpts:
+{self._format_chunks(chunk_texts[:5])}
+
+Return as JSON:
+{{
+  "cases": [
+    {{
+      "query": "What are the SECURITY features of the product?",
+      "contexts": [
+        "The product includes encryption, two-factor authentication, and audit logging. It also features a modern UI, fast performance, and extensive integrations."
+      ],
+      "required_elements": ["encryption", "authentication", "audit"],
+      "description": "Asks specifically about security, not general features",
+      "rationale": "Answer should focus on security features, not UI or performance"
+    }}
+  ]
+}}
+
+Generate {num_cases} diverse relevance trap scenarios."""
+
+        response = self._llm.complete(prompt)
+        generated = self._parse_json_response(response).get("cases", [])
+
+        for i, case_data in enumerate(generated[:num_cases]):
+            contexts = case_data.get("contexts", chunk_texts[:2])
+            cases.append(
+                FitzGovCase(
+                    id=f"gen_relevance_{i:03d}",
+                    category=FitzGovCategory.RELEVANCE,
+                    subcategory="off_topic_trap",
+                    query=case_data["query"],
+                    contexts=contexts,
+                    expected_mode=AnswerMode.CONFIDENT,  # Should answer the actual question
+                    description=case_data.get("description", "Generated relevance case"),
+                    rationale=case_data.get("rationale", "Tests if system stays on topic"),
+                    required_elements=case_data.get("required_elements", []),
+                )
+            )
+
+        return cases
+
+    def _extract_texts(self, chunks: list[Any]) -> list[str]:
+        """Extract text from chunk-like objects."""
+        texts = []
+        for chunk in chunks:
+            if hasattr(chunk, "text"):
+                texts.append(chunk.text)
+            elif isinstance(chunk, dict) and "text" in chunk:
+                texts.append(chunk["text"])
+            elif isinstance(chunk, str):
+                texts.append(chunk)
+            else:
+                texts.append(str(chunk))
+        return texts
+
+    def _format_chunks(self, texts: list[str], max_chars: int = 500) -> str:
+        """Format chunk texts for prompt."""
+        lines = []
+        for i, text in enumerate(texts):
+            truncated = text[:max_chars] + "..." if len(text) > max_chars else text
+            lines.append(f"[{i}] {truncated}")
+        return "\n\n".join(lines)
+
+    def _parse_json_response(self, response: str) -> dict:
+        """Parse JSON from LLM response."""
+        try:
+            # Try to extract JSON from response
+            match = re.search(r"\{.*\}", response, re.DOTALL)
+            if match:
+                return json.loads(match.group())
+        except Exception:
+            pass
+        return {}
+
+
+def save_cases(cases: list[FitzGovCase], output_dir: str | None = None) -> None:
+    """
+    Save generated cases to JSON files organized by category.
+
+    Args:
+        cases: List of FitzGovCase objects.
+        output_dir: Directory to save to. Defaults to ./generated_data/
+    """
+    from pathlib import Path
+
+    output_path = Path(output_dir) if output_dir else Path("./generated_data")
+
+    # Group by category
+    by_category: dict[FitzGovCategory, list[FitzGovCase]] = {}
+    for case in cases:
+        if case.category not in by_category:
+            by_category[case.category] = []
+        by_category[case.category].append(case)
+
+    # Save each category
+    for category, cat_cases in by_category.items():
+        cat_dir = output_path / category.value
+        cat_dir.mkdir(parents=True, exist_ok=True)
+
+        # Group by subcategory
+        by_subcat: dict[str, list[FitzGovCase]] = {}
+        for case in cat_cases:
+            if case.subcategory not in by_subcat:
+                by_subcat[case.subcategory] = []
+            by_subcat[case.subcategory].append(case)
+
+        # Save each subcategory file
+        for subcat, subcat_cases in by_subcat.items():
+            output_file = cat_dir / f"{subcat}.json"
+            data = {
+                "description": f"Generated {category.value} cases - {subcat}",
+                "cases": [case.to_dict() for case in subcat_cases],
+            }
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2)
+
+    print(f"Saved {len(cases)} cases to {output_path}")

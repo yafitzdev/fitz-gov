@@ -1,0 +1,131 @@
+# fitz_gov/schema.py
+"""
+Data schemas for FITZ-GOV benchmark.
+
+These schemas define the structure of test cases and are designed to be
+compatible with fitz-ai's evaluation framework.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import Any
+
+
+class AnswerMode(str, Enum):
+    """Expected answer mode for governance test cases."""
+
+    CONFIDENT = "confident"
+    """System should answer confidently."""
+
+    QUALIFIED = "qualified"
+    """System should hedge or qualify the answer."""
+
+    DISPUTED = "disputed"
+    """System should flag conflicting information."""
+
+    ABSTAIN = "abstain"
+    """System should refuse to answer."""
+
+
+class FitzGovCategory(str, Enum):
+    """Categories of governance test cases."""
+
+    # Governance Mode Categories (maps to AnswerMode)
+    ABSTENTION = "abstention"
+    """Cases where the system should refuse to answer."""
+
+    DISPUTE = "dispute"
+    """Cases where the system should flag conflicting information."""
+
+    QUALIFICATION = "qualification"
+    """Cases where the system should hedge or qualify the answer."""
+
+    CONFIDENCE = "confidence"
+    """Cases where the system should answer confidently."""
+
+    # Answer Quality Categories
+    GROUNDING = "grounding"
+    """Cases testing if answers are grounded in context (no hallucination)."""
+
+    RELEVANCE = "relevance"
+    """Cases testing if answers address the actual question asked."""
+
+
+@dataclass
+class FitzGovCase:
+    """A single FITZ-GOV test case."""
+
+    id: str
+    """Unique identifier for the test case."""
+
+    category: FitzGovCategory
+    """Category of governance test."""
+
+    subcategory: str
+    """More specific subcategory (e.g., 'no_context', 'out_of_scope')."""
+
+    query: str
+    """The question to answer."""
+
+    contexts: list[str]
+    """Context passages to use."""
+
+    expected_mode: AnswerMode
+    """Expected answer mode (for governance categories)."""
+
+    description: str
+    """Human-readable description of what's being tested."""
+
+    rationale: str
+    """Why this mode is expected."""
+
+    # Answer quality fields (for grounding/relevance categories)
+    forbidden_claims: list[str] = field(default_factory=list)
+    """For GROUNDING: Claims that indicate hallucination (should NOT appear)."""
+
+    required_elements: list[str] = field(default_factory=list)
+    """For RELEVANCE: Elements that MUST appear in the answer."""
+
+    metadata: dict[str, Any] = field(default_factory=dict)
+    """Additional test case metadata."""
+
+    def to_dict(self) -> dict[str, Any]:
+        """Convert to dictionary for JSON serialization."""
+        result = {
+            "id": self.id,
+            "category": self.category.value,
+            "subcategory": self.subcategory,
+            "query": self.query,
+            "contexts": self.contexts,
+            "expected_mode": self.expected_mode.value,
+            "description": self.description,
+            "rationale": self.rationale,
+            "metadata": self.metadata,
+        }
+        if self.forbidden_claims:
+            result["forbidden_claims"] = self.forbidden_claims
+        if self.required_elements:
+            result["required_elements"] = self.required_elements
+        return result
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> FitzGovCase:
+        """Create from dictionary."""
+        return cls(
+            id=data["id"],
+            category=FitzGovCategory(data["category"]),
+            subcategory=data["subcategory"],
+            query=data["query"],
+            contexts=data["contexts"],
+            expected_mode=AnswerMode(data["expected_mode"]),
+            description=data["description"],
+            rationale=data["rationale"],
+            forbidden_claims=data.get("forbidden_claims", []),
+            required_elements=data.get("required_elements", []),
+            metadata=data.get("metadata", {}),
+        )
+
+    def __str__(self) -> str:
+        return f"FitzGovCase({self.id}, {self.category.value}, expected={self.expected_mode.value})"
