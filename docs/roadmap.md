@@ -2,17 +2,17 @@
 
 Target: **200 test cases** across 6 governance categories.
 
-## Current Status (v0.7.0)
+## Current Status (v0.8.0) ✓ COMPLETE
 
 | Category | Current | Target | Progress |
 |----------|---------|--------|----------|
 | **Abstention** | **40** | 40 | **100%** |
 | **Dispute** | **40** | 40 | **100%** |
 | **Qualification** | **40** | 40 | **100%** |
-| Confidence | 10 | 30 | 33% |
+| **Confidence** | **30** | 30 | **100%** |
 | **Grounding** | **25** | 25 | **100%** |
 | **Relevance** | **25** | 25 | **100%** |
-| **Total** | **180** | **200** | **90%** |
+| **Total** | **200** | **200** | **100%** |
 
 ## Category Descriptions
 
@@ -51,9 +51,19 @@ These test the system's ability to select the correct answer mode.
   - incomplete_evidence (5): Partial information presented as complete
   - attribution_error (2): Multiple factors for single outcome
 
-**Confidence** (10/30)
+**Confidence** (30/30) ✓
 - System should answer confidently when evidence is clear and unambiguous
-- Subcategories: direct_factual, explicit_causal, complete_requirements
+- Subcategories:
+  - direct_factual (4): Simple factual questions with explicit answers
+  - explicit_causal (5): Why questions with cause explicitly stated
+  - complete_requirements (3): Requirements with full list provided
+  - complete_explanation (4): How/mechanism questions fully explained
+  - quantitative_clear (4): Number questions with precise figures
+  - definition_provided (3): What-is questions with clear definitions
+  - comparison_explicit (2): Comparisons with clear data for both sides
+  - temporal_explicit (2): When questions with precise dates/times
+  - procedural_complete (2): How-to with complete step-by-step
+  - attribution_clear (1): Who questions with explicit attribution
 
 ### Answer Quality Categories
 
@@ -87,14 +97,14 @@ These test the quality of generated answers.
   - temporal_mismatch (2): Info from wrong time period than asked
   - scope_mismatch (1): Wrong level of detail (global vs local)
 
-## Expansion Priority
+## Expansion History
 
 1. ~~**Qualification**~~ ✓ (v0.3.0) - Was 10% accuracy, now has comprehensive coverage
 2. ~~**Grounding**~~ ✓ (v0.4.0) - Critical for hallucination prevention
 3. ~~**Abstention**~~ ✓ (v0.5.0) - Core safety behavior
 4. ~~**Dispute**~~ ✓ (v0.6.0) - Important for epistemic honesty
 5. ~~**Relevance**~~ ✓ (v0.7.0) - Answer quality metric
-6. **Confidence** - Ensure system isn't overly cautious
+6. ~~**Confidence**~~ ✓ (v0.8.0) - Ensure system isn't overly cautious
 
 ## Corpus Requirements
 
@@ -106,7 +116,7 @@ These test the quality of generated answers.
 | v0.5.0 | 175 | +29 for abstention expansion |
 | v0.6.0 | 233 | +58 for dispute expansion |
 | v0.7.0 | 258 | +25 for relevance expansion |
-| Target | ~270 | Support all 200 test cases |
+| v0.8.0 | 288 | +30 for confidence expansion |
 
 Each test case expansion requires corresponding corpus documents with:
 - Relevant documents that support the test query
@@ -115,6 +125,7 @@ Each test case expansion requires corresponding corpus documents with:
 
 ## Version History
 
+- **v0.8.0** - Confidence expansion (10 → 30 cases, 258 → 288 docs) - **TARGET REACHED!**
 - **v0.7.0** - Relevance expansion (5 → 25 cases, 233 → 258 docs)
 - **v0.6.0** - Dispute expansion (10 → 40 cases, 175 → 233 docs)
 - **v0.5.0** - Abstention expansion (10 → 40 cases, 146 → 175 docs)
@@ -122,3 +133,14 @@ Each test case expansion requires corresponding corpus documents with:
 - **v0.3.0** - Qualification expansion (10 → 40 cases, 100 → 128 docs)
 - **v0.2.0** - Initial handcrafted test set (50 cases, 100 docs)
 - **v0.1.0** - Auto-generated test set (deprecated)
+
+## Summary
+
+FITZ-GOV v0.8.0 achieves the target of **200 test cases** with **288 corpus documents** across 6 governance categories. The benchmark comprehensively tests RAG system governance including:
+
+- **When to refuse** (abstention) - 40 cases
+- **When to flag conflicts** (dispute) - 40 cases
+- **When to hedge** (qualification) - 40 cases
+- **When to be confident** (confidence) - 30 cases
+- **Hallucination prevention** (grounding) - 25 cases
+- **Answer relevance** (relevance) - 25 cases

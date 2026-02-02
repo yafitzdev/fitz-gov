@@ -1,119 +1,382 @@
 {
   "category": "confidence",
   "description": "Queries where context clearly answers the question - system should be CONFIDENT",
+  "version": "0.8.0",
+  "subcategories": {
+    "direct_factual": "Simple factual questions with explicit answers in context",
+    "explicit_causal": "Why questions where the cause is explicitly stated",
+    "complete_requirements": "Requirements/criteria questions with full list provided",
+    "complete_explanation": "How/mechanism questions with full explanation provided",
+    "quantitative_clear": "Number questions with precise figures stated",
+    "definition_provided": "What-is questions with clear definition in context",
+    "comparison_explicit": "Comparison questions with clear data for both sides",
+    "temporal_explicit": "When questions with precise dates/times stated",
+    "procedural_complete": "How-to questions with complete step-by-step instructions",
+    "attribution_clear": "Who questions with explicit attribution"
+  },
   "cases": [
     {
       "id": "confident_easy_001",
       "difficulty": "easy",
+      "subcategory": "direct_factual",
       "query": "What is the capital of France?",
       "contexts": [
         "Paris is the capital and largest city of France. Located on the Seine River, it has a population of over 2 million in the city proper."
       ],
       "expected_mode": "confident",
       "description": "Direct factual question with explicit answer in context",
-      "rationale": "Direct factual question with explicit answer in context"
+      "rationale": "The answer 'Paris' is stated directly and unambiguously"
     },
     {
       "id": "confident_easy_002",
       "difficulty": "easy",
+      "subcategory": "temporal_explicit",
       "query": "When was the company founded?",
       "contexts": [
         "Acme Corporation was founded in 1985 by John Smith and Jane Doe in Silicon Valley. The company started as a two-person garage startup."
       ],
       "expected_mode": "confident",
-      "description": "Direct factual question with explicit date in context",
-      "rationale": "Direct factual question with explicit date in context"
+      "description": "Direct date question with explicit year in context",
+      "rationale": "The founding year '1985' is stated directly"
     },
     {
       "id": "confident_easy_003",
       "difficulty": "easy",
+      "subcategory": "direct_factual",
       "query": "What programming language is React written in?",
       "contexts": [
         "React is a JavaScript library for building user interfaces, developed and maintained by Meta (formerly Facebook). It was first released in 2013."
       ],
       "expected_mode": "confident",
       "description": "Direct technical question with clear answer",
-      "rationale": "Direct technical question with clear answer"
+      "rationale": "React being a 'JavaScript library' directly answers the language question"
     },
     {
       "id": "confident_easy_004",
       "difficulty": "easy",
+      "subcategory": "quantitative_clear",
       "query": "How many employees does the company have?",
       "contexts": [
         "As of December 2024, TechCorp employs 15,000 full-time employees across 12 global offices. This represents a 20% increase from the previous year."
       ],
       "expected_mode": "confident",
-      "description": "Direct factual question with specific number provided",
-      "rationale": "Direct factual question with specific number provided"
+      "description": "Direct count question with specific number provided",
+      "rationale": "The exact number '15,000 full-time employees' is explicitly stated"
+    },
+    {
+      "id": "confident_easy_005",
+      "difficulty": "easy",
+      "subcategory": "definition_provided",
+      "query": "What is machine learning?",
+      "contexts": [
+        "Machine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing algorithms that can access data and use it to learn for themselves."
+      ],
+      "expected_mode": "confident",
+      "description": "Definition question with clear definition provided",
+      "rationale": "A complete definition of machine learning is provided"
+    },
+    {
+      "id": "confident_easy_006",
+      "difficulty": "easy",
+      "subcategory": "attribution_clear",
+      "query": "Who invented the telephone?",
+      "contexts": [
+        "Alexander Graham Bell invented the telephone in 1876. He was awarded the first US patent for the telephone on March 7, 1876. Bell demonstrated the device to great acclaim at the Centennial Exposition in Philadelphia."
+      ],
+      "expected_mode": "confident",
+      "description": "Attribution question with explicit inventor named",
+      "rationale": "Alexander Graham Bell is explicitly named as the inventor"
+    },
+    {
+      "id": "confident_easy_007",
+      "difficulty": "easy",
+      "subcategory": "quantitative_clear",
+      "query": "What is the price of the premium subscription?",
+      "contexts": [
+        "Our premium subscription costs $29.99 per month or $299 per year (saving $60 annually). It includes unlimited storage, priority support, and advanced analytics features."
+      ],
+      "expected_mode": "confident",
+      "description": "Price question with exact figures provided",
+      "rationale": "Exact prices of $29.99/month and $299/year are stated"
+    },
+    {
+      "id": "confident_easy_008",
+      "difficulty": "easy",
+      "subcategory": "direct_factual",
+      "query": "What is the chemical formula for water?",
+      "contexts": [
+        "Water has the chemical formula H2O, meaning each molecule consists of two hydrogen atoms bonded to one oxygen atom. It is essential for all known forms of life."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct chemistry question with explicit formula",
+      "rationale": "The formula H2O is directly stated"
+    },
+    {
+      "id": "confident_easy_009",
+      "difficulty": "easy",
+      "subcategory": "temporal_explicit",
+      "query": "What is the deadline for the grant application?",
+      "contexts": [
+        "Applications for the 2025 Innovation Grant must be submitted by March 15, 2025 at 11:59 PM EST. Late submissions will not be accepted under any circumstances."
+      ],
+      "expected_mode": "confident",
+      "description": "Deadline question with precise date and time",
+      "rationale": "The exact deadline of March 15, 2025 at 11:59 PM EST is stated"
+    },
+    {
+      "id": "confident_easy_010",
+      "difficulty": "easy",
+      "subcategory": "definition_provided",
+      "query": "What is an API?",
+      "contexts": [
+        "An API (Application Programming Interface) is a set of protocols and tools that allows different software applications to communicate with each other. APIs define the methods and data formats that programs can use to request and exchange information."
+      ],
+      "expected_mode": "confident",
+      "description": "Technical definition question with clear explanation",
+      "rationale": "A complete definition of API is provided with explanation"
     },
     {
       "id": "confident_medium_001",
       "difficulty": "medium",
+      "subcategory": "explicit_causal",
       "query": "Why did the server crash?",
       "contexts": [
         "The post-mortem analysis revealed the server crash was caused by a memory leak in the authentication module. The leak accumulated over 72 hours until available RAM was exhausted, triggering an OOM killer event."
       ],
       "expected_mode": "confident",
-      "description": "Causal question with explicit causal evidence",
-      "rationale": "Causal question with explicit causal evidence ('caused by', 'triggered')"
+      "description": "Causal question with explicit root cause stated",
+      "rationale": "The cause is explicitly stated as 'memory leak in the authentication module'"
     },
     {
       "id": "confident_medium_002",
       "difficulty": "medium",
+      "subcategory": "complete_requirements",
       "query": "What are the requirements for the senior engineer role?",
       "contexts": [
         "Senior Engineer Requirements: 5+ years of professional software development experience, proficiency in Python or Java, experience with distributed systems, strong communication skills, and a BS/MS in Computer Science or equivalent experience."
       ],
       "expected_mode": "confident",
-      "description": "Direct question with comprehensive answer listing requirements",
-      "rationale": "Direct question with comprehensive answer listing all requirements"
+      "description": "Requirements question with comprehensive list provided",
+      "rationale": "All requirements are explicitly listed in the context"
     },
     {
       "id": "confident_medium_003",
       "difficulty": "medium",
+      "subcategory": "complete_explanation",
       "query": "How does photosynthesis work?",
       "contexts": [
         "Photosynthesis converts light energy into chemical energy through two stages. In the light-dependent reactions, chlorophyll absorbs sunlight to split water molecules, releasing oxygen and producing ATP. In the Calvin cycle, CO2 is fixed into glucose using the ATP generated earlier."
       ],
       "expected_mode": "confident",
-      "description": "Explanatory question with complete mechanism described",
-      "rationale": "Explanatory question with complete mechanism described"
+      "description": "Mechanism question with complete process described",
+      "rationale": "The full mechanism is explained with both stages detailed"
     },
     {
       "id": "confident_medium_004",
       "difficulty": "medium",
+      "subcategory": "explicit_causal",
       "query": "What caused the 2024 outage?",
       "contexts": [
         "The January 2024 outage was caused by a misconfigured load balancer that routed 100% of traffic to a single server instead of distributing it across the cluster. This occurred because a configuration change was deployed without proper review.",
         "The incident lasted 4 hours and affected approximately 2 million users. Engineering teams identified the root cause within 30 minutes and rolled back the configuration."
       ],
       "expected_mode": "confident",
-      "description": "Causal question with explicit root cause analysis",
-      "rationale": "Causal question with explicit root cause analysis"
+      "description": "Causal question with explicit root cause and chain of events",
+      "rationale": "The cause 'misconfigured load balancer' is explicitly stated with explanation"
+    },
+    {
+      "id": "confident_medium_005",
+      "difficulty": "medium",
+      "subcategory": "comparison_explicit",
+      "query": "Which database is faster for read operations, PostgreSQL or MongoDB?",
+      "contexts": [
+        "In our benchmarks using identical hardware, MongoDB achieved 45,000 read operations per second while PostgreSQL achieved 28,000 read operations per second for our document-heavy workload. However, PostgreSQL outperformed MongoDB in complex join operations."
+      ],
+      "expected_mode": "confident",
+      "description": "Comparison question with explicit benchmark data",
+      "rationale": "Clear numerical comparison shows MongoDB faster for reads (45k vs 28k ops/sec)"
+    },
+    {
+      "id": "confident_medium_006",
+      "difficulty": "medium",
+      "subcategory": "procedural_complete",
+      "query": "How do I reset my password?",
+      "contexts": [
+        "To reset your password: 1) Click 'Forgot Password' on the login page, 2) Enter your registered email address, 3) Check your inbox for a reset link (valid for 24 hours), 4) Click the link and enter your new password twice, 5) Click 'Confirm' to save. You will be automatically logged in."
+      ],
+      "expected_mode": "confident",
+      "description": "Procedural question with complete step-by-step guide",
+      "rationale": "All 5 steps are clearly listed with details"
+    },
+    {
+      "id": "confident_medium_007",
+      "difficulty": "medium",
+      "subcategory": "quantitative_clear",
+      "query": "What was the company's revenue last quarter?",
+      "contexts": [
+        "TechFlow reported Q3 2024 revenue of $847 million, representing a 23% year-over-year increase. The growth was driven primarily by enterprise subscriptions, which accounted for 65% of total revenue."
+      ],
+      "expected_mode": "confident",
+      "description": "Financial question with exact figures provided",
+      "rationale": "Exact revenue of $847 million is stated with breakdown"
+    },
+    {
+      "id": "confident_medium_008",
+      "difficulty": "medium",
+      "subcategory": "complete_requirements",
+      "query": "What are the eligibility criteria for the scholarship?",
+      "contexts": [
+        "Scholarship Eligibility: Applicants must be enrolled full-time at an accredited university, maintain a GPA of 3.5 or higher, demonstrate financial need through FAFSA, be a US citizen or permanent resident, and submit two letters of recommendation from faculty members."
+      ],
+      "expected_mode": "confident",
+      "description": "Eligibility question with all criteria listed",
+      "rationale": "All eligibility criteria are explicitly enumerated"
+    },
+    {
+      "id": "confident_medium_009",
+      "difficulty": "medium",
+      "subcategory": "complete_explanation",
+      "query": "How does HTTPS encryption work?",
+      "contexts": [
+        "HTTPS uses TLS encryption through a handshake process: First, the client sends supported cipher suites to the server. The server responds with its certificate and chosen cipher. The client verifies the certificate against trusted CAs, then both parties generate session keys using asymmetric encryption. All subsequent data is encrypted with these symmetric session keys."
+      ],
+      "expected_mode": "confident",
+      "description": "Technical mechanism question with full process explained",
+      "rationale": "The complete TLS handshake process is described step by step"
+    },
+    {
+      "id": "confident_medium_010",
+      "difficulty": "medium",
+      "subcategory": "definition_provided",
+      "query": "What is a microservice architecture?",
+      "contexts": [
+        "Microservice architecture is a software design approach where an application is built as a collection of small, independent services. Each service runs in its own process, communicates via lightweight protocols (typically HTTP/REST), and can be deployed, updated, and scaled independently. This contrasts with monolithic architectures where all functionality exists in a single deployable unit."
+      ],
+      "expected_mode": "confident",
+      "description": "Architecture definition question with comprehensive explanation",
+      "rationale": "Complete definition with key characteristics and contrast provided"
     },
     {
       "id": "confident_hard_001",
       "difficulty": "hard",
+      "subcategory": "explicit_causal",
       "query": "What is the company's competitive advantage?",
       "contexts": [
         "DataFlow's competitive advantage stems from three key factors: First, our proprietary compression algorithm reduces storage costs by 60% compared to competitors. Second, our platform processes queries 10x faster due to our columnar storage architecture. Third, we hold 12 patents on real-time data synchronization that prevent direct competition.",
         "Independent benchmarks by Gartner confirm DataFlow outperforms competitors in all major metrics including cost efficiency, query speed, and reliability."
       ],
       "expected_mode": "confident",
-      "description": "Complex question but context provides clear comprehensive answer",
-      "rationale": "Complex question requiring synthesis but context provides clear, comprehensive answer"
+      "description": "Complex strategic question with clear comprehensive answer",
+      "rationale": "Three specific advantages are enumerated with quantified benefits"
     },
     {
       "id": "confident_hard_002",
       "difficulty": "hard",
+      "subcategory": "explicit_causal",
       "query": "Why did customers churn last quarter?",
       "contexts": [
         "Customer exit surveys identified three primary reasons for churn: 45% cited price increases implemented in Q2 as the main factor, 30% switched to Competitor X's new offering with better mobile support, and 25% reported that missing features (specifically offline mode) led to their decision.",
         "Analysis showed that customers who churned had 40% lower product engagement in the 60 days before cancellation, suggesting early warning signs were present but not acted upon."
       ],
       "expected_mode": "confident",
-      "description": "Causal question with data-backed reasons",
-      "rationale": "Causal question with data-backed reasons and explicit causal language"
+      "description": "Causal question with data-backed reasons and percentages",
+      "rationale": "Three causes are stated with specific percentages from surveys"
+    },
+    {
+      "id": "confident_hard_003",
+      "difficulty": "hard",
+      "subcategory": "complete_explanation",
+      "query": "How does the recommendation algorithm work?",
+      "contexts": [
+        "Our recommendation algorithm uses a hybrid approach combining collaborative filtering and content-based methods. First, we build a user-item interaction matrix from viewing history. Collaborative filtering identifies users with similar preferences using cosine similarity. Content-based filtering analyzes item attributes (genre, actors, directors) using TF-IDF vectors. The final score combines both: 0.6 * collaborative_score + 0.4 * content_score, with a recency boost of 1.2x for items from the last 30 days."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex algorithm question with full methodology explained",
+      "rationale": "Complete algorithm description with specific weights and methods"
+    },
+    {
+      "id": "confident_hard_004",
+      "difficulty": "hard",
+      "subcategory": "comparison_explicit",
+      "query": "Should we use Kubernetes or Docker Swarm for our deployment?",
+      "contexts": [
+        "For your requirements (500+ microservices, multi-cloud deployment, auto-scaling needs), Kubernetes is the better choice. Our analysis shows: Kubernetes supports all major cloud providers natively while Swarm has limited multi-cloud support. Kubernetes handles 10,000+ pods per cluster vs Swarm's practical limit of 1,000 containers. Kubernetes has 4x more third-party integrations. The learning curve is steeper (estimated 3 months vs 2 weeks), but long-term operational benefits outweigh initial investment."
+      ],
+      "expected_mode": "confident",
+      "description": "Technical decision question with clear recommendation and data",
+      "rationale": "Clear recommendation for Kubernetes with specific comparative data"
+    },
+    {
+      "id": "confident_hard_005",
+      "difficulty": "hard",
+      "subcategory": "quantitative_clear",
+      "query": "What is the total cost of ownership for the enterprise deployment?",
+      "contexts": [
+        "Enterprise Deployment Total Cost of Ownership (3-year projection): Infrastructure costs: $450,000 (cloud hosting at $12,500/month). Licensing: $180,000 ($60,000/year enterprise license). Implementation: $120,000 (one-time professional services). Training: $30,000 ($10,000/year for ongoing training). Support: $90,000 ($30,000/year premium support). Total 3-year TCO: $870,000, or approximately $290,000 per year."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex financial question with detailed breakdown",
+      "rationale": "Complete TCO breakdown with all cost components and total"
+    },
+    {
+      "id": "confident_hard_006",
+      "difficulty": "hard",
+      "subcategory": "complete_requirements",
+      "query": "What are all the compliance requirements for handling healthcare data?",
+      "contexts": [
+        "HIPAA Compliance Requirements for Healthcare Data: 1) Administrative safeguards: designated security officer, workforce training, access management policies. 2) Physical safeguards: facility access controls, workstation security, device disposal procedures. 3) Technical safeguards: access controls, audit logs, encryption (AES-256 minimum), automatic logoff. 4) Organizational requirements: BAA with all vendors, documented policies, breach notification within 60 days. 5) Documentation: maintain records for 6 years, conduct annual risk assessments."
+      ],
+      "expected_mode": "confident",
+      "description": "Comprehensive compliance question with full requirements",
+      "rationale": "All five categories of HIPAA requirements are listed with specifics"
+    },
+    {
+      "id": "confident_hard_007",
+      "difficulty": "hard",
+      "subcategory": "procedural_complete",
+      "query": "How do I configure high availability for the database cluster?",
+      "contexts": [
+        "High Availability Database Configuration: 1) Set up primary node with synchronous_commit=on. 2) Configure two standby nodes with streaming replication (max_wal_senders=5, wal_level=replica). 3) Install pgpool-II on separate server for connection pooling and failover. 4) Configure health checks (health_check_period=10, health_check_timeout=20). 5) Set up automatic failover (failover_command='/usr/local/bin/failover.sh %d %h'). 6) Configure virtual IP with keepalived for seamless client failover. 7) Test failover by stopping primary and verifying automatic promotion within 30 seconds."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex procedural question with complete configuration steps",
+      "rationale": "All 7 configuration steps provided with specific parameters"
+    },
+    {
+      "id": "confident_hard_008",
+      "difficulty": "hard",
+      "subcategory": "explicit_causal",
+      "query": "Why did the machine learning model's accuracy drop in production?",
+      "contexts": [
+        "Root cause analysis identified data drift as the primary cause of the accuracy drop. Specifically: 1) Training data was from 2022-2023, but production data patterns shifted in Q1 2024 due to new product categories. 2) Feature distribution analysis showed the 'price' feature mean shifted from $45 to $78, outside the training distribution. 3) The 'category' feature had 12 new values not seen during training. Retraining with recent data restored accuracy from 76% to 94%."
+      ],
+      "expected_mode": "confident",
+      "description": "Technical causal question with detailed root cause analysis",
+      "rationale": "Specific cause (data drift) identified with quantified evidence"
+    },
+    {
+      "id": "confident_hard_009",
+      "difficulty": "hard",
+      "subcategory": "complete_explanation",
+      "query": "How does the fraud detection system identify suspicious transactions?",
+      "contexts": [
+        "The fraud detection system uses a multi-layer approach: Layer 1 applies rule-based filters (transactions over $10,000, international transfers to high-risk countries, velocity checks for 5+ transactions in 1 hour). Layer 2 uses an XGBoost model trained on 50 features including transaction amount, time, location, device fingerprint, and merchant category, achieving 99.2% recall at 0.1% false positive rate. Layer 3 employs graph analysis to detect coordinated fraud rings by analyzing transaction networks. Suspicious transactions are scored 0-100; scores above 75 trigger automatic holds, 50-75 require manual review."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex system question with complete architecture explained",
+      "rationale": "Full three-layer system described with specific thresholds and methods"
+    },
+    {
+      "id": "confident_hard_010",
+      "difficulty": "hard",
+      "subcategory": "direct_factual",
+      "query": "What are the SLA guarantees for the enterprise tier?",
+      "contexts": [
+        "Enterprise Tier SLA Guarantees: Uptime: 99.99% availability (maximum 52.6 minutes downtime per year). Response time: API responses under 100ms for 99th percentile. Support: 15-minute response time for critical issues, 4-hour resolution target. Data durability: 99.999999999% (11 nines) with cross-region replication. Backup: Daily automated backups retained for 30 days, point-in-time recovery. Credits: 10% credit for each 0.1% below SLA, up to 100% monthly fee."
+      ],
+      "expected_mode": "confident",
+      "description": "SLA question with all guarantees precisely specified",
+      "rationale": "All SLA metrics stated with exact numerical guarantees"
     }
   ]
 }

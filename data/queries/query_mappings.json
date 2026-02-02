@@ -1,6 +1,6 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "mappings": {
     "abstention": {
       "abstain_easy_001": {
@@ -651,53 +651,153 @@
     "confidence": {
       "confident_easy_001": {
         "query": "What is the capital of France?",
-        "relevant_docs": ["paris_001"],
-        "notes": "Direct factual answer"
+        "relevant_docs": ["conf_001"],
+        "notes": "Direct factual answer: Paris"
       },
       "confident_easy_002": {
         "query": "When was the company founded?",
-        "relevant_docs": ["acme_001"],
-        "notes": "Explicit founding date"
+        "relevant_docs": ["conf_002"],
+        "notes": "Explicit founding date: 1985"
       },
       "confident_easy_003": {
         "query": "What programming language is React written in?",
-        "relevant_docs": ["react_001"],
+        "relevant_docs": ["conf_003"],
         "notes": "Clear answer: JavaScript"
       },
       "confident_easy_004": {
         "query": "How many employees does the company have?",
-        "relevant_docs": ["techcorp_001"],
+        "relevant_docs": ["conf_004"],
         "notes": "Specific number: 15,000"
+      },
+      "confident_easy_005": {
+        "query": "What is machine learning?",
+        "relevant_docs": ["conf_005"],
+        "notes": "Clear definition provided"
+      },
+      "confident_easy_006": {
+        "query": "Who invented the telephone?",
+        "relevant_docs": ["conf_006"],
+        "notes": "Explicit attribution: Alexander Graham Bell"
+      },
+      "confident_easy_007": {
+        "query": "What is the price of the premium subscription?",
+        "relevant_docs": ["conf_007"],
+        "notes": "Exact prices stated"
+      },
+      "confident_easy_008": {
+        "query": "What is the chemical formula for water?",
+        "relevant_docs": ["conf_008"],
+        "notes": "Direct answer: H2O"
+      },
+      "confident_easy_009": {
+        "query": "What is the deadline for the grant application?",
+        "relevant_docs": ["conf_009"],
+        "notes": "Precise date and time provided"
+      },
+      "confident_easy_010": {
+        "query": "What is an API?",
+        "relevant_docs": ["conf_010"],
+        "notes": "Clear definition provided"
       },
       "confident_medium_001": {
         "query": "Why did the server crash?",
-        "relevant_docs": ["server_crash_001"],
-        "notes": "Explicit causal analysis"
+        "relevant_docs": ["conf_011"],
+        "notes": "Explicit causal analysis: memory leak"
       },
       "confident_medium_002": {
         "query": "What are the requirements for the senior engineer role?",
-        "relevant_docs": ["senior_engineer_001"],
+        "relevant_docs": ["conf_012"],
         "notes": "Complete requirements list"
       },
       "confident_medium_003": {
         "query": "How does photosynthesis work?",
-        "relevant_docs": ["photosynthesis_001"],
+        "relevant_docs": ["conf_013"],
         "notes": "Full mechanism explained"
       },
       "confident_medium_004": {
         "query": "What caused the 2024 outage?",
-        "relevant_docs": ["outage_2024_001"],
-        "notes": "Explicit root cause"
+        "relevant_docs": ["conf_014"],
+        "notes": "Explicit root cause: misconfigured load balancer"
+      },
+      "confident_medium_005": {
+        "query": "Which database is faster for read operations, PostgreSQL or MongoDB?",
+        "relevant_docs": ["conf_015"],
+        "notes": "Explicit benchmark data comparison"
+      },
+      "confident_medium_006": {
+        "query": "How do I reset my password?",
+        "relevant_docs": ["conf_016"],
+        "notes": "Complete step-by-step instructions"
+      },
+      "confident_medium_007": {
+        "query": "What was the company's revenue last quarter?",
+        "relevant_docs": ["conf_017"],
+        "notes": "Exact figure: $847 million"
+      },
+      "confident_medium_008": {
+        "query": "What are the eligibility criteria for the scholarship?",
+        "relevant_docs": ["conf_018"],
+        "notes": "All criteria explicitly listed"
+      },
+      "confident_medium_009": {
+        "query": "How does HTTPS encryption work?",
+        "relevant_docs": ["conf_019"],
+        "notes": "Full TLS handshake process described"
+      },
+      "confident_medium_010": {
+        "query": "What is a microservice architecture?",
+        "relevant_docs": ["conf_020"],
+        "notes": "Comprehensive definition with characteristics"
       },
       "confident_hard_001": {
         "query": "What is the company's competitive advantage?",
-        "relevant_docs": ["dataflow_001", "dataflow_002"],
-        "notes": "Comprehensive answer with evidence"
+        "relevant_docs": ["conf_021"],
+        "notes": "Three specific advantages with quantified benefits"
       },
       "confident_hard_002": {
         "query": "Why did customers churn last quarter?",
-        "relevant_docs": ["churn_001", "churn_002"],
-        "notes": "Data-backed causal analysis"
+        "relevant_docs": ["conf_022"],
+        "notes": "Data-backed causal analysis with percentages"
+      },
+      "confident_hard_003": {
+        "query": "How does the recommendation algorithm work?",
+        "relevant_docs": ["conf_023"],
+        "notes": "Complete algorithm with specific weights"
+      },
+      "confident_hard_004": {
+        "query": "Should we use Kubernetes or Docker Swarm for our deployment?",
+        "relevant_docs": ["conf_024"],
+        "notes": "Clear recommendation with comparative data"
+      },
+      "confident_hard_005": {
+        "query": "What is the total cost of ownership for the enterprise deployment?",
+        "relevant_docs": ["conf_025"],
+        "notes": "Complete TCO breakdown with all components"
+      },
+      "confident_hard_006": {
+        "query": "What are all the compliance requirements for handling healthcare data?",
+        "relevant_docs": ["conf_026"],
+        "notes": "Full HIPAA requirements listed"
+      },
+      "confident_hard_007": {
+        "query": "How do I configure high availability for the database cluster?",
+        "relevant_docs": ["conf_027"],
+        "notes": "Complete 7-step configuration guide"
+      },
+      "confident_hard_008": {
+        "query": "Why did the machine learning model's accuracy drop in production?",
+        "relevant_docs": ["conf_028"],
+        "notes": "Detailed data drift analysis with evidence"
+      },
+      "confident_hard_009": {
+        "query": "How does the fraud detection system identify suspicious transactions?",
+        "relevant_docs": ["conf_029"],
+        "notes": "Full three-layer system architecture"
+      },
+      "confident_hard_010": {
+        "query": "What are the SLA guarantees for the enterprise tier?",
+        "relevant_docs": ["conf_030"],
+        "notes": "All SLA metrics with exact numbers"
       }
     },
     "grounding": {
