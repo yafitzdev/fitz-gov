@@ -2,17 +2,17 @@
 
 Target: **200 test cases** across 6 governance categories.
 
-## Current Status (v0.5.0)
+## Current Status (v0.6.0)
 
 | Category | Current | Target | Progress |
 |----------|---------|--------|----------|
 | **Abstention** | **40** | 40 | **100%** |
-| Dispute | 10 | 40 | 25% |
+| **Dispute** | **40** | 40 | **100%** |
 | **Qualification** | **40** | 40 | **100%** |
 | Confidence | 10 | 30 | 33% |
 | **Grounding** | **25** | 25 | **100%** |
 | Relevance | 5 | 25 | 20% |
-| **Total** | **130** | **200** | **65%** |
+| **Total** | **160** | **200** | **80%** |
 
 ## Category Descriptions
 
@@ -30,9 +30,16 @@ These test the system's ability to select the correct answer mode.
   - partial_topic (4): Related info but missing the key detail asked
   - decoy_keywords (5): Context has keywords from query but doesn't answer
 
-**Dispute** (10/40)
+**Dispute** (40/40) ✓
 - System should flag when sources contain conflicting information
-- Subcategories: direct_contradiction, numeric_disagreement, competing_theories
+- Subcategories:
+  - direct_contradiction (11): Sources state opposite facts
+  - numerical_disagreement (6): Different numbers for same metric
+  - temporal_conflict (3): Conflicting timelines or dates
+  - competing_theories (4): Alternative explanations for same phenomenon
+  - source_conflict (4): Official vs unofficial sources disagree
+  - conditional_conflict (6): Context-dependent contradictions
+  - methodological_conflict (4): Different methodologies yield different results
 
 **Qualification** (40/40) ✓
 - System should hedge when evidence is incomplete or uncertain
@@ -74,7 +81,7 @@ These test the quality of generated answers.
 1. ~~**Qualification**~~ ✓ (v0.3.0) - Was 10% accuracy, now has comprehensive coverage
 2. ~~**Grounding**~~ ✓ (v0.4.0) - Critical for hallucination prevention
 3. ~~**Abstention**~~ ✓ (v0.5.0) - Core safety behavior
-4. **Dispute** - Important for epistemic honesty
+4. ~~**Dispute**~~ ✓ (v0.6.0) - Important for epistemic honesty
 5. **Relevance** - Answer quality metric
 6. **Confidence** - Ensure system isn't overly cautious
 
@@ -86,6 +93,7 @@ These test the quality of generated answers.
 | v0.3.0 | 128 | +28 for qualification expansion |
 | v0.4.0 | 146 | +18 for grounding expansion |
 | v0.5.0 | 175 | +29 for abstention expansion |
+| v0.6.0 | 233 | +58 for dispute expansion |
 | Target | ~250 | Support all 200 test cases |
 
 Each test case expansion requires corresponding corpus documents with:
@@ -95,6 +103,7 @@ Each test case expansion requires corresponding corpus documents with:
 
 ## Version History
 
+- **v0.6.0** - Dispute expansion (10 → 40 cases, 175 → 233 docs)
 - **v0.5.0** - Abstention expansion (10 → 40 cases, 146 → 175 docs)
 - **v0.4.0** - Grounding expansion (5 → 25 cases, 128 → 146 docs)
 - **v0.3.0** - Qualification expansion (10 → 40 cases, 100 → 128 docs)

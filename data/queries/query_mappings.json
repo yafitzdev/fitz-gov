@@ -1,6 +1,6 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "mappings": {
     "abstention": {
       "abstain_easy_001": {
@@ -265,6 +265,46 @@
         "relevant_docs": ["sales_up_001", "sales_down_001"],
         "notes": "Direct contradiction - increase vs decline"
       },
+      "dispute_easy_005": {
+        "query": "Is the CEO stepping down?",
+        "relevant_docs": ["ceo_resign_001", "ceo_staying_001"],
+        "notes": "Direct contradiction - resigning vs staying"
+      },
+      "dispute_easy_006": {
+        "query": "Did the defendant plead guilty?",
+        "relevant_docs": ["guilty_plea_001", "not_guilty_001"],
+        "notes": "Direct contradiction - guilty vs not guilty"
+      },
+      "dispute_easy_007": {
+        "query": "Was the concert cancelled?",
+        "relevant_docs": ["concert_cancelled_001", "concert_proceeded_001"],
+        "notes": "Direct contradiction - cancelled vs proceeded"
+      },
+      "dispute_easy_008": {
+        "query": "Did the bill pass in Congress?",
+        "relevant_docs": ["bill_passed_001", "bill_failed_001"],
+        "notes": "Direct contradiction - passed vs failed"
+      },
+      "dispute_easy_009": {
+        "query": "Is the product available for pre-order?",
+        "relevant_docs": ["preorder_open_001", "preorder_delayed_001"],
+        "notes": "Direct contradiction - available vs delayed"
+      },
+      "dispute_easy_010": {
+        "query": "Did the team win the championship?",
+        "relevant_docs": ["team_won_001", "team_lost_001"],
+        "notes": "Direct contradiction - won vs lost"
+      },
+      "dispute_easy_011": {
+        "query": "How much did the stock price change today?",
+        "relevant_docs": ["stock_up_001", "stock_down_001"],
+        "notes": "Numerical contradiction - +12% vs -8%"
+      },
+      "dispute_easy_012": {
+        "query": "Is the restaurant open on Sundays?",
+        "relevant_docs": ["restaurant_open_001", "restaurant_closed_001"],
+        "notes": "Direct contradiction - open vs closed"
+      },
       "dispute_medium_001": {
         "query": "What is the effectiveness rate of the vaccine?",
         "relevant_docs": ["vaccine_001", "vaccine_002", "vaccine_003"],
@@ -285,15 +325,125 @@
         "relevant_docs": ["titanic_001", "titanic_002", "titanic_003"],
         "notes": "Different counts: 1503, 1517, 1496"
       },
+      "dispute_medium_005": {
+        "query": "What is the company's market share?",
+        "relevant_docs": ["market_share_gartner_001", "market_share_idc_001"],
+        "notes": "Gartner 32% vs IDC 24%"
+      },
+      "dispute_medium_006": {
+        "query": "When did the company go public?",
+        "relevant_docs": ["ipo_march15_001", "ipo_march22_001"],
+        "notes": "March 15 vs March 22 for same IPO"
+      },
+      "dispute_medium_007": {
+        "query": "What is the population of the city?",
+        "relevant_docs": ["population_census_001", "population_planning_001"],
+        "notes": "Census 2.4M vs planning 2.8M"
+      },
+      "dispute_medium_008": {
+        "query": "What causes migraines?",
+        "relevant_docs": ["migraine_nerves_001", "migraine_genetic_001"],
+        "notes": "Nerve signals vs genetic mutations"
+      },
+      "dispute_medium_009": {
+        "query": "How many jobs will AI eliminate?",
+        "relevant_docs": ["ai_jobs_mckinsey_001", "ai_jobs_wef_001"],
+        "notes": "McKinsey 85M eliminated vs WEF 97M created"
+      },
+      "dispute_medium_010": {
+        "query": "What is the average house price in the area?",
+        "relevant_docs": ["house_price_zillow_001", "house_price_redfin_001"],
+        "notes": "Zillow $485K vs Redfin $520K"
+      },
+      "dispute_medium_011": {
+        "query": "When was the painting created?",
+        "relevant_docs": ["painting_date_1503_001", "painting_date_1517_001"],
+        "notes": "1503-1506 vs 1517"
+      },
+      "dispute_medium_012": {
+        "query": "How much water should you drink daily?",
+        "relevant_docs": ["water_8glasses_001", "water_nam_001"],
+        "notes": "64oz vs 91-125oz"
+      },
+      "dispute_medium_013": {
+        "query": "What is the unemployment rate?",
+        "relevant_docs": ["unemployment_bls_001", "unemployment_u6_001"],
+        "notes": "BLS 3.7% vs U-6 7.1%"
+      },
+      "dispute_medium_014": {
+        "query": "What is the best diet for weight loss?",
+        "relevant_docs": ["diet_keto_001", "diet_mediterranean_001"],
+        "notes": "Keto fastest vs Mediterranean best long-term"
+      },
       "dispute_hard_001": {
         "query": "Is remote work more productive than office work?",
         "relevant_docs": ["remote_001", "remote_002", "remote_003", "remote_004"],
-        "notes": "Nuanced - different aspects show different results"
+        "notes": "Conflicting studies - depends on measurement"
       },
       "dispute_hard_002": {
         "query": "Is coffee good for your health?",
         "relevant_docs": ["coffee_001", "coffee_002", "coffee_003", "coffee_004"],
         "notes": "Benefits and risks both documented"
+      },
+      "dispute_hard_003": {
+        "query": "Does screen time harm children's development?",
+        "relevant_docs": ["screen_time_harm_001", "screen_time_benefit_001"],
+        "notes": "Conflicting studies with methodological concerns"
+      },
+      "dispute_hard_004": {
+        "query": "Are electric vehicles better for the environment?",
+        "relevant_docs": ["ev_emissions_001", "ev_mining_001"],
+        "notes": "Lower emissions but mining damage"
+      },
+      "dispute_hard_005": {
+        "query": "What caused the Roman Empire to fall?",
+        "relevant_docs": ["roman_fall_001", "roman_fall_002"],
+        "notes": "Christianity vs economics theories"
+      },
+      "dispute_hard_006": {
+        "query": "Does the minimum wage increase cause unemployment?",
+        "relevant_docs": ["minimum_wage_theory_001", "minimum_wage_study_001"],
+        "notes": "Theory says yes, Card-Krueger says no"
+      },
+      "dispute_hard_007": {
+        "query": "Is social media harmful to mental health?",
+        "relevant_docs": ["social_media_harm_001", "social_media_benefit_001"],
+        "notes": "Harm documented but also benefits"
+      },
+      "dispute_hard_008": {
+        "query": "How many species are there on Earth?",
+        "relevant_docs": ["species_8m_001", "species_100m_001"],
+        "notes": "8.7M vs 100M estimates"
+      },
+      "dispute_hard_009": {
+        "query": "Does homework improve student achievement?",
+        "relevant_docs": ["homework_positive_001", "homework_negative_001"],
+        "notes": "Positive in high school, no effect elementary"
+      },
+      "dispute_hard_010": {
+        "query": "What causes autism?",
+        "relevant_docs": ["alzheimer_symptoms_001"],
+        "notes": "Multiple theories with no consensus (uses embedded contexts)"
+      },
+      "dispute_hard_011": {
+        "query": "Is nuclear power safe?",
+        "relevant_docs": ["nuclear_safe_001", "nuclear_accidents_001"],
+        "notes": "Safe by statistics but catastrophic accidents"
+      },
+      "dispute_hard_012": {
+        "query": "How many galaxies are in the universe?",
+        "relevant_docs": ["galaxies_200b_001", "galaxies_2t_001"],
+        "notes": "200B vs 2T - order of magnitude difference"
+      },
+      "dispute_hard_013": {
+        "query": "What determines intelligence?",
+        "relevant_docs": ["intelligence_genetic_001", "intelligence_environment_001"],
+        "notes": "Genetics vs environment debate"
+      },
+      "dispute_hard_014": {
+        "query": "Is organic food healthier?",
+        "relevant_docs": ["organic_stanford_001", "organic_pesticide_001"],
+        "notes": "No nutritional difference but less pesticide"
       }
     },
     "qualification": {
