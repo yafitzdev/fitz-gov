@@ -2,7 +2,7 @@
 
 Target: **200 test cases** across 6 governance categories.
 
-## Current Status (v0.6.0)
+## Current Status (v0.7.0)
 
 | Category | Current | Target | Progress |
 |----------|---------|--------|----------|
@@ -11,8 +11,8 @@ Target: **200 test cases** across 6 governance categories.
 | **Qualification** | **40** | 40 | **100%** |
 | Confidence | 10 | 30 | 33% |
 | **Grounding** | **25** | 25 | **100%** |
-| Relevance | 5 | 25 | 20% |
-| **Total** | **160** | **200** | **80%** |
+| **Relevance** | **25** | 25 | **100%** |
+| **Total** | **180** | **200** | **90%** |
 
 ## Category Descriptions
 
@@ -72,9 +72,20 @@ These test the quality of generated answers.
   - process_hallucination (3): Steps, procedures, workflows
   - attribution_hallucination (3): Quotes, sources, citations
 
-**Relevance** (5/25)
+**Relevance** (25/25) ✓
 - Answers must address the actual question asked
 - Tests use "required elements" that must appear in valid answers
+- Subcategories:
+  - feature_dump (3): Answers with features instead of specific requested info
+  - metric_avoidance (3): Qualitative description instead of concrete numbers
+  - status_dump (3): Progress/status instead of specific dates/milestones
+  - symptom_only (3): Effects/symptoms instead of causes/mechanisms
+  - instruction_only (2): How-to instead of specifications/requirements
+  - tangent_drift (3): Context shifts to related but different topic
+  - partial_answer (3): Answers part but misses key aspect asked
+  - wrong_entity_focus (2): Discusses entity X when asked about entity Y
+  - temporal_mismatch (2): Info from wrong time period than asked
+  - scope_mismatch (1): Wrong level of detail (global vs local)
 
 ## Expansion Priority
 
@@ -82,7 +93,7 @@ These test the quality of generated answers.
 2. ~~**Grounding**~~ ✓ (v0.4.0) - Critical for hallucination prevention
 3. ~~**Abstention**~~ ✓ (v0.5.0) - Core safety behavior
 4. ~~**Dispute**~~ ✓ (v0.6.0) - Important for epistemic honesty
-5. **Relevance** - Answer quality metric
+5. ~~**Relevance**~~ ✓ (v0.7.0) - Answer quality metric
 6. **Confidence** - Ensure system isn't overly cautious
 
 ## Corpus Requirements
@@ -94,7 +105,8 @@ These test the quality of generated answers.
 | v0.4.0 | 146 | +18 for grounding expansion |
 | v0.5.0 | 175 | +29 for abstention expansion |
 | v0.6.0 | 233 | +58 for dispute expansion |
-| Target | ~250 | Support all 200 test cases |
+| v0.7.0 | 258 | +25 for relevance expansion |
+| Target | ~270 | Support all 200 test cases |
 
 Each test case expansion requires corresponding corpus documents with:
 - Relevant documents that support the test query
@@ -103,6 +115,7 @@ Each test case expansion requires corresponding corpus documents with:
 
 ## Version History
 
+- **v0.7.0** - Relevance expansion (5 → 25 cases, 233 → 258 docs)
 - **v0.6.0** - Dispute expansion (10 → 40 cases, 175 → 233 docs)
 - **v0.5.0** - Abstention expansion (10 → 40 cases, 146 → 175 docs)
 - **v0.4.0** - Grounding expansion (5 → 25 cases, 128 → 146 docs)

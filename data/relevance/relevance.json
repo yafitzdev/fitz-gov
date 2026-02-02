@@ -1,9 +1,24 @@
 {
   "category": "relevance",
   "description": "Tests whether LLM answers the actual question asked (not just discusses the topic)",
+  "version": "0.7.0",
+  "subcategories": {
+    "feature_dump": "Answers with features/benefits instead of specific requested info (pricing, specs)",
+    "metric_avoidance": "Gives qualitative description instead of concrete numbers",
+    "status_dump": "Describes progress/status instead of specific dates/milestones",
+    "symptom_only": "Describes effects/symptoms instead of causes/mechanisms",
+    "instruction_only": "Gives how-to instead of specifications/requirements",
+    "tangent_drift": "Context shifts to related but different topic",
+    "partial_answer": "Answers part of the question but misses the key aspect asked",
+    "wrong_entity_focus": "Discusses entity X when specifically asked about entity Y",
+    "temporal_mismatch": "Provides info from wrong time period than asked",
+    "scope_mismatch": "Answers at wrong level of detail (global vs local, summary vs specific)"
+  },
   "cases": [
     {
-      "id": "relevance_001",
+      "id": "relevance_easy_001",
+      "difficulty": "easy",
+      "subcategory": "feature_dump",
       "query": "What is the PRICING of the enterprise plan?",
       "contexts": [
         "Our enterprise plan includes unlimited users, 24/7 support, custom integrations, SSO, and dedicated account management. Enterprise customers also get priority access to new features and a 99.99% SLA."
@@ -11,11 +26,12 @@
       "expected_mode": "confident",
       "description": "Pricing question but context only lists features",
       "rationale": "LLM should acknowledge pricing is not specified, NOT just list features",
-      "required_elements": ["not specified", "not mentioned", "no pricing", "contact", "not provided"],
-      "metadata": {"trap_type": "feature_dump"}
+      "required_elements": ["not specified", "not mentioned", "no pricing", "contact", "not provided"]
     },
     {
-      "id": "relevance_002",
+      "id": "relevance_easy_002",
+      "difficulty": "easy",
+      "subcategory": "metric_avoidance",
       "query": "HOW MANY users does the platform have?",
       "contexts": [
         "Our platform has experienced tremendous growth over the past year. Users love our intuitive interface and powerful analytics capabilities. We've expanded to 15 countries and added support for 8 new languages."
@@ -23,11 +39,12 @@
       "expected_mode": "confident",
       "description": "User count question but context only discusses growth",
       "rationale": "LLM should acknowledge user count is not specified",
-      "required_elements": ["not specified", "not mentioned", "specific number", "not provided", "no exact"],
-      "metadata": {"trap_type": "metric_avoidance"}
+      "required_elements": ["not specified", "not mentioned", "specific number", "not provided", "no exact"]
     },
     {
-      "id": "relevance_003",
+      "id": "relevance_easy_003",
+      "difficulty": "easy",
+      "subcategory": "status_dump",
       "query": "What is the DEADLINE for the project?",
       "contexts": [
         "The project is progressing well with all major milestones completed. The team has delivered the authentication module, API integration, and frontend redesign. Quality assurance testing is currently underway."
@@ -35,11 +52,12 @@
       "expected_mode": "confident",
       "description": "Deadline question but context only discusses progress",
       "rationale": "LLM should acknowledge deadline is not mentioned",
-      "required_elements": ["not specified", "not mentioned", "no deadline", "not provided", "no date"],
-      "metadata": {"trap_type": "status_dump"}
+      "required_elements": ["not specified", "not mentioned", "no deadline", "not provided", "no date"]
     },
     {
-      "id": "relevance_004",
+      "id": "relevance_easy_004",
+      "difficulty": "easy",
+      "subcategory": "symptom_only",
       "query": "What CAUSED the performance degradation?",
       "contexts": [
         "We observed a 40% decrease in API response times last Tuesday. The engineering team immediately began investigating. Performance returned to normal by Wednesday morning after deploying a fix."
@@ -47,11 +65,12 @@
       "expected_mode": "confident",
       "description": "Cause question but context only describes incident timeline",
       "rationale": "LLM should acknowledge the cause is not specified",
-      "required_elements": ["not specified", "not mentioned", "cause", "root cause", "not identified", "not provided"],
-      "metadata": {"trap_type": "symptom_only"}
+      "required_elements": ["not specified", "not mentioned", "cause", "root cause", "not identified", "not provided"]
     },
     {
-      "id": "relevance_005",
+      "id": "relevance_easy_005",
+      "difficulty": "easy",
+      "subcategory": "instruction_only",
       "query": "What is the RECOMMENDED dosage?",
       "contexts": [
         "MedX is indicated for the treatment of moderate to severe pain. It should be taken with food to minimize gastrointestinal side effects. Patients should not drive or operate heavy machinery while taking this medication."
@@ -59,8 +78,267 @@
       "expected_mode": "confident",
       "description": "Dosage question but context only has usage instructions",
       "rationale": "LLM should acknowledge dosage is not specified",
-      "required_elements": ["not specified", "not mentioned", "dosage", "not provided", "consult", "doctor"],
-      "metadata": {"trap_type": "instruction_only"}
+      "required_elements": ["not specified", "not mentioned", "dosage", "not provided", "consult", "doctor"]
+    },
+    {
+      "id": "relevance_easy_006",
+      "difficulty": "easy",
+      "subcategory": "feature_dump",
+      "query": "What are the MINIMUM SYSTEM REQUIREMENTS for the software?",
+      "contexts": [
+        "Our software features an intuitive drag-and-drop interface, real-time collaboration tools, cloud synchronization, and offline mode. The application supports Windows, macOS, and Linux operating systems with mobile apps available for iOS and Android."
+      ],
+      "expected_mode": "confident",
+      "description": "System requirements question but context only lists features and platforms",
+      "rationale": "LLM should acknowledge that minimum specs (RAM, CPU, storage) are not provided",
+      "required_elements": ["not specified", "requirements", "not mentioned", "RAM", "CPU", "storage", "minimum"]
+    },
+    {
+      "id": "relevance_easy_007",
+      "difficulty": "easy",
+      "subcategory": "metric_avoidance",
+      "query": "What is the AVERAGE response time for customer support?",
+      "contexts": [
+        "Our customer support team is known for excellent service quality. Support agents undergo extensive training and have access to comprehensive knowledge bases. Customer satisfaction surveys consistently show positive feedback about our support interactions."
+      ],
+      "expected_mode": "confident",
+      "description": "Response time metric question but context discusses quality not timing",
+      "rationale": "LLM should acknowledge response time metric is not specified",
+      "required_elements": ["not specified", "response time", "not mentioned", "hours", "minutes", "not provided"]
+    },
+    {
+      "id": "relevance_easy_008",
+      "difficulty": "easy",
+      "subcategory": "tangent_drift",
+      "query": "What programming languages does the API support?",
+      "contexts": [
+        "Our API provides comprehensive documentation with code examples. The API uses REST architecture with JSON payloads and supports OAuth 2.0 authentication. Rate limiting is set to 1000 requests per minute for standard accounts."
+      ],
+      "expected_mode": "confident",
+      "description": "Language support question but context discusses API architecture",
+      "rationale": "LLM should acknowledge programming language SDKs are not specified",
+      "required_elements": ["not specified", "language", "SDK", "not mentioned", "not provided", "Python", "Java", "JavaScript"]
+    },
+    {
+      "id": "relevance_medium_001",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "What are the ELIGIBILITY requirements AND application deadline for the scholarship?",
+      "contexts": [
+        "The Merit Excellence Scholarship is open to undergraduate students with a minimum GPA of 3.5. Applicants must be enrolled full-time and demonstrate financial need. Two letters of recommendation are required along with a 500-word personal statement."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for both eligibility AND deadline, context only provides eligibility",
+      "rationale": "LLM should acknowledge the deadline is missing even though eligibility is provided",
+      "required_elements": ["deadline", "not specified", "not mentioned", "when", "date", "not provided"]
+    },
+    {
+      "id": "relevance_medium_002",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is the battery life of the ProTab X1?",
+      "contexts": [
+        "The ProTab X2 features a stunning 12.9-inch OLED display with 120Hz refresh rate. It offers an impressive 14-hour battery life with fast charging support. The device weighs just 450 grams and is available in silver, space gray, and gold."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks about X1 battery life but context provides X2 specs",
+      "rationale": "LLM should recognize X1 ≠ X2 and indicate X1 battery life is not provided",
+      "required_elements": ["X1", "not specified", "not mentioned", "X2", "different", "not provided"]
+    },
+    {
+      "id": "relevance_medium_003",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "What were Q1 2024 sales figures?",
+      "contexts": [
+        "The company reported record Q3 2023 sales of $4.2 billion, representing a 15% year-over-year increase. The growth was driven by strong performance in the consumer electronics division. Q4 2023 projections suggest continued momentum with estimated sales of $4.5 billion."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for Q1 2024 but context only has Q3-Q4 2023",
+      "rationale": "LLM should acknowledge Q1 2024 figures are not provided",
+      "required_elements": ["Q1 2024", "not specified", "not mentioned", "not provided", "2023", "different period"]
+    },
+    {
+      "id": "relevance_medium_004",
+      "difficulty": "medium",
+      "subcategory": "symptom_only",
+      "query": "What MECHANISM allows the drug to reduce inflammation?",
+      "contexts": [
+        "Clinical trials demonstrated that ZymaCure reduces joint inflammation by 67% within 4 weeks. Patients reported significant pain relief and improved mobility. Side effects were mild, with only 8% of participants experiencing minor gastrointestinal discomfort."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for mechanism but context only shows efficacy results",
+      "rationale": "LLM should acknowledge the biochemical mechanism is not explained",
+      "required_elements": ["mechanism", "not specified", "how", "not explained", "pathway", "not mentioned"]
+    },
+    {
+      "id": "relevance_medium_005",
+      "difficulty": "medium",
+      "subcategory": "status_dump",
+      "query": "What is the BUDGET allocation for the marketing department?",
+      "contexts": [
+        "The marketing department has launched three successful campaigns this quarter. Brand awareness increased by 25% and social media engagement doubled. The team expanded from 12 to 18 members and opened a new regional office in Singapore."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for budget but context only discusses activities and results",
+      "rationale": "LLM should acknowledge budget figures are not provided",
+      "required_elements": ["budget", "not specified", "amount", "not mentioned", "dollars", "not provided"]
+    },
+    {
+      "id": "relevance_medium_006",
+      "difficulty": "medium",
+      "subcategory": "feature_dump",
+      "query": "What is the WARRANTY coverage for manufacturer defects?",
+      "contexts": [
+        "The XtremeBlend 5000 blender features a powerful 1500-watt motor, 10 speed settings, and pulse function. It includes a 64-oz BPA-free pitcher, self-cleaning mode, and dishwasher-safe parts. The unit comes with a recipe book and measuring cup."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for warranty details but context lists product features",
+      "rationale": "LLM should acknowledge warranty terms are not specified",
+      "required_elements": ["warranty", "not specified", "coverage", "not mentioned", "years", "not provided"]
+    },
+    {
+      "id": "relevance_medium_007",
+      "difficulty": "medium",
+      "subcategory": "scope_mismatch",
+      "query": "What is the unemployment rate in Austin, Texas specifically?",
+      "contexts": [
+        "The Texas state unemployment rate dropped to 4.1% in November 2024, below the national average of 4.3%. The state added 45,000 jobs in the last quarter, with strong growth in technology and healthcare sectors. Texas now has the second-largest economy among US states."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for Austin-specific rate but context gives state-level data",
+      "rationale": "LLM should acknowledge Austin-specific data is not provided",
+      "required_elements": ["Austin", "not specified", "city", "state-level", "not mentioned", "local"]
+    },
+    {
+      "id": "relevance_medium_008",
+      "difficulty": "medium",
+      "subcategory": "tangent_drift",
+      "query": "What security certifications does the cloud service have?",
+      "contexts": [
+        "Our cloud service provides 99.99% uptime with data centers in 12 regions worldwide. The platform supports automatic scaling and load balancing. Customers can choose between shared and dedicated infrastructure options. All data is encrypted using AES-256."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for certifications (SOC2, ISO) but context discusses infrastructure",
+      "rationale": "LLM should acknowledge security certifications are not listed",
+      "required_elements": ["certification", "not specified", "SOC", "ISO", "compliance", "not mentioned"]
+    },
+    {
+      "id": "relevance_medium_009",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "What are the INGREDIENTS and CALORIE count per serving?",
+      "contexts": [
+        "NutriBar protein bars contain whey protein isolate, almonds, dark chocolate chips, honey, and oat flour. They are gluten-free and contain no artificial sweeteners. Each bar provides 20g of protein and 5g of fiber."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for both ingredients AND calories, context only has ingredients and protein",
+      "rationale": "LLM should acknowledge calorie count is missing",
+      "required_elements": ["calorie", "not specified", "not mentioned", "not provided", "energy"]
+    },
+    {
+      "id": "relevance_hard_001",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is the revenue breakdown for the EMEA region?",
+      "contexts": [
+        "The company's APAC region generated $2.8 billion in revenue, representing 35% of global sales. China accounted for 60% of APAC revenue while Japan contributed 25%. The company plans to expand its presence in Southeast Asia with new offices in Vietnam and Indonesia."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks about EMEA but context discusses APAC",
+      "rationale": "LLM should recognize EMEA ≠ APAC and indicate EMEA figures aren't provided",
+      "required_elements": ["EMEA", "not specified", "Europe", "not mentioned", "APAC", "different region"]
+    },
+    {
+      "id": "relevance_hard_002",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was the company's market share BEFORE the merger?",
+      "contexts": [
+        "Following the merger, GlobalTech now holds 34% market share in the enterprise software sector. The combined entity serves over 10,000 enterprise customers across 45 countries. Post-merger integration is expected to generate $500 million in annual synergies by 2025."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for pre-merger data but context only has post-merger figures",
+      "rationale": "LLM should acknowledge pre-merger market share is not provided",
+      "required_elements": ["before", "pre-merger", "not specified", "prior", "not mentioned", "post-merger"]
+    },
+    {
+      "id": "relevance_hard_003",
+      "difficulty": "hard",
+      "subcategory": "instruction_only",
+      "query": "What are the LOAD CAPACITY specifications for the industrial crane?",
+      "contexts": [
+        "The HeavyLift 9000 crane should be operated only by certified personnel. Before each use, inspect all cables and hydraulic lines for wear. The crane must be positioned on level ground with outriggers fully extended. Never exceed the manufacturer's rated capacity shown on the load chart."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for load specs but context only has operating instructions",
+      "rationale": "LLM should acknowledge actual capacity numbers are not provided",
+      "required_elements": ["capacity", "not specified", "tons", "weight", "not mentioned", "load chart"]
+    },
+    {
+      "id": "relevance_hard_004",
+      "difficulty": "hard",
+      "subcategory": "metric_avoidance",
+      "query": "What is the EXACT fuel efficiency in miles per gallon?",
+      "contexts": [
+        "The EcoSport SUV delivers excellent fuel economy for its class. Drivers consistently praise its efficiency on highway trips. The hybrid powertrain combines a turbocharged engine with an electric motor for optimal performance. The vehicle earned a Green Car certification for its environmental performance."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for specific MPG but context uses vague efficiency language",
+      "rationale": "LLM should acknowledge specific MPG figure is not provided",
+      "required_elements": ["MPG", "miles per gallon", "not specified", "specific", "number", "not mentioned"]
+    },
+    {
+      "id": "relevance_hard_005",
+      "difficulty": "hard",
+      "subcategory": "symptom_only",
+      "query": "WHY did the algorithm produce biased outputs?",
+      "contexts": [
+        "Analysis revealed the algorithm rejected 23% more applications from minority groups. The disparity was consistent across multiple test datasets. After the bias was discovered, the model was immediately taken offline for review. The company issued a public apology and pledged to implement fairness audits."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for cause of bias but context only describes the bias and response",
+      "rationale": "LLM should acknowledge the root cause of bias is not explained",
+      "required_elements": ["why", "cause", "not specified", "reason", "not explained", "training data", "not mentioned"]
+    },
+    {
+      "id": "relevance_hard_006",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the PREREQUISITES, duration, AND certification exam format for the course?",
+      "contexts": [
+        "The Advanced Data Science certification course requires proficiency in Python and basic statistics. Students should have completed at least one introductory machine learning course. The program covers deep learning, NLP, and computer vision with hands-on projects."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for prereqs, duration, AND exam format - only prereqs provided",
+      "rationale": "LLM should acknowledge duration and exam format are not mentioned",
+      "required_elements": ["duration", "exam", "not specified", "weeks", "format", "not mentioned", "how long"]
+    },
+    {
+      "id": "relevance_hard_007",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What is the INTEREST RATE for the business loan?",
+      "contexts": [
+        "Our business loans offer flexible repayment terms from 1 to 10 years. Borrowers can choose between fixed and variable rate options. The application process is streamlined with decisions within 48 hours. Collateral requirements depend on loan amount and business history."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for specific interest rate but context discusses loan terms without rates",
+      "rationale": "LLM should acknowledge the actual interest rate percentage is not provided",
+      "required_elements": ["interest rate", "not specified", "percent", "APR", "not mentioned", "rate"]
+    },
+    {
+      "id": "relevance_hard_008",
+      "difficulty": "hard",
+      "subcategory": "status_dump",
+      "query": "What is the TARGET completion date for Phase 3?",
+      "contexts": [
+        "Phase 1 of the construction project was completed on schedule in March 2024. Phase 2 is currently 75% complete with structural work finished. The project has maintained its safety record with zero lost-time incidents. The construction team has grown to 450 workers across all sites."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for Phase 3 date but context only covers Phase 1-2 status",
+      "rationale": "LLM should acknowledge Phase 3 timeline is not provided",
+      "required_elements": ["Phase 3", "not specified", "date", "target", "not mentioned", "completion"]
     }
   ]
 }

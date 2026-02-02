@@ -1,6 +1,6 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "mappings": {
     "abstention": {
       "abstain_easy_001": {
@@ -853,35 +853,155 @@
       }
     },
     "relevance": {
-      "relevance_001": {
+      "relevance_easy_001": {
         "query": "What is the PRICING of the enterprise plan?",
-        "relevant_docs": ["enterprise_plan_001"],
+        "relevant_docs": ["rel_001"],
         "required_elements": ["not specified", "not mentioned", "no pricing", "contact", "not provided"],
         "notes": "Features listed but no pricing"
       },
-      "relevance_002": {
+      "relevance_easy_002": {
         "query": "HOW MANY users does the platform have?",
-        "relevant_docs": ["platform_growth_001"],
+        "relevant_docs": ["rel_002"],
         "required_elements": ["not specified", "not mentioned", "specific number", "not provided", "no exact"],
         "notes": "Growth discussed but no user count"
       },
-      "relevance_003": {
+      "relevance_easy_003": {
         "query": "What is the DEADLINE for the project?",
-        "relevant_docs": ["project_status_001"],
+        "relevant_docs": ["rel_003"],
         "required_elements": ["not specified", "not mentioned", "no deadline", "not provided", "no date"],
         "notes": "Progress discussed but no deadline"
       },
-      "relevance_004": {
+      "relevance_easy_004": {
         "query": "What CAUSED the performance degradation?",
-        "relevant_docs": ["performance_incident_001"],
+        "relevant_docs": ["rel_004"],
         "required_elements": ["not specified", "not mentioned", "cause", "root cause", "not identified", "not provided"],
-        "notes": "Timeline given but cause not in this doc"
+        "notes": "Timeline given but cause not explained"
       },
-      "relevance_005": {
+      "relevance_easy_005": {
         "query": "What is the RECOMMENDED dosage?",
-        "relevant_docs": ["medx_001"],
+        "relevant_docs": ["rel_005"],
         "required_elements": ["not specified", "not mentioned", "dosage", "not provided", "consult", "doctor"],
         "notes": "Usage instructions but no specific dosage"
+      },
+      "relevance_easy_006": {
+        "query": "What are the MINIMUM SYSTEM REQUIREMENTS for the software?",
+        "relevant_docs": ["rel_006"],
+        "required_elements": ["not specified", "requirements", "not mentioned", "RAM", "CPU", "storage", "minimum"],
+        "notes": "Features and platforms listed but no specs"
+      },
+      "relevance_easy_007": {
+        "query": "What is the AVERAGE response time for customer support?",
+        "relevant_docs": ["rel_007"],
+        "required_elements": ["not specified", "response time", "not mentioned", "hours", "minutes", "not provided"],
+        "notes": "Quality discussed but no timing metrics"
+      },
+      "relevance_easy_008": {
+        "query": "What programming languages does the API support?",
+        "relevant_docs": ["rel_008"],
+        "required_elements": ["not specified", "language", "SDK", "not mentioned", "not provided"],
+        "notes": "API architecture discussed but no SDK languages"
+      },
+      "relevance_medium_001": {
+        "query": "What are the ELIGIBILITY requirements AND application deadline for the scholarship?",
+        "relevant_docs": ["rel_009"],
+        "required_elements": ["deadline", "not specified", "not mentioned", "when", "date", "not provided"],
+        "notes": "Eligibility provided but deadline missing"
+      },
+      "relevance_medium_002": {
+        "query": "What is the battery life of the ProTab X1?",
+        "relevant_docs": ["rel_010"],
+        "required_elements": ["X1", "not specified", "not mentioned", "X2", "different", "not provided"],
+        "notes": "X2 specs provided, not X1"
+      },
+      "relevance_medium_003": {
+        "query": "What were Q1 2024 sales figures?",
+        "relevant_docs": ["rel_011"],
+        "required_elements": ["Q1 2024", "not specified", "not mentioned", "not provided", "2023", "different period"],
+        "notes": "Q3-Q4 2023 figures only"
+      },
+      "relevance_medium_004": {
+        "query": "What MECHANISM allows the drug to reduce inflammation?",
+        "relevant_docs": ["rel_012"],
+        "required_elements": ["mechanism", "not specified", "how", "not explained", "pathway", "not mentioned"],
+        "notes": "Efficacy results but no mechanism"
+      },
+      "relevance_medium_005": {
+        "query": "What is the BUDGET allocation for the marketing department?",
+        "relevant_docs": ["rel_013"],
+        "required_elements": ["budget", "not specified", "amount", "not mentioned", "dollars", "not provided"],
+        "notes": "Activities discussed but no budget figures"
+      },
+      "relevance_medium_006": {
+        "query": "What is the WARRANTY coverage for manufacturer defects?",
+        "relevant_docs": ["rel_014"],
+        "required_elements": ["warranty", "not specified", "coverage", "not mentioned", "years", "not provided"],
+        "notes": "Product features but no warranty info"
+      },
+      "relevance_medium_007": {
+        "query": "What is the unemployment rate in Austin, Texas specifically?",
+        "relevant_docs": ["rel_015"],
+        "required_elements": ["Austin", "not specified", "city", "state-level", "not mentioned", "local"],
+        "notes": "State-level data only, not city-specific"
+      },
+      "relevance_medium_008": {
+        "query": "What security certifications does the cloud service have?",
+        "relevant_docs": ["rel_016"],
+        "required_elements": ["certification", "not specified", "SOC", "ISO", "compliance", "not mentioned"],
+        "notes": "Infrastructure discussed but no certifications"
+      },
+      "relevance_medium_009": {
+        "query": "What are the INGREDIENTS and CALORIE count per serving?",
+        "relevant_docs": ["rel_017"],
+        "required_elements": ["calorie", "not specified", "not mentioned", "not provided", "energy"],
+        "notes": "Ingredients provided but no calorie count"
+      },
+      "relevance_hard_001": {
+        "query": "What is the revenue breakdown for the EMEA region?",
+        "relevant_docs": ["rel_018"],
+        "required_elements": ["EMEA", "not specified", "Europe", "not mentioned", "APAC", "different region"],
+        "notes": "APAC data provided, not EMEA"
+      },
+      "relevance_hard_002": {
+        "query": "What was the company's market share BEFORE the merger?",
+        "relevant_docs": ["rel_019"],
+        "required_elements": ["before", "pre-merger", "not specified", "prior", "not mentioned", "post-merger"],
+        "notes": "Post-merger figures only"
+      },
+      "relevance_hard_003": {
+        "query": "What are the LOAD CAPACITY specifications for the industrial crane?",
+        "relevant_docs": ["rel_020"],
+        "required_elements": ["capacity", "not specified", "tons", "weight", "not mentioned", "load chart"],
+        "notes": "Operating instructions but no capacity specs"
+      },
+      "relevance_hard_004": {
+        "query": "What is the EXACT fuel efficiency in miles per gallon?",
+        "relevant_docs": ["rel_021"],
+        "required_elements": ["MPG", "miles per gallon", "not specified", "specific", "number", "not mentioned"],
+        "notes": "Vague efficiency praise but no MPG figure"
+      },
+      "relevance_hard_005": {
+        "query": "WHY did the algorithm produce biased outputs?",
+        "relevant_docs": ["rel_022"],
+        "required_elements": ["why", "cause", "not specified", "reason", "not explained", "training data", "not mentioned"],
+        "notes": "Bias described but cause not explained"
+      },
+      "relevance_hard_006": {
+        "query": "What are the PREREQUISITES, duration, AND certification exam format for the course?",
+        "relevant_docs": ["rel_023"],
+        "required_elements": ["duration", "exam", "not specified", "weeks", "format", "not mentioned", "how long"],
+        "notes": "Prerequisites only, missing duration and exam format"
+      },
+      "relevance_hard_007": {
+        "query": "What is the INTEREST RATE for the business loan?",
+        "relevant_docs": ["rel_024"],
+        "required_elements": ["interest rate", "not specified", "percent", "APR", "not mentioned", "rate"],
+        "notes": "Loan terms but no interest rate"
+      },
+      "relevance_hard_008": {
+        "query": "What is the TARGET completion date for Phase 3?",
+        "relevant_docs": ["rel_025"],
+        "required_elements": ["Phase 3", "not specified", "date", "target", "not mentioned", "completion"],
+        "notes": "Phase 1-2 status but no Phase 3 timeline"
       }
     }
   }
