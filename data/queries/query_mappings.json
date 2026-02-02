@@ -1,67 +1,247 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "mappings": {
     "abstention": {
       "abstain_easy_001": {
         "query": "What was Apple's revenue in Q4 2024?",
         "relevant_docs": [],
         "decoy_docs": ["bio_001", "bio_002"],
-        "notes": "No Apple financial docs exist - should abstain"
+        "notes": "Biology docs cannot answer business finance questions"
       },
       "abstain_easy_002": {
         "query": "Who won the 2024 Super Bowl?",
         "relevant_docs": [],
-        "decoy_docs": ["hist_001", "hist_002", "sports_generic_001"],
-        "notes": "No Super Bowl results - generic football doc is decoy"
+        "decoy_docs": ["hist_001", "hist_002"],
+        "notes": "European history cannot answer American sports questions"
       },
       "abstain_easy_003": {
         "query": "How do I configure nginx reverse proxy?",
         "relevant_docs": [],
-        "decoy_docs": ["env_001", "env_002", "nginx_001"],
-        "notes": "nginx_001 mentions nginx but no config details"
+        "decoy_docs": ["env_001", "env_002"],
+        "notes": "Ecology cannot answer server configuration questions"
       },
       "abstain_easy_004": {
         "query": "What are the side effects of ibuprofen?",
         "relevant_docs": [],
-        "decoy_docs": ["prog_001", "prog_002", "ibuprofen_generic_001"],
-        "notes": "Generic OTC doc doesn't list specific ibuprofen side effects"
+        "decoy_docs": ["prog_001", "prog_002"],
+        "notes": "Programming languages cannot answer pharmaceutical questions"
+      },
+      "abstain_easy_005": {
+        "query": "What is the recipe for beef stroganoff?",
+        "relevant_docs": [],
+        "decoy_docs": ["quantum_physics_001"],
+        "notes": "Physics cannot answer cooking questions"
+      },
+      "abstain_easy_006": {
+        "query": "How do I train a puppy not to bite?",
+        "relevant_docs": [],
+        "decoy_docs": ["wwi_treaty_001"],
+        "notes": "Political history cannot answer pet training questions"
+      },
+      "abstain_easy_007": {
+        "query": "What are the lyrics to 'Bohemian Rhapsody'?",
+        "relevant_docs": [],
+        "decoy_docs": ["anatomy_heart_001"],
+        "notes": "Human anatomy cannot answer music questions"
+      },
+      "abstain_easy_008": {
+        "query": "What is the current exchange rate for USD to EUR?",
+        "relevant_docs": [],
+        "decoy_docs": ["geography_peaks_001"],
+        "notes": "Geographical features cannot answer currency questions"
+      },
+      "abstain_easy_009": {
+        "query": "How do I fix a leaky faucet?",
+        "relevant_docs": [],
+        "decoy_docs": ["literature_shakespeare_001"],
+        "notes": "Literary history cannot answer plumbing questions"
+      },
+      "abstain_easy_010": {
+        "query": "What are the rules of chess?",
+        "relevant_docs": [],
+        "decoy_docs": ["bio_001", "bio_002"],
+        "notes": "Cell biology cannot answer game rules questions"
+      },
+      "abstain_easy_011": {
+        "query": "What flights are available from NYC to LA tomorrow?",
+        "relevant_docs": [],
+        "decoy_docs": ["art_vangogh_001"],
+        "notes": "Art history cannot answer real-time flight availability"
+      },
+      "abstain_easy_012": {
+        "query": "How do I file my taxes?",
+        "relevant_docs": [],
+        "decoy_docs": ["chemistry_periodic_001"],
+        "notes": "Chemistry cannot answer tax filing questions"
       },
       "abstain_medium_001": {
         "query": "What is Tesla's current stock price?",
         "relevant_docs": [],
-        "decoy_docs": ["auto_001", "auto_002", "tesla_industry_001"],
-        "notes": "EV market docs but no Tesla stock price"
+        "decoy_docs": ["auto_001", "auto_002"],
+        "notes": "Ford and GM info cannot answer Tesla-specific stock questions"
       },
       "abstain_medium_002": {
         "query": "What are the symptoms of type 2 diabetes?",
         "relevant_docs": [],
-        "decoy_docs": ["med_001", "med_002", "type2_generic_001"],
-        "notes": "Type 1 and gestational docs, but no type 2 symptoms"
+        "decoy_docs": ["med_001", "med_002"],
+        "notes": "Type 1 and gestational diabetes info cannot answer type 2 symptoms"
       },
       "abstain_medium_003": {
         "query": "How do I deploy a React app to AWS?",
         "relevant_docs": [],
-        "decoy_docs": ["tech_001", "tech_002", "react_001", "react_aws_generic_001"],
-        "notes": "React overview exists but no AWS deployment guide"
+        "decoy_docs": ["tech_001", "tech_002"],
+        "notes": "Angular and Vue info cannot answer React/AWS deployment"
       },
       "abstain_medium_004": {
         "query": "What is the population of Tokyo?",
         "relevant_docs": [],
-        "decoy_docs": ["geo_001", "geo_002", "tokyo_generic_001"],
-        "notes": "Osaka/Kyoto docs, generic Asia cities doc - no Tokyo population"
+        "decoy_docs": ["geo_001", "geo_002"],
+        "notes": "Osaka and Kyoto info cannot answer Tokyo population"
+      },
+      "abstain_medium_005": {
+        "query": "What are Microsoft's quarterly earnings?",
+        "relevant_docs": [],
+        "decoy_docs": ["google_earnings_001"],
+        "notes": "Google and Amazon financials cannot answer Microsoft question"
+      },
+      "abstain_medium_006": {
+        "query": "What are the features of the iPhone 16?",
+        "relevant_docs": [],
+        "decoy_docs": ["samsung_pixel_001"],
+        "notes": "Samsung and Google phone specs cannot answer iPhone question"
+      },
+      "abstain_medium_007": {
+        "query": "What was the unemployment rate in 2024?",
+        "relevant_docs": [],
+        "decoy_docs": ["unemployment_2020_001"],
+        "notes": "2020-2021 unemployment data cannot answer 2024 question"
+      },
+      "abstain_medium_008": {
+        "query": "Who won the 2024 World Series?",
+        "relevant_docs": [],
+        "decoy_docs": ["world_series_history_001"],
+        "notes": "2021 and 2023 results cannot answer 2024 question"
+      },
+      "abstain_medium_009": {
+        "query": "What is the treatment for Parkinson's disease?",
+        "relevant_docs": [],
+        "decoy_docs": ["alzheimer_ms_001"],
+        "notes": "Alzheimer's and MS treatments cannot answer Parkinson's question"
+      },
+      "abstain_medium_010": {
+        "query": "What are the admission requirements for Harvard?",
+        "relevant_docs": [],
+        "decoy_docs": ["stanford_mit_001"],
+        "notes": "Stanford and MIT requirements cannot answer Harvard question"
+      },
+      "abstain_medium_011": {
+        "query": "How do I use Python for web scraping?",
+        "relevant_docs": [],
+        "decoy_docs": ["python_ml_001"],
+        "notes": "Python data science info cannot answer web scraping question"
+      },
+      "abstain_medium_012": {
+        "query": "What is the capital gains tax rate?",
+        "relevant_docs": [],
+        "decoy_docs": ["tax_rates_001"],
+        "notes": "Income and corporate tax rates cannot answer capital gains"
+      },
+      "abstain_medium_013": {
+        "query": "What is the current price of Bitcoin?",
+        "relevant_docs": [],
+        "decoy_docs": ["bitcoin_history_001"],
+        "notes": "Historical Bitcoin prices cannot answer current price"
+      },
+      "abstain_medium_014": {
+        "query": "What are the side effects of Moderna's COVID vaccine?",
+        "relevant_docs": [],
+        "decoy_docs": ["pfizer_jj_001"],
+        "notes": "Pfizer and J&J vaccine info cannot answer Moderna question"
       },
       "abstain_hard_001": {
         "query": "Why did the 2008 financial crisis happen?",
         "relevant_docs": [],
         "decoy_docs": ["fin_001", "fin_002", "fin_003"],
-        "notes": "Crisis effects/responses only - no CAUSES"
+        "notes": "Crisis effects and responses cannot answer causes question"
       },
       "abstain_hard_002": {
         "query": "What is the mechanism of action of aspirin?",
         "relevant_docs": [],
         "decoy_docs": ["pharma_001", "pharma_002"],
-        "notes": "Uses and side effects only - no mechanism (COX inhibition)"
+        "notes": "Uses, dosage, side effects cannot answer mechanism question"
+      },
+      "abstain_hard_003": {
+        "query": "How does CRISPR gene editing work?",
+        "relevant_docs": [],
+        "decoy_docs": ["crispr_ethics_001"],
+        "notes": "Applications and ethics cannot explain CRISPR mechanism"
+      },
+      "abstain_hard_004": {
+        "query": "What causes Alzheimer's disease?",
+        "relevant_docs": [],
+        "decoy_docs": ["alzheimer_symptoms_001"],
+        "notes": "Symptoms and treatments cannot answer causation question"
+      },
+      "abstain_hard_005": {
+        "query": "What is the full text of the First Amendment?",
+        "relevant_docs": [],
+        "decoy_docs": ["first_amendment_001"],
+        "notes": "Summary and case law cannot substitute for actual text"
+      },
+      "abstain_hard_006": {
+        "query": "What is the exact API endpoint for user authentication?",
+        "relevant_docs": [],
+        "decoy_docs": ["api_auth_001"],
+        "notes": "General API info cannot answer specific endpoint URL"
+      },
+      "abstain_hard_007": {
+        "query": "What is the chemical formula for table salt?",
+        "relevant_docs": [],
+        "decoy_docs": ["salt_health_001"],
+        "notes": "Health and nutrition info cannot answer chemistry question"
+      },
+      "abstain_hard_008": {
+        "query": "How does TCP/IP networking work?",
+        "relevant_docs": [],
+        "decoy_docs": ["network_security_001"],
+        "notes": "Network security info cannot explain TCP/IP protocol mechanics"
+      },
+      "abstain_hard_009": {
+        "query": "How is steel manufactured?",
+        "relevant_docs": [],
+        "decoy_docs": ["steel_production_001"],
+        "notes": "Applications and production stats cannot explain manufacturing"
+      },
+      "abstain_hard_010": {
+        "query": "What is the exact dosage of metformin for diabetes?",
+        "relevant_docs": [],
+        "decoy_docs": ["metformin_001"],
+        "notes": "Mechanism and side effects cannot substitute for dosing info"
+      },
+      "abstain_hard_011": {
+        "query": "What is the proof of the Pythagorean theorem?",
+        "relevant_docs": [],
+        "decoy_docs": ["pythagorean_001"],
+        "notes": "Statement and applications cannot substitute for proof"
+      },
+      "abstain_hard_012": {
+        "query": "What is Amazon's return policy?",
+        "relevant_docs": [],
+        "decoy_docs": ["amazon_river_001"],
+        "notes": "Amazon rainforest info cannot answer Amazon.com question"
+      },
+      "abstain_hard_013": {
+        "query": "How do I apply for an Apple credit card?",
+        "relevant_docs": [],
+        "decoy_docs": ["apple_financials_001"],
+        "notes": "Company financials cannot answer credit card application"
+      },
+      "abstain_hard_014": {
+        "query": "What is the phone number for customer support?",
+        "relevant_docs": [],
+        "decoy_docs": ["support_availability_001"],
+        "notes": "Support availability cannot substitute for contact number"
       }
     },
     "dispute": {

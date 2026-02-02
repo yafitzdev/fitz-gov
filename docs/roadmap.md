@@ -2,17 +2,17 @@
 
 Target: **200 test cases** across 6 governance categories.
 
-## Current Status (v0.4.0)
+## Current Status (v0.5.0)
 
 | Category | Current | Target | Progress |
 |----------|---------|--------|----------|
-| Abstention | 10 | 40 | 25% |
+| **Abstention** | **40** | 40 | **100%** |
 | Dispute | 10 | 40 | 25% |
 | **Qualification** | **40** | 40 | **100%** |
 | Confidence | 10 | 30 | 33% |
 | **Grounding** | **25** | 25 | **100%** |
 | Relevance | 5 | 25 | 20% |
-| **Total** | **100** | **200** | **50%** |
+| **Total** | **130** | **200** | **65%** |
 
 ## Category Descriptions
 
@@ -20,9 +20,15 @@ Target: **200 test cases** across 6 governance categories.
 
 These test the system's ability to select the correct answer mode.
 
-**Abstention** (10/40)
+**Abstention** (40/40) ✓
 - System should refuse to answer when context is irrelevant or insufficient
-- Subcategories: no_relevant_context, out_of_scope, insufficient_detail
+- Subcategories:
+  - different_domain (12): Query and context are completely unrelated fields
+  - wrong_entity (10): Same domain but different company/person/product
+  - wrong_time_period (3): Same topic but different time
+  - wrong_aspect (6): Same subject but different aspect (causes vs effects)
+  - partial_topic (4): Related info but missing the key detail asked
+  - decoy_keywords (5): Context has keywords from query but doesn't answer
 
 **Dispute** (10/40)
 - System should flag when sources contain conflicting information
@@ -67,7 +73,7 @@ These test the quality of generated answers.
 
 1. ~~**Qualification**~~ ✓ (v0.3.0) - Was 10% accuracy, now has comprehensive coverage
 2. ~~**Grounding**~~ ✓ (v0.4.0) - Critical for hallucination prevention
-3. **Abstention** - Core safety behavior
+3. ~~**Abstention**~~ ✓ (v0.5.0) - Core safety behavior
 4. **Dispute** - Important for epistemic honesty
 5. **Relevance** - Answer quality metric
 6. **Confidence** - Ensure system isn't overly cautious
@@ -79,6 +85,7 @@ These test the quality of generated answers.
 | v0.2.0 | 100 | Initial handcrafted corpus |
 | v0.3.0 | 128 | +28 for qualification expansion |
 | v0.4.0 | 146 | +18 for grounding expansion |
+| v0.5.0 | 175 | +29 for abstention expansion |
 | Target | ~250 | Support all 200 test cases |
 
 Each test case expansion requires corresponding corpus documents with:
@@ -88,6 +95,7 @@ Each test case expansion requires corresponding corpus documents with:
 
 ## Version History
 
+- **v0.5.0** - Abstention expansion (10 → 40 cases, 146 → 175 docs)
 - **v0.4.0** - Grounding expansion (5 → 25 cases, 128 → 146 docs)
 - **v0.3.0** - Qualification expansion (10 → 40 cases, 100 → 128 docs)
 - **v0.2.0** - Initial handcrafted test set (50 cases, 100 docs)
