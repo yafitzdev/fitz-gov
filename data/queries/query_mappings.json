@@ -1,6 +1,6 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "mappings": {
     "abstention": {
       "abstain_easy_001": {
@@ -137,6 +137,36 @@
         "relevant_docs": ["python_ds_001", "python_ds_002"],
         "notes": "Usage stats but no WHY"
       },
+      "qualify_easy_005": {
+        "query": "Why did sales increase this quarter?",
+        "relevant_docs": ["sales_growth_001"],
+        "notes": "Sales numbers shown but no causal explanation"
+      },
+      "qualify_easy_006": {
+        "query": "Why do customers leave negative reviews?",
+        "relevant_docs": ["review_stats_001"],
+        "notes": "Review statistics without actual customer feedback content"
+      },
+      "qualify_easy_007": {
+        "query": "Will the new feature be successful?",
+        "relevant_docs": ["beta_feature_001"],
+        "notes": "Beta status and costs but no success indicators"
+      },
+      "qualify_easy_008": {
+        "query": "Why did website traffic decrease?",
+        "relevant_docs": ["traffic_analytics_001"],
+        "notes": "Traffic metrics shown but no cause identified"
+      },
+      "qualify_easy_009": {
+        "query": "What will our market share be next year?",
+        "relevant_docs": ["market_share_001"],
+        "notes": "Current market position without predictive data"
+      },
+      "qualify_easy_010": {
+        "query": "Why did the app crash?",
+        "relevant_docs": ["app_crash_001"],
+        "notes": "Crash timeline without root cause analysis"
+      },
       "qualify_medium_001": {
         "query": "Why did employee satisfaction decrease?",
         "relevant_docs": ["satisfaction_001", "satisfaction_002", "satisfaction_003"],
@@ -157,6 +187,61 @@
         "relevant_docs": ["bitcoin_001", "bitcoin_002", "bitcoin_003"],
         "notes": "Predictions and patterns - no certain answer"
       },
+      "qualify_medium_005": {
+        "query": "Why do people who exercise regularly earn more money?",
+        "relevant_docs": ["exercise_income_001"],
+        "notes": "Correlation data without causal mechanism"
+      },
+      "qualify_medium_006": {
+        "query": "What do users think about the new design?",
+        "relevant_docs": ["user_research_001"],
+        "notes": "Very small sample size (5 interviews) for generalization"
+      },
+      "qualify_medium_007": {
+        "query": "Why did customer churn increase?",
+        "relevant_docs": ["churn_001", "churn_002"],
+        "notes": "Multiple potential causes without clear attribution"
+      },
+      "qualify_medium_008": {
+        "query": "Will the merger be approved by regulators?",
+        "relevant_docs": ["merger_regulatory_001"],
+        "notes": "Regulatory precedent but no certainty"
+      },
+      "qualify_medium_009": {
+        "query": "Is remote work better for productivity?",
+        "relevant_docs": ["remote_001", "remote_002", "remote_003", "remote_004"],
+        "notes": "Single study with methodological limitations"
+      },
+      "qualify_medium_010": {
+        "query": "Why is the team's velocity declining?",
+        "relevant_docs": ["sprint_velocity_001"],
+        "notes": "Multiple changes coinciding with velocity drop"
+      },
+      "qualify_medium_011": {
+        "query": "Why do companies with diverse boards perform better?",
+        "relevant_docs": ["diversity_study_001"],
+        "notes": "Correlation between diversity and performance"
+      },
+      "qualify_medium_012": {
+        "query": "How many users will we have by year end?",
+        "relevant_docs": ["user_growth_001"],
+        "notes": "Growth projection with many unknowns"
+      },
+      "qualify_medium_013": {
+        "query": "Which framework is better for our project?",
+        "relevant_docs": ["framework_comparison_001"],
+        "notes": "Partial information for framework decision"
+      },
+      "qualify_medium_014": {
+        "query": "What's the best marketing channel for our product?",
+        "relevant_docs": ["marketing_test_001"],
+        "notes": "Very limited test data for major decision"
+      },
+      "qualify_medium_015": {
+        "query": "Why did conversion rate improve after the redesign?",
+        "relevant_docs": ["conversion_redesign_001"],
+        "notes": "Improvement coinciding with multiple events"
+      },
       "qualify_hard_001": {
         "query": "Why do cities with more ice cream sales have higher crime rates?",
         "relevant_docs": ["icecream_crime_001"],
@@ -166,6 +251,71 @@
         "query": "Why do children who eat breakfast perform better in school?",
         "relevant_docs": ["breakfast_school_001"],
         "notes": "Correlation - breakfast may be proxy for other factors"
+      },
+      "qualify_hard_003": {
+        "query": "Why do hospital patients who get more visitors recover faster?",
+        "relevant_docs": ["hospital_visitors_001"],
+        "notes": "Correlation with confounding health factors"
+      },
+      "qualify_hard_004": {
+        "query": "Why do people who read more books live longer?",
+        "relevant_docs": ["reading_longevity_001"],
+        "notes": "Controlled study but causation still uncertain"
+      },
+      "qualify_hard_005": {
+        "query": "Based on our pilot results, should we scale this approach?",
+        "relevant_docs": ["pilot_study_001"],
+        "notes": "Tiny pilot used to justify massive rollout"
+      },
+      "qualify_hard_006": {
+        "query": "Is this treatment effective?",
+        "relevant_docs": ["phase2_trial_001"],
+        "notes": "Promising but incomplete clinical evidence (phase 2 only)"
+      },
+      "qualify_hard_007": {
+        "query": "Why did our revenue grow 50% this year?",
+        "relevant_docs": ["revenue_factors_001"],
+        "notes": "Multiple factors contributing to outcome"
+      },
+      "qualify_hard_008": {
+        "query": "Will this technology become mainstream in 5 years?",
+        "relevant_docs": ["tech_adoption_001"],
+        "notes": "Early-stage technology prediction"
+      },
+      "qualify_hard_009": {
+        "query": "Why do employees who take more vacation days get promoted more often?",
+        "relevant_docs": ["vacation_promotion_001"],
+        "notes": "Correlation confounded by seniority"
+      },
+      "qualify_hard_010": {
+        "query": "Should we adopt this new methodology based on the case study?",
+        "relevant_docs": ["methodology_case_001"],
+        "notes": "Single biased case study for major decision"
+      },
+      "qualify_hard_011": {
+        "query": "Why did our NPS score improve this quarter?",
+        "relevant_docs": ["nps_improvement_001"],
+        "notes": "Multiple simultaneous changes affecting NPS"
+      },
+      "qualify_hard_012": {
+        "query": "What percentage of users will pay for premium?",
+        "relevant_docs": ["premium_conversion_001"],
+        "notes": "Limited test used to project conversion"
+      },
+      "qualify_hard_013": {
+        "query": "Why do companies that blog more have higher revenue?",
+        "relevant_docs": ["blogging_revenue_001"],
+        "notes": "Correlation confounded by company size/resources"
+      },
+      "qualify_hard_014": {
+        "query": "Will our product succeed in the Japanese market?",
+        "relevant_docs": ["japan_market_001"],
+        "notes": "Market entry prediction with cultural gaps"
+      },
+      "qualify_hard_015": {
+        "query": "Is our security adequate against sophisticated attackers?",
+        "relevant_docs": ["security_assessment_001"],
+        "notes": "Security assessment with significant gaps"
       }
     },
     "confidence": {
