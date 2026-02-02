@@ -1,6 +1,6 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "mappings": {
     "abstention": {
       "abstain_easy_001": {
@@ -371,35 +371,155 @@
       }
     },
     "grounding": {
-      "grounding_001": {
+      "grounding_easy_001": {
         "query": "What is the company's revenue?",
         "relevant_docs": ["techcorp_revenue_001"],
-        "forbidden_claims": ["$", "million", "billion", "revenue of", "earned"],
+        "forbidden_claims": ["$", "million", "billion", "revenue of", "earned", "generated"],
         "notes": "Discusses performance but no specific revenue figure"
       },
-      "grounding_002": {
+      "grounding_easy_002": {
         "query": "Who is the CEO of Acme Corp?",
         "relevant_docs": ["acme_leadership_001"],
-        "forbidden_claims": ["John", "Jane", "Smith", "CEO is", "led by", "headed by"],
+        "forbidden_claims": ["John", "Jane", "Smith", "Johnson", "CEO is", "led by", "headed by", "the CEO"],
         "notes": "Leadership changes discussed but no names"
       },
-      "grounding_003": {
-        "query": "What are the side effects of this medication?",
-        "relevant_docs": ["drugx_001"],
-        "forbidden_claims": ["headache", "nausea", "dizziness", "fatigue", "common side effects include"],
-        "notes": "FDA approved, well-tolerated - no specific side effects"
-      },
-      "grounding_004": {
+      "grounding_easy_003": {
         "query": "When will the product launch?",
         "relevant_docs": ["product_dev_001"],
-        "forbidden_claims": ["Q1", "Q2", "Q3", "Q4", "January", "February", "March", "2024", "2025", "launching in", "expected to launch"],
+        "forbidden_claims": ["Q1", "Q2", "Q3", "Q4", "January", "February", "March", "April", "May", "June", "2024", "2025", "2026", "launching in", "expected to launch", "will launch"],
         "notes": "Development progress but no launch date"
       },
-      "grounding_005": {
+      "grounding_easy_004": {
         "query": "What programming languages does the API support?",
         "relevant_docs": ["api_docs_001"],
-        "forbidden_claims": ["Python", "JavaScript", "Java", "Ruby", "Go", "supports", "available in"],
+        "forbidden_claims": ["Python", "JavaScript", "Java", "Ruby", "Go", "C#", "PHP", "TypeScript", "supports", "available in", "SDKs for"],
         "notes": "SDKs mentioned but no specific languages"
+      },
+      "grounding_easy_005": {
+        "query": "What are the side effects of this medication?",
+        "relevant_docs": ["drugx_001"],
+        "forbidden_claims": ["headache", "nausea", "dizziness", "fatigue", "drowsiness", "insomnia", "common side effects include", "may cause", "patients experienced"],
+        "notes": "FDA approved, well-tolerated - no specific side effects"
+      },
+      "grounding_easy_006": {
+        "query": "How many employees does the company have?",
+        "relevant_docs": ["globaltech_growth_001"],
+        "forbidden_claims": ["employees", "workers", "staff of", "team of", "workforce of", "100", "500", "1000", "5000", "10000"],
+        "notes": "Growth mentioned but no employee count"
+      },
+      "grounding_easy_007": {
+        "query": "Where is the company headquarters located?",
+        "relevant_docs": ["megacorp_overview_001"],
+        "forbidden_claims": ["San Francisco", "New York", "Seattle", "Austin", "Boston", "Silicon Valley", "California", "headquartered in", "based in", "located in"],
+        "notes": "Multinational but no HQ location"
+      },
+      "grounding_easy_008": {
+        "query": "Who founded the company?",
+        "relevant_docs": ["startupx_history_001"],
+        "forbidden_claims": ["founded by", "co-founded", "founder", "started by", "created by", "John", "Jane", "Michael", "Sarah", "David"],
+        "notes": "Founding year but no founder names"
+      },
+      "grounding_medium_001": {
+        "query": "What is the price of the enterprise plan?",
+        "relevant_docs": ["enterprise_plan_001"],
+        "forbidden_claims": ["$", "per month", "per year", "annually", "costs", "priced at", "starting at", "contact sales"],
+        "notes": "Features listed but no pricing"
+      },
+      "grounding_medium_002": {
+        "query": "What are the steps to reset my password?",
+        "relevant_docs": ["password_security_001"],
+        "forbidden_claims": ["click", "select", "enter", "step 1", "step 2", "first", "then", "navigate to", "go to"],
+        "notes": "Password management mentioned but no specific steps"
+      },
+      "grounding_medium_003": {
+        "query": "What did the CEO say about the acquisition?",
+        "relevant_docs": ["acquisition_news_001"],
+        "forbidden_claims": ["said", "stated", "commented", "announced", "according to", "quote"],
+        "notes": "Acquisition announced but no CEO quotes"
+      },
+      "grounding_medium_004": {
+        "query": "What are the system requirements?",
+        "relevant_docs": ["desktop_app_001"],
+        "forbidden_claims": ["GB", "RAM", "processor", "CPU", "Windows", "macOS", "Linux", "minimum", "recommended", "requires"],
+        "notes": "Desktop app but no system requirements"
+      },
+      "grounding_medium_005": {
+        "query": "What is the recommended dosage?",
+        "relevant_docs": ["medx_001"],
+        "forbidden_claims": ["mg", "milligram", "tablet", "capsule", "once daily", "twice daily", "every", "hours", "take"],
+        "notes": "Usage info but no specific dosage"
+      },
+      "grounding_medium_006": {
+        "query": "When was the company founded?",
+        "relevant_docs": ["datacorp_history_001"],
+        "forbidden_claims": ["1990", "1995", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "founded in", "established in", "started in"],
+        "notes": "Two decades mentioned but no specific year"
+      },
+      "grounding_medium_007": {
+        "query": "What is the company's market share?",
+        "relevant_docs": ["industryleader_001"],
+        "forbidden_claims": ["%", "percent", "share of", "market share", "controls", "dominates", "leads with"],
+        "notes": "Top player but no market share percentage"
+      },
+      "grounding_medium_008": {
+        "query": "Which countries is the product available in?",
+        "relevant_docs": ["global_product_001"],
+        "forbidden_claims": ["United States", "UK", "Germany", "France", "Japan", "Canada", "Australia", "available in", "launched in", "countries including"],
+        "notes": "Global reach but no specific countries"
+      },
+      "grounding_medium_009": {
+        "query": "What do experts say about this approach?",
+        "relevant_docs": ["methodology_interest_001"],
+        "forbidden_claims": ["Dr.", "Professor", "expert", "researcher", "according to", "says", "believes", "argues", "Harvard", "MIT", "Stanford"],
+        "notes": "Industry interest but no expert quotes"
+      },
+      "grounding_medium_010": {
+        "query": "How do I integrate with Salesforce?",
+        "relevant_docs": ["crm_integration_001"],
+        "forbidden_claims": ["API key", "OAuth", "connected app", "install", "configure", "step", "click", "navigate", "settings"],
+        "notes": "CRM integration but no specific steps"
+      },
+      "grounding_hard_001": {
+        "query": "What was the conversion rate improvement?",
+        "relevant_docs": ["checkout_improvement_001"],
+        "forbidden_claims": ["%", "percent", "increased by", "improved by", "from", "to", "conversion rate of", "lift of"],
+        "notes": "Meaningful improvements but no numbers"
+      },
+      "grounding_hard_002": {
+        "query": "What encryption standard does the platform use?",
+        "relevant_docs": ["security_priority_001"],
+        "forbidden_claims": ["AES", "RSA", "256", "128", "bit", "TLS", "SSL", "encryption standard", "encrypted using", "algorithm"],
+        "notes": "Encrypted but no specific standard"
+      },
+      "grounding_hard_003": {
+        "query": "What research supports this claim?",
+        "relevant_docs": ["exercise_cognitive_001"],
+        "forbidden_claims": ["study by", "research from", "published in", "journal", "university", "found that", "showed that", "2020", "2021", "2022", "2023"],
+        "notes": "Studies mentioned but no specific citations"
+      },
+      "grounding_hard_004": {
+        "query": "How much faster is the new algorithm?",
+        "relevant_docs": ["algorithm_optimization_001"],
+        "forbidden_claims": ["x faster", "times faster", "% faster", "percent", "milliseconds", "seconds", "reduced by", "from", "to", "speedup"],
+        "notes": "Significantly faster but no specific numbers"
+      },
+      "grounding_hard_005": {
+        "query": "What is the success rate of this treatment?",
+        "relevant_docs": ["treatment_promise_001"],
+        "forbidden_claims": ["%", "percent", "success rate", "effective in", "patients", "out of", "cure rate", "remission rate"],
+        "notes": "Promising but no success rate"
+      },
+      "grounding_hard_006": {
+        "query": "When will the next version be released?",
+        "relevant_docs": ["next_release_001"],
+        "forbidden_claims": ["Q1", "Q2", "Q3", "Q4", "2024", "2025", "2026", "month", "week", "expected", "planned for", "releasing in", "coming in"],
+        "notes": "Beta testing but no release date"
+      },
+      "grounding_hard_007": {
+        "query": "What is the exact approval workflow?",
+        "relevant_docs": ["approval_workflow_001"],
+        "forbidden_claims": ["submitter", "reviewer", "approver", "manager", "step 1", "first", "then", "finally", "routed to", "escalated to"],
+        "notes": "Configurable workflows but no default process"
       }
     },
     "relevance": {

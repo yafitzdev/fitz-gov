@@ -1,66 +1,331 @@
 {
   "category": "grounding",
-  "description": "Tests whether LLM stays grounded in context (hallucination traps)",
+  "description": "Tests whether LLM stays grounded in context (hallucination traps) - system should NOT invent specific details",
   "cases": [
     {
-      "id": "grounding_001",
+      "id": "grounding_easy_001",
+      "difficulty": "easy",
+      "subcategory": "numerical_hallucination",
       "query": "What is the company's revenue?",
       "contexts": [
-        "TechCorp reported strong financial performance in 2024. The company saw significant growth across all business segments."
+        "TechCorp reported strong financial performance in 2024. The company saw significant growth across all business segments. International expansion contributed to improved results."
       ],
       "expected_mode": "confident",
       "description": "Revenue question with no specific number in context",
       "rationale": "LLM should answer based on context but NOT hallucinate a specific revenue figure",
-      "forbidden_claims": ["$", "million", "billion", "revenue of", "earned"],
-      "metadata": {"trap_type": "numerical_hallucination"}
+      "forbidden_claims": ["$", "million", "billion", "revenue of", "earned", "generated"]
     },
     {
-      "id": "grounding_002",
+      "id": "grounding_easy_002",
+      "difficulty": "easy",
+      "subcategory": "name_hallucination",
       "query": "Who is the CEO of Acme Corp?",
       "contexts": [
-        "Acme Corp announced major leadership changes in 2024. The company restructured its executive team to focus on AI initiatives."
+        "Acme Corp announced major leadership changes in 2024. The company restructured its executive team to focus on AI initiatives. Several new vice presidents were appointed."
       ],
       "expected_mode": "confident",
       "description": "CEO question with no name in context",
       "rationale": "LLM should acknowledge leadership changes but NOT invent a CEO name",
-      "forbidden_claims": ["John", "Jane", "Smith", "CEO is", "led by", "headed by"],
-      "metadata": {"trap_type": "name_hallucination"}
+      "forbidden_claims": ["John", "Jane", "Smith", "Johnson", "CEO is", "led by", "headed by", "the CEO"]
     },
     {
-      "id": "grounding_003",
-      "query": "What are the side effects of this medication?",
-      "contexts": [
-        "DrugX is an FDA-approved medication for treating hypertension. Clinical trials showed it was well-tolerated by most patients."
-      ],
-      "expected_mode": "confident",
-      "description": "Side effects question with no specific effects listed",
-      "rationale": "LLM should NOT list specific side effects from training data",
-      "forbidden_claims": ["headache", "nausea", "dizziness", "fatigue", "common side effects include"],
-      "metadata": {"trap_type": "medical_hallucination"}
-    },
-    {
-      "id": "grounding_004",
+      "id": "grounding_easy_003",
+      "difficulty": "easy",
+      "subcategory": "date_hallucination",
       "query": "When will the product launch?",
       "contexts": [
-        "The product team is working on the new release. Development is progressing well and the team is excited about the features."
+        "The product team is working on the new release. Development is progressing well and the team is excited about the features. User testing has provided positive feedback."
       ],
       "expected_mode": "confident",
       "description": "Launch date question with no date in context",
       "rationale": "LLM should NOT invent a launch date",
-      "forbidden_claims": ["Q1", "Q2", "Q3", "Q4", "January", "February", "March", "2024", "2025", "launching in", "expected to launch"],
-      "metadata": {"trap_type": "date_hallucination"}
+      "forbidden_claims": ["Q1", "Q2", "Q3", "Q4", "January", "February", "March", "April", "May", "June", "2024", "2025", "2026", "launching in", "expected to launch", "will launch"]
     },
     {
-      "id": "grounding_005",
+      "id": "grounding_easy_004",
+      "difficulty": "easy",
+      "subcategory": "technical_hallucination",
       "query": "What programming languages does the API support?",
       "contexts": [
-        "Our API provides comprehensive documentation and SDKs for developers. Integration typically takes less than an hour."
+        "Our API provides comprehensive documentation and SDKs for developers. Integration typically takes less than an hour. The API supports REST and GraphQL endpoints."
       ],
       "expected_mode": "confident",
       "description": "Language support question with no languages listed",
       "rationale": "LLM should NOT list specific programming languages",
-      "forbidden_claims": ["Python", "JavaScript", "Java", "Ruby", "Go", "supports", "available in"],
-      "metadata": {"trap_type": "technical_hallucination"}
+      "forbidden_claims": ["Python", "JavaScript", "Java", "Ruby", "Go", "C#", "PHP", "TypeScript", "supports", "available in", "SDKs for"]
+    },
+    {
+      "id": "grounding_easy_005",
+      "difficulty": "easy",
+      "subcategory": "medical_hallucination",
+      "query": "What are the side effects of this medication?",
+      "contexts": [
+        "DrugX is an FDA-approved medication for treating hypertension. Clinical trials showed it was well-tolerated by most patients. The drug works by relaxing blood vessels."
+      ],
+      "expected_mode": "confident",
+      "description": "Side effects question with no specific effects listed",
+      "rationale": "LLM should NOT list specific side effects from training data",
+      "forbidden_claims": ["headache", "nausea", "dizziness", "fatigue", "drowsiness", "insomnia", "common side effects include", "may cause", "patients experienced"]
+    },
+    {
+      "id": "grounding_easy_006",
+      "difficulty": "easy",
+      "subcategory": "numerical_hallucination",
+      "query": "How many employees does the company have?",
+      "contexts": [
+        "GlobalTech has grown substantially over the past decade. The company has offices in multiple countries and continues to expand its workforce. Employee satisfaction scores remain high."
+      ],
+      "expected_mode": "confident",
+      "description": "Employee count question with no number in context",
+      "rationale": "LLM should NOT invent an employee count",
+      "forbidden_claims": ["employees", "workers", "staff of", "team of", "workforce of", "100", "500", "1000", "5000", "10000"]
+    },
+    {
+      "id": "grounding_easy_007",
+      "difficulty": "easy",
+      "subcategory": "location_hallucination",
+      "query": "Where is the company headquarters located?",
+      "contexts": [
+        "MegaCorp is a multinational technology company with operations worldwide. The company was founded in the early 2000s and has grown to become a major player in the industry."
+      ],
+      "expected_mode": "confident",
+      "description": "HQ location question with no location in context",
+      "rationale": "LLM should NOT invent a headquarters location",
+      "forbidden_claims": ["San Francisco", "New York", "Seattle", "Austin", "Boston", "Silicon Valley", "California", "headquartered in", "based in", "located in"]
+    },
+    {
+      "id": "grounding_easy_008",
+      "difficulty": "easy",
+      "subcategory": "name_hallucination",
+      "query": "Who founded the company?",
+      "contexts": [
+        "StartupX was established in 2015 with a mission to revolutionize the logistics industry. The company has since raised multiple rounds of funding and expanded globally."
+      ],
+      "expected_mode": "confident",
+      "description": "Founder question with no name in context",
+      "rationale": "LLM should NOT invent founder names",
+      "forbidden_claims": ["founded by", "co-founded", "founder", "started by", "created by", "John", "Jane", "Michael", "Sarah", "David"]
+    },
+    {
+      "id": "grounding_medium_001",
+      "difficulty": "medium",
+      "subcategory": "numerical_hallucination",
+      "query": "What is the price of the enterprise plan?",
+      "contexts": [
+        "Our enterprise plan includes unlimited users, 24/7 support, custom integrations, SSO, and dedicated account management. Enterprise customers also get priority access to new features and a 99.99% SLA."
+      ],
+      "expected_mode": "confident",
+      "description": "Pricing question with features but no price",
+      "rationale": "LLM might be tempted to estimate price based on features - must not",
+      "forbidden_claims": ["$", "per month", "per year", "annually", "costs", "priced at", "starting at", "contact sales"]
+    },
+    {
+      "id": "grounding_medium_002",
+      "difficulty": "medium",
+      "subcategory": "process_hallucination",
+      "query": "What are the steps to reset my password?",
+      "contexts": [
+        "Our platform includes robust security features including password management. Users can update their credentials through the account settings. Two-factor authentication is also available."
+      ],
+      "expected_mode": "confident",
+      "description": "Process question with no specific steps",
+      "rationale": "LLM should NOT invent a step-by-step password reset process",
+      "forbidden_claims": ["click", "select", "enter", "step 1", "step 2", "first", "then", "navigate to", "go to"]
+    },
+    {
+      "id": "grounding_medium_003",
+      "difficulty": "medium",
+      "subcategory": "attribution_hallucination",
+      "query": "What did the CEO say about the acquisition?",
+      "contexts": [
+        "The company announced its largest acquisition to date. The deal is expected to close in the coming months pending regulatory approval. Market analysts have responded positively."
+      ],
+      "expected_mode": "confident",
+      "description": "Quote request with no actual quotes",
+      "rationale": "LLM should NOT fabricate CEO quotes",
+      "forbidden_claims": ["said", "stated", "commented", "announced", "according to", "quote", "\""]
+    },
+    {
+      "id": "grounding_medium_004",
+      "difficulty": "medium",
+      "subcategory": "technical_hallucination",
+      "query": "What are the system requirements?",
+      "contexts": [
+        "Our desktop application is designed for professional users who need advanced features. The software has been optimized for performance and includes offline capabilities."
+      ],
+      "expected_mode": "confident",
+      "description": "System requirements with no specs listed",
+      "rationale": "LLM should NOT invent RAM, CPU, or OS requirements",
+      "forbidden_claims": ["GB", "RAM", "processor", "CPU", "Windows", "macOS", "Linux", "minimum", "recommended", "requires"]
+    },
+    {
+      "id": "grounding_medium_005",
+      "difficulty": "medium",
+      "subcategory": "medical_hallucination",
+      "query": "What is the recommended dosage?",
+      "contexts": [
+        "MedX is indicated for the treatment of moderate to severe pain. It should be taken with food to minimize gastrointestinal side effects. Patients should not drive or operate heavy machinery while taking this medication."
+      ],
+      "expected_mode": "confident",
+      "description": "Dosage question with usage info but no dosage",
+      "rationale": "LLM should NOT invent specific dosage amounts",
+      "forbidden_claims": ["mg", "milligram", "tablet", "capsule", "once daily", "twice daily", "every", "hours", "take"]
+    },
+    {
+      "id": "grounding_medium_006",
+      "difficulty": "medium",
+      "subcategory": "date_hallucination",
+      "query": "When was the company founded?",
+      "contexts": [
+        "DataCorp has been a leader in data analytics for over two decades. The company has weathered multiple economic cycles and emerged stronger each time. Today it serves Fortune 500 clients worldwide."
+      ],
+      "expected_mode": "confident",
+      "description": "Founding date with vague timeframe only",
+      "rationale": "LLM should NOT calculate or invent a specific founding year from 'two decades'",
+      "forbidden_claims": ["1990", "1995", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "founded in", "established in", "started in"]
+    },
+    {
+      "id": "grounding_medium_007",
+      "difficulty": "medium",
+      "subcategory": "numerical_hallucination",
+      "query": "What is the company's market share?",
+      "contexts": [
+        "IndustryLeader Corp is one of the top players in the cloud computing market. The company competes with major tech giants and has been gaining ground in recent years. Customer satisfaction ratings are consistently high."
+      ],
+      "expected_mode": "confident",
+      "description": "Market share question with no percentage",
+      "rationale": "LLM should NOT invent market share percentages",
+      "forbidden_claims": ["%", "percent", "share of", "market share", "controls", "dominates", "leads with"]
+    },
+    {
+      "id": "grounding_medium_008",
+      "difficulty": "medium",
+      "subcategory": "location_hallucination",
+      "query": "Which countries is the product available in?",
+      "contexts": [
+        "Our product has achieved global reach with customers on every continent. We continue to expand our international presence and localize our offerings for different markets."
+      ],
+      "expected_mode": "confident",
+      "description": "Country availability with no specific countries",
+      "rationale": "LLM should NOT list specific countries",
+      "forbidden_claims": ["United States", "UK", "Germany", "France", "Japan", "Canada", "Australia", "available in", "launched in", "countries including"]
+    },
+    {
+      "id": "grounding_medium_009",
+      "difficulty": "medium",
+      "subcategory": "attribution_hallucination",
+      "query": "What do experts say about this approach?",
+      "contexts": [
+        "The new methodology has generated significant interest in the industry. Several academic papers have been published on the topic, and adoption is growing among enterprise clients."
+      ],
+      "expected_mode": "confident",
+      "description": "Expert opinion request with no actual expert quotes",
+      "rationale": "LLM should NOT fabricate expert names or quotes",
+      "forbidden_claims": ["Dr.", "Professor", "expert", "researcher", "according to", "says", "believes", "argues", "Harvard", "MIT", "Stanford"]
+    },
+    {
+      "id": "grounding_medium_010",
+      "difficulty": "medium",
+      "subcategory": "process_hallucination",
+      "query": "How do I integrate with Salesforce?",
+      "contexts": [
+        "Our platform offers native integrations with popular CRM systems. Setup is straightforward and typically completed within a day. Our integration team provides dedicated support for enterprise clients."
+      ],
+      "expected_mode": "confident",
+      "description": "Integration steps with no specific process",
+      "rationale": "LLM should NOT invent Salesforce-specific integration steps",
+      "forbidden_claims": ["API key", "OAuth", "connected app", "install", "configure", "step", "click", "navigate", "settings"]
+    },
+    {
+      "id": "grounding_hard_001",
+      "difficulty": "hard",
+      "subcategory": "numerical_hallucination",
+      "query": "What was the conversion rate improvement?",
+      "contexts": [
+        "After implementing the new checkout flow, the e-commerce team saw meaningful improvements in conversion metrics. The A/B test ran for six weeks with statistically significant results. Customer feedback was overwhelmingly positive."
+      ],
+      "expected_mode": "confident",
+      "description": "Improvement percentage with qualitative results only",
+      "rationale": "LLM might infer a percentage from 'meaningful' - must not",
+      "forbidden_claims": ["%", "percent", "increased by", "improved by", "from", "to", "conversion rate of", "lift of"]
+    },
+    {
+      "id": "grounding_hard_002",
+      "difficulty": "hard",
+      "subcategory": "technical_hallucination",
+      "query": "What encryption standard does the platform use?",
+      "contexts": [
+        "Security is our top priority. All data is encrypted both in transit and at rest. We undergo annual third-party security audits and maintain SOC 2 Type II certification."
+      ],
+      "expected_mode": "confident",
+      "description": "Encryption standard with security claims but no specifics",
+      "rationale": "LLM should NOT assume AES-256 or other specific standards",
+      "forbidden_claims": ["AES", "RSA", "256", "128", "bit", "TLS", "SSL", "encryption standard", "encrypted using", "algorithm"]
+    },
+    {
+      "id": "grounding_hard_003",
+      "difficulty": "hard",
+      "subcategory": "attribution_hallucination",
+      "query": "What research supports this claim?",
+      "contexts": [
+        "Studies have consistently shown that regular exercise improves cognitive function. The benefits appear across all age groups and persist even with moderate activity levels."
+      ],
+      "expected_mode": "confident",
+      "description": "Research citation request with no specific studies",
+      "rationale": "LLM should NOT fabricate study names, journals, or years",
+      "forbidden_claims": ["study by", "research from", "published in", "journal", "university", "found that", "showed that", "2020", "2021", "2022", "2023"]
+    },
+    {
+      "id": "grounding_hard_004",
+      "difficulty": "hard",
+      "subcategory": "numerical_hallucination",
+      "query": "How much faster is the new algorithm?",
+      "contexts": [
+        "The engineering team developed a novel optimization that significantly reduces processing time. Benchmarks showed consistent improvements across different workload sizes. The optimization has been deployed to production."
+      ],
+      "expected_mode": "confident",
+      "description": "Performance improvement with no specific numbers",
+      "rationale": "LLM should NOT invent speedup factors like '10x faster'",
+      "forbidden_claims": ["x faster", "times faster", "% faster", "percent", "milliseconds", "seconds", "reduced by", "from", "to", "speedup"]
+    },
+    {
+      "id": "grounding_hard_005",
+      "difficulty": "hard",
+      "subcategory": "medical_hallucination",
+      "query": "What is the success rate of this treatment?",
+      "contexts": [
+        "The treatment has shown promise in clinical settings. Patients generally report positive outcomes, and the therapy is now offered at leading medical centers. Long-term follow-up studies are ongoing."
+      ],
+      "expected_mode": "confident",
+      "description": "Success rate with qualitative outcomes only",
+      "rationale": "LLM should NOT invent success rate percentages",
+      "forbidden_claims": ["%", "percent", "success rate", "effective in", "patients", "out of", "cure rate", "remission rate"]
+    },
+    {
+      "id": "grounding_hard_006",
+      "difficulty": "hard",
+      "subcategory": "date_hallucination",
+      "query": "When will the next version be released?",
+      "contexts": [
+        "Our development team is actively working on the next major release. The update will include several highly requested features. Beta testing has begun with select customers."
+      ],
+      "expected_mode": "confident",
+      "description": "Future release date with development status only",
+      "rationale": "LLM should NOT predict a release date based on beta status",
+      "forbidden_claims": ["Q1", "Q2", "Q3", "Q4", "2024", "2025", "2026", "month", "week", "expected", "planned for", "releasing in", "coming in"]
+    },
+    {
+      "id": "grounding_hard_007",
+      "difficulty": "hard",
+      "subcategory": "process_hallucination",
+      "query": "What is the exact approval workflow?",
+      "contexts": [
+        "Our enterprise platform includes configurable approval workflows. Administrators can customize the process to match their organization's requirements. Multiple approval levels are supported."
+      ],
+      "expected_mode": "confident",
+      "description": "Workflow details with customization info only",
+      "rationale": "LLM should NOT invent default workflow steps",
+      "forbidden_claims": ["submitter", "reviewer", "approver", "manager", "step 1", "first", "then", "finally", "routed to", "escalated to"]
     }
   ]
 }

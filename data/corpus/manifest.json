@@ -1,7 +1,7 @@
 {
-  "version": "0.3.0",
-  "description": "FITZ-GOV curated test corpus - 128 documents designed to test governance behaviors",
-  "document_count": 128,
+  "version": "0.4.0",
+  "description": "FITZ-GOV curated test corpus - 146 documents designed to test governance behaviors",
+  "document_count": 146,
   "domains": {
     "biology": 3,
     "history": 6,

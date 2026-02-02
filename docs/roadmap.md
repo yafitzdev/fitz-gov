@@ -2,7 +2,7 @@
 
 Target: **200 test cases** across 6 governance categories.
 
-## Current Status (v0.3.0)
+## Current Status (v0.4.0)
 
 | Category | Current | Target | Progress |
 |----------|---------|--------|----------|
@@ -10,9 +10,9 @@ Target: **200 test cases** across 6 governance categories.
 | Dispute | 10 | 40 | 25% |
 | **Qualification** | **40** | 40 | **100%** |
 | Confidence | 10 | 30 | 33% |
-| Grounding | 5 | 25 | 20% |
+| **Grounding** | **25** | 25 | **100%** |
 | Relevance | 5 | 25 | 20% |
-| **Total** | **80** | **200** | **40%** |
+| **Total** | **100** | **200** | **50%** |
 
 ## Category Descriptions
 
@@ -46,9 +46,18 @@ These test the system's ability to select the correct answer mode.
 
 These test the quality of generated answers.
 
-**Grounding** (5/25)
+**Grounding** (25/25) ✓
 - Answers must be grounded in context (no hallucination)
 - Tests use "forbidden claims" that would indicate hallucination
+- Subcategories:
+  - numerical_hallucination (6): Revenue, prices, percentages, counts
+  - name_hallucination (2): People, founders, executives
+  - date_hallucination (3): Dates, timelines, deadlines
+  - technical_hallucination (3): Specs, features, languages
+  - medical_hallucination (3): Side effects, dosages, success rates
+  - location_hallucination (2): Addresses, countries, regions
+  - process_hallucination (3): Steps, procedures, workflows
+  - attribution_hallucination (3): Quotes, sources, citations
 
 **Relevance** (5/25)
 - Answers must address the actual question asked
@@ -57,7 +66,7 @@ These test the quality of generated answers.
 ## Expansion Priority
 
 1. ~~**Qualification**~~ ✓ (v0.3.0) - Was 10% accuracy, now has comprehensive coverage
-2. **Grounding** - Critical for hallucination prevention
+2. ~~**Grounding**~~ ✓ (v0.4.0) - Critical for hallucination prevention
 3. **Abstention** - Core safety behavior
 4. **Dispute** - Important for epistemic honesty
 5. **Relevance** - Answer quality metric
@@ -69,6 +78,7 @@ These test the quality of generated answers.
 |---------|-----------|-------|
 | v0.2.0 | 100 | Initial handcrafted corpus |
 | v0.3.0 | 128 | +28 for qualification expansion |
+| v0.4.0 | 146 | +18 for grounding expansion |
 | Target | ~250 | Support all 200 test cases |
 
 Each test case expansion requires corresponding corpus documents with:
@@ -78,6 +88,7 @@ Each test case expansion requires corresponding corpus documents with:
 
 ## Version History
 
+- **v0.4.0** - Grounding expansion (5 → 25 cases, 128 → 146 docs)
 - **v0.3.0** - Qualification expansion (10 → 40 cases, 100 → 128 docs)
 - **v0.2.0** - Initial handcrafted test set (50 cases, 100 docs)
 - **v0.1.0** - Auto-generated test set (deprecated)
