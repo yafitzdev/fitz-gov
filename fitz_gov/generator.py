@@ -1,6 +1,6 @@
 # fitz_gov/generator.py
 """
-Synthetic test case generator for FITZ-GOV benchmark.
+Synthetic test case generator for fitz-gov benchmark.
 
 Generates governance test cases from an existing corpus using LLM.
 This enables creating custom benchmark suites for specific domains.
@@ -41,7 +41,7 @@ class ChunkLike:
 
 class FitzGovGenerator:
     """
-    Generate FITZ-GOV test cases from an existing corpus.
+    Generate fitz-gov test cases from an existing corpus.
 
     Uses LLM to identify scenarios that should trigger different
     governance modes, creating a custom test suite for your data.
@@ -149,7 +149,7 @@ class FitzGovGenerator:
             data = {
                 "category": category,
                 "subcategory": subcat,
-                "description": f"FITZ-GOV {category} cases - {subcat}",
+                "description": f"fitz-gov {category} cases - {subcat}",
                 "cases": [c.to_dict() for c in subcat_cases],
             }
             with open(output_file, "w", encoding="utf-8") as f:

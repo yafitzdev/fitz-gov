@@ -1,8 +1,8 @@
 # fitz_gov/evaluator.py
 """
-FITZ-GOV evaluation logic.
+fitz-gov evaluation logic.
 
-This module provides the core evaluation functionality for the FITZ-GOV benchmark.
+This module provides the core evaluation functionality for the fitz-gov benchmark.
 It evaluates responses against test cases using regex patterns and optional LLM validation.
 """
 
@@ -46,7 +46,7 @@ ANSWER_QUALITY_CATEGORIES = {
 
 class FitzGovEvaluator:
     """
-    Evaluator for FITZ-GOV benchmark.
+    Evaluator for fitz-gov benchmark.
 
     Evaluates responses against test cases using:
     1. Regex pattern matching for forbidden/required elements

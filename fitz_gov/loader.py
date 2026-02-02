@@ -1,6 +1,6 @@
 # fitz_gov/loader.py
 """
-Data loader for FITZ-GOV benchmark test cases.
+Data loader for fitz-gov benchmark test cases.
 """
 
 from __future__ import annotations

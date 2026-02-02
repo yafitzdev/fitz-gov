@@ -1,6 +1,6 @@
 # fitz_gov/schema.py
 """
-Data schemas for FITZ-GOV benchmark.
+Data schemas for fitz-gov benchmark.
 
 These schemas define the structure of test cases and are designed to be
 compatible with fitz-ai's evaluation framework.
@@ -55,7 +55,7 @@ class FitzGovCategory(str, Enum):
 
 @dataclass
 class FitzGovCase:
-    """A single FITZ-GOV test case."""
+    """A single fitz-gov test case."""
 
     id: str
     """Unique identifier for the test case."""

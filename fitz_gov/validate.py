@@ -1,6 +1,6 @@
 # fitz_gov/validate.py
 """
-Validate and clean FITZ-GOV benchmark data.
+Validate and clean fitz-gov benchmark data.
 
 1. Semantic deduplication (similar queries)
 2. Quality checks (missing fields, wrong modes)
@@ -257,7 +257,7 @@ def save_clean_cases(data_dir: Path, cases: list[dict], remove_indices: set[int]
 def main():
     import argparse
 
-    parser = argparse.ArgumentParser(description="Validate FITZ-GOV benchmark data")
+    parser = argparse.ArgumentParser(description="Validate fitz-gov benchmark data")
     parser.add_argument("--data-dir", default="./data", help="Data directory")
     parser.add_argument("--threshold", type=float, default=0.9, help="Similarity threshold")
     parser.add_argument("--apply", action="store_true", help="Apply changes (default: dry run)")

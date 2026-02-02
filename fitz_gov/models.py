@@ -1,6 +1,6 @@
 # fitz_gov/models.py
 """
-Data models for FITZ-GOV benchmark.
+Data models for fitz-gov benchmark.
 """
 
 from __future__ import annotations
@@ -46,7 +46,7 @@ class AnswerMode(str, Enum):
 
 @dataclass
 class FitzGovCase:
-    """A single FITZ-GOV test case."""
+    """A single fitz-gov test case."""
 
     id: str
     """Unique identifier for the test case."""
@@ -138,7 +138,7 @@ class FitzGovCase:
 
 @dataclass
 class FitzGovCaseResult:
-    """Result for a single FITZ-GOV test case."""
+    """Result for a single fitz-gov test case."""
 
     case: FitzGovCase
     """The test case."""
@@ -245,7 +245,7 @@ class FitzGovConfusionMatrix:
 
 @dataclass
 class FitzGovResult:
-    """Full FITZ-GOV benchmark results."""
+    """Full fitz-gov benchmark results."""
 
     overall_accuracy: float
     """Overall accuracy across all categories."""
@@ -285,7 +285,7 @@ class FitzGovResult:
     def __str__(self) -> str:
         """Pretty print results."""
         lines = [
-            f"FITZ-GOV Results (n={self.num_cases}):",
+            f"fitz-gov Results (n={self.num_cases}):",
             f"  Overall Accuracy: {self.overall_accuracy:.2%}",
             "",
         ]

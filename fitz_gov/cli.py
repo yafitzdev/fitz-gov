@@ -1,6 +1,6 @@
 # fitz_gov/cli.py
 """
-CLI for FITZ-GOV benchmark.
+CLI for fitz-gov benchmark.
 
 Commands:
     fitz-gov validate           Validate benchmark data
@@ -52,7 +52,7 @@ def cmd_stats(args: argparse.Namespace) -> int:
         print(f"Error: {e}")
         return 1
 
-    print(f"FITZ-GOV Benchmark Statistics")
+    print(f"fitz-gov Benchmark Statistics")
     print("=" * 40)
     print(f"Total cases: {len(cases)}")
     print()
@@ -151,7 +151,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
 
 
 def cmd_build(args: argparse.Namespace) -> int:
-    """Build FITZ-GOV benchmark from BEIR corpus."""
+    """Build fitz-gov benchmark from BEIR corpus."""
     try:
         from .bootstrap import bootstrap_from_beir, list_available_datasets
     except ImportError as e:
@@ -176,7 +176,7 @@ def cmd_build(args: argparse.Namespace) -> int:
     datasets = args.datasets.split(",") if args.datasets else None
 
     print("=" * 50)
-    print("FITZ-GOV Benchmark Builder")
+    print("fitz-gov Benchmark Builder")
     print("=" * 50)
 
     # Single category mode (for retries)
@@ -393,7 +393,7 @@ def main() -> int:
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
         prog="fitz-gov",
-        description="FITZ-GOV: Comprehensive RAG Governance Benchmark",
+        description="fitz-gov: Comprehensive RAG Governance Benchmark",
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
 

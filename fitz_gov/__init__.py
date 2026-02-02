@@ -1,6 +1,6 @@
 # fitz_gov/__init__.py
 """
-FITZ-GOV: Comprehensive RAG Governance Benchmark.
+fitz-gov: Comprehensive RAG Governance Benchmark.
 
 A benchmark for evaluating RAG system governance - knowing when to abstain,
 dispute, qualify, or confidently answer based on available evidence.

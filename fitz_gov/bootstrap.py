@@ -1,6 +1,6 @@
 # fitz_gov/bootstrap.py
 """
-Bootstrap FITZ-GOV benchmark data from BEIR corpus.
+Bootstrap fitz-gov benchmark data from BEIR corpus.
 
 Downloads BEIR dataset(s), extracts corpus documents, and generates
 governance test cases using the synthetic generator.
@@ -161,7 +161,7 @@ def bootstrap_from_beir(
     output_dir: Path | str | None = None,
 ) -> dict[str, Any]:
     """
-    Bootstrap FITZ-GOV benchmark from BEIR corpus.
+    Bootstrap fitz-gov benchmark from BEIR corpus.
 
     Produces:
     - corpus/: Full document corpus for Mode B (full pipeline evaluation)
@@ -207,7 +207,7 @@ def bootstrap_from_beir(
     chunks = [{"text": doc["text"], "source": doc["source"], "id": doc["id"]} for doc in all_docs]
 
     # Generate cases (saves incrementally per category)
-    print(f"\nGenerating FITZ-GOV cases ({cases_per_category} per category)...", flush=True)
+    print(f"\nGenerating fitz-gov cases ({cases_per_category} per category)...", flush=True)
     generator = FitzGovGenerator(llm_client=llm_client)
     cases = generator.generate_all(
         chunks,
@@ -252,7 +252,7 @@ def save_corpus(
         "created_at": datetime.now(timezone.utc).isoformat(),
         "source_datasets": datasets,
         "document_count": len(docs),
-        "description": "FITZ-GOV evaluation corpus derived from BEIR datasets",
+        "description": "fitz-gov evaluation corpus derived from BEIR datasets",
     }
     manifest_file = output_dir / "manifest.json"
     with open(manifest_file, "w", encoding="utf-8") as f:
@@ -294,7 +294,7 @@ def save_cases_and_queries(cases: list, output_dir: Path) -> None:
             data = {
                 "category": cat,
                 "subcategory": subcat,
-                "description": f"FITZ-GOV {cat} cases - {subcat}",
+                "description": f"fitz-gov {cat} cases - {subcat}",
                 "cases": [c.to_dict() for c in subcat_cases],
             }
             with open(output_file, "w", encoding="utf-8") as f:

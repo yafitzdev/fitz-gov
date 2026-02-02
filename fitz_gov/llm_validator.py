@@ -1,6 +1,6 @@
 # fitz_gov/llm_validator.py
 """
-Two-pass LLM validation for FITZ-GOV benchmark.
+Two-pass LLM validation for fitz-gov benchmark.
 
 Pass 1: Regex catches obvious violations (fast)
 Pass 2: LLM validates flagged cases to reduce false positives (semantic)
