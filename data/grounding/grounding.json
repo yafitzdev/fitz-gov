@@ -1,0 +1,66 @@
+{
+  "category": "grounding",
+  "description": "Tests whether LLM stays grounded in context (hallucination traps)",
+  "cases": [
+    {
+      "id": "grounding_001",
+      "query": "What is the company's revenue?",
+      "contexts": [
+        "TechCorp reported strong financial performance in 2024. The company saw significant growth across all business segments."
+      ],
+      "expected_mode": "confident",
+      "description": "Revenue question with no specific number in context",
+      "rationale": "LLM should answer based on context but NOT hallucinate a specific revenue figure",
+      "forbidden_claims": ["$", "million", "billion", "revenue of", "earned"],
+      "metadata": {"trap_type": "numerical_hallucination"}
+    },
+    {
+      "id": "grounding_002",
+      "query": "Who is the CEO of Acme Corp?",
+      "contexts": [
+        "Acme Corp announced major leadership changes in 2024. The company restructured its executive team to focus on AI initiatives."
+      ],
+      "expected_mode": "confident",
+      "description": "CEO question with no name in context",
+      "rationale": "LLM should acknowledge leadership changes but NOT invent a CEO name",
+      "forbidden_claims": ["John", "Jane", "Smith", "CEO is", "led by", "headed by"],
+      "metadata": {"trap_type": "name_hallucination"}
+    },
+    {
+      "id": "grounding_003",
+      "query": "What are the side effects of this medication?",
+      "contexts": [
+        "DrugX is an FDA-approved medication for treating hypertension. Clinical trials showed it was well-tolerated by most patients."
+      ],
+      "expected_mode": "confident",
+      "description": "Side effects question with no specific effects listed",
+      "rationale": "LLM should NOT list specific side effects from training data",
+      "forbidden_claims": ["headache", "nausea", "dizziness", "fatigue", "common side effects include"],
+      "metadata": {"trap_type": "medical_hallucination"}
+    },
+    {
+      "id": "grounding_004",
+      "query": "When will the product launch?",
+      "contexts": [
+        "The product team is working on the new release. Development is progressing well and the team is excited about the features."
+      ],
+      "expected_mode": "confident",
+      "description": "Launch date question with no date in context",
+      "rationale": "LLM should NOT invent a launch date",
+      "forbidden_claims": ["Q1", "Q2", "Q3", "Q4", "January", "February", "March", "2024", "2025", "launching in", "expected to launch"],
+      "metadata": {"trap_type": "date_hallucination"}
+    },
+    {
+      "id": "grounding_005",
+      "query": "What programming languages does the API support?",
+      "contexts": [
+        "Our API provides comprehensive documentation and SDKs for developers. Integration typically takes less than an hour."
+      ],
+      "expected_mode": "confident",
+      "description": "Language support question with no languages listed",
+      "rationale": "LLM should NOT list specific programming languages",
+      "forbidden_claims": ["Python", "JavaScript", "Java", "Ruby", "Go", "supports", "available in"],
+      "metadata": {"trap_type": "technical_hallucination"}
+    }
+  ]
+}

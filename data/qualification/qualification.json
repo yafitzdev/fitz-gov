@@ -1,0 +1,132 @@
+{
+  "category": "qualification",
+  "description": "Causal/predictive queries where context lacks causal evidence - system should mark as QUALIFIED",
+  "cases": [
+    {
+      "id": "qualify_easy_001",
+      "difficulty": "easy",
+      "query": "Why do users prefer dark mode?",
+      "contexts": [
+        "Survey data shows 82% of users have dark mode enabled on their devices.",
+        "Dark mode adoption has increased 340% since 2019 across all major platforms."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal 'why' question with only correlational data",
+      "rationale": "Causal 'why' question but context only shows correlation/stats, no explanation of WHY"
+    },
+    {
+      "id": "qualify_easy_002",
+      "difficulty": "easy",
+      "query": "Why did the stock price drop yesterday?",
+      "contexts": [
+        "The stock closed at $142.50, down 8.3% from the previous day's close of $155.40.",
+        "Trading volume was 3x the 30-day average, with 45 million shares exchanged."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for cause but context only provides price data",
+      "rationale": "Asks for cause but context only provides price data, no explanation"
+    },
+    {
+      "id": "qualify_easy_003",
+      "difficulty": "easy",
+      "query": "What will the weather be like next week?",
+      "contexts": [
+        "Last week saw temperatures ranging from 65-78°F with partly cloudy skies.",
+        "Historical data shows October averages 68°F with 3.2 inches of rainfall in this region."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with only historical data",
+      "rationale": "Prediction question but context only has historical data, no forecast"
+    },
+    {
+      "id": "qualify_easy_004",
+      "difficulty": "easy",
+      "query": "Why is Python popular for data science?",
+      "contexts": [
+        "Python is used by 68% of data scientists according to the 2024 Stack Overflow survey.",
+        "Major companies using Python for data science include Google, Netflix, and Spotify."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks WHY popular but context only shows THAT it's popular",
+      "rationale": "Asks WHY popular but context only shows THAT it's popular"
+    },
+    {
+      "id": "qualify_medium_001",
+      "difficulty": "medium",
+      "query": "Why did employee satisfaction decrease?",
+      "contexts": [
+        "Employee satisfaction scores dropped from 4.2 to 3.1 on a 5-point scale over the past year.",
+        "During this period, the company implemented a return-to-office policy and restructured several departments.",
+        "Exit interviews mentioned concerns about work-life balance and career growth opportunities."
+      ],
+      "expected_mode": "qualified",
+      "description": "Correlating events and symptoms but no confirmed causal link",
+      "rationale": "Context provides correlating events and symptoms but no confirmed causal link"
+    },
+    {
+      "id": "qualify_medium_002",
+      "difficulty": "medium",
+      "query": "What impact will AI have on employment?",
+      "contexts": [
+        "McKinsey estimates 30% of work activities could be automated by 2030.",
+        "Historical automation has created more jobs than it eliminated, though in different sectors.",
+        "Current AI adoption is highest in finance, healthcare, and manufacturing."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with estimates and history only",
+      "rationale": "Prediction question - context has estimates and history but no definitive answer"
+    },
+    {
+      "id": "qualify_medium_003",
+      "difficulty": "medium",
+      "query": "Why do some startups fail while others succeed?",
+      "contexts": [
+        "90% of startups fail within the first 5 years according to Bureau of Labor Statistics.",
+        "Successful startups like Airbnb and Uber pivoted multiple times before finding product-market fit.",
+        "Common characteristics of failed startups include running out of cash and lack of market need."
+      ],
+      "expected_mode": "qualified",
+      "description": "Context lists correlations and patterns but no proven mechanism",
+      "rationale": "Context lists correlations and patterns but no proven causal mechanism"
+    },
+    {
+      "id": "qualify_medium_004",
+      "difficulty": "medium",
+      "query": "What will Bitcoin's price be in 2025?",
+      "contexts": [
+        "Bitcoin reached an all-time high of $73,000 in March 2024.",
+        "Analyst predictions range from $50,000 to $200,000 depending on regulatory developments.",
+        "The next Bitcoin halving is expected in April 2024, historically followed by price increases."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with opinions and patterns only",
+      "rationale": "Prediction question - context has opinions and historical patterns but no certain answer"
+    },
+    {
+      "id": "qualify_hard_001",
+      "difficulty": "hard",
+      "query": "Why do cities with more ice cream sales have higher crime rates?",
+      "contexts": [
+        "Data shows a strong positive correlation (r=0.85) between ice cream sales and crime rates across US cities.",
+        "Both ice cream sales and crime rates peak during summer months.",
+        "Cities with populations over 500,000 show the strongest correlation between these variables."
+      ],
+      "expected_mode": "qualified",
+      "description": "Classic correlation vs causation trap",
+      "rationale": "Classic correlation vs causation trap - context shows correlation but the actual cause is a confounding variable (hot weather)"
+    },
+    {
+      "id": "qualify_hard_002",
+      "difficulty": "hard",
+      "query": "Why do children who eat breakfast perform better in school?",
+      "contexts": [
+        "Studies show students who eat breakfast score 17% higher on standardized tests.",
+        "Breakfast-eating students have 25% fewer absences and better classroom behavior.",
+        "Schools with free breakfast programs see improved academic outcomes across all subjects."
+      ],
+      "expected_mode": "qualified",
+      "description": "Correlation shown but breakfast may be proxy for other factors",
+      "rationale": "Context shows correlation but breakfast may be proxy for other factors (stable home, parental involvement, SES)"
+    }
+  ]
+}

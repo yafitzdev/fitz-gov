@@ -1,0 +1,134 @@
+{
+  "category": "dispute",
+  "description": "Queries where contexts contain conflicting information - system should mark as DISPUTED",
+  "cases": [
+    {
+      "id": "dispute_easy_001",
+      "difficulty": "easy",
+      "query": "Did the project launch successfully?",
+      "contexts": [
+        "The project launch was a complete success. All systems performed as expected and user adoption exceeded targets by 40%.",
+        "The project launch failed catastrophically. Critical bugs caused system outages affecting thousands of users."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: success vs failure",
+      "rationale": "Direct contradiction: success vs failure"
+    },
+    {
+      "id": "dispute_easy_002",
+      "difficulty": "easy",
+      "query": "Is the company profitable?",
+      "contexts": [
+        "The company reported record profits of $2.3 billion in 2024, marking its fifth consecutive year of growth.",
+        "The company posted a net loss of $450 million in 2024, forcing layoffs of 15% of its workforce."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: profitable vs loss-making",
+      "rationale": "Direct contradiction: profitable vs loss-making"
+    },
+    {
+      "id": "dispute_easy_003",
+      "difficulty": "easy",
+      "query": "Was the medication approved by the FDA?",
+      "contexts": [
+        "The FDA granted full approval for the medication in March 2024, citing strong efficacy data from Phase 3 trials.",
+        "The FDA rejected the medication's application in March 2024 due to insufficient safety data and concerns about side effects."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: approved vs rejected",
+      "rationale": "Direct contradiction: approved vs rejected"
+    },
+    {
+      "id": "dispute_easy_004",
+      "difficulty": "easy",
+      "query": "Did sales increase this quarter?",
+      "contexts": [
+        "Sales increased 25% quarter-over-quarter, driven by strong demand in the Asian market.",
+        "Sales declined 18% compared to last quarter as supply chain issues impacted product availability."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: increase vs decrease",
+      "rationale": "Direct contradiction: increase vs decrease"
+    },
+    {
+      "id": "dispute_medium_001",
+      "difficulty": "medium",
+      "query": "What is the effectiveness rate of the vaccine?",
+      "contexts": [
+        "Clinical trials conducted by Pfizer showed the vaccine was 95% effective at preventing symptomatic infection.",
+        "Real-world data from Israel found the vaccine was only 64% effective against the Delta variant.",
+        "A UK study reported 88% effectiveness against hospitalization."
+      ],
+      "expected_mode": "disputed",
+      "description": "Numerical disagreement across different studies",
+      "rationale": "Numerical disagreement across different studies (95% vs 64% vs 88%)"
+    },
+    {
+      "id": "dispute_medium_002",
+      "difficulty": "medium",
+      "query": "When was the Great Wall of China built?",
+      "contexts": [
+        "The Great Wall was primarily built during the Ming Dynasty (1368-1644), with most existing sections dating to this period.",
+        "Construction of the Great Wall began during the Qin Dynasty under Emperor Qin Shi Huang around 221 BC.",
+        "Archaeological evidence suggests wall-building in China dates back to the 7th century BC, predating unified China."
+      ],
+      "expected_mode": "disputed",
+      "description": "Different historical accounts giving different time periods",
+      "rationale": "Different historical accounts giving different time periods"
+    },
+    {
+      "id": "dispute_medium_003",
+      "difficulty": "medium",
+      "query": "What caused the dinosaur extinction?",
+      "contexts": [
+        "The asteroid impact theory, supported by the Chicxulub crater, is now the scientific consensus for dinosaur extinction.",
+        "Volcanic activity from the Deccan Traps in India released massive amounts of gases, causing climate change that killed the dinosaurs.",
+        "Some scientists argue it was a combination of asteroid impact and volcanic activity that led to the mass extinction."
+      ],
+      "expected_mode": "disputed",
+      "description": "Competing scientific theories for the same event",
+      "rationale": "Competing scientific theories for the same event"
+    },
+    {
+      "id": "dispute_medium_004",
+      "difficulty": "medium",
+      "query": "How many people died in the Titanic sinking?",
+      "contexts": [
+        "The official British inquiry concluded that 1,503 people died when the Titanic sank on April 15, 1912.",
+        "The US Senate investigation put the death toll at 1,517, based on different passenger manifest interpretations.",
+        "Recent historical analysis suggests the actual number may be closer to 1,496, accounting for name duplications in records."
+      ],
+      "expected_mode": "disputed",
+      "description": "Different authoritative sources give different numbers",
+      "rationale": "Different authoritative sources give different numbers"
+    },
+    {
+      "id": "dispute_hard_001",
+      "difficulty": "hard",
+      "query": "Is remote work more productive than office work?",
+      "contexts": [
+        "A Stanford study found remote workers were 13% more productive, with fewer breaks and sick days.",
+        "Microsoft research showed that while individual productivity increased, collaboration and innovation suffered in remote settings.",
+        "A Harvard study found productivity varied significantly by role - creative work suffered while routine tasks improved.",
+        "Managers reported difficulty assessing remote worker productivity, leading to potential measurement biases in all studies."
+      ],
+      "expected_mode": "disputed",
+      "description": "Nuanced disagreement - studies show different aspects",
+      "rationale": "Nuanced disagreement - studies show different aspects, no clear answer"
+    },
+    {
+      "id": "dispute_hard_002",
+      "difficulty": "hard",
+      "query": "Is coffee good for your health?",
+      "contexts": [
+        "Research published in NEJM found that coffee drinkers had a 10-15% lower risk of death from heart disease and diabetes.",
+        "Studies show coffee can increase anxiety, disrupt sleep patterns, and raise blood pressure in sensitive individuals.",
+        "The health effects of coffee depend heavily on individual genetics, particularly the CYP1A2 gene that affects caffeine metabolism.",
+        "Pregnant women are advised to limit coffee intake due to potential risks to fetal development."
+      ],
+      "expected_mode": "disputed",
+      "description": "Context-dependent and conflicting evidence",
+      "rationale": "Context-dependent and conflicting evidence - benefits and risks both exist"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "category": "confidence",
+  "description": "Queries where context clearly answers the question - system should be CONFIDENT",
+  "cases": [
+    {
+      "id": "confident_easy_001",
+      "difficulty": "easy",
+      "query": "What is the capital of France?",
+      "contexts": [
+        "Paris is the capital and largest city of France. Located on the Seine River, it has a population of over 2 million in the city proper."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct factual question with explicit answer in context",
+      "rationale": "Direct factual question with explicit answer in context"
+    },
+    {
+      "id": "confident_easy_002",
+      "difficulty": "easy",
+      "query": "When was the company founded?",
+      "contexts": [
+        "Acme Corporation was founded in 1985 by John Smith and Jane Doe in Silicon Valley. The company started as a two-person garage startup."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct factual question with explicit date in context",
+      "rationale": "Direct factual question with explicit date in context"
+    },
+    {
+      "id": "confident_easy_003",
+      "difficulty": "easy",
+      "query": "What programming language is React written in?",
+      "contexts": [
+        "React is a JavaScript library for building user interfaces, developed and maintained by Meta (formerly Facebook). It was first released in 2013."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct technical question with clear answer",
+      "rationale": "Direct technical question with clear answer"
+    },
+    {
+      "id": "confident_easy_004",
+      "difficulty": "easy",
+      "query": "How many employees does the company have?",
+      "contexts": [
+        "As of December 2024, TechCorp employs 15,000 full-time employees across 12 global offices. This represents a 20% increase from the previous year."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct factual question with specific number provided",
+      "rationale": "Direct factual question with specific number provided"
+    },
+    {
+      "id": "confident_medium_001",
+      "difficulty": "medium",
+      "query": "Why did the server crash?",
+      "contexts": [
+        "The post-mortem analysis revealed the server crash was caused by a memory leak in the authentication module. The leak accumulated over 72 hours until available RAM was exhausted, triggering an OOM killer event."
+      ],
+      "expected_mode": "confident",
+      "description": "Causal question with explicit causal evidence",
+      "rationale": "Causal question with explicit causal evidence ('caused by', 'triggered')"
+    },
+    {
+      "id": "confident_medium_002",
+      "difficulty": "medium",
+      "query": "What are the requirements for the senior engineer role?",
+      "contexts": [
+        "Senior Engineer Requirements: 5+ years of professional software development experience, proficiency in Python or Java, experience with distributed systems, strong communication skills, and a BS/MS in Computer Science or equivalent experience."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct question with comprehensive answer listing requirements",
+      "rationale": "Direct question with comprehensive answer listing all requirements"
+    },
+    {
+      "id": "confident_medium_003",
+      "difficulty": "medium",
+      "query": "How does photosynthesis work?",
+      "contexts": [
+        "Photosynthesis converts light energy into chemical energy through two stages. In the light-dependent reactions, chlorophyll absorbs sunlight to split water molecules, releasing oxygen and producing ATP. In the Calvin cycle, CO2 is fixed into glucose using the ATP generated earlier."
+      ],
+      "expected_mode": "confident",
+      "description": "Explanatory question with complete mechanism described",
+      "rationale": "Explanatory question with complete mechanism described"
+    },
+    {
+      "id": "confident_medium_004",
+      "difficulty": "medium",
+      "query": "What caused the 2024 outage?",
+      "contexts": [
+        "The January 2024 outage was caused by a misconfigured load balancer that routed 100% of traffic to a single server instead of distributing it across the cluster. This occurred because a configuration change was deployed without proper review.",
+        "The incident lasted 4 hours and affected approximately 2 million users. Engineering teams identified the root cause within 30 minutes and rolled back the configuration."
+      ],
+      "expected_mode": "confident",
+      "description": "Causal question with explicit root cause analysis",
+      "rationale": "Causal question with explicit root cause analysis"
+    },
+    {
+      "id": "confident_hard_001",
+      "difficulty": "hard",
+      "query": "What is the company's competitive advantage?",
+      "contexts": [
+        "DataFlow's competitive advantage stems from three key factors: First, our proprietary compression algorithm reduces storage costs by 60% compared to competitors. Second, our platform processes queries 10x faster due to our columnar storage architecture. Third, we hold 12 patents on real-time data synchronization that prevent direct competition.",
+        "Independent benchmarks by Gartner confirm DataFlow outperforms competitors in all major metrics including cost efficiency, query speed, and reliability."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex question but context provides clear comprehensive answer",
+      "rationale": "Complex question requiring synthesis but context provides clear, comprehensive answer"
+    },
+    {
+      "id": "confident_hard_002",
+      "difficulty": "hard",
+      "query": "Why did customers churn last quarter?",
+      "contexts": [
+        "Customer exit surveys identified three primary reasons for churn: 45% cited price increases implemented in Q2 as the main factor, 30% switched to Competitor X's new offering with better mobile support, and 25% reported that missing features (specifically offline mode) led to their decision.",
+        "Analysis showed that customers who churned had 40% lower product engagement in the 60 days before cancellation, suggesting early warning signs were present but not acted upon."
+      ],
+      "expected_mode": "confident",
+      "description": "Causal question with data-backed reasons",
+      "rationale": "Causal question with data-backed reasons and explicit causal language"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "category": "abstention",
+  "description": "Queries where context is completely irrelevant - system should ABSTAIN",
+  "cases": [
+    {
+      "id": "abstain_easy_001",
+      "difficulty": "easy",
+      "query": "What was Apple's revenue in Q4 2024?",
+      "contexts": [
+        "The mitochondria is the powerhouse of the cell, responsible for producing ATP through cellular respiration. This process involves the electron transport chain and oxidative phosphorylation.",
+        "Photosynthesis occurs in the chloroplasts of plant cells, converting light energy into chemical energy stored in glucose molecules."
+      ],
+      "expected_mode": "abstain",
+      "description": "Business/finance query with biology contexts",
+      "rationale": "Business/finance query with biology contexts - completely different domains"
+    },
+    {
+      "id": "abstain_easy_002",
+      "difficulty": "easy",
+      "query": "Who won the 2024 Super Bowl?",
+      "contexts": [
+        "The French Revolution began in 1789 with the storming of the Bastille. It led to the end of the monarchy and the rise of Napoleon Bonaparte.",
+        "The Renaissance was a cultural movement that began in Italy in the 14th century, spreading throughout Europe over the next few centuries."
+      ],
+      "expected_mode": "abstain",
+      "description": "Sports query with history contexts",
+      "rationale": "Sports query with history contexts - completely different domains"
+    },
+    {
+      "id": "abstain_easy_003",
+      "difficulty": "easy",
+      "query": "How do I configure nginx reverse proxy?",
+      "contexts": [
+        "The Amazon rainforest produces approximately 20% of the world's oxygen. Deforestation threatens this vital ecosystem.",
+        "Coral reefs support 25% of all marine species despite covering less than 1% of the ocean floor."
+      ],
+      "expected_mode": "abstain",
+      "description": "Technical/software query with environmental contexts",
+      "rationale": "Technical/software query with environmental contexts"
+    },
+    {
+      "id": "abstain_easy_004",
+      "difficulty": "easy",
+      "query": "What are the side effects of ibuprofen?",
+      "contexts": [
+        "Python was created by Guido van Rossum and first released in 1991. It emphasizes code readability with its use of significant indentation.",
+        "JavaScript is the most popular programming language for web development, running in browsers and on servers via Node.js."
+      ],
+      "expected_mode": "abstain",
+      "description": "Medical query with programming contexts",
+      "rationale": "Medical query with programming contexts"
+    },
+    {
+      "id": "abstain_medium_001",
+      "difficulty": "medium",
+      "query": "What is Tesla's current stock price?",
+      "contexts": [
+        "Ford Motor Company reported strong earnings in Q3 2024, with F-150 Lightning sales increasing 40% year-over-year.",
+        "General Motors announced plans to invest $35 billion in electric and autonomous vehicles through 2025."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (automotive/stocks) but wrong company",
+      "rationale": "Same domain (automotive/stocks) but wrong company - no Tesla information"
+    },
+    {
+      "id": "abstain_medium_002",
+      "difficulty": "medium",
+      "query": "What are the symptoms of type 2 diabetes?",
+      "contexts": [
+        "Type 1 diabetes is an autoimmune condition where the pancreas produces little or no insulin. It typically develops in childhood.",
+        "Gestational diabetes occurs during pregnancy and usually resolves after delivery, though it increases risk of type 2 diabetes later."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same medical domain but different conditions",
+      "rationale": "Same medical domain but different conditions - no type 2 diabetes symptoms listed"
+    },
+    {
+      "id": "abstain_medium_003",
+      "difficulty": "medium",
+      "query": "How do I deploy a React app to AWS?",
+      "contexts": [
+        "Angular is a TypeScript-based framework developed by Google. It uses a component-based architecture similar to React.",
+        "Vue.js offers a progressive framework that can be adopted incrementally. It's known for its gentle learning curve."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (frontend frameworks) but no React or AWS info",
+      "rationale": "Same domain (frontend frameworks) but no React or AWS deployment info"
+    },
+    {
+      "id": "abstain_medium_004",
+      "difficulty": "medium",
+      "query": "What is the population of Tokyo?",
+      "contexts": [
+        "Osaka is Japan's second-largest city with a population of approximately 2.7 million in the city proper and 19 million in the greater metro area.",
+        "Kyoto served as Japan's capital for over a millennium and remains the cultural heart of the country with numerous UNESCO World Heritage sites."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same country/domain but different cities",
+      "rationale": "Same country/domain but different cities - no Tokyo population data"
+    },
+    {
+      "id": "abstain_hard_001",
+      "difficulty": "hard",
+      "query": "Why did the 2008 financial crisis happen?",
+      "contexts": [
+        "The 2008 crisis led to significant regulatory changes including the Dodd-Frank Act, which imposed stricter oversight on financial institutions.",
+        "Many banks received government bailouts during the crisis, with TARP providing $700 billion to stabilize the financial system.",
+        "Unemployment peaked at 10% in October 2009 as the effects of the crisis rippled through the economy."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context discusses effects not causes of crisis",
+      "rationale": "Contexts discuss effects and responses to 2008 crisis, but not the CAUSES (subprime mortgages, CDOs, etc.)"
+    },
+    {
+      "id": "abstain_hard_002",
+      "difficulty": "hard",
+      "query": "What is the mechanism of action of aspirin?",
+      "contexts": [
+        "Aspirin is commonly used to reduce fever, relieve mild to moderate pain, and reduce inflammation. It's also used as a blood thinner.",
+        "The recommended dosage for adults is typically 325-650mg every 4-6 hours as needed, not exceeding 4g per day.",
+        "Side effects may include stomach upset, heartburn, and in rare cases, gastrointestinal bleeding."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has uses and dosage but not mechanism",
+      "rationale": "Contexts discuss uses, dosage, and side effects but NOT the mechanism (COX inhibition, prostaglandin synthesis)"
+    }
+  ]
+}
