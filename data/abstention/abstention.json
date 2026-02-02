@@ -1,6 +1,8 @@
 {
   "category": "abstention",
   "description": "Queries where context is irrelevant or insufficient - system should ABSTAIN from answering",
+  "version": "0.9.0",
+  "mode_rationale": "ABSTAIN because context is completely irrelevant to the query or discusses wrong entity/time period. System should refuse to answer rather than speculate.",
   "cases": [
     {
       "id": "abstain_easy_001",

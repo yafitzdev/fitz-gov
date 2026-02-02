@@ -1,6 +1,8 @@
 {
   "category": "dispute",
   "description": "Queries where contexts contain conflicting information - system should mark as DISPUTED",
+  "version": "0.9.0",
+  "mode_rationale": "DISPUTED because sources provide contradictory information. System should flag the conflict and present both perspectives.",
   "cases": [
     {
       "id": "dispute_easy_001",

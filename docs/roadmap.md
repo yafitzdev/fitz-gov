@@ -2,7 +2,7 @@
 
 Target: **200 test cases** across 6 governance categories.
 
-## Current Status (v0.8.0) ✓ COMPLETE
+## Current Status (v0.9.0) ✓ COMPLETE
 
 | Category | Current | Target | Progress |
 |----------|---------|--------|----------|
@@ -125,6 +125,12 @@ Each test case expansion requires corresponding corpus documents with:
 
 ## Version History
 
+- **v0.9.0** - Schema improvements & evaluation refinements:
+  - Fixed expected_mode for grounding (25) and relevance (25) categories: "confident" → "qualified"
+  - Added evaluation_config with regex patterns, allowed_phrases, forbidden_elements
+  - Standardized schema: version, mode_rationale, evaluation_config across all categories
+  - Added validation script (scripts/validate.py)
+  - Added mode decision tree documentation (docs/mode-decision-tree.md)
 - **v0.8.0** - Confidence expansion (10 → 30 cases, 258 → 288 docs) - **TARGET REACHED!**
 - **v0.7.0** - Relevance expansion (5 → 25 cases, 233 → 258 docs)
 - **v0.6.0** - Dispute expansion (10 → 40 cases, 175 → 233 docs)
@@ -136,7 +142,9 @@ Each test case expansion requires corresponding corpus documents with:
 
 ## Summary
 
-FITZ-GOV v0.8.0 achieves the target of **200 test cases** with **288 corpus documents** across 6 governance categories. The benchmark comprehensively tests RAG system governance including:
+FITZ-GOV v0.9.0 achieves the target of **200 test cases** with **288 corpus documents** across 6 governance categories. Version 0.9.0 includes improved schema consistency and enhanced evaluation mechanisms with regex-based forbidden_claims and forbidden_elements for detecting hallucinations and irrelevant answers.
+
+The benchmark comprehensively tests RAG system governance including:
 
 - **When to refuse** (abstention) - 40 cases
 - **When to flag conflicts** (dispute) - 40 cases

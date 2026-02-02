@@ -1,6 +1,8 @@
 {
   "category": "qualification",
   "description": "Queries where context lacks sufficient evidence for confident answers - system should mark as QUALIFIED",
+  "version": "0.9.0",
+  "mode_rationale": "QUALIFIED because context provides partial/uncertain evidence. System should answer with appropriate hedging (correlation vs causation, limited sample, etc.).",
   "cases": [
     {
       "id": "qualify_easy_001",

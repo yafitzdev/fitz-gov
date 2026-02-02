@@ -1,7 +1,8 @@
 {
   "category": "confidence",
   "description": "Queries where context clearly answers the question - system should be CONFIDENT",
-  "version": "0.8.0",
+  "version": "0.9.0",
+  "mode_rationale": "CONFIDENT because context clearly and unambiguously answers the question. System should provide direct answer without unnecessary hedging.",
   "subcategories": {
     "direct_factual": "Simple factual questions with explicit answers in context",
     "explicit_causal": "Why questions where the cause is explicitly stated",
