@@ -1,12 +1,12 @@
-# FITZ-GOV: Comprehensive RAG Governance Benchmark
+# fitz-gov: Comprehensive RAG Governance Benchmark
 
-FITZ-GOV is a benchmark for evaluating RAG system governance - the ability to know when to abstain, dispute, qualify, or confidently answer questions.
+fitz-gov is a benchmark for evaluating RAG system governance - the ability to know when to abstain, dispute, qualify, or confidently answer questions.
 
-## Why FITZ-GOV?
+## Why fitz-gov?
 
 Most RAG benchmarks focus on retrieval quality (BEIR) or answer correctness (RAGAS). But real-world RAG systems need **epistemic honesty** - knowing what they don't know.
 
-FITZ-GOV measures:
+fitz-gov measures:
 
 | Category | What it Tests | Maps to |
 |----------|--------------|---------|
@@ -41,7 +41,7 @@ benchmark = FitzGovBenchmark()
 results = benchmark.evaluate(engine)
 
 print(results)
-# FITZ-GOV Results (n=200):
+# fitz-gov Results (n=200):
 #   Overall Accuracy: 78.33%
 #
 # Governance Mode Categories:
@@ -107,7 +107,7 @@ print(f"Expected: {case.expected_mode.value}, Got: {mode.value}")
 
 ## Two-Pass Validation (Answer Quality Categories)
 
-For grounding and relevance categories, FITZ-GOV uses **two-pass validation** to reduce false positives:
+For grounding and relevance categories, fitz-gov uses **two-pass validation** to reduce false positives:
 
 1. **Regex pass**: Fast pattern matching catches obvious violations
 2. **LLM pass**: Semantic validation for flagged cases
@@ -262,7 +262,7 @@ See [docs/roadmap.md](docs/roadmap.md) for test case coverage details.
 
 ## Architecture Note
 
-FITZ-GOV is designed as a standalone package so that:
+fitz-gov is designed as a standalone package so that:
 
 1. **Any RAG system** can benchmark against the same test cases
 2. **Evaluation logic is consistent** - all systems get identical evaluation

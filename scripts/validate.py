@@ -1,6 +1,6 @@
 # scripts/validate.py
 """
-Validation script for FITZ-GOV benchmark test data.
+Validation script for fitz-gov benchmark test data.
 
 Verifies:
 - Schema consistency across all category files
@@ -124,7 +124,7 @@ def main():
     global_duplicate_ids = []
 
     print("=" * 60)
-    print("FITZ-GOV Validation Report")
+    print("fitz-gov Validation Report")
     print("=" * 60)
 
     for category in categories:

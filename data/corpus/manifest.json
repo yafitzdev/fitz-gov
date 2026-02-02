@@ -1,6 +1,6 @@
 {
   "version": "0.8.0",
-  "description": "FITZ-GOV curated test corpus - 288 documents designed to test governance behaviors",
+  "description": "fitz-gov curated test corpus - 288 documents designed to test governance behaviors",
   "document_count": 288,
   "domains": {
     "biology": 3,

@@ -1,4 +1,4 @@
-# FITZ-GOV Test Case Roadmap
+# fitz-gov Test Case Roadmap
 
 Target: **200 test cases** across 6 governance categories.
 
@@ -142,7 +142,7 @@ Each test case expansion requires corresponding corpus documents with:
 
 ## Summary
 
-FITZ-GOV v0.9.0 achieves the target of **200 test cases** with **288 corpus documents** across 6 governance categories. Version 0.9.0 includes improved schema consistency and enhanced evaluation mechanisms with regex-based forbidden_claims and forbidden_elements for detecting hallucinations and irrelevant answers.
+fitz-gov v0.9.0 achieves the target of **200 test cases** with **288 corpus documents** across 6 governance categories. Version 0.9.0 includes improved schema consistency and enhanced evaluation mechanisms with regex-based forbidden_claims and forbidden_elements for detecting hallucinations and irrelevant answers.
 
 The benchmark comprehensively tests RAG system governance including:
 

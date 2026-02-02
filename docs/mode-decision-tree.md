@@ -1,4 +1,4 @@
-# FITZ-GOV Mode Decision Tree
+# fitz-gov Mode Decision Tree
 
 This document explains how to determine the correct `expected_mode` for a test case based on the relationship between the query and context.
 
