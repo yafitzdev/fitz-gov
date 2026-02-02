@@ -2,63 +2,60 @@
 """
 FITZ-GOV: Comprehensive RAG Governance Benchmark.
 
-This package provides:
-1. Benchmark test data for evaluating RAG governance
-2. Synthetic test case generator for creating custom benchmarks
-3. CLI tools for working with benchmark data
+A benchmark for evaluating RAG system governance - knowing when to abstain,
+dispute, qualify, or confidently answer based on available evidence.
 
-Usage:
-    from fitz_gov import load_cases, FitzGovCase
+Example:
+    from fitz_gov import FitzGovEvaluator, load_cases, FitzGovCategory
 
-    cases = load_cases()
+    # Load test cases
+    cases = load_cases([FitzGovCategory.GROUNDING])
+
+    # Create evaluator with LLM validation
+    evaluator = FitzGovEvaluator(llm_validation=True)
+
+    # Evaluate responses
     for case in cases:
-        # Evaluate your RAG system
-        ...
+        response = my_rag_system.query(case.query, case.contexts)
+        result = evaluator.evaluate_case(case, response)
+        print(f"{case.id}: {'PASS' if result.passed else 'FAIL'}")
 """
 
-__version__ = "0.1.0"
+__version__ = "0.9.1"
+
+from .evaluator import FitzGovEvaluator
+from .loader import get_category_info, get_data_dir, load_case_by_id, load_cases
+from .llm_validator import OllamaValidator, ValidationResult, ValidatorConfig
+from .models import (
+    AnswerMode,
+    FitzGovCase,
+    FitzGovCaseResult,
+    FitzGovCategory,
+    FitzGovCategoryResult,
+    FitzGovConfusionMatrix,
+    FitzGovResult,
+)
 
 __all__ = [
-    # Schema
-    "FitzGovCategory",
-    "FitzGovCase",
-    "AnswerMode",
-    # Data loading
+    # Version
+    "__version__",
+    # Evaluator
+    "FitzGovEvaluator",
+    # Loader
     "load_cases",
+    "load_case_by_id",
     "get_data_dir",
-    # Generator (requires [generator] extra)
-    "FitzGovGenerator",
-    # Bootstrap (requires [generator] extra + beir)
-    "bootstrap_from_beir",
+    "get_category_info",
+    # Models
+    "FitzGovCategory",
+    "AnswerMode",
+    "FitzGovCase",
+    "FitzGovCaseResult",
+    "FitzGovCategoryResult",
+    "FitzGovConfusionMatrix",
+    "FitzGovResult",
+    # LLM Validator
+    "OllamaValidator",
+    "ValidatorConfig",
+    "ValidationResult",
 ]
-
-
-def __getattr__(name: str):
-    """Lazy imports."""
-    if name in ("FitzGovCategory", "FitzGovCase", "AnswerMode"):
-        from .schema import AnswerMode, FitzGovCase, FitzGovCategory
-
-        if name == "FitzGovCategory":
-            return FitzGovCategory
-        elif name == "FitzGovCase":
-            return FitzGovCase
-        return AnswerMode
-
-    if name in ("load_cases", "get_data_dir"):
-        from .loader import get_data_dir, load_cases
-
-        if name == "load_cases":
-            return load_cases
-        return get_data_dir
-
-    if name == "FitzGovGenerator":
-        from .generator import FitzGovGenerator
-
-        return FitzGovGenerator
-
-    if name == "bootstrap_from_beir":
-        from .bootstrap import bootstrap_from_beir
-
-        return bootstrap_from_beir
-
-    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

@@ -1,111 +1,157 @@
 # fitz_gov/loader.py
 """
-Data loader for FITZ-GOV benchmark cases.
+Data loader for FITZ-GOV benchmark test cases.
 """
 
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
 
-from .schema import FitzGovCase, FitzGovCategory
+from .models import FitzGovCase, FitzGovCategory
 
-# Data directory is relative to this package
-DATA_DIR = Path(__file__).parent.parent / "data"
+logger = logging.getLogger(__name__)
+
+# Package data directory
+PACKAGE_DATA_DIR = Path(__file__).parent.parent / "data"
 
 
 def get_data_dir() -> Path:
     """Get the path to the benchmark data directory."""
-    return DATA_DIR
+    return PACKAGE_DATA_DIR
 
 
 def load_cases(
-    categories: list[str] | None = None,
-    data_dir: Path | str | None = None,
+    categories: list[FitzGovCategory] | None = None,
+    data_dir: Path | None = None,
 ) -> list[FitzGovCase]:
     """
-    Load FITZ-GOV test cases.
+    Load test cases from data directory.
 
     Args:
-        categories: List of category names to load. Defaults to all.
-        data_dir: Custom data directory. Defaults to bundled data.
+        categories: Categories to load. Defaults to all.
+        data_dir: Data directory. Defaults to package data dir.
 
     Returns:
         List of FitzGovCase objects.
     """
-    data_path = Path(data_dir) if data_dir else DATA_DIR
+    if data_dir is None:
+        data_dir = PACKAGE_DATA_DIR
+
+    if not data_dir.exists():
+        logger.warning(f"Data directory not found: {data_dir}")
+        return []
+
     cases: list[FitzGovCase] = []
-
-    if not data_path.exists():
-        raise FileNotFoundError(f"Data directory not found: {data_path}")
-
-    # Map category names to FitzGovCategory
-    category_map = {c.value: c for c in FitzGovCategory}
-
-    # Determine which categories to load
-    if categories:
-        target_categories = [category_map[c] for c in categories if c in category_map]
-    else:
-        target_categories = list(FitzGovCategory)
+    target_categories = categories or list(FitzGovCategory)
 
     for cat in target_categories:
-        cat_dir = data_path / cat.value
+        cat_dir = data_dir / cat.value
         if not cat_dir.exists():
+            logger.debug(f"Category directory not found: {cat_dir}")
             continue
 
         for json_file in cat_dir.glob("*.json"):
             try:
-                with open(json_file, encoding="utf-8") as f:
-                    data = json.load(f)
-
-                for case_data in data.get("cases", []):
-                    # Ensure category is set correctly
-                    case_data["category"] = cat.value
-                    case_data["subcategory"] = json_file.stem
-                    cases.append(FitzGovCase.from_dict(case_data))
-
+                loaded = _load_category_file(json_file, cat)
+                cases.extend(loaded)
             except Exception as e:
-                print(f"Warning: Failed to load {json_file}: {e}")
+                logger.warning(f"Failed to load {json_file}: {e}")
+
+    logger.info(f"Loaded {len(cases)} test cases from {data_dir}")
+    return cases
+
+
+def _load_category_file(json_file: Path, category: FitzGovCategory) -> list[FitzGovCase]:
+    """Load test cases from a single category JSON file."""
+    with open(json_file, encoding="utf-8") as f:
+        data = json.load(f)
+
+    # Get category-level evaluation config
+    category_eval_config = data.get("evaluation_config", {})
+
+    cases = []
+    for case_data in data.get("cases", []):
+        case_data["category"] = category.value
+
+        # Use file stem as subcategory if not specified
+        if "subcategory" not in case_data:
+            case_data["subcategory"] = json_file.stem
+
+        # Merge category-level eval config with case-level
+        case_eval_config = case_data.get("evaluation_config", {})
+        merged_config = {**category_eval_config, **case_eval_config}
+        case_data["evaluation_config"] = merged_config
+
+        cases.append(FitzGovCase.from_dict(case_data))
 
     return cases
 
 
-def validate_cases(cases: list[FitzGovCase]) -> list[str]:
+def load_case_by_id(case_id: str, data_dir: Path | None = None) -> FitzGovCase | None:
     """
-    Validate test cases for common issues.
+    Load a single test case by ID.
+
+    Args:
+        case_id: The case ID (e.g., "grounding_easy_001").
+        data_dir: Data directory. Defaults to package data dir.
 
     Returns:
-        List of validation error messages (empty if valid).
+        FitzGovCase if found, None otherwise.
     """
-    errors: list[str] = []
-    seen_ids: set[str] = set()
+    # Parse category from case_id
+    for cat in FitzGovCategory:
+        if case_id.startswith(cat.value):
+            cases = load_cases([cat], data_dir)
+            for case in cases:
+                if case.id == case_id:
+                    return case
+            break
 
-    for case in cases:
-        # Check for duplicate IDs
-        if case.id in seen_ids:
-            errors.append(f"Duplicate case ID: {case.id}")
-        seen_ids.add(case.id)
+    # Fallback: search all categories
+    all_cases = load_cases(data_dir=data_dir)
+    for case in all_cases:
+        if case.id == case_id:
+            return case
 
-        # Check required fields
-        if not case.query.strip():
-            errors.append(f"Case {case.id}: Empty query")
+    return None
 
-        if not case.contexts:
-            errors.append(f"Case {case.id}: No contexts provided")
 
-        if not case.description.strip():
-            errors.append(f"Case {case.id}: Empty description")
+def get_category_info(data_dir: Path | None = None) -> dict[str, dict]:
+    """
+    Get metadata about each category.
 
-        if not case.rationale.strip():
-            errors.append(f"Case {case.id}: Empty rationale")
+    Returns:
+        Dict mapping category name to metadata (description, version, case count).
+    """
+    if data_dir is None:
+        data_dir = PACKAGE_DATA_DIR
 
-        # Category-specific validation
-        if case.category == FitzGovCategory.GROUNDING:
-            if not case.forbidden_claims:
-                errors.append(f"Case {case.id}: GROUNDING case missing forbidden_claims")
+    info = {}
+    for cat in FitzGovCategory:
+        cat_dir = data_dir / cat.value
+        if not cat_dir.exists():
+            continue
 
-        if case.category == FitzGovCategory.RELEVANCE:
-            if not case.required_elements:
-                errors.append(f"Case {case.id}: RELEVANCE case missing required_elements")
+        # Load first JSON file to get metadata
+        json_files = list(cat_dir.glob("*.json"))
+        if not json_files:
+            continue
 
-    return errors
+        with open(json_files[0], encoding="utf-8") as f:
+            data = json.load(f)
+
+        case_count = sum(
+            len(json.load(open(jf, encoding="utf-8")).get("cases", []))
+            for jf in json_files
+        )
+
+        info[cat.value] = {
+            "description": data.get("description", ""),
+            "version": data.get("version", "unknown"),
+            "mode_rationale": data.get("mode_rationale", ""),
+            "case_count": case_count,
+        }
+
+    return info
