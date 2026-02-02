@@ -20,24 +20,28 @@ FITZ-GOV measures:
 ## Installation
 
 ```bash
-# Just the data (no generator)
 pip install fitz-gov
-
-# With synthetic test case generator
-pip install fitz-gov[generator]
 ```
 
-## Usage with Fitz
+Or install from local path during development:
+
+```bash
+pip install -e path/to/fitz-gov
+```
+
+## Quick Start
+
+### With Fitz RAG Engine
 
 ```python
 from fitz_ai.evaluation.benchmarks import FitzGovBenchmark
 
-# Downloads data automatically from GitHub releases
+# Create benchmark and evaluate your engine
 benchmark = FitzGovBenchmark()
 results = benchmark.evaluate(engine)
 
 print(results)
-# FITZ-GOV Results (n=240):
+# FITZ-GOV Results (n=200):
 #   Overall Accuracy: 78.33%
 #
 # Governance Mode Categories:
@@ -47,74 +51,169 @@ print(results)
 #   Confidence: 85.00% (34/40)
 #
 # Answer Quality Categories:
-#   Grounding: 80.00% (32/40)
-#   Relevance: 77.50% (31/40)
+#   Grounding: 80.00% (20/25)
+#   Relevance: 77.50% (19/25)
 ```
 
-## Standalone Usage
+### Standalone Usage (Any RAG System)
+
+The `fitz-gov` package contains all evaluation logic, so any RAG system can be evaluated:
 
 ```python
-from fitz_gov import load_cases, FitzGovCase
+from fitz_gov import FitzGovEvaluator, load_cases, FitzGovCategory, AnswerMode
 
-# Load all test cases
+# Load test cases
 cases = load_cases()
 
-# Load specific category
-abstention_cases = load_cases(categories=["abstention"])
+# Create evaluator
+evaluator = FitzGovEvaluator()
 
-# Evaluate your own system
+# Evaluate your RAG system's responses
+responses = []
+modes = []
+
 for case in cases:
-    your_answer = your_rag_system.answer(case.query, case.contexts)
-    your_mode = classify_answer_mode(your_answer)
-    passed = your_mode == case.expected_mode
+    # Your RAG system generates response
+    response = your_rag_system.query(case.query, case.contexts)
+    mode = your_rag_system.classify_mode(response)  # Your mode classification
+
+    responses.append(response)
+    modes.append(mode)
+
+# Get comprehensive results
+results = evaluator.evaluate_all(cases, responses, modes)
+print(f"Overall accuracy: {results.overall_accuracy:.1%}")
 ```
 
-## Bootstrapping from BEIR
-
-The recommended way to generate FITZ-GOV benchmark data is to bootstrap from BEIR corpora:
-
-```bash
-# Install with generator dependencies
-pip install fitz-gov[generator]
-
-# See available BEIR datasets
-fitz-gov bootstrap --list-datasets
-
-# Bootstrap from recommended datasets (scifact, nfcorpus, fiqa)
-export OPENAI_API_KEY=your_key
-fitz-gov bootstrap --output ./data --num-cases 50
-
-# Or use specific datasets
-fitz-gov bootstrap --datasets scifact,hotpotqa --output ./data
-
-# Use Anthropic instead
-export ANTHROPIC_API_KEY=your_key
-fitz-gov bootstrap --llm-provider anthropic --output ./data
-```
-
-This downloads BEIR corpus documents and uses an LLM to generate governance test cases.
-
-## Generating Custom Test Cases
-
-Generate benchmark cases from your own corpus:
-
-```bash
-# Generate abstention cases
-fitz-gov generate abstention --corpus ./my_docs --output ./my_cases
-
-# Generate all categories
-fitz-gov generate all --corpus ./my_docs --output ./my_cases
-```
+### Evaluating Individual Cases
 
 ```python
-from fitz_gov.generator import FitzGovGenerator
+from fitz_gov import FitzGovEvaluator, load_case_by_id
 
-generator = FitzGovGenerator(llm_client=your_client)
+evaluator = FitzGovEvaluator()
 
-# Generate from your chunks
-cases = generator.generate_abstention_cases(your_chunks, num_cases=50)
-cases += generator.generate_dispute_cases(your_chunks, num_cases=50)
-# ... etc
+# Load specific test case
+case = load_case_by_id("abstain_001")
+
+# Your system's response
+response = "Based on the context provided, I cannot find information about..."
+mode = AnswerMode.ABSTAIN
+
+# Evaluate
+result = evaluator.evaluate_case(case, response, mode)
+print(f"Passed: {result.passed}")
+print(f"Expected: {case.expected_mode.value}, Got: {mode.value}")
+```
+
+## Two-Pass Validation (Answer Quality Categories)
+
+For grounding and relevance categories, FITZ-GOV uses **two-pass validation** to reduce false positives:
+
+1. **Regex pass**: Fast pattern matching catches obvious violations
+2. **LLM pass**: Semantic validation for flagged cases
+
+### Enable LLM Validation
+
+```python
+from fitz_gov import FitzGovEvaluator
+
+# Enable LLM validation with local Ollama
+evaluator = FitzGovEvaluator(
+    llm_validation=True,
+    llm_model="qwen2.5:14b",  # or any Ollama model
+    llm_base_url="http://localhost:11434"
+)
+
+# Responses flagged by regex are sent to LLM for semantic check
+results = evaluator.evaluate_all(cases, responses, modes)
+```
+
+### Validation Flow
+
+```
+Response contains forbidden_claim pattern?
+    │
+    ├─ No  → PASS (no hallucination detected)
+    │
+    └─ Yes → LLM validates: "Is this an actual hallucination?"
+                │
+                ├─ LLM says no (e.g., "no revenue mentioned") → PASS
+                │
+                └─ LLM says yes (fabricated specific value) → FAIL
+```
+
+### Caching
+
+LLM validation results are cached for 7 days to speed up repeated evaluations:
+- Cache location: `~/.cache/fitz_gov/`
+- Automatic cache cleanup on startup
+
+## API Reference
+
+### Core Classes
+
+```python
+from fitz_gov import (
+    # Evaluator
+    FitzGovEvaluator,
+
+    # Data loading
+    load_cases,
+    load_case_by_id,
+    get_category_info,
+    get_data_dir,
+
+    # Models
+    FitzGovCategory,
+    AnswerMode,
+    FitzGovCase,
+    FitzGovCaseResult,
+    FitzGovCategoryResult,
+    FitzGovConfusionMatrix,
+    FitzGovResult,
+
+    # LLM Validation
+    OllamaValidator,
+    ValidatorConfig,
+    ValidationResult,
+)
+```
+
+### FitzGovEvaluator
+
+```python
+evaluator = FitzGovEvaluator(
+    llm_validation=False,      # Enable two-pass validation
+    llm_model="qwen2.5:14b",   # Ollama model for validation
+    llm_base_url="http://localhost:11434"
+)
+
+# Evaluate all cases
+results = evaluator.evaluate_all(cases, responses, modes)
+
+# Evaluate single case
+result = evaluator.evaluate_case(case, response, mode)
+```
+
+### Loading Test Cases
+
+```python
+# Load all cases (200 total)
+cases = load_cases()
+
+# Load specific categories
+governance_cases = load_cases([
+    FitzGovCategory.ABSTENTION,
+    FitzGovCategory.DISPUTE,
+])
+
+quality_cases = load_cases([
+    FitzGovCategory.GROUNDING,
+    FitzGovCategory.RELEVANCE,
+])
+
+# Load single case by ID
+case = load_case_by_id("dispute_005")
 ```
 
 ## Data Format
@@ -124,39 +223,52 @@ Test cases are JSON files organized by category:
 ```
 data/
 ├── abstention/
-│   ├── no_context.json
-│   └── out_of_scope.json
+│   └── abstention.json    # 40 cases
 ├── dispute/
-│   └── contradicting_facts.json
+│   └── dispute.json       # 40 cases
 ├── qualification/
-│   └── causal_without_evidence.json
+│   └── qualification.json # 40 cases
 ├── confidence/
-│   └── clear_answers.json
+│   └── confidence.json    # 30 cases
 ├── grounding/
-│   └── hallucination_traps.json
+│   └── grounding.json     # 25 cases
 └── relevance/
-    └── off_topic_traps.json
+    └── relevance.json     # 25 cases
 ```
 
-Each JSON file:
+Each case has:
 
 ```json
 {
-  "description": "Category description",
-  "cases": [
-    {
-      "id": "abstain_001",
-      "query": "What is the company's revenue for 2024?",
-      "contexts": ["The company was founded in 2010..."],
-      "expected_mode": "abstain",
-      "description": "Question about data not in context",
-      "rationale": "Context contains no financial data",
-      "forbidden_claims": [],
-      "required_elements": []
-    }
-  ]
+  "id": "abstain_001",
+  "query": "What is the company's revenue for 2024?",
+  "contexts": ["The company was founded in 2010..."],
+  "expected_mode": "abstain",
+  "subcategory": "different_domain",
+  "difficulty": "medium",
+  "mode_rationale": "Context contains no financial data",
+  "evaluation_config": {
+    "forbidden_claims": ["\\$\\d"],
+    "allowed_phrases": ["not specified", "cannot find"]
+  }
 }
 ```
+
+## Version
+
+Current version: **0.9.1**
+
+See [docs/roadmap.md](docs/roadmap.md) for test case coverage details.
+
+## Architecture Note
+
+FITZ-GOV is designed as a standalone package so that:
+
+1. **Any RAG system** can benchmark against the same test cases
+2. **Evaluation logic is consistent** - all systems get identical evaluation
+3. **Test data is versioned** - reproducible benchmarks across releases
+
+For Fitz RAG engine integration, see `fitz_ai.evaluation.benchmarks.FitzGovBenchmark` which wraps this package.
 
 ## Contributing
 
@@ -164,7 +276,7 @@ We welcome contributions! To add new test cases:
 
 1. Fork this repo
 2. Add cases to the appropriate `data/<category>/` directory
-3. Run validation: `fitz-gov validate`
+3. Run validation: `python scripts/validate.py`
 4. Submit a PR
 
 ## License

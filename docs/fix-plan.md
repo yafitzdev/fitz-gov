@@ -1,9 +1,12 @@
 # FITZ-GOV Test Case Fix Plan
 
+> **Status: ARCHIVED** - This plan was completed in v0.9.0. Kept for historical reference.
+> For current test case status, see [roadmap.md](roadmap.md).
+
 ## Overview
 
-This plan addresses critical issues identified in the FITZ-GOV benchmark test cases.
-Fixes are ordered by priority and dependency.
+This plan addressed critical issues identified in the FITZ-GOV benchmark test cases.
+Fixes were ordered by priority and dependency.
 
 ---
 
