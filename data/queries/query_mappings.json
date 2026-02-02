@@ -1,0 +1,288 @@
+{
+  "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
+  "version": "0.2.0",
+  "mappings": {
+    "abstention": {
+      "abstain_easy_001": {
+        "query": "What was Apple's revenue in Q4 2024?",
+        "relevant_docs": [],
+        "decoy_docs": ["bio_001", "bio_002"],
+        "notes": "No Apple financial docs exist - should abstain"
+      },
+      "abstain_easy_002": {
+        "query": "Who won the 2024 Super Bowl?",
+        "relevant_docs": [],
+        "decoy_docs": ["hist_001", "hist_002", "sports_generic_001"],
+        "notes": "No Super Bowl results - generic football doc is decoy"
+      },
+      "abstain_easy_003": {
+        "query": "How do I configure nginx reverse proxy?",
+        "relevant_docs": [],
+        "decoy_docs": ["env_001", "env_002", "nginx_001"],
+        "notes": "nginx_001 mentions nginx but no config details"
+      },
+      "abstain_easy_004": {
+        "query": "What are the side effects of ibuprofen?",
+        "relevant_docs": [],
+        "decoy_docs": ["prog_001", "prog_002", "ibuprofen_generic_001"],
+        "notes": "Generic OTC doc doesn't list specific ibuprofen side effects"
+      },
+      "abstain_medium_001": {
+        "query": "What is Tesla's current stock price?",
+        "relevant_docs": [],
+        "decoy_docs": ["auto_001", "auto_002", "tesla_industry_001"],
+        "notes": "EV market docs but no Tesla stock price"
+      },
+      "abstain_medium_002": {
+        "query": "What are the symptoms of type 2 diabetes?",
+        "relevant_docs": [],
+        "decoy_docs": ["med_001", "med_002", "type2_generic_001"],
+        "notes": "Type 1 and gestational docs, but no type 2 symptoms"
+      },
+      "abstain_medium_003": {
+        "query": "How do I deploy a React app to AWS?",
+        "relevant_docs": [],
+        "decoy_docs": ["tech_001", "tech_002", "react_001", "react_aws_generic_001"],
+        "notes": "React overview exists but no AWS deployment guide"
+      },
+      "abstain_medium_004": {
+        "query": "What is the population of Tokyo?",
+        "relevant_docs": [],
+        "decoy_docs": ["geo_001", "geo_002", "tokyo_generic_001"],
+        "notes": "Osaka/Kyoto docs, generic Asia cities doc - no Tokyo population"
+      },
+      "abstain_hard_001": {
+        "query": "Why did the 2008 financial crisis happen?",
+        "relevant_docs": [],
+        "decoy_docs": ["fin_001", "fin_002", "fin_003"],
+        "notes": "Crisis effects/responses only - no CAUSES"
+      },
+      "abstain_hard_002": {
+        "query": "What is the mechanism of action of aspirin?",
+        "relevant_docs": [],
+        "decoy_docs": ["pharma_001", "pharma_002"],
+        "notes": "Uses and side effects only - no mechanism (COX inhibition)"
+      }
+    },
+    "dispute": {
+      "dispute_easy_001": {
+        "query": "Did the project launch successfully?",
+        "relevant_docs": ["proj_success_001", "proj_fail_001"],
+        "notes": "Direct contradiction - success vs failure reports"
+      },
+      "dispute_easy_002": {
+        "query": "Is the company profitable?",
+        "relevant_docs": ["company_profit_001", "company_loss_001"],
+        "notes": "Direct contradiction - profit vs loss reports"
+      },
+      "dispute_easy_003": {
+        "query": "Was the medication approved by the FDA?",
+        "relevant_docs": ["fda_approve_001", "fda_reject_001"],
+        "notes": "Direct contradiction - approval vs rejection"
+      },
+      "dispute_easy_004": {
+        "query": "Did sales increase this quarter?",
+        "relevant_docs": ["sales_up_001", "sales_down_001"],
+        "notes": "Direct contradiction - increase vs decline"
+      },
+      "dispute_medium_001": {
+        "query": "What is the effectiveness rate of the vaccine?",
+        "relevant_docs": ["vaccine_001", "vaccine_002", "vaccine_003"],
+        "notes": "Different studies report 95%, 64%, 88%"
+      },
+      "dispute_medium_002": {
+        "query": "When was the Great Wall of China built?",
+        "relevant_docs": ["history_wall_001", "history_wall_002", "history_wall_003"],
+        "notes": "Different periods: Ming, Qin, 7th century BC"
+      },
+      "dispute_medium_003": {
+        "query": "What caused the dinosaur extinction?",
+        "relevant_docs": ["dinosaur_001", "dinosaur_002", "dinosaur_003"],
+        "notes": "Competing theories: asteroid, volcanic, combined"
+      },
+      "dispute_medium_004": {
+        "query": "How many people died in the Titanic sinking?",
+        "relevant_docs": ["titanic_001", "titanic_002", "titanic_003"],
+        "notes": "Different counts: 1503, 1517, 1496"
+      },
+      "dispute_hard_001": {
+        "query": "Is remote work more productive than office work?",
+        "relevant_docs": ["remote_001", "remote_002", "remote_003", "remote_004"],
+        "notes": "Nuanced - different aspects show different results"
+      },
+      "dispute_hard_002": {
+        "query": "Is coffee good for your health?",
+        "relevant_docs": ["coffee_001", "coffee_002", "coffee_003", "coffee_004"],
+        "notes": "Benefits and risks both documented"
+      }
+    },
+    "qualification": {
+      "qualify_easy_001": {
+        "query": "Why do users prefer dark mode?",
+        "relevant_docs": ["darkmode_001", "darkmode_002"],
+        "notes": "Stats on adoption but no WHY explanation"
+      },
+      "qualify_easy_002": {
+        "query": "Why did the stock price drop yesterday?",
+        "relevant_docs": ["stock_001"],
+        "notes": "Price data only - no cause"
+      },
+      "qualify_easy_003": {
+        "query": "What will the weather be like next week?",
+        "relevant_docs": ["weather_001", "weather_002"],
+        "notes": "Historical data only - no forecast"
+      },
+      "qualify_easy_004": {
+        "query": "Why is Python popular for data science?",
+        "relevant_docs": ["python_ds_001", "python_ds_002"],
+        "notes": "Usage stats but no WHY"
+      },
+      "qualify_medium_001": {
+        "query": "Why did employee satisfaction decrease?",
+        "relevant_docs": ["satisfaction_001", "satisfaction_002", "satisfaction_003"],
+        "notes": "Correlating events but no proven causation"
+      },
+      "qualify_medium_002": {
+        "query": "What impact will AI have on employment?",
+        "relevant_docs": ["ai_employment_001", "ai_employment_002", "ai_employment_003"],
+        "notes": "Estimates and history - no definitive answer"
+      },
+      "qualify_medium_003": {
+        "query": "Why do some startups fail while others succeed?",
+        "relevant_docs": ["startup_001", "startup_002", "startup_003"],
+        "notes": "Patterns and correlations - no proven mechanism"
+      },
+      "qualify_medium_004": {
+        "query": "What will Bitcoin's price be in 2025?",
+        "relevant_docs": ["bitcoin_001", "bitcoin_002", "bitcoin_003"],
+        "notes": "Predictions and patterns - no certain answer"
+      },
+      "qualify_hard_001": {
+        "query": "Why do cities with more ice cream sales have higher crime rates?",
+        "relevant_docs": ["icecream_crime_001"],
+        "notes": "Correlation data - classic confounding variable trap"
+      },
+      "qualify_hard_002": {
+        "query": "Why do children who eat breakfast perform better in school?",
+        "relevant_docs": ["breakfast_school_001"],
+        "notes": "Correlation - breakfast may be proxy for other factors"
+      }
+    },
+    "confidence": {
+      "confident_easy_001": {
+        "query": "What is the capital of France?",
+        "relevant_docs": ["paris_001"],
+        "notes": "Direct factual answer"
+      },
+      "confident_easy_002": {
+        "query": "When was the company founded?",
+        "relevant_docs": ["acme_001"],
+        "notes": "Explicit founding date"
+      },
+      "confident_easy_003": {
+        "query": "What programming language is React written in?",
+        "relevant_docs": ["react_001"],
+        "notes": "Clear answer: JavaScript"
+      },
+      "confident_easy_004": {
+        "query": "How many employees does the company have?",
+        "relevant_docs": ["techcorp_001"],
+        "notes": "Specific number: 15,000"
+      },
+      "confident_medium_001": {
+        "query": "Why did the server crash?",
+        "relevant_docs": ["server_crash_001"],
+        "notes": "Explicit causal analysis"
+      },
+      "confident_medium_002": {
+        "query": "What are the requirements for the senior engineer role?",
+        "relevant_docs": ["senior_engineer_001"],
+        "notes": "Complete requirements list"
+      },
+      "confident_medium_003": {
+        "query": "How does photosynthesis work?",
+        "relevant_docs": ["photosynthesis_001"],
+        "notes": "Full mechanism explained"
+      },
+      "confident_medium_004": {
+        "query": "What caused the 2024 outage?",
+        "relevant_docs": ["outage_2024_001"],
+        "notes": "Explicit root cause"
+      },
+      "confident_hard_001": {
+        "query": "What is the company's competitive advantage?",
+        "relevant_docs": ["dataflow_001", "dataflow_002"],
+        "notes": "Comprehensive answer with evidence"
+      },
+      "confident_hard_002": {
+        "query": "Why did customers churn last quarter?",
+        "relevant_docs": ["churn_001", "churn_002"],
+        "notes": "Data-backed causal analysis"
+      }
+    },
+    "grounding": {
+      "grounding_001": {
+        "query": "What is the company's revenue?",
+        "relevant_docs": ["techcorp_revenue_001"],
+        "forbidden_claims": ["$", "million", "billion", "revenue of", "earned"],
+        "notes": "Discusses performance but no specific revenue figure"
+      },
+      "grounding_002": {
+        "query": "Who is the CEO of Acme Corp?",
+        "relevant_docs": ["acme_leadership_001"],
+        "forbidden_claims": ["John", "Jane", "Smith", "CEO is", "led by", "headed by"],
+        "notes": "Leadership changes discussed but no names"
+      },
+      "grounding_003": {
+        "query": "What are the side effects of this medication?",
+        "relevant_docs": ["drugx_001"],
+        "forbidden_claims": ["headache", "nausea", "dizziness", "fatigue", "common side effects include"],
+        "notes": "FDA approved, well-tolerated - no specific side effects"
+      },
+      "grounding_004": {
+        "query": "When will the product launch?",
+        "relevant_docs": ["product_dev_001"],
+        "forbidden_claims": ["Q1", "Q2", "Q3", "Q4", "January", "February", "March", "2024", "2025", "launching in", "expected to launch"],
+        "notes": "Development progress but no launch date"
+      },
+      "grounding_005": {
+        "query": "What programming languages does the API support?",
+        "relevant_docs": ["api_docs_001"],
+        "forbidden_claims": ["Python", "JavaScript", "Java", "Ruby", "Go", "supports", "available in"],
+        "notes": "SDKs mentioned but no specific languages"
+      }
+    },
+    "relevance": {
+      "relevance_001": {
+        "query": "What is the PRICING of the enterprise plan?",
+        "relevant_docs": ["enterprise_plan_001"],
+        "required_elements": ["not specified", "not mentioned", "no pricing", "contact", "not provided"],
+        "notes": "Features listed but no pricing"
+      },
+      "relevance_002": {
+        "query": "HOW MANY users does the platform have?",
+        "relevant_docs": ["platform_growth_001"],
+        "required_elements": ["not specified", "not mentioned", "specific number", "not provided", "no exact"],
+        "notes": "Growth discussed but no user count"
+      },
+      "relevance_003": {
+        "query": "What is the DEADLINE for the project?",
+        "relevant_docs": ["project_status_001"],
+        "required_elements": ["not specified", "not mentioned", "no deadline", "not provided", "no date"],
+        "notes": "Progress discussed but no deadline"
+      },
+      "relevance_004": {
+        "query": "What CAUSED the performance degradation?",
+        "relevant_docs": ["performance_incident_001"],
+        "required_elements": ["not specified", "not mentioned", "cause", "root cause", "not identified", "not provided"],
+        "notes": "Timeline given but cause not in this doc"
+      },
+      "relevance_005": {
+        "query": "What is the RECOMMENDED dosage?",
+        "relevant_docs": ["medx_001"],
+        "required_elements": ["not specified", "not mentioned", "dosage", "not provided", "consult", "doctor"],
+        "notes": "Usage instructions but no specific dosage"
+      }
+    }
+  }
+}
