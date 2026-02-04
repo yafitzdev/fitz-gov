@@ -1,0 +1,220 @@
+{
+  "tier": "sanity",
+  "tier_description": "Baseline functionality verification - models should score 95%+",
+  "passing_threshold": 0.95,
+  "category": "relevance",
+  "description": "Tests whether LLM answers the actual question asked (not just discusses the topic)",
+  "version": "1.0.0",
+  "mode_rationale": "QUALIFIED because context discusses the topic but doesn't contain the specific information requested. System should acknowledge what IS available while noting what's missing.",
+  "cases": [
+    {
+      "id": "t0_relevance_easy_001",
+      "difficulty": "easy",
+      "subcategory": "feature_dump",
+      "query": "What is the PRICING of the enterprise plan?",
+      "contexts": [
+        "Our enterprise plan includes unlimited users, 24/7 support, custom integrations, SSO, and dedicated account management. Enterprise customers also get priority access to new features and a 99.99% SLA."
+      ],
+      "expected_mode": "qualified",
+      "description": "Pricing question but context only lists features",
+      "rationale": "LLM should acknowledge pricing is not specified, NOT just list features",
+      "required_elements": [
+        "not specified",
+        "not mentioned",
+        "no pricing",
+        "contact",
+        "not provided"
+      ],
+      "forbidden_elements": [
+        "\\$\\d",
+        "costs?\\s+\\$?\\d",
+        "priced at",
+        "starting at \\$",
+        "per (month|year|user|seat)"
+      ],
+      "original_id": "relevance_easy_001"
+    },
+    {
+      "id": "t0_relevance_easy_002",
+      "difficulty": "easy",
+      "subcategory": "metric_avoidance",
+      "query": "HOW MANY users does the platform have?",
+      "contexts": [
+        "Our platform has experienced tremendous growth over the past year. Users love our intuitive interface and powerful analytics capabilities. We've expanded to 15 countries and added support for 8 new languages."
+      ],
+      "expected_mode": "qualified",
+      "description": "User count question but context only discusses growth",
+      "rationale": "LLM should acknowledge user count is not specified",
+      "required_elements": [
+        "not specified",
+        "not mentioned",
+        "specific number",
+        "not provided",
+        "no exact"
+      ],
+      "forbidden_elements": [
+        "\\d+[,\\d]*\\s*(users|customers|subscribers)",
+        "has (about |approximately |around )?\\d+\\s*(million|thousand)",
+        "over \\d+ (million |thousand )?users"
+      ],
+      "original_id": "relevance_easy_002"
+    },
+    {
+      "id": "t0_relevance_easy_003",
+      "difficulty": "easy",
+      "subcategory": "status_dump",
+      "query": "What is the DEADLINE for the project?",
+      "contexts": [
+        "The project is progressing well with all major milestones completed. The team has delivered the authentication module, API integration, and frontend redesign. Quality assurance testing is currently underway."
+      ],
+      "expected_mode": "qualified",
+      "description": "Deadline question but context only discusses progress",
+      "rationale": "LLM should acknowledge deadline is not mentioned",
+      "required_elements": [
+        "not specified",
+        "not mentioned",
+        "no deadline",
+        "not provided",
+        "no date"
+      ],
+      "forbidden_elements": [
+        "deadline (is|was) (in |on |by )?\\w+",
+        "(January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}",
+        "due (on |by )",
+        "by (the end of |Q[1-4])"
+      ],
+      "original_id": "relevance_easy_003"
+    },
+    {
+      "id": "t0_relevance_easy_004",
+      "difficulty": "easy",
+      "subcategory": "symptom_only",
+      "query": "What CAUSED the performance degradation?",
+      "contexts": [
+        "We observed a 40% decrease in API response times last Tuesday. The engineering team immediately began investigating. Performance returned to normal by Wednesday morning after deploying a fix."
+      ],
+      "expected_mode": "qualified",
+      "description": "Cause question but context only describes incident timeline",
+      "rationale": "LLM should acknowledge the cause is not specified",
+      "required_elements": [
+        "not specified",
+        "not mentioned",
+        "cause",
+        "root cause",
+        "not identified",
+        "not provided"
+      ],
+      "original_id": "relevance_easy_004"
+    },
+    {
+      "id": "t0_relevance_easy_005",
+      "difficulty": "easy",
+      "subcategory": "instruction_only",
+      "query": "What is the RECOMMENDED dosage?",
+      "contexts": [
+        "MedX is indicated for the treatment of moderate to severe pain. It should be taken with food to minimize gastrointestinal side effects. Patients should not drive or operate heavy machinery while taking this medication."
+      ],
+      "expected_mode": "qualified",
+      "description": "Dosage question but context only has usage instructions",
+      "rationale": "LLM should acknowledge dosage is not specified",
+      "required_elements": [
+        "not specified",
+        "not mentioned",
+        "dosage",
+        "not provided",
+        "consult",
+        "doctor"
+      ],
+      "forbidden_elements": [
+        "\\d+\\s*(mg|milligrams?|tablets?|capsules?)",
+        "(once|twice|three times) (daily|a day)",
+        "take \\d+",
+        "every \\d+ hours"
+      ],
+      "original_id": "relevance_easy_005"
+    },
+    {
+      "id": "t0_relevance_easy_006",
+      "difficulty": "easy",
+      "subcategory": "feature_dump",
+      "query": "What are the MINIMUM SYSTEM REQUIREMENTS for the software?",
+      "contexts": [
+        "Our software features an intuitive drag-and-drop interface, real-time collaboration tools, cloud synchronization, and offline mode. The application supports Windows, macOS, and Linux operating systems with mobile apps available for iOS and Android."
+      ],
+      "expected_mode": "qualified",
+      "description": "System requirements question but context only lists features and platforms",
+      "rationale": "LLM should acknowledge that minimum specs (RAM, CPU, storage) are not provided",
+      "required_elements": [
+        "not specified",
+        "requirements",
+        "not mentioned",
+        "not provided"
+      ],
+      "forbidden_elements": [
+        "\\d+\\s*(GB|MB|GHz|cores?)",
+        "requires? (at least )?\\d+",
+        "minimum (of )?\\d+",
+        "RAM:? \\d+",
+        "CPU:? ",
+        "storage:? \\d+"
+      ],
+      "original_id": "relevance_easy_006"
+    },
+    {
+      "id": "t0_relevance_easy_007",
+      "difficulty": "easy",
+      "subcategory": "metric_avoidance",
+      "query": "What is the AVERAGE response time for customer support?",
+      "contexts": [
+        "Our customer support team is known for excellent service quality. Support agents undergo extensive training and have access to comprehensive knowledge bases. Customer satisfaction surveys consistently show positive feedback about our support interactions."
+      ],
+      "expected_mode": "qualified",
+      "description": "Response time metric question but context discusses quality not timing",
+      "rationale": "LLM should acknowledge response time metric is not specified",
+      "required_elements": [
+        "not specified",
+        "not mentioned",
+        "not provided"
+      ],
+      "forbidden_elements": [
+        "\\d+\\s*(minutes?|hours?|seconds?)",
+        "(within|under|less than) \\d+",
+        "average (of |is )?\\d+",
+        "typically \\d+",
+        "response time (is |of )?\\d+"
+      ],
+      "original_id": "relevance_easy_007"
+    },
+    {
+      "id": "t0_relevance_easy_008",
+      "difficulty": "easy",
+      "subcategory": "tangent_drift",
+      "query": "What programming languages does the API support?",
+      "contexts": [
+        "Our API provides comprehensive documentation with code examples. The API uses REST architecture with JSON payloads and supports OAuth 2.0 authentication. Rate limiting is set to 1000 requests per minute for standard accounts."
+      ],
+      "expected_mode": "qualified",
+      "description": "Language support question but context discusses API architecture",
+      "rationale": "LLM should acknowledge programming language SDKs are not specified",
+      "required_elements": [
+        "not specified",
+        "not mentioned",
+        "not provided",
+        "SDK"
+      ],
+      "forbidden_elements": [
+        "supports? (Python|JavaScript|Java|Ruby|Go|PHP|C#)",
+        "SDKs? (for|in) (Python|JavaScript|Java)",
+        "available in (Python|JavaScript|Java)",
+        "(Python|JavaScript|Java|Ruby) SDK"
+      ],
+      "original_id": "relevance_easy_008"
+    }
+  ],
+  "evaluation_config": {
+    "min_required": 1,
+    "use_regex": true,
+    "case_insensitive": true,
+    "note": "Response must match at least min_required elements from required_elements. If forbidden_elements are present, the response fails regardless of required matches."
+  }
+}

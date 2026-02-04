@@ -1,0 +1,141 @@
+{
+  "tier": "sanity",
+  "tier_description": "Baseline functionality verification - models should score 95%+",
+  "passing_threshold": 0.95,
+  "category": "confidence",
+  "description": "Queries where context clearly answers the question - system should be CONFIDENT",
+  "version": "1.0.0",
+  "mode_rationale": "CONFIDENT because context clearly and unambiguously answers the question. System should provide direct answer without unnecessary hedging.",
+  "cases": [
+    {
+      "id": "t0_confident_easy_001",
+      "difficulty": "easy",
+      "subcategory": "direct_factual",
+      "query": "What is the capital of France?",
+      "contexts": [
+        "Paris is the capital and largest city of France. Located on the Seine River, it has a population of over 2 million in the city proper."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct factual question with explicit answer in context",
+      "rationale": "The answer 'Paris' is stated directly and unambiguously",
+      "original_id": "confident_easy_001"
+    },
+    {
+      "id": "t0_confident_easy_002",
+      "difficulty": "easy",
+      "subcategory": "temporal_explicit",
+      "query": "When was the company founded?",
+      "contexts": [
+        "Acme Corporation was founded in 1985 by John Smith and Jane Doe in Silicon Valley. The company started as a two-person garage startup."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct date question with explicit year in context",
+      "rationale": "The founding year '1985' is stated directly",
+      "original_id": "confident_easy_002"
+    },
+    {
+      "id": "t0_confident_easy_003",
+      "difficulty": "easy",
+      "subcategory": "direct_factual",
+      "query": "What programming language is React written in?",
+      "contexts": [
+        "React is a JavaScript library for building user interfaces, developed and maintained by Meta (formerly Facebook). It was first released in 2013."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct technical question with clear answer",
+      "rationale": "React being a 'JavaScript library' directly answers the language question",
+      "original_id": "confident_easy_003"
+    },
+    {
+      "id": "t0_confident_easy_004",
+      "difficulty": "easy",
+      "subcategory": "quantitative_clear",
+      "query": "How many employees does the company have?",
+      "contexts": [
+        "As of December 2024, TechCorp employs 15,000 full-time employees across 12 global offices. This represents a 20% increase from the previous year."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct count question with specific number provided",
+      "rationale": "The exact number '15,000 full-time employees' is explicitly stated",
+      "original_id": "confident_easy_004"
+    },
+    {
+      "id": "t0_confident_easy_005",
+      "difficulty": "easy",
+      "subcategory": "definition_provided",
+      "query": "What is machine learning?",
+      "contexts": [
+        "Machine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing algorithms that can access data and use it to learn for themselves."
+      ],
+      "expected_mode": "confident",
+      "description": "Definition question with clear definition provided",
+      "rationale": "A complete definition of machine learning is provided",
+      "original_id": "confident_easy_005"
+    },
+    {
+      "id": "t0_confident_easy_006",
+      "difficulty": "easy",
+      "subcategory": "attribution_clear",
+      "query": "Who invented the telephone?",
+      "contexts": [
+        "Alexander Graham Bell invented the telephone in 1876. He was awarded the first US patent for the telephone on March 7, 1876. Bell demonstrated the device to great acclaim at the Centennial Exposition in Philadelphia."
+      ],
+      "expected_mode": "confident",
+      "description": "Attribution question with explicit inventor named",
+      "rationale": "Alexander Graham Bell is explicitly named as the inventor",
+      "original_id": "confident_easy_006"
+    },
+    {
+      "id": "t0_confident_easy_007",
+      "difficulty": "easy",
+      "subcategory": "quantitative_clear",
+      "query": "What is the price of the premium subscription?",
+      "contexts": [
+        "Our premium subscription costs $29.99 per month or $299 per year (saving $60 annually). It includes unlimited storage, priority support, and advanced analytics features."
+      ],
+      "expected_mode": "confident",
+      "description": "Price question with exact figures provided",
+      "rationale": "Exact prices of $29.99/month and $299/year are stated",
+      "original_id": "confident_easy_007"
+    },
+    {
+      "id": "t0_confident_easy_008",
+      "difficulty": "easy",
+      "subcategory": "direct_factual",
+      "query": "What is the chemical formula for water?",
+      "contexts": [
+        "Water has the chemical formula H2O, meaning each molecule consists of two hydrogen atoms bonded to one oxygen atom. It is essential for all known forms of life."
+      ],
+      "expected_mode": "confident",
+      "description": "Direct chemistry question with explicit formula",
+      "rationale": "The formula H2O is directly stated",
+      "original_id": "confident_easy_008"
+    },
+    {
+      "id": "t0_confident_easy_009",
+      "difficulty": "easy",
+      "subcategory": "temporal_explicit",
+      "query": "What is the deadline for the grant application?",
+      "contexts": [
+        "Applications for the 2025 Innovation Grant must be submitted by March 15, 2025 at 11:59 PM EST. Late submissions will not be accepted under any circumstances."
+      ],
+      "expected_mode": "confident",
+      "description": "Deadline question with precise date and time",
+      "rationale": "The exact deadline of March 15, 2025 at 11:59 PM EST is stated",
+      "original_id": "confident_easy_009"
+    },
+    {
+      "id": "t0_confident_easy_010",
+      "difficulty": "easy",
+      "subcategory": "definition_provided",
+      "query": "What is an API?",
+      "contexts": [
+        "An API (Application Programming Interface) is a set of protocols and tools that allows different software applications to communicate with each other. APIs define the methods and data formats that programs can use to request and exchange information."
+      ],
+      "expected_mode": "confident",
+      "description": "Technical definition question with clear explanation",
+      "rationale": "A complete definition of API is provided with explanation",
+      "original_id": "confident_easy_010"
+    }
+  ]
+}

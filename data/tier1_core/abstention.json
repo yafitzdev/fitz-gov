@@ -1,0 +1,443 @@
+{
+  "tier": "core",
+  "tier_description": "Primary benchmark for model discrimination",
+  "category": "abstention",
+  "description": "Queries where context is irrelevant or insufficient - system should ABSTAIN from answering",
+  "version": "1.0.0",
+  "mode_rationale": "ABSTAIN because context is completely irrelevant to the query or discusses wrong entity/time period. System should refuse to answer rather than speculate.",
+  "cases": [
+    {
+      "id": "t1_abstain_medium_001",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "What is Tesla's current stock price?",
+      "contexts": [
+        "Ford Motor Company reported strong earnings in Q3 2024, with F-150 Lightning sales increasing 40%.",
+        "General Motors announced plans to invest $35 billion in electric and autonomous vehicles."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (automotive) but wrong company",
+      "rationale": "Ford and GM info cannot answer Tesla-specific stock questions",
+      "original_id": "abstain_medium_001"
+    },
+    {
+      "id": "t1_abstain_medium_002",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "What are the symptoms of type 2 diabetes?",
+      "contexts": [
+        "Type 1 diabetes is an autoimmune condition where the pancreas produces little or no insulin.",
+        "Gestational diabetes occurs during pregnancy and usually resolves after delivery."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same medical area but different condition",
+      "rationale": "Type 1 and gestational diabetes info cannot answer type 2 symptoms question",
+      "original_id": "abstain_medium_002"
+    },
+    {
+      "id": "t1_abstain_medium_003",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "How do I deploy a React app to AWS?",
+      "contexts": [
+        "Angular is a TypeScript-based framework developed by Google.",
+        "Vue.js offers a progressive framework that can be adopted incrementally."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (frontend) but wrong framework",
+      "rationale": "Angular and Vue info cannot answer React/AWS deployment question",
+      "original_id": "abstain_medium_003"
+    },
+    {
+      "id": "t1_abstain_medium_004",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "What is the population of Tokyo?",
+      "contexts": [
+        "Osaka is Japan's second-largest city with a population of approximately 2.7 million.",
+        "Kyoto served as Japan's capital for over a millennium with numerous UNESCO sites."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same country but different city",
+      "rationale": "Osaka and Kyoto info cannot answer Tokyo population question",
+      "original_id": "abstain_medium_004"
+    },
+    {
+      "id": "t1_abstain_medium_005",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "What are Microsoft's quarterly earnings?",
+      "contexts": [
+        "Google reported advertising revenue of $65 billion in Q3 2024.",
+        "Amazon Web Services grew 27% year-over-year, reaching $23 billion in revenue."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (big tech) but wrong company",
+      "rationale": "Google and Amazon financials cannot answer Microsoft earnings question",
+      "original_id": "abstain_medium_005"
+    },
+    {
+      "id": "t1_abstain_medium_006",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "What are the features of the iPhone 16?",
+      "contexts": [
+        "The Samsung Galaxy S24 Ultra features a 200MP camera and S Pen support.",
+        "The Google Pixel 8 Pro includes advanced AI photo editing capabilities."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (smartphones) but wrong product",
+      "rationale": "Samsung and Google phone specs cannot answer iPhone question",
+      "original_id": "abstain_medium_006"
+    },
+    {
+      "id": "t1_abstain_medium_007",
+      "difficulty": "medium",
+      "subcategory": "wrong_time_period",
+      "query": "What was the unemployment rate in 2024?",
+      "contexts": [
+        "The unemployment rate reached 14.7% in April 2020 during the COVID-19 pandemic.",
+        "By December 2021, unemployment had fallen to 3.9% as the economy recovered."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same metric but wrong time period",
+      "rationale": "2020-2021 unemployment data cannot answer 2024 question",
+      "original_id": "abstain_medium_007"
+    },
+    {
+      "id": "t1_abstain_medium_008",
+      "difficulty": "medium",
+      "subcategory": "wrong_time_period",
+      "query": "Who won the 2024 World Series?",
+      "contexts": [
+        "The Atlanta Braves won the 2021 World Series, defeating the Houston Astros.",
+        "The Texas Rangers won their first World Series title in 2023."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same topic but wrong year",
+      "rationale": "2021 and 2023 World Series results cannot answer 2024 question",
+      "original_id": "abstain_medium_008"
+    },
+    {
+      "id": "t1_abstain_medium_009",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "What is the treatment for Parkinson's disease?",
+      "contexts": [
+        "Alzheimer's disease is typically treated with cholinesterase inhibitors like donepezil.",
+        "Multiple sclerosis treatments include disease-modifying therapies and steroids."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (neurological) but different disease",
+      "rationale": "Alzheimer's and MS treatments cannot answer Parkinson's question",
+      "original_id": "abstain_medium_009"
+    },
+    {
+      "id": "t1_abstain_medium_010",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "What are the admission requirements for Harvard?",
+      "contexts": [
+        "Stanford requires SAT/ACT scores, transcripts, and two teacher recommendations.",
+        "MIT emphasizes STEM achievements and requires interviews for all applicants."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (elite universities) but wrong school",
+      "rationale": "Stanford and MIT requirements cannot answer Harvard-specific question",
+      "original_id": "abstain_medium_010"
+    },
+    {
+      "id": "t1_abstain_medium_011",
+      "difficulty": "medium",
+      "subcategory": "decoy_keywords",
+      "query": "How do I use Python for web scraping?",
+      "contexts": [
+        "Python is widely used for data science, with libraries like NumPy and Pandas.",
+        "Machine learning in Python typically uses TensorFlow or PyTorch frameworks."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same language but different use case",
+      "rationale": "Python data science info cannot answer web scraping question",
+      "original_id": "abstain_medium_011"
+    },
+    {
+      "id": "t1_abstain_medium_012",
+      "difficulty": "medium",
+      "subcategory": "decoy_keywords",
+      "query": "What is the capital gains tax rate?",
+      "contexts": [
+        "Income tax rates in the US range from 10% to 37% based on taxable income.",
+        "Corporate tax rate in the US is currently set at 21% following the 2017 tax reform."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (taxes) but different tax type",
+      "rationale": "Income and corporate tax rates cannot answer capital gains question",
+      "original_id": "abstain_medium_012"
+    },
+    {
+      "id": "t1_abstain_medium_013",
+      "difficulty": "medium",
+      "subcategory": "wrong_time_period",
+      "query": "What is the current price of Bitcoin?",
+      "contexts": [
+        "Bitcoin reached $20,000 for the first time in December 2017.",
+        "In November 2021, Bitcoin hit an all-time high of approximately $69,000."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same asset but historical data only",
+      "rationale": "Historical Bitcoin prices cannot answer current price question",
+      "original_id": "abstain_medium_013"
+    },
+    {
+      "id": "t1_abstain_medium_014",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "What are the side effects of Moderna's COVID vaccine?",
+      "contexts": [
+        "The Pfizer-BioNTech vaccine showed 95% efficacy in clinical trials.",
+        "Johnson & Johnson's single-dose vaccine showed 66% overall efficacy."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (COVID vaccines) but wrong manufacturer",
+      "rationale": "Pfizer and J&J vaccine info cannot answer Moderna-specific question",
+      "original_id": "abstain_medium_014"
+    },
+    {
+      "id": "t1_abstain_hard_001",
+      "difficulty": "hard",
+      "subcategory": "wrong_aspect",
+      "query": "Why did the 2008 financial crisis happen?",
+      "contexts": [
+        "The 2008 crisis led to the Dodd-Frank Act, which imposed stricter oversight on financial institutions.",
+        "Many banks received government bailouts, with TARP providing $700 billion.",
+        "Unemployment peaked at 10% in October 2009 as the effects rippled through the economy."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same topic but effects instead of causes",
+      "rationale": "Crisis effects and responses cannot answer why it happened (causes)",
+      "original_id": "abstain_hard_001"
+    },
+    {
+      "id": "t1_abstain_hard_002",
+      "difficulty": "hard",
+      "subcategory": "wrong_aspect",
+      "query": "What is the mechanism of action of aspirin?",
+      "contexts": [
+        "Aspirin is commonly used to reduce fever, relieve pain, and reduce inflammation.",
+        "The recommended dosage is typically 325-650mg every 4-6 hours as needed.",
+        "Side effects may include stomach upset and gastrointestinal bleeding."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same drug but uses/dosage instead of mechanism",
+      "rationale": "Uses, dosage, and side effects cannot answer mechanism question (COX inhibition)",
+      "original_id": "abstain_hard_002"
+    },
+    {
+      "id": "t1_abstain_hard_003",
+      "difficulty": "hard",
+      "subcategory": "wrong_aspect",
+      "query": "How does CRISPR gene editing work?",
+      "contexts": [
+        "CRISPR has been used to treat sickle cell disease in clinical trials.",
+        "Ethical concerns about CRISPR include germline editing and designer babies.",
+        "CRISPR research won the 2020 Nobel Prize in Chemistry."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same topic but applications/ethics instead of mechanism",
+      "rationale": "Applications and ethics cannot explain how CRISPR works technically",
+      "original_id": "abstain_hard_003"
+    },
+    {
+      "id": "t1_abstain_hard_004",
+      "difficulty": "hard",
+      "subcategory": "wrong_aspect",
+      "query": "What causes Alzheimer's disease?",
+      "contexts": [
+        "Alzheimer's symptoms include memory loss, confusion, and difficulty with daily tasks.",
+        "Treatment options include cholinesterase inhibitors and memantine.",
+        "Caregivers of Alzheimer's patients often experience high levels of stress."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same disease but symptoms/treatment instead of causes",
+      "rationale": "Symptoms, treatments, and caregiver info cannot answer causation question",
+      "original_id": "abstain_hard_004"
+    },
+    {
+      "id": "t1_abstain_hard_005",
+      "difficulty": "hard",
+      "subcategory": "partial_topic",
+      "query": "What is the full text of the First Amendment?",
+      "contexts": [
+        "The First Amendment protects freedom of speech, religion, and the press.",
+        "Landmark First Amendment cases include Brandenburg v. Ohio and New York Times v. Sullivan.",
+        "The First Amendment does not protect speech that incites imminent lawless action."
+      ],
+      "expected_mode": "abstain",
+      "description": "Discusses amendment but doesn't quote full text",
+      "rationale": "Summaries and case law cannot substitute for the actual constitutional text",
+      "original_id": "abstain_hard_005"
+    },
+    {
+      "id": "t1_abstain_hard_006",
+      "difficulty": "hard",
+      "subcategory": "partial_topic",
+      "query": "What is the exact API endpoint for user authentication?",
+      "contexts": [
+        "Our API uses OAuth 2.0 for authentication with JWT tokens.",
+        "Rate limiting is set to 100 requests per minute for authenticated users.",
+        "All API responses are returned in JSON format with standard HTTP status codes."
+      ],
+      "expected_mode": "abstain",
+      "description": "API info but no specific endpoint",
+      "rationale": "General API info cannot answer specific endpoint URL question",
+      "original_id": "abstain_hard_006"
+    },
+    {
+      "id": "t1_abstain_hard_007",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "What is the chemical formula for table salt?",
+      "contexts": [
+        "Excessive salt intake is linked to high blood pressure and cardiovascular disease.",
+        "The WHO recommends limiting sodium intake to less than 2,000 mg per day.",
+        "Sea salt and table salt have similar sodium content despite marketing differences."
+      ],
+      "expected_mode": "abstain",
+      "description": "Discusses salt but health aspects not chemistry",
+      "rationale": "Health and nutrition info cannot answer chemistry question (NaCl)",
+      "original_id": "abstain_hard_007"
+    },
+    {
+      "id": "t1_abstain_hard_008",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "How does TCP/IP networking work?",
+      "contexts": [
+        "Network security best practices include using firewalls and encryption.",
+        "Common network attacks include DDoS, man-in-the-middle, and SQL injection.",
+        "Zero trust architecture assumes no user or device should be trusted by default."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same domain (networking) but security not protocol",
+      "rationale": "Network security info cannot explain TCP/IP protocol mechanics",
+      "original_id": "abstain_hard_008"
+    },
+    {
+      "id": "t1_abstain_hard_009",
+      "difficulty": "hard",
+      "subcategory": "wrong_aspect",
+      "query": "How is steel manufactured?",
+      "contexts": [
+        "Steel is used in construction, automotive, and appliance manufacturing.",
+        "Global steel production reached 1.9 billion metric tons in 2023.",
+        "China produces over 50% of the world's steel, followed by India and Japan."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same material but uses/production stats not process",
+      "rationale": "Applications and production statistics cannot explain manufacturing process",
+      "original_id": "abstain_hard_009"
+    },
+    {
+      "id": "t1_abstain_hard_010",
+      "difficulty": "hard",
+      "subcategory": "partial_topic",
+      "query": "What is the exact dosage of metformin for diabetes?",
+      "contexts": [
+        "Metformin is the first-line treatment for type 2 diabetes.",
+        "It works by reducing glucose production in the liver and improving insulin sensitivity.",
+        "Common side effects include gastrointestinal upset, which usually improves over time."
+      ],
+      "expected_mode": "abstain",
+      "description": "Drug info but no specific dosage numbers",
+      "rationale": "Mechanism and side effects cannot substitute for specific dosing information",
+      "original_id": "abstain_hard_010"
+    },
+    {
+      "id": "t1_abstain_hard_011",
+      "difficulty": "hard",
+      "subcategory": "wrong_aspect",
+      "query": "What is the proof of the Pythagorean theorem?",
+      "contexts": [
+        "The Pythagorean theorem states that a² + b² = c² for right triangles.",
+        "It is used extensively in construction, navigation, and computer graphics.",
+        "Pythagorean triples include (3,4,5), (5,12,13), and (8,15,17)."
+      ],
+      "expected_mode": "abstain",
+      "description": "Theorem statement and applications but no proof",
+      "rationale": "Statement and applications cannot substitute for mathematical proof",
+      "original_id": "abstain_hard_011"
+    },
+    {
+      "id": "t1_abstain_hard_012",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "What is Amazon's return policy?",
+      "contexts": [
+        "The Amazon rainforest spans nine countries and contains 10% of all species.",
+        "Amazon deforestation reached record levels in recent years due to agriculture.",
+        "The Amazon River is the second-longest river in the world at 4,000 miles."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same keyword but geography not company",
+      "rationale": "Amazon rainforest info cannot answer Amazon.com return policy question",
+      "original_id": "abstain_hard_012"
+    },
+    {
+      "id": "t1_abstain_hard_013",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "How do I apply for an Apple credit card?",
+      "contexts": [
+        "Apple Inc. reported $383 billion in revenue for fiscal year 2023.",
+        "The Apple ecosystem includes iPhone, iPad, Mac, Apple Watch, and services.",
+        "Apple's services revenue grew 16% year-over-year driven by App Store and Apple Music."
+      ],
+      "expected_mode": "abstain",
+      "description": "Same company but financials not credit card",
+      "rationale": "Company financials cannot answer specific product application question",
+      "original_id": "abstain_hard_013"
+    },
+    {
+      "id": "t1_abstain_hard_014",
+      "difficulty": "hard",
+      "subcategory": "partial_topic",
+      "query": "What is the phone number for customer support?",
+      "contexts": [
+        "Our customer support team is available 24/7 to assist with any issues.",
+        "Support tickets are typically resolved within 24 hours.",
+        "Premium customers receive priority support with dedicated account managers."
+      ],
+      "expected_mode": "abstain",
+      "description": "Support info but no contact details",
+      "rationale": "Support availability info cannot substitute for actual contact number",
+      "original_id": "abstain_hard_014"
+    },
+    {
+      "id": "t1_abstain_hard_015",
+      "difficulty": "hard",
+      "subcategory": "near_miss_entity",
+      "query": "What are the specs for the iPhone 15 Pro Max?",
+      "contexts": [
+        "The iPhone 15 Pro features the A17 Pro chip, 6.1-inch Super Retina XDR display with ProMotion, and titanium design. It has 8GB RAM, starts at 128GB storage, and includes a 48MP main camera with 3x telephoto.",
+        "The iPhone 15 features the A16 Bionic chip, 6.1-inch Super Retina XDR display, and aluminum design. It has 6GB RAM and starts at 128GB storage with a 48MP main camera."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks for Pro Max but context only has Pro and standard models",
+      "rationale": "iPhone 15 Pro ≠ iPhone 15 Pro Max; the Max model has different specs (larger screen, battery)"
+    },
+    {
+      "id": "t1_abstain_hard_016",
+      "difficulty": "hard",
+      "subcategory": "stale_data",
+      "query": "What is Tesla's current stock price?",
+      "contexts": [
+        "As of market close on March 15, 2023, Tesla (TSLA) traded at $180.45 per share.",
+        "Tesla's stock performance in Q1 2023 showed significant volatility, with prices ranging from $150 to $215.",
+        "Analyst price targets for Tesla in early 2023 ranged from $120 to $300."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks for current price but context only has 2023 data",
+      "rationale": "Stock prices from early 2023 cannot answer questions about current (2024/2025) prices"
+    }
+  ]
+}

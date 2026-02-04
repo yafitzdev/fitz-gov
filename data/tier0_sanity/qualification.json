@@ -1,0 +1,156 @@
+{
+  "tier": "sanity",
+  "tier_description": "Baseline functionality verification - models should score 95%+",
+  "passing_threshold": 0.95,
+  "category": "qualification",
+  "description": "Queries where context lacks sufficient evidence for confident answers - system should mark as QUALIFIED",
+  "version": "1.0.0",
+  "mode_rationale": "QUALIFIED because context provides partial/uncertain evidence. System should answer with appropriate hedging (correlation vs causation, limited sample, etc.).",
+  "cases": [
+    {
+      "id": "t0_qualify_easy_001",
+      "difficulty": "easy",
+      "subcategory": "causal_without_evidence",
+      "query": "Why do users prefer dark mode?",
+      "contexts": [
+        "Survey data shows 82% of users have dark mode enabled on their devices.",
+        "Dark mode adoption has increased 340% since 2019 across all major platforms."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causal 'why' question with only usage statistics",
+      "rationale": "Context shows THAT users use dark mode, not WHY they prefer it",
+      "original_id": "qualify_easy_001"
+    },
+    {
+      "id": "t0_qualify_easy_002",
+      "difficulty": "easy",
+      "subcategory": "causal_without_evidence",
+      "query": "Why did the stock price drop yesterday?",
+      "contexts": [
+        "The stock closed at $142.50, down 8.3% from the previous day's close of $155.40.",
+        "Trading volume was 3x the 30-day average, with 45 million shares exchanged."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for cause but context only provides price movement",
+      "rationale": "Context describes WHAT happened (price dropped) but not WHY",
+      "original_id": "qualify_easy_002"
+    },
+    {
+      "id": "t0_qualify_easy_003",
+      "difficulty": "easy",
+      "subcategory": "prediction_insufficient_data",
+      "query": "What will the weather be like next week?",
+      "contexts": [
+        "Last week saw temperatures ranging from 65-78°F with partly cloudy skies.",
+        "Historical data shows October averages 68°F with 3.2 inches of rainfall in this region."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction question with only historical data",
+      "rationale": "Context has past data only - no actual forecast for next week",
+      "original_id": "qualify_easy_003"
+    },
+    {
+      "id": "t0_qualify_easy_004",
+      "difficulty": "easy",
+      "subcategory": "causal_without_evidence",
+      "query": "Why is Python popular for data science?",
+      "contexts": [
+        "Python is used by 68% of data scientists according to the 2024 Stack Overflow survey.",
+        "Major companies using Python for data science include Google, Netflix, and Spotify."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks WHY popular but context only shows THAT it's popular",
+      "rationale": "Statistics and examples show popularity, not the reasons for it",
+      "original_id": "qualify_easy_004"
+    },
+    {
+      "id": "t0_qualify_easy_005",
+      "difficulty": "easy",
+      "subcategory": "causal_without_evidence",
+      "query": "Why did sales increase this quarter?",
+      "contexts": [
+        "Q3 sales reached $4.2 million, up 23% from Q2's $3.4 million.",
+        "The sales team closed 147 deals compared to 112 in the previous quarter."
+      ],
+      "expected_mode": "qualified",
+      "description": "Sales growth shown but no explanation of cause",
+      "rationale": "Context shows sales increased but doesn't explain why (new product? marketing? market conditions?)",
+      "original_id": "qualify_easy_005"
+    },
+    {
+      "id": "t0_qualify_easy_006",
+      "difficulty": "easy",
+      "subcategory": "causal_without_evidence",
+      "query": "Why do customers leave negative reviews?",
+      "contexts": [
+        "The product has a 3.2-star average rating with 1,240 reviews.",
+        "34% of reviews are 1-star, 18% are 2-star, and 28% are 5-star.",
+        "Review volume increased 200% after the product was featured on social media."
+      ],
+      "expected_mode": "qualified",
+      "description": "Review statistics without customer feedback content",
+      "rationale": "Context shows review patterns but not the actual reasons customers give",
+      "original_id": "qualify_easy_006"
+    },
+    {
+      "id": "t0_qualify_easy_007",
+      "difficulty": "easy",
+      "subcategory": "prediction_insufficient_data",
+      "query": "Will the new feature be successful?",
+      "contexts": [
+        "The feature is currently in beta with 500 test users.",
+        "Development took 6 months and cost approximately $200,000.",
+        "Similar features from competitors launched in the past year."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for prediction but no success indicators provided",
+      "rationale": "Context describes development effort but no user feedback or success metrics",
+      "original_id": "qualify_easy_007"
+    },
+    {
+      "id": "t0_qualify_easy_008",
+      "difficulty": "easy",
+      "subcategory": "causal_without_evidence",
+      "query": "Why did website traffic decrease?",
+      "contexts": [
+        "Monthly unique visitors dropped from 50,000 to 35,000 over the past quarter.",
+        "Page views per session remained stable at 3.2.",
+        "The bounce rate increased from 42% to 58%."
+      ],
+      "expected_mode": "qualified",
+      "description": "Traffic metrics shown but no cause identified",
+      "rationale": "Context shows WHAT happened to traffic but not WHY (algorithm change? competition? seasonal?)",
+      "original_id": "qualify_easy_008"
+    },
+    {
+      "id": "t0_qualify_easy_009",
+      "difficulty": "easy",
+      "subcategory": "prediction_insufficient_data",
+      "query": "What will our market share be next year?",
+      "contexts": [
+        "Current market share is 12%, up from 9% two years ago.",
+        "The total addressable market is valued at $5 billion.",
+        "Three new competitors entered the market this year."
+      ],
+      "expected_mode": "qualified",
+      "description": "Current market position without predictive data",
+      "rationale": "Historical market share doesn't predict future share",
+      "original_id": "qualify_easy_009"
+    },
+    {
+      "id": "t0_qualify_easy_010",
+      "difficulty": "easy",
+      "subcategory": "causal_without_evidence",
+      "query": "Why did the app crash?",
+      "contexts": [
+        "The app crashed at 3:42 PM affecting 12,000 users.",
+        "The crash lasted 47 minutes before service was restored.",
+        "This was the third outage this month."
+      ],
+      "expected_mode": "qualified",
+      "description": "Crash timeline without root cause",
+      "rationale": "Context describes the crash event but not the technical cause",
+      "original_id": "qualify_easy_010"
+    }
+  ]
+}

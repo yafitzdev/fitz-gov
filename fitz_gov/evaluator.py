@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from .llm_validator import OllamaValidator, ValidatorConfig
+from .loader import Tier, load_tier
 from .models import (
     AnswerMode,
     FitzGovCase,
@@ -24,6 +25,9 @@ from .models import (
     FitzGovCategoryResult,
     FitzGovConfusionMatrix,
     FitzGovResult,
+    Tier0Result,
+    Tier1Result,
+    TieredResult,
 )
 
 logger = logging.getLogger(__name__)
@@ -201,6 +205,125 @@ class FitzGovEvaluator:
             metadata={
                 "llm_validation": self._llm_validation,
             },
+        )
+
+    def evaluate_tiered(
+        self,
+        tier0_cases: list[FitzGovCase],
+        tier0_responses: list[str],
+        tier0_modes: list[AnswerMode | None] | None,
+        tier1_cases: list[FitzGovCase],
+        tier1_responses: list[str],
+        tier1_modes: list[AnswerMode | None] | None,
+        tier0_threshold: float = 0.95,
+        gating_enabled: bool = True,
+    ) -> TieredResult:
+        """
+        Evaluate cases using tiered structure.
+
+        Args:
+            tier0_cases: Tier 0 (sanity) test cases.
+            tier0_responses: Responses for tier 0 cases.
+            tier0_modes: Actual modes for tier 0 governance cases.
+            tier1_cases: Tier 1 (core) test cases.
+            tier1_responses: Responses for tier 1 cases.
+            tier1_modes: Actual modes for tier 1 governance cases.
+            tier0_threshold: Required accuracy to pass tier 0 (default 0.95).
+            gating_enabled: If True, skip tier 1 if tier 0 fails.
+
+        Returns:
+            TieredResult with both tier results.
+        """
+        start_time = time.time()
+
+        # Evaluate Tier 0
+        tier0_result = self._evaluate_tier0(
+            tier0_cases, tier0_responses, tier0_modes, tier0_threshold
+        )
+
+        # Evaluate Tier 1 (if not gated or tier 0 passed)
+        tier1_result = None
+        if not gating_enabled or tier0_result.passed:
+            tier1_result = self._evaluate_tier1(
+                tier1_cases, tier1_responses, tier1_modes
+            )
+
+        return TieredResult(
+            tier0=tier0_result,
+            tier1=tier1_result,
+            gating_enabled=gating_enabled,
+            evaluation_time_seconds=time.time() - start_time,
+            metadata={
+                "llm_validation": self._llm_validation,
+            },
+        )
+
+    def _evaluate_tier0(
+        self,
+        cases: list[FitzGovCase],
+        responses: list[str],
+        modes: list[AnswerMode | None] | None,
+        threshold: float,
+    ) -> Tier0Result:
+        """Evaluate Tier 0 (sanity check) cases."""
+        if modes is None:
+            modes = [None] * len(cases)
+
+        # Use evaluate_all to get results
+        result = self.evaluate_all(cases, responses, modes)
+
+        # Collect failure cases
+        failure_cases = []
+        for cat_result in result.category_results.values():
+            for case_result in cat_result.case_results:
+                if not case_result.passed:
+                    failure_cases.append(case_result)
+
+        return Tier0Result(
+            passed=result.overall_accuracy >= threshold,
+            accuracy=result.overall_accuracy,
+            threshold=threshold,
+            category_results=result.category_results,
+            failure_cases=failure_cases,
+            num_cases=result.num_cases,
+        )
+
+    def _evaluate_tier1(
+        self,
+        cases: list[FitzGovCase],
+        responses: list[str],
+        modes: list[AnswerMode | None] | None,
+    ) -> Tier1Result:
+        """Evaluate Tier 1 (core benchmark) cases."""
+        if modes is None:
+            modes = [None] * len(cases)
+
+        # Use evaluate_all to get results
+        result = self.evaluate_all(cases, responses, modes)
+
+        # Calculate difficulty breakdown
+        difficulty_correct: dict[str, int] = defaultdict(int)
+        difficulty_total: dict[str, int] = defaultdict(int)
+
+        for cat_result in result.category_results.values():
+            for case_result in cat_result.case_results:
+                diff = case_result.case.difficulty
+                difficulty_total[diff] += 1
+                if case_result.passed:
+                    difficulty_correct[diff] += 1
+
+        difficulty_breakdown = {
+            diff: difficulty_correct[diff] / total
+            for diff, total in difficulty_total.items()
+            if total > 0
+        }
+
+        return Tier1Result(
+            accuracy=result.overall_accuracy,
+            category_results=result.category_results,
+            confusion_matrix=result.confusion_matrix,
+            difficulty_breakdown=difficulty_breakdown,
+            num_cases=result.num_cases,
         )
 
     def _evaluate_governance(

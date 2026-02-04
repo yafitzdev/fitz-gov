@@ -234,12 +234,14 @@ class FitzGovConfusionMatrix:
     def __str__(self) -> str:
         """Pretty print the confusion matrix."""
         modes = [m.value for m in AnswerMode]
-        lines = ["Confusion Matrix (rows=expected, cols=actual):"]
-        header = "           " + " ".join(f"{m[:8]:>10}" for m in modes)
+        # Use abbreviated headers for compact display
+        abbrev = {"abstain": "ABST", "disputed": "DISP", "qualified": "QUAL", "confident": "CONF"}
+        lines = ["  Confusion Matrix (rows=expected, cols=actual):"]
+        header = "              " + "  ".join(f"{abbrev.get(m, m[:4]):>6}" for m in modes)
         lines.append(header)
         for exp in modes:
-            row_vals = " ".join(f"{self.matrix[exp][act]:>10}" for act in modes)
-            lines.append(f"{exp[:10]:>10} {row_vals}")
+            row_vals = "  ".join(f"{self.matrix[exp][act]:>6}" for act in modes)
+            lines.append(f"    {abbrev.get(exp, exp[:4]):>6}  {row_vals}")
         return "\n".join(lines)
 
 
@@ -315,4 +317,201 @@ class FitzGovResult:
 
         lines.append("")
         lines.append(str(self.confusion_matrix))
+        return "\n".join(lines)
+
+
+# =============================================================================
+# Tiered Evaluation Results
+# =============================================================================
+
+
+@dataclass
+class Tier0Result:
+    """Result for Tier 0 (sanity check) evaluation."""
+
+    passed: bool
+    """Whether the tier passed (accuracy >= threshold)."""
+
+    accuracy: float
+    """Overall accuracy for tier 0."""
+
+    threshold: float
+    """Required threshold to pass (default 0.95)."""
+
+    category_results: dict[FitzGovCategory, FitzGovCategoryResult]
+    """Results by category."""
+
+    failure_cases: list[FitzGovCaseResult]
+    """Cases that failed (for debugging)."""
+
+    num_cases: int
+    """Total number of tier 0 cases."""
+
+    def to_dict(self) -> dict[str, Any]:
+        """Convert to dictionary."""
+        return {
+            "passed": self.passed,
+            "accuracy": self.accuracy,
+            "threshold": self.threshold,
+            "category_results": {
+                k.value: v.to_dict() for k, v in self.category_results.items()
+            },
+            "failure_cases": [c.to_dict() for c in self.failure_cases],
+            "num_cases": self.num_cases,
+        }
+
+    def __str__(self) -> str:
+        """Pretty print tier 0 results."""
+        status = "PASSED" if self.passed else "FAILED"
+        num_correct = sum(r.num_correct for r in self.category_results.values())
+        lines = [
+            f"TIER 0 (Sanity Check): {status}",
+            f"  Threshold: {self.threshold:.0%} | Achieved: {self.accuracy:.1%} ({num_correct}/{self.num_cases})",
+            "",
+            "  By Category:",
+        ]
+
+        for cat in FitzGovCategory:
+            if cat in self.category_results:
+                r = self.category_results[cat]
+                lines.append(f"    {cat.value}: {r.num_correct}/{r.num_total} ({r.accuracy:.1%})")
+
+        if self.failure_cases:
+            lines.append("")
+            lines.append(f"  Failed Cases ({len(self.failure_cases)}):")
+            for case_result in self.failure_cases[:5]:  # Show first 5
+                lines.append(f"    - {case_result.case.id}: {case_result.failure_reason}")
+            if len(self.failure_cases) > 5:
+                lines.append(f"    ... and {len(self.failure_cases) - 5} more")
+
+        return "\n".join(lines)
+
+
+@dataclass
+class Tier1Result:
+    """Result for Tier 1 (core benchmark) evaluation."""
+
+    accuracy: float
+    """Overall accuracy for tier 1."""
+
+    category_results: dict[FitzGovCategory, FitzGovCategoryResult]
+    """Results by category."""
+
+    confusion_matrix: FitzGovConfusionMatrix
+    """Mode confusion matrix."""
+
+    difficulty_breakdown: dict[str, float]
+    """Accuracy by difficulty level (medium, hard)."""
+
+    num_cases: int
+    """Total number of tier 1 cases."""
+
+    def to_dict(self) -> dict[str, Any]:
+        """Convert to dictionary."""
+        return {
+            "accuracy": self.accuracy,
+            "category_results": {
+                k.value: v.to_dict() for k, v in self.category_results.items()
+            },
+            "confusion_matrix": self.confusion_matrix.to_dict(),
+            "difficulty_breakdown": self.difficulty_breakdown,
+            "num_cases": self.num_cases,
+        }
+
+    def __str__(self) -> str:
+        """Pretty print tier 1 results."""
+        lines = [
+            f"TIER 1 (Core Benchmark): {self.accuracy:.1%}",
+            "",
+            "  By Category:",
+        ]
+
+        for cat in FitzGovCategory:
+            if cat in self.category_results:
+                r = self.category_results[cat]
+                lines.append(f"    {cat.value}: {r.num_correct}/{r.num_total} ({r.accuracy:.1%})")
+
+        if self.difficulty_breakdown:
+            lines.append("")
+            lines.append("  By Difficulty:")
+            for diff, acc in sorted(self.difficulty_breakdown.items()):
+                lines.append(f"    {diff}: {acc:.1%}")
+
+        # Add confusion matrix
+        lines.append("")
+        lines.append(str(self.confusion_matrix))
+
+        return "\n".join(lines)
+
+
+@dataclass
+class TieredResult:
+    """Full tiered fitz-gov benchmark results."""
+
+    tier0: Tier0Result
+    """Tier 0 (sanity check) results."""
+
+    tier1: Tier1Result | None
+    """Tier 1 (core benchmark) results. None if tier0 failed and gating is enabled."""
+
+    gating_enabled: bool
+    """Whether tier0 gates tier1 evaluation."""
+
+    evaluation_time_seconds: float
+    """Total time taken for evaluation."""
+
+    timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    """When evaluation was run."""
+
+    metadata: dict[str, Any] = field(default_factory=dict)
+    """Additional metadata."""
+
+    @property
+    def tier0_passed(self) -> bool:
+        """Whether tier 0 passed."""
+        return self.tier0.passed
+
+    @property
+    def tier1_accuracy(self) -> float | None:
+        """Tier 1 accuracy, or None if not evaluated."""
+        return self.tier1.accuracy if self.tier1 else None
+
+    def to_dict(self) -> dict[str, Any]:
+        """Convert to dictionary for JSON serialization."""
+        return {
+            "tier0": self.tier0.to_dict(),
+            "tier1": self.tier1.to_dict() if self.tier1 else None,
+            "gating_enabled": self.gating_enabled,
+            "evaluation_time_seconds": self.evaluation_time_seconds,
+            "timestamp": self.timestamp.isoformat(),
+            "metadata": self.metadata,
+        }
+
+    def __str__(self) -> str:
+        """Pretty print tiered results."""
+        lines = [
+            "fitz-gov Tiered Evaluation",
+            "=" * 26,
+            "",
+            str(self.tier0),
+        ]
+
+        if self.tier1:
+            lines.append("")
+            lines.append(str(self.tier1))
+        elif self.gating_enabled and not self.tier0.passed:
+            lines.append("")
+            lines.append("TIER 1: Skipped (Tier 0 failed)")
+
+        # Summary
+        lines.append("")
+        lines.append("-" * 40)
+        if self.tier1:
+            lines.append(
+                f"Summary: Tier 0 {'PASSED' if self.tier0.passed else 'FAILED'}, "
+                f"Tier 1 Score: {self.tier1.accuracy:.1%}"
+            )
+        else:
+            lines.append(f"Summary: Tier 0 {'PASSED' if self.tier0.passed else 'FAILED'}")
+
         return "\n".join(lines)

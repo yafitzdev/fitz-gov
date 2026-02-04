@@ -1,0 +1,179 @@
+{
+  "tier": "sanity",
+  "tier_description": "Baseline functionality verification - models should score 95%+",
+  "passing_threshold": 0.95,
+  "category": "dispute",
+  "description": "Queries where contexts contain conflicting information - system should mark as DISPUTED",
+  "version": "1.0.0",
+  "mode_rationale": "DISPUTED because sources provide contradictory information. System should flag the conflict and present both perspectives.",
+  "cases": [
+    {
+      "id": "t0_dispute_easy_001",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Did the project launch successfully?",
+      "contexts": [
+        "The project launch was a complete success. All systems performed as expected and user adoption exceeded targets by 40%.",
+        "The project launch failed catastrophically. Critical bugs caused system outages affecting thousands of users."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: success vs failure",
+      "rationale": "One source says success, another says failure - cannot both be true",
+      "original_id": "dispute_easy_001"
+    },
+    {
+      "id": "t0_dispute_easy_002",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Is the company profitable?",
+      "contexts": [
+        "The company reported record profits of $2.3 billion in 2024, marking its fifth consecutive year of growth.",
+        "The company posted a net loss of $450 million in 2024, forcing layoffs of 15% of its workforce."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: profitable vs loss-making",
+      "rationale": "One source reports profits, another reports losses for the same period",
+      "original_id": "dispute_easy_002"
+    },
+    {
+      "id": "t0_dispute_easy_003",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Was the medication approved by the FDA?",
+      "contexts": [
+        "The FDA granted full approval for the medication in March 2024, citing strong efficacy data.",
+        "The FDA rejected the medication's application in March 2024 due to insufficient safety data."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: approved vs rejected",
+      "rationale": "One source says approved, another says rejected - mutually exclusive",
+      "original_id": "dispute_easy_003"
+    },
+    {
+      "id": "t0_dispute_easy_004",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Did sales increase this quarter?",
+      "contexts": [
+        "Sales increased 25% quarter-over-quarter, driven by strong demand in the Asian market.",
+        "Sales declined 18% compared to last quarter as supply chain issues impacted availability."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: increase vs decrease",
+      "rationale": "One source reports increase, another reports decrease",
+      "original_id": "dispute_easy_004"
+    },
+    {
+      "id": "t0_dispute_easy_005",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Is the CEO stepping down?",
+      "contexts": [
+        "The CEO announced his resignation effective immediately, citing personal reasons.",
+        "The CEO confirmed he will remain in his role for at least another three years."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: leaving vs staying",
+      "rationale": "One source says resigning, another says staying",
+      "original_id": "dispute_easy_005"
+    },
+    {
+      "id": "t0_dispute_easy_006",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Did the defendant plead guilty?",
+      "contexts": [
+        "The defendant entered a guilty plea to all charges in court this morning.",
+        "The defendant pleaded not guilty and requested a jury trial."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: guilty vs not guilty plea",
+      "rationale": "One source says guilty plea, another says not guilty",
+      "original_id": "dispute_easy_006"
+    },
+    {
+      "id": "t0_dispute_easy_007",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Was the concert cancelled?",
+      "contexts": [
+        "The concert was cancelled due to severe weather conditions. All ticket holders will receive refunds.",
+        "The concert went ahead as scheduled despite weather concerns. Over 50,000 fans attended."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: cancelled vs proceeded",
+      "rationale": "One source says cancelled, another says it proceeded",
+      "original_id": "dispute_easy_007"
+    },
+    {
+      "id": "t0_dispute_easy_008",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Did the bill pass in Congress?",
+      "contexts": [
+        "The bill passed the House with a vote of 245-190 and now heads to the Senate.",
+        "The bill failed to pass the House, falling 15 votes short of the required majority."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: passed vs failed",
+      "rationale": "One source says passed, another says failed",
+      "original_id": "dispute_easy_008"
+    },
+    {
+      "id": "t0_dispute_easy_009",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Is the product available for pre-order?",
+      "contexts": [
+        "Pre-orders are now open on the official website with shipping expected in December.",
+        "The company confirmed that pre-orders have been delayed indefinitely due to supply issues."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: available vs delayed",
+      "rationale": "One source says pre-orders open, another says delayed indefinitely",
+      "original_id": "dispute_easy_009"
+    },
+    {
+      "id": "t0_dispute_easy_010",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Did the team win the championship?",
+      "contexts": [
+        "The team won the championship with a dramatic last-second victory, their first title in 20 years.",
+        "The team lost the championship game in overtime, extending their title drought to 21 years."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: won vs lost",
+      "rationale": "One source says won, another says lost",
+      "original_id": "dispute_easy_010"
+    },
+    {
+      "id": "t0_dispute_easy_011",
+      "difficulty": "easy",
+      "subcategory": "numerical_disagreement",
+      "query": "How much did the stock price change today?",
+      "contexts": [
+        "The stock surged 12% today following better-than-expected earnings.",
+        "The stock dropped 8% today as investors reacted to disappointing guidance."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct numerical contradiction: up vs down",
+      "rationale": "One source says +12%, another says -8%",
+      "original_id": "dispute_easy_011"
+    },
+    {
+      "id": "t0_dispute_easy_012",
+      "difficulty": "easy",
+      "subcategory": "direct_contradiction",
+      "query": "Is the restaurant open on Sundays?",
+      "contexts": [
+        "The restaurant is open seven days a week, including Sundays from 10am to 9pm.",
+        "The restaurant is closed on Sundays for staff rest days."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct contradiction: open vs closed",
+      "rationale": "One source says open on Sundays, another says closed",
+      "original_id": "dispute_easy_012"
+    }
+  ]
+}

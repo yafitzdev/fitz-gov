@@ -1,0 +1,401 @@
+{
+  "tier": "core",
+  "tier_description": "Primary benchmark for model discrimination",
+  "category": "confidence",
+  "description": "Queries where context clearly answers the question - system should be CONFIDENT",
+  "version": "1.0.0",
+  "mode_rationale": "CONFIDENT because context clearly and unambiguously answers the question. System should provide direct answer without unnecessary hedging.",
+  "cases": [
+    {
+      "id": "t1_confident_medium_001",
+      "difficulty": "medium",
+      "subcategory": "explicit_causal",
+      "query": "Why did the server crash?",
+      "contexts": [
+        "The post-mortem analysis revealed the server crash was caused by a memory leak in the authentication module. The leak accumulated over 72 hours until available RAM was exhausted, triggering an OOM killer event."
+      ],
+      "expected_mode": "confident",
+      "description": "Causal question with explicit root cause stated",
+      "rationale": "The cause is explicitly stated as 'memory leak in the authentication module'",
+      "original_id": "confident_medium_001"
+    },
+    {
+      "id": "t1_confident_medium_002",
+      "difficulty": "medium",
+      "subcategory": "complete_requirements",
+      "query": "What are the requirements for the senior engineer role?",
+      "contexts": [
+        "Senior Engineer Requirements: 5+ years of professional software development experience, proficiency in Python or Java, experience with distributed systems, strong communication skills, and a BS/MS in Computer Science or equivalent experience."
+      ],
+      "expected_mode": "confident",
+      "description": "Requirements question with comprehensive list provided",
+      "rationale": "All requirements are explicitly listed in the context",
+      "original_id": "confident_medium_002"
+    },
+    {
+      "id": "t1_confident_medium_003",
+      "difficulty": "medium",
+      "subcategory": "complete_explanation",
+      "query": "How does photosynthesis work?",
+      "contexts": [
+        "Photosynthesis converts light energy into chemical energy through two stages. In the light-dependent reactions, chlorophyll absorbs sunlight to split water molecules, releasing oxygen and producing ATP. In the Calvin cycle, CO2 is fixed into glucose using the ATP generated earlier."
+      ],
+      "expected_mode": "confident",
+      "description": "Mechanism question with complete process described",
+      "rationale": "The full mechanism is explained with both stages detailed",
+      "original_id": "confident_medium_003"
+    },
+    {
+      "id": "t1_confident_medium_004",
+      "difficulty": "medium",
+      "subcategory": "explicit_causal",
+      "query": "What caused the 2024 outage?",
+      "contexts": [
+        "The January 2024 outage was caused by a misconfigured load balancer that routed 100% of traffic to a single server instead of distributing it across the cluster. This occurred because a configuration change was deployed without proper review.",
+        "The incident lasted 4 hours and affected approximately 2 million users. Engineering teams identified the root cause within 30 minutes and rolled back the configuration."
+      ],
+      "expected_mode": "confident",
+      "description": "Causal question with explicit root cause and chain of events",
+      "rationale": "The cause 'misconfigured load balancer' is explicitly stated with explanation",
+      "original_id": "confident_medium_004"
+    },
+    {
+      "id": "t1_confident_medium_005",
+      "difficulty": "medium",
+      "subcategory": "comparison_explicit",
+      "query": "Which database is faster for read operations, PostgreSQL or MongoDB?",
+      "contexts": [
+        "In our benchmarks using identical hardware, MongoDB achieved 45,000 read operations per second while PostgreSQL achieved 28,000 read operations per second for our document-heavy workload. However, PostgreSQL outperformed MongoDB in complex join operations."
+      ],
+      "expected_mode": "confident",
+      "description": "Comparison question with explicit benchmark data",
+      "rationale": "Clear numerical comparison shows MongoDB faster for reads (45k vs 28k ops/sec)",
+      "original_id": "confident_medium_005"
+    },
+    {
+      "id": "t1_confident_medium_006",
+      "difficulty": "medium",
+      "subcategory": "procedural_complete",
+      "query": "How do I reset my password?",
+      "contexts": [
+        "To reset your password: 1) Click 'Forgot Password' on the login page, 2) Enter your registered email address, 3) Check your inbox for a reset link (valid for 24 hours), 4) Click the link and enter your new password twice, 5) Click 'Confirm' to save. You will be automatically logged in."
+      ],
+      "expected_mode": "confident",
+      "description": "Procedural question with complete step-by-step guide",
+      "rationale": "All 5 steps are clearly listed with details",
+      "original_id": "confident_medium_006"
+    },
+    {
+      "id": "t1_confident_medium_007",
+      "difficulty": "medium",
+      "subcategory": "quantitative_clear",
+      "query": "What was the company's revenue last quarter?",
+      "contexts": [
+        "TechFlow reported Q3 2024 revenue of $847 million, representing a 23% year-over-year increase. The growth was driven primarily by enterprise subscriptions, which accounted for 65% of total revenue."
+      ],
+      "expected_mode": "confident",
+      "description": "Financial question with exact figures provided",
+      "rationale": "Exact revenue of $847 million is stated with breakdown",
+      "original_id": "confident_medium_007"
+    },
+    {
+      "id": "t1_confident_medium_008",
+      "difficulty": "medium",
+      "subcategory": "complete_requirements",
+      "query": "What are the eligibility criteria for the scholarship?",
+      "contexts": [
+        "Scholarship Eligibility: Applicants must be enrolled full-time at an accredited university, maintain a GPA of 3.5 or higher, demonstrate financial need through FAFSA, be a US citizen or permanent resident, and submit two letters of recommendation from faculty members."
+      ],
+      "expected_mode": "confident",
+      "description": "Eligibility question with all criteria listed",
+      "rationale": "All eligibility criteria are explicitly enumerated",
+      "original_id": "confident_medium_008"
+    },
+    {
+      "id": "t1_confident_medium_009",
+      "difficulty": "medium",
+      "subcategory": "complete_explanation",
+      "query": "How does HTTPS encryption work?",
+      "contexts": [
+        "HTTPS uses TLS encryption through a handshake process: First, the client sends supported cipher suites to the server. The server responds with its certificate and chosen cipher. The client verifies the certificate against trusted CAs, then both parties generate session keys using asymmetric encryption. All subsequent data is encrypted with these symmetric session keys."
+      ],
+      "expected_mode": "confident",
+      "description": "Technical mechanism question with full process explained",
+      "rationale": "The complete TLS handshake process is described step by step",
+      "original_id": "confident_medium_009"
+    },
+    {
+      "id": "t1_confident_medium_010",
+      "difficulty": "medium",
+      "subcategory": "definition_provided",
+      "query": "What is a microservice architecture?",
+      "contexts": [
+        "Microservice architecture is a software design approach where an application is built as a collection of small, independent services. Each service runs in its own process, communicates via lightweight protocols (typically HTTP/REST), and can be deployed, updated, and scaled independently. This contrasts with monolithic architectures where all functionality exists in a single deployable unit."
+      ],
+      "expected_mode": "confident",
+      "description": "Architecture definition question with comprehensive explanation",
+      "rationale": "Complete definition with key characteristics and contrast provided",
+      "original_id": "confident_medium_010"
+    },
+    {
+      "id": "t1_confident_hard_001",
+      "difficulty": "hard",
+      "subcategory": "explicit_causal",
+      "query": "What is the company's competitive advantage?",
+      "contexts": [
+        "DataFlow's competitive advantage stems from three key factors: First, our proprietary compression algorithm reduces storage costs by 60% compared to competitors. Second, our platform processes queries 10x faster due to our columnar storage architecture. Third, we hold 12 patents on real-time data synchronization that prevent direct competition.",
+        "Independent benchmarks by Gartner confirm DataFlow outperforms competitors in all major metrics including cost efficiency, query speed, and reliability."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex strategic question with clear comprehensive answer",
+      "rationale": "Three specific advantages are enumerated with quantified benefits",
+      "original_id": "confident_hard_001"
+    },
+    {
+      "id": "t1_confident_hard_002",
+      "difficulty": "hard",
+      "subcategory": "explicit_causal",
+      "query": "Why did customers churn last quarter?",
+      "contexts": [
+        "Customer exit surveys identified three primary reasons for churn: 45% cited price increases implemented in Q2 as the main factor, 30% switched to Competitor X's new offering with better mobile support, and 25% reported that missing features (specifically offline mode) led to their decision.",
+        "Analysis showed that customers who churned had 40% lower product engagement in the 60 days before cancellation, suggesting early warning signs were present but not acted upon."
+      ],
+      "expected_mode": "confident",
+      "description": "Causal question with data-backed reasons and percentages",
+      "rationale": "Three causes are stated with specific percentages from surveys",
+      "original_id": "confident_hard_002"
+    },
+    {
+      "id": "t1_confident_hard_003",
+      "difficulty": "hard",
+      "subcategory": "complete_explanation",
+      "query": "How does the recommendation algorithm work?",
+      "contexts": [
+        "Our recommendation algorithm uses a hybrid approach combining collaborative filtering and content-based methods. First, we build a user-item interaction matrix from viewing history. Collaborative filtering identifies users with similar preferences using cosine similarity. Content-based filtering analyzes item attributes (genre, actors, directors) using TF-IDF vectors. The final score combines both: 0.6 * collaborative_score + 0.4 * content_score, with a recency boost of 1.2x for items from the last 30 days."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex algorithm question with full methodology explained",
+      "rationale": "Complete algorithm description with specific weights and methods",
+      "original_id": "confident_hard_003"
+    },
+    {
+      "id": "t1_confident_hard_004",
+      "difficulty": "hard",
+      "subcategory": "comparison_explicit",
+      "query": "Should we use Kubernetes or Docker Swarm for our deployment?",
+      "contexts": [
+        "For your requirements (500+ microservices, multi-cloud deployment, auto-scaling needs), Kubernetes is the better choice. Our analysis shows: Kubernetes supports all major cloud providers natively while Swarm has limited multi-cloud support. Kubernetes handles 10,000+ pods per cluster vs Swarm's practical limit of 1,000 containers. Kubernetes has 4x more third-party integrations. The learning curve is steeper (estimated 3 months vs 2 weeks), but long-term operational benefits outweigh initial investment."
+      ],
+      "expected_mode": "confident",
+      "description": "Technical decision question with clear recommendation and data",
+      "rationale": "Clear recommendation for Kubernetes with specific comparative data",
+      "original_id": "confident_hard_004"
+    },
+    {
+      "id": "t1_confident_hard_005",
+      "difficulty": "hard",
+      "subcategory": "quantitative_clear",
+      "query": "What is the total cost of ownership for the enterprise deployment?",
+      "contexts": [
+        "Enterprise Deployment Total Cost of Ownership (3-year projection): Infrastructure costs: $450,000 (cloud hosting at $12,500/month). Licensing: $180,000 ($60,000/year enterprise license). Implementation: $120,000 (one-time professional services). Training: $30,000 ($10,000/year for ongoing training). Support: $90,000 ($30,000/year premium support). Total 3-year TCO: $870,000, or approximately $290,000 per year."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex financial question with detailed breakdown",
+      "rationale": "Complete TCO breakdown with all cost components and total",
+      "original_id": "confident_hard_005"
+    },
+    {
+      "id": "t1_confident_hard_006",
+      "difficulty": "hard",
+      "subcategory": "complete_requirements",
+      "query": "What are all the compliance requirements for handling healthcare data?",
+      "contexts": [
+        "HIPAA Compliance Requirements for Healthcare Data: 1) Administrative safeguards: designated security officer, workforce training, access management policies. 2) Physical safeguards: facility access controls, workstation security, device disposal procedures. 3) Technical safeguards: access controls, audit logs, encryption (AES-256 minimum), automatic logoff. 4) Organizational requirements: BAA with all vendors, documented policies, breach notification within 60 days. 5) Documentation: maintain records for 6 years, conduct annual risk assessments."
+      ],
+      "expected_mode": "confident",
+      "description": "Comprehensive compliance question with full requirements",
+      "rationale": "All five categories of HIPAA requirements are listed with specifics",
+      "original_id": "confident_hard_006"
+    },
+    {
+      "id": "t1_confident_hard_007",
+      "difficulty": "hard",
+      "subcategory": "procedural_complete",
+      "query": "How do I configure high availability for the database cluster?",
+      "contexts": [
+        "High Availability Database Configuration: 1) Set up primary node with synchronous_commit=on. 2) Configure two standby nodes with streaming replication (max_wal_senders=5, wal_level=replica). 3) Install pgpool-II on separate server for connection pooling and failover. 4) Configure health checks (health_check_period=10, health_check_timeout=20). 5) Set up automatic failover (failover_command='/usr/local/bin/failover.sh %d %h'). 6) Configure virtual IP with keepalived for seamless client failover. 7) Test failover by stopping primary and verifying automatic promotion within 30 seconds."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex procedural question with complete configuration steps",
+      "rationale": "All 7 configuration steps provided with specific parameters",
+      "original_id": "confident_hard_007"
+    },
+    {
+      "id": "t1_confident_hard_008",
+      "difficulty": "hard",
+      "subcategory": "explicit_causal",
+      "query": "Why did the machine learning model's accuracy drop in production?",
+      "contexts": [
+        "Root cause analysis identified data drift as the primary cause of the accuracy drop. Specifically: 1) Training data was from 2022-2023, but production data patterns shifted in Q1 2024 due to new product categories. 2) Feature distribution analysis showed the 'price' feature mean shifted from $45 to $78, outside the training distribution. 3) The 'category' feature had 12 new values not seen during training. Retraining with recent data restored accuracy from 76% to 94%."
+      ],
+      "expected_mode": "confident",
+      "description": "Technical causal question with detailed root cause analysis",
+      "rationale": "Specific cause (data drift) identified with quantified evidence",
+      "original_id": "confident_hard_008"
+    },
+    {
+      "id": "t1_confident_hard_009",
+      "difficulty": "hard",
+      "subcategory": "complete_explanation",
+      "query": "How does the fraud detection system identify suspicious transactions?",
+      "contexts": [
+        "The fraud detection system uses a multi-layer approach: Layer 1 applies rule-based filters (transactions over $10,000, international transfers to high-risk countries, velocity checks for 5+ transactions in 1 hour). Layer 2 uses an XGBoost model trained on 50 features including transaction amount, time, location, device fingerprint, and merchant category, achieving 99.2% recall at 0.1% false positive rate. Layer 3 employs graph analysis to detect coordinated fraud rings by analyzing transaction networks. Suspicious transactions are scored 0-100; scores above 75 trigger automatic holds, 50-75 require manual review."
+      ],
+      "expected_mode": "confident",
+      "description": "Complex system question with complete architecture explained",
+      "rationale": "Full three-layer system described with specific thresholds and methods",
+      "original_id": "confident_hard_009"
+    },
+    {
+      "id": "t1_confident_hard_010",
+      "difficulty": "hard",
+      "subcategory": "direct_factual",
+      "query": "What are the SLA guarantees for the enterprise tier?",
+      "contexts": [
+        "Enterprise Tier SLA Guarantees: Uptime: 99.99% availability (maximum 52.6 minutes downtime per year). Response time: API responses under 100ms for 99th percentile. Support: 15-minute response time for critical issues, 4-hour resolution target. Data durability: 99.999999999% (11 nines) with cross-region replication. Backup: Daily automated backups retained for 30 days, point-in-time recovery. Credits: 10% credit for each 0.1% below SLA, up to 100% monthly fee."
+      ],
+      "expected_mode": "confident",
+      "description": "SLA question with all guarantees precisely specified",
+      "rationale": "All SLA metrics stated with exact numerical guarantees",
+      "original_id": "confident_hard_010"
+    },
+    {
+      "id": "t1_confident_hard_011",
+      "difficulty": "hard",
+      "subcategory": "multi_source_agreement",
+      "query": "What is the market size for the AI chip industry?",
+      "contexts": [
+        "According to Gartner's 2024 report, the global AI chip market is valued at $42.8 billion.",
+        "IDC's market analysis estimates the AI semiconductor market at $43.1 billion for 2024.",
+        "McKinsey's technology sector review places the AI processor market at $42.5 billion, with projected growth to $120 billion by 2028."
+      ],
+      "expected_mode": "confident",
+      "description": "Market size question with three independent sources agreeing",
+      "rationale": "Three authoritative sources (Gartner, IDC, McKinsey) converge on ~$42-43 billion"
+    },
+    {
+      "id": "t1_confident_hard_012",
+      "difficulty": "hard",
+      "subcategory": "multi_source_agreement",
+      "query": "What programming language is most used for data science?",
+      "contexts": [
+        "Stack Overflow's 2024 Developer Survey shows Python is used by 68% of data science professionals.",
+        "Kaggle's State of Data Science 2024 reports Python usage at 71% among ML practitioners.",
+        "IEEE Spectrum's programming language rankings place Python as #1 for data science and ML applications, used by approximately 70% of practitioners.",
+        "O'Reilly's Data Science Salary Survey confirms Python dominance at 69% usage rate."
+      ],
+      "expected_mode": "confident",
+      "description": "Language preference question with four surveys agreeing",
+      "rationale": "Four independent surveys converge on Python at 68-71% usage"
+    },
+    {
+      "id": "t1_confident_hard_013",
+      "difficulty": "hard",
+      "subcategory": "explicit_recency",
+      "query": "What is the current federal minimum wage?",
+      "contexts": [
+        "As of January 1, 2025, the federal minimum wage in the United States remains at $7.25 per hour. This rate has been in effect since July 24, 2009. Note that many states and cities have enacted higher minimum wages; this document reflects only the federal floor."
+      ],
+      "expected_mode": "confident",
+      "description": "Policy question with explicit effective date and scope",
+      "rationale": "Answer includes explicit date (January 1, 2025) and clear scope (federal only)"
+    },
+    {
+      "id": "t1_confident_hard_014",
+      "difficulty": "hard",
+      "subcategory": "explicit_recency",
+      "query": "What are the current AWS Lambda pricing rates?",
+      "contexts": [
+        "AWS Lambda Pricing (effective December 1, 2024): Request pricing: $0.20 per 1 million requests. Duration pricing: $0.0000166667 per GB-second. Free tier: 1 million requests and 400,000 GB-seconds per month. Provisioned concurrency: $0.0000041667 per GB-second. These prices apply to US East (N. Virginia) region; other regions may vary by up to 20%."
+      ],
+      "expected_mode": "confident",
+      "description": "Pricing question with explicit effective date and regional scope",
+      "rationale": "Explicit date (December 1, 2024) and regional scope (US East) stated"
+    },
+    {
+      "id": "t1_confident_hard_015",
+      "difficulty": "hard",
+      "subcategory": "bounded_claim",
+      "query": "Does the drug reduce cholesterol levels?",
+      "contexts": [
+        "In a Phase 3 clinical trial (n=2,400, randomized double-blind placebo-controlled), StatinX reduced LDL cholesterol by an average of 38% over 12 weeks compared to placebo (p<0.001). Important limitations: The study population was adults aged 40-75 with baseline LDL >130 mg/dL; results may not generalize to other populations. Patients with liver disease or taking certain medications were excluded."
+      ],
+      "expected_mode": "confident",
+      "description": "Efficacy question with clear results AND stated limitations",
+      "rationale": "Clear efficacy data (38% reduction) with explicit population and limitations stated"
+    },
+    {
+      "id": "t1_confident_hard_016",
+      "difficulty": "hard",
+      "subcategory": "bounded_claim",
+      "query": "Is React faster than Angular for rendering?",
+      "contexts": [
+        "In our benchmarks testing initial render time for a 1,000-item list on Chrome 120: React 18 rendered in 45ms, Angular 17 in 62ms. For re-renders with single item changes, React averaged 8ms vs Angular's 12ms. Test conditions: MacBook Pro M2, 16GB RAM, production builds with AOT compilation. Note: These benchmarks test specific scenarios; real-world performance depends heavily on application architecture, bundle size, and optimization strategies."
+      ],
+      "expected_mode": "confident",
+      "description": "Performance comparison with specific conditions and caveat",
+      "rationale": "Clear data (React faster in tested scenarios) with explicit test conditions and appropriate caveat"
+    },
+    {
+      "id": "t1_confident_hard_017",
+      "difficulty": "hard",
+      "subcategory": "authoritative_source",
+      "query": "What are the GDPR data retention requirements?",
+      "contexts": [
+        "Per Article 5(1)(e) of the EU General Data Protection Regulation (GDPR), personal data must be 'kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed.' The European Data Protection Board's Guidelines 04/2019 clarify that retention periods must be determined on a case-by-case basis, with documented justification. Organizations must implement deletion policies and conduct regular reviews of stored data."
+      ],
+      "expected_mode": "confident",
+      "description": "Legal requirement question citing official regulation and guidance",
+      "rationale": "Cites specific GDPR article and official EDPB guidelines"
+    },
+    {
+      "id": "t1_confident_hard_018",
+      "difficulty": "hard",
+      "subcategory": "authoritative_source",
+      "query": "What authentication methods does OAuth 2.0 support?",
+      "contexts": [
+        "According to RFC 6749 (The OAuth 2.0 Authorization Framework), the specification defines four grant types: Authorization Code Grant (Section 4.1), Implicit Grant (Section 4.2, now deprecated per security BCP), Resource Owner Password Credentials Grant (Section 4.3), and Client Credentials Grant (Section 4.4). RFC 7636 adds PKCE extension for public clients, and RFC 8628 defines Device Authorization Grant for input-constrained devices."
+      ],
+      "expected_mode": "confident",
+      "description": "Protocol specification question citing official RFCs",
+      "rationale": "Cites specific RFC numbers and sections as authoritative sources"
+    },
+    {
+      "id": "t1_confident_hard_019",
+      "difficulty": "hard",
+      "subcategory": "multi_source_agreement",
+      "query": "What is the average software engineer salary in San Francisco?",
+      "contexts": [
+        "Glassdoor data (updated November 2024) shows average software engineer salary in San Francisco at $165,000 base.",
+        "Levels.fyi reports median total compensation of $245,000 for software engineers in SF Bay Area (includes stock and bonus).",
+        "LinkedIn's 2024 Salary Insights indicates $162,000 median base salary for software engineers in San Francisco.",
+        "Note: All sources agree on base salary range of $160-165K; total compensation varies by company size and stock grants."
+      ],
+      "expected_mode": "confident",
+      "description": "Salary question with multiple sources converging on consistent range",
+      "rationale": "Three sources agree on $160-165K base salary range with clear distinction between base and total comp"
+    },
+    {
+      "id": "t1_confident_hard_020",
+      "difficulty": "hard",
+      "subcategory": "explicit_recency",
+      "query": "What is the current version of Python?",
+      "contexts": [
+        "As of October 2024, Python 3.13 is the latest stable release (released October 7, 2024). Python 3.12 remains in active support. Python 3.11 is in security-fix-only mode until October 2027. Python 2.7 reached end-of-life on January 1, 2020 and receives no updates. Version information sourced from python.org/downloads."
+      ],
+      "expected_mode": "confident",
+      "description": "Version question with explicit release dates and support status",
+      "rationale": "Explicit dates and official source (python.org) cited"
+    }
+  ]
+}

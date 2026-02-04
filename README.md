@@ -31,6 +31,46 @@ pip install -e path/to/fitz-gov
 
 ## Quick Start
 
+### Tiered Evaluation (Recommended)
+
+fitz-gov uses a two-tier evaluation system:
+- **Tier 0 (Sanity)**: 60 easy cases with 95% pass threshold - gates Tier 1
+- **Tier 1 (Core)**: 160 discriminative cases with gradient scoring
+
+```python
+from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
+
+# Load tiered cases
+tier0_cases = load_tier(Tier.SANITY)  # 60 cases
+tier1_cases = load_tier(Tier.CORE)    # 160 cases
+
+# Your RAG system generates responses and modes for each tier
+tier0_responses, tier0_modes = your_rag_system.evaluate(tier0_cases)
+tier1_responses, tier1_modes = your_rag_system.evaluate(tier1_cases)
+
+# Run tiered evaluation
+evaluator = FitzGovEvaluator()
+result = evaluator.evaluate_tiered(
+    tier0_cases, tier0_responses, tier0_modes,
+    tier1_cases, tier1_responses, tier1_modes,
+)
+
+print(result)
+# fitz-gov Tiered Evaluation
+# ==========================
+#
+# TIER 0 (Sanity Check): PASSED
+#   Threshold: 95% | Achieved: 98.3% (59/60)
+#
+# TIER 1 (Core Benchmark): 78.1%
+#   By Category:
+#     abstention: 26/30 (86.7%)
+#     dispute: 22/30 (73.3%)
+#     ...
+#
+# Summary: Tier 0 PASSED, Tier 1 Score: 78.1%
+```
+
 ### With Fitz RAG Engine
 
 ```python
@@ -41,18 +81,6 @@ benchmark = FitzGovBenchmark()
 results = benchmark.evaluate(engine)
 
 print(results)
-# fitz-gov Results (n=200):
-#   Overall Accuracy: 78.33%
-#
-# Governance Mode Categories:
-#   Abstention: 82.50% (33/40)
-#   Dispute: 75.00% (30/40)
-#   Qualification: 72.50% (29/40)
-#   Confidence: 85.00% (34/40)
-#
-# Answer Quality Categories:
-#   Grounding: 80.00% (20/25)
-#   Relevance: 77.50% (19/25)
 ```
 
 ### Standalone Usage (Any RAG System)
@@ -159,9 +187,13 @@ from fitz_gov import (
 
     # Data loading
     load_cases,
+    load_tier,
     load_case_by_id,
     get_category_info,
+    get_tier_info,
     get_data_dir,
+    get_tier_dir,
+    Tier,
 
     # Models
     FitzGovCategory,
@@ -171,6 +203,11 @@ from fitz_gov import (
     FitzGovCategoryResult,
     FitzGovConfusionMatrix,
     FitzGovResult,
+
+    # Tiered Results
+    TieredResult,
+    Tier0Result,
+    Tier1Result,
 
     # LLM Validation
     OllamaValidator,
@@ -188,7 +225,15 @@ evaluator = FitzGovEvaluator(
     llm_base_url="http://localhost:11434"
 )
 
-# Evaluate all cases
+# Tiered evaluation (recommended)
+result = evaluator.evaluate_tiered(
+    tier0_cases, tier0_responses, tier0_modes,
+    tier1_cases, tier1_responses, tier1_modes,
+    tier0_threshold=0.95,      # Default: 95%
+    gating_enabled=True,       # Skip Tier 1 if Tier 0 fails
+)
+
+# Flat evaluation (all cases together)
 results = evaluator.evaluate_all(cases, responses, modes)
 
 # Evaluate single case
@@ -198,42 +243,48 @@ result = evaluator.evaluate_case(case, response, mode)
 ### Loading Test Cases
 
 ```python
-# Load all cases (200 total)
-cases = load_cases()
+# Load by tier (recommended)
+tier0_cases = load_tier(Tier.SANITY)  # 60 sanity cases
+tier1_cases = load_tier(Tier.CORE)    # 160 core cases
 
-# Load specific categories
+# Load all cases (220 total)
+all_cases = load_cases()
+
+# Load specific categories from a tier
+abstention_tier0 = load_tier(Tier.SANITY, [FitzGovCategory.ABSTENTION])
+
+# Load specific categories across all tiers
 governance_cases = load_cases([
     FitzGovCategory.ABSTENTION,
     FitzGovCategory.DISPUTE,
 ])
 
-quality_cases = load_cases([
-    FitzGovCategory.GROUNDING,
-    FitzGovCategory.RELEVANCE,
-])
-
-# Load single case by ID
-case = load_case_by_id("dispute_005")
+# Load single case by ID (IDs prefixed with t0_ or t1_)
+case = load_case_by_id("t1_dispute_medium_005")
 ```
 
 ## Data Format
 
-Test cases are JSON files organized by category:
+Test cases are organized in a tiered structure:
 
 ```
 data/
-├── abstention/
-│   └── abstention.json    # 40 cases
-├── dispute/
-│   └── dispute.json       # 40 cases
-├── qualification/
-│   └── qualification.json # 40 cases
-├── confidence/
-│   └── confidence.json    # 30 cases
-├── grounding/
-│   └── grounding.json     # 25 cases
-└── relevance/
-    └── relevance.json     # 25 cases
+├── tier0_sanity/          # 60 cases - baseline verification (95% threshold)
+│   ├── abstention.json    # 12 cases
+│   ├── dispute.json       # 12 cases
+│   ├── qualification.json # 10 cases
+│   ├── confidence.json    # 10 cases
+│   ├── grounding.json     # 8 cases
+│   └── relevance.json     # 8 cases
+├── tier1_core/            # 160 cases - discriminative benchmark
+│   ├── abstention.json    # 30 cases
+│   ├── dispute.json       # 30 cases
+│   ├── qualification.json # 30 cases
+│   ├── confidence.json    # 30 cases
+│   ├── grounding.json     # 20 cases
+│   └── relevance.json     # 20 cases
+└── corpus/
+    └── documents.jsonl    # 288 reference documents
 ```
 
 Each case has:
@@ -256,9 +307,9 @@ Each case has:
 
 ## Version
 
-Current version: **1.0.0**
+Current version: **1.1.0**
 
-See [docs/roadmap.md](docs/roadmap.md) for test case coverage details.
+See [CHANGELOG.md](CHANGELOG.md) for release history and [docs/roadmap](docs/roadmap/) for implementation details.
 
 ## Architecture Note
 

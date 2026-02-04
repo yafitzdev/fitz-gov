@@ -41,44 +41,87 @@ def cmd_validate(args: argparse.Namespace) -> int:
 
 def cmd_stats(args: argparse.Namespace) -> int:
     """Show benchmark statistics."""
-    from .loader import load_cases
-    from .schema import FitzGovCategory
+    from .loader import Tier, get_tier_info, load_cases, load_tier
+    from .models import FitzGovCategory
 
     data_dir = Path(args.data_dir) if args.data_dir else None
 
     try:
-        cases = load_cases(data_dir=data_dir)
+        all_cases = load_cases(data_dir=data_dir)
     except FileNotFoundError as e:
         print(f"Error: {e}")
         return 1
 
-    print(f"fitz-gov Benchmark Statistics")
+    print("fitz-gov Benchmark Statistics")
     print("=" * 40)
-    print(f"Total cases: {len(cases)}")
+    print(f"Total cases: {len(all_cases)}")
     print()
 
-    # Count by category
-    by_category: dict[str, int] = {}
-    by_subcategory: dict[str, dict[str, int]] = {}
+    # Get tier info
+    tier_info = get_tier_info(data_dir)
 
-    for case in cases:
-        cat = case.category.value
-        by_category[cat] = by_category.get(cat, 0) + 1
+    if tier_info:
+        # Tiered structure
+        print("Tiered Structure:")
+        print("-" * 40)
 
-        if cat not in by_subcategory:
-            by_subcategory[cat] = {}
-        subcat = case.subcategory
-        by_subcategory[cat][subcat] = by_subcategory[cat].get(subcat, 0) + 1
+        for tier in Tier:
+            if tier.value in tier_info:
+                info = tier_info[tier.value]
+                tier_label = "Tier 0 (Sanity)" if tier == Tier.SANITY else "Tier 1 (Core)"
+                threshold = info.get("passing_threshold")
+                threshold_str = f" | Threshold: {threshold:.0%}" if threshold else ""
+                print(f"\n{tier_label}: {info['total_cases']} cases{threshold_str}")
 
-    print("By Category:")
-    for cat in FitzGovCategory:
-        count = by_category.get(cat.value, 0)
-        print(f"  {cat.value}: {count}")
+                # Show by category
+                tier_cases = load_tier(tier, data_dir=data_dir)
+                by_category: dict[str, int] = {}
+                by_difficulty: dict[str, int] = {}
 
-        # Show subcategories
-        if cat.value in by_subcategory:
-            for subcat, subcount in by_subcategory[cat.value].items():
-                print(f"    - {subcat}: {subcount}")
+                for case in tier_cases:
+                    cat = case.category.value
+                    by_category[cat] = by_category.get(cat, 0) + 1
+                    diff = case.difficulty
+                    by_difficulty[diff] = by_difficulty.get(diff, 0) + 1
+
+                for cat in FitzGovCategory:
+                    count = by_category.get(cat.value, 0)
+                    if count > 0:
+                        print(f"    {cat.value}: {count}")
+
+                if tier == Tier.CORE and by_difficulty:
+                    print(f"  By Difficulty:")
+                    for diff in ["medium", "hard"]:
+                        if diff in by_difficulty:
+                            print(f"    {diff}: {by_difficulty[diff]}")
+
+        print()
+        print("-" * 40)
+        print(f"Combined: {len(all_cases)} cases")
+
+    else:
+        # Legacy flat structure
+        by_category: dict[str, int] = {}
+        by_subcategory: dict[str, dict[str, int]] = {}
+
+        for case in all_cases:
+            cat = case.category.value
+            by_category[cat] = by_category.get(cat, 0) + 1
+
+            if cat not in by_subcategory:
+                by_subcategory[cat] = {}
+            subcat = case.subcategory
+            by_subcategory[cat][subcat] = by_subcategory[cat].get(subcat, 0) + 1
+
+        print("By Category:")
+        for cat in FitzGovCategory:
+            count = by_category.get(cat.value, 0)
+            print(f"  {cat.value}: {count}")
+
+            # Show subcategories if verbose
+            if args.verbose and cat.value in by_subcategory:
+                for subcat, subcount in sorted(by_subcategory[cat.value].items()):
+                    print(f"    - {subcat}: {subcount}")
 
     return 0
 
@@ -407,6 +450,7 @@ def main() -> int:
     # stats command
     stats_parser = subparsers.add_parser("stats", help="Show benchmark statistics")
     stats_parser.add_argument("--data-dir", help="Data directory")
+    stats_parser.add_argument("-v", "--verbose", action="store_true", help="Show subcategory breakdown")
 
     # generate command
     gen_parser = subparsers.add_parser("generate", help="Generate test cases from corpus")

@@ -1,0 +1,455 @@
+{
+  "tier": "core",
+  "tier_description": "Primary benchmark for model discrimination",
+  "category": "relevance",
+  "description": "Tests whether LLM answers the actual question asked (not just discusses the topic)",
+  "version": "1.0.0",
+  "mode_rationale": "QUALIFIED because context discusses the topic but doesn't contain the specific information requested. System should acknowledge what IS available while noting what's missing.",
+  "cases": [
+    {
+      "id": "t1_relevance_medium_001",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "What are the ELIGIBILITY requirements AND application deadline for the scholarship?",
+      "contexts": [
+        "The Merit Excellence Scholarship is open to undergraduate students with a minimum GPA of 3.5. Applicants must be enrolled full-time and demonstrate financial need. Two letters of recommendation are required along with a 500-word personal statement."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for both eligibility AND deadline, context only provides eligibility",
+      "rationale": "LLM should acknowledge the deadline is missing even though eligibility is provided",
+      "required_elements": [
+        "deadline",
+        "not specified",
+        "not mentioned",
+        "when",
+        "date",
+        "not provided"
+      ],
+      "original_id": "relevance_medium_001"
+    },
+    {
+      "id": "t1_relevance_medium_002",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is the battery life of the ProTab X1?",
+      "contexts": [
+        "The ProTab X2 features a stunning 12.9-inch OLED display with 120Hz refresh rate. It offers an impressive 14-hour battery life with fast charging support. The device weighs just 450 grams and is available in silver, space gray, and gold."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks about X1 battery life but context provides X2 specs",
+      "rationale": "LLM should recognize X1 ≠ X2 and indicate X1 battery life is not provided",
+      "required_elements": [
+        "X1",
+        "not specified",
+        "not mentioned",
+        "X2",
+        "different",
+        "not provided"
+      ],
+      "original_id": "relevance_medium_002"
+    },
+    {
+      "id": "t1_relevance_medium_003",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "What were Q1 2024 sales figures?",
+      "contexts": [
+        "The company reported record Q3 2023 sales of $4.2 billion, representing a 15% year-over-year increase. The growth was driven by strong performance in the consumer electronics division. Q4 2023 projections suggest continued momentum with estimated sales of $4.5 billion."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for Q1 2024 but context only has Q3-Q4 2023",
+      "rationale": "LLM should acknowledge Q1 2024 figures are not provided",
+      "required_elements": [
+        "Q1 2024",
+        "not specified",
+        "not mentioned",
+        "not provided",
+        "2023",
+        "different period"
+      ],
+      "original_id": "relevance_medium_003"
+    },
+    {
+      "id": "t1_relevance_medium_004",
+      "difficulty": "medium",
+      "subcategory": "symptom_only",
+      "query": "What MECHANISM allows the drug to reduce inflammation?",
+      "contexts": [
+        "Clinical trials demonstrated that ZymaCure reduces joint inflammation by 67% within 4 weeks. Patients reported significant pain relief and improved mobility. Side effects were mild, with only 8% of participants experiencing minor gastrointestinal discomfort."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for mechanism but context only shows efficacy results",
+      "rationale": "LLM should acknowledge the biochemical mechanism is not explained",
+      "required_elements": [
+        "mechanism",
+        "not specified",
+        "how",
+        "not explained",
+        "pathway",
+        "not mentioned"
+      ],
+      "original_id": "relevance_medium_004"
+    },
+    {
+      "id": "t1_relevance_medium_005",
+      "difficulty": "medium",
+      "subcategory": "status_dump",
+      "query": "What is the BUDGET allocation for the marketing department?",
+      "contexts": [
+        "The marketing department has launched three successful campaigns this quarter. Brand awareness increased by 25% and social media engagement doubled. The team expanded from 12 to 18 members and opened a new regional office in Singapore."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for budget but context only discusses activities and results",
+      "rationale": "LLM should acknowledge budget figures are not provided",
+      "required_elements": [
+        "budget",
+        "not specified",
+        "amount",
+        "not mentioned",
+        "dollars",
+        "not provided"
+      ],
+      "forbidden_elements": [
+        "\\$\\d",
+        "budget (is|was) (\\$|approximately )?\\d",
+        "allocated \\$?\\d",
+        "\\d+\\s*(million|thousand|billion)"
+      ],
+      "original_id": "relevance_medium_005"
+    },
+    {
+      "id": "t1_relevance_medium_006",
+      "difficulty": "medium",
+      "subcategory": "feature_dump",
+      "query": "What is the WARRANTY coverage for manufacturer defects?",
+      "contexts": [
+        "The XtremeBlend 5000 blender features a powerful 1500-watt motor, 10 speed settings, and pulse function. It includes a 64-oz BPA-free pitcher, self-cleaning mode, and dishwasher-safe parts. The unit comes with a recipe book and measuring cup."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for warranty details but context lists product features",
+      "rationale": "LLM should acknowledge warranty terms are not specified",
+      "required_elements": [
+        "warranty",
+        "not specified",
+        "coverage",
+        "not mentioned",
+        "years",
+        "not provided"
+      ],
+      "original_id": "relevance_medium_006"
+    },
+    {
+      "id": "t1_relevance_medium_007",
+      "difficulty": "medium",
+      "subcategory": "scope_mismatch",
+      "query": "What is the unemployment rate in Austin, Texas specifically?",
+      "contexts": [
+        "The Texas state unemployment rate dropped to 4.1% in November 2024, below the national average of 4.3%. The state added 45,000 jobs in the last quarter, with strong growth in technology and healthcare sectors. Texas now has the second-largest economy among US states."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for Austin-specific rate but context gives state-level data",
+      "rationale": "LLM should acknowledge Austin-specific data is not provided",
+      "required_elements": [
+        "Austin",
+        "not specified",
+        "city",
+        "state-level",
+        "not mentioned",
+        "local"
+      ],
+      "original_id": "relevance_medium_007"
+    },
+    {
+      "id": "t1_relevance_medium_008",
+      "difficulty": "medium",
+      "subcategory": "tangent_drift",
+      "query": "What security certifications does the cloud service have?",
+      "contexts": [
+        "Our cloud service provides 99.99% uptime with data centers in 12 regions worldwide. The platform supports automatic scaling and load balancing. Customers can choose between shared and dedicated infrastructure options. All data is encrypted using AES-256."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for certifications (SOC2, ISO) but context discusses infrastructure",
+      "rationale": "LLM should acknowledge security certifications are not listed",
+      "required_elements": [
+        "certification",
+        "not specified",
+        "SOC",
+        "ISO",
+        "compliance",
+        "not mentioned"
+      ],
+      "original_id": "relevance_medium_008"
+    },
+    {
+      "id": "t1_relevance_medium_009",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "What are the INGREDIENTS and CALORIE count per serving?",
+      "contexts": [
+        "NutriBar protein bars contain whey protein isolate, almonds, dark chocolate chips, honey, and oat flour. They are gluten-free and contain no artificial sweeteners. Each bar provides 20g of protein and 5g of fiber."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for both ingredients AND calories, context only has ingredients and protein",
+      "rationale": "LLM should acknowledge calorie count is missing",
+      "required_elements": [
+        "calorie",
+        "not specified",
+        "not mentioned",
+        "not provided",
+        "energy"
+      ],
+      "original_id": "relevance_medium_009"
+    },
+    {
+      "id": "t1_relevance_hard_001",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is the revenue breakdown for the EMEA region?",
+      "contexts": [
+        "The company's APAC region generated $2.8 billion in revenue, representing 35% of global sales. China accounted for 60% of APAC revenue while Japan contributed 25%. The company plans to expand its presence in Southeast Asia with new offices in Vietnam and Indonesia."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks about EMEA but context discusses APAC",
+      "rationale": "LLM should recognize EMEA ≠ APAC and indicate EMEA figures aren't provided",
+      "required_elements": [
+        "EMEA",
+        "not specified",
+        "Europe",
+        "not mentioned",
+        "APAC",
+        "different region"
+      ],
+      "original_id": "relevance_hard_001"
+    },
+    {
+      "id": "t1_relevance_hard_002",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was the company's market share BEFORE the merger?",
+      "contexts": [
+        "Following the merger, GlobalTech now holds 34% market share in the enterprise software sector. The combined entity serves over 10,000 enterprise customers across 45 countries. Post-merger integration is expected to generate $500 million in annual synergies by 2025."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for pre-merger data but context only has post-merger figures",
+      "rationale": "LLM should acknowledge pre-merger market share is not provided",
+      "required_elements": [
+        "before",
+        "pre-merger",
+        "not specified",
+        "prior",
+        "not mentioned",
+        "post-merger"
+      ],
+      "original_id": "relevance_hard_002"
+    },
+    {
+      "id": "t1_relevance_hard_003",
+      "difficulty": "hard",
+      "subcategory": "instruction_only",
+      "query": "What are the LOAD CAPACITY specifications for the industrial crane?",
+      "contexts": [
+        "The HeavyLift 9000 crane should be operated only by certified personnel. Before each use, inspect all cables and hydraulic lines for wear. The crane must be positioned on level ground with outriggers fully extended. Never exceed the manufacturer's rated capacity shown on the load chart."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for load specs but context only has operating instructions",
+      "rationale": "LLM should acknowledge actual capacity numbers are not provided",
+      "required_elements": [
+        "capacity",
+        "not specified",
+        "tons",
+        "weight",
+        "not mentioned",
+        "load chart"
+      ],
+      "original_id": "relevance_hard_003"
+    },
+    {
+      "id": "t1_relevance_hard_004",
+      "difficulty": "hard",
+      "subcategory": "metric_avoidance",
+      "query": "What is the EXACT fuel efficiency in miles per gallon?",
+      "contexts": [
+        "The EcoSport SUV delivers excellent fuel economy for its class. Drivers consistently praise its efficiency on highway trips. The hybrid powertrain combines a turbocharged engine with an electric motor for optimal performance. The vehicle earned a Green Car certification for its environmental performance."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for specific MPG but context uses vague efficiency language",
+      "rationale": "LLM should acknowledge specific MPG figure is not provided",
+      "required_elements": [
+        "MPG",
+        "miles per gallon",
+        "not specified",
+        "specific",
+        "number",
+        "not mentioned"
+      ],
+      "forbidden_elements": [
+        "\\d+\\s*(MPG|mpg)",
+        "\\d+\\s*miles per gallon",
+        "gets \\d+\\s*(city|highway)",
+        "achieves \\d+"
+      ],
+      "original_id": "relevance_hard_004"
+    },
+    {
+      "id": "t1_relevance_hard_005",
+      "difficulty": "hard",
+      "subcategory": "symptom_only",
+      "query": "WHY did the algorithm produce biased outputs?",
+      "contexts": [
+        "Analysis revealed the algorithm rejected 23% more applications from minority groups. The disparity was consistent across multiple test datasets. After the bias was discovered, the model was immediately taken offline for review. The company issued a public apology and pledged to implement fairness audits."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for cause of bias but context only describes the bias and response",
+      "rationale": "LLM should acknowledge the root cause of bias is not explained",
+      "required_elements": [
+        "why",
+        "cause",
+        "not specified",
+        "reason",
+        "not explained",
+        "training data",
+        "not mentioned"
+      ],
+      "original_id": "relevance_hard_005"
+    },
+    {
+      "id": "t1_relevance_hard_006",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the PREREQUISITES, duration, AND certification exam format for the course?",
+      "contexts": [
+        "The Advanced Data Science certification course requires proficiency in Python and basic statistics. Students should have completed at least one introductory machine learning course. The program covers deep learning, NLP, and computer vision with hands-on projects."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for prereqs, duration, AND exam format - only prereqs provided",
+      "rationale": "LLM should acknowledge duration and exam format are not mentioned",
+      "required_elements": [
+        "duration",
+        "exam",
+        "not specified",
+        "weeks",
+        "format",
+        "not mentioned",
+        "how long"
+      ],
+      "original_id": "relevance_hard_006"
+    },
+    {
+      "id": "t1_relevance_hard_007",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What is the INTEREST RATE for the business loan?",
+      "contexts": [
+        "Our business loans offer flexible repayment terms from 1 to 10 years. Borrowers can choose between fixed and variable rate options. The application process is streamlined with decisions within 48 hours. Collateral requirements depend on loan amount and business history."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for specific interest rate but context discusses loan terms without rates",
+      "rationale": "LLM should acknowledge the actual interest rate percentage is not provided",
+      "required_elements": [
+        "interest rate",
+        "not specified",
+        "percent",
+        "APR",
+        "not mentioned",
+        "rate"
+      ],
+      "forbidden_elements": [
+        "\\d+(\\.\\d+)?\\s*%",
+        "rate (is|of|starts at) \\d",
+        "APR (is|of) \\d",
+        "\\d+(\\.\\d+)?\\s*percent"
+      ],
+      "original_id": "relevance_hard_007"
+    },
+    {
+      "id": "t1_relevance_hard_008",
+      "difficulty": "hard",
+      "subcategory": "status_dump",
+      "query": "What is the TARGET completion date for Phase 3?",
+      "contexts": [
+        "Phase 1 of the construction project was completed on schedule in March 2024. Phase 2 is currently 75% complete with structural work finished. The project has maintained its safety record with zero lost-time incidents. The construction team has grown to 450 workers across all sites."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for Phase 3 date but context only covers Phase 1-2 status",
+      "rationale": "LLM should acknowledge Phase 3 timeline is not provided",
+      "required_elements": [
+        "Phase 3",
+        "not specified",
+        "date",
+        "target",
+        "not mentioned",
+        "completion"
+      ],
+      "original_id": "relevance_hard_008"
+    },
+    {
+      "id": "t1_relevance_hard_009",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "Give me a BULLETED LIST of the key features.",
+      "contexts": [
+        "Our product combines cutting-edge AI with an intuitive interface. The machine learning engine continuously improves recommendations based on user behavior. Real-time analytics provide instant insights into customer patterns. The cloud-native architecture ensures 99.99% uptime and seamless scaling."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for bulleted list but context is prose",
+      "rationale": "LLM should acknowledge information is available but not in requested list format, or extract and format appropriately while noting the source format",
+      "required_elements": [
+        "AI",
+        "analytics",
+        "machine learning",
+        "cloud"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_010",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What is the population of Springfield, Illinois specifically?",
+      "contexts": [
+        "Illinois has a population of approximately 12.8 million people. The state capital is Springfield. Major cities include Chicago (2.7 million), Aurora (180,000), and Rockford (148,000). The state saw a 0.5% population decline between 2020 and 2023."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for Springfield population but context only has state and other cities",
+      "rationale": "LLM should acknowledge Springfield's specific population is not provided despite it being mentioned as the capital",
+      "required_elements": [
+        "Springfield",
+        "not specified",
+        "not mentioned",
+        "capital",
+        "not provided"
+      ],
+      "forbidden_elements": [
+        "Springfield.*(population|has|is).*(\\d{2,3},?\\d{3}|hundred thousand)"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_011",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the HOURLY rates for the premium consulting service?",
+      "contexts": [
+        "Our consulting services are available in three tiers: Basic, Professional, and Premium. Premium tier includes dedicated consultants, 24/7 availability, and priority response times. Pricing is based on engagement scope and typically ranges from $50,000 to $500,000 per project. Contact our sales team for a custom quote."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for hourly rate but context only has project-based pricing",
+      "rationale": "LLM should acknowledge hourly rates are not provided, only project ranges",
+      "required_elements": [
+        "hourly",
+        "not specified",
+        "not mentioned",
+        "project",
+        "contact"
+      ],
+      "forbidden_elements": [
+        "\\$\\d+[\\d,]*\\s*(per|/|an?)\\s*hour",
+        "hourly rate (is|of) \\$"
+      ]
+    }
+  ],
+  "evaluation_config": {
+    "min_required": 1,
+    "use_regex": true,
+    "case_insensitive": true,
+    "note": "Response must match at least min_required elements from required_elements. If forbidden_elements are present, the response fails regardless of required matches."
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "tier": "core",
+  "tier_description": "Primary benchmark for model discrimination",
+  "category": "grounding",
+  "description": "Tests whether LLM stays grounded in context (hallucination traps) - system should NOT invent specific details",
+  "version": "1.0.0",
+  "mode_rationale": "QUALIFIED because context discusses the topic but lacks specific details. System should acknowledge the topic while stating specific details are not provided - WITHOUT hallucinating them.",
+  "cases": [
+    {
+      "id": "t1_grounding_medium_001",
+      "difficulty": "medium",
+      "subcategory": "numerical_hallucination",
+      "query": "What is the price of the enterprise plan?",
+      "contexts": [
+        "Our enterprise plan includes unlimited users, 24/7 support, custom integrations, SSO, and dedicated account management. Enterprise customers also get priority access to new features and a 99.99% SLA."
+      ],
+      "expected_mode": "qualified",
+      "description": "Pricing question with features but no price",
+      "rationale": "LLM might be tempted to estimate price based on features - must not",
+      "forbidden_claims": [
+        "\\$\\d",
+        "\\d+\\s*per (month|year|user|seat)",
+        "costs \\$?\\d",
+        "priced at \\$?\\d",
+        "starting at \\$?\\d",
+        "pricing (is|starts|begins) (at )?\\$?\\d"
+      ],
+      "original_id": "grounding_medium_001"
+    },
+    {
+      "id": "t1_grounding_medium_002",
+      "difficulty": "medium",
+      "subcategory": "process_hallucination",
+      "query": "What are the steps to reset my password?",
+      "contexts": [
+        "Our platform includes robust security features including password management. Users can update their credentials through the account settings. Two-factor authentication is also available."
+      ],
+      "expected_mode": "qualified",
+      "description": "Process question with no specific steps",
+      "rationale": "LLM should NOT invent a step-by-step password reset process",
+      "forbidden_claims": [
+        "click (on |the )?['\"]?\\w+['\"]?",
+        "select (the )?['\"]?\\w+['\"]?",
+        "enter (your |the )?\\w+",
+        "step \\d",
+        "first[,:]? (click|go|navigate|select|enter)",
+        "(and )?then[,:]? (click|go|navigate|select|enter)",
+        "navigate to (the )?['\"]?\\w+['\"]?",
+        "go to (the )?(settings|menu|page|account)"
+      ],
+      "original_id": "grounding_medium_002"
+    },
+    {
+      "id": "t1_grounding_medium_003",
+      "difficulty": "medium",
+      "subcategory": "attribution_hallucination",
+      "query": "What did the CEO say about the acquisition?",
+      "contexts": [
+        "The company announced its largest acquisition to date. The deal is expected to close in the coming months pending regulatory approval. Market analysts have responded positively."
+      ],
+      "expected_mode": "qualified",
+      "description": "Quote request with no actual quotes",
+      "rationale": "LLM should NOT fabricate CEO quotes",
+      "forbidden_claims": [
+        "(CEO|he|she|they) said[,:]? ['\"]",
+        "(CEO|he|she|they) stated[,:]? ['\"]",
+        "(CEO|he|she|they) (commented|announced)[,:]? ['\"]",
+        "according to (the CEO|him|her|them)",
+        "quote[d]?[,:]? ['\"]",
+        "['\"][A-Z][^'\"]{10,}['\"]"
+      ],
+      "original_id": "grounding_medium_003"
+    },
+    {
+      "id": "t1_grounding_medium_004",
+      "difficulty": "medium",
+      "subcategory": "technical_hallucination",
+      "query": "What are the system requirements?",
+      "contexts": [
+        "Our desktop application is designed for professional users who need advanced features. The software has been optimized for performance and includes offline capabilities."
+      ],
+      "expected_mode": "qualified",
+      "description": "System requirements with no specs listed",
+      "rationale": "LLM should NOT invent RAM, CPU, or OS requirements",
+      "forbidden_claims": [
+        "\\d+\\s*(GB|MB|TB)",
+        "\\d+\\s*(GB|MB) (of )?RAM",
+        "(Intel|AMD|ARM|M1|M2|M3)\\s*(processor|CPU|chip)?",
+        "Windows \\d",
+        "macOS \\d",
+        "(Ubuntu|Debian|CentOS|RHEL)",
+        "minimum (of )?\\d",
+        "requires (at least )?\\d",
+        "(at least|minimum) \\d+\\s*(GB|cores)"
+      ],
+      "original_id": "grounding_medium_004"
+    },
+    {
+      "id": "t1_grounding_medium_005",
+      "difficulty": "medium",
+      "subcategory": "medical_hallucination",
+      "query": "What is the recommended dosage?",
+      "contexts": [
+        "MedX is indicated for the treatment of moderate to severe pain. It should be taken with food to minimize gastrointestinal side effects. Patients should not drive or operate heavy machinery while taking this medication."
+      ],
+      "expected_mode": "qualified",
+      "description": "Dosage question with usage info but no dosage",
+      "rationale": "LLM should NOT invent specific dosage amounts",
+      "forbidden_claims": [
+        "\\d+\\s*(mg|milligrams?)",
+        "\\d+\\s*(tablet|capsule)s?",
+        "(once|twice|three times) (daily|a day|per day)",
+        "every \\d+\\s*(hours?|days?)",
+        "take \\d+\\s*(mg|tablet|capsule)",
+        "(recommended |typical |standard )?dos(e|age) (is|of) \\d"
+      ],
+      "original_id": "grounding_medium_005"
+    },
+    {
+      "id": "t1_grounding_medium_006",
+      "difficulty": "medium",
+      "subcategory": "date_hallucination",
+      "query": "When was the company founded?",
+      "contexts": [
+        "DataCorp has been a leader in data analytics for over two decades. The company has weathered multiple economic cycles and emerged stronger each time. Today it serves Fortune 500 clients worldwide."
+      ],
+      "expected_mode": "qualified",
+      "description": "Founding date with vague timeframe only",
+      "rationale": "LLM should NOT calculate or invent a specific founding year from 'two decades'",
+      "forbidden_claims": [
+        "(19|20)\\d{2}",
+        "founded in \\d",
+        "established in \\d",
+        "started in \\d",
+        "since (19|20)\\d{2}",
+        "in (19|20)\\d{2}"
+      ],
+      "original_id": "grounding_medium_006"
+    },
+    {
+      "id": "t1_grounding_medium_007",
+      "difficulty": "medium",
+      "subcategory": "numerical_hallucination",
+      "query": "What is the company's market share?",
+      "contexts": [
+        "IndustryLeader Corp is one of the top players in the cloud computing market. The company competes with major tech giants and has been gaining ground in recent years. Customer satisfaction ratings are consistently high."
+      ],
+      "expected_mode": "qualified",
+      "description": "Market share question with no percentage",
+      "rationale": "LLM should NOT invent market share percentages",
+      "forbidden_claims": [
+        "\\d+\\s*%",
+        "\\d+\\s*percent",
+        "market share (of|is|was) \\d",
+        "controls \\d",
+        "dominates with \\d",
+        "leads with \\d",
+        "holds \\d"
+      ],
+      "original_id": "grounding_medium_007"
+    },
+    {
+      "id": "t1_grounding_medium_008",
+      "difficulty": "medium",
+      "subcategory": "location_hallucination",
+      "query": "Which countries is the product available in?",
+      "contexts": [
+        "Our product has achieved global reach with customers on every continent. We continue to expand our international presence and localize our offerings for different markets."
+      ],
+      "expected_mode": "qualified",
+      "description": "Country availability with no specific countries",
+      "rationale": "LLM should NOT list specific countries",
+      "forbidden_claims": [
+        "United States",
+        "UK",
+        "Germany",
+        "France",
+        "Japan",
+        "Canada",
+        "Australia",
+        "available in",
+        "launched in",
+        "countries including"
+      ],
+      "original_id": "grounding_medium_008"
+    },
+    {
+      "id": "t1_grounding_medium_009",
+      "difficulty": "medium",
+      "subcategory": "attribution_hallucination",
+      "query": "What do experts say about this approach?",
+      "contexts": [
+        "The new methodology has generated significant interest in the industry. Several academic papers have been published on the topic, and adoption is growing among enterprise clients."
+      ],
+      "expected_mode": "qualified",
+      "description": "Expert opinion request with no actual expert quotes",
+      "rationale": "LLM should NOT fabricate expert names or quotes",
+      "forbidden_claims": [
+        "Dr\\. [A-Z][a-z]+",
+        "Professor [A-Z][a-z]+",
+        "expert [A-Z][a-z]+",
+        "researcher [A-Z][a-z]+",
+        "according to (Dr\\.|Professor|expert|researcher)",
+        "(he|she|they) (says|said|believes|argues)",
+        "(Harvard|MIT|Stanford|Berkeley|Oxford|Cambridge) (study|research|professor)"
+      ],
+      "original_id": "grounding_medium_009"
+    },
+    {
+      "id": "t1_grounding_medium_010",
+      "difficulty": "medium",
+      "subcategory": "process_hallucination",
+      "query": "How do I integrate with Salesforce?",
+      "contexts": [
+        "Our platform offers native integrations with popular CRM systems. Setup is straightforward and typically completed within a day. Our integration team provides dedicated support for enterprise clients."
+      ],
+      "expected_mode": "qualified",
+      "description": "Integration steps with no specific process",
+      "rationale": "LLM should NOT invent Salesforce-specific integration steps",
+      "forbidden_claims": [
+        "(your |the |an )?API key",
+        "OAuth (flow|token|2\\.0)",
+        "connected app",
+        "install (the |a )?\\w+ (app|package|plugin)",
+        "configure (the |your )?\\w+",
+        "step \\d",
+        "click (on |the )?['\"]?\\w+['\"]?",
+        "navigate to (the )?\\w+",
+        "(in |under |go to )(the )?settings"
+      ],
+      "original_id": "grounding_medium_010"
+    },
+    {
+      "id": "t1_grounding_hard_001",
+      "difficulty": "hard",
+      "subcategory": "numerical_hallucination",
+      "query": "What was the conversion rate improvement?",
+      "contexts": [
+        "After implementing the new checkout flow, the e-commerce team saw meaningful improvements in conversion metrics. The A/B test ran for six weeks with statistically significant results. Customer feedback was overwhelmingly positive."
+      ],
+      "expected_mode": "qualified",
+      "description": "Improvement percentage with qualitative results only",
+      "rationale": "LLM might infer a percentage from 'meaningful' - must not",
+      "forbidden_claims": [
+        "\\d+\\s*%",
+        "\\d+\\s*percent",
+        "increased by \\d",
+        "improved by \\d",
+        "(from|went from) \\d+\\s*%? to \\d",
+        "conversion rate (of|was|is|reached) \\d",
+        "lift of \\d",
+        "\\d+x (improvement|increase|lift)"
+      ],
+      "original_id": "grounding_hard_001"
+    },
+    {
+      "id": "t1_grounding_hard_002",
+      "difficulty": "hard",
+      "subcategory": "technical_hallucination",
+      "query": "What encryption standard does the platform use?",
+      "contexts": [
+        "Security is our top priority. All data is encrypted both in transit and at rest. We undergo annual third-party security audits and maintain SOC 2 Type II certification."
+      ],
+      "expected_mode": "qualified",
+      "description": "Encryption standard with security claims but no specifics",
+      "rationale": "LLM should NOT assume AES-256 or other specific standards",
+      "forbidden_claims": [
+        "AES-?\\d*",
+        "RSA-?\\d*",
+        "\\d+-bit",
+        "(TLS|SSL)\\s*\\d",
+        "uses? (AES|RSA|SHA|ECDSA|ChaCha)",
+        "encrypted (using|with) (AES|RSA|TLS)",
+        "encryption (standard|algorithm) (is|uses)"
+      ],
+      "original_id": "grounding_hard_002"
+    },
+    {
+      "id": "t1_grounding_hard_003",
+      "difficulty": "hard",
+      "subcategory": "attribution_hallucination",
+      "query": "What research supports this claim?",
+      "contexts": [
+        "Studies have consistently shown that regular exercise improves cognitive function. The benefits appear across all age groups and persist even with moderate activity levels."
+      ],
+      "expected_mode": "qualified",
+      "description": "Research citation request with no specific studies",
+      "rationale": "LLM should NOT fabricate study names, journals, or years",
+      "forbidden_claims": [
+        "(a |the )?study (by|from|at) [A-Z]",
+        "research (from|at|by) [A-Z]",
+        "published in (the )?[A-Z]",
+        "(the )?[A-Z][a-z]+ (Journal|Review)",
+        "[A-Z][a-z]+ University (study|research|found)",
+        "(study |research )?(found|showed) that \\d",
+        "(in |from )(20[12]\\d)"
+      ],
+      "original_id": "grounding_hard_003"
+    },
+    {
+      "id": "t1_grounding_hard_004",
+      "difficulty": "hard",
+      "subcategory": "numerical_hallucination",
+      "query": "How much faster is the new algorithm?",
+      "contexts": [
+        "The engineering team developed a novel optimization that significantly reduces processing time. Benchmarks showed consistent improvements across different workload sizes. The optimization has been deployed to production."
+      ],
+      "expected_mode": "qualified",
+      "description": "Performance improvement with no specific numbers",
+      "rationale": "LLM should NOT invent speedup factors like '10x faster'",
+      "forbidden_claims": [
+        "\\d+x faster",
+        "\\d+ times faster",
+        "\\d+\\s*% faster",
+        "\\d+\\s*percent faster",
+        "\\d+\\s*(ms|milliseconds|seconds|minutes)",
+        "reduced (by|from) \\d",
+        "(from|went from) \\d+\\s*(ms|s)? to \\d",
+        "speedup of \\d",
+        "\\d+x (speedup|improvement|faster)"
+      ],
+      "original_id": "grounding_hard_004"
+    },
+    {
+      "id": "t1_grounding_hard_005",
+      "difficulty": "hard",
+      "subcategory": "medical_hallucination",
+      "query": "What is the success rate of this treatment?",
+      "contexts": [
+        "The treatment has shown promise in clinical settings. Patients generally report positive outcomes, and the therapy is now offered at leading medical centers. Long-term follow-up studies are ongoing."
+      ],
+      "expected_mode": "qualified",
+      "description": "Success rate with qualitative outcomes only",
+      "rationale": "LLM should NOT invent success rate percentages",
+      "forbidden_claims": [
+        "\\d+\\s*%",
+        "\\d+\\s*percent",
+        "success rate (of|is|was) \\d",
+        "effective in \\d",
+        "\\d+ (out of|of) \\d+ patients",
+        "cure rate (of|is|was) \\d",
+        "remission rate (of|is|was) \\d",
+        "\\d+\\s*% (success|effective|cure|remission)"
+      ],
+      "original_id": "grounding_hard_005"
+    },
+    {
+      "id": "t1_grounding_hard_006",
+      "difficulty": "hard",
+      "subcategory": "date_hallucination",
+      "query": "When will the next version be released?",
+      "contexts": [
+        "Our development team is actively working on the next major release. The update will include several highly requested features. Beta testing has begun with select customers."
+      ],
+      "expected_mode": "qualified",
+      "description": "Future release date with development status only",
+      "rationale": "LLM should NOT predict a release date based on beta status",
+      "forbidden_claims": [
+        "Q[1-4] (of )?\\d{4}",
+        "(20)\\d{2}",
+        "(this|next) (month|week|quarter)",
+        "expected (in|by|around)",
+        "planned for (Q[1-4]|\\d{4}|January)",
+        "releasing (in|by|around)",
+        "coming (in|this|next)",
+        "will (be released|launch|ship) (in|by)"
+      ],
+      "original_id": "grounding_hard_006"
+    },
+    {
+      "id": "t1_grounding_hard_007",
+      "difficulty": "hard",
+      "subcategory": "process_hallucination",
+      "query": "What is the exact approval workflow?",
+      "contexts": [
+        "Our enterprise platform includes configurable approval workflows. Administrators can customize the process to match their organization's requirements. Multiple approval levels are supported."
+      ],
+      "expected_mode": "qualified",
+      "description": "Workflow details with customization info only",
+      "rationale": "LLM should NOT invent default workflow steps",
+      "forbidden_claims": [
+        "(the )?submitter (will|must|should)",
+        "(the )?(reviewer|approver) (will|must|reviews|approves)",
+        "(a |the |your )?manager (will|must|reviews|approves)",
+        "step \\d",
+        "first[,:]? (the |a |it )",
+        "(and )?then[,:]? (the |a |it )",
+        "finally[,:]? (the |a |it )",
+        "routed to (the |a |your )?\\w+",
+        "escalated to (the |a |your )?\\w+"
+      ],
+      "original_id": "grounding_hard_007"
+    },
+    {
+      "id": "t1_grounding_hard_008",
+      "difficulty": "hard",
+      "subcategory": "entity_blending",
+      "query": "What is Company A's revenue growth strategy?",
+      "contexts": [
+        "Company A reported strong Q3 results with revenue up 15% year-over-year.",
+        "Company B's CEO outlined their growth strategy at the investor conference: expanding into emerging markets, doubling R&D investment, and acquiring smaller competitors.",
+        "Industry analysts expect continued consolidation in the sector."
+      ],
+      "expected_mode": "qualified",
+      "description": "Question about A but strategy details are for B",
+      "rationale": "LLM should NOT attribute Company B's strategy to Company A",
+      "forbidden_claims": [
+        "Company A('s)?( plan| strateg| approach)?.*(emerging markets|expand|acquisition|R&D)",
+        "(their|its) (strategy|plan|approach) (is|includes|involves)",
+        "A (is|will be|plans to) (expand|acquir|invest|double)"
+      ]
+    },
+    {
+      "id": "t1_grounding_hard_009",
+      "difficulty": "hard",
+      "subcategory": "quote_fabrication",
+      "query": "What did the CEO say about future plans?",
+      "contexts": [
+        "The CEO addressed employees at the annual meeting. The company announced record profits and thanked the team for their hard work. Questions about the company's future direction were discussed during the Q&A session."
+      ],
+      "expected_mode": "qualified",
+      "description": "CEO mentioned but no actual quotes provided",
+      "rationale": "LLM should NOT fabricate CEO quotes like 'We plan to...' or 'Our vision is...'",
+      "forbidden_claims": [
+        "\"[^\"]+\"",
+        "'[^']+'",
+        "(the CEO|he|she) (said|stated|mentioned|announced|declared) (that |\"|\\')",
+        "according to the CEO[,:]? (\"|\\'|we|the|our)",
+        "(his|her) (exact )?words were"
+      ]
+    },
+    {
+      "id": "t1_grounding_hard_010",
+      "difficulty": "hard",
+      "subcategory": "statistical_inference",
+      "query": "By how much did customer satisfaction improve?",
+      "contexts": [
+        "After implementing the new support system, customer satisfaction improved significantly. Surveys showed positive feedback from users, and complaint rates dropped. The support team received recognition for their improvements."
+      ],
+      "expected_mode": "qualified",
+      "description": "'Significant improvement' without quantification",
+      "rationale": "LLM should NOT invent specific percentage improvements",
+      "forbidden_claims": [
+        "\\d+\\s*%",
+        "\\d+\\s*percent",
+        "improved (by|from) \\d",
+        "increased (by|from) \\d",
+        "rose (by|from) \\d",
+        "went (up|from) \\d",
+        "\\d+ (point|pts|percentage)",
+        "(from|by) \\d+(\\.|\\d)*( percent| points| %| to)"
+      ]
+    }
+  ],
+  "evaluation_config": {
+    "use_regex": true,
+    "case_insensitive": true,
+    "allowed_phrases": [
+      "not specified",
+      "not mentioned",
+      "not provided",
+      "not stated",
+      "not (available|included|disclosed|given)",
+      "no .* (is |was )?(mentioned|specified|provided|given|stated|found|included)",
+      "does not (mention|specify|provide|state|include|contain|disclose)",
+      "doesn't (mention|specify|provide|state|include|contain|disclose)",
+      "context does not",
+      "information (is |was )?not (available|provided|included)",
+      "unable to (determine|find|locate)",
+      "cannot (determine|find|locate|identify)",
+      "could not (find|locate|identify|determine)",
+      "can't (find|locate|identify|determine)",
+      "no specific .* (is |was )?(given|provided|mentioned|found)",
+      "I (cannot|could not|can't) find",
+      "there is no .* (mentioned|provided|specified|included)",
+      "the .* (is |are )?(not |un)(specified|mentioned|provided|known|clear)"
+    ],
+    "note": "If response matches an allowed_phrase pattern, forbidden_claims check is bypassed for that sentence"
+  }
+}
