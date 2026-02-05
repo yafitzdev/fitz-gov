@@ -467,6 +467,149 @@
       "description": "Security assessment with significant gaps",
       "rationale": "5-day pentest can't find all vulnerabilities; no breaches doesn't mean no vulnerabilities; sophisticated attackers have more resources than mid-tier firms",
       "original_id": "qualify_hard_015"
+    },
+    {
+      "id": "t1_qualify_hard_016",
+      "difficulty": "hard",
+      "subcategory": "hedged_source",
+      "query": "Does intermittent fasting improve cognitive function?",
+      "contexts": [
+        "A 2023 review in Nutritional Neuroscience states: 'Results suggest intermittent fasting may improve certain cognitive markers.'",
+        "The review analyzed 12 studies with sample sizes ranging from 20 to 150 participants.",
+        "Authors note: 'More rigorous, long-term trials are needed to confirm these preliminary observations.'"
+      ],
+      "expected_mode": "qualified",
+      "description": "Source uses hedging language ('may', 'suggest', 'preliminary')",
+      "rationale": "The source itself hedges with 'suggest', 'may', and 'preliminary' - system should preserve this uncertainty rather than state definitively"
+    },
+    {
+      "id": "t1_qualify_hard_017",
+      "difficulty": "hard",
+      "subcategory": "hedged_source",
+      "query": "Is this new cancer treatment effective?",
+      "contexts": [
+        "Early trial results indicate the treatment could be effective for certain patient subgroups.",
+        "Lead researcher Dr. Martinez stated: 'Preliminary findings are encouraging, but we cannot draw definitive conclusions yet.'",
+        "The Phase 1 trial enrolled 45 patients with a 6-month follow-up period."
+      ],
+      "expected_mode": "qualified",
+      "description": "Medical source explicitly hedges effectiveness claim",
+      "rationale": "Source uses 'could be', 'preliminary', 'cannot draw definitive conclusions' - these hedges must be preserved in any answer"
+    },
+    {
+      "id": "t1_qualify_hard_018",
+      "difficulty": "hard",
+      "subcategory": "hedged_source",
+      "query": "Will autonomous vehicles be mainstream by 2030?",
+      "contexts": [
+        "Industry analysts believe autonomous vehicles are likely to achieve significant market penetration by 2030.",
+        "McKinsey report notes: 'Under optimistic assumptions, AVs could represent 10-15% of new vehicle sales.'",
+        "Regulatory experts suggest approval timelines remain uncertain in key markets."
+      ],
+      "expected_mode": "qualified",
+      "description": "Prediction sources use hedging throughout",
+      "rationale": "All sources hedge: 'believe', 'likely', 'could', 'under optimistic assumptions', 'uncertain' - no confident prediction is warranted"
+    },
+    {
+      "id": "t1_qualify_hard_019",
+      "difficulty": "hard",
+      "subcategory": "source_quality",
+      "query": "What causes migraines?",
+      "contexts": [
+        "According to HealthyLivingBlog.com: 'Migraines are caused by electromagnetic radiation from cell phones and WiFi routers.'",
+        "The blog post, written by wellness coach Jenny Thompson, has been shared 50,000 times on social media.",
+        "The article cites 'numerous studies' but provides no specific references or links."
+      ],
+      "expected_mode": "qualified",
+      "description": "Non-authoritative source making causal claims",
+      "rationale": "Blog post by non-medical professional, no citations, making definitive causal claims about medical condition - source quality is insufficient for confident answer"
+    },
+    {
+      "id": "t1_qualify_hard_020",
+      "difficulty": "hard",
+      "subcategory": "source_quality",
+      "query": "Is this supplement safe for long-term use?",
+      "contexts": [
+        "A popular health influencer with 2M followers posted: 'I've taken this supplement daily for 3 years with amazing results and zero side effects!'",
+        "The post received 15,000 likes and hundreds of comments from followers sharing similar experiences.",
+        "The influencer disclosed a paid partnership with the supplement manufacturer."
+      ],
+      "expected_mode": "qualified",
+      "description": "Social media testimonial as safety evidence",
+      "rationale": "Influencer testimonial with financial conflict of interest, anecdotal evidence, no clinical data - cannot confidently assess long-term safety"
+    },
+    {
+      "id": "t1_qualify_hard_021",
+      "difficulty": "hard",
+      "subcategory": "population_mismatch",
+      "query": "Is this medication safe for children under 12?",
+      "contexts": [
+        "Clinical trials demonstrated the medication is safe and effective in adults aged 18-65.",
+        "The study enrolled 2,500 participants over a 2-year period with comprehensive safety monitoring.",
+        "No pediatric trials have been conducted to date.",
+        "The FDA approved the medication for adult use only."
+      ],
+      "expected_mode": "qualified",
+      "description": "Adult study applied to pediatric question",
+      "rationale": "Study population (adults 18-65) doesn't match question population (children under 12) - children metabolize drugs differently, cannot extrapolate safety"
+    },
+    {
+      "id": "t1_qualify_hard_022",
+      "difficulty": "hard",
+      "subcategory": "population_mismatch",
+      "query": "Will this agile methodology work for our enterprise with 5,000 employees?",
+      "contexts": [
+        "Case study: TechStartup Inc. (25 employees) implemented this methodology and saw 60% faster delivery.",
+        "The startup's CTO reported: 'The informal communication and flat structure made adoption seamless.'",
+        "Implementation took 2 weeks with the entire team co-located in one office."
+      ],
+      "expected_mode": "qualified",
+      "description": "Startup case study applied to enterprise context",
+      "rationale": "25-person co-located startup vs 5,000-employee enterprise - organizational scale, structure, and communication patterns differ fundamentally"
+    },
+    {
+      "id": "t1_qualify_hard_023",
+      "difficulty": "hard",
+      "subcategory": "population_mismatch",
+      "query": "Will this marketing strategy work in the US market?",
+      "contexts": [
+        "The campaign achieved 300% ROI in South Korea over 6 months.",
+        "Key success factors included partnerships with local K-pop influencers and integration with KakaoTalk.",
+        "The target demographic was urban millennials aged 25-35 in Seoul metropolitan area."
+      ],
+      "expected_mode": "qualified",
+      "description": "Different country study applied to US question",
+      "rationale": "South Korean market has different social platforms (KakaoTalk vs US platforms), cultural context (K-pop influence), and consumer behavior - cannot assume transferability"
+    },
+    {
+      "id": "t1_qualify_hard_024",
+      "difficulty": "hard",
+      "subcategory": "temporal_extrapolation",
+      "query": "What will the electric vehicle market share be in 2026?",
+      "contexts": [
+        "EV market share grew from 2.5% in 2019 to 4.5% in 2020 to 6.5% in 2021 to 8% in 2022.",
+        "This represents consistent year-over-year growth of approximately 2 percentage points.",
+        "Government incentives remained stable during this period.",
+        "Report published: January 2023."
+      ],
+      "expected_mode": "qualified",
+      "description": "Historical trend used for future prediction",
+      "rationale": "2019-2022 trend data is 3-4 years old for 2026 prediction - market conditions, competition, regulations, and technology have changed significantly"
+    },
+    {
+      "id": "t1_qualify_hard_025",
+      "difficulty": "hard",
+      "subcategory": "temporal_extrapolation",
+      "query": "What is the current size of the global AI market?",
+      "contexts": [
+        "According to a comprehensive market analysis, the global AI market was valued at $136.5 billion.",
+        "The report projected 35% annual growth rate based on adoption trends.",
+        "Key growth drivers identified included healthcare AI and autonomous systems.",
+        "Report publication date: March 2022."
+      ],
+      "expected_mode": "qualified",
+      "description": "Outdated market report for 'current' question",
+      "rationale": "3-year-old market report cannot answer 'current' market size question - AI market has evolved dramatically since 2022 with ChatGPT launch and subsequent developments"
     }
   ]
 }

@@ -444,6 +444,242 @@
         "\\$\\d+[\\d,]*\\s*(per|/|an?)\\s*hour",
         "hourly rate (is|of) \\$"
       ]
+    },
+    {
+      "id": "t1_relevance_hard_012",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "Should we proceed with the acquisition?",
+      "contexts": [
+        "The target company has $50M in annual revenue with 15% profit margins. They have 200 employees and operate in 5 countries. Their technology stack is modern and compatible with ours. Due diligence revealed no major legal or financial red flags. Integration would take approximately 12 months."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for recommendation but context only provides facts",
+      "rationale": "LLM should recognize the context provides data but no recommendation - it should not simply summarize the facts as if that answers the yes/no question",
+      "required_elements": [
+        "recommend",
+        "decision",
+        "not stated",
+        "not provided",
+        "depends",
+        "consider"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_013",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "Is this investment worth the risk?",
+      "contexts": [
+        "The startup has raised $20M in Series B funding. Their user base grew 300% last year. The founding team has prior exits. The market size is estimated at $50B. Two competitors have failed in this space. The burn rate is $1.5M per month with 18 months of runway."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for risk assessment but context only lists facts",
+      "rationale": "LLM should not just summarize metrics as an answer to 'worth the risk' - that requires judgment not provided in context",
+      "required_elements": [
+        "risk",
+        "assessment",
+        "not provided",
+        "judgment",
+        "depends",
+        "evaluate"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_014",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "Which candidate should we hire?",
+      "contexts": [
+        "Candidate A has 10 years of experience at Fortune 500 companies. They have an MBA from a top school. Candidate B is a self-taught developer with 5 years of startup experience. They have contributed to major open-source projects. Both candidates performed well in technical interviews."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for hiring decision but context only describes candidates",
+      "rationale": "LLM should recognize it cannot make hiring recommendation from descriptions alone - role requirements and team needs are not provided",
+      "required_elements": [
+        "hire",
+        "decision",
+        "not stated",
+        "depends",
+        "requirements",
+        "role"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_015",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the return policy for online purchases?",
+      "contexts": [
+        "Our in-store return policy allows returns within 30 days with receipt. Items must be in original packaging and unused condition. Store credit is issued for returns without receipt. Clearance items are final sale. Our stores are open Monday through Saturday, 9 AM to 9 PM."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks about online returns but context only covers in-store",
+      "rationale": "LLM should recognize online policy may differ from in-store and indicate online-specific policy is not provided",
+      "required_elements": [
+        "online",
+        "not specified",
+        "in-store",
+        "not mentioned",
+        "different",
+        "not provided"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_016",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "How do I upgrade my personal account to business?",
+      "contexts": [
+        "To create a new business account, visit business.example.com and click 'Sign Up'. You'll need to provide your company name, tax ID, and business address. Business accounts include advanced analytics, team management, and priority support. Pricing starts at $29/month per user."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks about upgrading existing account but context describes new account creation",
+      "rationale": "LLM should recognize upgrade process may differ from new account creation",
+      "required_elements": [
+        "upgrade",
+        "not specified",
+        "new account",
+        "not mentioned",
+        "existing",
+        "convert"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_017",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What are the side effects of this medication for elderly patients?",
+      "contexts": [
+        "Clinical trials in adults aged 18-55 showed the following side effects: headache (12%), nausea (8%), dizziness (5%), and fatigue (4%). Most side effects resolved within 2 weeks. The medication should be taken with food. Avoid alcohol while taking this medication."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks about elderly patients but trials only included 18-55 age group",
+      "rationale": "LLM should recognize elderly patients (65+) may have different side effect profiles than the studied population",
+      "required_elements": [
+        "elderly",
+        "not specified",
+        "18-55",
+        "age",
+        "not studied",
+        "adult"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_018",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "What is the company's headquarters address?",
+      "contexts": [
+        "TechCorp is headquartered at 100 Innovation Drive, San Francisco, CA 94105. The company was founded in 2010 by Jane Smith and has grown to 5,000 employees. They operate in 30 countries with regional offices in London, Tokyo, and Sydney. Last year's revenue was $2.3 billion."
+      ],
+      "expected_mode": "confident",
+      "description": "Simple address question - should answer directly without extra info",
+      "rationale": "LLM should provide the address (100 Innovation Drive, SF) without volunteering founding date, employee count, revenue, etc.",
+      "required_elements": [
+        "100 Innovation Drive",
+        "San Francisco",
+        "94105"
+      ],
+      "forbidden_elements": [
+        "founded|employees|revenue|billion|countries"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_019",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "What programming language is the API written in?",
+      "contexts": [
+        "Our REST API is written in Python using the FastAPI framework. The API supports JSON and XML response formats. Authentication is handled via OAuth 2.0. Rate limits are 1000 requests per hour for free tier and unlimited for enterprise. The API documentation is available at docs.example.com."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for language only - should not dump all API details",
+      "rationale": "LLM should answer 'Python' or 'Python with FastAPI' without volunteering auth, rate limits, formats, etc.",
+      "required_elements": [
+        "Python"
+      ],
+      "forbidden_elements": [
+        "OAuth|rate limit|1000|JSON|XML|documentation"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_020",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "Who is the current CEO?",
+      "contexts": [
+        "Sarah Johnson became CEO in 2022 after serving as COO for five years. She holds an MBA from Harvard and previously worked at McKinsey. Under her leadership, the company has expanded into three new markets and launched two successful products. The board recently extended her contract through 2028."
+      ],
+      "expected_mode": "confident",
+      "description": "Asks for CEO name only - should not provide full biography",
+      "rationale": "LLM should answer 'Sarah Johnson' without volunteering MBA, McKinsey background, contract details, etc.",
+      "required_elements": [
+        "Sarah Johnson"
+      ],
+      "forbidden_elements": [
+        "Harvard|McKinsey|COO|2028|markets|products"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_021",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "How do I fix the synchronization error?",
+      "contexts": [
+        "If you encounter sync error code E-401, clear your cache and restart the application. For error E-402, check your network connection and firewall settings. Error E-403 indicates an authentication issue - try logging out and back in. Contact support if issues persist after these steps."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks how to fix 'the' error but which error code is not specified",
+      "rationale": "LLM should ask which error code or indicate that different errors have different solutions",
+      "required_elements": [
+        "which error",
+        "error code",
+        "E-401",
+        "E-402",
+        "E-403",
+        "depends"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_022",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "What is the shipping cost?",
+      "contexts": [
+        "Shipping rates vary by destination and package weight. Domestic standard shipping: $5.99 for orders under 2 lbs, $9.99 for 2-5 lbs, $14.99 for 5-10 lbs. Express shipping adds $10. International shipping starts at $24.99. Free shipping on domestic orders over $75."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks for 'the' shipping cost but destination, weight, and speed not specified",
+      "rationale": "LLM should indicate that shipping cost depends on factors not specified in the query",
+      "required_elements": [
+        "depends",
+        "weight",
+        "destination",
+        "domestic",
+        "international",
+        "need"
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_023",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Can I use this feature?",
+      "contexts": [
+        "The advanced analytics feature is available on Professional and Enterprise plans. Free tier users can access basic analytics only. The feature requires admin permissions to enable. Once enabled, it takes 24 hours for historical data to populate. API access to analytics requires an additional license."
+      ],
+      "expected_mode": "qualified",
+      "description": "Asks if they can use feature but plan tier and role not specified",
+      "rationale": "LLM should indicate that access depends on plan and permissions not specified in query",
+      "required_elements": [
+        "depends",
+        "plan",
+        "Professional",
+        "Enterprise",
+        "admin",
+        "permissions"
+      ]
     }
   ],
   "evaluation_config": {
