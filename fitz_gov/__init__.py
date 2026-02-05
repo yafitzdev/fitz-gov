@@ -36,7 +36,7 @@ Tiered Evaluation Example:
     print(result)
 """
 
-__version__ = "1.1.0"
+__version__ = "2.0.0"
 
 from .evaluator import FitzGovEvaluator
 from .loader import (

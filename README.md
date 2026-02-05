@@ -35,14 +35,14 @@ pip install -e path/to/fitz-gov
 
 fitz-gov uses a two-tier evaluation system:
 - **Tier 0 (Sanity)**: 60 easy cases with 95% pass threshold - gates Tier 1
-- **Tier 1 (Core)**: 160 discriminative cases with gradient scoring
+- **Tier 1 (Core)**: 271 discriminative cases with gradient scoring
 
 ```python
 from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
 
 # Load tiered cases
 tier0_cases = load_tier(Tier.SANITY)  # 60 cases
-tier1_cases = load_tier(Tier.CORE)    # 160 cases
+tier1_cases = load_tier(Tier.CORE)    # 271 cases
 
 # Your RAG system generates responses and modes for each tier
 tier0_responses, tier0_modes = your_rag_system.evaluate(tier0_cases)
@@ -245,9 +245,9 @@ result = evaluator.evaluate_case(case, response, mode)
 ```python
 # Load by tier (recommended)
 tier0_cases = load_tier(Tier.SANITY)  # 60 sanity cases
-tier1_cases = load_tier(Tier.CORE)    # 160 core cases
+tier1_cases = load_tier(Tier.CORE)    # 271 core cases
 
-# Load all cases (220 total)
+# Load all cases (331 total)
 all_cases = load_cases()
 
 # Load specific categories from a tier
@@ -276,15 +276,15 @@ data/
 │   ├── confidence.json    # 10 cases
 │   ├── grounding.json     # 8 cases
 │   └── relevance.json     # 8 cases
-├── tier1_core/            # 160 cases - discriminative benchmark
-│   ├── abstention.json    # 30 cases
-│   ├── dispute.json       # 30 cases
-│   ├── qualification.json # 30 cases
-│   ├── confidence.json    # 30 cases
-│   ├── grounding.json     # 20 cases
-│   └── relevance.json     # 20 cases
+├── tier1_core/            # 271 cases - discriminative benchmark
+│   ├── abstention.json    # 51 cases
+│   ├── dispute.json       # 43 cases
+│   ├── qualification.json # 58 cases
+│   ├── confidence.json    # 53 cases
+│   ├── grounding.json     # 34 cases
+│   └── relevance.json     # 32 cases
 └── corpus/
-    └── documents.jsonl    # 288 reference documents
+    └── documents.jsonl    # 378 reference documents
 ```
 
 Each case has:
@@ -307,7 +307,7 @@ Each case has:
 
 ## Version
 
-Current version: **1.1.0**
+Current version: **2.0.0**
 
 See [CHANGELOG.md](CHANGELOG.md) for release history and [docs/roadmap](docs/roadmap/) for implementation details.
 
