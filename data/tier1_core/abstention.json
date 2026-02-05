@@ -628,6 +628,109 @@
       "expected_mode": "abstain",
       "description": "Question about response time SLA but table only has price, hours, and channels",
       "rationale": "The support plan table does not include response time or SLA columns - this information is not provided"
+    },
+    {
+      "id": "t1_abstain_hard_031",
+      "difficulty": "hard",
+      "subcategory": "temporal_staleness",
+      "query": "What is the current inflation rate in the United States?",
+      "contexts": [
+        "The Consumer Price Index rose 7.0% year-over-year as of December 2021.",
+        "The Federal Reserve began raising interest rates in early 2022 to combat rising inflation.",
+        "Core inflation, excluding food and energy, was 5.5% in December 2021."
+      ],
+      "expected_mode": "abstain",
+      "description": "Question asks for current data but context is 3+ years old",
+      "rationale": "2021 inflation data cannot answer questions about 'current' rates - economic conditions have changed significantly"
+    },
+    {
+      "id": "t1_abstain_hard_032",
+      "difficulty": "hard",
+      "subcategory": "temporal_staleness",
+      "query": "What is the current market cap of Nvidia?",
+      "contexts": [
+        "As of January 2023, Nvidia's market capitalization was approximately $360 billion.",
+        "Nvidia's stock price recovered from 2022 lows driven by AI chip demand.",
+        "The company reported Q4 2022 revenue of $6.05 billion, down from the previous quarter."
+      ],
+      "expected_mode": "abstain",
+      "description": "Market cap question with outdated financial data",
+      "rationale": "Early 2023 market cap data cannot answer current questions - Nvidia's valuation changed dramatically with AI boom"
+    },
+    {
+      "id": "t1_abstain_hard_033",
+      "difficulty": "hard",
+      "subcategory": "jurisdictional_mismatch",
+      "query": "What are the data privacy requirements I need to comply with in California?",
+      "contexts": [
+        "The General Data Protection Regulation (GDPR) requires explicit consent for data processing.",
+        "Under GDPR, data subjects have the right to access, rectify, and erase their personal data.",
+        "GDPR applies to all organizations processing data of EU residents, regardless of company location.",
+        "Non-compliance with GDPR can result in fines up to €20 million or 4% of global revenue."
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about California law but context only covers EU GDPR",
+      "rationale": "GDPR (EU regulation) cannot answer questions about California requirements (CCPA/CPRA) - different jurisdictions with different rules"
+    },
+    {
+      "id": "t1_abstain_hard_034",
+      "difficulty": "hard",
+      "subcategory": "domain_bleed",
+      "query": "Is this supplement safe to take with my blood pressure medication?",
+      "contexts": [
+        "This herbal supplement contains Ginkgo biloba extract standardized to 24% flavone glycosides.",
+        "Ginkgo supplements are marketed for memory enhancement and cognitive function.",
+        "The FDA classifies dietary supplements differently from pharmaceutical drugs.",
+        "Recommended dosage is 120-240mg daily, divided into two or three doses."
+      ],
+      "expected_mode": "abstain",
+      "description": "Drug interaction question but context only covers supplement marketing info",
+      "rationale": "Supplement marketing information cannot answer drug interaction safety questions - requires pharmacological/medical expertise not present"
+    },
+    {
+      "id": "t1_abstain_hard_035",
+      "difficulty": "hard",
+      "subcategory": "domain_bleed",
+      "query": "Can I deduct these business expenses on my tax return?",
+      "contexts": [
+        "Generally Accepted Accounting Principles (GAAP) require expenses to be recognized when incurred.",
+        "Under GAAP, expenses should be matched with the revenues they help generate.",
+        "The materiality principle allows immaterial items to be treated in the most practical manner.",
+        "GAAP distinguishes between capital expenditures and operating expenses."
+      ],
+      "expected_mode": "abstain",
+      "description": "Tax deduction question but context only covers accounting standards",
+      "rationale": "GAAP accounting rules are different from IRS tax deduction rules - accounting treatment doesn't determine tax deductibility"
+    },
+    {
+      "id": "t1_abstain_hard_036",
+      "difficulty": "hard",
+      "subcategory": "vague_entity_reference",
+      "query": "What is the company's return policy?",
+      "contexts": [
+        "Amazon offers free returns within 30 days for most items sold and fulfilled by Amazon.",
+        "Walmart allows returns within 90 days for most items with a receipt.",
+        "Target's return policy gives customers 90 days for most items, or 120 days for RedCard holders.",
+        "Best Buy offers a 15-day return window for most products, extended to 60 days for Elite members."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks about 'the company' but context mentions four different companies",
+      "rationale": "Four different companies with four different return policies are mentioned - cannot determine which 'the company' refers to"
+    },
+    {
+      "id": "t1_abstain_hard_037",
+      "difficulty": "hard",
+      "subcategory": "insufficient_comparative",
+      "query": "Which cloud provider offers better value for our use case?",
+      "contexts": [
+        "AWS EC2 offers a wide range of instance types optimized for different workloads.",
+        "EC2 pricing varies by region, instance type, and purchase option (on-demand, reserved, spot).",
+        "AWS provides a free tier with limited resources for new customers.",
+        "Reserved instances can offer up to 72% discount compared to on-demand pricing."
+      ],
+      "expected_mode": "abstain",
+      "description": "Comparison question but context only covers one provider",
+      "rationale": "Only AWS information is provided - cannot compare value without information about other cloud providers (Azure, GCP, etc.)"
     }
   ]
 }

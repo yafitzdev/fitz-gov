@@ -645,6 +645,45 @@
       "expected_mode": "confident",
       "description": "JSON array navigation to specific index",
       "rationale": "Second user (Bob Johnson) has role 'developer' at members[1].role"
+    },
+    {
+      "id": "t1_confident_hard_041",
+      "difficulty": "hard",
+      "subcategory": "conditional_confidence",
+      "query": "What is the maximum file upload size?",
+      "contexts": [
+        "File Upload Limits (effective January 2025):\n\n- Free tier: 10 MB per file\n- Pro tier: 100 MB per file\n- Enterprise tier: 500 MB per file\n- API uploads: 1 GB per file (requires authentication)\n\nNote: These limits apply to all file types. Uploads exceeding limits will return HTTP 413 error."
+      ],
+      "expected_mode": "confident",
+      "description": "Conditional answer but all conditions are clearly specified",
+      "rationale": "Limits depend on tier, but all tiers are explicitly listed with exact values - can confidently state limits for each tier"
+    },
+    {
+      "id": "t1_confident_hard_042",
+      "difficulty": "hard",
+      "subcategory": "conditional_confidence",
+      "query": "What is the shipping time for my order?",
+      "contexts": [
+        "Shipping Timeframes:\n\n- Standard Shipping (Free): 5-7 business days\n- Express Shipping ($9.99): 2-3 business days\n- Next Day ($19.99): 1 business day (orders before 2 PM)\n- Same Day ($29.99): Available in select metros only\n\nAll times calculated from order confirmation. Excludes weekends and holidays."
+      ],
+      "expected_mode": "confident",
+      "description": "Multiple conditions but all are fully specified",
+      "rationale": "Shipping times depend on method chosen, but all options with exact timeframes and costs are provided"
+    },
+    {
+      "id": "t1_confident_hard_043",
+      "difficulty": "hard",
+      "subcategory": "expert_consensus",
+      "query": "What temperature should I cook chicken to for food safety?",
+      "contexts": [
+        "The USDA recommends cooking chicken to an internal temperature of 165°F (74°C).",
+        "The FDA Food Code specifies 165°F as the minimum safe internal temperature for poultry.",
+        "WHO guidelines state that poultry should reach 74°C (165°F) to eliminate salmonella and other pathogens.",
+        "Both the CDC and major food safety organizations confirm 165°F as the standard for safe poultry consumption."
+      ],
+      "expected_mode": "confident",
+      "description": "Multiple authoritative sources explicitly agree",
+      "rationale": "USDA, FDA, WHO, and CDC all confirm the same 165°F recommendation - clear expert consensus"
     }
   ]
 }

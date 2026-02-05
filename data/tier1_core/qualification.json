@@ -785,6 +785,100 @@
       "expected_mode": "qualified",
       "description": "Ambiguous 'efficiency' has multiple dimensions in context",
       "rationale": "Four different efficiency metrics are provided - time, cost, energy, labor - cannot determine which type of efficiency the question asks about"
+    },
+    {
+      "id": "t1_qualify_hard_038",
+      "difficulty": "hard",
+      "subcategory": "multiple_confounders",
+      "query": "Why did our customer acquisition cost decrease by 35%?",
+      "contexts": [
+        "Customer acquisition cost dropped from $150 to $97 over the past quarter.",
+        "During this period, we launched a referral program that generated 2,000 new signups.",
+        "We also reduced our paid advertising spend by 40% as an experiment.",
+        "A viral TikTok video about our product reached 5 million views organically.",
+        "Our main competitor raised their prices by 25%, driving comparison shoppers to us."
+      ],
+      "expected_mode": "qualified",
+      "description": "Four simultaneous changes make attribution impossible",
+      "rationale": "Referral program, reduced ad spend, viral video, and competitor price increase all happened - cannot isolate which caused the CAC decrease"
+    },
+    {
+      "id": "t1_qualify_hard_039",
+      "difficulty": "hard",
+      "subcategory": "multiple_confounders",
+      "query": "What caused the website conversion rate to double?",
+      "contexts": [
+        "Conversion rate increased from 2.1% to 4.3% over three months.",
+        "We redesigned the checkout flow to reduce steps from 5 to 3.",
+        "Page load time improved from 4.2 seconds to 1.8 seconds after infrastructure upgrades.",
+        "We introduced a limited-time 20% discount promotion during this period.",
+        "Mobile traffic increased from 40% to 65% of total visitors."
+      ],
+      "expected_mode": "qualified",
+      "description": "Multiple simultaneous improvements obscure causation",
+      "rationale": "Checkout redesign, faster loading, discount promotion, and traffic mix change all occurred - each could explain the improvement"
+    },
+    {
+      "id": "t1_qualify_hard_040",
+      "difficulty": "hard",
+      "subcategory": "reverse_causation",
+      "query": "Does having a mentor accelerate career advancement?",
+      "contexts": [
+        "Employees with mentors are promoted 5x more frequently than those without mentors.",
+        "Mentored employees report 25% higher job satisfaction scores.",
+        "High-potential employees identified in leadership programs are assigned executive mentors.",
+        "The mentorship program targets employees already on the fast-track for promotion."
+      ],
+      "expected_mode": "qualified",
+      "description": "Causation could flow in either direction",
+      "rationale": "Do mentors cause promotions, or are promotion-track employees assigned mentors? Selection bias makes causation direction unclear"
+    },
+    {
+      "id": "t1_qualify_hard_041",
+      "difficulty": "hard",
+      "subcategory": "reverse_causation",
+      "query": "Does exercise improve mental health?",
+      "contexts": [
+        "People who exercise regularly report 40% lower rates of depression and anxiety.",
+        "A survey found that gym members score higher on mental well-being assessments.",
+        "Individuals with depression are less likely to engage in physical activity.",
+        "Mental health conditions often manifest as fatigue and reduced motivation for exercise."
+      ],
+      "expected_mode": "qualified",
+      "description": "Bidirectional causation makes simple answer impossible",
+      "rationale": "Does exercise improve mental health, or does good mental health enable exercise? Both directions are plausible from this evidence"
+    },
+    {
+      "id": "t1_qualify_hard_042",
+      "difficulty": "hard",
+      "subcategory": "temporal_ordering_unclear",
+      "query": "Did the price increase cause customers to churn?",
+      "contexts": [
+        "Customer churn increased significantly during Q3 2024.",
+        "We implemented a 15% price increase effective July 1, 2024.",
+        "A major competitor launched an aggressive discount campaign in Q3.",
+        "Our support team experienced a 3-week backlog due to understaffing in the same period.",
+        "All three events occurred within the same quarter."
+      ],
+      "expected_mode": "qualified",
+      "description": "Multiple events in same period make sequencing unclear",
+      "rationale": "Price increase, competitor campaign, and support issues all happened in Q3 - cannot determine which caused churn or if they interacted"
+    },
+    {
+      "id": "t1_qualify_hard_043",
+      "difficulty": "hard",
+      "subcategory": "outdated_confidence",
+      "query": "Is hormone replacement therapy safe for menopausal women?",
+      "contexts": [
+        "For decades, HRT was considered safe and widely prescribed for menopausal symptoms.",
+        "The 2002 Women's Health Initiative study found increased risks of breast cancer and heart disease with HRT.",
+        "Post-WHI reanalysis suggested the risks were primarily in women starting HRT later in life.",
+        "Current guidelines distinguish between different types of HRT and patient age at initiation.",
+        "The medical consensus on HRT safety has evolved significantly over the past 20 years."
+      ],
+      "expected_mode": "qualified",
+      "description": "Medical consensus changed dramatically over time",
+      "rationale": "Initial confidence in safety was overturned, then partially restored with nuance - answer requires acknowledging this evolution and current complexity"
     }
   ]
 }

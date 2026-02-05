@@ -4,7 +4,7 @@
 > **Status**: In Progress
 > **Created**: 2026-02-05
 > **Target Release**: v2.0.0
-> **Current Phase**: Phase 7 - Documentation & Release
+> **Current Phase**: Phase 8 - Documentation & Release
 
 ## Overview
 
@@ -251,7 +251,55 @@ Expand fitz-gov from 220 cases to 280 cases by addressing gaps identified in the
 
 ---
 
-### Phase 7: Documentation & Release (Week 9)
+### Phase 7.5: Edge Case Expansion (Week 8.5) ✅ COMPLETE
+
+**Goal**: Add 21 high-priority edge cases addressing real-world RAG failure modes
+
+#### 7.5.1 Abstention Edge Cases (+7)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `temporal_staleness` | 2 | Context too old for "current" questions without explicit dating |
+| `jurisdictional_mismatch` | 1 | Question about one legal regime, context from another |
+| `domain_bleed` | 2 | Related but legally/technically distinct domains |
+| `vague_entity_reference` | 1 | "The company" when multiple companies in context |
+| `insufficient_comparative` | 1 | Comparison needed but only one entity provided |
+
+#### 7.5.2 Dispute Edge Cases (+5)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `time_dependent_contradiction` | 2 | Information was true then, false now (unclear temporal bounds) |
+| `unit_scale_mismatch` | 1 | Same measurement in different units looks like disagreement |
+| `scope_disagreement` | 1 | Both claims true for different populations |
+| `semantic_ambiguity` | 1 | Apparent contradiction resolved by definition clarification |
+
+#### 7.5.3 Qualification Edge Cases (+6)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `multiple_confounders` | 2 | Multiple simultaneous changes, unclear attribution |
+| `reverse_causation` | 2 | Correlation present but causation could flow either direction |
+| `temporal_ordering_unclear` | 1 | Events in same period, sequence ambiguous |
+| `outdated_confidence` | 1 | Old confident claim superseded by newer contradicting data |
+
+#### 7.5.4 Confidence Edge Cases (+3)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `conditional_confidence` | 2 | Answer true "under condition X" but all conditions clearly specified |
+| `expert_consensus` | 1 | Multiple authoritative sources explicitly agree |
+
+#### Deliverables
+- [x] 7 new abstention edge cases ✓ (t1_abstain_hard_031-037)
+- [x] 5 new dispute edge cases ✓ (t1_dispute_hard_025-029)
+- [x] 6 new qualification edge cases ✓ (t1_qualify_hard_038-043)
+- [x] 3 new confidence edge cases ✓ (t1_confident_hard_041-043)
+- [x] Total: 21 high-priority edge cases ✓
+
+---
+
+### Phase 8: Documentation & Release (Week 10)
 
 **Goal**: v2.0.0 release
 
@@ -271,10 +319,10 @@ Expand fitz-gov from 220 cases to 280 cases by addressing gaps identified in the
 
 ---
 
-## Actual Distribution (v2.0)
+## Target Distribution (v2.0 after Phase 7.5)
 
 ```
-Total: 310 cases
+Total: 331 cases (310 current + 21 edge cases)
 
 tier0_sanity/       60 cases (unchanged)
 ├── abstention/     12 cases
@@ -284,14 +332,14 @@ tier0_sanity/       60 cases (unchanged)
 ├── grounding/       8 cases
 └── relevance/       8 cases
 
-tier1_core/        250 cases (+90 from v1.1.0)
-├── abstention/     44 cases (+14)
-├── dispute/        38 cases (+8)
-├── qualification/  52 cases (+22)
-├── confidence/     50 cases (+20)
-├── grounding/      34 cases (+14)
-├── relevance/      32 cases (+12)
-└── (new categories integrated into existing files)
+tier1_core/        271 cases (+21 edge cases)
+├── abstention/     51 cases (+7 edge cases)
+├── dispute/        43 cases (+5 edge cases)
+├── qualification/  58 cases (+6 edge cases)
+├── confidence/     53 cases (+3 edge cases)
+├── grounding/      34 cases (unchanged)
+├── relevance/      32 cases (unchanged)
+└── (edge cases test real-world RAG failure modes)
 ```
 
 ---
@@ -306,7 +354,8 @@ tier1_core/        250 cases (+90 from v1.1.0)
 | Phase 4 | ~~Abstention reaches 50, Dispute reaches 50~~ ✅ Done (38 each in Tier 1) |
 | Phase 5 | ~~Confidence reaches 50 cases~~ ✅ Done (50 cases in Tier 1) |
 | Phase 6 | ~~30 new category cases added~~ ✅ Done (30 cases across categories) |
-| Phase 7 | v2.0.0 released on PyPI |
+| Phase 7.5 | ~~21 high-priority edge cases added~~ ✅ Done (21 cases across 4 categories) |
+| Phase 8 | v2.0.0 released on PyPI |
 
 ---
 
@@ -320,6 +369,7 @@ tier1_core/        250 cases (+90 from v1.1.0)
 | Phase 4 | Week 5 | ~~16 new abstention/dispute cases~~ ✅ Done |
 | Phase 5 | Week 6 | ~~10 new confidence cases~~ ✅ Done |
 | Phase 6 | Week 7-8 | ~~30 new category cases~~ ✅ Done |
-| Phase 7 | Week 9 | v2.0.0 release |
+| Phase 7.5 | Week 9 | ~~21 high-priority edge cases~~ ✅ Done |
+| Phase 8 | Week 10 | v2.0.0 release |
 
-**Total estimated effort**: 9 weeks
+**Total estimated effort**: 10 weeks

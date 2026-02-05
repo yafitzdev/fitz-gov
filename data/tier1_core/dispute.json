@@ -583,6 +583,80 @@
       "expected_mode": "disputed",
       "description": "Market direction depends entirely on chosen time frame",
       "rationale": "YoY: improving (+8%), from peak: declining (-2%), vs 2019: up significantly, recent: flat - conflicting narratives"
+    },
+    {
+      "id": "t1_dispute_hard_025",
+      "difficulty": "hard",
+      "subcategory": "time_dependent_contradiction",
+      "query": "Is TLS 1.2 secure for production use?",
+      "contexts": [
+        "TLS 1.2 was considered the gold standard for secure communications when released in 2008.",
+        "Security researchers discovered several vulnerabilities in TLS 1.2 implementations over the years.",
+        "TLS 1.3 was finalized in 2018 and addresses many weaknesses present in earlier versions.",
+        "PCI DSS compliance previously mandated TLS 1.2 as the minimum acceptable version."
+      ],
+      "expected_mode": "disputed",
+      "description": "Security recommendation changed over time without clear current guidance",
+      "rationale": "TLS 1.2 was secure, then vulnerabilities found, then TLS 1.3 released - answer depends on current security landscape not fully specified"
+    },
+    {
+      "id": "t1_dispute_hard_026",
+      "difficulty": "hard",
+      "subcategory": "time_dependent_contradiction",
+      "query": "Is remote work good for employee productivity?",
+      "contexts": [
+        "A 2020 Stanford study found remote workers were 13% more productive than in-office counterparts.",
+        "Microsoft's 2022 Work Trend Index reported concerns about productivity paranoia and collaboration decline.",
+        "A 2023 meta-analysis found hybrid work optimizes both productivity and employee satisfaction.",
+        "Recent 2024 RTO mandates by major tech companies cite productivity concerns as primary motivation."
+      ],
+      "expected_mode": "disputed",
+      "description": "Research findings evolved and contradict over time",
+      "rationale": "2020: pro-remote, 2022: concerns raised, 2023: hybrid best, 2024: companies reversing - conflicting evidence across time"
+    },
+    {
+      "id": "t1_dispute_hard_027",
+      "difficulty": "hard",
+      "subcategory": "unit_scale_mismatch",
+      "query": "How much memory does the application require?",
+      "contexts": [
+        "System requirements specify 8 GB RAM for optimal performance.",
+        "The installation guide states 8192 MB of memory is recommended.",
+        "Performance testing showed the application uses approximately 8,000,000 KB under load."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same value in different units appears as different numbers",
+      "rationale": "8 GB = 8192 MB = ~8,000,000 KB are actually the same, but inconsistent unit presentation creates apparent disagreement"
+    },
+    {
+      "id": "t1_dispute_hard_028",
+      "difficulty": "hard",
+      "subcategory": "scope_disagreement",
+      "query": "Does coffee consumption increase health risks?",
+      "contexts": [
+        "A study of 500,000 adults found moderate coffee consumption (3-4 cups/day) associated with lower mortality.",
+        "Research on pregnant women recommends limiting caffeine to under 200mg/day due to fetal risks.",
+        "Studies in patients with anxiety disorders found caffeine worsened symptoms significantly.",
+        "Meta-analysis of cardiovascular outcomes showed no increased risk for healthy adults drinking coffee."
+      ],
+      "expected_mode": "disputed",
+      "description": "Claims are all true but for different populations",
+      "rationale": "General adults: no risk; pregnant women: risk; anxiety patients: risk - answer depends on which population, creating valid disagreement"
+    },
+    {
+      "id": "t1_dispute_hard_029",
+      "difficulty": "hard",
+      "subcategory": "semantic_ambiguity",
+      "query": "Is the company profitable?",
+      "contexts": [
+        "The company reported positive EBITDA of $50 million for fiscal year 2024.",
+        "Net income was negative $30 million after accounting for depreciation and interest expenses.",
+        "Operating cash flow was positive at $25 million, indicating healthy business operations.",
+        "The company has not achieved GAAP profitability since its founding in 2019."
+      ],
+      "expected_mode": "disputed",
+      "description": "Different definitions of 'profitable' give different answers",
+      "rationale": "EBITDA positive, net income negative, cash flow positive, GAAP unprofitable - 'profitable' depends on which metric you use"
     }
   ]
 }
