@@ -1,19 +1,19 @@
 {
   "version": "0.8.0",
-  "description": "fitz-gov curated test corpus - 288 documents designed to test governance behaviors",
-  "document_count": 288,
+  "description": "fitz-gov curated test corpus - 378 documents designed to test governance behaviors",
+  "document_count": 378,
   "domains": {
     "biology": 3,
     "history": 7,
     "environment": 2,
-    "programming": 2,
-    "automotive": 4,
-    "medical": 8,
-    "technology": 40,
+    "programming": 7,
+    "automotive": 5,
+    "medical": 11,
+    "technology": 66,
     "geography": 4,
-    "finance": 18,
+    "finance": 36,
     "pharmaceutical": 7,
-    "business": 42,
+    "business": 45,
     "regulatory": 3,
     "health": 8,
     "science": 9,
@@ -21,19 +21,26 @@
     "economics": 6,
     "crypto": 3,
     "statistics": 3,
-    "education": 7,
+    "education": 10,
     "weather": 2,
-    "sports": 1,
-    "energy": 4,
+    "sports": 9,
+    "energy": 5,
     "agriculture": 3,
     "real_estate": 2,
-    "legal": 2,
+    "legal": 12,
     "psychology": 2,
     "nutrition": 5,
     "climate": 4,
-    "consumer": 1,
-    "industrial": 1,
+    "consumer": 3,
+    "industrial": 2,
     "construction": 1
+  },
+  "format_distribution": {
+    "prose": 263,
+    "table": 25,
+    "json": 15,
+    "code": 15,
+    "long_form": 15
   },
   "purpose": {
     "abstention": "Documents in unrelated domains (e.g., biology docs for business queries)",
@@ -44,5 +51,6 @@
     "relevance": "Documents with tangential information (off-topic traps)"
   },
   "created_at": "2026-02-02",
-  "notes": "Curated mix of synthetic documents designed to match the 200 handcrafted test cases"
+  "updated_at": "2026-02-05",
+  "notes": "Curated mix of synthetic documents designed to match the 200 handcrafted test cases. Enhanced with structured data formats, code documentation, and domain expansion."
 }

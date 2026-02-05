@@ -1,346 +1,325 @@
-# Critical Evaluation of fitz-gov Test Cases (v1.1.0)
+# fitz-gov v2.0 Roadmap: Test Case Expansion
 
 > **Version**: 2.0
-> **Status**: Complete
-> **Created**: 2026-02-04
-> **Updated**: 2026-02-05
-> **Evaluated Version**: v1.1.0 (220 cases, tiered structure)
+> **Status**: In Progress
+> **Created**: 2026-02-05
+> **Target Release**: v2.0.0
+> **Current Phase**: Phase 2 - Qualification Expansion
+
+## Overview
+
+Expand fitz-gov from 220 cases to 280 cases by addressing gaps identified in the v1.1.0 benchmark evaluation. Focus areas: qualification subcategories, corpus quality, and new test categories (code context, ambiguous queries, structured data).
 
 ---
 
-## Executive Summary
+## Current State (v1.1.0)
 
-The fitz-gov benchmark has been significantly improved with v1.1.0's tiered evaluation structure. The separation of Tier 0 sanity checks (60 cases, 95% threshold) from Tier 1 core evaluation (160 cases, gradient scoring) addresses the original ceiling effect concerns. Many recommendations from the initial evaluation have been implemented, including new subcategories like `near_miss_entity`, `stale_data`, `implicit_contradiction`, and `multi_source_agreement`.
-
-**Remaining gaps** focus primarily on:
-1. Corpus quality (still synthetic, no structured data)
-2. Missing qualification subcategories (hedged sources, population mismatch)
-3. No code/programming context cases
-4. Confidence category still leans conservative (10 tier0 + 30 tier1 vs 50+ for negative modes)
-
----
-
-## 1. Tiered Structure Assessment
-
-### 1.1 Tier 0 Sanity Check (60 cases)
-
-| Category | Cases | Subcategories | Assessment |
-|----------|-------|---------------|------------|
-| Abstention | 12 | `different_domain` only | **Excellent** - Pure domain mismatches, trivially correct |
-| Dispute | 12 | `direct_contradiction`, `numerical_disagreement` | **Excellent** - Binary contradictions (success/failure, approved/rejected) |
-| Qualification | 10 | `causal_without_evidence`, `prediction_insufficient_data` | **Good** - Clear "why X?" with only "X happened" patterns |
-| Confidence | 10 | `direct_factual`, `temporal_explicit`, `quantitative_clear`, `definition_provided`, `attribution_clear` | **Excellent** - Explicit answers in context |
-| Grounding | 8 | `numerical_hallucination`, `name_hallucination`, `date_hallucination`, `technical_hallucination`, `medical_hallucination`, `location_hallucination` | **Excellent** - Clear hallucination traps with forbidden_claims |
-| Relevance | 8 | `feature_dump`, `metric_avoidance`, `status_dump`, `symptom_only`, `instruction_only`, `tangent_drift` | **Good** - Required/forbidden elements well-defined |
-
-**Overall Tier 0 Grade: A**
-
-The 95% threshold is appropriate. Cases are unambiguous and pattern-matchable. Any model failing Tier 0 has fundamental governance deficits.
-
-### 1.2 Tier 1 Core Benchmark (160 cases)
-
-| Category | Cases | Notable Subcategories | Assessment |
-|----------|-------|----------------------|------------|
-| Abstention | 30 | `wrong_entity`, `wrong_time_period`, `decoy_keywords`, `wrong_aspect`, `near_miss_entity`✓, `stale_data`✓ | **Excellent** - Good progression from obvious to subtle |
-| Dispute | 30 | `numerical_disagreement`, `conditional_conflict`, `methodological_conflict`, `implicit_contradiction`✓, `definition_conflict`✓ | **Excellent** - Hard cases require inference |
-| Qualification | 30 | `correlation_causation`, `small_sample`, `incomplete_evidence`, `attribution_error` | **Good** - Missing `hedged_source`, `population_mismatch` |
-| Confidence | 30 | `multi_source_agreement`✓, `explicit_recency`✓, `bounded_claim`✓, `authoritative_source`✓ | **Excellent** - New subcategories address over-hedging risk |
-| Grounding | 20 | `entity_blending`✓, `quote_fabrication`✓, `statistical_inference`✓ | **Excellent** - New subtle hallucination types added |
-| Relevance | 20 | `partial_answer`, `wrong_entity_focus`, `format_mismatch`✓, `granularity_mismatch`✓ | **Good** - Covers most failure modes |
-
-✓ = New subcategory added in v1.1.0
-
-**Overall Tier 1 Grade: B+**
-
-The discriminative cases are generally well-designed. Main weakness is qualification category gaps.
+| Tier | Category | Cases | Subcategories |
+|------|----------|-------|---------------|
+| Tier 0 | Abstention | 12 | different_domain |
+| Tier 0 | Dispute | 12 | direct_contradiction |
+| Tier 0 | Qualification | 10 | causal_without_evidence, prediction_insufficient_data |
+| Tier 0 | Confidence | 10 | direct_factual, temporal_explicit, definition_provided |
+| Tier 0 | Grounding | 8 | numerical/name/date/technical/medical/location hallucination |
+| Tier 0 | Relevance | 8 | feature_dump, metric_avoidance, status_dump |
+| **Tier 0 Total** | | **60** | |
+| Tier 1 | Abstention | 30 | wrong_entity, wrong_time_period, decoy_keywords, wrong_aspect, near_miss_entity, stale_data |
+| Tier 1 | Dispute | 30 | numerical_disagreement, conditional_conflict, methodological_conflict, implicit_contradiction, definition_conflict |
+| Tier 1 | Qualification | 30 | correlation_causation, small_sample, incomplete_evidence, attribution_error |
+| Tier 1 | Confidence | 30 | multi_source_agreement, explicit_recency, bounded_claim, authoritative_source |
+| Tier 1 | Grounding | 20 | entity_blending, quote_fabrication, statistical_inference |
+| Tier 1 | Relevance | 20 | partial_answer, wrong_entity_focus, format_mismatch, granularity_mismatch |
+| **Tier 1 Total** | | **160** | |
+| **Grand Total** | | **220** | |
 
 ---
 
-## 2. Category-by-Category Deep Dive
+## Gaps to Address
 
-### 2.1 Abstention (42 cases total)
+### Gap 1: Missing Qualification Subcategories
 
-**Improvements since v0.9.1:**
-- Added `near_miss_entity` (iPhone 15 vs iPhone 15 Pro Max)
-- Added `stale_data` (2023 stock data for current price question)
-- Better difficulty gradient from Tier 0 → Tier 1
+| Subcategory | Description | Current | Target |
+|-------------|-------------|---------|--------|
+| `hedged_source` | Context contains "may", "possibly", "suggests" | 0 | 3 |
+| `source_quality` | Non-authoritative source (blog vs peer-reviewed) | 0 | 2 |
+| `population_mismatch` | Study on group A, question about group B | 0 | 3 |
+| `temporal_extrapolation` | Historical data for future prediction | 0 | 2 |
 
-**Remaining gaps:**
-| Missing Scenario | Priority | Example |
-|------------------|----------|---------|
-| `version_mismatch` | Medium | Python 3.11 docs for 3.12 question |
-| `partial_coverage` | Low | 2 of 3 required dimensions present |
+### Gap 2: Corpus Quality
 
-**Grade: A-**
+| Issue | Current | Target |
+|-------|---------|--------|
+| Documents with tables | 0 | 40 |
+| Documents with JSON/structured data | 0 | 20 |
+| Documents with code samples | 0 | 15 |
+| Legal/regulatory documents | 2 | 12 |
+| Sports documents | 1 | 9 |
+| Longer documents (500+ words) | 0 | 20 |
 
-### 2.2 Dispute (42 cases total)
+### Gap 3: Missing Test Categories
 
-**Improvements since v0.9.1:**
-- Added `implicit_contradiction` (mathematically incompatible without direct conflict)
-- Added `definition_conflict` (tomato: botanical fruit vs legal vegetable)
-- Excellent `conditional_conflict` cases (coffee health, remote work productivity)
+| Category | Description | Cases Needed |
+|----------|-------------|--------------|
+| Code context | Programming docs with code samples | 10 |
+| Ambiguous queries | Multiple valid interpretations | 10 |
+| Structured data | Tables, JSON in context | 10 |
 
-**Remaining gaps:**
-| Missing Scenario | Priority | Example |
-|------------------|----------|---------|
-| `confidence_interval_overlap` | Medium | 85±5% vs 72±3% |
-| `time_context_conflict` | Low | Same metric, different reporting periods |
+### Gap 4: Category Balance
 
-**Grade: A**
+| Category | Current | Target | Delta |
+|----------|---------|--------|-------|
+| Abstention | 42 | 50 | +8 |
+| Dispute | 42 | 50 | +8 |
+| Qualification | 40 | 50 | +10 |
+| Confidence | 40 | 50 | +10 |
+| Grounding | 28 | 40 | +12 |
+| Relevance | 28 | 40 | +12 |
+| **Total** | **220** | **280** | **+60** |
 
-### 2.3 Qualification (40 cases total)
+---
 
-**Current subcategories:**
-- `causal_without_evidence` (17 cases) - "Why did X happen?" with only "X happened"
-- `correlation_causation` (9 cases) - Ice cream/crime, breakfast/grades
-- `small_sample` (3 cases) - Pilot with 12 participants
-- `incomplete_evidence` (4 cases) - Phase 2 trial only
-- `attribution_error` (3 cases) - Multiple simultaneous factors
-- `prediction_insufficient_data` (4 cases) - Future predictions
+## Implementation Phases
 
-**Critical gaps:**
+### Phase 1: Corpus Enhancement (Week 1-2) ✅ COMPLETE
 
-| Missing Scenario | Priority | Example | Impact |
-|------------------|----------|---------|--------|
-| `hedged_source` | **High** | Context says "may improve", "suggests" | Common in real RAG |
-| `source_quality` | **High** | Blog post cited for medical claim | Trust calibration |
-| `population_mismatch` | Medium | Study on adults, question about children | Generalization error |
-| `temporal_extrapolation` | Medium | 2019-2022 data for 2025 prediction | Common business need |
+**Goal**: Add 90 new documents with format variety and domain balance
 
-**Recommendation:** Add 10 cases covering these gaps. The qualification category relies too heavily on `causal_without_evidence` pattern.
+#### Tasks
 
-**Grade: B**
+1. **Structured data documents** (+40)
+   - Financial tables: 15 documents
+   - Product spec sheets: 10 documents
+   - API response examples (JSON): 15 documents
 
-### 2.4 Confidence (40 cases total)
+2. **Code documentation** (+15)
+   - Python function docs with signatures: 5
+   - REST API endpoint docs: 5
+   - Configuration file examples: 5
 
-**Major improvements since v0.9.1:**
-- `multi_source_agreement` (3 cases) - Multiple authoritative sources converge
-- `explicit_recency` (3 cases) - "As of January 2025..."
-- `bounded_claim` (2 cases) - Answer with explicit scope/limitations
-- `authoritative_source` (2 cases) - RFC citations, GDPR articles
+3. **Domain expansion** (+20)
+   - Legal/regulatory: 10 documents
+   - Sports: 8 documents
+   - Consumer products: 2 documents
 
-**Remaining concerns:**
-- Still the smallest category at 40 cases (10+30) vs 42 for abstention/dispute
-- Over-hedging bias risk: models may learn to hedge by default
+4. **Longer documents** (+15)
+   - 500-1000 word documents: 15
 
-**Recommendation:** Add 10 more cases to reach 50, focusing on:
-- `code_documentation` - Clear API docs with exact syntax
-- `official_statement` - Quoted company announcements
-- `regulatory_specification` - Explicit legal requirements
+#### Deliverables
+- [x] 90 new documents in `data/corpus/documents.jsonl` ✓ (288 → 378 total)
+- [x] Domain distribution rebalanced ✓ (legal: 12, sports: 9, consumer: 3)
+- [x] `data/corpus/manifest.json` updated ✓ (added format_distribution)
 
-**Grade: B+**
+---
 
-### 2.5 Grounding (28 cases total)
+### Phase 2: Qualification Expansion (Week 3)
 
-**Major improvements since v0.9.1:**
-- `entity_blending` - Mixing attributes of Company A and Company B
-- `quote_fabrication` - Inventing CEO quotes
-- `statistical_inference` - "Significant improvement" → specific %
+**Goal**: Add 10 new qualification cases with missing subcategories
 
-**Forbidden_claims patterns are well-designed:**
-```python
-# Strong regex coverage:
-"\\$\\d"                    # Dollar amounts
-"\\d+\\s*(million|billion)" # Large numbers
-"(CEO|he|she) said[,:]? "   # Quote fabrication
-"AES-?\\d*"                 # Technical standards
+#### New Cases
+
+| ID | Subcategory | Query Pattern | Context Pattern |
+|----|-------------|---------------|-----------------|
+| t1_qualify_hard_016 | hedged_source | "Does X improve Y?" | "Results suggest X may improve Y" |
+| t1_qualify_hard_017 | hedged_source | "Is X effective?" | "Preliminary findings indicate X could be effective" |
+| t1_qualify_hard_018 | hedged_source | "Will X happen?" | "Experts believe X is likely" |
+| t1_qualify_hard_019 | source_quality | "What causes X?" | Blog post claiming causal mechanism |
+| t1_qualify_hard_020 | source_quality | "Is X safe?" | Social media post about safety |
+| t1_qualify_hard_021 | population_mismatch | "Effect on children?" | Study conducted on adults only |
+| t1_qualify_hard_022 | population_mismatch | "Works for enterprise?" | Case study from startup |
+| t1_qualify_hard_023 | population_mismatch | "Effective in US?" | Study from different country |
+| t1_qualify_hard_024 | temporal_extrapolation | "2025 prediction?" | 2019-2022 trend data |
+| t1_qualify_hard_025 | temporal_extrapolation | "Current market size?" | 3-year-old market report |
+
+#### Deliverables
+- [ ] 10 new cases in `data/tier1_core/qualification.json`
+- [ ] Required corpus documents added
+- [ ] All cases have evaluation_config
+
+---
+
+### Phase 3: Grounding & Relevance Expansion (Week 4)
+
+**Goal**: Add 24 new cases (12 grounding + 12 relevance)
+
+#### Grounding Cases (+12)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `code_hallucination` | 3 | Fabricating function parameters, return types |
+| `table_inference` | 3 | Inventing data not in provided table |
+| `quote_extension` | 3 | Adding words to partial quotes |
+| `temporal_confusion` | 3 | Mixing dates from different events |
+
+#### Relevance Cases (+12)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `summarization_vs_answer` | 3 | Summarizing instead of answering |
+| `related_but_different` | 3 | Answering adjacent question |
+| `over_answering` | 3 | Providing unrequested details |
+| `prerequisite_missing` | 3 | Answer requires unstated context |
+
+#### Deliverables
+- [ ] 12 new grounding cases
+- [ ] 12 new relevance cases
+- [ ] forbidden_claims patterns for all
+
+---
+
+### Phase 4: Abstention & Dispute Expansion (Week 5)
+
+**Goal**: Add 16 new cases (8 abstention + 8 dispute)
+
+#### Abstention Cases (+8)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `version_mismatch` | 2 | v2.1 context, v2.0 question |
+| `partial_coverage` | 2 | 2 of 3 required aspects present |
+| `scope_mismatch` | 2 | Country data for city question |
+| `temporal_gap` | 2 | Context too old for "current" question |
+
+#### Dispute Cases (+8)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `confidence_interval_overlap` | 2 | 85±5% vs 72±3% |
+| `scope_conflict` | 2 | General rule vs specific exception |
+| `methodology_incompatible` | 2 | Survey vs experimental results |
+| `time_context_conflict` | 2 | Same metric, different periods |
+
+#### Deliverables
+- [ ] 8 new abstention cases
+- [ ] 8 new dispute cases
+
+---
+
+### Phase 5: Confidence Expansion (Week 6)
+
+**Goal**: Add 10 new confidence cases to balance positive/negative ratio
+
+#### New Cases (+10)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `code_documentation` | 3 | Clear API docs with exact syntax |
+| `official_statement` | 2 | Quoted company announcement |
+| `regulatory_specification` | 2 | Explicit legal requirement |
+| `multi_source_convergence` | 3 | 3+ independent sources agree |
+
+#### Deliverables
+- [ ] 10 new confidence cases
+- [ ] All use authoritative corpus documents
+
+---
+
+### Phase 6: New Test Categories (Week 7-8)
+
+**Goal**: Add 30 new cases in new categories
+
+#### 6.1 Code Context Cases (10)
+
+| Subcategory | Count | Expected Mode | Description |
+|-------------|-------|---------------|-------------|
+| `api_confidence` | 3 | CONFIDENT | Clear function docs → confident answer |
+| `code_abstention` | 3 | ABSTAIN | Wrong language/version context |
+| `deprecation_qualification` | 2 | QUALIFIED | Deprecated API in context |
+| `code_grounding` | 2 | QUALIFIED | Temptation to hallucinate parameters |
+
+#### 6.2 Ambiguous Query Cases (10)
+
+| Subcategory | Count | Expected Mode | Description |
+|-------------|-------|---------------|-------------|
+| `entity_ambiguity` | 3 | QUALIFIED | "Apple" - company or records? |
+| `scope_ambiguity` | 3 | QUALIFIED | "The project" with multiple projects |
+| `temporal_ambiguity` | 2 | QUALIFIED | "Current" with multiple time contexts |
+| `metric_ambiguity` | 2 | QUALIFIED | "Performance" - speed, quality, or cost? |
+
+#### 6.3 Structured Data Cases (10)
+
+| Subcategory | Count | Expected Mode | Description |
+|-------------|-------|---------------|-------------|
+| `table_extraction` | 4 | CONFIDENT | Answer clearly in table cell |
+| `json_navigation` | 3 | CONFIDENT | Answer in nested JSON |
+| `table_absence` | 3 | ABSTAIN | Question about missing column |
+
+#### Deliverables
+- [ ] 10 code context cases
+- [ ] 10 ambiguous query cases
+- [ ] 10 structured data cases
+- [ ] Supporting corpus documents
+
+---
+
+### Phase 7: Documentation & Release (Week 9)
+
+**Goal**: v2.0.0 release
+
+#### Tasks
+
+1. Update README.md with new case counts and categories
+2. Update CHANGELOG.md with v2.0.0 release notes
+3. Update `fitz_gov/__init__.py` version to 2.0.0
+4. Run full test suite
+5. Create GitHub release
+6. Publish to PyPI
+
+#### Deliverables
+- [ ] All documentation updated
+- [ ] Tests passing
+- [ ] v2.0.0 released
+
+---
+
+## Target Distribution (v2.0)
+
+```
+Total: 280 cases
+
+tier0_sanity/       60 cases (unchanged)
+├── abstention/     12 cases
+├── dispute/        12 cases
+├── qualification/  10 cases
+├── confidence/     10 cases
+├── grounding/       8 cases
+└── relevance/       8 cases
+
+tier1_core/        220 cases (+60)
+├── abstention/     38 cases (+8)
+├── dispute/        38 cases (+8)
+├── qualification/  40 cases (+10)
+├── confidence/     40 cases (+10)
+├── grounding/      32 cases (+12)
+├── relevance/      32 cases (+12)
+└── (new categories integrated into existing files)
 ```
 
-**Minor gap:**
-| Missing Scenario | Priority | Example |
-|------------------|----------|---------|
-| `code_hallucination` | Medium | Fabricating function parameters |
-| `table_inference` | Low | Inventing data not in provided table |
+---
 
-**Grade: A-**
+## Success Criteria
 
-### 2.6 Relevance (28 cases total)
-
-**Good coverage:**
-- `partial_answer` - Multi-part question, single-part answer
-- `wrong_entity_focus` - X1 specs asked, X2 provided
-- `temporal_mismatch` - Q1 2024 asked, Q3-Q4 2023 provided
-- `format_mismatch` - Asked for list, prose provided
-- `granularity_mismatch` - City data asked, state data provided
-
-**Required/forbidden elements well-structured:**
-```json
-{
-  "required_elements": ["not specified", "deadline", "not mentioned"],
-  "forbidden_elements": ["\\$\\d", "costs?\\s+\\$?\\d"]
-}
-```
-
-**Minor gaps:**
-| Missing Scenario | Priority | Example |
-|------------------|----------|---------|
-| `summarization_vs_answer` | Low | Summarizing context instead of answering |
-| `over_answering` | Low | Providing unrequested additional details |
-
-**Grade: B+**
+| Phase | Complete When |
+|-------|---------------|
+| Phase 1 | ~~Corpus has 370+ documents, structured data present~~ ✅ Done (378 docs) |
+| Phase 2 | Qualification reaches 50 cases with 4 new subcategories |
+| Phase 3 | Grounding reaches 40, Relevance reaches 40 |
+| Phase 4 | Abstention reaches 50, Dispute reaches 50 |
+| Phase 5 | Confidence reaches 50 cases |
+| Phase 6 | 30 new category cases added |
+| Phase 7 | v2.0.0 released on PyPI |
 
 ---
 
-## 3. Corpus Quality Assessment
+## Timeline Summary
 
-### 3.1 Current State (288 documents)
+| Phase | Duration | Key Deliverable |
+|-------|----------|-----------------|
+| Phase 1 | Week 1-2 | ~~90 new corpus documents~~ ✅ Done |
+| Phase 2 | Week 3 | 10 new qualification cases |
+| Phase 3 | Week 4 | 24 new grounding/relevance cases |
+| Phase 4 | Week 5 | 16 new abstention/dispute cases |
+| Phase 5 | Week 6 | 10 new confidence cases |
+| Phase 6 | Week 7-8 | 30 new category cases |
+| Phase 7 | Week 9 | v2.0.0 release |
 
-| Domain | Count | % | Assessment |
-|--------|-------|---|------------|
-| business | 42 | 15% | Over-represented |
-| technology | 40 | 14% | Over-represented |
-| medical/health | 24 | 8% | Adequate |
-| finance | 18 | 6% | Adequate |
-| history | 15 | 5% | Adequate |
-| science | 12 | 4% | Adequate |
-| sports | 1 | 0.3% | **Under-represented** |
-| legal | 2 | 0.7% | **Under-represented** |
-| consumer | 1 | 0.3% | **Under-represented** |
-
-### 3.2 Quality Issues
-
-| Issue | Status | Impact |
-|-------|--------|--------|
-| Synthetic prose | **Not fixed** | Documents feel test-generated |
-| Uniform length | **Not fixed** | All 2-4 sentences |
-| No structured data | **Not fixed** | No tables, JSON, code |
-| No noise/artifacts | **Not fixed** | No OCR errors, truncation |
-
-### 3.3 Recommendations
-
-**Phase 1 (High priority):**
-- Add 40 documents with tables (financial reports, specs sheets)
-- Add 20 documents with JSON/structured data (API responses)
-- Add 15 documents with code samples (documentation)
-
-**Phase 2 (Medium priority):**
-- Rebalance domains: +10 legal, +10 sports, +8 consumer
-- Add longer documents (500+ words): 20 cases
-- Add documents with minor imperfections: 10 cases
-
----
-
-## 4. Test Category Gaps
-
-### 4.1 Missing Categories
-
-| Category | Description | Priority | Recommended Cases |
-|----------|-------------|----------|-------------------|
-| **Ambiguous queries** | Queries with multiple valid interpretations | High | 10 |
-| **Code context** | Programming docs with code samples | High | 10 |
-| **Structured data** | Tables, JSON in context | Medium | 10 |
-| **Metacognitive** | Model recognizes need for clarification | Low | 5 |
-
-### 4.2 Ambiguous Query Examples
-
-```json
-{
-  "id": "t1_ambiguous_001",
-  "query": "What's the Apple policy?",
-  "contexts": [
-    "Apple Inc. offers a 14-day return policy for all products...",
-    "Apple Records has strict licensing policies for Beatles music..."
-  ],
-  "expected_mode": "qualified",
-  "rationale": "Model should recognize entity ambiguity and ask for clarification"
-}
-```
-
-### 4.3 Code Context Examples
-
-```json
-{
-  "id": "t1_code_001",
-  "query": "What parameters does the `authenticate()` function accept?",
-  "contexts": [
-    "def authenticate(username: str, password: str, mfa_token: Optional[str] = None) -> User:\n    '''Authenticate a user and return User object.'''"
-  ],
-  "expected_mode": "confident",
-  "rationale": "Function signature clearly shows parameters"
-}
-```
-
----
-
-## 5. Scoring & Threshold Assessment
-
-### 5.1 Tier 0 Threshold (95%)
-
-| Consideration | Assessment |
-|---------------|------------|
-| Is 95% achievable? | Yes - cases are unambiguous |
-| Is 95% meaningful? | Yes - failing indicates fundamental issues |
-| Risk of false negatives? | Low - cases have clear correct answers |
-
-**Recommendation:** Keep 95% threshold. Consider adding 1-2 more cases per category to reduce variance.
-
-### 5.2 Tier 1 Expected Range (60-90%)
-
-| Model Capability | Expected Score |
-|------------------|----------------|
-| Basic RAG (no governance) | 40-55% |
-| Standard production model | 60-75% |
-| Well-tuned governance system | 75-85% |
-| State-of-the-art | 85-92% |
-
-**Recommendation:** Current difficulty distribution is appropriate.
-
----
-
-## 6. Overall Assessment Summary
-
-### 6.1 Improvements from v0.9.1 → v1.1.0
-
-| Aspect | Before | After | Change |
-|--------|--------|-------|--------|
-| Structure | Flat 200 cases | Tiered 220 cases | **+10%** |
-| Ceiling effects | High | Low | **Fixed** |
-| Abstention subcategories | 5 | 7 (+2) | **Improved** |
-| Dispute subcategories | 6 | 8 (+2) | **Improved** |
-| Confidence subcategories | 6 | 10 (+4) | **Much improved** |
-| Grounding subcategories | 6 | 9 (+3) | **Improved** |
-| Relevance subcategories | 6 | 8 (+2) | **Improved** |
-
-### 6.2 Remaining Gaps (v2.0 Targets)
-
-| Gap | Priority | Estimated Effort |
-|-----|----------|------------------|
-| Qualification subcategories | High | 10 new cases |
-| Corpus quality | High | 90 new documents |
-| Code context cases | High | 10 new cases |
-| Ambiguous query cases | Medium | 10 new cases |
-| Confidence expansion | Medium | 10 new cases |
-| Structured data cases | Medium | 10 new cases |
-
-### 6.3 Grade Summary
-
-| Component | v0.9.1 Grade | v1.1.0 Grade | Change |
-|-----------|--------------|--------------|--------|
-| Tier 0 Cases | N/A | A | New |
-| Tier 1 Cases | B | B+ | +0.5 |
-| Abstention | B+ | A- | +0.5 |
-| Dispute | B | A | +1.0 |
-| Qualification | B- | B | +0.5 |
-| Confidence | C+ | B+ | +1.0 |
-| Grounding | B+ | A- | +0.5 |
-| Relevance | B | B+ | +0.5 |
-| Corpus | C+ | C+ | No change |
-| **Overall** | **B-** | **B+** | **+1.0** |
-
----
-
-## 7. Quick Wins for v2.0
-
-| Priority | Action | Effort | Impact |
-|----------|--------|--------|--------|
-| 1 | Add 10 qualification cases (hedged_source, population_mismatch) | Medium | High |
-| 2 | Add 30 corpus documents with structured data (tables, JSON) | Medium | High |
-| 3 | Add 10 code context cases | Medium | High |
-| 4 | Expand confidence to 50 cases | Medium | Medium |
-| 5 | Add 10 ambiguous query cases | Low | Medium |
-
----
-
-## Related Documents
-
-- [Tiered Evaluation Plan](tiered-evaluation-plan.md) - Implementation plan for v1.1.0 and v2.0
+**Total estimated effort**: 9 weeks
