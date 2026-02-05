@@ -1,27 +1,45 @@
 # Tiered Evaluation Implementation Plan
 
-> **Version**: 1.0
-> **Status**: In Progress
+> **Version**: 2.0
+> **Status**: Planning
 > **Created**: 2026-02-04
 > **Updated**: 2026-02-05
-> **Target Release**: v1.1.0
-> **Current Phase**: Phase 5 (Documentation & Release)
+> **Completed Release**: v1.1.0 (Tiered Structure)
+> **Target Release**: v2.0.0
+> **Current Phase**: Planning
 
 ## Overview
 
-Restructure fitz-gov from a flat 200-case benchmark into a tiered evaluation system that separates baseline functionality verification from discriminative capability testing.
+This document covers two milestones:
+
+1. **v1.1.0 (COMPLETE)**: Restructured fitz-gov from a flat 200-case benchmark into a tiered evaluation system (60 tier0 + 160 tier1)
+2. **v2.0.0 (PLANNED)**: Address critical gaps identified in the [benchmark evaluation](fitz-gov-2.0.md) including corpus quality, missing subcategories, and new test categories
 
 ---
 
 ## Motivation
 
-The current benchmark mixes trivially easy cases (biology context for finance query) with genuinely challenging cases (implicit contradictions, correlation vs causation). This creates problems:
+### v1.1.0 (Addressed)
 
-1. **Ceiling effects**: Sophisticated models score similarly on easy cases, reducing discrimination
-2. **Unclear failure semantics**: A 75% score could mean "fails basics" or "struggles with edge cases"
+The original benchmark mixed trivially easy cases with genuinely challenging ones:
+
+1. **Ceiling effects**: Sophisticated models scored similarly on easy cases
+2. **Unclear failure semantics**: A 75% could mean "fails basics" or "struggles with edge cases"
 3. **Wasted evaluation time**: Running 200 cases when 60 could gate the rest
 
-The tiered approach solves this by establishing clear semantics for each evaluation layer.
+**Solution**: Tiered structure with gating (Tier 0 sanity → Tier 1 core)
+
+### v2.0.0 (To Address)
+
+The [critical evaluation](fitz-gov-2.0.md) identified additional issues:
+
+1. **Corpus quality**: Synthetic documents lack real-world messiness (no tables, code, varied lengths)
+2. **Missing subcategories**: Key qualification triggers (hedged sources, population mismatch) absent
+3. **Category gaps**: No tests for ambiguous queries, code contexts, or structured data parsing
+4. **Domain imbalance**: Business/tech over-represented; legal/sports/consumer under-represented
+5. **Over-hedging risk**: Confidence category (30 cases) underweighted vs negative cases (170 cases)
+
+**Solution**: Corpus enhancement, category expansion to 280 cases, new test types
 
 ---
 
@@ -507,6 +525,364 @@ Summary: Tier 0 PASSED, Tier 1 Score: 78.1%
 **Remaining:**
 - GitHub release (manual step)
 - PyPI publish (manual step)
+
+---
+
+# Part 2: v2.0.0 Plan (Benchmark Quality & Coverage)
+
+Based on the [Critical Evaluation](fitz-gov-2.0.md), the following gaps remain after v1.1.0:
+
+## Gaps to Address
+
+### Gap 1: Missing Qualification Subcategories
+
+The evaluation identified these missing scenarios:
+
+| Subcategory | Description | Status |
+|-------------|-------------|--------|
+| `hedged_source` | Context contains "may", "possibly", "suggests" | **Not added** |
+| `source_quality` | Non-authoritative source (blog vs peer-reviewed) | **Not added** |
+| `population_mismatch` | Study on group A applied to question about group B | **Not added** |
+| `temporal_extrapolation` | 2019 data used for 2024 prediction | **Not added** |
+
+### Gap 2: Corpus Quality Issues
+
+| Issue | Current State | Target |
+|-------|---------------|--------|
+| Domain balance | business/tech over-represented | Add legal, government, sports, consumer |
+| Document style | Synthetic 2-4 sentence prose | Add real-world messiness, varied length |
+| Structured data | None | Add tables, JSON, code snippets |
+| Noise/errors | None | Add OCR artifacts, incomplete docs |
+
+### Gap 3: Missing Test Categories
+
+| Category | Description | Priority |
+|----------|-------------|----------|
+| Ambiguous queries | Queries with multiple valid interpretations | High |
+| Code as context | Programming docs with code samples | High |
+| Structured data parsing | Tables, JSON responses | Medium |
+| Metacognitive tests | Model recognizes need for clarification | Medium |
+| Multi-turn scenarios | Follow-up question handling | Low (Tier 2) |
+
+### Gap 4: Case Count Targets
+
+The evaluation recommends increasing to 280 total cases:
+
+| Category | v1.1.0 | Target | Delta |
+|----------|--------|--------|-------|
+| Abstention | 42 (12+30) | 50 | +8 |
+| Dispute | 42 (12+30) | 50 | +8 |
+| Qualification | 40 (10+30) | 50 | +10 |
+| Confidence | 40 (10+30) | 50 | +10 |
+| Grounding | 28 (8+20) | 40 | +12 |
+| Relevance | 28 (8+20) | 40 | +12 |
+| **Total** | **220** | **280** | **+60** |
+
+---
+
+## v2.0 Implementation Phases
+
+### Phase 6: Corpus Enhancement (Week 1-2)
+
+**Goal**: Improve corpus realism and domain balance
+
+#### Tasks
+
+1. **Domain expansion** (+40 documents)
+   - Legal/regulatory: 10 documents (contracts, compliance, court decisions)
+   - Government: 10 documents (policy statements, public records)
+   - Sports: 8 documents (match reports, player stats, league rules)
+   - Consumer: 8 documents (product reviews, warranties, user manuals)
+   - Industrial: 4 documents (manufacturing specs, safety protocols)
+
+2. **Format variety** (+30 documents)
+   - Tables: 10 documents with tabular data
+   - JSON/structured: 8 documents with API responses or configs
+   - Code samples: 8 documents with programming examples
+   - Mixed format: 4 documents combining prose + tables + code
+
+3. **Real-world artifacts** (+20 documents)
+   - Longer documents (500+ words): 8
+   - Documents with minor OCR errors: 4
+   - Incomplete/truncated documents: 4
+   - Documents with inconsistent formatting: 4
+
+#### Deliverables
+- [ ] 90 new documents added to corpus
+- [ ] Domain distribution rebalanced
+- [ ] Structured data formats represented
+- [ ] Document length variety achieved
+
+---
+
+### Phase 7: Qualification Category Expansion (Week 3)
+
+**Goal**: Add missing qualification subcategories
+
+#### New Cases (+10)
+
+| Subcategory | Count | Example Pattern |
+|-------------|-------|-----------------|
+| `hedged_source` | 3 | Context: "Results suggest X may improve Y" / Query: "Does X improve Y?" |
+| `source_quality` | 2 | Context: Blog post claims fact / Query: Scientific question |
+| `population_mismatch` | 3 | Context: Study on adults / Query: Effects on children |
+| `temporal_extrapolation` | 2 | Context: 2019-2022 trends / Query: 2025 prediction |
+
+#### Validation Criteria
+- Each case must have clear qualification trigger
+- Expected_mode must be `QUALIFIED`
+- Include `required_elements` that mandate hedge language
+
+#### Deliverables
+- [ ] 10 new qualification cases created
+- [ ] All cases use realistic corpus documents
+- [ ] Two-pass validation configs complete
+
+---
+
+### Phase 8: Grounding & Relevance Expansion (Week 4)
+
+**Goal**: Expand smaller categories to target counts
+
+#### Grounding (+12 cases)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `code_hallucination` | 3 | Fabricating function names, parameters, or syntax |
+| `table_inference` | 3 | Inventing data not in provided table |
+| `quote_extension` | 3 | Adding words to partial quotes |
+| `temporal_confusion` | 3 | Mixing dates from different events |
+
+#### Relevance (+12 cases)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `summarization_vs_answer` | 3 | Summarizing context instead of answering question |
+| `related_but_different` | 3 | Answering adjacent question |
+| `over_answering` | 3 | Providing unrequested additional details |
+| `granularity_mismatch` | 3 | General answer for specific question |
+
+#### Deliverables
+- [ ] 12 new grounding cases
+- [ ] 12 new relevance cases
+- [ ] Forbidden/required patterns validated
+
+---
+
+### Phase 9: Abstention & Dispute Expansion (Week 5)
+
+**Goal**: Increase governance categories to 50 cases each
+
+#### Abstention (+8 cases)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `version_mismatch` | 2 | v2.1 context, v2.0 question |
+| `partial_coverage` | 2 | 2 of 3 required aspects present |
+| `scope_mismatch` | 2 | Country data for city question |
+| `temporal_gap` | 2 | 2021 context, 2024 question with explicit recency need |
+
+#### Dispute (+8 cases)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `scope_conflict` | 2 | General rule vs specific exception in sources |
+| `confidence_interval_overlap` | 2 | 85±5% vs 72±3% |
+| `methodology_incompatible` | 2 | Survey vs experimental results |
+| `time_context_conflict` | 2 | Same metric, different time periods |
+
+#### Deliverables
+- [ ] 8 new abstention cases
+- [ ] 8 new dispute cases
+- [ ] All governance modes reach 50 cases
+
+---
+
+### Phase 10: Confidence Expansion (Week 6)
+
+**Goal**: Balance positive cases to prevent over-hedging bias
+
+#### Confidence (+10 cases)
+
+| Subcategory | Count | Description |
+|-------------|-------|-------------|
+| `code_documentation` | 3 | Clear API docs with exact syntax |
+| `official_statement` | 2 | Quoted company/government announcement |
+| `multi_source_convergence` | 2 | 3+ independent sources agree |
+| `explicit_scope` | 3 | Answer bounded by stated conditions |
+
+#### Deliverables
+- [ ] 10 new confidence cases
+- [ ] All use authoritative corpus documents
+- [ ] Category reaches 50 cases
+
+---
+
+### Phase 11: New Test Categories (Week 7-8)
+
+**Goal**: Add missing category types for comprehensive coverage
+
+#### 11.1 Ambiguous Queries (10 cases)
+
+Test model's ability to recognize when clarification is needed:
+
+```json
+{
+  "id": "t1_ambiguous_001",
+  "query": "What's the Apple policy?",
+  "contexts": ["Apple Inc. return policy...", "Apple Records licensing..."],
+  "expected_mode": "QUALIFIED",
+  "evaluation_config": {
+    "required_elements": ["clarif", "which Apple"],
+    "subcategory": "entity_ambiguity"
+  }
+}
+```
+
+| Subcategory | Count | Pattern |
+|-------------|-------|---------|
+| `entity_ambiguity` | 3 | Same name, different entities |
+| `scope_ambiguity` | 3 | "The project" with multiple projects |
+| `temporal_ambiguity` | 2 | "Current" with multiple time contexts |
+| `metric_ambiguity` | 2 | "Performance" (speed vs quality vs cost) |
+
+#### 11.2 Code Context Cases (10 cases)
+
+Test handling of programming documentation:
+
+| Subcategory | Count | Pattern |
+|-------------|-------|---------|
+| `api_confidence` | 3 | Clear function docs → confident answer |
+| `code_abstention` | 3 | Wrong language/version context |
+| `deprecation_qualification` | 2 | Deprecated API in context |
+| `code_grounding` | 2 | Temptation to hallucinate parameters |
+
+#### 11.3 Structured Data Cases (10 cases)
+
+| Subcategory | Count | Pattern |
+|-------------|-------|---------|
+| `table_extraction` | 4 | Answer in table cell |
+| `json_navigation` | 3 | Answer in nested JSON |
+| `table_absence` | 3 | Question about missing column |
+
+#### Deliverables
+- [ ] 10 ambiguous query cases
+- [ ] 10 code context cases
+- [ ] 10 structured data cases
+- [ ] All integrated into Tier 1
+
+---
+
+### Phase 12: Documentation & Release (Week 9)
+
+**Goal**: v2.0.0 release with comprehensive documentation
+
+#### Documentation Updates
+
+1. **README.md**
+   - Update case counts and categories
+   - Add corpus description
+   - Document new test categories
+
+2. **docs/corpus-guide.md** (new)
+   - Corpus structure and domains
+   - How to add new documents
+   - Format specifications
+
+3. **docs/case-design.md** (update)
+   - New subcategory definitions
+   - Guidelines for code/structured data cases
+   - Ambiguity handling patterns
+
+4. **CHANGELOG.md**
+   - v2.0.0 release notes
+   - Migration notes from v1.1.0
+
+#### Deliverables
+- [ ] All documentation updated
+- [ ] CHANGELOG written
+- [ ] GitHub release created
+- [ ] PyPI package updated
+
+---
+
+## v2.0 Success Criteria
+
+### Phase 6 Complete When:
+- [ ] Corpus has 370+ documents (current 288 + 90 new)
+- [ ] No domain has >25% representation
+- [ ] Structured data formats present
+
+### Phase 7-10 Complete When:
+- [ ] Total cases reach 280
+- [ ] Distribution: 50/50/50/50/40/40
+- [ ] All new subcategories have 2+ cases
+
+### Phase 11 Complete When:
+- [ ] 30 new category cases added
+- [ ] Code context cases use real programming docs
+- [ ] Ambiguous cases have clear evaluation criteria
+
+### Phase 12 Complete When:
+- [ ] v2.0.0 released on PyPI
+- [ ] All documentation reflects new structure
+- [ ] Migration guide complete
+
+---
+
+## v2.0 Timeline Summary
+
+| Phase | Duration | Key Deliverable |
+|-------|----------|-----------------|
+| Phase 6: Corpus Enhancement | Week 1-2 | 90 new documents, format variety |
+| Phase 7: Qualification Expansion | Week 3 | 10 new qualification cases |
+| Phase 8: Grounding & Relevance | Week 4 | 24 new cases (12+12) |
+| Phase 9: Abstention & Dispute | Week 5 | 16 new cases (8+8) |
+| Phase 10: Confidence Expansion | Week 6 | 10 new confidence cases |
+| Phase 11: New Test Categories | Week 7-8 | 30 new cases (ambiguous, code, structured) |
+| Phase 12: Documentation & Release | Week 9 | v2.0.0 release |
+
+**Total estimated effort**: 9 weeks
+
+---
+
+## v2.0 Case Distribution (Target)
+
+```
+Total: 280 cases
+
+tier0_sanity/       60 cases (unchanged from v1.1.0)
+├── abstention/     12 cases
+├── dispute/        12 cases
+├── qualification/  10 cases
+├── confidence/     10 cases
+├── grounding/       8 cases
+└── relevance/       8 cases
+
+tier1_core/        220 cases (was 160, +60 new)
+├── abstention/     38 cases (+8)
+├── dispute/        38 cases (+8)
+├── qualification/  40 cases (+10)
+├── confidence/     40 cases (+10)
+├── grounding/      32 cases (+12)
+├── relevance/      32 cases (+12)
+└── new_categories/
+    ├── ambiguous/      10 cases (NEW)
+    ├── code_context/   10 cases (NEW)
+    └── structured/     10 cases (NEW)
+
+tier2_adversarial/  40 cases (future, unchanged)
+├── ambiguous/      10 cases
+├── adversarial/    10 cases
+├── borderline/     10 cases
+└── multi_turn/     10 cases
+```
+
+---
+
+# Part 1: v1.1.0 Plan (COMPLETE)
+
+*The following documents the completed v1.1.0 implementation.*
 
 ---
 
