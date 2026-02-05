@@ -438,6 +438,196 @@
       "expected_mode": "abstain",
       "description": "Asks for current price but context only has 2023 data",
       "rationale": "Stock prices from early 2023 cannot answer questions about current (2024/2025) prices"
+    },
+    {
+      "id": "t1_abstain_hard_017",
+      "difficulty": "hard",
+      "subcategory": "version_mismatch",
+      "query": "How do I configure authentication in React Router v6?",
+      "contexts": [
+        "React Router v5 uses the <Route> component with a render prop for authentication: <Route render={() => isAuth ? <Dashboard /> : <Redirect to='/login' />} />",
+        "In React Router v5, the <Switch> component is used to render the first matching route exclusively.",
+        "The useHistory hook in React Router v5 provides access to the history instance for programmatic navigation."
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about v6 but context only covers v5 API",
+      "rationale": "React Router v6 has completely different API (no Switch, no Redirect, no useHistory) - v5 docs cannot answer v6 questions"
+    },
+    {
+      "id": "t1_abstain_hard_018",
+      "difficulty": "hard",
+      "subcategory": "version_mismatch",
+      "query": "What are the new features in Python 3.12?",
+      "contexts": [
+        "Python 3.10 introduced structural pattern matching with the match/case syntax.",
+        "Python 3.11 brought significant performance improvements, with some benchmarks showing 25% faster execution.",
+        "The tomllib module for parsing TOML files was added in Python 3.11."
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about 3.12 but context only covers 3.10 and 3.11",
+      "rationale": "Python 3.12 features (like improved error messages, type parameter syntax) are not covered in 3.10/3.11 documentation"
+    },
+    {
+      "id": "t1_abstain_hard_019",
+      "difficulty": "hard",
+      "subcategory": "partial_coverage",
+      "query": "What are the pricing, features, AND support options for the Enterprise plan?",
+      "contexts": [
+        "The Enterprise plan includes unlimited users, SSO integration, custom roles, and API access.",
+        "Enterprise customers get a dedicated account manager and 24/7 phone support.",
+        "Implementation assistance and custom training are included for Enterprise subscriptions."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks for pricing, features, AND support but pricing is missing",
+      "rationale": "Context covers features and support but completely omits pricing information - cannot answer the full question"
+    },
+    {
+      "id": "t1_abstain_hard_020",
+      "difficulty": "hard",
+      "subcategory": "partial_coverage",
+      "query": "What are the ingredients, nutritional information, AND allergens for this product?",
+      "contexts": [
+        "This product contains wheat flour, sugar, vegetable oil, salt, and natural flavors.",
+        "Manufactured in a facility that also processes peanuts and tree nuts.",
+        "Contains wheat. May contain traces of peanuts and tree nuts."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks for ingredients, nutrition, AND allergens but nutrition facts missing",
+      "rationale": "Context has ingredients and allergens but no nutritional information (calories, protein, etc.) - cannot fully answer"
+    },
+    {
+      "id": "t1_abstain_hard_021",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What is the crime rate in Brooklyn specifically?",
+      "contexts": [
+        "New York City's overall crime rate decreased by 5% in 2024 compared to the previous year.",
+        "The NYPD reported a total of 95,000 major crimes citywide in 2024.",
+        "Manhattan saw the largest decrease in crime among NYC boroughs, with a 12% reduction."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks about Brooklyn but context only has citywide and Manhattan data",
+      "rationale": "Brooklyn-specific data is not provided - citywide averages and Manhattan stats cannot answer borough-specific question"
+    },
+    {
+      "id": "t1_abstain_hard_022",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What is the average salary for software engineers in Austin, Texas?",
+      "contexts": [
+        "The national average salary for software engineers in the US is $120,000 per year.",
+        "California software engineers earn an average of $145,000, the highest in the nation.",
+        "Texas ranks 5th nationally for software engineer employment with over 200,000 positions."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks about Austin specifically but context only has national and state-level data",
+      "rationale": "Austin salary data is not provided - national average and Texas employment numbers cannot answer city-specific salary question"
+    },
+    {
+      "id": "t1_abstain_hard_023",
+      "difficulty": "hard",
+      "subcategory": "temporal_gap",
+      "query": "What is the current interest rate for 30-year mortgages?",
+      "contexts": [
+        "As of December 2022, the average 30-year fixed mortgage rate was 6.42%.",
+        "Mortgage rates peaked at 7.08% in October 2022, the highest since 2002.",
+        "The Federal Reserve raised rates multiple times in 2022 to combat inflation."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks for current rate but context is from 2022",
+      "rationale": "2022 mortgage rate data is too old to answer 'current' rate questions - rates have changed significantly since then"
+    },
+    {
+      "id": "t1_abstain_hard_024",
+      "difficulty": "hard",
+      "subcategory": "temporal_gap",
+      "query": "Who is the current CEO of Twitter?",
+      "contexts": [
+        "Jack Dorsey co-founded Twitter in 2006 and served as CEO until 2021.",
+        "Parag Agrawal became Twitter CEO in November 2021 after Dorsey's departure.",
+        "Twitter went public in 2013 with an IPO valuing the company at $31 billion."
+      ],
+      "expected_mode": "abstain",
+      "description": "Asks for current CEO but context only goes up to 2021",
+      "rationale": "Context predates the Musk acquisition and subsequent changes - 2021 leadership info cannot answer current question"
+    },
+    {
+      "id": "t1_abstain_hard_025",
+      "difficulty": "hard",
+      "subcategory": "code_abstention",
+      "query": "How do I implement authentication middleware in Express.js?",
+      "contexts": [
+        "Django middleware is a framework of hooks into Django's request/response processing. It's a lightweight, low-level plugin system for globally altering Django's input or output.",
+        "To create custom middleware in Django, define a class with __init__ and __call__ methods. The middleware can process requests before they reach the view.",
+        "Django's authentication middleware adds the user attribute to incoming HttpRequest objects."
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about Express.js (Node.js) but context only covers Django (Python)",
+      "rationale": "Django middleware documentation cannot answer Express.js middleware questions - completely different frameworks and languages"
+    },
+    {
+      "id": "t1_abstain_hard_026",
+      "difficulty": "hard",
+      "subcategory": "code_abstention",
+      "query": "What is the syntax for async/await in Python 3.11?",
+      "contexts": [
+        "JavaScript async functions are declared with the async keyword and can contain await expressions.",
+        "In JavaScript, await pauses the execution of the async function until a Promise is resolved.",
+        "ES2017 introduced async/await as syntactic sugar over Promises for cleaner asynchronous code."
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about Python async but context only covers JavaScript async",
+      "rationale": "JavaScript async/await documentation cannot answer Python-specific syntax questions despite similar keywords"
+    },
+    {
+      "id": "t1_abstain_hard_027",
+      "difficulty": "hard",
+      "subcategory": "code_abstention",
+      "query": "How do I create a generic type in TypeScript 5.0?",
+      "contexts": [
+        "Java generics allow you to write a single class or method that works with different types.",
+        "In Java, generic types are declared using angle brackets: class Box<T> { private T item; }",
+        "Java generics support bounded type parameters using extends keyword: <T extends Comparable<T>>"
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about TypeScript generics but context only covers Java generics",
+      "rationale": "Java generics documentation cannot answer TypeScript-specific questions - different type systems and syntax"
+    },
+    {
+      "id": "t1_abstain_hard_028",
+      "difficulty": "hard",
+      "subcategory": "table_absence",
+      "query": "What is the customer retention rate for each region?",
+      "contexts": [
+        "Regional Sales Performance Q4 2024:\n\n| Region | Revenue ($M) | Growth YoY | Headcount |\n|--------|--------------|------------|----------|\n| North America | 125.4 | +8% | 245 |\n| Europe | 89.2 | +12% | 180 |\n| Asia Pacific | 67.8 | +22% | 120 |\n| Latin America | 23.1 | +5% | 45 |"
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about retention rate but table only has revenue, growth, and headcount",
+      "rationale": "The table does not include customer retention rate column - this data is simply not present"
+    },
+    {
+      "id": "t1_abstain_hard_029",
+      "difficulty": "hard",
+      "subcategory": "table_absence",
+      "query": "What is the unit price for Product SKU-789?",
+      "contexts": [
+        "Inventory Status Report:\n\n| SKU | Product Name | Quantity in Stock | Warehouse Location |\n|-----|-------------|-------------------|-------------------|\n| SKU-123 | Widget Pro | 1,450 | Warehouse A |\n| SKU-456 | Gadget Max | 892 | Warehouse B |\n| SKU-789 | Tool Elite | 2,100 | Warehouse A |\n| SKU-101 | Device Plus | 567 | Warehouse C |"
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about price but table only has inventory data without pricing",
+      "rationale": "The inventory table has no price column - cannot answer pricing questions from stock quantity data"
+    },
+    {
+      "id": "t1_abstain_hard_030",
+      "difficulty": "hard",
+      "subcategory": "table_absence",
+      "query": "What is the response time SLA for the Premium support tier?",
+      "contexts": [
+        "Support Plan Comparison:\n\n| Plan | Monthly Price | Support Hours | Channels Available |\n|------|---------------|---------------|--------------------|\n| Basic | $0 | Business hours | Email only |\n| Standard | $49 | Extended hours | Email, Chat |\n| Premium | $199 | 24/7 | Email, Chat, Phone |\n| Enterprise | Custom | 24/7 | All + Dedicated Rep |"
+      ],
+      "expected_mode": "abstain",
+      "description": "Question about response time SLA but table only has price, hours, and channels",
+      "rationale": "The support plan table does not include response time or SLA columns - this information is not provided"
     }
   ]
 }

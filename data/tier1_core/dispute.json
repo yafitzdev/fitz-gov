@@ -468,6 +468,121 @@
       "expected_mode": "disputed",
       "description": "Classification depends on which definition system you use",
       "rationale": "Botanical: fruit; Culinary: vegetable; Legal: vegetable - legitimate conflict based on definition"
+    },
+    {
+      "id": "t1_dispute_hard_017",
+      "difficulty": "hard",
+      "subcategory": "confidence_interval_overlap",
+      "query": "Which treatment is more effective?",
+      "contexts": [
+        "Treatment A showed 85% effectiveness (95% CI: 80-90%) in a study of 500 patients.",
+        "Treatment B demonstrated 78% effectiveness (95% CI: 72-84%) in a comparable study of 480 patients.",
+        "Both studies used similar methodologies and patient populations."
+      ],
+      "expected_mode": "disputed",
+      "description": "Point estimates differ but confidence intervals overlap",
+      "rationale": "Treatment A: 85% (80-90%), Treatment B: 78% (72-84%) - CIs overlap at 80-84%, so difference may not be statistically significant"
+    },
+    {
+      "id": "t1_dispute_hard_018",
+      "difficulty": "hard",
+      "subcategory": "confidence_interval_overlap",
+      "query": "Which marketing channel has better ROI?",
+      "contexts": [
+        "Email marketing showed 320% ROI (±45% margin of error) based on Q3 data.",
+        "Social media advertising achieved 285% ROI (±50% margin of error) in the same period.",
+        "Both measurements used consistent attribution methodology across channels."
+      ],
+      "expected_mode": "disputed",
+      "description": "ROI figures differ but error margins overlap significantly",
+      "rationale": "Email: 275-365%, Social: 235-335% - substantial overlap means we cannot confidently say which is better"
+    },
+    {
+      "id": "t1_dispute_hard_019",
+      "difficulty": "hard",
+      "subcategory": "scope_conflict",
+      "query": "Can employees work remotely?",
+      "contexts": [
+        "Company policy states: 'All employees are expected to work from the office at least 3 days per week.'",
+        "The Engineering department memo clarifies: 'Engineering team members may work fully remote with manager approval.'",
+        "HR guidelines note: 'Remote work exceptions require VP-level approval for non-engineering roles.'"
+      ],
+      "expected_mode": "disputed",
+      "description": "General policy conflicts with department-specific exceptions",
+      "rationale": "General policy says 3 days in office, but Engineering has full remote option - answer depends on department and role"
+    },
+    {
+      "id": "t1_dispute_hard_020",
+      "difficulty": "hard",
+      "subcategory": "scope_conflict",
+      "query": "What is the return policy?",
+      "contexts": [
+        "Standard return policy: 'Items may be returned within 30 days for a full refund.'",
+        "Electronics policy: 'Electronics must be returned within 15 days and may be subject to a 15% restocking fee.'",
+        "Holiday policy: 'Items purchased between Nov 1 and Dec 31 may be returned until January 31.'"
+      ],
+      "expected_mode": "disputed",
+      "description": "Multiple overlapping policies with different terms",
+      "rationale": "30-day general, 15-day electronics with fee, extended holiday - which applies depends on product and purchase date"
+    },
+    {
+      "id": "t1_dispute_hard_021",
+      "difficulty": "hard",
+      "subcategory": "methodology_incompatible",
+      "query": "What percentage of customers are satisfied?",
+      "contexts": [
+        "Our NPS survey shows 72% promoters (9-10 rating), indicating high satisfaction.",
+        "The CSAT survey reports 58% of customers selected 'Satisfied' or 'Very Satisfied'.",
+        "Customer interviews revealed that 85% would recommend us to a friend.",
+        "Online reviews average 3.8 out of 5 stars across major platforms."
+      ],
+      "expected_mode": "disputed",
+      "description": "Different satisfaction metrics give different results",
+      "rationale": "NPS: 72%, CSAT: 58%, interviews: 85%, reviews: 76% (3.8/5) - methodologies measure different things"
+    },
+    {
+      "id": "t1_dispute_hard_022",
+      "difficulty": "hard",
+      "subcategory": "methodology_incompatible",
+      "query": "What is the market size?",
+      "contexts": [
+        "Top-down analysis based on TAM puts the addressable market at $50 billion.",
+        "Bottom-up analysis from customer segments estimates $28 billion market size.",
+        "Competitor revenue analysis suggests the total market is approximately $35 billion."
+      ],
+      "expected_mode": "disputed",
+      "description": "Different estimation methodologies yield different market sizes",
+      "rationale": "Top-down: $50B, bottom-up: $28B, competitor-based: $35B - nearly 2x difference between methods"
+    },
+    {
+      "id": "t1_dispute_hard_023",
+      "difficulty": "hard",
+      "subcategory": "time_context_conflict",
+      "query": "What is the company's growth rate?",
+      "contexts": [
+        "Year-over-year revenue growth was 45% comparing Q4 2024 to Q4 2023.",
+        "Quarter-over-quarter growth was -5% from Q3 2024 to Q4 2024.",
+        "The 3-year CAGR from 2022 to 2024 is 28%.",
+        "Monthly recurring revenue grew 12% in December 2024 alone."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same metric reported differently across time periods",
+      "rationale": "YoY: +45%, QoQ: -5%, CAGR: 28%, monthly: +12% - all valid but paint very different pictures"
+    },
+    {
+      "id": "t1_dispute_hard_024",
+      "difficulty": "hard",
+      "subcategory": "time_context_conflict",
+      "query": "Is the housing market improving?",
+      "contexts": [
+        "Home prices rose 8% year-over-year according to the January 2025 report.",
+        "Prices declined 2% from the peak reached in June 2024.",
+        "Compared to pre-pandemic levels (2019), prices are up 42%.",
+        "Month-over-month prices have been flat for the past three months."
+      ],
+      "expected_mode": "disputed",
+      "description": "Market direction depends entirely on chosen time frame",
+      "rationale": "YoY: improving (+8%), from peak: declining (-2%), vs 2019: up significantly, recent: flat - conflicting narratives"
     }
   ]
 }

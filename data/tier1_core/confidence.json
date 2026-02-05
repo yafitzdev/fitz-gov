@@ -396,6 +396,255 @@
       "expected_mode": "confident",
       "description": "Version question with explicit release dates and support status",
       "rationale": "Explicit dates and official source (python.org) cited"
+    },
+    {
+      "id": "t1_confident_hard_021",
+      "difficulty": "hard",
+      "subcategory": "code_documentation",
+      "query": "What parameters does the requests.get() function accept?",
+      "contexts": [
+        "requests.get(url, params=None, **kwargs)\n\nSends a GET request.\n\nParameters:\n- url (str): URL for the new Request object.\n- params (dict, optional): Dictionary or bytes to be sent in the query string.\n- **kwargs: Optional arguments that request takes (timeout, headers, auth, cookies, etc.)\n\nReturns:\n- Response object\n\nRaises:\n- requests.exceptions.RequestException: Base exception for requests\n- requests.exceptions.Timeout: If the request times out"
+      ],
+      "expected_mode": "confident",
+      "description": "API documentation question with complete function signature",
+      "rationale": "Full function signature with parameters, return type, and exceptions documented"
+    },
+    {
+      "id": "t1_confident_hard_022",
+      "difficulty": "hard",
+      "subcategory": "code_documentation",
+      "query": "How do I use the pandas read_csv function to handle missing values?",
+      "contexts": [
+        "pandas.read_csv() missing value handling:\n\nParameters for NA handling:\n- na_values: list-like, default None. Additional strings to recognize as NA/NaN.\n- keep_default_na: bool, default True. Whether to include default NaN values.\n- na_filter: bool, default True. Detect missing value markers.\n\nExample:\n```python\ndf = pd.read_csv('data.csv', na_values=['N/A', 'missing', '-'], keep_default_na=True)\n```\n\nDefault NA values recognized: '', '#N/A', '#N/A N/A', '#NA', '-1.#IND', '-1.#QNAN', '-NaN', '-nan', '1.#IND', '1.#QNAN', '<NA>', 'N/A', 'NA', 'NULL', 'NaN', 'n/a', 'nan', 'null'."
+      ],
+      "expected_mode": "confident",
+      "description": "API usage question with complete parameter documentation",
+      "rationale": "All relevant parameters documented with example and default values list"
+    },
+    {
+      "id": "t1_confident_hard_023",
+      "difficulty": "hard",
+      "subcategory": "code_documentation",
+      "query": "What is the syntax for creating a React useEffect hook with cleanup?",
+      "contexts": [
+        "React useEffect with cleanup:\n\n```javascript\nuseEffect(() => {\n  // Effect code runs after render\n  const subscription = someAPI.subscribe(id);\n  \n  // Cleanup function runs before unmount and before re-running effect\n  return () => {\n    subscription.unsubscribe();\n  };\n}, [id]); // Dependency array - effect re-runs when 'id' changes\n```\n\nKey points:\n- Return a function from useEffect for cleanup\n- Cleanup runs before component unmounts\n- Cleanup also runs before each re-execution of the effect\n- Empty dependency array [] means effect runs only once on mount"
+      ],
+      "expected_mode": "confident",
+      "description": "Code syntax question with complete example and explanation",
+      "rationale": "Full syntax with working example and explanation of cleanup behavior"
+    },
+    {
+      "id": "t1_confident_hard_024",
+      "difficulty": "hard",
+      "subcategory": "official_statement",
+      "query": "What did the company announce about the layoffs?",
+      "contexts": [
+        "Official Press Release - TechCorp Inc., January 15, 2025:\n\n'Today we announced a workforce reduction affecting approximately 1,200 employees, or 8% of our global workforce. This difficult decision was made to align our cost structure with current market conditions. Affected employees will receive a minimum of 16 weeks severance, 6 months of healthcare coverage, and job placement assistance. We expect to complete the reduction by March 31, 2025.'\n\n- Sarah Johnson, CEO, TechCorp Inc."
+      ],
+      "expected_mode": "confident",
+      "description": "Quote question with verbatim official statement",
+      "rationale": "Direct quote from official press release with specific numbers and timeline"
+    },
+    {
+      "id": "t1_confident_hard_025",
+      "difficulty": "hard",
+      "subcategory": "official_statement",
+      "query": "What is the company's position on remote work?",
+      "contexts": [
+        "Internal Memo from CEO David Chen, effective February 1, 2025:\n\n'After careful evaluation of productivity data and employee feedback, GlobalSoft is implementing a hybrid work policy. All employees may work remotely up to 3 days per week. Core collaboration days are Tuesday and Wednesday, when in-office attendance is expected for non-exempt roles. Fully remote arrangements require VP approval and are limited to roles that can demonstrate 100% remote productivity. This policy supersedes all previous remote work guidelines.'"
+      ],
+      "expected_mode": "confident",
+      "description": "Policy question with official memo providing exact terms",
+      "rationale": "Official internal memo with specific policy details and effective date"
+    },
+    {
+      "id": "t1_confident_hard_026",
+      "difficulty": "hard",
+      "subcategory": "regulatory_specification",
+      "query": "What are the password requirements under PCI DSS?",
+      "contexts": [
+        "PCI DSS v4.0 Requirement 8.3.6 - Password/Passphrase Requirements:\n\nIf passwords/passphrases are used as an authentication factor, they must meet the following:\n- Minimum length of 12 characters (or 8 characters if the system does not support 12)\n- Contain both numeric and alphabetic characters\n- Changed at least once every 90 days\n- Cannot be the same as any of the last four passwords used\n- First-time passwords must be unique and changed immediately after first use\n\nSource: Payment Card Industry Data Security Standard v4.0, March 2022"
+      ],
+      "expected_mode": "confident",
+      "description": "Regulatory requirement question with specific standard cited",
+      "rationale": "Cites specific PCI DSS version and requirement number with exact specifications"
+    },
+    {
+      "id": "t1_confident_hard_027",
+      "difficulty": "hard",
+      "subcategory": "regulatory_specification",
+      "query": "What are the FDA labeling requirements for food allergens?",
+      "contexts": [
+        "FDA Food Allergen Labeling Requirements (FALCPA, as amended by FASTER Act 2021):\n\nThe following nine major allergens must be declared on food labels:\n1. Milk\n2. Eggs\n3. Fish (species must be identified)\n4. Crustacean shellfish (species must be identified)\n5. Tree nuts (specific type must be identified)\n6. Peanuts\n7. Wheat\n8. Soybeans\n9. Sesame (added January 1, 2023)\n\nAllergens must be declared either in the ingredient list (in parentheses after the ingredient) or in a separate 'Contains' statement immediately after the ingredient list."
+      ],
+      "expected_mode": "confident",
+      "description": "Regulatory requirement with specific law and requirements listed",
+      "rationale": "Cites specific laws (FALCPA, FASTER Act) with complete list of requirements"
+    },
+    {
+      "id": "t1_confident_hard_028",
+      "difficulty": "hard",
+      "subcategory": "multi_source_convergence",
+      "query": "What is the global average temperature increase since pre-industrial times?",
+      "contexts": [
+        "NASA's Goddard Institute reports global average temperature has increased 1.1°C (2.0°F) since the pre-industrial era (1880-1900 baseline).",
+        "The IPCC Sixth Assessment Report (2023) states warming of 1.1°C above 1850-1900 levels as of 2011-2020.",
+        "NOAA's 2024 Global Climate Report confirms 1.1°C warming relative to the 20th century average.",
+        "The World Meteorological Organization's State of the Global Climate 2024 reports 1.15°C above pre-industrial baseline."
+      ],
+      "expected_mode": "confident",
+      "description": "Scientific consensus question with four authoritative sources agreeing",
+      "rationale": "NASA, IPCC, NOAA, and WMO all converge on approximately 1.1°C warming"
+    },
+    {
+      "id": "t1_confident_hard_029",
+      "difficulty": "hard",
+      "subcategory": "multi_source_convergence",
+      "query": "How much sleep do adults need?",
+      "contexts": [
+        "The CDC recommends adults aged 18-60 get at least 7 hours of sleep per night.",
+        "The American Academy of Sleep Medicine recommends 7-9 hours for adults aged 18-64.",
+        "The National Sleep Foundation guidelines recommend 7-9 hours for adults aged 26-64.",
+        "The NHS (UK) recommends most adults need 7-9 hours of sleep per night."
+      ],
+      "expected_mode": "confident",
+      "description": "Health recommendation with multiple authoritative sources agreeing",
+      "rationale": "CDC, AASM, NSF, and NHS all recommend 7-9 hours (or minimum 7) for adults"
+    },
+    {
+      "id": "t1_confident_hard_030",
+      "difficulty": "hard",
+      "subcategory": "multi_source_convergence",
+      "query": "What is the speed of light?",
+      "contexts": [
+        "NIST (National Institute of Standards and Technology) defines the speed of light in vacuum as exactly 299,792,458 meters per second.",
+        "The International Bureau of Weights and Measures (BIPM) uses c = 299,792,458 m/s as the defined constant.",
+        "Physics textbooks universally cite c = 299,792,458 m/s (approximately 3 × 10^8 m/s).",
+        "Note: Since 1983, the meter is defined in terms of the speed of light, making this value exact by definition."
+      ],
+      "expected_mode": "confident",
+      "description": "Physical constant question with universal scientific agreement",
+      "rationale": "Defined constant with exact value agreed upon by all authoritative sources"
+    },
+    {
+      "id": "t1_confident_hard_031",
+      "difficulty": "hard",
+      "subcategory": "api_confidence",
+      "query": "How do I make an authenticated API request with the Stripe SDK?",
+      "contexts": [
+        "Stripe API Authentication (Node.js SDK):\n\n```javascript\nconst stripe = require('stripe')('sk_test_your_api_key');\n\n// Create a payment intent\nconst paymentIntent = await stripe.paymentIntents.create({\n  amount: 2000, // Amount in cents\n  currency: 'usd',\n  payment_method_types: ['card'],\n});\n```\n\nAuthentication: Pass your secret API key when initializing the Stripe client. Test keys begin with 'sk_test_', live keys with 'sk_live_'. Never expose secret keys in client-side code."
+      ],
+      "expected_mode": "confident",
+      "description": "API usage question with complete working code example",
+      "rationale": "Complete code example with authentication method clearly documented"
+    },
+    {
+      "id": "t1_confident_hard_032",
+      "difficulty": "hard",
+      "subcategory": "api_confidence",
+      "query": "What is the correct SQL syntax for an UPSERT operation in PostgreSQL?",
+      "contexts": [
+        "PostgreSQL UPSERT Syntax (INSERT ON CONFLICT):\n\n```sql\nINSERT INTO users (id, email, name, updated_at)\nVALUES (1, 'user@example.com', 'John Doe', NOW())\nON CONFLICT (id) DO UPDATE SET\n  email = EXCLUDED.email,\n  name = EXCLUDED.name,\n  updated_at = NOW();\n```\n\nKey components:\n- ON CONFLICT (column): Specifies the unique constraint column\n- DO UPDATE SET: Specifies columns to update on conflict\n- EXCLUDED: References values from the attempted INSERT\n- DO NOTHING: Alternative to skip the row on conflict"
+      ],
+      "expected_mode": "confident",
+      "description": "SQL syntax question with correct complete example",
+      "rationale": "Full syntax with working example and explanation of components"
+    },
+    {
+      "id": "t1_confident_hard_033",
+      "difficulty": "hard",
+      "subcategory": "api_confidence",
+      "query": "How do I configure CORS in an Express.js application?",
+      "contexts": [
+        "Express.js CORS Configuration:\n\n```javascript\nconst express = require('express');\nconst cors = require('cors');\nconst app = express();\n\n// Allow all origins (development only)\napp.use(cors());\n\n// Production configuration\napp.use(cors({\n  origin: ['https://example.com', 'https://app.example.com'],\n  methods: ['GET', 'POST', 'PUT', 'DELETE'],\n  allowedHeaders: ['Content-Type', 'Authorization'],\n  credentials: true,\n  maxAge: 86400 // Cache preflight for 24 hours\n}));\n```\n\nInstall: `npm install cors`"
+      ],
+      "expected_mode": "confident",
+      "description": "Configuration question with complete working examples",
+      "rationale": "Full configuration code with both simple and production examples"
+    },
+    {
+      "id": "t1_confident_hard_034",
+      "difficulty": "hard",
+      "subcategory": "table_extraction",
+      "query": "What was the revenue for the European region in Q3?",
+      "contexts": [
+        "Regional Revenue Summary Q3 2024:\n\n| Region | Revenue ($M) | YoY Growth | Operating Margin |\n|--------|--------------|------------|------------------|\n| North America | 245.3 | +12% | 34% |\n| Europe | 187.6 | +8% | 31% |\n| Asia Pacific | 156.2 | +22% | 28% |\n| Latin America | 42.1 | +15% | 25% |"
+      ],
+      "expected_mode": "confident",
+      "description": "Table lookup question with answer clearly in cell",
+      "rationale": "Answer ($187.6M) is directly stated in the Europe row"
+    },
+    {
+      "id": "t1_confident_hard_035",
+      "difficulty": "hard",
+      "subcategory": "table_extraction",
+      "query": "Which product has the highest price?",
+      "contexts": [
+        "Product Catalog - Electronics Category:\n\n| Product ID | Name | Price | Stock | Rating |\n|------------|------|-------|-------|--------|\n| E-001 | Wireless Headphones | $149.99 | 234 | 4.5 |\n| E-002 | Smart Watch Pro | $399.99 | 89 | 4.8 |\n| E-003 | Bluetooth Speaker | $79.99 | 567 | 4.2 |\n| E-004 | Tablet Stand | $34.99 | 1203 | 4.0 |"
+      ],
+      "expected_mode": "confident",
+      "description": "Table comparison question with clear maximum value",
+      "rationale": "Smart Watch Pro at $399.99 is clearly the highest price in the table"
+    },
+    {
+      "id": "t1_confident_hard_036",
+      "difficulty": "hard",
+      "subcategory": "table_extraction",
+      "query": "How many employees are in the Engineering department?",
+      "contexts": [
+        "Department Headcount (as of January 2025):\n\n| Department | Full-Time | Part-Time | Contractors | Total |\n|------------|-----------|-----------|-------------|-------|\n| Engineering | 142 | 8 | 23 | 173 |\n| Sales | 89 | 12 | 5 | 106 |\n| Marketing | 45 | 6 | 15 | 66 |\n| Operations | 78 | 34 | 8 | 120 |"
+      ],
+      "expected_mode": "confident",
+      "description": "Table lookup with answer in specific cell",
+      "rationale": "Engineering Total is clearly 173 in the table"
+    },
+    {
+      "id": "t1_confident_hard_037",
+      "difficulty": "hard",
+      "subcategory": "table_extraction",
+      "query": "What is the deadline for the Phase 2 milestone?",
+      "contexts": [
+        "Project Timeline:\n\n| Phase | Milestone | Start Date | Deadline | Owner |\n|-------|-----------|------------|----------|-------|\n| 1 | Requirements | Jan 15 | Feb 1 | Sarah |\n| 2 | Design | Feb 5 | Mar 15 | Mike |\n| 3 | Development | Mar 18 | Jun 30 | Team A |\n| 4 | Testing | Jul 1 | Aug 15 | QA |"
+      ],
+      "expected_mode": "confident",
+      "description": "Table lookup for specific phase deadline",
+      "rationale": "Phase 2 deadline is clearly Mar 15 in the table"
+    },
+    {
+      "id": "t1_confident_hard_038",
+      "difficulty": "hard",
+      "subcategory": "json_navigation",
+      "query": "What is the user's email address?",
+      "contexts": [
+        "API Response - GET /api/v1/users/12345:\n\n```json\n{\n  \"id\": \"usr_12345\",\n  \"status\": \"active\",\n  \"profile\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone\": \"+1-555-123-4567\"\n  },\n  \"settings\": {\n    \"notifications\": true,\n    \"theme\": \"dark\"\n  },\n  \"createdAt\": \"2024-01-15T10:30:00Z\"\n}\n```"
+      ],
+      "expected_mode": "confident",
+      "description": "JSON navigation to nested field",
+      "rationale": "Email is clearly at profile.email: john.doe@example.com"
+    },
+    {
+      "id": "t1_confident_hard_039",
+      "difficulty": "hard",
+      "subcategory": "json_navigation",
+      "query": "What is the shipping cost for the order?",
+      "contexts": [
+        "Order Details Response:\n\n```json\n{\n  \"orderId\": \"ORD-789456\",\n  \"items\": [\n    {\"sku\": \"PROD-001\", \"quantity\": 2, \"price\": 29.99},\n    {\"sku\": \"PROD-042\", \"quantity\": 1, \"price\": 149.99}\n  ],\n  \"pricing\": {\n    \"subtotal\": 209.97,\n    \"tax\": 18.90,\n    \"shipping\": 12.50,\n    \"discount\": -10.00,\n    \"total\": 231.37\n  },\n  \"shippingAddress\": {\n    \"city\": \"San Francisco\",\n    \"state\": \"CA\"\n  }\n}\n```"
+      ],
+      "expected_mode": "confident",
+      "description": "JSON navigation to specific nested value",
+      "rationale": "Shipping cost is clearly at pricing.shipping: $12.50"
+    },
+    {
+      "id": "t1_confident_hard_040",
+      "difficulty": "hard",
+      "subcategory": "json_navigation",
+      "query": "What role does the second user have?",
+      "contexts": [
+        "Team Members Response:\n\n```json\n{\n  \"teamId\": \"team_abc\",\n  \"members\": [\n    {\n      \"userId\": \"u001\",\n      \"name\": \"Alice Smith\",\n      \"role\": \"admin\",\n      \"joinedAt\": \"2023-01-15\"\n    },\n    {\n      \"userId\": \"u002\",\n      \"name\": \"Bob Johnson\",\n      \"role\": \"developer\",\n      \"joinedAt\": \"2023-03-20\"\n    },\n    {\n      \"userId\": \"u003\",\n      \"name\": \"Carol White\",\n      \"role\": \"viewer\",\n      \"joinedAt\": \"2024-01-10\"\n    }\n  ]\n}\n```"
+      ],
+      "expected_mode": "confident",
+      "description": "JSON array navigation to specific index",
+      "rationale": "Second user (Bob Johnson) has role 'developer' at members[1].role"
     }
   ]
 }

@@ -4,7 +4,7 @@
 > **Status**: In Progress
 > **Created**: 2026-02-05
 > **Target Release**: v2.0.0
-> **Current Phase**: Phase 4 - Abstention & Dispute Expansion
+> **Current Phase**: Phase 7 - Documentation & Release
 
 ## Overview
 
@@ -166,7 +166,7 @@ Expand fitz-gov from 220 cases to 280 cases by addressing gaps identified in the
 
 ---
 
-### Phase 4: Abstention & Dispute Expansion (Week 5)
+### Phase 4: Abstention & Dispute Expansion (Week 5) ✅ COMPLETE
 
 **Goal**: Add 16 new cases (8 abstention + 8 dispute)
 
@@ -189,12 +189,12 @@ Expand fitz-gov from 220 cases to 280 cases by addressing gaps identified in the
 | `time_context_conflict` | 2 | Same metric, different periods |
 
 #### Deliverables
-- [ ] 8 new abstention cases
-- [ ] 8 new dispute cases
+- [x] 8 new abstention cases ✓ (30 → 38 total)
+- [x] 8 new dispute cases ✓ (30 → 38 total)
 
 ---
 
-### Phase 5: Confidence Expansion (Week 6)
+### Phase 5: Confidence Expansion (Week 6) ✅ COMPLETE
 
 **Goal**: Add 10 new confidence cases to balance positive/negative ratio
 
@@ -208,12 +208,12 @@ Expand fitz-gov from 220 cases to 280 cases by addressing gaps identified in the
 | `multi_source_convergence` | 3 | 3+ independent sources agree |
 
 #### Deliverables
-- [ ] 10 new confidence cases
-- [ ] All use authoritative corpus documents
+- [x] 10 new confidence cases ✓ (t1_confident_hard_021-030)
+- [x] All use authoritative corpus documents ✓
 
 ---
 
-### Phase 6: New Test Categories (Week 7-8)
+### Phase 6: New Test Categories (Week 7-8) ✅ COMPLETE
 
 **Goal**: Add 30 new cases in new categories
 
@@ -244,10 +244,10 @@ Expand fitz-gov from 220 cases to 280 cases by addressing gaps identified in the
 | `table_absence` | 3 | ABSTAIN | Question about missing column |
 
 #### Deliverables
-- [ ] 10 code context cases
-- [ ] 10 ambiguous query cases
-- [ ] 10 structured data cases
-- [ ] Supporting corpus documents
+- [x] 10 code context cases ✓ (api_confidence→confidence, code_abstention→abstention, deprecation_qualification→qualification, code_grounding→grounding)
+- [x] 10 ambiguous query cases ✓ (entity_ambiguity, scope_ambiguity, temporal_ambiguity, metric_ambiguity→qualification)
+- [x] 10 structured data cases ✓ (table_extraction, json_navigation→confidence, table_absence→abstention)
+- [x] Supporting corpus documents ✓ (contexts self-contained)
 
 ---
 
@@ -271,10 +271,10 @@ Expand fitz-gov from 220 cases to 280 cases by addressing gaps identified in the
 
 ---
 
-## Target Distribution (v2.0)
+## Actual Distribution (v2.0)
 
 ```
-Total: 280 cases
+Total: 310 cases
 
 tier0_sanity/       60 cases (unchanged)
 ├── abstention/     12 cases
@@ -284,12 +284,12 @@ tier0_sanity/       60 cases (unchanged)
 ├── grounding/       8 cases
 └── relevance/       8 cases
 
-tier1_core/        220 cases (+60)
-├── abstention/     38 cases (+8)
+tier1_core/        250 cases (+90 from v1.1.0)
+├── abstention/     44 cases (+14)
 ├── dispute/        38 cases (+8)
-├── qualification/  40 cases (+10)
-├── confidence/     40 cases (+10)
-├── grounding/      32 cases (+12)
+├── qualification/  52 cases (+22)
+├── confidence/     50 cases (+20)
+├── grounding/      34 cases (+14)
 ├── relevance/      32 cases (+12)
 └── (new categories integrated into existing files)
 ```
@@ -303,9 +303,9 @@ tier1_core/        220 cases (+60)
 | Phase 1 | ~~Corpus has 370+ documents, structured data present~~ ✅ Done (378 docs) |
 | Phase 2 | ~~Qualification reaches 50 cases with 4 new subcategories~~ ✅ Done (40 cases, 4 new subcats) |
 | Phase 3 | ~~Grounding reaches 40, Relevance reaches 40~~ ✅ Done (32 each in Tier 1) |
-| Phase 4 | Abstention reaches 50, Dispute reaches 50 |
-| Phase 5 | Confidence reaches 50 cases |
-| Phase 6 | 30 new category cases added |
+| Phase 4 | ~~Abstention reaches 50, Dispute reaches 50~~ ✅ Done (38 each in Tier 1) |
+| Phase 5 | ~~Confidence reaches 50 cases~~ ✅ Done (50 cases in Tier 1) |
+| Phase 6 | ~~30 new category cases added~~ ✅ Done (30 cases across categories) |
 | Phase 7 | v2.0.0 released on PyPI |
 
 ---
@@ -317,9 +317,9 @@ tier1_core/        220 cases (+60)
 | Phase 1 | Week 1-2 | ~~90 new corpus documents~~ ✅ Done |
 | Phase 2 | Week 3 | ~~10 new qualification cases~~ ✅ Done |
 | Phase 3 | Week 4 | ~~24 new grounding/relevance cases~~ ✅ Done |
-| Phase 4 | Week 5 | 16 new abstention/dispute cases |
-| Phase 5 | Week 6 | 10 new confidence cases |
-| Phase 6 | Week 7-8 | 30 new category cases |
+| Phase 4 | Week 5 | ~~16 new abstention/dispute cases~~ ✅ Done |
+| Phase 5 | Week 6 | ~~10 new confidence cases~~ ✅ Done |
+| Phase 6 | Week 7-8 | ~~30 new category cases~~ ✅ Done |
 | Phase 7 | Week 9 | v2.0.0 release |
 
 **Total estimated effort**: 9 weeks

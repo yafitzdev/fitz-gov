@@ -610,6 +610,181 @@
       "expected_mode": "qualified",
       "description": "Outdated market report for 'current' question",
       "rationale": "3-year-old market report cannot answer 'current' market size question - AI market has evolved dramatically since 2022 with ChatGPT launch and subsequent developments"
+    },
+    {
+      "id": "t1_qualify_hard_026",
+      "difficulty": "hard",
+      "subcategory": "deprecation_qualification",
+      "query": "How do I use the componentWillMount lifecycle method in React?",
+      "contexts": [
+        "componentWillMount() is invoked immediately before mounting occurs. It is called before render().",
+        "Note: This method is considered legacy and you should avoid it in new code. It has been renamed to UNSAFE_componentWillMount.",
+        "As of React 16.3, componentWillMount is deprecated. The React team recommends using componentDidMount or the constructor instead."
+      ],
+      "expected_mode": "qualified",
+      "description": "Question about deprecated API that still exists but shouldn't be used",
+      "rationale": "Context explicitly states the method is deprecated and should be avoided - answer must include this qualification rather than simply explaining usage"
+    },
+    {
+      "id": "t1_qualify_hard_027",
+      "difficulty": "hard",
+      "subcategory": "deprecation_qualification",
+      "query": "How do I make HTTP requests using the request library in Node.js?",
+      "contexts": [
+        "The request library provides a simple way to make HTTP calls in Node.js: request('http://example.com', (err, res, body) => { ... })",
+        "IMPORTANT: As of February 2020, the request library has been fully deprecated and is in maintenance mode only.",
+        "The maintainers recommend migrating to alternatives like node-fetch, axios, or the built-in fetch API (Node 18+)."
+      ],
+      "expected_mode": "qualified",
+      "description": "Question about deprecated library that technically still works",
+      "rationale": "The library is explicitly deprecated - any answer must qualify that users should consider alternatives rather than providing usage instructions without warning"
+    },
+    {
+      "id": "t1_qualify_hard_028",
+      "difficulty": "hard",
+      "subcategory": "entity_ambiguity",
+      "query": "What was Apple's revenue last quarter?",
+      "contexts": [
+        "Apple Inc. reported Q4 2024 revenue of $94.9 billion, driven by strong iPhone and Services performance.",
+        "Apple Records, the Beatles' record label, announced restructuring plans and reported annual revenue of £12 million.",
+        "The European apple (Malus domestica) harvest yielded approximately 12 million tonnes valued at €8 billion."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ambiguous 'Apple' could refer to multiple entities in context",
+      "rationale": "Context contains information about Apple Inc., Apple Records, and apple fruit - the query is ambiguous and answer should clarify which entity or acknowledge the ambiguity"
+    },
+    {
+      "id": "t1_qualify_hard_029",
+      "difficulty": "hard",
+      "subcategory": "entity_ambiguity",
+      "query": "When was the Mercury program completed?",
+      "contexts": [
+        "NASA's Mercury program concluded in 1963 after six crewed flights, paving the way for the Gemini program.",
+        "The Mercury automobile program ended in 2011 when Ford discontinued the brand after 72 years of production.",
+        "The Mercury Prize for British and Irish albums was established in 1992 and continues annually."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ambiguous 'Mercury program' matches multiple contexts",
+      "rationale": "Multiple 'Mercury programs' exist - NASA space program vs Ford Mercury car program - answer must clarify which one or acknowledge ambiguity"
+    },
+    {
+      "id": "t1_qualify_hard_030",
+      "difficulty": "hard",
+      "subcategory": "entity_ambiguity",
+      "query": "What is the current status of the Paris Agreement?",
+      "contexts": [
+        "The Paris Agreement on climate change, adopted in 2015, has been ratified by 194 parties as of 2024.",
+        "The Paris Peace Agreements of 1973 ended direct U.S. military involvement in Vietnam.",
+        "The 2024 Paris Agreement on AI Safety was signed by 28 nations and establishes voluntary guidelines for AI development."
+      ],
+      "expected_mode": "qualified",
+      "description": "Multiple 'Paris Agreements' exist across different domains",
+      "rationale": "Context mentions climate agreement, Vietnam peace agreement, and AI safety agreement - query doesn't specify which Paris Agreement"
+    },
+    {
+      "id": "t1_qualify_hard_031",
+      "difficulty": "hard",
+      "subcategory": "scope_ambiguity",
+      "query": "What is the budget for the project?",
+      "contexts": [
+        "Project Alpha (Marketing): Q1 budget allocation of $250,000 for digital advertising campaigns.",
+        "Project Beta (Engineering): Annual budget of $1.2 million for infrastructure modernization.",
+        "Project Gamma (Research): Multi-year funding of $5 million for advanced materials development.",
+        "All projects are currently active and within their respective budget constraints."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ambiguous 'the project' when multiple projects exist",
+      "rationale": "Three different projects with different budgets are mentioned - cannot determine which 'the project' refers to without clarification"
+    },
+    {
+      "id": "t1_qualify_hard_032",
+      "difficulty": "hard",
+      "subcategory": "scope_ambiguity",
+      "query": "When is the deadline?",
+      "contexts": [
+        "Phase 1 deliverables are due by March 15, 2025.",
+        "The grant application deadline is April 30, 2025.",
+        "Final project completion is scheduled for December 31, 2025.",
+        "All milestones are on track according to the latest status report."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ambiguous 'the deadline' when multiple deadlines exist",
+      "rationale": "Context contains three different deadlines - Phase 1, grant application, and final completion - query doesn't specify which deadline"
+    },
+    {
+      "id": "t1_qualify_hard_033",
+      "difficulty": "hard",
+      "subcategory": "scope_ambiguity",
+      "query": "Who is the team lead?",
+      "contexts": [
+        "Sarah Chen leads the frontend development team with 8 engineers.",
+        "Marcus Williams is the team lead for backend services, overseeing 12 developers.",
+        "Dr. Emily Rodriguez heads the data science team of 5 researchers.",
+        "Cross-functional coordination happens through weekly sync meetings."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ambiguous 'the team' when multiple teams exist",
+      "rationale": "Three different teams with three different leads are mentioned - cannot determine which team the question refers to"
+    },
+    {
+      "id": "t1_qualify_hard_034",
+      "difficulty": "hard",
+      "subcategory": "temporal_ambiguity",
+      "query": "What is the current price?",
+      "contexts": [
+        "As of January 2024, the standard tier was priced at $29/month.",
+        "The March 2024 price adjustment set the rate at $35/month.",
+        "Our October 2024 promotional pricing offers 20% off the regular price.",
+        "Pricing is subject to change based on market conditions."
+      ],
+      "expected_mode": "qualified",
+      "description": "Multiple 'current' timeframes with different prices",
+      "rationale": "Context shows prices from different times in 2024 - 'current' is ambiguous without knowing today's date relative to these entries"
+    },
+    {
+      "id": "t1_qualify_hard_035",
+      "difficulty": "hard",
+      "subcategory": "temporal_ambiguity",
+      "query": "What is the latest version?",
+      "contexts": [
+        "Version 4.2 was released on June 15, 2024 with performance improvements.",
+        "The beta channel currently offers version 5.0-beta.3 with new features.",
+        "Long-term support (LTS) users should use version 3.8.12, updated August 2024.",
+        "Version numbering follows semantic versioning principles."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ambiguous 'latest' depends on release channel",
+      "rationale": "Multiple 'latest' versions exist depending on channel (stable, beta, LTS) - query doesn't specify which context"
+    },
+    {
+      "id": "t1_qualify_hard_036",
+      "difficulty": "hard",
+      "subcategory": "metric_ambiguity",
+      "query": "What is the system's performance?",
+      "contexts": [
+        "Response latency averages 45ms at the 95th percentile under normal load.",
+        "The accuracy rate for classification tasks reached 97.3% on the benchmark dataset.",
+        "Operating costs decreased to $0.002 per transaction after optimization.",
+        "System uptime has been maintained at 99.95% over the past year."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ambiguous 'performance' could mean speed, accuracy, cost, or reliability",
+      "rationale": "Context provides multiple performance metrics - latency, accuracy, cost, uptime - 'performance' is ambiguous without specifying which dimension"
+    },
+    {
+      "id": "t1_qualify_hard_037",
+      "difficulty": "hard",
+      "subcategory": "metric_ambiguity",
+      "query": "How efficient is the process?",
+      "contexts": [
+        "Time efficiency: The automated process completes in 2.3 hours vs 8 hours manual.",
+        "Cost efficiency: Processing cost reduced from $15 to $4 per unit.",
+        "Energy efficiency: Power consumption is 340 kWh per 1000 units processed.",
+        "Labor efficiency: One operator can now manage 5 production lines instead of 2."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ambiguous 'efficiency' has multiple dimensions in context",
+      "rationale": "Four different efficiency metrics are provided - time, cost, energy, labor - cannot determine which type of efficiency the question asks about"
     }
   ]
 }

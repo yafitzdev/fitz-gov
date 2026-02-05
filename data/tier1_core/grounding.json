@@ -685,6 +685,49 @@
         "when.*(enacted|signed).*(4\\.2|3\\.9)",
         "unemployment (was|at) (4\\.2|3\\.9).*(when|policy)"
       ]
+    },
+    {
+      "id": "t1_grounding_hard_023",
+      "difficulty": "hard",
+      "subcategory": "code_grounding",
+      "query": "What configuration options does the DatabaseConfig class support?",
+      "contexts": [
+        "The DatabaseConfig class is the central configuration manager for all database connections. It handles connection pooling, timeout settings, and retry logic.",
+        "DatabaseConfig integrates with the application's environment system to load settings. The class is designed for both development and production environments.",
+        "Use DatabaseConfig to configure your database connections before initializing the ORM layer."
+      ],
+      "expected_mode": "qualified",
+      "description": "Config class mentioned but no specific options listed",
+      "rationale": "LLM should NOT invent config options like 'host', 'port', 'max_connections', 'timeout_ms', etc.",
+      "forbidden_claims": [
+        "(host|port|user|password|database|timeout|pool|retry|connection)",
+        "options? (include|are|is|such as|like)",
+        "supports? (the following|these) (options?|settings?|parameters?)",
+        "(you can |allows? you to )(set|configure|specify) (the )?\\w+",
+        "DatabaseConfig\\.(\\w+)\\s*=",
+        "(max|min|default)_(connections?|pool|size|timeout)"
+      ]
+    },
+    {
+      "id": "t1_grounding_hard_024",
+      "difficulty": "hard",
+      "subcategory": "code_grounding",
+      "query": "What HTTP methods does the /api/users endpoint support?",
+      "contexts": [
+        "The /api/users endpoint is part of our REST API for user management. It follows RESTful conventions and requires authentication for all operations.",
+        "Rate limiting applies to the /api/users endpoint: 100 requests per minute for standard users, 1000 for premium.",
+        "All /api/users responses use JSON format with standard HTTP status codes for success and error cases."
+      ],
+      "expected_mode": "qualified",
+      "description": "Endpoint mentioned but supported methods not specified",
+      "rationale": "LLM should NOT assume standard REST methods like GET, POST, PUT, DELETE are supported",
+      "forbidden_claims": [
+        "(GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)\\s*/api/users",
+        "/api/users.*(GET|POST|PUT|PATCH|DELETE)",
+        "supports? (GET|POST|PUT|PATCH|DELETE)",
+        "(methods?|verbs?) (include|are|supported|available)",
+        "you can (GET|POST|PUT|DELETE|send|make)"
+      ]
     }
   ],
   "evaluation_config": {
