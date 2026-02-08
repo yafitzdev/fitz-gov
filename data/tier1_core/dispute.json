@@ -1645,6 +1645,510 @@
       "description": "Different dietary approaches with conflicting evidence",
       "rationale": "Keto: fastest short-term, Mediterranean: best long-term, calories: primary driver",
       "original_id": "dispute_medium_014"
+    },
+    {
+      "id": "t1_dispute_hard_400",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What is the average latency of the Helix distributed database under production workloads?",
+      "contexts": [
+        "Helix Systems Performance Whitepaper (Q3 2024): Comprehensive benchmarking of Helix DB v4.2 under production-representative workloads showed a mean query latency of 2.3 milliseconds (p50) and 8.7 ms (p99) across a 12-node cluster processing 45,000 transactions per second. The benchmark used the industry-standard YCSB workload B (95% reads, 5% updates) with a dataset of 500 million records distributed across three geographic regions. Hardware configuration consisted of AWS r6g.4xlarge instances with NVMe-backed storage. The tests were conducted over a 72-hour sustained period to account for compaction cycles and garbage collection pauses. These results were independently verified by Percona Labs under their Database Performance Certification program.",
+        "TechBench Labs Independent Review — Helix DB v4.2 (October 2024): Our rigorous 30-day evaluation of Helix DB v4.2 measured a mean query latency of 11.4 ms (p50) and 67.2 ms (p99) under production workloads. Testing utilized a mixed read-write workload (95% reads, 5% writes) consistent with YCSB workload B across a 12-node cluster on equivalent r6g.4xlarge instances. The dataset comprised 500 million records. We observed significant latency degradation during compaction windows, with p99 spikes reaching 340 ms. The discrepancy with vendor-reported figures likely stems from Helix's benchmark excluding compaction-overlapping intervals, which our continuous monitoring captured. TechBench does not exclude any measurement windows from reported figures."
+      ],
+      "expected_mode": "disputed",
+      "description": "Both use the same benchmark workload and cluster config but report p50 latency of 2.3ms vs 11.4ms — vendor excludes compaction windows while independent lab includes all intervals.",
+      "rationale": "Despite identical hardware, dataset size, and workload profile, the p50 latency differs by 5x. The independent lab alleges the vendor excludes compaction windows, but the vendor claims independent verification. Both present their figure as the definitive latency. The query asks for a single metric and gets irreconcilable values."
+    },
+    {
+      "id": "t1_dispute_hard_401",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Does intermittent fasting reduce cardiovascular disease risk?",
+      "contexts": [
+        "American Heart Association Research Report (March 2024): A prospective cohort study following 24,317 adults over 8 years found that participants practicing time-restricted eating (16:8 pattern) had a 91% higher risk of cardiovascular death compared to those eating across a 12-16 hour window (HR 1.91, 95% CI: 1.20-3.03). After adjusting for age, sex, BMI, smoking, physical activity, and dietary quality, the association remained significant. Lead author Dr. Victor Zhong noted that restricting eating windows may lead to consuming larger meals that spike blood glucose and lipids. The study used NHANES dietary recall data linked to National Death Index records through December 2023. The sample was nationally representative of the U.S. adult population.",
+        "New England Journal of Medicine Clinical Trial (June 2024): The CHRONO-HEART randomized controlled trial enrolled 3,200 adults with metabolic syndrome across 28 clinical sites. After 18 months, participants randomized to 16:8 time-restricted eating showed a 23% reduction in 10-year ASCVD risk score (p<0.001) compared to controls eating ad libitum. Secondary endpoints included reductions in LDL cholesterol (-14.2 mg/dL), systolic blood pressure (-6.8 mmHg), and fasting glucose (-11.3 mg/dL). The intervention group also showed significant reductions in inflammatory markers including hs-CRP (-0.42 mg/L) and IL-6 (-1.8 pg/mL). Protocol adherence was monitored via a smartphone app with food photography verification, achieving 87% compliance."
+      ],
+      "expected_mode": "disputed",
+      "description": "AHA cohort study finds 91% higher cardiovascular death risk from time-restricted eating; NEJM RCT finds 23% reduction in cardiovascular risk scores from the same 16:8 pattern.",
+      "rationale": "Both studies examine the same intervention (16:8 intermittent fasting) on cardiovascular outcomes and reach directly opposing conclusions. One finds substantially increased risk, the other finds substantial benefit. These are not complementary findings about different aspects — they directly contradict on whether IF helps or harms cardiovascular health."
+    },
+    {
+      "id": "t1_dispute_hard_402",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Does the NovaCrypt encryption library support post-quantum key exchange?",
+      "contexts": [
+        "NovaCrypt v3.1 Official Documentation (Release Notes, January 2025): NovaCrypt v3.1 introduces full support for post-quantum cryptographic key exchange through integration of the CRYSTALS-Kyber (ML-KEM) algorithm as standardized in NIST FIPS 203. The implementation supports all three parameter sets: ML-KEM-512, ML-KEM-768, and ML-KEM-1024. Hybrid key exchange combining X25519 with ML-KEM-768 is available as the recommended default configuration. The library has undergone formal verification of its Kyber implementation using the Jasmin/EasyCrypt framework, and side-channel resistance has been validated through Test Vector Leakage Assessment (TVLA) on ARM Cortex-M4 and x86-64 platforms. API usage requires linking against the novacrypt-pqc module.",
+        "NIST Cryptographic Module Validation Program — NovaCrypt v3.1 (CMVP Certificate #4891, February 2025): The FIPS 140-3 validation of NovaCrypt v3.1 covers the following approved algorithms: AES (CBC, GCM, CCM), SHA-2 (256, 384, 512), SHA-3, HMAC, RSA (2048, 3072, 4096), ECDSA (P-256, P-384, P-521), ECDH, and HKDF. Post-quantum algorithms including ML-KEM are NOT included in the validated module boundary. The Cryptographic Algorithm Validation Program (CAVP) certificates listed on this validation do not include any post-quantum algorithm test vectors. Implementations of post-quantum algorithms shipped with NovaCrypt v3.1 are explicitly excluded from the FIPS-validated configuration and must not be used in environments requiring FIPS 140-3 compliance."
+      ],
+      "expected_mode": "disputed",
+      "description": "Official docs say NovaCrypt v3.1 fully supports post-quantum key exchange; NIST FIPS validation explicitly states PQ algorithms are NOT in the validated module boundary.",
+      "rationale": "The query asks whether the library supports post-quantum key exchange. One source says yes with full formal verification; the other says PQ algorithms are explicitly excluded from the validated configuration. This is a binary conflict — the answer depends on whether 'support' means 'code exists' or 'validated and approved for use.' Both sources are authoritative and give opposite answers to the same question."
+    },
+    {
+      "id": "t1_dispute_hard_403",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What is the employee turnover rate at Pinnacle Health Systems?",
+      "contexts": [
+        "Pinnacle Health Systems 2024 ESG Report: Pinnacle Health Systems maintained an annual voluntary turnover rate of 12.4% across all facilities in fiscal year 2024, representing a continued improvement from 14.1% in FY2023 and 18.7% in FY2022. The metric includes all voluntary separations (resignations, retirements, voluntary transfers out) divided by average headcount of 34,200 employees. Notably, nursing staff turnover decreased to 15.8% from 22.3% the prior year following implementation of the Nurse Retention and Advancement Program. The ESG report was prepared in accordance with GRI Standards 2021 and verified by EY as part of their limited assurance engagement on sustainability metrics.",
+        "Bureau of Labor Statistics JOLTS Data — Healthcare Sector Analysis (2024): According to BLS Job Openings and Labor Turnover Survey data, Pinnacle Health Systems reported a total separation rate of 28.6% for calendar year 2024 through its mandatory JOLTS reporting. This figure includes voluntary quits (18.2%), layoffs and discharges (6.1%), retirements (2.8%), and other separations (1.5%). The BLS notes that total separations at Pinnacle exceeded the healthcare sector average of 24.3%. Pinnacle's quits rate of 18.2% was also above the sector median of 16.7%, suggesting ongoing workforce retention challenges despite the organization's public claims of improvement."
+      ],
+      "expected_mode": "disputed",
+      "description": "Pinnacle self-reports 12.4% voluntary turnover in ESG report; BLS mandatory filing shows 18.2% voluntary quits rate for the same period.",
+      "rationale": "Both report voluntary employee departures at the same organization in the same year. The ESG report claims 12.4% while BLS mandatory data shows 18.2% voluntary quits. Even accounting for slightly different definitions (voluntary turnover vs quits), the gap is too large to reconcile. Both are presented as definitive metrics for essentially the same measure."
+    },
+    {
+      "id": "t1_dispute_hard_404",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Does screen time before bed affect sleep quality in adolescents?",
+      "contexts": [
+        "Journal of Adolescent Health (Vol. 74, Issue 2, 2024): A randomized crossover trial with 312 adolescents aged 13-17 found no statistically significant difference in polysomnography-measured sleep quality between a 2-hour pre-bed screen use condition and a no-screen condition. Total sleep time differed by only 4.2 minutes (not significant, p=0.31), sleep efficiency was 88.1% vs 88.7% (p=0.44), and REM latency was unchanged. The study used actigraphy-validated PSG across four consecutive nights per condition with a one-week washout period. Screens included smartphones and tablets at typical brightness. Lead author Dr. Sarah Kimball noted that when content was controlled for emotional arousal, the screen itself had negligible physiological impact on adolescent sleep architecture.",
+        "Pediatrics (Vol. 153, Issue 5, 2024): A longitudinal study of 8,400 adolescents across 14 countries found that each additional hour of screen time in the two hours before bed was associated with a 32% increase in clinically significant insomnia symptoms (OR 1.32, 95% CI: 1.24-1.41), 23 fewer minutes of total sleep, and a 2.4-fold increase in daytime sleepiness scores. Effects were dose-dependent and persisted after controlling for content type, socioeconomic status, caffeine intake, physical activity, and mental health comorbidities. The study used validated self-report instruments (PSQI, ISI) administered at 6-month intervals over 3 years. The authors concluded that pre-bed screen exposure represents a significant modifiable risk factor for adolescent sleep disturbance."
+      ],
+      "expected_mode": "disputed",
+      "description": "RCT with objective PSG finds no effect of screen time on sleep; large longitudinal study finds 32% increase in insomnia symptoms per hour of screen time.",
+      "rationale": "Both studies directly address whether pre-bed screen time affects adolescent sleep quality and reach opposing conclusions. The RCT finds no significant effect; the longitudinal study finds substantial, dose-dependent harm. These are not complementary — they directly contradict on the same causal question."
+    },
+    {
+      "id": "t1_dispute_hard_405",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Is the Kestrel-9 rocket engine reusable?",
+      "contexts": [
+        "Astralion Aerospace Technical Specifications Sheet (2024): The Kestrel-9 LOX/RP-1 engine is designed for single-use expendable applications only. Each engine undergoes a single hot-fire acceptance test before integration and is not rated for reuse. The turbopump bearing design uses non-replenishable solid lubricant coatings rated for a cumulative 840 seconds of operation, and the regeneratively cooled chamber liner experiences thermal cycling that reduces wall thickness by approximately 0.15mm per firing. Astralion's quality assurance protocol requires destructive teardown inspection of one engine per production lot. Engine unit cost is $1.8 million, reflecting the single-use design philosophy that prioritizes mass optimization over durability.",
+        "Astralion Aerospace Investor Presentation (Q4 2024): The Kestrel-9 engine is at the heart of our reusability strategy. Following our successful demonstration in September 2024, we have now reflown a Kestrel-9 engine three times with no measurable performance degradation. Our proprietary thermal barrier coating and upgraded turbopump bearings — introduced in the Block 2 variant shipping since July 2024 — enable a certified reuse life of 10 flights. Reusability reduces our per-launch engine cost from $1.8M to an amortized $220K by the fifth flight, fundamentally changing our cost structure. We project Block 2 Kestrel-9 engines will power 80% of our 2025 manifest."
+      ],
+      "expected_mode": "disputed",
+      "description": "Astralion's own tech spec says Kestrel-9 is single-use expendable; their investor presentation says it is reusable for 10 flights.",
+      "rationale": "Both sources are from the same manufacturer but give binary opposite answers about reusability. The investor deck references a Block 2 variant, but the query asks about the engine generically. Without knowing which variant the user means, these sources provide directly contradictory answers to a yes/no question from the same authoritative source."
+    },
+    {
+      "id": "t1_dispute_hard_406",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "temporal_conflict",
+      "query": "What is the current federal minimum staffing requirement for nursing homes?",
+      "contexts": [
+        "Centers for Medicare & Medicaid Services Final Rule (April 2024): CMS published a final rule establishing the first-ever federal minimum staffing standards for nursing homes participating in Medicare and Medicaid. The rule requires a minimum of 3.48 hours per resident day (HPRD) of total nursing staff time, including 0.55 HPRD of registered nurse time and 2.45 HPRD of nurse aide time. Facilities must also have an RN on site 24 hours a day, seven days a week. Rural facilities with fewer than 100 beds may apply for a temporary hardship exemption of up to 3 years. Full compliance is required by May 2027 for urban facilities and May 2029 for rural facilities. CMS estimated the rule would affect approximately 75% of nursing homes currently below the standards.",
+        "U.S. District Court for the Western District of Texas — American Health Care Association v. CMS (November 2024): The court granted summary judgment vacating the CMS minimum staffing rule in its entirety. Judge Robert Clearwater held that CMS exceeded its statutory authority under the Social Security Act, which delegates staffing determinations to states, not the federal agency. The court found that the Administrative Procedure Act's notice-and-comment process was deficient because CMS failed to adequately address the economic impact analysis showing a $40 billion unfunded mandate. The ruling enjoins CMS from enforcing any provision of the April 2024 final rule nationwide. CMS has filed a notice of appeal to the Fifth Circuit."
+      ],
+      "expected_mode": "disputed",
+      "description": "CMS rule establishes specific federal staffing minimums; a federal court vacated the entire rule as exceeding statutory authority, with appeal pending.",
+      "rationale": "The query asks about the current requirement. One source says specific minimums exist; the other says the rule has been struck down. Both are authoritative legal sources. The answer genuinely depends on the legal status during appeal, creating a real factual dispute about what the current law requires."
+    },
+    {
+      "id": "t1_dispute_hard_408",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "What caused the Northfield bridge collapse in 2024?",
+      "contexts": [
+        "National Transportation Safety Board Preliminary Report — Northfield Bridge Collapse (August 2024): NTSB investigators determined that the primary cause of the Northfield Highway 9 bridge collapse on June 14, 2024, was fatigue cracking in the lower chord of truss member L9-U10, originating from a fabrication defect introduced during the 1987 rehabilitation. Metallurgical analysis revealed incomplete fusion in a critical groove weld, creating a 4.2mm flaw that propagated under cyclic loading over 37 years. The investigation found no evidence that the bridge was overloaded at the time of collapse. The defect would have been detectable through ultrasonic inspection, but MnDOT records showed the last hands-on inspection occurred in 2016.",
+        "Minnesota Department of Transportation Internal Review (September 2024): MnDOT's engineering review concluded that the collapse resulted from unanticipated overloading caused by the concurrent passage of two permitted overweight vehicles (combined gross weight 187 tons) while carrying normal traffic at 94% of design lane loading. The permit office had issued both overweight permits without checking for temporal overlap, and combined loading exceeded rated capacity by approximately 22%. Finite element analysis showed truss member L9-U10 experienced stresses 31% above factored resistance. The review recommended immediate reform of the overweight vehicle permitting system."
+      ],
+      "expected_mode": "disputed",
+      "description": "NTSB says collapse caused by 37-year-old fabrication defect with no overloading; MnDOT says collapse caused by 22% overloading from permitted vehicles.",
+      "rationale": "Both investigate the same event and reach opposing conclusions about causation. NTSB explicitly states no overloading occurred; MnDOT says overloading was the cause. These are contradictory causal claims about the same incident from two authoritative investigative bodies. The claims are mutually exclusive — the bridge cannot have simultaneously been overloaded and not overloaded."
+    },
+    {
+      "id": "t1_dispute_hard_409",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Does the NeuroLink brain-computer interface improve motor function in spinal cord injury patients?",
+      "contexts": [
+        "The Lancet Neurology (Vol. 23, Issue 8, 2024): The RESTORE-1 pivotal trial evaluated the NeuroLink BCI in 64 patients with chronic cervical spinal cord injury (AIS grade B/C). At 12 months post-implantation, the treatment group showed a mean improvement of 14.2 points on the Spinal Cord Independence Measure III (SCIM-III) compared to 2.1 points in the sham-surgery control group (p<0.001). Sixty-seven percent of treatment participants achieved clinically meaningful improvement in upper extremity motor function (>5 points on UEMS). Three patients experienced device-related serious adverse events including one subdural hematoma requiring evacuation. Lead investigator Dr. Patricia Moreau described the results as transformative for a patient population with no other therapeutic options.",
+        "FDA Medical Device Advisory Committee Meeting Transcript — NeuroLink BCI (December 2024): The FDA's statistical reviewer identified critical concerns with the RESTORE-1 trial. Reanalysis using the pre-specified primary endpoint (SCIM-III at 6 months, not 12 months) showed a non-significant difference of 4.8 points (p=0.087). The sponsor changed the primary timepoint from 6 to 12 months via protocol amendment after 40% of patients had been enrolled, which the reviewer characterized as outcome-driven modification. Additionally, 11 of 32 control patients were unblinded before the 12-month assessment due to MRI-visible implant artifacts, potentially biasing subjective outcome measures. The advisory committee voted 8-5 against approval, citing insufficient evidence of efficacy."
+      ],
+      "expected_mode": "disputed",
+      "description": "Published trial reports significant motor function improvement with NeuroLink BCI; FDA reviewers found the result non-significant at the original primary endpoint with protocol irregularities.",
+      "rationale": "Both assess the same clinical trial for the same device. The published paper claims significant efficacy; the FDA review finds the same data non-significant at the pre-specified endpoint and identifies methodological problems. These are directly opposing conclusions about whether the device works, based on the same underlying data."
+    },
+    {
+      "id": "t1_dispute_hard_410",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How many active users does the Meridian social platform have?",
+      "contexts": [
+        "Meridian Inc. Q3 2024 Earnings Report (SEC Filing 10-Q): Meridian reported 284 million monthly active users (MAUs) as of September 30, 2024, an increase of 11% year-over-year. The company defines an MAU as a registered account that logged in and performed at least one intentional action (post, comment, like, share, or message) within the trailing 30-day period. Automated accounts identified by the integrity team are excluded from reported MAUs. The metric is audited by Ernst & Young as part of the quarterly financial review process. CFO Laura Jennings noted on the earnings call that the MAU methodology has been consistent since the company's IPO in 2019 and represents genuine human engagement.",
+        "Sensor Tower Digital Market Intelligence Report — Social Media Landscape Q3 2024: Independent analytics firm Sensor Tower estimates Meridian's MAUs at 178 million for Q3 2024, based on SDK telemetry from a panel of 42 million devices globally extrapolated to the total device population. The methodology counts unique devices that opened the Meridian app or visited meridian.com during a 30-day period. The 106 million gap has widened from 62 million in Q3 2023. Sensor Tower's VP of Analytics noted the discrepancy is consistent with multi-account inflation and accounts accessed solely through third-party embedded widgets."
+      ],
+      "expected_mode": "disputed",
+      "description": "Meridian self-reports 284M MAUs; independent analytics firm measures 178M — a 106M user gap that the firm attributes to multi-account inflation.",
+      "rationale": "Both measure monthly active users of the same platform in the same quarter but arrive at figures 60% apart. The independent firm directly challenges the company's count as inflated. Both present their figure as the accurate MAU count. The query asks for a single number and gets two irreconcilable answers from sources with conflicting incentives."
+    },
+    {
+      "id": "t1_dispute_hard_411",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Does minimum wage increase cause unemployment among low-skilled workers?",
+      "contexts": [
+        "National Bureau of Economic Research Working Paper #32841 (2024): Using a border-discontinuity design comparing adjacent counties across state lines with different minimum wages, researchers found that a $1 increase in the minimum wage was associated with a 2.7% reduction in employment among workers without a high school diploma (p=0.003) and a 4.1% reduction in hours worked (p<0.001). The study examined 487 county pairs across 22 state border changes between 2018-2023, using quarterly Longitudinal Employer-Household Dynamics data. The authors found that employment effects were concentrated in accommodation, food services, and retail trade. Lead economist Dr. James Borland concluded that the disemployment effects, while modest, are statistically robust and practically meaningful.",
+        "Journal of Labor Economics (Vol. 42, Issue 4, 2024): Analysis of 68 minimum wage increases across U.S. states and cities from 2014-2023 found no statistically significant negative effect on total employment of workers earning within $2 of the new minimum (elasticity = -0.04, 95% CI: -0.11 to 0.03). Using a stacked difference-in-differences estimator with callaway-sant'anna treatment-effect heterogeneity corrections, the study tracked 12.3 million workers through the Quarterly Workforce Indicators. The analysis found positive wage effects (+7.2% average earnings increase) with no offsetting employment decline over a 3-year post-implementation window. Effects were consistent across demographic groups, firm sizes, and industry sectors."
+      ],
+      "expected_mode": "disputed",
+      "description": "NBER study finds 2.7% employment reduction per $1 minimum wage increase among low-skilled workers; JLE study finds no significant employment effect across 68 wage increases.",
+      "rationale": "Both examine the same causal question using rigorous econometric methods on similar time periods in the same country. One finds statistically significant disemployment; the other finds none. These are directly opposing conclusions about the same policy question. Despite methodological differences in study design, both present their result as the more reliable estimate."
+    },
+    {
+      "id": "t1_dispute_hard_412",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Does the Apex framework support hot module replacement in production builds?",
+      "contexts": [
+        "Apex Framework v5.0 Official Documentation — Production Deployment Guide: Hot Module Replacement (HMR) is available in both development and production modes in Apex v5.0. Production HMR uses a differential module update mechanism that patches running modules without full page reloads, maintaining user session state and in-memory application data. Enable production HMR by setting `apex.config.production.hmr = true` in the deployment manifest. The feature requires the Apex Runtime Agent (12KB gzipped) to be included in the production bundle. Production HMR is recommended for applications requiring zero-downtime deployments and is used in production by six of our enterprise design partners including a major airline reservation system.",
+        "Apex Framework GitHub Issue #4891 — Production HMR causes memory leaks (opened September 2024, 247 comments): Multiple users report that enabling production HMR in Apex v5.0 causes cumulative memory leaks that crash Node.js processes after 4-8 hours under load. Apex core maintainer @chen-apex confirmed on October 3: 'Production HMR in v5.0 is broken and should not be used. The differential patching does not properly clean up old module references, leading to unbounded memory growth. We are marking this as a known defect and will remove the production HMR documentation. The feature will be disabled in v5.0.4 and reworked for v5.1. We apologize for shipping this prematurely.' The v5.0.4 changelog confirms: 'Removed: Production HMR (broken, causes memory leaks). Will return in v5.1.'"
+      ],
+      "expected_mode": "disputed",
+      "description": "Official docs say production HMR is supported and recommended; a core maintainer confirms it is broken and will be removed in the next patch.",
+      "rationale": "The documentation says the feature works and recommends it for production; the maintainer explicitly says it is broken and should not be used. This is a direct binary conflict about whether the feature is functional. Both are from the same project but represent contradictory states of the same claim."
+    },
+    {
+      "id": "t1_dispute_hard_413",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "What is the expected lifespan of residential solar panels?",
+      "contexts": [
+        "International Renewable Energy Agency (IRENA) Technology Brief — Solar PV (2024): IRENA's technical assessment establishes a standard useful life of 25-30 years for crystalline silicon residential solar panels, based on degradation studies across 12 countries. Annual power degradation rates average 0.5-0.7% per year for monocrystalline and 0.6-0.8% for polycrystalline modules. At these rates, panels retain approximately 80% of original rated power at year 25. IRENA notes that 25 years is the industry-standard warranty period and represents the point at which panels are typically replaced, though they continue generating electricity. The assessment draws on field performance data from over 3.2 million residential installations monitored since 2004.",
+        "Fraunhofer Institute for Solar Energy Systems — Long-Duration Field Study (2024): A 40-year longitudinal study of 1,847 crystalline silicon panels installed between 1984-1990 across 23 German sites found that 82% were still operational in 2024, with a median degradation rate of 0.35%/year — significantly lower than the commonly cited 0.5-0.7%. Panels surviving past year 30 showed no acceleration in degradation. The study concluded that functional lifespan is 40-50 years, not 25-30, and that the standard assumption is overly conservative, driven by warranty considerations rather than technical limits. Lead researcher Dr. Karl Heidler argued the 25-year figure causes premature replacement."
+      ],
+      "expected_mode": "disputed",
+      "description": "IRENA establishes 25-30 year standard lifespan based on degradation data; Fraunhofer field study argues actual lifespan is 40-50 years and the standard figure is artificially conservative.",
+      "rationale": "Both address the same question about solar panel lifespan but reach different conclusions. IRENA says 25-30 years based on when panels hit 80% output; Fraunhofer says 40-50 years based on actual field data showing panels still working well past 30 years. The Fraunhofer study explicitly disputes IRENA's standard as warranty-driven rather than technically grounded. These are competing authoritative claims about the same metric."
+    },
+    {
+      "id": "t1_dispute_hard_414",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Does the ketogenic diet improve outcomes for Type 2 diabetes patients?",
+      "contexts": [
+        "Diabetes Care (Vol. 47, Issue 6, 2024): The KETO-DM randomized trial enrolled 480 adults with Type 2 diabetes across 18 endocrinology clinics. After 12 months, participants on a ketogenic diet (<30g carbs/day) achieved a mean HbA1c reduction of 1.4% (vs 0.4% in the standard diet group, p<0.001), and 38% of keto participants discontinued at least one diabetes medication versus 12% in the control group. Mean weight loss was 11.2 kg vs 3.8 kg. LDL cholesterol increased by 14 mg/dL in the keto group but the LDL particle profile shifted toward larger, less atherogenic particles. The investigators concluded that ketogenic diets should be considered a first-line dietary intervention for Type 2 diabetes management.",
+        "The Lancet Diabetes & Endocrinology (Vol. 12, Issue 9, 2024): A 3-year follow-up of 2,100 Type 2 diabetes patients in the UK Biobank who self-reported ketogenic or very-low-carbohydrate diets found a 26% higher rate of cardiovascular events (HR 1.26, 95% CI: 1.08-1.47) compared to those following moderate-carbohydrate diets, after adjustment for age, sex, BMI, smoking, HbA1c, and statin use. The keto group showed higher all-cause mortality (HR 1.18, 95% CI: 1.02-1.37). While short-term glycemic markers improved, long-term outcomes were worse. The authors concluded that ketogenic diets pose significant cardiovascular risks for Type 2 diabetes patients and recommended against their use as sustained dietary interventions."
+      ],
+      "expected_mode": "disputed",
+      "description": "RCT shows keto diet significantly improves diabetes markers and medication use at 12 months; observational study finds 26% higher cardiovascular events at 3 years.",
+      "rationale": "Both address whether ketogenic diets benefit Type 2 diabetes patients and reach directly opposing conclusions. The trial shows substantial short-term benefit; the observational study shows long-term harm. These are not complementary timeframe findings — they reach opposite recommendations (first-line intervention vs recommend against). A patient or clinician receives conflicting medical advice."
+    },
+    {
+      "id": "t1_dispute_hard_415",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What is the rate of long COVID among people who had breakthrough infections after vaccination?",
+      "contexts": [
+        "The Lancet Infectious Diseases (Vol. 24, Issue 7, 2024): A prospective cohort study of 18,400 vaccinated adults (3+ doses) who experienced breakthrough SARS-CoV-2 infection found that 5.2% developed long COVID symptoms persisting beyond 12 weeks, compared to 28.4% of unvaccinated infected individuals. Long COVID was defined using the WHO Delphi consensus criteria requiring symptoms at 12 weeks that cannot be explained by an alternative diagnosis. The study followed participants through structured assessments at 4, 12, 26, and 52 weeks with objective measures including 6-minute walk test, Montreal Cognitive Assessment, and cardiopulmonary exercise testing.",
+        "Nature Medicine (Vol. 30, 2024): Analysis of 3.2 million electronic health records from the U.S. Veterans Affairs healthcare system found that vaccinated individuals with breakthrough infections had a 12-week long COVID incidence of 17.4%, compared to 23.1% in unvaccinated infected veterans. Long COVID was identified using ICD-10 diagnosis code U09.9 or the presence of two or more qualifying symptoms coded across two or more encounters in the 12-52 week post-infection window. The authors noted that EHR-based identification captures milder cases missed by prospective studies requiring in-person assessment."
+      ],
+      "expected_mode": "disputed",
+      "description": "Prospective cohort reports 5.2% long COVID rate in vaccinated breakthroughs; EHR study reports 17.4% — a 3.3x difference for the same population and timeframe.",
+      "rationale": "Both report the rate of long COVID after breakthrough infections in vaccinated populations. The 5.2% vs 17.4% gap is enormous and gives wildly different answers to the same clinical question. While the EHR study acknowledges methodological differences, both present their rate as the definitive measure. A clinician or patient asking this question receives irreconcilable numbers that lead to very different risk assessments."
+    },
+    {
+      "id": "t1_dispute_hard_416",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Has the Greenfield Wetlands Restoration Project achieved its biodiversity targets?",
+      "contexts": [
+        "Greenfield Conservation District Annual Report (2024): The Greenfield Wetlands Restoration Project has exceeded its 5-year biodiversity targets across all key indicators. Bird species richness increased from 34 to 89 species (target: 75), amphibian populations recovered to 12 native species (target: 8), and macroinvertebrate diversity indices reached 4.2 on the Shannon-Wiener scale (target: 3.5). Water quality improved to Class B standards with dissolved oxygen averaging 7.8 mg/L. The project has been nominated for the National Wetlands Award. Independent monitoring by the Audubon Society confirmed the bird species counts.",
+        "State Environmental Quality Board Compliance Audit (November 2024): The compliance audit found that the project has NOT met its legally binding biodiversity targets as specified in the 2019 Environmental Impact Mitigation Agreement. While total species counts appear high, 31 of the 89 bird species detected are invasive or non-target species (European Starling, House Sparrow, Brown-headed Cowbird, etc.) not intended as outcomes. When restricted to target native wetland-obligate species, the count is 41 — below the required 75. Similarly, 3 of the 12 amphibian species are non-native and actively predate native species. The Board assessed the project as non-compliant and ordered corrective action."
+      ],
+      "expected_mode": "disputed",
+      "description": "Conservation District reports exceeding all biodiversity targets (89 bird species vs 75 target); compliance audit says targets not met because 31 species are invasive/non-target.",
+      "rationale": "Both assess the same project against the same targets. One says targets are exceeded; the other says they are not met. The dispute centers on whether invasive species should count toward native biodiversity targets. The compliance audit directly contradicts the conservation district's claim of success with a factual recount using the legal definition."
+    },
+    {
+      "id": "t1_dispute_hard_417",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Is the Zenith water filtration system effective at removing PFAS contamination?",
+      "contexts": [
+        "NSF International Certification Report — Zenith ZF-9000 (2024): The Zenith ZF-9000 achieved NSF/ANSI 53 certification for reduction of 18 PFAS compounds including PFOA and PFOS. Testing at an influent concentration of 1,500 ppt total PFAS showed reduction to below 4 ppt (>99.7% removal) through 800 gallons of filtered water. The activated carbon block and ion exchange resin dual-media design maintained consistent removal throughout the rated filter life. Testing was conducted at NSF's Ann Arbor laboratory following EPA Method 533 analytical procedures.",
+        "Environmental Working Group Independent Testing Report (2024): EWG's in-home testing of the Zenith ZF-9000 across 48 households found that real-world PFAS removal averaged 61% — far below the 99.7% claimed in laboratory certification. After 400 gallons (half the rated filter life), average removal dropped to 43%. Twelve of 48 units showed PFAS in filtered water exceeding EPA's 4 ppt health advisory level. EWG attributed the performance gap to competing organic contaminants in real water that saturate the activated carbon. EWG recommended against relying solely on point-of-use filters for PFAS protection."
+      ],
+      "expected_mode": "disputed",
+      "description": "NSF lab certification shows 99.7% PFAS removal; EWG in-home testing shows only 61% average removal with rapid degradation.",
+      "rationale": "Both evaluate the same product for PFAS removal effectiveness. The lab says 99.7%; real-world testing says 61%. The query asks if the system is effective, and the sources give directly opposing answers. One certifies it as highly effective; the other says it fails to protect consumers in actual use."
+    },
+    {
+      "id": "t1_dispute_hard_418",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "temporal_conflict",
+      "query": "What is the current status of the Nord Stream pipeline repair?",
+      "contexts": [
+        "Reuters Energy Desk (August 2024): Technical assessments by an international consortium of pipeline engineers confirmed that the Nord Stream 1 pipeline is irreparably damaged and cannot be restored to operational status. The September 2022 explosions caused structural failures across three of the four pipeline strings, with seawater intrusion corroding internal surfaces over 47 km. The estimated repair cost exceeds $3.2 billion, and the consortium determined that building a new pipeline would be more cost-effective. The German Federal Maritime Agency has designated the damaged sections as permanent subsea debris.",
+        "Gazprom Investor Relations Briefing (October 2024): Gazprom Deputy Chairman Vitaly Markelov stated that Nord Stream AG has completed a preliminary engineering plan for partial restoration of Nord Stream 2, which sustained less damage. One of the two NS2 strings was not damaged in the 2022 incident and remains technically operable pending regulatory approval. Gazprom estimates the intact string could resume gas deliveries within 6-9 months of receiving German and Danish regulatory clearance, with a capacity of 27.5 bcm per year. Markelov described the pipeline as a strategic asset Gazprom will not abandon."
+      ],
+      "expected_mode": "disputed",
+      "description": "Engineering consortium says Nord Stream is irreparably damaged; Gazprom says one NS2 string is intact and could resume operations within months.",
+      "rationale": "Both address the pipeline repair status but reach opposing conclusions. The engineering assessment says repair is impossible; Gazprom says one string is operational and restoration is planned. These are directly conflicting claims about the physical and operational status of the same infrastructure."
+    },
+    {
+      "id": "t1_dispute_hard_420",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How many civilians were displaced by the Darfur conflict in 2024?",
+      "contexts": [
+        "United Nations OCHA Situation Report (December 2024): OCHA estimates 2.8 million people were newly displaced within Darfur between April and December 2024, bringing total IDPs to approximately 4.1 million. The figure derives from OCHA's Displacement Tracking Matrix combining satellite imagery, registration at IDP camps and transit points, and key informant interviews. OCHA acknowledges that access restrictions prevented direct counting in 35% of affected areas, where estimates rely on pre-conflict population data and satellite-detected destruction patterns. The figures were endorsed by the Inter-Agency Standing Committee as the official humanitarian planning baseline.",
+        "Medecins Sans Frontieres Operational Assessment — Darfur (November 2024): MSF field teams estimate approximately 6.2 million displaced civilians in Darfur — substantially higher than UN figures. MSF bases this on direct observation at 14 field locations where displaced-to-non-displaced ratios consistently exceed OCHA projections by 2-3x. Medical coordinators report treating patients from communities absent from OCHA data because they fled to informal settlements, remote areas, or across borders into Chad and South Sudan where tracking is absent. MSF Head of Mission Dr. Claire Perrin stated the UN methodology systematically undercounts displacement and the response is planned around barely half the actual need."
+      ],
+      "expected_mode": "disputed",
+      "description": "OCHA estimates 4.1M total displaced in Darfur; MSF field observations suggest 6.2M, calling UN figures a systematic undercount.",
+      "rationale": "Both report displacement from the same conflict in the same region and year. MSF directly disputes OCHA's figure as a systematic undercount, not a complementary measure. Both present their number as the more accurate estimate of actual displacement. The 2.1 million person gap would dramatically change humanitarian resource allocation. This is a genuine dispute about the same metric."
+    },
+    {
+      "id": "t1_dispute_hard_421",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Is magnesium supplementation effective for treating migraine headaches?",
+      "contexts": [
+        "Headache: The Journal of Head and Face Pain (Vol. 64, 2024): A multicenter double-blind RCT randomized 620 patients with episodic migraine (4-14 attacks/month) to magnesium glycinate 400mg twice daily or placebo for 16 weeks. The magnesium group experienced a mean reduction of 3.1 migraine days per month compared to 1.4 in the placebo group (p<0.001). Responder rate (>50% reduction in monthly migraine days) was 47% vs 22%. Serum magnesium levels at baseline did not predict treatment response, suggesting that supplementation benefits patients regardless of deficiency status. The trial used pharmaceutical-grade magnesium glycinate with verified bioavailability. The investigators recommended magnesium as a first-line preventive therapy given its favorable safety profile.",
+        "Cochrane Database of Systematic Reviews (2024): An updated Cochrane review analyzing 12 randomized controlled trials (n=1,840) of oral magnesium supplementation for migraine prevention found no statistically significant benefit over placebo for the primary outcome of monthly migraine frequency (MD -0.52 days, 95% CI: -1.24 to 0.20, p=0.16). The review rated the overall evidence quality as low due to high heterogeneity (I2=74%), small sample sizes in most trials, and inconsistent formulations and doses across studies. The review specifically noted that only 3 of 12 trials used magnesium glycinate, while others used oxide, citrate, or pidolate forms with varying bioavailability. The Cochrane authors concluded that evidence is insufficient to recommend magnesium for migraine prevention."
+      ],
+      "expected_mode": "disputed",
+      "description": "Large RCT finds magnesium significantly reduces migraines by 3.1 days/month; Cochrane systematic review finds no significant benefit across pooled trials.",
+      "rationale": "Both address the same clinical question about magnesium for migraine. The RCT finds significant benefit and recommends it as first-line therapy; the Cochrane review finds insufficient evidence and declines to recommend it. These are directly opposing clinical conclusions. While the Cochrane review notes formulation heterogeneity, it includes the positive trial in its analysis and still concludes the evidence is insufficient."
+    },
+    {
+      "id": "t1_dispute_hard_422",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Does the DataVault Pro backup solution support incremental backups of PostgreSQL databases?",
+      "contexts": [
+        "DataVault Pro v8.0 Product Datasheet (2024): DataVault Pro v8.0 delivers enterprise-grade backup for all major database platforms including PostgreSQL 12-17, MySQL 8.x, Oracle 19c/21c, and SQL Server 2019-2024. PostgreSQL backup features include full, differential, and incremental backup modes with point-in-time recovery (PITR) using WAL archiving. Incremental backups capture only changed data blocks since the last backup using DataVault's proprietary block-level change tracking agent, reducing backup windows by up to 90% compared to full backups. The PostgreSQL agent supports both logical (pg_dump) and physical (pg_basebackup + WAL) backup strategies. Encryption at rest uses AES-256, and backups can target local storage, NFS, S3-compatible object stores, or DataVault Cloud.",
+        "DataVault Pro v8.0 Known Issues (KB Article #DVP-2024-0847, November 2024): PostgreSQL incremental backup is NOT supported in v8.0. The block-level change tracking agent has not been ported to PostgreSQL. Only full and differential backups are available. Customers needing incremental PostgreSQL backup should use native pg_basebackup with WAL archiving, or wait for v8.1 (scheduled Q2 2025). The product datasheet has been flagged for correction. This applies to all PostgreSQL versions (12-17). Workaround: Configure differential backups with a 24-hour retention cycle to approximate incremental behavior."
+      ],
+      "expected_mode": "disputed",
+      "description": "Product datasheet advertises PostgreSQL incremental backup support; KB article explicitly states it is NOT supported and the datasheet is flagged for correction.",
+      "rationale": "This is a direct binary contradiction from the same vendor. The datasheet says incremental PostgreSQL backup is supported; the known issues article says it is not and acknowledges the datasheet is wrong. The query asks a yes/no question and gets opposite answers from the same company's documentation."
+    },
+    {
+      "id": "t1_dispute_hard_423",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Is the Thornton Building in downtown Portland structurally safe for continued occupancy?",
+      "contexts": [
+        "Thornton Building Structural Assessment — Pacific Engineering Associates (August 2024): Pacific Engineering completed a structural evaluation of the Thornton Building at 415 SW Morrison Street, Portland, OR, including visual inspection, ground-penetrating radar, concrete core sampling, and rebar tensile testing. The reinforced concrete frame was found in satisfactory condition with no deficiencies requiring remediation. Concrete compressive strength averaged 4,200 psi against a 3,000 psi requirement. Rebar corrosion was within limits (<5% loss) in all 24 test locations. The building meets seismic code under ASCE 7-22. Pacific issued an unconditional certification for continued occupancy.",
+        "City of Portland Bureau of Development Services — Notice of Unsafe Structure (October 2024): BDS structural engineer Maria Delgado identified critical deficiencies in the Thornton Building at 415 SW Morrison Street rendering it unsafe. The inspection found active water infiltration through the parking garage ceiling causing rebar corrosion in four load-bearing columns (18-32% cross-section loss), concrete delamination on the south face of the third-floor transfer beam, and second-floor slab deflection exceeding L/180 limits. BDS issued a 60-day notice requiring remediation or vacating. Delgado noted the Pacific Engineering assessment two months earlier did not examine the garage sublevel or south-face transfer beam where the worst deterioration was found."
+      ],
+      "expected_mode": "disputed",
+      "description": "Private engineering firm certifies building as structurally safe; city inspector finds critical deficiencies and issues unsafe structure notice, noting the prior assessment missed key areas.",
+      "rationale": "Both assess the structural safety of the exact same building and reach directly opposing conclusions. One certifies it as safe; the other declares it unsafe and orders remediation or vacating. The city inspector alleges the private assessment was incomplete, but both present authoritative structural safety determinations for the same building. A building owner or tenant receives contradictory safety assessments."
+    },
+    {
+      "id": "t1_dispute_hard_424",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "What is the carbon footprint of producing one kilogram of lab-grown meat?",
+      "contexts": [
+        "Environmental Science & Technology (Vol. 58, 2024): A cradle-to-gate LCA of cultured meat at commercial scale (10,000 tonnes/year) estimated a carbon footprint of 7.5 kg CO2-eq per kg, approximately 65% lower than conventional beef (21.3 kg CO2-eq/kg). The analysis assumed bioreactors using renewable electricity (90% wind/solar), soy-based growth media, and food-grade growth factors. Energy consumption of 26 kWh/kg was the dominant emission source. The study used process data from three companies under NDA. The authors concluded cultured meat offers a clear climate advantage over conventional beef.",
+        "University of California Davis — Anticipatory LCA of Cultured Meat (2024): A comprehensive LCA found cultured meat at scale would generate 24.8 kg CO2-eq/kg — comparable to or exceeding conventional beef. The analysis modeled energy-intensive bioreactor operations (42 kWh/kg) for sterile conditions, pharmaceutical-grade growth media production (8.2 kg CO2-eq/kg), and purification requirements for cell culture inputs. Eliminating endotoxins from growth media requires pharmaceutical-grade processing that prior LCAs omitted by assuming food-grade inputs. Lead author Dr. Derrick Risner stated that optimistic LCAs systematically underestimate energy and purity requirements of mammalian cell culture at scale."
+      ],
+      "expected_mode": "disputed",
+      "description": "One LCA estimates 7.5 kg CO2-eq/kg for cultured meat (65% less than beef); another estimates 24.8 kg CO2-eq/kg (comparable to beef), with sharply different energy and purity assumptions.",
+      "rationale": "Both estimate the carbon footprint of lab-grown meat at commercial scale but arrive at figures that differ by more than 3x. The UC Davis study directly challenges the assumptions of optimistic LCAs. These are not complementary measures — they directly contradict on whether cultured meat has a climate advantage over conventional beef, which is the core claim at stake."
+    },
+    {
+      "id": "t1_dispute_hard_450",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "short_query",
+      "query": "Timeline?",
+      "contexts": [
+        "According to the project charter signed off by the steering committee on January 8th, the data migration is scheduled to complete by March 31st, with full production cutover on April 15th. The project manager confirmed these dates in the last all-hands meeting on February 1st.",
+        "The infrastructure team's capacity planning report from January 22nd indicates that the new database cluster will not be provisioned until April 10th at the earliest due to hardware procurement delays. The team lead noted in the Slack channel that this makes the March 31st migration target unrealistic and proposed a revised cutover date of May 15th."
+      ],
+      "expected_mode": "disputed",
+      "description": "Ultra-short timeline query with conflicting schedule information from different teams",
+      "rationale": "Two authoritative internal sources present contradictory timelines: the project charter says April 15th cutover while the infrastructure team says the hardware won't be ready until April 10th and proposes May 15th. The conflict is genuine and unresolved."
+    },
+    {
+      "id": "t1_dispute_hard_451",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "short_query",
+      "query": "Cause?",
+      "contexts": [
+        "The post-incident review conducted by the SRE team concluded that the 47-minute outage on January 18th was caused by a memory leak in the connection pooling library (version 3.2.1) that was deployed as part of the v2.8 release the previous day. The leak caused the application servers to exhaust available memory under sustained load.",
+        "The application development team's independent analysis attributes the outage to a misconfigured load balancer health check that was changed during the same maintenance window. Their investigation found that the health check timeout was reduced from 30 seconds to 5 seconds, causing healthy nodes to be marked as unhealthy under load and triggering a cascading failure."
+      ],
+      "expected_mode": "disputed",
+      "description": "Ultra-short root cause query with two teams providing different root cause analyses",
+      "rationale": "Two credible internal teams arrived at different root causes for the same incident. One blames a memory leak in a library, the other blames a misconfigured load balancer. Both analyses are plausible and internally consistent, creating a genuine dispute."
+    },
+    {
+      "id": "t1_dispute_hard_452",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "What is the expected revenue impact of expanding into the Southeast Asian market?",
+      "contexts": [
+        "The strategic planning team's market entry analysis for Southeast Asia, presented to the board of directors in October 2024, provides a detailed assessment of the revenue opportunity. The analysis projects that entering the five target markets (Indonesia, Thailand, Vietnam, Philippines, and Malaysia) would generate incremental revenue of $45 million to $55 million within the first 24 months of operations, ramping to $120 million to $150 million annually by Year 5. The revenue projections are based on a bottom-up model that considers addressable market size in each country, expected market share capture rates derived from the company's historical performance in analogous emerging markets, average revenue per user benchmarked against regional competitors, and customer acquisition cost assumptions validated by digital marketing agencies with local expertise. The model assumes a phased entry strategy beginning with Indonesia and Thailand in Q2 2025, followed by Vietnam and the Philippines in Q4 2025, and Malaysia in Q2 2026. The base case assumes local currency pricing at approximately 60% of the developed market price point, with premium tiers available for enterprise customers. The payback period for the initial market entry investment of $35 million is estimated at 30 to 36 months. The analysis identifies key risks including regulatory uncertainty in Indonesia's data localization requirements, competitive pressure from established local players in Thailand, and currency volatility across the region. Sensitivity analysis shows that a 20% reduction in market share assumptions would extend the payback period to approximately 48 months but would not change the positive NPV conclusion.",
+        "The finance team's independent assessment of the Southeast Asian expansion, prepared for the CFO in November 2024, reaches materially different conclusions regarding the revenue opportunity. Using a top-down methodology that begins with total addressable market sizing from industry analyst reports and applies conservative penetration rate assumptions, the finance team projects incremental revenue of $18 million to $25 million in the first 24 months, growing to $60 million to $80 million annually by Year 5. The finance team's analysis emphasizes several factors that the strategic planning team's model does not adequately account for. First, the company's historical emerging market entries have consistently achieved only 40% to 60% of initial revenue projections in the first two years due to longer-than-expected sales cycles and the need for localization beyond basic translation. Second, the competitive landscape analysis understates the strength of regional incumbents, several of whom have recently received significant venture capital funding and are aggressively expanding. Third, the pricing assumption of 60% of developed market rates may be too high for price-sensitive Southeast Asian buyers, particularly in the SMB segment which represents the majority of the addressable market. The finance team recommends a more conservative initial investment of $20 million focused on Indonesia and Thailand only, with expansion to additional markets contingent on achieving defined revenue milestones. The finance team's payback estimate under their base case is 42 to 54 months, and they note that under downside scenarios, the expansion could fail to achieve positive ROI within the five-year planning horizon."
+      ],
+      "expected_mode": "disputed",
+      "description": "Revenue projection query with two internal teams providing materially different forecasts based on different methodologies",
+      "rationale": "The strategic planning team projects $45-55M in 24 months and $120-150M by Year 5, while the finance team projects $18-25M in 24 months and $60-80M by Year 5. The methodologies differ (bottom-up vs. top-down), the assumptions conflict on market share, pricing, and competitive dynamics, and the investment recommendations diverge. This is a genuine internal dispute between two credible analyses."
+    },
+    {
+      "id": "t1_dispute_hard_453",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "Does the longitudinal study support a causal link between social media usage and adolescent depression?",
+      "contexts": [
+        "A longitudinal cohort study published in the Journal of Adolescent Health followed 3,247 participants aged 13 to 18 over a four-year period from 2019 to 2023, collecting data on social media usage patterns, mental health outcomes, and a comprehensive set of covariates including family structure, socioeconomic status, academic performance, physical activity levels, sleep quality, and pre-existing mental health conditions. The study employed ecological momentary assessment (EMA) methods, prompting participants to report their social media usage and mood states six times daily via a smartphone application, resulting in over 2.8 million individual data points. The primary analysis used multilevel structural equation modeling to assess the temporal relationship between social media usage and depressive symptom trajectories as measured by the Patient Health Questionnaire for Adolescents (PHQ-A). After adjusting for all measured confounders, the study found that increases in daily social media usage predicted subsequent increases in depressive symptoms at the next measurement occasion (standardized path coefficient = 0.14, 95% CI: 0.09-0.19, p < 0.001). The effect was moderated by gender, with stronger associations observed in female participants (coefficient = 0.21) compared to male participants (coefficient = 0.08). Sensitivity analyses using instrumental variable approaches to address potential unmeasured confounding produced consistent results. The study also found evidence of a dose-response relationship, with participants reporting more than 3 hours of daily usage showing a 2.3-fold increase in the probability of developing moderate-to-severe depressive symptoms compared to those reporting less than 1 hour. The authors conclude that the longitudinal design, temporal ordering of variables, dose-response relationship, and robustness to sensitivity analyses collectively provide strong evidence for a causal effect.",
+        "A critical commentary published in the same journal by a team of researchers from the Oxford Internet Institute challenges several aspects of the cohort study's methodology and conclusions. The commentary argues that while the standardized path coefficient of 0.14 is statistically significant given the large sample size, the effect size is small by conventional standards and explains less than 2% of the variance in depressive symptoms, which raises questions about clinical significance. The commentators note that ecological momentary assessment, while generating high-frequency data, is subject to reactive measurement effects wherein the act of repeatedly reporting social media usage may itself alter behavior and mood reporting. The commentary also highlights that the instrumental variable approach used in the sensitivity analysis relies on assumptions that are difficult to verify empirically, particularly the exclusion restriction. The commentators present a re-analysis of publicly available data from the same cohort using a specification-curve approach that systematically varies analytical decisions (covariate selection, operationalization of social media usage, choice of depression measure, and inclusion/exclusion criteria). Across 240 distinct model specifications, the effect sizes ranged from -0.03 to 0.22, with a median of 0.06, suggesting that the original finding is sensitive to analytical choices. The commentary further notes that the study cannot rule out the possibility of reverse causation occurring at timescales shorter than the measurement intervals, and that third-variable explanations related to peer relationship quality and school connectedness remain plausible. The commentators conclude that while a small association between social media usage and depressive symptoms likely exists, characterizing it as causal is premature given the current evidence."
+      ],
+      "expected_mode": "disputed",
+      "description": "Causality assessment query with original longitudinal study claiming causal evidence and a peer commentary challenging the methodology and conclusions",
+      "rationale": "The original study presents a statistically significant longitudinal association with multiple robustness checks and claims causal evidence. The commentary challenges the effect size's clinical significance, raises methodological concerns about EMA reactivity and IV assumptions, demonstrates sensitivity to analytical specifications, and argues the causal claim is premature. Both are peer-reviewed academic sources with substantive arguments, creating a genuine scientific dispute."
+    },
+    {
+      "id": "t1_dispute_hard_454",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "Is the proposed microservices migration expected to reduce or increase total infrastructure costs?",
+      "contexts": [
+        "The cloud architecture team's technical proposal for migrating the monolithic order management system to a microservices architecture includes a detailed total cost of ownership analysis covering a five-year horizon. The current monolithic application runs on a cluster of eight bare-metal servers with a fully loaded annual cost of $480,000 including hardware depreciation, colocation fees, network bandwidth, and operations staff allocation. The proposed microservices architecture would be deployed on Kubernetes running on a major cloud provider, with estimated annual infrastructure costs of $320,000 in Year 1, declining to $280,000 by Year 3 through reserved instance pricing and auto-scaling optimizations. The analysis projects annual infrastructure savings of $160,000 to $200,000 once the migration is complete and the legacy hardware is decommissioned. The architecture team argues that microservices enable granular auto-scaling that eliminates the over-provisioning inherent in the monolithic deployment, where the entire application must be scaled even when only one component experiences increased load. The proposal includes benchmarks showing that during Black Friday peak traffic, the monolithic system required all eight servers running at 85% CPU utilization, while a simulated microservices deployment would require the equivalent of only 5.2 servers worth of compute by scaling only the order processing and inventory check services. The team also projects reduced developer productivity costs through faster deployment cycles (from 2-week release trains to multiple daily deployments) and improved fault isolation that reduces the blast radius of failures.",
+        "The infrastructure operations team's cost assessment of the proposed microservices migration presents a significantly different financial picture. Their analysis accounts for costs that the architecture team's proposal does not fully address. First, the Kubernetes operational overhead is substantial: the operations team estimates that managing a production Kubernetes cluster with proper observability, security, and reliability requires 1.5 additional full-time DevOps engineers at a fully loaded cost of $225,000 each, adding $337,500 annually. Second, the observability stack required for a microservices architecture (distributed tracing, service mesh metrics, log aggregation across dozens of services) costs approximately $96,000 annually for tooling licenses alone, compared to $12,000 for the current monolithic application's monitoring. Third, inter-service network traffic in the cloud environment incurs data transfer costs that the architecture team's estimate does not include; the operations team models this at $48,000 to $72,000 annually based on projected API call volumes between services. Fourth, the migration itself requires a parallel-run period of six to nine months during which both the monolithic and microservices systems must operate simultaneously, representing a one-time cost of $240,000 to $360,000. The operations team's total five-year TCO for the microservices architecture is $3.8 million to $4.2 million, compared to $2.4 million for maintaining and modestly upgrading the existing monolithic infrastructure. The operations team recommends a modular monolith approach as an intermediate step that captures some decomposition benefits without the full operational cost of distributed systems."
+      ],
+      "expected_mode": "disputed",
+      "description": "Infrastructure cost projection query with architecture team projecting savings and operations team projecting increased costs",
+      "rationale": "The architecture team projects annual savings of $160K-$200K through reduced compute costs, while the operations team projects higher total costs by accounting for additional DevOps staffing ($337.5K), observability tooling ($96K), network transfer fees ($48-72K), and migration costs ($240-360K). Their five-year TCO estimates diverge dramatically: the architecture team implies roughly $1.6M for microservices vs $2.4M for monolith, while the operations team calculates $3.8-4.2M for microservices. The disagreement stems from fundamentally different cost scoping."
+    },
+    {
+      "id": "t1_dispute_hard_455",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "Is the building structurally safe for continued occupancy following the seismic event?",
+      "contexts": [
+        "The post-earthquake structural assessment report prepared by Thornton Engineering Associates, a licensed structural engineering firm, evaluated the commercial office building at 450 Pacific Boulevard following the magnitude 5.2 seismic event on December 3, 2024. The assessment included visual inspection of all structural elements across 12 floors, review of the original structural drawings and as-built documentation, and non-destructive testing of concrete core samples and reinforcement bar placement using ground-penetrating radar. The inspection identified hairline cracking in the concrete shear walls on floors 3 through 5, with maximum crack widths of 0.2 mm, which falls within acceptable limits per ACI 318 for seismic force-resisting elements. The steel moment frame connections on floors 8 through 12 showed no evidence of damage, weld fracture, or bolt loosening. Foundation settlement measurements using precision leveling indicated a maximum differential settlement of 4 mm, well within the tolerance specified in the original geotechnical report. The building's seismic instrumentation recorded peak floor accelerations consistent with the design-level earthquake for the structure's seismic design category. The report concludes that the building sustained only minor cosmetic damage that does not affect its structural integrity and recommends continued occupancy without restriction. The report recommends repairing the shear wall cracks using epoxy injection to restore water tightness and scheduling a follow-up inspection in six months as a precautionary measure.",
+        "An independent assessment commissioned by the building tenants' association was conducted by Pacific Seismic Consultants, a firm specializing in post-earthquake evaluation. Their assessment employed additional diagnostic techniques including ambient vibration testing to measure the building's natural frequency and compare it to pre-earthquake baseline measurements, as well as fiber-optic strain sensing on select structural elements. The ambient vibration testing revealed a 7% reduction in the building's fundamental natural frequency compared to the baseline established during the original commissioning in 2018. Pacific Seismic Consultants notes that while individual crack widths may fall within code limits, the cumulative pattern of cracking across three consecutive floors of shear walls, combined with the measured frequency reduction, suggests a modest but measurable reduction in the building's lateral stiffness. Their analysis indicates that the building's seismic performance would be degraded in a subsequent earthquake, with the effective lateral force-resisting capacity reduced by an estimated 12% to 18% relative to its original design condition. The report stops short of recommending evacuation but classifies the building as having sustained moderate structural damage under the ATC-20 rapid evaluation framework and recommends restricted occupancy: specifically, limiting floor loads on floors 3 through 5 to 75% of design capacity, prohibiting storage of heavy equipment above floor 7, and conducting a detailed seismic retrofit analysis within 90 days to determine whether strengthening of the shear wall system is required to restore the building to its original seismic performance level."
+      ],
+      "expected_mode": "disputed",
+      "description": "Building safety assessment query with two structural engineering firms reaching different conclusions about occupancy safety",
+      "rationale": "Thornton Engineering concludes the building is safe for unrestricted occupancy with only cosmetic damage, while Pacific Seismic Consultants identifies a measurable reduction in lateral stiffness (7% frequency reduction, 12-18% capacity reduction) and recommends restricted occupancy with load limitations and a retrofit study. Both are licensed professional firms using legitimate methodologies, but their diagnostic techniques and conclusions differ materially on the safety question."
+    },
+    {
+      "id": "t1_dispute_hard_500",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Should we use an ORM or write raw SQL for our data access layer?",
+      "contexts": [
+        "Architecture Review Board Decision (ARB-2024-12, Official): After evaluating both approaches for the new inventory service, the ARB recommends SQLAlchemy ORM for all data access. Rationale: 1) Type safety with mapped_column prevents runtime type errors caught in 14 incidents last quarter. 2) Migration management via Alembic provides auditable schema evolution. 3) Unit testing with in-memory SQLite reduces CI time by 60%. 4) New team members are productive 2x faster with ORM abstractions. Vote: 7-2 in favor. The two dissenting members noted performance concerns for batch operations exceeding 100K rows.\n\nAll new services MUST use SQLAlchemy unless an ARB exception is granted.",
+        "Post-Mortem: Inventory Sync Outage (INC-2024-1203, November 2024): Root cause: The inventory sync job processing 2.3M daily records through SQLAlchemy ORM created 2.3M Python objects, consuming 18GB of memory and causing OOM kills. The ORM's unit-of-work pattern issued 2.3M individual INSERT statements instead of bulk operations. Emergency fix: Rewrote the sync job using raw asyncpg with COPY FROM STDIN, reducing memory usage to 400MB and execution time from 45 minutes to 90 seconds (30x improvement). The tech lead's post-mortem recommendation: 'For any batch operation exceeding 10K rows, bypass the ORM and use raw SQL or database-native bulk loading. The ORM should be reserved for transactional CRUD operations.' This contradicts ARB-2024-12's blanket ORM mandate."
+      ],
+      "expected_mode": "disputed",
+      "description": "Official architecture board mandates ORM but a real production outage showed raw SQL was necessary, and the post-mortem explicitly contradicts the mandate",
+      "rationale": "The ARB officially mandates SQLAlchemy ORM for all data access, but a production incident proved that the ORM is unsuitable for batch operations at scale, with a 30x performance difference. The post-mortem directly contradicts the ARB mandate. These are authoritative sources within the same organization giving opposing guidance, making this a genuine dispute."
+    },
+    {
+      "id": "t1_dispute_hard_501",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Which code review tool gives the most accurate results for detecting security vulnerabilities?",
+      "contexts": [
+        "Static Analysis Tool Evaluation (Security Team Report, Q2 2024): We evaluated three SAST tools against our codebase (450K lines Python, 200K lines TypeScript). Results on a curated set of 87 known vulnerabilities:\n\n| Tool       | True Positives | False Positives | Missed | Precision | Recall |\n|------------|---------------|-----------------|--------|-----------|--------|\n| CodeGuard  | 71            | 23              | 16     | 75.5%     | 81.6%  |\n| SecScan Pro| 62            | 8               | 25     | 88.6%     | 71.3%  |\n| OpenAudit  | 78            | 145             | 9      | 35.0%     | 89.7%  |\n\nRecommendation: CodeGuard offers the best balance of precision and recall. SecScan Pro is better when false positive triage cost is high. OpenAudit catches the most issues but the noise level is impractical for CI pipelines.",
+        "DevSecOps Quarterly Review (Q3 2024): After deploying CodeGuard in CI for 3 months, developer satisfaction surveys show 67% of engineers find the tool 'noisy and disruptive,' with an average of 12 minutes spent per PR triaging false positives. Meanwhile, Team Bravo piloted SecScan Pro and reports 94% developer satisfaction with only 2 minutes of triage per PR. Team Bravo's security incident rate remained unchanged compared to teams using CodeGuard, suggesting SecScan Pro's lower recall has no practical impact on actual vulnerabilities reaching production. The DevSecOps lead now recommends SecScan Pro over CodeGuard, directly contradicting the Security Team's Q2 recommendation."
+      ],
+      "expected_mode": "disputed",
+      "description": "Security team's benchmark-based recommendation (CodeGuard) is contradicted by real-world deployment data and developer experience favoring SecScan Pro",
+      "rationale": "The Security Team recommends CodeGuard based on controlled benchmark data, but the DevSecOps team found CodeGuard impractical in real CI usage and recommends SecScan Pro based on developer productivity and equivalent real-world security outcomes. Both are authoritative internal sources reaching opposite conclusions because they optimize for different metrics (recall vs. developer experience)."
+    },
+    {
+      "id": "t1_dispute_hard_502",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Is our authentication service vulnerable to the timing attack described in CVE-2024-XXXXX?",
+      "contexts": [
+        "External Security Audit (PenTest Report, CyberShield Inc., September 2024): During the engagement, we identified that the /auth/verify endpoint in the authentication service is vulnerable to a timing-based side-channel attack. The password comparison uses Python's == operator rather than hmac.compare_digest(), allowing an attacker to determine password length and character matches by measuring response time variance. Measured timing difference: 2.3ms per correct character (statistically significant, p<0.001 over 1000 requests). Classification: HIGH severity. We strongly recommend immediate remediation.\n\nCVE reference: CVE-2024-XXXXX (pending assignment).",
+        "Engineering Team Response (Security Review, October 2024): We investigated the CyberShield finding and disagree with the HIGH severity classification. While the code does use == for comparison (confirmed), our infrastructure mitigates exploitation: 1) The Envoy proxy adds 5-50ms of random jitter to all responses. 2) Rate limiting caps /auth/verify at 5 requests per second per IP. 3) Account lockout triggers after 10 failed attempts. Our internal testing with the jitter and rate limiting active showed no statistically significant timing difference (p=0.43 over 10,000 requests). We have scheduled the fix for v2.4 (December 2024) as LOW severity. The external auditor's test bypassed the proxy layer by testing the service directly, which does not reflect production conditions."
+      ],
+      "expected_mode": "disputed",
+      "description": "External security auditor says HIGH severity vulnerability exists, engineering team says infrastructure mitigations make it LOW severity",
+      "rationale": "Both sources agree the vulnerable code exists (== instead of hmac.compare_digest). They dispute the severity: the auditor demonstrated exploitation in isolated testing (HIGH), while the engineering team argues production infrastructure (jitter, rate limiting, lockout) makes exploitation infeasible (LOW). The disagreement is about exploitability in context, not about the code defect itself."
+    },
+    {
+      "id": "t1_dispute_hard_503",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Is our React application faster after the migration to Server Components?",
+      "contexts": [
+        "Performance Benchmark Report (Frontend Platform Team, July 2024): Post-migration metrics for the dashboard application after converting 47 components to React Server Components (RSC):\n\n| Metric | Before (CSR) | After (RSC) | Change |\n|--------|-------------|-------------|--------|\n| First Contentful Paint | 1.8s | 0.9s | -50% |\n| Time to Interactive | 3.2s | 1.4s | -56% |\n| JS Bundle Size | 487KB | 213KB | -56% |\n| Lighthouse Score | 72 | 94 | +31% |\n\nTested on simulated 4G connection, mid-range device (Moto G Power). Conclusion: RSC migration delivers substantial performance improvements across all measured metrics. Recommendation: Proceed with migrating remaining 120 client components.",
+        "Production Monitoring Report (SRE Team, September 2024): Two months after the RSC migration, production observability tells a different story. Server-side metrics:\n\n| Metric | Before Migration | After Migration | Change |\n|--------|-----------------|-----------------|--------|\n| p95 Server Response Time | 45ms | 180ms | +300% |\n| Server CPU Utilization | 22% | 58% | +164% |\n| Monthly Infra Cost | $4,200 | $11,800 | +181% |\n| Error Rate (5xx) | 0.02% | 0.15% | +650% |\n\nThe RSC rendering moved computation from client browsers to our servers. While client-side metrics improved, server costs nearly tripled and reliability degraded. At current growth rate, we will need to scale from 4 to 12 server instances by Q1 2025. The SRE team recommends pausing further RSC migration until server-side performance is addressed."
+      ],
+      "expected_mode": "disputed",
+      "description": "Frontend team shows dramatic client-side improvements, SRE team shows dramatic server-side degradation from the same migration",
+      "rationale": "Both reports use real metrics from the same migration. The frontend team measured client-side performance (FCP, TTI, bundle size) and found major improvements. The SRE team measured server-side performance (response time, CPU, cost, errors) and found major degradation. Whether the application is 'faster' depends entirely on which perspective you take, and both are valid engineering concerns."
+    },
+    {
+      "id": "t1_dispute_hard_504",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "What is the correct way to migrate from MongoDB to PostgreSQL for our user data?",
+      "contexts": [
+        "Database Migration Guide (Platform Team, Version 1.0, August 2024): The recommended migration approach for user data from MongoDB to PostgreSQL:\n\n1. Create PostgreSQL schema mirroring MongoDB document structure using JSONB columns for flexible fields\n2. Run dual-write proxy: all writes go to both MongoDB and PostgreSQL simultaneously\n3. Backfill historical data using mongodump → custom ETL script → PostgreSQL COPY\n4. Verify data integrity with row-count and checksum comparison\n5. Switch reads to PostgreSQL, keep MongoDB as fallback for 30 days\n6. Decommission MongoDB\n\nEstimated timeline: 6-8 weeks. This approach preserves the flexible schema while gaining PostgreSQL's ACID guarantees. JSONB queries perform within 10% of normalized tables for our access patterns.",
+        "Database Migration Guide (Data Engineering Team, Version 1.0, September 2024): The recommended migration approach for user data from MongoDB to PostgreSQL:\n\n1. Design fully normalized PostgreSQL schema: users, user_profiles, user_preferences, user_addresses (4th normal form)\n2. Build CDC pipeline from MongoDB oplog to Kafka to PostgreSQL using Debezium\n3. Run shadow traffic: duplicate all read queries to PostgreSQL, compare results\n4. Gradual traffic shift: 1% → 10% → 50% → 100% over 4 weeks\n5. Maintain MongoDB read replica for 90 days post-migration\n\nEstimated timeline: 12-16 weeks. The JSONB approach from the Platform Team's guide is explicitly NOT recommended: it replicates MongoDB's schema-less problems in PostgreSQL and negates the benefits of relational modeling. Proper normalization enables JOIN-based queries, foreign key constraints, and index optimization that JSONB cannot match."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two internal teams published conflicting migration guides with fundamentally different approaches (JSONB vs. normalized) and opposing technical rationale",
+      "rationale": "The Platform Team recommends JSONB columns for flexibility and faster migration (6-8 weeks), while the Data Engineering Team recommends full normalization for relational benefits (12-16 weeks) and explicitly rejects the JSONB approach. Both are official internal guides from authoritative teams, giving directly contradictory technical recommendations with reasoned justifications."
+    },
+    {
+      "id": "t1_dispute_hard_505",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Which is better for serverless APIs, AWS Lambda or Google Cloud Functions?",
+      "contexts": [
+        "Cloud Platform Evaluation (DevOps Team, March 2024): We migrated our notification API from AWS Lambda to Google Cloud Functions (GCF) 2nd gen and measured the impact over 60 days:\n\n| Metric | AWS Lambda | GCF 2nd Gen | Winner |\n|--------|-----------|-------------|--------|\n| Cold Start (256MB) | 890ms | 420ms | GCF |\n| Cold Start (1GB) | 1,200ms | 680ms | GCF |\n| Warm Latency p50 | 12ms | 18ms | Lambda |\n| Warm Latency p99 | 45ms | 82ms | Lambda |\n| Monthly Cost (5M invocations) | $48 | $52 | Lambda |\n| Deploy Time | 45s | 22s | GCF |\n| Concurrency Scaling | 3,000 burst | 1,000 burst | Lambda |\n\nConclusion: AWS Lambda wins for latency-sensitive, high-concurrency workloads. GCF wins for developer experience and cold-start-sensitive use cases. For our notification API (bursty, latency-tolerant), GCF was the better fit.",
+        "Cloud Platform Evaluation (Backend Team, August 2024): We compared AWS Lambda and Google Cloud Functions for our real-time pricing API (latency-critical, sustained traffic):\n\nAWS Lambda issues encountered: 1) Provisioned concurrency costs $18/day per 100 instances. 2) VPC cold starts added 2-6 seconds (unacceptable). 3) Lambda Layers dependency management was fragile. 4) CloudWatch logging costs exceeded compute costs.\n\nGCF advantages: 1) Cloud Run backing means min-instances stay warm ($0.50/day per instance). 2) No VPC cold start penalty. 3) Built-in structured logging at no extra cost. 4) Revision-based traffic splitting for canary deployments.\n\nConclusion: GCF is definitively superior for production serverless APIs. Lambda's pricing model and VPC limitations make it unsuitable for latency-critical services. We recommend standardizing on GCF."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two teams evaluated the same platforms but reached different conclusions because they tested different workload profiles",
+      "rationale": "The DevOps team found Lambda superior for warm latency and concurrency scaling, while the Backend team found GCF superior due to VPC cold start issues and operational costs. Both are internal evaluations with real data, but they tested different workload patterns (bursty/tolerant vs. sustained/latency-critical). The contradictory conclusions reflect genuine disagreement about which platform is 'better.'"
+    },
+    {
+      "id": "t1_dispute_hard_507",
+      "category": "dispute",
+      "difficulty": "hard",
+      "subcategory": "opposing_conclusions",
+      "query": "Everyone agrees that remote work is more productive than in-office work, right?",
+      "contexts": [
+        "Stanford Remote Work Study (Professor Nicholas Bloom, Updated 2024): A longitudinal study tracking 1,600 remote workers at a large technology company found that fully remote workers were 13% more productive than in-office counterparts, measured by lines of code committed, tickets resolved, and customer satisfaction scores. However, the study also found that hybrid workers (3 days office, 2 days remote) were 4% MORE productive than fully remote workers, suggesting the optimal arrangement is not fully remote. The study controlled for self-selection bias by randomly assigning work arrangements.",
+        "Return-to-Office Analysis (Internal People Analytics, October 2024): Our analysis of 3,200 employees across engineering, sales, and operations after the March 2024 return-to-office mandate (4 days/week) shows mixed results:\n\n| Department | Productivity Change | Attrition Change |\n|------------|-------------------|------------------|\n| Engineering | -7% (measured by sprint velocity) | +12% |\n| Sales | +15% (measured by quota attainment) | -3% |\n| Operations | +2% (measured by ticket throughput) | +1% |\n\nEngineering productivity dropped significantly, with senior engineers disproportionately leaving (18% attrition vs. 8% for junior). Sales productivity increased, attributed to in-person collaboration and spontaneous deal strategy sessions. The CPO and CTO disagree on interpretation: CPO advocates for department-specific policies; CTO insists uniform policy is necessary for culture."
+      ],
+      "expected_mode": "disputed",
+      "description": "The leading question claims universal agreement, but evidence shows contradictory results by department and a direct internal leadership disagreement",
+      "rationale": "Far from universal agreement, the evidence shows: 1) The Stanford study found hybrid beats fully remote, contradicting the 'remote is best' premise. 2) Internal data shows remote was better for engineering but worse for sales. 3) The CPO and CTO explicitly disagree on policy. The 'everyone agrees' framing is directly contradicted by genuine dispute in both the research and the organization's own leadership."
     }
   ]
 }

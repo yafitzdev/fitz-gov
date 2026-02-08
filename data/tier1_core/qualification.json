@@ -4843,6 +4843,560 @@
       "rationale": "Redesign, press mention, and seasonality all occurred - can't attribute improvement to redesign alone",
       "original_id": "qualify_medium_015",
       "original_subcategory": "causal_without_evidence"
+    },
+    {
+      "id": "t1_dispute_hard_407",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "methodology_difference",
+      "query": "What percentage of plastic waste is actually recycled in the United States?",
+      "contexts": [
+        "U.S. Environmental Protection Agency Advancing Sustainable Materials Management Report (2024): The EPA reports that 5.3% of post-consumer plastic waste generated in the United States was recycled in 2023. This figure is calculated by dividing the tonnage of plastic entering domestic material recovery facilities that was successfully processed into recycled feedstock (2.7 million tons) by total plastic waste generated (51.0 million tons). The methodology counts only plastic that completed the recycling process and was sold as recycled resin or feedstock to manufacturers. Plastic collected for recycling but subsequently rejected, contaminated, or exported is not counted as recycled. The EPA considers this the most conservative and accurate measure of actual plastic recycling.",
+        "American Chemistry Council Plastics Recycling Report (2024): The U.S. plastics recycling rate reached 13.7% in 2023, according to data compiled from MRF operators, reclaimers, and export documentation. The ACC methodology counts all post-consumer plastic that enters the recycling stream — including material collected curbside and delivered to MRFs, plastic exported for recycling to certified facilities, and chemical/advanced recycling inputs. The 13.7% rate includes 2.7 million tons of mechanical recycling, 1.8 million tons of verified export recycling, and 2.5 million tons processed through pyrolysis and other chemical recycling pathways. ACC President Chris Jahn stated that excluding chemical recycling and verified exports dramatically understates the industry's progress."
+      ],
+      "expected_mode": "qualified",
+      "description": "EPA says 5.3% of US plastic is recycled; the American Chemistry Council says 13.7% for the same year, counting chemical recycling and exports.",
+      "rationale": "Both report the US plastic recycling rate for 2023 and give sharply different numbers. The methodological difference is clear (what counts as recycled), but the query asks for a single percentage and gets 5.3% vs 13.7%. Both present their figure as the authoritative answer. The gap is not a rounding difference — it represents fundamentally different claims about recycling effectiveness.",
+      "original_category": "dispute",
+      "original_expected_mode": "disputed",
+      "relabel_reason": "EPA vs ACC use transparently different definitions of 'recycled'; structurally identical to qualified methodology_difference cases"
+    },
+    {
+      "id": "t1_qualify_hard_800",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "methodology_difference",
+      "query": "How much carbon does the Amazon rainforest absorb annually?",
+      "contexts": [
+        "Nature Climate Change (Vol. 14, 2024): A bottom-up analysis using 487 permanent forest inventory plots across the Brazilian Amazon estimated net carbon uptake of 1.06 billion tonnes of CO2 per year for the period 2019-2023. The method measures tree growth, mortality, and decomposition directly in the field, then scales to the full basin using remote sensing of forest cover. Plot-level measurements showed intact forests absorbing 2.4 tonnes of carbon per hectare per year on average, though with high spatial variability (range: 0.8-4.1 tC/ha/yr). The study excluded contributions from soil carbon, understory vegetation, and coarse woody debris, focusing exclusively on aboveground live tree biomass changes.",
+        "Global Carbon Project Annual Assessment (2024): Top-down atmospheric inversion models constrained by OCO-2 satellite column CO2 measurements indicate the Amazon basin was approximately carbon-neutral in 2023, with a net flux of +0.12 billion tonnes CO2 (a small net source). The atmospheric approach captures all carbon exchange including soil respiration, fire emissions, wetland methane, and lateral carbon transport through rivers — fluxes that ground-based inventory plots cannot measure. The divergence from inventory-based estimates reflects that while intact forest trees continue growing, emissions from degradation, edge effects, drought stress, and fire in non-intact areas largely offset this uptake. The inversion ensemble included 12 independent modeling groups."
+      ],
+      "expected_mode": "qualified",
+      "description": "Bottom-up inventory says Amazon absorbs 1.06 Gt CO2/yr; top-down atmospheric inversion says it is roughly carbon-neutral. Different methods measure different components.",
+      "rationale": "The difference is explained by methodology: inventory plots measure only live tree biomass in intact forests, while atmospheric inversions capture ALL carbon fluxes including fire, soil, and degradation. Both are correct within their scope. The inventory shows trees are still growing; the atmosphere shows total basin flux is near zero. These are complementary measurements of different components, not conflicting claims about the same thing."
+    },
+    {
+      "id": "t1_qualify_hard_801",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "different_aspects",
+      "query": "How effective is the Stratos language learning app?",
+      "contexts": [
+        "Journal of Educational Technology Research (Vol. 58, 2024): A controlled study of 420 university students using the Stratos app for Spanish acquisition over one semester found that Stratos users scored 34% higher on vocabulary recognition tests (p<0.001) and completed 2.8x more practice sessions than the textbook-only control group. The gamification elements — streak tracking, leaderboards, and XP rewards — drove engagement metrics well above industry benchmarks, with 72% of users maintaining daily practice at week 12 versus a typical 23% retention rate for language apps. The study noted Stratos as exceptionally effective for building receptive vocabulary and maintaining learner motivation.",
+        "Applied Linguistics Quarterly (Vol. 41, Issue 3, 2024): An assessment of conversational proficiency among 380 adult learners using Stratos for 6+ months found that only 14% achieved CEFR B1 (intermediate) speaking proficiency, compared to 61% of students in traditional classroom instruction matched for total study hours. Stratos users showed characteristic deficits in spontaneous speech production, grammatical accuracy in unscripted contexts, and pragmatic competence. Error analysis revealed heavy reliance on formulaic chunks without productive grammar internalization. Dr. Kenji Watanabe concluded that while Stratos excels at recognition-based knowledge, it fails to develop the procedural skills required for real-world communication."
+      ],
+      "expected_mode": "qualified",
+      "description": "One study finds Stratos highly effective for vocabulary and engagement; another finds it poor for conversational proficiency and speaking skills.",
+      "rationale": "These sources evaluate different aspects of the same app. One measures vocabulary recognition and engagement (where Stratos excels); the other measures speaking proficiency and communicative competence (where Stratos falls short). Both findings can be simultaneously true — the app is effective for some skills and ineffective for others. This calls for qualification, not dispute."
+    },
+    {
+      "id": "t1_qualify_hard_802",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "scope_condition",
+      "query": "Is the Orion electric SUV safe?",
+      "contexts": [
+        "Euro NCAP Safety Rating Report — Orion EV SUV (2024): The Orion electric SUV achieved a 5-star Euro NCAP safety rating with scores of 94% for adult occupant protection, 89% for child occupant protection, 82% for vulnerable road users, and 78% for safety assist systems. The vehicle's rigid battery floor structure provided exceptional side-impact performance, with intrusion limited to 3.2cm at the B-pillar. The autonomous emergency braking system detected pedestrians with 96% accuracy in daylight and 81% in darkness. Euro NCAP chief engineer Michiel van Ratingen described the Orion as one of the safest SUVs tested in 2024.",
+        "National Highway Traffic Safety Administration Recall Notice NHTSA-2024-0847: NHTSA has issued a recall for 42,000 Orion electric SUVs (model years 2023-2024) due to a defect in the high-voltage battery management system that can cause thermal runaway during DC fast charging in ambient temperatures exceeding 38°C. Three confirmed fire incidents have been reported, including one that resulted in total vehicle loss in a residential garage. Until the software update is applied, NHTSA advises owners not to use DC fast chargers when the outside temperature exceeds 35°C and not to charge the vehicle in enclosed structures. The root cause is a firmware error that fails to reduce charging current when cell temperature differential exceeds 8°C across the battery module."
+      ],
+      "expected_mode": "qualified",
+      "description": "Euro NCAP gives the Orion a 5-star crash safety rating; NHTSA recalls it for battery fires during fast charging.",
+      "rationale": "These address different dimensions of vehicle safety. The Euro NCAP rating covers crashworthiness (structural protection in collisions) — the Orion excels. The NHTSA recall covers a specific electrical/thermal safety defect. Both are true simultaneously: the car is exceptionally safe in crashes AND has a dangerous battery defect. The answer requires qualification about which aspect of safety is being discussed."
+    },
+    {
+      "id": "t1_qualify_hard_803",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "hedged_evidence",
+      "query": "What is the ROI of corporate diversity training programs?",
+      "contexts": [
+        "McKinsey & Company Report — Diversity Wins: How Inclusion Matters (2024 Update): Analysis of 1,265 large companies across 23 countries found that organizations in the top quartile for ethnic and cultural diversity on executive teams were 39% more likely to achieve above-average financial performance than those in the bottom quartile. Companies with structured diversity training programs reported 22% higher employee retention among underrepresented groups and a 15-point improvement in inclusion index scores. McKinsey estimates that for a mid-sized firm, the ROI of comprehensive D&I programs including training, mentoring, and sponsorship ranges from 3.2x to 5.8x over a five-year horizon.",
+        "Academy of Management Journal (Vol. 67, Issue 4, 2024): A meta-analysis of 492 studies spanning 1996-2023 found that mandatory diversity training had no statistically significant effect on the representation of women or minorities in management positions (d=0.02, 95% CI: -0.04 to 0.08). Voluntary training programs showed a modest positive effect (d=0.11) that was statistically significant but practically small. The authors note that training effects on explicit attitudes decayed to baseline within 2-4 weeks in 78% of studies with follow-up measurements. The meta-analysis distinguishes between training as an isolated intervention versus training embedded within broader organizational change initiatives, finding meaningful effects only in the latter context."
+      ],
+      "expected_mode": "qualified",
+      "description": "McKinsey reports strong ROI (3.2-5.8x) from comprehensive D&I programs; meta-analysis finds training alone has no significant effect on representation.",
+      "rationale": "The McKinsey report measures outcomes of comprehensive D&I programs (training + mentoring + sponsorship + structural changes); the meta-analysis isolates training as a standalone intervention. The meta-analysis itself notes that training within broader initiatives does show effects. These are not contradictory — they measure different scopes of intervention. The answer requires qualification about what 'diversity training' encompasses."
+    },
+    {
+      "id": "t1_qualify_hard_804",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "temporal_uncertainty",
+      "query": "What is the unemployment rate in Argentina?",
+      "contexts": [
+        "INDEC (Argentina National Statistics Institute) — Labor Market Report Q2 2024: The unemployment rate in urban areas of Argentina was 7.6% for the second quarter of 2024, based on the Permanent Household Survey (EPH) covering 31 urban agglomerates representing approximately 71% of the national urban population. The rate represents a decrease from 8.4% in Q2 2023. Employment growth was concentrated in the informal sector, which accounted for 48.2% of all employment. Youth unemployment (ages 14-29) remained elevated at 16.3%. The EPH methodology follows ILO guidelines, counting as employed anyone who worked at least one hour for pay during the reference week.",
+        "International Monetary Fund World Economic Outlook — Argentina (October 2024): The IMF estimates Argentina's unemployment rate at 11.8% for 2024, incorporating the economic contraction resulting from the fiscal consolidation program initiated in December 2023. The IMF methodology adjusts for underemployment (workers employed fewer than 35 hours/week who seek additional work) and for the estimated 2.1 million workers who left the labor force since Q4 2023, many of whom would be counted as unemployed under broader definitions. The IMF projects unemployment will peak at 13.2% in Q1 2025 before declining as the economy stabilizes. The report notes that INDEC's headline rate understates labor market weakness due to the narrow ILO definition of unemployment."
+      ],
+      "expected_mode": "qualified",
+      "description": "INDEC official rate is 7.6% using standard ILO methodology; IMF estimates 11.8% after adjusting for underemployment and labor force exits.",
+      "rationale": "The difference is clearly explained by methodology. INDEC uses the standard ILO definition (worked 1+ hour = employed); the IMF adjusts for underemployment and discouraged workers. Both explicitly state their methodology and acknowledge the other's approach. These are different measures of labor market health, not competing claims about the same metric. The answer needs qualification about which definition of unemployment is used."
+    },
+    {
+      "id": "t1_qualify_hard_806",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "methodology_difference",
+      "query": "How many people are affected by food insecurity in the United States?",
+      "contexts": [
+        "USDA Economic Research Service — Household Food Security in the United States, 2023: The USDA reports that 47.4 million people lived in food-insecure households in 2023, representing 14.4% of the U.S. population. Food insecurity is measured via the 18-item Core Food Security Module administered as part of the December Current Population Survey supplement. A household is classified as food-insecure if it affirms three or more conditions indicating difficulty meeting food needs due to insufficient resources. The USDA notes that food insecurity is an economic and social condition, not a measure of dietary quality or nutritional status. Very low food security (previously called food insecurity with hunger) affected 18.3 million people in 6.2% of households.",
+        "Feeding America Map the Meal Gap Study (2024): Feeding America estimates that 54.2 million people in the United States experienced food insecurity in 2023, including 16.2 million children. The Map the Meal Gap methodology combines USDA CPS data with county-level estimates derived from American Community Survey indicators including poverty rates, unemployment, median income, homeownership, and disability rates. The higher figure reflects the model's inclusion of food-insecure individuals living in otherwise food-secure households (intra-household food insecurity) and its use of local cost-of-meals adjustments that capture regional variation in food costs. Feeding America notes its methodology captures populations that may be missed by the household-level CPS survey."
+      ],
+      "expected_mode": "qualified",
+      "description": "USDA reports 47.4 million food-insecure; Feeding America estimates 54.2 million using a model that captures intra-household insecurity and regional cost adjustments.",
+      "rationale": "Both measure food insecurity in the US for the same year but use different methodological scopes. The USDA measures at the household level from a direct survey; Feeding America uses modeling that captures additional dimensions (intra-household variation, regional costs). Both clearly explain their methodology and the reason for the gap. This is a methodological difference, not a factual dispute — the answer depends on which definition and scope you use."
+    },
+    {
+      "id": "t1_qualify_hard_807",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "different_aspects",
+      "query": "How reliable is the Atlas cloud platform?",
+      "contexts": [
+        "Atlas Cloud Platform Status Page — Annual Reliability Report (2024): Atlas achieved 99.982% uptime across all global regions in calendar year 2024, corresponding to 94 minutes of cumulative downtime. Core compute and storage services maintained 99.995% availability. Three significant incidents occurred: a 41-minute compute outage in US-East-1 (March), a 28-minute storage degradation in EU-West-2 (July), and a 25-minute networking issue in AP-Southeast-1 (November). All were resolved within the 60-minute target MTTR. Atlas's SLA guarantees 99.95% monthly uptime and no customer received SLA credits in 2024.",
+        "Gartner Peer Insights — Atlas Cloud Platform Reviews (Q4 2024): Analysis of 342 verified enterprise reviews shows a mean reliability score of 2.8/5.0, with 38% citing reliability concerns. Common complaints include unpredictable API latency spikes (p99 of 3-12 seconds, 2-4 times daily), silent data consistency issues where eventually-consistent reads return stale data up to 45 seconds after writes, and SDK retry storms during failovers cascading into application timeouts. One financial services reviewer noted: 'The platform is technically up but functionally unreliable for latency-sensitive workloads.'"
+      ],
+      "expected_mode": "qualified",
+      "description": "Atlas reports 99.982% uptime; customer reviews rate reliability 2.8/5 citing latency spikes, consistency issues, and operational turbulence despite high uptime.",
+      "rationale": "The status page measures availability (is the platform responding?); customer reviews assess operational reliability (does it perform predictably?). Both can be true: the platform rarely goes fully down but frequently exhibits performance degradation that impacts users. These are different dimensions of reliability, not contradictory claims. The answer requires qualification about which aspect of reliability is being evaluated."
+    },
+    {
+      "id": "t1_qualify_hard_809",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "hedged_evidence",
+      "query": "What is the market share of ARM-based processors in data center servers?",
+      "contexts": [
+        "IDC Worldwide Server Market Tracker (Q3 2024): ARM-based processors accounted for 7.2% of global server shipments by unit volume in Q3 2024, up from 4.8% in Q3 2023. The figure represents physical servers shipped with ARM-architecture CPUs including AWS Graviton, Ampere Altra, and Nvidia Grace. IDC notes that x86 processors from Intel and AMD continue to dominate with a combined 91.3% unit share. The ARM share has grown steadily from under 1% in 2020 but remains a niche segment concentrated primarily among hyperscale cloud providers. IDC projects ARM server unit share will reach 12-15% by 2027.",
+        "Counterpoint Research Cloud Infrastructure Report (Q3 2024): ARM architecture captured approximately 18.4% of cloud compute instances deployed globally in Q3 2024, as measured by active virtual machine instances across the top 20 cloud providers. AWS Graviton instances alone account for roughly 40% of all new EC2 instances launched. When measured by compute hours consumed rather than physical server count, ARM's share rises to an estimated 22% due to higher average utilization of ARM instances. Counterpoint notes that the discrepancy between unit shipments and compute share reflects ARM's concentration in hyperscale environments where each physical server runs more workloads than a typical enterprise server."
+      ],
+      "expected_mode": "qualified",
+      "description": "IDC reports 7.2% ARM share by server unit shipments; Counterpoint reports 18.4% by cloud compute instances deployed, or 22% by compute hours.",
+      "rationale": "Both sources measure ARM's presence in data centers but using entirely different metrics. IDC counts physical servers shipped; Counterpoint counts cloud VM instances deployed. The gap is fully explained by the measurement methodology — ARM servers run more VMs per unit. Both explicitly state their metric and acknowledge the difference. This requires qualification about what 'market share' means, not dispute resolution."
+    },
+    {
+      "id": "t1_qualify_hard_810",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "different_aspects",
+      "query": "Is the Vextra programming language ready for production use?",
+      "contexts": [
+        "Vextra Language Foundation Annual Report (2024): The Vextra language reached its 1.0 stable release in March 2024, with a comprehensive standard library covering HTTP, cryptography, JSON/XML parsing, database connectivity, and async I/O. The compiler has been formally verified to produce correct output for all programs conforming to the language specification, using the Coq proof assistant. Benchmark results show Vextra programs achieve 92-97% of equivalent C++ performance on compute-intensive workloads. The package ecosystem grew to 12,400 published libraries on VexPkg, and three Fortune 500 companies (including a major bank) have Vextra services in production. Memory safety is guaranteed by the type system without garbage collection pauses.",
+        "Stack Overflow Developer Survey — Emerging Languages Section (2024): Vextra ranked 74th in adoption among professional developers, with only 0.3% reporting regular use. Developer satisfaction was high among users (4.2/5) but the most common complaint was difficulty hiring: 89% of Vextra-using teams reported that candidate availability was their top challenge. The ecosystem gap analysis found that Vextra lacked mature equivalents for 67% of the top 100 most-downloaded Python and JavaScript libraries, with particular gaps in machine learning, data visualization, and frontend web frameworks. Debugging tooling was rated poor by 62% of respondents, with IDE support limited to basic syntax highlighting in VS Code and JetBrains products."
+      ],
+      "expected_mode": "qualified",
+      "description": "Foundation report highlights language maturity, formal verification, and Fortune 500 adoption; developer survey reveals tiny adoption, hiring difficulties, and ecosystem gaps.",
+      "rationale": "Both assessments can be simultaneously true. The language is technically mature and performant (ready in a technical sense) but has low adoption, hiring challenges, and ecosystem gaps (not ready in a practical sense). These are different dimensions of production readiness — one measures language capability, the other measures ecosystem and workforce maturity. The answer depends on which dimension matters to the asker."
+    },
+    {
+      "id": "t1_qualify_hard_811",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "methodology_difference",
+      "query": "What is the poverty rate among elderly Americans?",
+      "contexts": [
+        "U.S. Census Bureau Current Population Survey — Income and Poverty Report (2024): The official poverty rate for Americans aged 65 and older was 10.7% in 2023, representing 6.2 million individuals. The official poverty measure (OPM) uses income thresholds based on pre-tax cash income including Social Security benefits, pensions, and investment income. For an elderly individual living alone, the poverty threshold was $15,060. The Census Bureau notes that the elderly poverty rate has declined substantially from 35.2% in 1959, largely due to the expansion of Social Security benefits and cost-of-living adjustments. The 2023 rate represents a slight increase from 10.3% in 2022, attributed to the expiration of pandemic-era supplemental benefits.",
+        "U.S. Census Bureau Supplemental Poverty Measure Report (2024): Under the Supplemental Poverty Measure (SPM), the poverty rate for Americans 65 and older was 14.1% in 2023, or 8.1 million individuals. The SPM adjusts for geographic variation in housing costs, subtracts out-of-pocket medical expenses (which averaged $6,800 annually for elderly households), and accounts for in-kind benefits like SNAP and housing subsidies. While the SPM adds government benefits as income (reducing poverty for families with children), it subtracts medical costs that disproportionately burden the elderly, resulting in a higher elderly poverty rate than the OPM. The Census Bureau publishes both measures annually and considers them complementary."
+      ],
+      "expected_mode": "qualified",
+      "description": "Official poverty measure shows 10.7% elderly poverty; Supplemental Poverty Measure shows 14.1% for the same year, differing due to medical cost treatment.",
+      "rationale": "Both figures come from the same agency (Census Bureau) for the same population and year. The difference is entirely methodological: the SPM subtracts medical expenses that burden the elderly, revealing higher effective poverty. The Census Bureau itself publishes both and calls them complementary. This is a textbook case of methodology difference requiring qualification, not dispute."
+    },
+    {
+      "id": "t1_qualify_hard_812",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "scope_condition",
+      "query": "Does remote work reduce employee productivity?",
+      "contexts": [
+        "Stanford Institute for Economic Policy Research Working Paper (2024): A study of 4,200 software engineers at a Fortune 100 technology company found that fully remote workers produced 18% more code commits, resolved 12% more tickets, and had 7% fewer critical bugs per commit compared to their in-office counterparts over a 14-month period, after controlling for seniority, team size, and project complexity. The productivity premium was largest for senior engineers (22% more commits) and those with dedicated home offices. The researchers had access to complete version control and project management data, enabling objective output measurement without self-report bias.",
+        "Harvard Business Review Research Report (2024): A multi-firm study across 186 companies in professional services, marketing, and consulting found that fully remote teams scored 24% lower on cross-functional innovation metrics (measured by novel product launches and patent co-inventions across departments), took 31% longer to onboard new hires to full productivity, and showed 19% lower scores on 360-degree collaboration assessments. The effects were strongest for roles requiring unstructured creative collaboration and weakest for roles with well-defined individual deliverables. The study measured team-level and organizational-level outcomes over 2 years using a difference-in-differences design comparing pre-pandemic, hybrid, and fully remote periods."
+      ],
+      "expected_mode": "qualified",
+      "description": "Stanford finds remote software engineers 18% more productive on code output; HBR finds remote professional services teams 24% lower on cross-functional innovation.",
+      "rationale": "These measure different types of productivity in different contexts. Individual coding output in tech (where tasks are well-defined and independently executable) improves remotely. Cross-functional innovation and collaboration in professional services (where unstructured interaction drives value) suffers remotely. Both findings can be simultaneously true because they measure different aspects of productivity in different industries. Qualification is needed."
+    },
+    {
+      "id": "t1_qualify_hard_813",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "hedged_evidence",
+      "query": "What is the failure rate of dental implants?",
+      "contexts": [
+        "Journal of Dental Research (Vol. 103, 2024): A prospective multicenter study following 8,240 implants placed by board-certified periodontists and oral surgeons at academic medical centers found a 10-year cumulative survival rate of 96.8% (failure rate 3.2%). Failures were defined as implant removal or unresolvable peri-implant bone loss exceeding 50% of implant length. Risk factors for failure included smoking (HR 2.4), uncontrolled diabetes (HR 1.9), and posterior mandible placement (HR 1.3). The study population was screened for adequate bone volume and excluded patients with uncontrolled periodontal disease or insufficient bone for standard-diameter implants.",
+        "British Dental Journal Community Practice Audit (2024): A retrospective audit of 14,600 implants placed across 340 general dental practices in England found a 10-year cumulative failure rate of 11.3%. The higher failure rate compared to specialist literature was attributed to the inclusion of all practitioner skill levels, patients with comorbidities typically excluded from research cohorts, and inconsistent maintenance compliance (only 34% of patients attended recommended annual reviews). The audit authors emphasized that real-world failure rates in community practice settings substantially exceed those reported in controlled research environments and should be communicated to patients during informed consent."
+      ],
+      "expected_mode": "qualified",
+      "description": "Academic specialist study reports 3.2% failure at 10 years; community practice audit finds 11.3% failure at 10 years in general dentistry settings.",
+      "rationale": "Both report dental implant failure rates at the same timeframe but in very different clinical settings. The academic study reflects best-case outcomes by specialists with screened patients; the community audit reflects real-world outcomes across all practitioner skill levels and patient populations. The gap is fully explained by the scope difference (controlled specialist setting vs general practice). Both sources acknowledge this distinction. The answer requires qualification about the clinical context."
+    },
+    {
+      "id": "t1_qualify_hard_814",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "temporal_uncertainty",
+      "query": "What is the average home price in Austin, Texas?",
+      "contexts": [
+        "Austin Board of Realtors Monthly Market Report (June 2024): The median home price in the Austin-Round Rock-Georgetown MSA was $564,000 in June 2024, a 2.3% increase from June 2023. The average sale price was $612,400. Active listings rose to 8,200, representing 4.1 months of inventory — the highest level since 2019. Days on market averaged 52, up from 38 in June 2023. The data covers all residential property types (single-family, condo, townhome) recorded through Austin MLS. The market showed signs of normalization after the 2021-2022 price surge, with sellers accepting an average of 96.2% of asking price.",
+        "Zillow Home Value Index — Austin, TX (December 2024): Zillow's Home Value Index for the Austin metro area was $487,300 as of December 2024, reflecting a 5.8% decline from the June 2024 peak. The ZHVI measures the typical home value using Zillow's proprietary automated valuation model (AVM), which estimates the value of all homes including those not currently for sale. The ZHVI methodology weights toward the 35th-65th percentile to represent a typical home, excluding luxury and entry-level segments that skew average-based metrics. Zillow's forecast model projected a further 2.1% decline over the following 12 months based on rising inventory, mortgage rates above 7%, and continued inbound migration slowdown."
+      ],
+      "expected_mode": "qualified",
+      "description": "ABR reports median sale price of $564K in June 2024; Zillow shows typical home value of $487K in December 2024 — different time points and measurement approaches.",
+      "rationale": "The difference is explained by both timing (June vs December, with a documented decline between) and methodology (actual sale prices of transacted homes vs AVM estimates of all homes). The ABR measures what homes sold for; Zillow estimates what homes are worth. These are complementary metrics at different time points, not contradictory claims. Qualification is needed about which metric and time period."
+    },
+    {
+      "id": "t1_dispute_hard_419",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "methodology_difference",
+      "query": "What is the gender pay gap in the United Kingdom?",
+      "contexts": [
+        "Office for National Statistics Annual Survey of Hours and Earnings (2024): The ONS reports a median gender pay gap of 7.7% for full-time employees in the UK for tax year 2023-2024, meaning women's median hourly pay was 7.7% lower than men's. This compares median hourly earnings excluding overtime for full-time employees working at least 30 hours per week. The gap has narrowed from 9.4% in 2019. The ONS notes the figure does not adjust for occupation, industry, hours worked, or seniority differences between men and women.",
+        "Fawcett Society Equal Pay Report (2024): The Fawcett Society calculates the true gender pay gap at 24.3% when measured as the difference in total annual earnings between all working-age men and women, including part-time work, career breaks, unpaid care work penalties, and occupational segregation effects. The Society uses Labour Force Survey data to capture the lifetime earnings impact of gendered work patterns. Director Jemima Olchawski stated that the ONS 7.7% figure gives a dangerously misleading impression of progress and obscures the majority of gender pay inequality by excluding part-time workers."
+      ],
+      "expected_mode": "qualified",
+      "description": "ONS reports 7.7% gender pay gap for full-time workers; Fawcett Society reports 24.3% including all earnings impacts.",
+      "rationale": "Both report 'the gender pay gap' in the UK but arrive at dramatically different figures. The Fawcett Society explicitly disputes the ONS methodology as misleading. Unlike complementary methodological differences, here one source directly attacks the other's answer as wrong and dangerously misleading. The query asks for a single metric and gets two irreconcilable answers where one source claims the other's answer is incorrect.",
+      "original_category": "dispute",
+      "original_expected_mode": "disputed",
+      "relabel_reason": "ONS vs Fawcett Society measure different metrics (median hourly FT vs total annual all-workers); policy disagreement, not factual dispute"
+    },
+    {
+      "id": "t1_abstain_hard_867",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "Compliance?",
+      "contexts": [
+        "Our engineering team has adopted a trunk-based development workflow with short-lived feature branches. All pull requests require at least two approvals before merging. The CI/CD pipeline runs unit tests, integration tests, and static analysis on every commit. Deployment to staging is automatic on merge to main, while production deployments require manual approval from a team lead. We use feature flags extensively to decouple deployment from release. The monitoring stack includes Prometheus for metrics, Grafana for dashboards, and PagerDuty for alerting. On-call rotations follow a weekly schedule with primary and secondary responders."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ultra-short regulatory query with context about software engineering practices",
+      "rationale": "The query likely asks about regulatory or legal compliance, but the context describes software development workflows and DevOps practices. While these could loosely relate to SOC2 compliance, the context contains no regulatory, legal, or compliance framework information.",
+      "original_category": "abstention",
+      "original_expected_mode": "abstain",
+      "relabel_reason": "Engineering practices (CI/CD, code review, monitoring) ARE compliance controls under SOC 2/ISO 27001; context is relevant but needs framework qualification"
+    },
+    {
+      "id": "t1_qualify_hard_850",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "short_query",
+      "query": "Status?",
+      "contexts": [
+        "Project Aurora is currently in the integration testing phase. The backend services passed all unit tests as of last Friday, but the frontend team reported three blocking issues related to the new authentication flow. The deployment to the staging environment has been postponed until these issues are resolved. No updated ETA has been communicated by the frontend lead."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ultra-short status query with partial project status information",
+      "rationale": "The context provides partial status information - we know about testing phase and blocking issues, but the overall project timeline, budget status, and delivery ETA are missing. The answer should be qualified to note the incomplete picture."
+    },
+    {
+      "id": "t1_qualify_hard_851",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "short_query",
+      "query": "Dosage?",
+      "contexts": [
+        "For adult patients with moderate hypertension, lisinopril is typically initiated at 10 mg once daily. The dose may be titrated upward based on blood pressure response. However, patients with renal impairment may require dose adjustments. The prescribing information notes that elderly patients and those taking concurrent diuretics may be more sensitive to the hypotensive effects. The maximum recommended dose varies by indication and patient population. Consult the full prescribing information for complete dosing guidelines."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ultra-short medical dosage query with partial prescribing information",
+      "rationale": "The context provides a starting dose but explicitly notes that the answer depends on renal function, age, concurrent medications, and indication. The answer must be qualified with these important caveats."
+    },
+    {
+      "id": "t1_qualify_hard_852",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "short_query",
+      "query": "ETA?",
+      "contexts": [
+        "The shipment was dispatched from the warehouse in Memphis, TN on February 3rd via standard ground shipping. The carrier tracking shows the package arrived at the regional distribution center in Atlanta, GA on February 4th at 11:42 PM. No further tracking updates have been recorded. The standard delivery window for ground shipping from Memphis to the Miami metropolitan area is 4-7 business days, though delays have been reported across the southeastern corridor due to weather conditions this week."
+      ],
+      "expected_mode": "qualified",
+      "description": "Ultra-short delivery query with tracking data but uncertain final ETA",
+      "rationale": "The context shows shipment progress and a delivery window, but tracking has stalled and weather delays are mentioned. A qualified answer can share what is known while flagging the uncertainty about actual delivery date."
+    },
+    {
+      "id": "t1_qualify_hard_853",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "What was the total return on our fixed income portfolio for the fiscal year?",
+      "contexts": [
+        "The annual investment performance report for the pension fund covers the fiscal year ending September 30, 2024. The total fund returned 8.7% net of fees, outperforming the policy benchmark by 42 basis points. The equity allocation, comprising 55% of total assets, returned 12.3% gross and 11.9% net of fees. Within equities, the domestic large-cap allocation returned 14.1%, driven by strong performance in the technology and healthcare sectors. The international developed markets allocation returned 9.2%, while emerging markets returned 7.8%, slightly underperforming the MSCI Emerging Markets Index due to underweight positions in Chinese technology names that rallied sharply in Q4. The real assets allocation, representing 12% of total assets, generated a total return of 5.4%. Real estate investment trusts recovered from the prior year's losses, returning 8.1%, while infrastructure assets returned 6.3%. The commodities allocation detracted from performance with a return of negative 1.2%, primarily due to weakness in energy prices during the first half of the fiscal year. The alternatives allocation, comprising 8% of total assets, returned 9.8% net of fees, led by the private equity portfolio which reported a 13.2% return based on the most recent quarterly valuations. Hedge fund allocations returned 6.5%, with event-driven strategies outperforming relative value and macro strategies. The cash and short-term holdings allocation returned 5.1%, benefiting from the elevated interest rate environment.",
+        "The investment committee met quarterly to review portfolio positioning and manager performance. During the November meeting, the committee approved a rebalancing of the fixed income allocation to increase exposure to investment-grade corporate bonds and reduce duration risk in the government bond portfolio. The rationale for this shift was the inverted yield curve environment and the committee's expectation that credit spreads would tighten over the following six months. The February meeting focused on manager transitions within the equity allocation, with the committee approving the termination of one underperforming international equity manager and the hiring of a replacement following a comprehensive search process. The May meeting addressed the fund's liquidity position in light of upcoming benefit payment obligations, resulting in a decision to maintain a higher cash allocation through the summer months. The August meeting reviewed the preliminary fiscal year performance and discussed the strategic asset allocation study scheduled for the following quarter. The committee noted that the fixed income allocation had benefited from the duration management decisions made earlier in the year but expressed concern about potential spread widening in the high-yield segment. The committee also approved a 2% increase in the target allocation to private credit, funded by a corresponding reduction in the public fixed income allocation, effective in the new fiscal year beginning October 1."
+      ],
+      "expected_mode": "qualified",
+      "description": "Fixed income total return query with detailed investment report that covers most asset classes but omits the specific fixed income return figure",
+      "rationale": "The first context provides returns for equities, real assets, and alternatives but conspicuously omits the fixed income total return figure. The second context mentions that fixed income benefited from duration decisions but provides no specific return number. The system can note what is known about fixed income strategy and that the total fund returned 8.7%, but cannot provide the specific fixed income return with confidence."
+    },
+    {
+      "id": "t1_qualify_hard_854",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "Is the new drug candidate safe for use in patients with hepatic impairment?",
+      "contexts": [
+        "The pharmacokinetic characterization of compound RVT-3081 was conducted as part of the Phase I clinical development program. The single ascending dose study enrolled 48 healthy male volunteers aged 18-45 across six dose cohorts (10 mg, 25 mg, 50 mg, 100 mg, 200 mg, and 400 mg), with six subjects receiving active drug and two receiving placebo in each cohort. The compound demonstrated dose-proportional pharmacokinetics across the tested range, with a mean terminal half-life of approximately 14 hours, supporting once-daily dosing. Peak plasma concentrations were achieved at a median Tmax of 2.5 hours, and the compound exhibited moderate plasma protein binding of 78%. The multiple ascending dose study in healthy volunteers confirmed the absence of significant accumulation with repeated dosing over 14 days. Steady state was achieved by Day 4 in all dose groups. The food effect study showed that co-administration with a high-fat meal increased AUC by approximately 22% and delayed Tmax by 1 hour, which was not considered clinically significant. In vitro studies indicated that RVT-3081 is primarily metabolized by CYP3A4 with minor contributions from CYP2D6. The compound is a weak inhibitor of CYP2C9 but showed no significant inhibition of other major CYP enzymes at clinically relevant concentrations. Renal excretion accounts for approximately 15% of total clearance based on mass balance studies conducted in a separate cohort of eight subjects. The remaining clearance is attributed to hepatic metabolism and biliary excretion.",
+        "The integrated safety database from the Phase I program includes data from 132 subjects who received at least one dose of RVT-3081. The most commonly reported adverse events were headache (12%), nausea (8%), and dizziness (6%), all of which were mild to moderate in severity and resolved without intervention. No serious adverse events were attributed to the study drug. Laboratory assessments showed transient elevations in alanine aminotransferase (ALT) exceeding three times the upper limit of normal in two subjects (1.5%) at the 400 mg dose level, both of which resolved upon discontinuation without clinical sequelae. No cases met Hy's Law criteria. Electrocardiographic monitoring showed no clinically significant QTc prolongation at any dose level, with the largest mean change from baseline being 4.2 milliseconds at the 400 mg supratherapeutic dose. Vital sign assessments were unremarkable across all dose groups. The Phase I program did not include a dedicated hepatic impairment study; however, given the compound's primary hepatic metabolism via CYP3A4 and the observed ALT elevations at the highest dose, the regulatory agency has recommended that a hepatic impairment study be conducted prior to initiation of Phase III trials. The clinical pharmacology team has proposed a reduced-design study enrolling subjects with mild and moderate hepatic impairment using the Child-Pugh classification system. The protocol for this study is currently under internal review and is expected to be submitted to the ethics committee by mid-Q2."
+      ],
+      "expected_mode": "qualified",
+      "description": "Hepatic impairment safety query with extensive Phase I data that reveals the hepatic impairment study has not yet been conducted",
+      "rationale": "The contexts provide substantial pharmacokinetic and safety data, including the fact that the drug is hepatically metabolized and caused ALT elevations at high doses. Critically, the context explicitly states that a dedicated hepatic impairment study has NOT been conducted and was recommended by regulators. The answer must be qualified: there are concerning signals (hepatic metabolism, ALT elevations) but definitive safety data in hepatic impairment patients does not yet exist."
+    },
+    {
+      "id": "t1_qualify_hard_855",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "Does our current cybersecurity posture meet the requirements for FedRAMP Moderate authorization?",
+      "contexts": [
+        "The annual cybersecurity assessment report, prepared by the internal security team in collaboration with external auditors, provides a comprehensive evaluation of the organization's security controls as mapped to the NIST 800-53 framework. The assessment covered all production systems, including the cloud infrastructure hosted on AWS and the on-premises data center in Ashburn, Virginia. The identity and access management controls were found to be largely effective, with multi-factor authentication enforced for all administrative access and 97% of general user accounts. Role-based access control is implemented across all major applications, though the assessment noted that 23 service accounts had excessive privileges that should be remediated. The encryption posture is strong: all data at rest is encrypted using AES-256, and all data in transit uses TLS 1.2 or higher. Certificate management follows automated renewal processes with no expired certificates found during the assessment. The vulnerability management program conducts weekly scans of all internet-facing assets and monthly scans of internal systems. The mean time to remediate critical vulnerabilities improved from 18 days to 11 days year-over-year. However, the assessment identified 14 high-severity findings in the application security domain, including three instances of insufficient input validation in customer-facing APIs. The incident response plan was tested through two tabletop exercises during the year, with response times meeting the documented SLAs. The security operations center provides 24/7 monitoring using a SIEM platform that ingests logs from all critical systems.",
+        "The organization currently holds SOC 2 Type II certification covering the Security and Availability trust service criteria. The most recent audit was completed in August 2024 with no qualified opinions. The ISO 27001 certification was renewed in March 2024 following a successful surveillance audit. The organization has not previously pursued FedRAMP authorization. A preliminary gap analysis conducted by the compliance team in Q2 identified several areas requiring attention before a FedRAMP Moderate assessment could be undertaken. Key gaps include the absence of a formal Plan of Action and Milestones (POA&M) management process compliant with FedRAMP requirements, incomplete implementation of FIPS 140-2 validated cryptographic modules across all system components, and the lack of a FedRAMP-specific continuous monitoring program with the required monthly vulnerability scanning cadence for all assets. The boundary definition for the cloud service offering has not been formally documented as required by FedRAMP. Additionally, the organization's current third-party assessment organization (3PAO) is not FedRAMP-accredited. The compliance team estimated that addressing these gaps would require approximately 6-9 months of dedicated effort and a budget of $800,000 to $1.2 million, including the cost of engaging a FedRAMP-accredited 3PAO for the formal assessment. The compliance team has begun preliminary discussions with two FedRAMP-accredited 3PAOs to obtain proposals and timelines for the authorization process."
+      ],
+      "expected_mode": "qualified",
+      "description": "FedRAMP readiness query with detailed security assessment showing strong baseline controls but identified gaps for FedRAMP specifically",
+      "rationale": "The context shows a mature security program with SOC 2 and ISO 27001 certifications, but the FedRAMP gap analysis explicitly identifies several unmet requirements (POA&M process, FIPS 140-2, continuous monitoring cadence, boundary documentation, accredited 3PAO). The answer must be qualified: the organization has a strong security foundation but does not currently meet FedRAMP Moderate requirements, with specific gaps enumerated."
+    },
+    {
+      "id": "t1_qualify_hard_856",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "Can we use the open-source LLM model weights commercially without any licensing restrictions?",
+      "contexts": [
+        "The technical evaluation report for the open-source large language model codenamed Falcon-180B provides a detailed assessment of model capabilities, infrastructure requirements, and deployment considerations. The model demonstrates strong performance on standard NLP benchmarks, achieving scores competitive with proprietary models on tasks including text generation, summarization, question answering, and code generation. The model was trained on the RefinedWeb dataset comprising approximately 3.5 trillion tokens sourced from publicly available web data with extensive deduplication and quality filtering. Fine-tuning experiments conducted by the evaluation team showed that the model adapts well to domain-specific tasks with relatively modest amounts of supervised training data. The infrastructure requirements for serving the full 180B parameter model include a minimum of eight A100 80GB GPUs for inference, with quantized variants available that reduce the hardware requirement to four A100 GPUs with acceptable degradation in output quality. The evaluation team also tested a distilled 40B parameter variant that can run on two A100 GPUs while retaining approximately 85% of the full model's performance on the benchmark suite. Latency measurements indicate that the full model generates tokens at approximately 15 tokens per second on the eight-GPU configuration, which meets the target throughput for the anticipated workload. The model supports context windows of up to 2048 tokens in its base configuration, with community-developed extensions enabling context lengths up to 8192 tokens through positional interpolation techniques.",
+        "The legal team conducted a review of the licensing terms associated with the model release. The model weights are distributed under the Technology Innovation Institute (TII) Falcon LLM License, which is distinct from standard open-source licenses such as Apache 2.0 or MIT. The Falcon license permits commercial use but includes several notable conditions. First, any commercial deployment generating annual revenue exceeding $1 million from products or services powered by the Falcon model requires the licensee to enter into a separate royalty agreement with TII. Second, the license includes an acceptable use policy that prohibits certain applications including surveillance, military weapons systems, and the generation of content that violates applicable laws. Third, derivative models created through fine-tuning must acknowledge the original Falcon model in their documentation and license files. The legal team also flagged a potential concern regarding the training data composition: while the RefinedWeb dataset was sourced from publicly available data, the legal landscape around training AI models on web-scraped content remains unsettled, with ongoing litigation in multiple jurisdictions that could affect the defensibility of models trained on such data. The legal team recommended obtaining a formal legal opinion before proceeding with commercial deployment, particularly given the organization's exposure to European markets where data protection regulations may impose additional constraints on the use of web-scraped training data."
+      ],
+      "expected_mode": "qualified",
+      "description": "Commercial licensing query with detailed technical and legal analysis revealing conditional licensing terms",
+      "rationale": "The context explicitly shows that commercial use is permitted but with significant conditions: a royalty agreement is required above $1M revenue, an acceptable use policy restricts certain applications, and the legal team flagged unresolved risks around training data. The answer must be qualified to present these conditions and caveats rather than giving a simple yes or no."
+    },
+    {
+      "id": "t1_qualify_hard_900",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "version_overlap",
+      "query": "What is the correct way to authenticate requests to the DataSync API?",
+      "contexts": [
+        "DataSync API v3.2 Authentication (Released August 2024): Authentication uses JWT bearer tokens obtained from the /auth/token endpoint. Request a token by POST-ing client credentials:\n\nPOST /auth/token\nContent-Type: application/json\n{ \"client_id\": \"your-client-id\", \"client_secret\": \"your-secret\", \"grant_type\": \"client_credentials\" }\n\nResponse: { \"access_token\": \"eyJhbG...\", \"expires_in\": 3600, \"token_type\": \"Bearer\" }\n\nInclude the token in subsequent requests:\nAuthorization: Bearer eyJhbG...\n\nTokens expire after 1 hour. The SDK handles automatic refresh. Note: API key authentication (X-Api-Key header) from v2.x is still supported for backwards compatibility during the migration period ending Q1 2025.",
+        "DataSync SDK Migration Notes (Internal, October 2024): The v3.2 SDK defaults to JWT auth but falls back to API key if no client credentials are configured. Known issue: token refresh fails silently when system clocks are skewed more than 30 seconds (fix scheduled for v3.3). For high-throughput scenarios, cache tokens client-side to avoid rate limiting on /auth/token (max 10 requests per minute). The v4.0 roadmap indicates API key support will be fully removed and OAuth2 PKCE flow will be added for browser-based clients."
+      ],
+      "expected_mode": "qualified",
+      "description": "Context shows the current auth method (JWT) but mentions both the old method still works and a future method is planned, creating version uncertainty",
+      "rationale": "The JWT bearer token approach is documented as the current method, but the context reveals the API key fallback is still active (until Q1 2025), there is a known token refresh bug, and v4.0 will change the auth model again. The answer should note JWT is current but qualify that the authentication landscape is actively shifting and the timeline for deprecating the old method may have already passed."
+    },
+    {
+      "id": "t1_qualify_hard_901",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "version_overlap",
+      "query": "Should I use the formatDate utility function in my code?",
+      "contexts": [
+        "Utility Library Reference (utils/formatting.ts, v2.8): The formatDate function formats Date objects to locale-aware strings.\n\n/**\n * @deprecated Since v2.5. Use Intl.DateTimeFormat or the date-fns library instead.\n * This function will be removed in v3.0.\n */\nexport function formatDate(date: Date, format: string = 'YYYY-MM-DD'): string {\n  // Legacy implementation using manual string replacement\n  const year = date.getFullYear();\n  const month = String(date.getMonth() + 1).padStart(2, '0');\n  const day = String(date.getDate()).padStart(2, '0');\n  return format\n    .replace('YYYY', String(year))\n    .replace('MM', month)\n    .replace('DD', day);\n}\n\nNote: This function does not handle timezones, locales, or edge cases like DST transitions. It is maintained only for backwards compatibility with modules that have not migrated.",
+        "Migration Guide (docs/migration-v3.md, Draft): The v3.0 release removes several deprecated utilities including formatDate, formatCurrency, and parseQueryString. Recommended replacements:\n\n// Before (deprecated):\nimport { formatDate } from '@internal/utils';\nconst display = formatDate(new Date(), 'YYYY-MM-DD');\n\n// After (recommended):\nconst display = new Intl.DateTimeFormat('en-CA').format(new Date());\n// or with date-fns:\nimport { format } from 'date-fns';\nconst display = format(new Date(), 'yyyy-MM-dd');\n\nThe v3.0 release date has not been announced. Current production is on v2.8."
+      ],
+      "expected_mode": "qualified",
+      "description": "Function exists and works but is deprecated with known limitations; removal is planned but not yet scheduled",
+      "rationale": "The function is technically available and functional in the current version (v2.8), but it is explicitly deprecated with documented limitations (no timezone/locale support). The migration guide recommends alternatives, but v3.0 (which removes it) has no release date. A qualified answer should note it works now but recommend against new usage, with caveats about the uncertain removal timeline."
+    },
+    {
+      "id": "t1_qualify_hard_902",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "version_overlap",
+      "query": "What is the best way to handle form validation in our application?",
+      "contexts": [
+        "Frontend Architecture Decision Record (ADR-017, March 2024): The team evaluated three approaches for form validation: 1) Zod schemas with react-hook-form (recommended by the Platform team), 2) Yup schemas with Formik (used in the legacy dashboard), 3) Custom validation hooks (used in the mobile-responsive checkout flow). Decision: Adopt Zod + react-hook-form for all new forms. Rationale: type-safe schema inference, smaller bundle size (12KB vs 23KB for Yup+Formik), better TypeScript integration. Dissent: Two senior engineers preferred keeping Formik for its more declarative API and existing team familiarity.\n\nNote: Existing Formik forms will not be migrated unless they require significant changes.",
+        "Code Review Discussion (PR #4821, November 2024): Reviewer A: 'This new settings form uses Formik but ADR-017 says we should use Zod + react-hook-form.' Author: 'I started with RHF but ran into issues with dynamic field arrays and conditional validation. Formik handled the complex nested form better. Filed issue #892 to revisit ADR-017 for complex form cases.' Reviewer B: 'I agree, RHF struggles with deeply nested dynamic forms. We should update the ADR.' Status: PR merged with Formik, ADR revision pending."
+      ],
+      "expected_mode": "qualified",
+      "description": "Context shows an official recommendation (Zod + RHF) but also a real exception where the team chose differently, with an ADR revision pending",
+      "rationale": "The ADR recommends Zod + react-hook-form, but a real code review shows cases where Formik was preferred for complex forms, and the ADR revision is pending. The answer cannot be a simple recommendation because the official guidance is actively being reconsidered. Qualification is needed to explain the general recommendation while noting the known gaps."
+    },
+    {
+      "id": "t1_qualify_hard_903",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "version_overlap",
+      "query": "How fast is the search indexer for large datasets?",
+      "contexts": [
+        "Search Indexer Performance Benchmarks (Engineering Blog, June 2024): We benchmarked the v2.1 search indexer on three dataset sizes:\n\n| Dataset | Documents | Index Time | Memory Peak | Queries/sec |\n|---------|-----------|------------|-------------|-------------|\n| Small   | 10,000    | 4.2s       | 512 MB      | 2,400       |\n| Medium  | 500,000   | 3.1 min    | 2.8 GB      | 1,800       |\n| Large   | 5,000,000 | 47 min     | 11.2 GB     | 1,200       |\n\nHardware: 8-core AMD EPYC, 32GB RAM, NVMe SSD. The indexer uses batch processing with configurable batch sizes (default 1000). Note: These benchmarks used English-only documents averaging 2KB each. Multi-language documents with CJK tokenization are approximately 2.5x slower due to segmentation overhead.",
+        "Search Indexer Incident Report (INC-2024-0891, September 2024): During the Q3 data migration, the search indexer processing 8M documents ran out of memory at 6.2M documents on a 32GB instance. Root cause: the embedding cache grew linearly without eviction. Workaround: set INDEXER_CACHE_MAX_MB=8192 to cap cache size. With the cap, indexing completed in 2h 14min but query throughput dropped to 890 queries/sec due to cache misses. Fix deployed in v2.1.3: LRU eviction policy with configurable cache size. Post-fix benchmarks pending."
+      ],
+      "expected_mode": "qualified",
+      "description": "Benchmarks exist but have significant caveats: specific hardware, English-only, and a known memory issue at scale beyond what was benchmarked",
+      "rationale": "The benchmarks provide concrete numbers but multiple qualifications are necessary: the benchmarks are for English-only documents on specific hardware, CJK is 2.5x slower, and a real incident showed the indexer failed at 8M documents (beyond the benchmarked 5M). The post-fix benchmarks are still pending. Performance claims require heavy qualification about conditions and scale."
+    },
+    {
+      "id": "t1_qualify_hard_904",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "version_overlap",
+      "query": "How should I fix the CORS vulnerability in our API gateway?",
+      "contexts": [
+        "Security Audit Report (PenTest Results, August 2024, Confidential): Finding SEC-041: Cross-Origin Resource Sharing (CORS) Misconfiguration. Severity: Medium. The API gateway at api.internal.example.com reflects the Origin header in Access-Control-Allow-Origin without validation, allowing any domain to make credentialed requests. Affected endpoints: all /api/v2/* routes. The wildcard behavior was introduced in commit abc123f to fix a front-end integration issue. Recommendation: Implement an explicit allowlist of permitted origins.\n\nRemediation deadline: September 30, 2024.",
+        "Security Team Response (Jira SEC-041, October 2024): The CORS configuration was updated in gateway config to allowlist specific origins:\n\ncors:\n  allowed_origins:\n    - https://app.example.com\n    - https://admin.example.com\n    - https://staging.example.com\n  allow_credentials: true\n  max_age: 3600\n\nHowever, the security team noted this fix only covers the primary API gateway. The legacy gateway (legacy-api.example.com) still uses the old configuration and handles /api/v1/* routes. The legacy gateway CORS fix is tracked in JIRA SEC-041b, scheduled for Q1 2025 deprecation of v1 endpoints. Risk accepted by CISO for the interim period."
+      ],
+      "expected_mode": "qualified",
+      "description": "Context has a fix for the vulnerability but it was only applied to one of two gateways, with the other still vulnerable by accepted risk",
+      "rationale": "The CORS fix (origin allowlisting) is documented and applied to the primary gateway, but the legacy gateway remains vulnerable with risk accepted until Q1 2025. An answer recommending the allowlist approach is correct but must be qualified: the fix exists for v2 routes but v1 routes on the legacy gateway are still affected, and the remediation depends on the v1 deprecation timeline."
+    },
+    {
+      "id": "t1_qualify_hard_905",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "Compare PostgreSQL and MySQL performance for high-concurrency OLTP workloads",
+      "contexts": [
+        "PostgreSQL Performance Benchmarks (DBA Team Report, Q3 2024): We benchmarked PostgreSQL 16 on our standard OLTP workload (TPC-C inspired, 500 warehouses). Hardware: 32-core AMD EPYC, 128GB RAM, NVMe array.\n\n| Concurrency | Transactions/sec | p99 Latency | CPU Util |\n|-------------|-----------------|-------------|----------|\n| 50 threads  | 12,400          | 8.2ms       | 35%      |\n| 200 threads | 41,200          | 15.6ms      | 72%      |\n| 500 threads | 68,500          | 42.3ms      | 91%      |\n| 1000 threads| 71,200          | 128ms       | 98%      |\n\nPostgreSQL scales well to 500 concurrent connections. Beyond that, connection pooling via PgBouncer is essential. MVCC implementation means readers never block writers. The new pg_stat_io view in PG16 revealed I/O wait as the primary bottleneck above 500 threads. Vacuum tuning (autovacuum_naptime=10s) was critical to prevent transaction ID wraparound under sustained load.",
+        "Database Selection Criteria (Architecture Decision Record, ADR-031): When selecting between PostgreSQL and MySQL for new services, consider: PostgreSQL excels at complex queries, JSON operations, full-text search, and extensibility (PostGIS, pgvector). MySQL excels at simple read-heavy workloads and has a larger managed service ecosystem. Both support ACID transactions and replication. Our organization has standardized on PostgreSQL for all new services (see ADR-019). This ADR does not include MySQL benchmarks as we no longer operate MySQL in production."
+      ],
+      "expected_mode": "qualified",
+      "description": "Query asks for a comparison of both databases but context only has PostgreSQL benchmarks; MySQL data is absent",
+      "rationale": "The PostgreSQL benchmarks are thorough and authoritative, but no MySQL performance data is provided. The ADR mentions MySQL in general terms but explicitly states no MySQL benchmarks exist because the organization does not run MySQL. A comparison requires data from both systems, so the answer must be qualified as one-sided."
+    },
+    {
+      "id": "t1_qualify_hard_906",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "different_aspects",
+      "query": "Compare PostgreSQL and MongoDB for time-series data storage and querying",
+      "contexts": [
+        "PostgreSQL for Time-Series (TimescaleDB Extension, DBA Guide): PostgreSQL with the TimescaleDB extension provides a mature solution for time-series workloads. Hypertables automatically partition data by time, enabling efficient range queries and data retention policies.\n\nCREATE TABLE sensor_readings (\n  time TIMESTAMPTZ NOT NULL,\n  sensor_id INTEGER NOT NULL,\n  temperature DOUBLE PRECISION,\n  humidity DOUBLE PRECISION\n);\nSELECT create_hypertable('sensor_readings', 'time');\n\nPerformance on our IoT platform (10B rows, 500 sensors): Time-range queries: 12ms (1 hour window), 85ms (1 day), 340ms (1 month). Continuous aggregates (materialized views) reduce dashboard query time by 95%. Compression achieves 10x space reduction on data older than 7 days. Retention policy auto-drops data older than 2 years. Caveat: TimescaleDB is an extension, not core PostgreSQL. The open-source version lacks multi-node clustering; the licensed version adds distributed hypertables at significant cost.",
+        "MongoDB Time-Series Collections (Internal Evaluation, 2024): MongoDB 7.0 introduced native time-series collections with automatic bucketing:\n\ndb.createCollection('sensor_readings', {\n  timeseries: { timeField: 'timestamp', metaField: 'sensor_id', granularity: 'seconds' }\n});\n\nOur evaluation on the same IoT dataset (10B rows, 500 sensors): Ingestion rate: 850K docs/sec (vs PostgreSQL's 420K rows/sec). Storage: 2.1TB (vs 1.8TB with TimescaleDB compression). Time-range queries: 18ms (1 hour), 120ms (1 day), 580ms (1 month). Aggregation pipeline queries were 30-40% slower than TimescaleDB continuous aggregates. Caveat: MongoDB time-series collections do not support secondary indexes on non-meta fields until v7.1. Schema validation for time-series data is limited compared to PostgreSQL's CHECK constraints."
+      ],
+      "expected_mode": "qualified",
+      "description": "Both databases are covered with real benchmarks, but each has significant caveats that prevent a clear winner",
+      "rationale": "Both PostgreSQL (with TimescaleDB) and MongoDB are evaluated with comparable benchmarks on the same dataset. PostgreSQL wins on query speed and compression, MongoDB wins on ingestion rate, but both have notable caveats: TimescaleDB's multi-node clustering requires a paid license, and MongoDB lacks secondary indexes on non-meta fields until v7.1. The answer must be qualified because each database has trade-offs and the 'better' choice depends on whether the workload is read-heavy or write-heavy."
+    },
+    {
+      "id": "t1_qualify_hard_907",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "implicit_assumptions",
+      "query": "Given that Kubernetes has deprecated Docker support, should we migrate our container runtime?",
+      "contexts": [
+        "Kubernetes Container Runtime Migration Guide (Platform Engineering, 2024): In Kubernetes v1.24 (May 2022), the dockershim component was removed from kubelet. This is commonly misunderstood as 'Kubernetes deprecated Docker.' What actually happened: Kubernetes removed the built-in Docker-specific adapter (dockershim) and standardized on the Container Runtime Interface (CRI). Docker images (OCI-compliant) continue to work unchanged on all CRI-compatible runtimes.\n\nCurrent supported runtimes:\n- containerd (recommended, used by EKS, GKE, AKS by default)\n- CRI-O (used by OpenShift)\n- Docker Engine + cri-dockerd adapter (for legacy compatibility)\n\nIf your cluster uses containerd (check: kubectl get nodes -o wide, look at CONTAINER-RUNTIME column), no migration is needed. Docker-built images run identically on containerd. The only migration required is if your cluster still uses Docker Engine as the runtime AND you're on Kubernetes 1.24+, in which case install the cri-dockerd adapter or switch to containerd.",
+        "Container Runtime Performance Comparison (SRE Team, Q2 2024): We benchmarked containerd vs Docker Engine + cri-dockerd on our production cluster (200 nodes, 4,000 pods):\n\n| Metric | containerd | Docker + cri-dockerd |\n|--------|-----------|---------------------|\n| Pod startup time (p50) | 1.2s | 1.8s |\n| Pod startup time (p99) | 3.1s | 5.4s |\n| Memory overhead per node | 45MB | 120MB |\n| Image pull time (1GB image) | 8.2s | 9.1s |\n\ncontainerd is lighter because it eliminates the Docker daemon as a middle layer. Docker + cri-dockerd adds an extra hop: kubelet → cri-dockerd → Docker daemon → containerd (Docker uses containerd internally). Recommendation: Use containerd directly. The Docker daemon provides CLI tools (docker build, docker exec) that are useful for development but unnecessary in production Kubernetes nodes."
+      ],
+      "expected_mode": "qualified",
+      "description": "The query's premise is partially incorrect: Docker support was not deprecated in the way commonly understood, and the answer depends on the current runtime",
+      "rationale": "The query contains a false premise. Kubernetes did not deprecate Docker support broadly; it removed dockershim and standardized on CRI. Docker images still work fine. The contexts correct this misconception and show that migration may or may not be needed depending on the current runtime. The answer must qualify the false premise before addressing the actual question."
+    },
+    {
+      "id": "t1_dispute_hard_506",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "different_framing",
+      "query": "Since the company's revenue declined last quarter, what cost-cutting measures should we prioritize?",
+      "contexts": [
+        "Q3 2024 Earnings Report (CFO Presentation, October 2024): NovaTech delivered strong Q3 results with revenue of $142.3M, up 8.2% year-over-year and 3.1% quarter-over-quarter from Q2's $138.0M. Gross margin improved to 71.4% (from 69.8% in Q2) driven by cloud migration savings and renegotiated vendor contracts. Operating expenses grew 4.2% YoY but declined as a percentage of revenue from 58% to 55%. Free cash flow was $28.6M, enabling a $15M share buyback program. Customer count grew to 2,847 (net new: +124). The board approved a 12% increase in R&D budget for Q4 to accelerate the AI product roadmap.",
+        "Q3 2024 All-Hands Summary (CEO, October 2024): 'I'm proud to share that Q3 was our strongest quarter in two years. Revenue grew both year-over-year and sequentially. Our bet on the enterprise tier is paying off with average deal size increasing 22%. We are NOT in cost-cutting mode. In fact, we're investing aggressively: 45 new engineering hires approved for Q4, expanding the Singapore office, and doubling our cloud infrastructure budget. The leadership team's focus is on growth, not austerity. If you hear rumors about layoffs, they are unfounded.'"
+      ],
+      "expected_mode": "qualified",
+      "description": "The query's premise (revenue declined) directly contradicts both contexts which show revenue grew; the question itself is based on false information",
+      "rationale": "The query assumes revenue declined, but both the CFO's earnings report and the CEO's all-hands explicitly state revenue grew 8.2% YoY and 3.1% QoQ. The contexts contradict the query's foundational premise. This is a dispute between the query's claim and the evidence, making it impossible to answer the question as asked without first addressing the factual error.",
+      "original_category": "dispute",
+      "original_expected_mode": "disputed",
+      "relabel_reason": "Both sources unanimously refute the query's false premise (revenue grew, not declined); structurally identical to qualified false-premise cases 907/908"
+    },
+    {
+      "id": "t1_qualify_hard_908",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "implicit_assumptions",
+      "query": "Why did the Python GIL get removed in version 3.12?",
+      "contexts": [
+        "Python 3.12 Release Notes (Official, October 2023): Python 3.12 includes significant improvements to error messages, type parameter syntax (PEP 695), f-string enhancements, and per-interpreter GIL (PEP 684). The per-interpreter GIL allows multiple Python interpreters within the same process to have independent GILs, enabling true parallelism between interpreters. However, the main GIL still exists for each individual interpreter. This is a step toward, but NOT the removal of, the GIL.\n\nKey features: Improved 'Did you mean...' suggestions, type alias syntax (type Point = tuple[float, float]), buffer protocol support in Python code (PEP 688), monitoring API for profilers (PEP 669).",
+        "PEP 703 — Making the GIL Optional (Accepted for 3.13, Experimental): PEP 703 introduces a build-time option to disable the GIL (--disable-gil). This free-threaded build was accepted for Python 3.13 as an experimental feature. It is NOT enabled by default and requires a separate CPython build (python3.13t). Known limitations: some C extensions may not be thread-safe without the GIL, performance of single-threaded code may regress 5-10% in the free-threaded build, and the feature is explicitly marked as experimental with no stability guarantees. The Python Steering Council stated that full GIL removal (if it happens) would be a multi-year, multi-release process."
+      ],
+      "expected_mode": "qualified",
+      "description": "The query contains a false premise: the GIL was NOT removed in 3.12. The context corrects this and explains what actually happened",
+      "rationale": "The GIL was not removed in Python 3.12. Python 3.12 introduced per-interpreter GIL (PEP 684), which is different from removing it. The optional GIL-free build was introduced experimentally in Python 3.13 (PEP 703). The answer must correct the false premise and qualify what actually changed, since the real situation is more nuanced than the question assumes."
+    },
+    {
+      "id": "t1_qualify_hard_909",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "hedged_evidence",
+      "query": "Isn't it obvious that microservices are the best architecture for our new project?",
+      "contexts": [
+        "Architecture Evaluation Summary (Tech Lead, January 2025): We evaluated monolith vs. microservices for the new analytics platform. Current team: 8 engineers, MVP deadline: 4 months.\n\nMonolith advantages for our case: 1) Faster development velocity (shared database, no inter-service communication). 2) Simpler debugging (single deployment, unified logs). 3) Lower infrastructure cost (one service vs. 6-8). 4) Team size below recommended threshold for microservices (Amazon's 'two-pizza team per service' suggests minimum 18-24 engineers for 3 services).\n\nMicroservices advantages: 1) Independent scaling of compute-heavy analytics vs. lightweight API. 2) Technology flexibility (Python for ML, Go for API gateway). 3) Fault isolation (analytics crash doesn't take down API).\n\nRecommendation: Start with a well-structured modular monolith. Extract services later if/when the team grows or specific scaling needs emerge. This follows the 'monolith-first' pattern endorsed by Martin Fowler and Sam Newman.",
+        "Industry Survey on Microservices Adoption (InfoQ, 2024): Among 1,200 engineering leaders surveyed, 63% reported that their microservices migration took longer than expected. 47% said operational complexity increased more than anticipated. 28% described their microservices adoption as 'premature' given their team size and domain complexity. However, 71% of teams with 50+ engineers reported net positive outcomes from microservices after 18 months. The survey identified team size, domain maturity, and operational tooling as the three strongest predictors of microservices success."
+      ],
+      "expected_mode": "qualified",
+      "description": "The leading question assumes microservices are obviously best, but context shows it depends heavily on team size and project phase",
+      "rationale": "Despite the leading framing ('isn't it obvious'), the evidence strongly suggests microservices are NOT the best choice for a small team on a tight deadline. The tech lead recommends a modular monolith, and the survey shows 28% of adopters called it premature and 63% found it took longer than expected. The answer must qualify that the 'best' architecture depends on team size, timeline, and domain maturity."
+    },
+    {
+      "id": "t1_qualify_hard_910",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "hedged_evidence",
+      "query": "The data clearly shows a declining trend in customer satisfaction scores, correct?",
+      "contexts": [
+        "Customer Satisfaction Dashboard (Q1-Q4 2024): Quarterly CSAT scores across all product lines:\n\n| Quarter | CSAT Score | Response Rate | NPS |\n|---------|-----------|---------------|-----|\n| Q1 2024 | 82.1 | 34% | +42 |\n| Q2 2024 | 79.8 | 28% | +38 |\n| Q3 2024 | 83.4 | 41% | +45 |\n| Q4 2024 | 80.2 | 22% | +39 |\n\nNote: The Q2 survey coincided with a major pricing change (15% increase). Q3 included a satisfaction bonus program where respondents received a $10 gift card, which may have inflated both response rate and scores. Q4 response rate was the lowest of the year due to survey fatigue (fourth survey in 12 months).",
+        "Customer Success Team Analysis (January 2025): Looking at the raw CSAT numbers (82.1 → 79.8 → 83.4 → 80.2), there is no clear trend. The data shows oscillation rather than decline. Statistical analysis: linear regression slope is -0.47 per quarter (not statistically significant, p=0.68, R²=0.04). The variation is better explained by survey methodology changes than by actual satisfaction changes. Recommendation: Standardize survey methodology before drawing trend conclusions. The Q3 incentive and Q4 fatigue effects are confounding variables that make quarter-over-quarter comparison unreliable."
+      ],
+      "expected_mode": "qualified",
+      "description": "The leading question claims a clear declining trend, but the data shows oscillation with confounding variables and no statistical significance",
+      "rationale": "The CSAT scores oscillate (82.1, 79.8, 83.4, 80.2) rather than showing a monotonic decline. The linear regression is not statistically significant (p=0.68). Each quarter had different survey methodology (pricing change, gift card incentive, survey fatigue), making comparison unreliable. The 'clear declining trend' framing is not supported by the data, requiring qualification."
+    },
+    {
+      "id": "t1_qualify_hard_911",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "The security report states that our API is vulnerable to SQL injection. Based on this finding, is our system actually at risk?",
+      "contexts": [
+        "External Penetration Test Report (SecureAudit LLC, November 2024): Finding #7: SQL Injection vulnerability in the /api/v2/search endpoint. The search parameter is concatenated directly into the SQL query without parameterization:\n\nquery = f\"SELECT * FROM products WHERE name LIKE '%{search_term}%'\"\n\nProof of concept: Sending search_term=' OR '1'='1 returned all products. Severity: CRITICAL. The auditor confirmed that data exfiltration, authentication bypass, and database modification are theoretically possible through this vector.\n\nThis report is the sole source identifying this vulnerability. No other security assessments have been conducted on the v2 API.",
+        "Application Architecture Notes (DevOps Wiki): The /api/v2/search endpoint sits behind three layers: 1) Cloudflare WAF with OWASP Core Rule Set (blocks common SQL injection patterns). 2) Application-level input validation that rejects inputs containing single quotes, semicolons, and SQL keywords (UNION, DROP, SELECT). 3) The database user for the search service has read-only permissions on the products table only (no access to users, credentials, or other sensitive tables). However, these mitigations were not tested during the penetration test, which accessed the application server directly."
+      ],
+      "expected_mode": "qualified",
+      "description": "Query cites a single source (the security report) and asks if it is true; the context IS the source, making the question self-referential, plus mitigations exist but were untested",
+      "rationale": "The vulnerability exists in the code (confirmed by the PoC), but the actual risk depends on infrastructure mitigations (WAF, input validation, read-only permissions) that were NOT tested during the audit. The question is partially self-referential: the security report is the only source, and no independent corroboration exists. The answer must be qualified because the raw vulnerability is real but the practical exploitability through the production stack is unknown."
+    },
+    {
+      "id": "t1_qualify_hard_912",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "The market analysis claims that AI spending will reach $500B by 2027. Does the evidence support this projection?",
+      "contexts": [
+        "Global AI Market Forecast (TechVision Research, February 2024): TechVision projects global AI spending to reach $500B by 2027, growing at a 36.2% CAGR from $150B in 2023. Key growth drivers: enterprise LLM adoption (40% of spend), autonomous systems (25%), and healthcare AI (15%). The forecast was widely cited in financial media and investor presentations. TechVision's methodology: survey of 200 CIOs, extrapolation of hyperscaler GPU procurement, and analysis of VC funding trends.",
+        "AI Market Reality Check (Industry Commentary, December 2024): Several analysts have questioned TechVision's $500B projection. Key counterpoints: 1) Gartner estimates $300B by 2027 using a different methodology (actual enterprise budget allocation). 2) The 2024 AI spending came in at $195B, below TechVision's implied trajectory of $204B. 3) TechVision's CIO survey captures intent, not commitment, and historically overstates by 20-30%. However, TechVision correctly predicted the cloud computing market size within 5% error for three consecutive years, lending some credibility to their AI forecast methodology. The actual 2027 number likely falls between Gartner's $300B and TechVision's $500B."
+      ],
+      "expected_mode": "qualified",
+      "description": "Query asks if a specific claim (from a report in the context) is supported; the context provides both the claim and its critiques",
+      "rationale": "The $500B projection comes from a single firm (TechVision) whose methodology has known limitations (surveys overstate by 20-30%), and 2024 actuals already came in below their trajectory. Another firm (Gartner) estimates $300B. The evidence neither fully supports nor refutes the claim; it requires qualification that the projection may be optimistic and the actual number likely falls in a wide range."
+    },
+    {
+      "id": "t1_qualify_hard_913",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "entity_ambiguity",
+      "query": "What are the disadvantages of NOT using microservices for our architecture?",
+      "contexts": [
+        "Microservices Benefits Assessment (Architecture Team, 2024): Our evaluation of microservices architecture identified the following key advantages for our platform:\n\n1. Independent deployability: Each service can be deployed without coordinating with other teams. Our deployment frequency increased from weekly to 15 deploys/day after the microservices migration.\n2. Technology heterogeneity: The recommendation engine uses Python/PyTorch, the API gateway uses Go, and the admin portal uses TypeScript. Each team chose optimal tools.\n3. Fault isolation: When the email service crashed in March, the core platform remained unaffected. In the monolith era, a similar failure would have caused a full outage.\n4. Scalability: The search service scales to 50 replicas during Black Friday while other services run at baseline.\n5. Team autonomy: Teams own their services end-to-end, reducing cross-team coordination overhead from 30% to 8% of engineering time.\n\nTradeoffs noted: Increased operational complexity, distributed system debugging challenges, data consistency across services requires eventual consistency patterns.",
+        "Monolith Architecture Patterns (Engineering Blog, 2024): Modern monoliths are not the tightly coupled systems of the past. A well-structured modular monolith with clear bounded contexts can provide many of the same benefits as microservices (team autonomy, independent development) without the operational overhead. Shopify runs one of the world's largest Ruby on Rails monoliths serving millions of merchants. The key is enforcing module boundaries at the code level rather than the network level."
+      ],
+      "expected_mode": "qualified",
+      "description": "Query asks about disadvantages of NOT using something, requiring logical inversion of the available advantages, which risks inference errors",
+      "rationale": "The contexts describe advantages of microservices and benefits of monoliths, not disadvantages of avoiding microservices. Inverting 'advantages of X' into 'disadvantages of not-X' is a risky inference: losing independent deployability does not necessarily mean you cannot deploy often (as the monolith blog notes). The answer must be qualified because the inversion is not straightforward, and the monolith context shows that some supposed disadvantages of not using microservices are mitigatable."
+    },
+    {
+      "id": "t1_qualify_hard_914",
+      "category": "qualification",
+      "difficulty": "hard",
+      "subcategory": "entity_ambiguity",
+      "query": "How much does it cost to NOT have a CDN for our web application?",
+      "contexts": [
+        "CDN Cost Analysis (Infrastructure Team, Q3 2024): Our current CDN (CloudFront) costs breakdown:\n\n| Component | Monthly Cost |\n|-----------|-------------|\n| Data transfer (15TB/month) | $1,275 |\n| HTTPS requests (800M/month) | $640 |\n| Origin shield | $180 |\n| WAF integration | $95 |\n| Total CDN cost | $2,190/month |\n\nPerformance impact: CDN reduces median page load time from 2.8s to 0.9s (68% improvement) for users >500 miles from our origin servers. Cache hit ratio: 89%. Without CDN, origin server bandwidth costs would increase to approximately $4,500/month for the same 15TB, but this does not account for the additional origin server capacity needed to handle all requests directly.",
+        "E-commerce Performance Research (Akamai/Google Studies, 2024): Studies show that every 100ms increase in page load time reduces conversion rate by approximately 1.1% (Akamai 2024 data from 10B sessions). For mobile users, a 1-second delay increases bounce rate by 32% (Google Core Web Vitals study). However, these are aggregate industry statistics and the actual impact varies significantly by industry vertical, user demographics, and geographic distribution. High-traffic e-commerce sites see the largest impact, while B2B SaaS applications with captive user bases may see minimal conversion impact from latency increases."
+      ],
+      "expected_mode": "qualified",
+      "description": "Query asks about the cost of NOT having something, but contexts provide costs of having it and general performance data, not direct costs of absence",
+      "rationale": "The contexts show CDN costs ($2,190/month) and some inference about bandwidth costs without CDN ($4,500/month), but the real cost of not having a CDN includes indirect impacts (conversion loss, bounce rates) that vary significantly by business type. The performance studies provide aggregate data with explicit caveats about variability. The answer requires qualification because the direct infrastructure cost comparison is incomplete and the indirect business impact is highly context-dependent."
     }
   ]
 }

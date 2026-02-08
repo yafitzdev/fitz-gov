@@ -2301,6 +2301,463 @@
       "description": "Same domain (COVID vaccines) but wrong manufacturer",
       "rationale": "Pfizer and J&J vaccine info cannot answer Moderna-specific question",
       "original_id": "abstain_medium_014"
+    },
+    {
+      "id": "t1_abstain_hard_800",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "off_topic_contradiction",
+      "query": "What is the optimal dosage of metformin for newly diagnosed Type 2 diabetes?",
+      "contexts": [
+        "Clinical Pharmacology & Therapeutics (2024): A pharmacokinetic study of liraglutide (Victoza) in 240 patients with Type 2 diabetes found that the 1.8mg daily dose achieved steady-state plasma concentrations of 34.2 nmol/L, with a half-life of 13.1 hours. At this dose, 62% of patients achieved HbA1c below 7.0% at 26 weeks. The 1.2mg dose achieved plasma concentrations of 22.8 nmol/L with a 54% HbA1c target achievement rate. Weight loss was dose-dependent: 3.2 kg at 1.2mg versus 4.7 kg at 1.8mg. Common adverse events included nausea (28% at 1.8mg) and diarrhea (12%). The study recommended initiating at 0.6mg daily for one week, then escalating to 1.2mg, with further increase to 1.8mg based on glycemic response.",
+        "Endocrine Reviews (Vol. 45, 2024): A meta-analysis of GLP-1 receptor agonist dosing strategies found that semaglutide 2.4mg weekly was superior to liraglutide 1.8mg daily for both glycemic control (HbA1c reduction -1.8% vs -1.2%, p<0.001) and weight loss (-15.3 kg vs -4.7 kg at 68 weeks). However, the higher semaglutide dose was associated with more frequent gastrointestinal side effects (nausea 44% vs 28%) and a numerically higher rate of gallbladder events. The authors recommended semaglutide as the preferred GLP-1 RA based on the composite efficacy-safety profile, though noting that individual patient factors should guide selection."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about metformin dosing; contexts discuss liraglutide and semaglutide (GLP-1 receptor agonists) dosing — different drug classes entirely.",
+      "rationale": "Metformin is a biguanide with completely different pharmacology, dosing, and mechanism than GLP-1 receptor agonists. The contexts contain detailed drug dosing information that might seem superficially relevant to a diabetes treatment question, but neither source addresses metformin at all. The contradiction between sources (liraglutide vs semaglutide preference) is irrelevant to the query."
+    },
+    {
+      "id": "t1_abstain_hard_801",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What were the results of the Phase 3 trial for Vertex Pharmaceuticals' pain drug VX-548?",
+      "contexts": [
+        "New England Journal of Medicine (2024): The ALPINE-1 Phase 3 trial of Eli Lilly's mirikizumab (Omvoh) for moderate-to-severe ulcerative colitis enrolled 1,281 patients across 238 sites in 37 countries. The primary endpoint of clinical remission at week 12 was achieved by 24.2% of mirikizumab-treated patients versus 13.3% on placebo (p<0.001). Endoscopic remission rates were 36.3% vs 21.1%. However, a competing trial of Johnson & Johnson's guselkumab for the same indication reported higher remission rates (27.6% at week 12), sparking debate about which IL-23 inhibitor should be the preferred second-line biologic. Mirikizumab's unique dual mechanism may offer advantages in mucosal healing.",
+        "Gastroenterology (Vol. 166, 2024): A network meta-analysis of advanced therapies for ulcerative colitis ranked guselkumab first for clinical remission (SUCRA 0.89), followed by mirikizumab (SUCRA 0.76) and upadacitinib (SUCRA 0.72). The analysis was criticized by Eli Lilly researchers who argued that cross-trial comparisons are unreliable due to differences in patient populations, prior biologic exposure, and endpoint definitions. Lilly's post-hoc subgroup analysis of ALPINE-1 showed mirikizumab achieved remission rates of 31.4% in biologic-naive patients, comparable to guselkumab's results, and superior mucosal healing at week 52."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Vertex's pain drug VX-548; contexts discuss Eli Lilly's mirikizumab and J&J's guselkumab for ulcerative colitis — different company, drug, and disease.",
+      "rationale": "VX-548 is a non-opioid pain medication from Vertex Pharmaceuticals. The contexts discuss IL-23 inhibitors for ulcerative colitis from different companies. Despite the sources containing Phase 3 trial data that superficially matches the format of the question, they discuss entirely different drugs, companies, and therapeutic areas. The contradiction between sources is about UC biologics, not pain treatment."
+    },
+    {
+      "id": "t1_abstain_hard_802",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "What are the best practices for implementing zero-trust network architecture in healthcare?",
+      "contexts": [
+        "IEEE Transactions on Industrial Informatics (2024): A study of zero-trust implementations in automotive manufacturing plants found that microsegmentation of operational technology (OT) networks reduced lateral movement attack success rates by 94% in penetration testing. The recommended architecture places each programmable logic controller (PLC) and SCADA system in an individual microsegment with application-layer inspection. However, the 23ms average latency introduced by inline policy enforcement exceeded tolerances for real-time robotic assembly cells, requiring bypass rules for safety-critical systems.",
+        "Journal of Manufacturing Systems (Vol. 72, 2024): An opposing perspective argued that zero-trust is fundamentally incompatible with manufacturing OT environments due to the deterministic timing requirements of industrial protocols like EtherNet/IP and PROFINET. Testing at three German automotive plants showed that zero-trust policy engines introduced jitter of 8-45ms in PLC-to-PLC communications, causing intermittent quality control failures in welding robots. The authors advocated for air-gapped OT networks with unidirectional security gateways as a more appropriate security model, calling zero-trust an IT-centric paradigm that ignores industrial control system realities."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about zero-trust in healthcare; contexts discuss zero-trust in automotive manufacturing OT environments — same cybersecurity concept but completely wrong domain.",
+      "rationale": "Healthcare zero-trust architecture involves protecting electronic health records, medical devices, HIPAA compliance, and clinical workflows. Manufacturing OT zero-trust involves PLCs, SCADA, robotic assembly, and industrial protocols. The security challenges, regulatory requirements, network topologies, and implementation constraints are fundamentally different. The contradicting sources about manufacturing OT latency issues have no bearing on healthcare zero-trust implementation."
+    },
+    {
+      "id": "t1_abstain_hard_803",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is Tesla's battery recycling strategy for end-of-life vehicles?",
+      "contexts": [
+        "Samsung SDI Sustainability Report (2024): Samsung SDI's battery recycling program recovers 95% of cobalt, 92% of nickel, and 88% of lithium from spent EV battery cells through a hydrometallurgical process at their Ulsan recycling facility. The facility processes 12,000 tonnes of battery black mass annually. Samsung SDI has invested $340 million in expanding recycling capacity to 30,000 tonnes by 2026. Their closed-loop approach returns recovered cathode materials directly into new NCM811 cell production, reducing raw material costs by an estimated 18%.",
+        "CATL Environmental Impact Assessment (2024): CATL's Brunp Recycling subsidiary operates the world's largest lithium battery recycling operation processing 200,000 tonnes annually across four Chinese facilities. CATL reports a 99.3% recovery rate for nickel and cobalt using a combined pyrometallurgical-hydrometallurgical process, but only 72% lithium recovery due to volatilization losses in the initial smelting stage. Industry critics argue that CATL's pyrometallurgical first stage generates significant CO2 emissions (1.2 tonnes CO2 per tonne of black mass), partially undermining the environmental benefits of recycling."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Tesla's battery recycling; contexts discuss Samsung SDI and CATL recycling programs — different companies in the battery supply chain.",
+      "rationale": "Tesla has its own distinct battery recycling program (including partnerships with Redwood Materials). Samsung SDI and CATL are separate battery manufacturers with different recycling approaches, facilities, and strategies. Their recycling programs cannot be attributed to Tesla. The sources' disagreement on recovery rates and methods is about their own operations, not Tesla's."
+    },
+    {
+      "id": "t1_abstain_hard_804",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "off_topic_contradiction",
+      "query": "What is the recommended protein intake for endurance athletes?",
+      "contexts": [
+        "Journal of the International Society of Sports Nutrition (2024): A position stand on protein timing and distribution for resistance-trained athletes recommends 1.6-2.2 g/kg/day of protein, distributed across 4-5 meals with 0.4-0.55 g/kg per meal to maximize muscle protein synthesis. Post-exercise protein intake of 40g within 2 hours of resistance training significantly enhanced 24-hour muscle protein synthesis rates compared to 20g (p=0.02). The position stand emphasizes that total daily protein intake matters more than timing for hypertrophy outcomes.",
+        "Sports Medicine (Vol. 54, 2024): A systematic review challenged the ISSN position, finding that protein intakes above 1.5 g/kg/day provided no additional benefit for strength gains in resistance-trained individuals. The review of 74 RCTs found a plateau effect where increasing protein beyond 1.5 g/kg/day produced diminishing returns with no statistically significant benefit above 1.8 g/kg/day (p=0.67 for 1.8 vs 2.2 g/kg comparison). The authors argued that the sports nutrition industry overstates protein needs and recommended 1.2-1.5 g/kg/day as sufficient for most resistance athletes."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about protein for endurance athletes; both contexts discuss protein for resistance-trained athletes — same nutrient but wrong athletic population.",
+      "rationale": "Endurance athletes (runners, cyclists, swimmers) have fundamentally different protein needs than resistance-trained athletes (weightlifters, bodybuilders). Endurance athletes need protein for repair and mitochondrial biogenesis, not hypertrophy. The recommendations for resistance athletes cannot be directly applied to endurance contexts. The sources' disagreement (1.6-2.2 vs 1.2-1.5 g/kg/day) is about resistance training, not the endurance context asked about."
+    },
+    {
+      "id": "t1_abstain_hard_805",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What are the privacy features of the Signal messaging app?",
+      "contexts": [
+        "Electronic Frontier Foundation Messenger Scorecard (2024): WhatsApp implements the Signal Protocol for end-to-end encryption of messages, calls, and media. However, WhatsApp collects extensive metadata including contact lists, usage frequency, message timestamps, group membership, profile photos, device information, and IP addresses. In 2024, WhatsApp introduced encrypted backups using AES-256-GCM with a user-generated key, though only 12% of users have enabled it. WhatsApp shares metadata with parent company Meta for advertising targeting, a practice that has faced regulatory challenges under GDPR. The EFF rates WhatsApp's encryption as strong but its metadata practices as problematic.",
+        "Telegram Privacy Analysis — University of Zurich Computer Science Department (2024): Telegram uses a custom MTProto 2.0 encryption protocol for cloud chats, which are encrypted in transit but stored on Telegram's servers in a form accessible to the company. End-to-end encrypted 'Secret Chats' are available but must be manually initiated and are not available for group chats. An independent cryptographic audit found that MTProto 2.0, while not broken, uses non-standard constructions that deviate from established cryptographic best practices. Approximately 4% of Telegram users regularly use Secret Chats."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Signal's privacy features; contexts analyze WhatsApp and Telegram privacy — different messaging apps entirely.",
+      "rationale": "Signal has its own unique privacy architecture (no metadata collection, open-source, sealed sender, etc.) that is distinct from both WhatsApp and Telegram. While Signal's protocol is mentioned in the WhatsApp context, the analysis is of WhatsApp's implementation and metadata practices, not Signal's. The sources' implicit disagreement about which messenger is more private does not address Signal's own features."
+    },
+    {
+      "id": "t1_abstain_hard_806",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "off_topic_contradiction",
+      "query": "What regulations govern autonomous vehicle testing on public roads in California?",
+      "contexts": [
+        "Federal Aviation Administration Advisory Circular AC 107-2A (2024): The FAA's updated regulations for commercial drone operations under Part 107 require Remote Pilot Certificates for all operators, restrict flights to 400 feet AGL maximum altitude, mandate visual line-of-sight operations unless a waiver is obtained, and prohibit flights over moving vehicles unless the drone weighs under 0.55 lbs. Effective January 2025, all drones over 0.55 lbs must comply with Remote ID requirements, broadcasting identification and location information. Night operations are permitted with anti-collision lighting visible for 3 statute miles.",
+        "European Union Aviation Safety Agency (EASA) U-Space Regulation (2024): EASA's updated U-Space framework establishes three operational categories for unmanned aircraft systems: Open (minimal risk, no authorization needed under 25kg), Specific (requires risk assessment and operational authorization), and Certified (equivalent to manned aviation standards). The framework requires mandatory geo-awareness systems that prevent drones from entering restricted airspace. EASA and the FAA have differing approaches to airspace integration, leading to interoperability challenges for transatlantic operators."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about California autonomous vehicle road testing regulations; contexts discuss FAA drone regulations and EU drone frameworks — autonomous aircraft, not cars.",
+      "rationale": "California AV testing is governed by the DMV under state vehicle code (permits, safety drivers, reporting requirements). The contexts discuss aviation regulations for unmanned drones — a completely different domain, regulatory body, and vehicle type. While both involve autonomous systems, drone airspace rules have no bearing on self-driving car road testing regulations."
+    },
+    {
+      "id": "t1_abstain_hard_807",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "How does the new EU AI Act classify high-risk artificial intelligence systems?",
+      "contexts": [
+        "Journal of International Trade Law (Vol. 42, 2024): The EU Carbon Border Adjustment Mechanism (CBAM), fully effective from January 2026, classifies imported goods into risk tiers based on embedded carbon intensity. Tier 1 (highest risk) includes steel, aluminum, cement, fertilizers, and electricity. Tier 2 includes chemicals, glass, ceramics, and paper products. The CBAM requires importers to purchase certificates matching the carbon price differential between the EU ETS price and the carbon price paid in the country of origin. Disputes have arisen over the classification methodology: the European Commission uses lifecycle embedded emissions, while WTO precedent suggests only direct production emissions should count.",
+        "World Trade Organization Dispute Panel Report DS/618 (2024): India and China jointly challenged the CBAM before the WTO, arguing that the carbon intensity classification system discriminates against developing countries whose energy grids are coal-dependent. The panel found that CBAM's product classification was based on objective environmental criteria but raised concerns about whether Scope 2 (indirect electricity) emissions could be fairly attributed to specific products. The EU defended its methodology by citing IPCC AR6 guidelines for emissions accounting. The case remains under appeal, with significant implications for climate-motivated trade measures."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about AI Act risk classification for AI systems; contexts discuss EU CBAM carbon border tax classification for imported goods — different EU regulation entirely.",
+      "rationale": "The EU AI Act and the EU CBAM are entirely different regulations addressing different domains. The AI Act classifies AI systems by risk level based on impact on fundamental rights. The CBAM classifies physical goods by carbon intensity for trade purposes. The word 'classify' and 'risk' appear in both domains but refer to completely different regulatory frameworks."
+    },
+    {
+      "id": "t1_abstain_hard_808",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the interest rate on Marcus by Goldman Sachs high-yield savings accounts?",
+      "contexts": [
+        "Ally Financial Q3 2024 Earnings Call Transcript: Ally Bank's Online Savings Account offered an APY of 4.20% as of September 30, 2024, down from 4.25% in Q2 following the Federal Reserve's 25 basis point rate cut. CFO Russell Hutchinson noted that Ally's deposit beta was 62%, meaning the bank retained 38% of the rate cut benefit. Total deposit balance grew 3.1% to $142.7 billion. Hutchinson emphasized that Ally's online savings rate maintained a 300+ basis point premium over the national savings average of 0.59%.",
+        "Bankrate.com Best High-Yield Savings Accounts Review (October 2024): Bankrate's latest review found significant variation among online savings rates, with top offers ranging from 5.05% (Bask Bank) to 4.10% (Capital One 360 Performance Savings). The review noted that Ally Bank's 4.20% APY was competitive but no longer industry-leading as smaller institutions offered promotional rates above 5%. Bankrate criticized Ally for reducing rates faster than competitors following the September Fed cut, noting that Discover and American Express maintained their pre-cut rates for an additional 6 weeks."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Marcus by Goldman Sachs savings rates; contexts discuss Ally Bank and other competitors' rates — different financial institutions.",
+      "rationale": "Marcus by Goldman Sachs has its own distinct APY that differs from Ally Bank's and other institutions'. Each bank sets its own rates independently. Knowing Ally's rate (4.20%) or Bask Bank's rate (5.05%) tells you nothing definitive about Marcus's current rate. The sources' mild disagreement about Ally's competitiveness is entirely off-topic for a Marcus-specific question."
+    },
+    {
+      "id": "t1_abstain_hard_809",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "off_topic_contradiction",
+      "query": "What caused the 2024 CrowdStrike global IT outage?",
+      "contexts": [
+        "IEEE Spectrum (September 2024): Analysis of the July 2024 AT&T cellular network outage that affected 125 million subscribers for 11+ hours found that the root cause was a misconfigured network routing policy during a planned infrastructure migration. A BGP route leak from AT&T's peering fabric caused cascading failures across 47 mobile switching centers. The FCC investigation revealed that AT&T's change management process lacked adequate rollback automation. AT&T disputed the FCC's characterization, arguing that the root cause was a software bug in their Ericsson routing platform that misinterpreted the BGP configuration.",
+        "Reuters Technology Analysis (August 2024): AT&T's internal post-mortem report, obtained via FOIA request, attributed the July outage to human error by a network engineer who applied a production configuration intended for a test environment. This contradicts AT&T's public statement blaming an Ericsson software bug. The internal report documented 23 missed safeguards in the change management workflow, including disabled peer review requirements and overridden automated validation checks. Ericsson issued a statement denying any software defect in their routing platform."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the CrowdStrike global outage; contexts discuss the AT&T cellular network outage — different company, different incident, different technology.",
+      "rationale": "The 2024 CrowdStrike outage was caused by a faulty content update to the Falcon sensor that triggered Windows BSODs globally. The AT&T outage was a cellular network routing failure. These are completely different incidents involving different companies and technologies. The sources' contradiction about AT&T's root cause (software bug vs human error) has no bearing on what caused CrowdStrike's outage."
+    },
+    {
+      "id": "t1_abstain_hard_850",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What are the known drug interactions between metformin and ACE inhibitors?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Medical drug interaction query - empty context - retrieval returned no results",
+      "rationale": "With no retrieved context, the system has zero evidence to ground a pharmacological claim. Answering from parametric knowledge risks dangerous medical misinformation."
+    },
+    {
+      "id": "t1_abstain_hard_851",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "Why did the Federal Reserve raise interest rates in Q3 of the reporting period?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Financial causal query - empty context - retrieval returned no results",
+      "rationale": "Causal reasoning about monetary policy requires grounding in specific Fed statements and economic data. Without any context, any explanation would be hallucinated."
+    },
+    {
+      "id": "t1_abstain_hard_852",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "How do I file a wrongful termination claim in the state of Oregon?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Legal procedural query - empty context - retrieval returned no results",
+      "rationale": "Legal procedures are jurisdiction-specific and change over time. Without retrieved legal documentation, providing steps could lead to missed deadlines or incorrect filings."
+    },
+    {
+      "id": "t1_abstain_hard_853",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "How does the garbage collector in the V8 engine handle weak references?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Technical implementation detail query - empty context - retrieval returned no results",
+      "rationale": "V8 internals are version-specific and frequently changing. Without documentation context, any answer risks being outdated or inaccurate about implementation details."
+    },
+    {
+      "id": "t1_abstain_hard_854",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "Should we adopt a microservices architecture for our payment processing system?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Opinion/recommendation query - empty context - retrieval returned no results",
+      "rationale": "Architecture recommendations require understanding the specific system's constraints, scale, and team capabilities. Without any context about the system in question, advice would be generic and potentially harmful."
+    },
+    {
+      "id": "t1_abstain_hard_855",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "How does the efficacy of CBT compare to EMDR for treating PTSD in adolescents?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Medical comparison query - empty context - retrieval returned no results",
+      "rationale": "Comparing therapeutic efficacy requires citing specific clinical trials and meta-analyses. Without retrieved research evidence, any comparison would be ungrounded."
+    },
+    {
+      "id": "t1_abstain_hard_856",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "How many production incidents were caused by the authentication service last quarter?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Numerical/quantitative query - empty context - retrieval returned no results",
+      "rationale": "Numerical counts require exact data from incident reports. Without any retrieved records, fabricating a number would be pure hallucination."
+    },
+    {
+      "id": "t1_abstain_hard_857",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "When did the company's data retention policy last get updated?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Temporal query about policy change - empty context - retrieval returned no results",
+      "rationale": "Policy update dates are specific factual claims that must come from organizational records. No context means no evidence for any date."
+    },
+    {
+      "id": "t1_abstain_hard_858",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the recommended daily intake of vitamin D for patients with chronic kidney disease?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Medical dosage query - empty context - retrieval returned no results",
+      "rationale": "Dosage recommendations for patients with comorbidities require clinical guideline sources. Providing an ungrounded number could cause patient harm."
+    },
+    {
+      "id": "t1_abstain_hard_859",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "Why did the batch processing pipeline fail on the night of March 12th?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Causal query about specific incident - empty context - retrieval returned no results",
+      "rationale": "Root cause analysis for a specific incident requires logs, postmortem reports, or monitoring data. Without any context, speculating about causes would be misleading."
+    },
+    {
+      "id": "t1_abstain_hard_860",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "How do I configure the Kubernetes ingress controller to support mutual TLS?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Technical procedural query - empty context - retrieval returned no results",
+      "rationale": "Kubernetes configuration varies by ingress controller type, version, and cluster setup. Without documentation context, providing steps risks misconfiguration of security-critical infrastructure."
+    },
+    {
+      "id": "t1_abstain_hard_861",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What are the tax implications of converting a traditional IRA to a Roth IRA for someone earning above the income threshold?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Financial/tax query - empty context - retrieval returned no results",
+      "rationale": "Tax implications depend on current tax law, income brackets, and individual circumstances. Without authoritative tax documentation, any answer risks incorrect financial guidance."
+    },
+    {
+      "id": "t1_abstain_hard_862",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What score did the student receive on the final assessment for the machine learning course?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Education records query - empty context - retrieval returned no results",
+      "rationale": "Student assessment scores are specific factual data points that must come from academic records. Without any context, no score can be provided."
+    },
+    {
+      "id": "t1_abstain_hard_863",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "Is the Samsung Galaxy S25 Ultra worth buying over the iPhone 16 Pro Max?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Consumer comparison/opinion query - empty context - retrieval returned no results",
+      "rationale": "Product comparisons require review data, specifications, and benchmark results. Without any retrieved product information, a recommendation would be ungrounded opinion."
+    },
+    {
+      "id": "t1_abstain_hard_864",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the mechanism by which CRISPR-Cas13 targets RNA rather than DNA?",
+      "contexts": [],
+      "expected_mode": "abstain",
+      "description": "Science mechanism query - empty context - retrieval returned no results",
+      "rationale": "Molecular mechanisms require precise scientific descriptions from research literature. Without retrieved papers or documentation, explaining the mechanism risks inaccuracy in a rapidly evolving field."
+    },
+    {
+      "id": "t1_abstain_hard_865",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "short_query",
+      "query": "Revenue?",
+      "contexts": [
+        "The product team released version 4.2 of the mobile application in September, which included a redesigned onboarding flow, push notification improvements, and a new in-app tutorial system. User engagement metrics showed a 15% increase in daily active users within the first two weeks. The crash rate dropped to 0.3% from 0.8% in the previous version. The QA team ran 2,400 automated tests across iOS and Android platforms. The design system was updated to support dark mode across all components. Three new accessibility features were added to comply with WCAG 2.1 AA standards."
+      ],
+      "expected_mode": "abstain",
+      "description": "Ultra-short financial query with irrelevant product/engineering context",
+      "rationale": "The query asks about revenue but the context discusses product features, engagement metrics, and QA testing. None of the context contains financial or revenue data, so the system must abstain."
+    },
+    {
+      "id": "t1_abstain_hard_866",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "short_query",
+      "query": "Side effects?",
+      "contexts": [
+        "The clinical trial protocol was approved by the institutional review board on January 15th. Enrollment began in March and proceeded across 12 sites in the southeastern United States. The study design follows a randomized, double-blind, placebo-controlled methodology with a 2:1 allocation ratio. Participants must be between 18 and 65 years of age, with a confirmed diagnosis of moderate-to-severe plaque psoriasis for at least six months. Exclusion criteria include active tuberculosis, current use of biologic therapies, and pregnancy. The primary endpoint is the proportion of patients achieving PASI 75 at week 16. Secondary endpoints include quality of life measures using the DLQI instrument."
+      ],
+      "expected_mode": "abstain",
+      "description": "Ultra-short medical query with context about trial design but no adverse event data",
+      "rationale": "The query asks about side effects but the context only describes trial design, enrollment criteria, and endpoints. No adverse event data or safety profile information is present."
+    },
+    {
+      "id": "t1_abstain_hard_868",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "What was the clinical outcome of the Phase III trial for compound ZX-4419 in treating refractory epilepsy?",
+      "contexts": [
+        "The pharmaceutical research division published its annual review of pipeline compounds in development during the fiscal year. The document covers the strategic priorities for the oncology franchise, with particular emphasis on the checkpoint inhibitor program that entered Phase II trials in Q2. The report notes that the immuno-oncology market is projected to reach $150 billion globally by 2030, driven by combination therapy approaches and expansion into earlier lines of treatment. The team successfully completed IND-enabling studies for two novel bispecific antibodies targeting PD-L1 and TIGIT, with clinical trial applications expected to be filed in the first half of the next fiscal year. Manufacturing scale-up for the lead oncology asset progressed according to plan, with the commercial-scale bioreactor campaign yielding titers of 4.2 g/L, exceeding the target of 3.5 g/L. Quality control testing confirmed that all batches met release specifications for purity, potency, and endotoxin levels. The supply chain team secured long-term agreements with two contract manufacturing organizations to ensure redundancy in the production network. Separately, the rare disease unit reported positive preclinical results for an enzyme replacement therapy targeting Fabry disease, with favorable pharmacokinetic profiles observed in non-human primate studies. The regulatory affairs team is preparing a pre-IND meeting request with the FDA to discuss the nonclinical package and proposed first-in-human study design for this program.",
+        "The neuroscience portfolio review discussed the broader strategic direction for CNS drug development within the organization. The team highlighted the challenges of blood-brain barrier penetration for small molecule therapeutics and the emerging potential of focused ultrasound-mediated delivery techniques. Several academic collaborations were initiated during the year to explore novel delivery modalities for CNS targets. The report also covered the organization's investment in digital biomarkers for neurological conditions, including partnerships with wearable device manufacturers to develop continuous monitoring solutions for patients with movement disorders. The real-world evidence program collected data from over 12,000 patients across 45 clinical sites to better characterize the natural history of several rare neurological conditions. This data is expected to support future regulatory submissions by providing context for single-arm trial designs. The medical affairs team conducted 23 advisory boards with key opinion leaders in neurology and published 14 peer-reviewed manuscripts during the reporting period. The team also supported the development of clinical practice guidelines for the management of treatment-resistant depression, working closely with professional medical societies in North America and Europe. Publication planning for three late-stage clinical assets is on track, with Phase II results manuscripts expected to be submitted to high-impact journals in Q1 of the upcoming fiscal year."
+      ],
+      "expected_mode": "abstain",
+      "description": "Epilepsy trial outcome query with long pharma pipeline context that covers oncology and neuroscience strategy but not the specific compound or trial results",
+      "rationale": "Despite two lengthy pharmaceutical contexts that discuss pipelines and neuroscience strategy, neither mentions compound ZX-4419, epilepsy trials, or any Phase III clinical outcomes. The length and domain similarity make the context appear relevant, but the specific information requested is entirely absent."
+    },
+    {
+      "id": "t1_abstain_hard_869",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "What is the current capitalization rate for Class A industrial properties in the Dallas-Fort Worth market?",
+      "contexts": [
+        "The quarterly commercial real estate market report for the southeastern United States provides a comprehensive overview of market conditions across major metropolitan statistical areas. In the Atlanta market, office vacancy rates declined to 14.2% in Q3, down from 15.8% in the prior quarter, driven by strong leasing activity in the Midtown and Buckhead submarkets. Several large technology companies signed new leases totaling over 800,000 square feet during the quarter. The average asking rent for Class A office space in Atlanta reached $38.50 per square foot, representing a 3.2% year-over-year increase. Net absorption was positive for the third consecutive quarter at 425,000 square feet. The construction pipeline remains manageable with 2.1 million square feet under development, of which approximately 60% is pre-leased. In the multifamily sector, the Atlanta metro area saw the delivery of 4,200 new apartment units during Q3, with an average occupancy rate of 94.3% across stabilized properties. Effective rents grew by 2.8% year-over-year, with the strongest gains observed in suburban Class B properties. The investment sales market recorded $1.8 billion in transaction volume during the quarter, a 12% increase from Q2 but still below the five-year quarterly average of $2.3 billion. Capitalization rates for multifamily assets compressed by approximately 15 basis points quarter-over-quarter, reflecting sustained investor appetite for income-producing residential properties in the Atlanta metro area.",
+        "The Nashville commercial real estate market continues to demonstrate strong fundamentals across multiple property types. The industrial sector recorded its lowest vacancy rate on record at 3.1%, reflecting the sustained demand from logistics and distribution tenants attracted by Nashville's central location and interstate connectivity. Several speculative warehouse developments totaling 2.8 million square feet are scheduled for delivery in the next 12 months, though pre-leasing activity suggests the majority of this space will be absorbed quickly. The office market in Nashville showed divergent trends between downtown and suburban locations. Downtown Class A office properties maintained relatively stable occupancy at 88.7%, supported by the financial services and healthcare sectors. In contrast, suburban office parks experienced rising vacancy, particularly in the Brentwood and Cool Springs corridors. The retail sector benefited from Nashville's continued tourism growth, with hospitality-adjacent retail locations commanding premium rents. Mixed-use developments incorporating retail, residential, and entertainment components attracted significant institutional investment capital during the quarter. The report also covers preliminary data on the Raleigh-Durham and Charlotte markets, noting that both metros are experiencing rapid population growth and corresponding demand across all property types. Life sciences real estate in particular has seen increased institutional interest in the Research Triangle Park submarket."
+      ],
+      "expected_mode": "abstain",
+      "description": "Dallas-Fort Worth industrial cap rate query with long CRE market reports covering Southeast US markets but not DFW or industrial cap rates",
+      "rationale": "The contexts contain detailed commercial real estate data but focus on Atlanta and Nashville markets, covering office, multifamily, and some industrial sectors. The query asks specifically about Dallas-Fort Worth industrial capitalization rates, which appear nowhere in the provided context. The domain overlap makes this a challenging abstention case."
+    },
+    {
+      "id": "t1_abstain_hard_870",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "long_context",
+      "query": "What penalties apply if a subcontractor fails to meet the SLA for incident response times under our managed services agreement?",
+      "contexts": [
+        "The Master Services Agreement between TechCorp Solutions and Meridian Industries, effective as of July 1, 2024, establishes the framework for the provision of information technology consulting services. Section 3 of the agreement defines the scope of work to include strategic technology advisory, systems architecture review, and project management oversight for the client's digital transformation initiative. The agreement specifies a time-and-materials billing structure with blended hourly rates ranging from $175 for junior consultants to $425 for principal consultants. Section 5 addresses intellectual property rights, stipulating that all work product created during the engagement shall be owned by the client upon full payment, while pre-existing intellectual property of the service provider shall remain the property of the service provider with a perpetual, non-exclusive license granted to the client for use in connection with the deliverables. Section 7 covers confidentiality obligations, requiring both parties to maintain the confidentiality of proprietary information for a period of five years following the termination of the agreement. The limitation of liability clause in Section 9 caps the total aggregate liability of either party at the total fees paid under the agreement during the twelve-month period preceding the claim. Section 10 outlines the dispute resolution process, requiring mediation before arbitration, with arbitration to be conducted under the rules of the American Arbitration Association in the state of Delaware.",
+        "The Statement of Work attached to the consulting agreement details the phased approach for the digital transformation project. Phase 1 covers the current-state assessment and technology roadmap development, with a duration of eight weeks and a fixed fee of $285,000. Phase 2 involves the detailed design and vendor selection for the new enterprise resource planning system, spanning twelve weeks with an estimated budget of $420,000. Phase 3 addresses implementation oversight and change management support, with duration and budget to be determined based on the outcomes of Phase 2. Key deliverables include the technology assessment report, vendor evaluation matrix, implementation roadmap, organizational change management plan, and executive dashboard for tracking project milestones. The governance structure requires bi-weekly steering committee meetings attended by senior leadership from both organizations. The Statement of Work includes acceptance criteria for each deliverable, requiring written sign-off from the client's designated project sponsor within ten business days of delivery. The escalation process defines three tiers of escalation, starting with the project managers, then the engagement director and client VP of IT, and finally the respective C-suite executives. Resource allocation for the engagement includes a principal consultant serving as engagement lead, two senior consultants, and three junior consultants, with additional specialist resources available on an as-needed basis for specific workstreams."
+      ],
+      "expected_mode": "abstain",
+      "description": "SLA penalty query with long legal/consulting agreement context that covers a different type of contract entirely",
+      "rationale": "The contexts describe a consulting services agreement (time-and-materials advisory) with no managed services component, no SLAs, no subcontractor provisions, and no incident response requirements. Despite being lengthy legal documents from the same organization, they address a fundamentally different contractual relationship."
+    },
+    {
+      "id": "t1_abstain_hard_900",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "code_abstention",
+      "query": "How do I use Python's dataclasses with default_factory for mutable defaults?",
+      "contexts": [
+        "TypeScript Interface Patterns (Internal Wiki): In TypeScript, interfaces define the shape of objects without runtime overhead. For optional properties with defaults, use the Partial<T> utility type or provide defaults in the constructor. Example:\n\ninterface UserConfig {\n  name: string;\n  roles: string[];\n  settings: Record<string, unknown>;\n}\n\nfunction createUser(config: Partial<UserConfig> = {}): UserConfig {\n  return {\n    name: config.name ?? 'anonymous',\n    roles: config.roles ?? ['viewer'],\n    settings: config.settings ?? {},\n  };\n}\n\nThis avoids mutable default issues since each call creates a new object literal. TypeScript's structural typing means these interfaces can be extended via intersection types without inheritance.",
+        "JavaScript Object Patterns (Team Style Guide, v3.1): When creating objects with default values in JavaScript, avoid sharing mutable references. The spread operator provides shallow copies:\n\nconst DEFAULT_OPTIONS = Object.freeze({\n  retries: 3,\n  timeout: 5000,\n  headers: { 'Content-Type': 'application/json' },\n});\n\nfunction createClient(overrides = {}) {\n  return { ...DEFAULT_OPTIONS, ...overrides };\n}\n\nFor nested objects, use structuredClone() (available in Node 17+) or a deep-clone utility. Note: Object.freeze is shallow; nested objects remain mutable unless individually frozen."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Python dataclasses and field(default_factory=...) but contexts only have TypeScript interfaces and JavaScript object patterns",
+      "rationale": "Python's dataclass decorator, the field() function, and default_factory parameter are language-specific features with no equivalent in the JavaScript/TypeScript code provided. The concepts of mutable defaults exist across languages but the implementations are entirely different."
+    },
+    {
+      "id": "t1_abstain_hard_901",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "code_abstention",
+      "query": "How do I use React's useEffect hook to fetch data on component mount?",
+      "contexts": [
+        "Angular HTTP Client Guide (v17 Documentation): Angular provides the HttpClient service for making HTTP requests. Inject it via the constructor and use it in lifecycle hooks:\n\n@Component({ selector: 'app-users', template: '<ul><li *ngFor=\"let u of users\">{{u.name}}</li></ul>' })\nexport class UsersComponent implements OnInit {\n  users: User[] = [];\n  constructor(private http: HttpClient) {}\n  ngOnInit(): void {\n    this.http.get<User[]>('/api/users').subscribe({\n      next: (data) => this.users = data,\n      error: (err) => console.error('Failed to load users', err),\n    });\n  }\n}\n\nThe OnInit lifecycle hook fires after the component's inputs are initialized. For cleanup, implement OnDestroy and unsubscribe from observables to prevent memory leaks.",
+        "Angular Signals and RxJS (v17 Migration Notes): Angular 17 introduces signals as a reactive primitive. While RxJS Observables remain supported, signals offer simpler reactivity for many use cases:\n\nexport class DashboardComponent {\n  private dataService = inject(DataService);\n  metrics = signal<Metric[]>([]);\n  loading = signal(true);\n\n  constructor() {\n    effect(() => {\n      this.dataService.getMetrics().subscribe(m => {\n        this.metrics.set(m);\n        this.loading.set(false);\n      });\n    });\n  }\n}\n\nSignals provide fine-grained change detection without Zone.js, improving performance in large applications."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about React useEffect hook but contexts only cover Angular's OnInit lifecycle and signals",
+      "rationale": "React hooks (useEffect, useState) and Angular's component lifecycle (OnInit, signals, RxJS) are fundamentally different paradigms. Angular's dependency injection, decorators, and Observable-based patterns cannot answer questions about React's functional component hooks."
+    },
+    {
+      "id": "t1_abstain_hard_902",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "code_abstention",
+      "query": "What columns and constraints are defined in the orders table schema?",
+      "contexts": [
+        "Payment Gateway Integration (API Reference v2.4): The payment processing module handles transaction routing and settlement. Key endpoints:\n\nPOST /api/v2/payments/charge\nBody: { amount: number, currency: string, payment_method_id: string, idempotency_key: string }\nResponse: { transaction_id: string, status: 'pending'|'completed'|'failed', created_at: string }\n\nPOST /api/v2/payments/refund\nBody: { transaction_id: string, amount?: number, reason: string }\nResponse: { refund_id: string, status: 'processing'|'completed', estimated_completion: string }\n\nWebhook events are sent for status transitions. Configure webhook URLs in the dashboard under Settings > Integrations. All amounts are in the smallest currency unit (cents for USD).",
+        "Notification Service Architecture (Design Doc): The notification service dispatches messages across channels (email, SMS, push). It reads from a Kafka topic 'notification-events' and routes based on user preferences stored in Redis. Message templates are stored in PostgreSQL in the templates table with columns: id (UUID), channel (enum), subject (text), body_template (text), created_at (timestamptz). The service supports rate limiting per user (max 10 notifications/hour) and deduplication via a 24-hour sliding window on message hash."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the orders table schema but contexts describe payment API endpoints and a notification service's templates table",
+      "rationale": "Neither context contains the orders table definition. The payment API shows HTTP endpoints without database schemas, and the notification service describes a different table (templates). No columns, constraints, or schema for an orders table can be derived from this context."
+    },
+    {
+      "id": "t1_abstain_hard_903",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "code_abstention",
+      "query": "How does the calculate_shipping_cost function determine rates for international orders?",
+      "contexts": [
+        "Inventory Management Module (inventory/stock.py): The stock management system tracks warehouse quantities and triggers reorder alerts.\n\ndef check_stock_level(product_id: str, warehouse_id: str) -> StockStatus:\n    \"\"\"Check current stock for a product in a specific warehouse.\"\"\"\n    current = db.query(Stock).filter_by(\n        product_id=product_id, warehouse_id=warehouse_id\n    ).first()\n    if not current:\n        return StockStatus(available=0, reserved=0, reorder_needed=True)\n    reorder_point = current.reorder_threshold or 10\n    return StockStatus(\n        available=current.quantity - current.reserved,\n        reserved=current.reserved,\n        reorder_needed=current.quantity <= reorder_point,\n    )\n\nThe module integrates with the procurement service via an async event bus. When stock drops below the reorder threshold, a RestockRequested event is published.",
+        "Product Catalog Service (catalog/models.py): The product catalog defines the core data model for all sellable items.\n\nclass Product(Base):\n    __tablename__ = 'products'\n    id = Column(UUID, primary_key=True, default=uuid4)\n    sku = Column(String(50), unique=True, nullable=False)\n    name = Column(String(255), nullable=False)\n    description = Column(Text)\n    base_price = Column(Numeric(10, 2), nullable=False)\n    weight_kg = Column(Numeric(6, 3))\n    dimensions_cm = Column(JSON)  # {length, width, height}\n    category_id = Column(UUID, ForeignKey('categories.id'))\n    is_active = Column(Boolean, default=True)\n\nProducts are versioned through a separate product_versions table for audit history. Price overrides per region are managed by the pricing service, not stored directly on the product."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a specific shipping cost function but contexts cover inventory stock checking and product catalog models from entirely different modules",
+      "rationale": "The calculate_shipping_cost function is not present in either context. Stock management and product catalog code cannot answer questions about shipping rate logic, international zone definitions, or carrier selection algorithms."
+    },
+    {
+      "id": "t1_abstain_hard_904",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "code_abstention",
+      "query": "What changed in the v2 REST API for the /users endpoint compared to v1?",
+      "contexts": [
+        "User Service API v1 Reference (Deprecated January 2025): The v1 users endpoint follows REST conventions:\n\nGET /api/v1/users - List users (paginated, 50 per page)\nGET /api/v1/users/:id - Get user by ID\nPOST /api/v1/users - Create user\nPUT /api/v1/users/:id - Full update\nDELETE /api/v1/users/:id - Soft delete\n\nAuthentication: API key in X-Api-Key header. Response format:\n{ \"data\": {...}, \"meta\": { \"request_id\": \"...\", \"timestamp\": \"...\" } }\n\nPagination uses offset/limit: ?offset=0&limit=50. User object fields: id (int), email (string), name (string), role (enum: admin|member|viewer), created_at (ISO 8601), last_login (ISO 8601 or null). Rate limit: 100 requests per minute per API key.",
+        "Infrastructure Migration Runbook (DevOps, March 2025): The v1 to v2 migration involves moving from EC2-hosted monolith to EKS-based microservices. Key infrastructure changes: PostgreSQL 14 to PostgreSQL 16, Redis 6 to Redis 7 for caching, Nginx to Envoy for ingress. DNS cutover requires updating CNAME records for api.example.com. The migration window is scheduled for Saturday 02:00-06:00 UTC. Rollback procedure: revert DNS to old load balancer IP. Health check endpoints remain at /health for both versions. Database migration scripts are in deploy/migrations/ and must run before traffic cutover."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for v2 API changes compared to v1 but contexts only have v1 documentation and infrastructure migration notes without v2 API spec",
+      "rationale": "The v1 API specification is present but the v2 API specification is entirely absent. The infrastructure migration runbook describes deployment changes (PostgreSQL version, container orchestration) but does not document any v2 API contract changes such as new fields, changed endpoints, or modified authentication. Without the v2 spec, the comparison cannot be made."
+    },
+    {
+      "id": "t1_abstain_hard_905",
+      "category": "abstention",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "Compare the side effects of Metformin and Glipizide for type 2 diabetes management",
+      "contexts": [
+        "Atorvastatin (Lipitor) Safety Profile: Atorvastatin is a statin medication used to lower cholesterol. Common side effects include muscle pain (myalgia, 5-10%), elevated liver enzymes (1-3%), digestive issues (nausea, diarrhea, constipation, 4-7%), and headache (3-5%). Serious but rare effects include rhabdomyolysis (muscle breakdown, <0.1%), hepatotoxicity, and new-onset diabetes (9-12% increased risk in large studies). Drug interactions: avoid with strong CYP3A4 inhibitors (clarithromycin, itraconazole), grapefruit juice, and gemfibrozil. Monitoring: liver function tests at baseline and 12 weeks, then annually. Creatine kinase if muscle symptoms develop.",
+        "Lisinopril Prescribing Information: Lisinopril is an ACE inhibitor for hypertension and heart failure. Side effects: dry cough (10-15%, class effect), dizziness (5-7%), hyperkalemia (2-4%), hypotension (1-3%), angioedema (<1%, potentially life-threatening). Contraindicated in pregnancy (category D) and bilateral renal artery stenosis. Monitor potassium and renal function. Common drug interactions: potassium-sparing diuretics, NSAIDs (reduce efficacy), lithium (increased levels). Dose adjustment required for renal impairment (CrCl <30 mL/min: start at 2.5mg)."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about two diabetes medications (Metformin, Glipizide) but contexts contain information about a cholesterol drug and a blood pressure drug",
+      "rationale": "The contexts describe Atorvastatin (a statin for cholesterol) and Lisinopril (an ACE inhibitor for hypertension). Neither Metformin nor Glipizide appears anywhere in the provided context. While all four drugs are commonly prescribed, the contexts contain zero information about the two medications being compared."
     }
   ]
 }
