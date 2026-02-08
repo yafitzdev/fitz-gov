@@ -3,7 +3,7 @@
   "tier_description": "Primary benchmark for model discrimination",
   "category": "dispute",
   "description": "Queries where contexts contain conflicting information - system should mark as DISPUTED",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "mode_rationale": "DISPUTED because sources provide contradictory information. System should flag the conflict and present both perspectives.",
   "cases": [
     {
@@ -2149,6 +2149,771 @@
       "expected_mode": "disputed",
       "description": "The leading question claims universal agreement, but evidence shows contradictory results by department and a direct internal leadership disagreement",
       "rationale": "Far from universal agreement, the evidence shows: 1) The Stanford study found hybrid beats fully remote, contradicting the 'remote is best' premise. 2) Internal data shows remote was better for engineering but worse for sales. 3) The CPO and CTO explicitly disagree on policy. The 'everyone agrees' framing is directly contradicted by genuine dispute in both the research and the organization's own leadership."
+    },
+    {
+      "id": "t1_dispute_medium_508",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "medium",
+      "query": "What was the total cost of the highway expansion project?",
+      "contexts": [
+        "The highway expansion project was completed under budget at $14.2 million, according to the Department of Transportation's final report filed in June 2024.",
+        "State auditors documented $18.7 million in expenditures related to the highway expansion, including contractor payments, environmental remediation, and land acquisition costs.",
+        "The project was praised by the governor as a model of fiscal responsibility during the ribbon-cutting ceremony."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two sources report different total costs for the same project without acknowledging each other",
+      "rationale": "The DOT report claims $14.2M while auditors documented $18.7M. Both present their figures as factual totals. A classifier may miss this because neither source references or disputes the other, and both use confident, neutral language."
+    },
+    {
+      "id": "t1_dispute_medium_509",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "medium",
+      "query": "How long does it take for the new antiviral medication to clear the virus?",
+      "contexts": [
+        "Clinical trial data published in The Lancet showed viral clearance within 3 days of initiating treatment with the antiviral compound BX-440.",
+        "Post-market surveillance data from 12,000 patients indicated a median time to viral clearance of 9 days when treated with BX-440.",
+        "The FDA label recommends a 5-day course of BX-440 for standard treatment protocols."
+      ],
+      "expected_mode": "disputed",
+      "description": "Clinical trial and real-world data give very different viral clearance timelines",
+      "rationale": "The trial says 3 days, real-world data says 9 days. Both are presented as straightforward findings. The classifier may see these as complementary (trial vs. real-world) rather than conflicting, but the 3x difference in clearance time represents a genuine factual dispute about the drug's effectiveness."
+    },
+    {
+      "id": "t1_dispute_hard_511",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "What is the expected lifespan of the new bridge design?",
+      "contexts": [
+        "Engineers at the firm responsible for the design certified a 120-year service life for the bridge based on their structural fatigue models and material specifications.",
+        "An independent materials science review noted that the grade of weathering steel specified for the bridge has a documented corrosion rate that would reduce structural capacity below safety thresholds within 75 years under the local environmental conditions.",
+        "The city council approved the bridge construction, citing its long-term cost-effectiveness and reduced maintenance requirements."
+      ],
+      "expected_mode": "disputed",
+      "description": "Design certification and materials analysis imply different lifespans without directly disputing each other",
+      "rationale": "The design firm certifies 120 years, but the materials review implies the steel will fail in 75 years. Neither source mentions the other. The classifier may miss this because the contradiction requires understanding that material degradation below safety thresholds means the 120-year claim is unsupported."
+    },
+    {
+      "id": "t1_dispute_hard_512",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "Did the reforestation program achieve its carbon sequestration goals?",
+      "contexts": [
+        "The reforestation initiative planted 4 million trees across 12,000 hectares, sequestering an estimated 380,000 tonnes of CO2 annually according to the program's 2024 impact report.",
+        "Satellite imagery analysis by an independent research group measured only 6,800 hectares of surviving forest canopy in the program area, with spectral analysis indicating approximately 40% of plantings consisted of fast-growing non-native species with lower carbon density.",
+        "The program was awarded the Global Green Initiative prize for its contribution to national climate targets."
+      ],
+      "expected_mode": "disputed",
+      "description": "Program reports full success while satellite data shows substantially fewer surviving trees and lower-quality plantings",
+      "rationale": "The program claims 12,000 hectares and 380K tonnes CO2, but satellite data shows only 6,800 hectares surviving with 40% being low-carbon species. This implies the actual sequestration is far below claimed levels. The classifier may miss this because neither source explicitly challenges the other, and the contradiction requires calculating the implied shortfall."
+    },
+    {
+      "id": "t1_dispute_medium_513",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "medium",
+      "query": "How effective is the new water filtration system at removing lead?",
+      "contexts": [
+        "Laboratory testing by the manufacturer demonstrated 99.7% lead removal efficiency when filtering water with lead concentrations of 15 ppb through the Model X filtration unit.",
+        "Field testing by the city water authority found lead levels of 8 ppb in filtered water output when the same Model X units were installed in homes with lead service lines carrying water at 50 ppb, representing 84% removal.",
+        "The EPA action level for lead in drinking water is 15 ppb."
+      ],
+      "expected_mode": "disputed",
+      "description": "Lab and field testing show very different filtration effectiveness for the same product",
+      "rationale": "The manufacturer claims 99.7% removal in lab conditions, while the city found only 84% in real installations. Both present their results factually. The classifier may interpret these as different test conditions rather than a dispute, but the significant gap (99.7% vs. 84%) and the fact that field results still exceed EPA limits represent a meaningful conflict about the product's effectiveness."
+    },
+    {
+      "id": "t1_dispute_hard_514",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "Is the pension fund fully funded?",
+      "contexts": [
+        "The pension fund's annual report stated total assets of $4.2 billion against projected liabilities of $3.9 billion, yielding a funded ratio of 107.7% as of December 2024.",
+        "An actuarial analysis using updated mortality tables and a 5.5% discount rate calculated the present value of pension obligations at $5.8 billion for the same fund and reporting period.",
+        "The fund's board of trustees voted to maintain current employer contribution rates for the 2025 fiscal year."
+      ],
+      "expected_mode": "disputed",
+      "description": "Fund self-reports as overfunded while independent actuarial analysis shows significant underfunding",
+      "rationale": "The fund claims 107.7% funded ($4.2B assets vs $3.9B liabilities), but the actuarial analysis puts liabilities at $5.8B, making the fund only 72% funded. The contradiction is entirely implicit, embedded in different liability calculations. The classifier may miss it because both sources present numbers without acknowledging each other."
+    },
+    {
+      "id": "t1_dispute_hard_516",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "What is the recidivism rate for the rehabilitation program participants?",
+      "contexts": [
+        "The rehabilitation program's 5-year outcome study reported a 12% recidivism rate among program graduates, based on new felony convictions recorded in state court databases.",
+        "A longitudinal tracking study by the state corrections department found that 38% of the same program's graduates had new arrests, parole violations, or returns to custody within the same 5-year window.",
+        "The program recently received a $15 million federal grant renewal based on its demonstrated effectiveness."
+      ],
+      "expected_mode": "disputed",
+      "description": "Program and corrections department report radically different recidivism rates for the same cohort",
+      "rationale": "The program reports 12% (felony convictions only) while corrections reports 38% (arrests, violations, returns to custody). Both claim to measure recidivism for the same group over the same period. The classifier might see different definitions of recidivism as making these non-contradictory, but they represent fundamentally different claims about whether the program works."
+    },
+    {
+      "id": "t1_dispute_hard_517",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "How much water does the data center consume annually?",
+      "contexts": [
+        "The data center operator's sustainability report disclosed annual water consumption of 120 million gallons for cooling operations at their Phoenix facility.",
+        "Municipal water utility records obtained through a public records request show 340 million gallons delivered to the same facility address during the corresponding fiscal year.",
+        "The company committed to achieving water-positive operations by 2030 through investment in watershed restoration projects."
+      ],
+      "expected_mode": "disputed",
+      "description": "Company self-reports far less water consumption than municipal delivery records show",
+      "rationale": "The operator reports 120M gallons while municipal records show 340M gallons delivered to the same address. The discrepancy is nearly 3x. The classifier may not recognize this as a dispute because the sources use different framing (consumption vs. delivery), but both measure water flowing into the same facility."
+    },
+    {
+      "id": "t1_dispute_medium_518",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "medium",
+      "query": "What is the average class size at the school district?",
+      "contexts": [
+        "The school district's annual report states an average class size of 22 students, meeting the state-mandated maximum of 25 for elementary grades.",
+        "Teacher union survey data collected from 87% of district teachers found average class enrollment of 31 students, with some classrooms exceeding 35.",
+        "The district was recognized by the state education board for maintaining high educational standards."
+      ],
+      "expected_mode": "disputed",
+      "description": "District and teacher reports give very different class sizes for the same schools",
+      "rationale": "The district claims 22 students per class while teachers report 31. Both measure the same thing for the same schools. The classifier may not flag this because both sources present their numbers as straightforward facts with no mutual reference, but the 40% discrepancy represents a clear factual conflict."
+    },
+    {
+      "id": "t1_dispute_hard_519",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "What is the drug's effect on kidney function in diabetic patients?",
+      "contexts": [
+        "A phase III randomized trial of metforgliptin in 3,200 type 2 diabetes patients showed a 23% improvement in estimated glomerular filtration rate (eGFR) over 18 months, with investigators concluding the drug has renoprotective properties.",
+        "Post-marketing pharmacovigilance data from the European Medicines Agency documented 847 reports of acute kidney injury associated with metforgliptin use, with 12% requiring dialysis initiation.",
+        "Metforgliptin was added to the WHO Essential Medicines List in 2024 based on its glycemic control profile."
+      ],
+      "expected_mode": "disputed",
+      "description": "Clinical trial shows kidney protection while post-market data shows kidney injury reports",
+      "rationale": "The trial finds the drug protects kidneys (23% eGFR improvement), while pharmacovigilance data shows hundreds of acute kidney injuries. These are diametrically opposed claims about the drug's renal effects. The classifier may see trial data and adverse event reports as different evidence types rather than contradictory, but they make incompatible claims about whether the drug helps or harms kidneys."
+    },
+    {
+      "id": "t1_dispute_medium_520",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "medium",
+      "query": "How much did the company's revenue grow last quarter?",
+      "contexts": [
+        "In the Q3 earnings call, the CFO reported 18% year-over-year revenue growth, calling it the strongest quarter in the company's history.",
+        "The company's SEC 10-Q filing for the same quarter showed total revenue of $892 million, compared to $814 million in the year-ago quarter.",
+        "Analysts at Goldman Sachs maintained their buy rating on the stock following the earnings release."
+      ],
+      "expected_mode": "disputed",
+      "description": "Earnings call claims 18% growth but SEC filing numbers only show 9.6% growth",
+      "rationale": "The CFO says 18% growth, but the 10-Q numbers ($892M vs $814M) calculate to 9.6% growth. The classifier must do arithmetic to spot this. Both are official company communications about the same quarter, making this an implicit contradiction that requires numerical reasoning to detect."
+    },
+    {
+      "id": "t1_dispute_hard_521",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "Is the groundwater in the region safe for agricultural use?",
+      "contexts": [
+        "The regional water authority's 2024 assessment certified groundwater quality as meeting all agricultural irrigation standards, with nitrate levels at 8 mg/L and total dissolved solids at 450 mg/L.",
+        "Soil analysis reports from farms using the same aquifer showed progressive salinization of topsoil over the past three years, with sodium adsorption ratios increasing from 4 to 13, consistent with irrigation using water containing elevated sodium concentrations.",
+        "The regional agriculture cooperative reported stable crop yields across the monitored period."
+      ],
+      "expected_mode": "disputed",
+      "description": "Water authority certifies safety while soil data implies the irrigation water is degrading farmland",
+      "rationale": "The water authority says the water meets standards, but soil salinization data implies the water has high sodium that is damaging soil. The classifier must understand that rising sodium adsorption ratios in soil are caused by the water being used for irrigation, making the safety certification questionable. This requires domain knowledge to connect."
+    },
+    {
+      "id": "t1_dispute_hard_523",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "What is the failure rate of the implanted cardiac device?",
+      "contexts": [
+        "The manufacturer's product performance report cited a 0.3% device malfunction rate over 5 years across 45,000 implanted units, based on returned product analysis and voluntary physician reporting.",
+        "A Medicare claims database analysis of 28,000 patients with the same device model identified 1,840 device-related revision surgeries within 5 years of implantation, representing a 6.6% surgical intervention rate.",
+        "The device received FDA Class III premarket approval and is covered by most major insurance carriers."
+      ],
+      "expected_mode": "disputed",
+      "description": "Manufacturer reports very low failure rate while Medicare data shows much higher surgical revision rate",
+      "rationale": "The manufacturer claims 0.3% malfunction while Medicare data shows 6.6% revision surgeries. The manufacturer relies on voluntary reporting (known to undercount), while Medicare captures actual surgical interventions. The classifier may not connect voluntary malfunction reports with surgical revision data as contradictory metrics about the same underlying question of device reliability."
+    },
+    {
+      "id": "t1_dispute_hard_524",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "How energy-efficient is the new office building?",
+      "contexts": [
+        "The building earned LEED Platinum certification with a projected energy use intensity of 42 kBtu per square foot per year, placing it in the top 5% of commercial buildings nationally.",
+        "Utility billing records for the first two full years of operation show actual energy consumption averaging 118 kBtu per square foot per year, with peak summer months reaching 145 kBtu.",
+        "The architecture firm received a design excellence award from the American Institute of Architects for the project."
+      ],
+      "expected_mode": "disputed",
+      "description": "LEED certification projects high efficiency but actual utility bills show nearly 3x the energy use",
+      "rationale": "The LEED certification projects 42 kBtu/sqft/yr while actual bills show 118 kBtu/sqft/yr. This is a 2.8x gap between projected and actual performance. The classifier may treat projected vs. actual as different timeframes rather than conflicting claims, but they represent fundamentally different answers to whether the building is energy-efficient."
+    },
+    {
+      "id": "t1_dispute_hard_525",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "What is the air quality impact of the new industrial facility?",
+      "contexts": [
+        "The facility's environmental impact assessment predicted annual emissions of 12 tonnes of particulate matter and 45 tonnes of volatile organic compounds, concluding these levels would not cause exceedances of National Ambient Air Quality Standards at any nearby receptor location.",
+        "Air quality monitoring stations within 3 kilometers of the facility recorded a 35% increase in PM2.5 concentrations and a 28% increase in ozone precursors during the first year of operations compared to the three-year pre-construction baseline.",
+        "The facility operator maintained full compliance with all air quality permit conditions throughout the reporting period."
+      ],
+      "expected_mode": "disputed",
+      "description": "Environmental impact assessment predicted minimal impact but monitoring stations show significant air quality deterioration",
+      "rationale": "The EIA predicted no standard exceedances, but actual monitoring shows 35% more particulate matter and 28% more ozone precursors. The facility claims permit compliance, which further obscures the conflict. The classifier must recognize that predicting no impact and measuring significant degradation are contradictory claims about the same facility, even though neither source references the other."
+    },
+    {
+      "id": "t1_dispute_medium_526",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "medium",
+      "query": "How many hours per week do junior doctors work at the hospital?",
+      "contexts": [
+        "Hospital administration records show junior doctors averaging 48 hours per week, in compliance with the European Working Time Directive's 48-hour limit.",
+        "An anonymous survey of 340 junior doctors at the same hospital reported average weekly working hours of 67, including unrecorded overtime spent completing patient documentation after shift end.",
+        "The hospital received a satisfactory rating in its most recent workforce inspection by the Care Quality Commission."
+      ],
+      "expected_mode": "disputed",
+      "description": "Hospital records and doctor surveys give very different weekly hours worked",
+      "rationale": "Administration says 48 hours (exactly at the legal limit) while doctors report 67 hours. Both measure the same workforce at the same hospital. The classifier may dismiss the survey as subjective, but the 40% discrepancy between recorded and self-reported hours represents a direct factual conflict about working conditions."
+    },
+    {
+      "id": "t1_dispute_hard_527",
+      "category": "dispute",
+      "subcategory": "implicit_contradiction",
+      "difficulty": "hard",
+      "query": "What is the mortality rate for the surgical procedure?",
+      "contexts": [
+        "The hospital's published outcomes data reported a 30-day mortality rate of 1.2% for laparoscopic Whipple procedures, based on 420 cases performed between 2020 and 2024.",
+        "A state health department database query for the same hospital and procedure codes during the same period returned 38 deaths within 90 days out of 385 matched cases, with 14 deaths occurring between days 31 and 90 post-operation.",
+        "The surgical department was designated as a Center of Excellence for pancreatic surgery by the national surgical quality consortium."
+      ],
+      "expected_mode": "disputed",
+      "description": "Hospital's published mortality rate uses a narrower window and different case count than state records show",
+      "rationale": "The hospital reports 1.2% at 30 days (from 420 cases), while state data shows 38 deaths in 90 days from 385 cases (9.9%), with 14 deaths between days 31-90. The case count discrepancy (420 vs 385) and different time windows obscure a major difference in reported safety. The classifier must recognize that the hospital's favorable metric conceals a significantly higher overall mortality rate captured in state records."
+    },
+    {
+      "id": "t1_dispute_medium_528",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "medium",
+      "query": "Does the building's fire suppression system meet current code requirements?",
+      "contexts": [
+        "The property owner's insurance certificate confirms that the fire suppression system was inspected and certified as code-compliant by ABC Fire Protection Services in January 2024.",
+        "The city fire marshal's inspection report from March 2024 found the building's sprinkler system has insufficient coverage in the renovated east wing and ordered corrective action within 90 days.",
+        "The building was constructed in 1998 and underwent a major renovation of the east wing in 2023."
+      ],
+      "expected_mode": "disputed",
+      "description": "Insurance inspection certifies code compliance while fire marshal finds violations",
+      "rationale": "The insurance inspector says compliant, the fire marshal says non-compliant. This is a binary yes/no conflict about whether the system meets code. The classifier may predict qualified because both sources have authority, but they make directly opposite determinations about the same factual question."
+    },
+    {
+      "id": "t1_dispute_medium_529",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "medium",
+      "query": "Is the river water safe for recreational swimming?",
+      "contexts": [
+        "The county health department posted signs designating the river segment as safe for primary contact recreation, based on E. coli sampling results from their monthly monitoring program.",
+        "University researchers conducting weekly sampling at the same river locations detected fecal coliform levels exceeding the EPA's recreational water quality criteria in 60% of their samples during the summer season.",
+        "The river is a popular destination for tubing and kayaking during summer months."
+      ],
+      "expected_mode": "disputed",
+      "description": "Health department declares water safe while university sampling finds frequent contamination",
+      "rationale": "The county says safe for swimming, while university data shows 60% of samples fail EPA criteria. The binary question (safe or not) gets opposite answers. The classifier may weigh the official designation more heavily and predict a confident answer, but the university data directly contradicts the safety determination."
+    },
+    {
+      "id": "t1_dispute_hard_530",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "hard",
+      "query": "Has the company achieved carbon neutrality?",
+      "contexts": [
+        "The company's 2024 sustainability report announced the achievement of carbon neutrality across all operations, verified by an independent auditor using the GHG Protocol Corporate Standard methodology.",
+        "An investigative analysis by a climate accountability nonprofit found that 78% of the company's claimed carbon offsets came from forest preservation projects that were later found to have no additional climate benefit, as the forests were never at risk of being cleared.",
+        "The company was included in the Dow Jones Sustainability Index for the third consecutive year."
+      ],
+      "expected_mode": "disputed",
+      "description": "Company claims verified carbon neutrality but analysis shows most offsets are worthless",
+      "rationale": "The company says carbon neutral (verified by auditor), but 78% of offsets had no real climate benefit. If the offsets are invalid, the company is not actually carbon neutral. This is a binary claim (neutral or not) with opposing conclusions. The classifier may treat the auditor verification as definitive, missing that the offset quality analysis undermines the entire neutrality claim."
+    },
+    {
+      "id": "t1_dispute_medium_531",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "medium",
+      "query": "Did the vaccine clinical trial meet its primary endpoint?",
+      "contexts": [
+        "The pharmaceutical company's press release announced that the Phase III trial of their RSV vaccine met its primary endpoint, demonstrating statistically significant efficacy in preventing severe respiratory illness in adults over 60.",
+        "The FDA's Vaccines and Related Biological Products Advisory Committee briefing document noted that the trial's primary endpoint was not met when using the pre-specified statistical analysis plan, and that significance was achieved only after a post-hoc adjustment to the analysis population.",
+        "The company's stock price increased 12% on the day of the press release."
+      ],
+      "expected_mode": "disputed",
+      "description": "Company says trial met endpoint while FDA advisory documents say it did not under the original analysis plan",
+      "rationale": "The company says the trial succeeded; the FDA advisory committee says it only succeeded after changing the analysis rules. This is a binary dispute about whether the trial met its primary endpoint. The classifier may see both as discussing the same trial results and predict qualified, but they reach opposite conclusions about trial success."
+    },
+    {
+      "id": "t1_dispute_hard_532",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "hard",
+      "query": "Is the autonomous vehicle system ready for deployment on public roads?",
+      "contexts": [
+        "The autonomous vehicle company submitted certification documents to the National Highway Traffic Safety Administration demonstrating that their Level 4 system completed 2.3 million miles of testing with a disengagement rate of 0.004 per thousand miles, meeting all proposed federal safety benchmarks.",
+        "Internal engineering documents obtained through a whistleblower disclosure revealed that the testing fleet's software included a geofenced operational design domain that excluded 73% of common urban driving scenarios, including unprotected left turns, construction zones, and school zones.",
+        "Three states have issued permits allowing limited commercial deployment of the company's autonomous vehicles."
+      ],
+      "expected_mode": "disputed",
+      "description": "Certification documents show safety benchmarks met but internal documents reveal testing excluded most real-world scenarios",
+      "rationale": "The company certifies readiness with impressive stats (2.3M miles, low disengagement), but internal documents show testing excluded 73% of common driving scenarios. Meeting benchmarks in controlled conditions does not equal readiness for real roads. The classifier may focus on the certification metrics and miss that the testing scope invalidates the readiness claim."
+    },
+    {
+      "id": "t1_dispute_hard_533",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "hard",
+      "query": "Does the dietary supplement contain the labeled amount of active ingredient?",
+      "contexts": [
+        "The supplement manufacturer's certificate of analysis, performed by their in-house quality control laboratory, confirmed each capsule contains 500 mg of curcuminoid extract as labeled, with a potency result of 498 mg per capsule.",
+        "Independent testing by ConsumerLab found that capsules from three separate retail lots of the same product contained between 85 mg and 210 mg of curcuminoids, with an average of 152 mg per capsule, representing 30% of the labeled amount.",
+        "The product carries a GMP-certified manufacturing label and is sold through major pharmacy chains."
+      ],
+      "expected_mode": "disputed",
+      "description": "Manufacturer's testing confirms full potency while independent lab finds only 30% of labeled ingredient",
+      "rationale": "The manufacturer says 498 mg per capsule, independent testing finds 152 mg average. This is a binary factual question about whether the product contains what it claims. The classifier may weigh the manufacturer's certificate of analysis as authoritative, but the independent lab's multi-lot testing directly refutes the potency claim."
+    },
+    {
+      "id": "t1_dispute_medium_534",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "medium",
+      "query": "Was the contract awarded through a competitive bidding process?",
+      "contexts": [
+        "The procurement office's official record states that the $45 million IT services contract was awarded through a full and open competitive process, with five qualified vendors submitting proposals evaluated against published criteria.",
+        "Emails released under a Freedom of Information request show the agency's CIO sharing draft requirements with the eventual winner four months before the solicitation was publicly posted, and adjusting technical specifications based on that vendor's capabilities.",
+        "The Government Accountability Office received no bid protests related to this contract award."
+      ],
+      "expected_mode": "disputed",
+      "description": "Official records claim competitive bidding while internal emails show pre-solicitation coordination with the winner",
+      "rationale": "The procurement record says competitive, but FOIA emails show the winning vendor shaped the requirements before the competition was announced. This is a binary question (competitive or not) with contradictory evidence. The classifier may predict confident based on the official record, missing that the emails undermine the competitiveness of the process."
+    },
+    {
+      "id": "t1_dispute_hard_535",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "hard",
+      "query": "Is the mine's tailings dam structurally sound?",
+      "contexts": [
+        "The mining company's annual dam safety report, prepared by their retained engineering consultant, classified the tailings dam as satisfactory with a factor of safety of 1.5, exceeding the minimum regulatory requirement of 1.3.",
+        "Satellite-based interferometric synthetic aperture radar (InSAR) monitoring data published by a geotechnical research institute detected accelerating surface displacement of 4.2 cm per month along the dam's northern embankment, a rate that their analysis characterized as consistent with progressive internal erosion of the foundation materials.",
+        "The dam's operating permit was renewed by the state mining regulator for a five-year term in 2023."
+      ],
+      "expected_mode": "disputed",
+      "description": "Engineering assessment says dam is satisfactory while satellite data shows accelerating structural movement consistent with failure precursors",
+      "rationale": "The consultant says the dam is safe (factor of safety 1.5), but InSAR data shows accelerating displacement consistent with internal erosion, a known failure mechanism. The classifier must understand that progressive displacement at 4.2 cm/month contradicts a satisfactory structural assessment. The technical language in both sources may prevent the classifier from recognizing these as opposing claims about the same structure's integrity."
+    },
+    {
+      "id": "t1_dispute_hard_536",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "hard",
+      "query": "Did the clinical study demonstrate that the therapy reduces chronic pain?",
+      "contexts": [
+        "The therapy developer's published results from a 200-patient randomized controlled trial reported a 3.2-point reduction on the Visual Analog Scale for patients receiving the treatment versus a 0.8-point reduction in the placebo group, with a p-value of 0.002.",
+        "A systematic review published in the Cochrane Database identified that the trial used last-observation-carried-forward imputation for the 34% of patients who dropped out, and that when the analysis was restricted to trial completers only, the between-group difference was 0.9 points, which fell below the minimum clinically important difference of 1.5 points.",
+        "The therapy is currently marketed in 14 countries and is seeking expanded insurance reimbursement coverage."
+      ],
+      "expected_mode": "disputed",
+      "description": "Published trial shows significant pain reduction but systematic review finds the result depends on how dropouts are handled",
+      "rationale": "The trial reports a statistically significant 3.2 vs 0.8 point difference (p=0.002), but the Cochrane review reveals that with 34% dropout imputation removed, the real difference is only 0.9 points, below clinical significance. Both cite the same study data. The classifier may see a published significant result and a review discussing methodology as non-contradictory, but they reach opposite conclusions about whether the therapy actually works for pain."
+    },
+    {
+      "id": "t1_dispute_hard_537",
+      "category": "dispute",
+      "subcategory": "binary_conflict",
+      "difficulty": "hard",
+      "query": "Is the endangered species population recovering in the protected area?",
+      "contexts": [
+        "The wildlife management agency's annual census reported the population of the spotted owl in the designated recovery zone increased from 120 breeding pairs in 2020 to 185 breeding pairs in 2024, representing a 54% population increase over four years.",
+        "Genetic analysis of feather samples collected throughout the same recovery zone by university researchers revealed that effective population size declined from an estimated 95 genetically distinct individuals in 2020 to 62 in 2024, with heterozygosity dropping 18%, indicating a severe genetic bottleneck and increased inbreeding despite the apparent numerical increase.",
+        "The recovery zone was expanded by 12,000 acres in 2022 to provide additional habitat connectivity."
+      ],
+      "expected_mode": "disputed",
+      "description": "Census counts show population growth while genetic analysis reveals the population is actually collapsing genetically",
+      "rationale": "The agency counts 54% more breeding pairs, but genetic analysis shows effective population shrinking from 95 to 62 unique individuals with an inbreeding bottleneck. More pairs does not mean a healthier population if genetic diversity is collapsing. The classifier must understand that numerical growth and genetic decline are contradictory indicators of population recovery, which requires ecological domain knowledge to connect."
+    },
+    {
+      "id": "t1_dispute_hard_538",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "hard",
+      "query": "Does the new blood pressure medication Valsotrin reduce cardiovascular events?",
+      "contexts": [
+        "The CARDINAL trial (n=4,200, 24-month follow-up) found that Valsotrin reduced major adverse cardiovascular events by 23% compared to placebo (HR 0.77, 95% CI 0.63-0.94, p=0.03). The treatment group showed significantly lower rates of hospitalization for heart failure.",
+        "A post-market observational study conducted across 38 European hospitals (n=6,100) found no statistically significant reduction in cardiovascular events among Valsotrin users (HR 0.96, 95% CI 0.84-1.10, p=0.41). Researchers noted the effect size was negligible at 3.2%.",
+        "Both studies used similar patient populations with Stage 2 hypertension, though the CARDINAL trial excluded patients with prior myocardial infarction while the European study did not."
+      ],
+      "expected_mode": "disputed",
+      "description": "Randomized trial shows significant CV reduction while large observational study shows no effect",
+      "rationale": "The CARDINAL trial reports a statistically significant 23% reduction (p=0.03) while the European observational study finds a negligible 3.2% change that is not significant (p=0.41). These point in fundamentally different directions on whether the drug works."
+    },
+    {
+      "id": "t1_dispute_medium_539",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "medium",
+      "query": "Has customer satisfaction improved after the new support system rollout?",
+      "contexts": [
+        "Internal survey results (n=500 respondents, Q3 2024) show customer satisfaction increased to 87%, up from 78% before the rollout. The net promoter score rose from 34 to 52.",
+        "An independent survey commissioned by the board (n=1,200 respondents, Q3 2024) found satisfaction at 71%, down from 79% pre-rollout. Detractor scores increased by 11 percentage points.",
+        "Both surveys targeted the same customer base during the same quarter but used different sampling methods."
+      ],
+      "expected_mode": "disputed",
+      "description": "Internal survey shows satisfaction up while independent survey shows satisfaction down",
+      "rationale": "The internal survey reports satisfaction rising from 78% to 87% while the independent survey shows it declining from 79% to 71%. One indicates improvement and the other deterioration, a clear directional conflict."
+    },
+    {
+      "id": "t1_dispute_hard_540",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "hard",
+      "query": "Does the cognitive training app MindSharp improve working memory in older adults?",
+      "contexts": [
+        "A randomized controlled trial at Johns Hopkins (n=340, ages 65-80) found that 8 weeks of MindSharp training improved working memory scores by 18% on the N-back task (Cohen's d=0.54, p=0.008). Gains persisted at 6-month follow-up.",
+        "A multi-site replication study across four universities (n=720, ages 62-82) found no significant improvement in working memory. The treatment group improved by 2.1% on the N-back task (Cohen's d=0.07, p=0.62), indistinguishable from the active control group.",
+        "Both studies used the same version of MindSharp and identical N-back assessment protocols."
+      ],
+      "expected_mode": "disputed",
+      "description": "Original RCT shows significant working memory gains while larger replication finds no effect",
+      "rationale": "The Hopkins trial reports an 18% improvement with a medium effect size (d=0.54, p=0.008), while the larger multi-site replication finds only 2.1% change with a negligible effect size (d=0.07, p=0.62). The replication effectively fails to confirm the original finding."
+    },
+    {
+      "id": "t1_dispute_medium_541",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "medium",
+      "query": "Is the new fertilizer blend effective at increasing corn yield?",
+      "contexts": [
+        "Field trials conducted by AgriTech Solutions across 12 Midwest farms showed corn yield increased by 14.2 bushels per acre (from 178.3 to 192.5 bu/acre, p=0.02) when using the new blend compared to the standard formulation.",
+        "University of Illinois Extension trials across 20 farms found the new blend produced 1.8 fewer bushels per acre compared to the standard (171.4 vs 173.2 bu/acre, p=0.71), with no statistically significant difference in yield.",
+        "Both trials were conducted during the 2024 growing season in comparable soil types."
+      ],
+      "expected_mode": "disputed",
+      "description": "Industry trials show significant yield increase while university trials show no benefit",
+      "rationale": "AgriTech reports a significant 14.2 bu/acre increase (p=0.02) while the university extension finds a slight decrease of 1.8 bu/acre that is not significant (p=0.71). The directional conflict is clear: one says the blend works, the other says it does not."
+    },
+    {
+      "id": "t1_dispute_hard_542",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "hard",
+      "query": "Does workplace meditation reduce employee absenteeism?",
+      "contexts": [
+        "A controlled study at three Fortune 500 companies (n=1,800 employees, 12-month period) found that departments offering daily 15-minute meditation sessions saw absenteeism drop by 31% (95% CI: 22%-40%, p<0.001). Sick days fell from an average of 8.2 to 5.7 per employee per year.",
+        "A Department of Labor meta-analysis of 14 workplace wellness programs including meditation (total n=12,400) concluded that meditation-based interventions showed no statistically significant effect on absenteeism rates (pooled OR 0.94, 95% CI 0.82-1.08, p=0.38). The authors noted high heterogeneity across studies (I-squared=74%).",
+        "The Fortune 500 study controlled for pre-existing wellness culture while the meta-analysis included companies with varying baseline wellness engagement."
+      ],
+      "expected_mode": "disputed",
+      "description": "Corporate study shows 31% absenteeism reduction while federal meta-analysis finds no significant effect",
+      "rationale": "The Fortune 500 study reports a highly significant 31% reduction in absenteeism (p<0.001) while the meta-analysis of 14 programs finds no significant effect (pooled OR 0.94, p=0.38). These are directionally opposed conclusions about the same intervention."
+    },
+    {
+      "id": "t1_dispute_medium_543",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "medium",
+      "query": "Does the redesigned checkout flow improve e-commerce conversion rates?",
+      "contexts": [
+        "A/B test results from the platform team (n=45,000 sessions, 2 weeks) show the redesigned checkout increased conversion by 8.4% (from 3.1% to 3.36%, p=0.04). Mobile conversions specifically improved by 12.1%.",
+        "Extended A/B test run by the analytics team (n=180,000 sessions, 8 weeks) found the redesigned checkout decreased conversion by 2.7% (from 3.1% to 3.02%, p=0.03). The initial uplift observed in weeks 1-2 reversed in subsequent weeks.",
+        "Both tests used the same checkout design variant and randomization methodology."
+      ],
+      "expected_mode": "disputed",
+      "description": "Short-run A/B test shows conversion increase while longer test shows a decrease",
+      "rationale": "The 2-week test reports a significant 8.4% lift (p=0.04) while the 8-week test reports a significant 2.7% decline (p=0.03). Both are statistically significant but point in opposite directions regarding the redesign's effectiveness."
+    },
+    {
+      "id": "t1_dispute_hard_544",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "hard",
+      "query": "Does exposure to glyphosate increase cancer risk in agricultural workers?",
+      "contexts": [
+        "The Agricultural Health Study, a prospective cohort of 54,251 pesticide applicators followed for 20 years, found no significant association between glyphosate use and overall cancer incidence (RR 1.03, 95% CI 0.91-1.17). No individual cancer type showed a statistically significant elevation.",
+        "A meta-analysis published in Mutation Research (6 case-control studies, combined n=8,400) found a statistically significant 41% increased risk of non-Hodgkin lymphoma among individuals with the highest cumulative glyphosate exposure (OR 1.41, 95% CI 1.13-1.75, p=0.002).",
+        "The IARC classified glyphosate as 'probably carcinogenic to humans' (Group 2A), while the EPA, EFSA, and ECHA concluded it is not likely carcinogenic based on the available evidence."
+      ],
+      "expected_mode": "disputed",
+      "description": "Largest cohort study finds no cancer link while meta-analysis finds 41% increased lymphoma risk",
+      "rationale": "The prospective cohort study finds no association (RR 1.03, CI crosses 1.0) while the meta-analysis reports a significant 41% increased risk of non-Hodgkin lymphoma (OR 1.41, p=0.002). These are diametrically opposed conclusions about glyphosate's carcinogenicity."
+    },
+    {
+      "id": "t1_dispute_medium_545",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "medium",
+      "query": "Does the four-day work week improve company productivity?",
+      "contexts": [
+        "Iceland's large-scale trial (n=2,500 workers, 2015-2019) found that productivity remained the same or improved in 86% of participating workplaces after moving to a four-day week. Revenue per employee increased by an average of 6.3% (p=0.01).",
+        "A US manufacturing sector study (n=34 factories, 18 months) found output per labor-hour declined by 9.4% under four-day schedules (p=0.006). Total weekly output dropped by 11.2% despite longer individual shifts, with quality control incidents rising by 17%.",
+        "Both studies measured productivity using output-per-hour metrics appropriate to their respective sectors."
+      ],
+      "expected_mode": "disputed",
+      "description": "Iceland trial shows productivity improvement while US manufacturing study shows decline",
+      "rationale": "Iceland's trial reports a 6.3% increase in revenue per employee (p=0.01) while the US study finds a 9.4% decline in output per labor-hour (p=0.006). Both are statistically significant but reach opposite conclusions about four-day week productivity."
+    },
+    {
+      "id": "t1_dispute_hard_546",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "hard",
+      "query": "Does the probiotic supplement LactoBalance reduce IBS symptoms?",
+      "contexts": [
+        "A double-blind RCT (n=280, 12-week intervention) published in Gastroenterology found LactoBalance reduced IBS symptom severity scores by 42% compared to placebo (mean difference -84 points on IBS-SSS, 95% CI -108 to -60, p<0.001). Bloating and abdominal pain showed the greatest improvement.",
+        "A Cochrane systematic review incorporating 9 trials of the same probiotic formulation (total n=2,100) found no clinically meaningful benefit. The pooled effect was a 6% symptom reduction (mean difference -12 points on IBS-SSS, 95% CI -28 to +4, p=0.14). The authors rated the evidence certainty as 'low' due to inconsistency.",
+        "The original RCT recruited participants through gastroenterology clinics while the systematic review included trials with broader recruitment criteria."
+      ],
+      "expected_mode": "disputed",
+      "description": "Single high-profile RCT shows large symptom reduction while Cochrane review of 9 trials finds no benefit",
+      "rationale": "The individual RCT reports a dramatic 42% symptom reduction (p<0.001) while the Cochrane review pooling 9 trials finds only a 6% non-significant reduction (p=0.14). The single trial's strong positive result is contradicted by the broader evidence synthesis."
+    },
+    {
+      "id": "t1_dispute_hard_547",
+      "category": "dispute",
+      "subcategory": "statistical_direction_conflict",
+      "difficulty": "hard",
+      "query": "Does implementing speed cameras reduce traffic fatalities?",
+      "contexts": [
+        "An analysis of 72 UK speed camera sites (5-year pre/post comparison) found a 42% reduction in fatal and serious collisions within 500 meters of camera locations (IRR 0.58, 95% CI 0.49-0.69, p<0.001). The reduction was consistent across urban and rural sites.",
+        "A regression-to-the-mean adjusted study from the RAC Foundation (n=551 camera sites) found that after accounting for the statistical tendency for accident rates to naturally decrease at high-accident sites, speed cameras reduced fatalities by only 1.4% (IRR 0.986, 95% CI 0.91-1.07, p=0.73). The authors concluded the raw reduction was largely a statistical artifact.",
+        "Both studies used UK Department for Transport collision data but applied different statistical adjustments for baseline accident trends."
+      ],
+      "expected_mode": "disputed",
+      "description": "Unadjusted analysis shows 42% fatality reduction while regression-adjusted study finds negligible 1.4% effect",
+      "rationale": "The first study reports a highly significant 42% reduction (p<0.001) while the regression-adjusted analysis finds only a 1.4% non-significant reduction (p=0.73). The disagreement centers on whether the observed reduction is a genuine camera effect or a statistical artifact."
+    },
+    {
+      "id": "t1_dispute_hard_550",
+      "category": "dispute",
+      "subcategory": "temporal_conflict",
+      "difficulty": "hard",
+      "query": "What is the water quality status of Lake Champlain?",
+      "contexts": [
+        "Vermont Department of Environmental Conservation Report (2022): 'Lake Champlain's phosphorus levels have decreased by 18% over the past decade, with concentrations now averaging 14.2 micrograms per liter in the main lake body. Blue-green algae bloom frequency has declined by 30%. The lake meets federal water quality standards for recreational use.'",
+        "EPA Region 1 Assessment (August 2024): 'Lake Champlain has been placed on the 303(d) impaired waters list following sustained phosphorus exceedances in the Missisquoi Bay and St. Albans Bay segments. Average phosphorus concentrations reached 28.7 micrograms per liter in monitored bays, exceeding the 17 ug/L threshold. Blue-green algae advisories were issued on 23 days during the 2024 summer season, the highest count in a decade.'",
+        "The Vermont DEC and EPA both monitor Lake Champlain water quality using consistent USGS sampling protocols."
+      ],
+      "expected_mode": "disputed",
+      "description": "2022 state report shows improving water quality while 2024 EPA assessment lists the lake as impaired",
+      "rationale": "The 2022 Vermont report describes a positive trend with declining phosphorus and fewer algae blooms, while the 2024 EPA assessment places the lake on the impaired waters list with double the phosphorus concentration and record algae advisories. The lake's condition appears to have significantly deteriorated between assessments."
+    },
+    {
+      "id": "t1_dispute_hard_552",
+      "category": "dispute",
+      "subcategory": "temporal_conflict",
+      "difficulty": "hard",
+      "query": "What is the deforestation rate in the Brazilian Amazon?",
+      "contexts": [
+        "INPE PRODES Report (August 2023): 'Deforestation in the Brazilian Legal Amazon fell by 22.3% in the 2022-2023 monitoring period, reaching 9,001 square kilometers. This represents the first significant decline in four years, attributed to strengthened enforcement operations and real-time satellite monitoring via the DETER system.'",
+        "Global Forest Watch Analysis (July 2024): 'Primary forest loss in the Brazilian Amazon increased by 14% in the first half of 2024 compared to the same period in 2023, reversing the downward trend. Hot-spot analysis reveals new clearing corridors along the BR-319 highway and in the Apui municipality of Amazonas state, areas previously considered low-risk.'",
+        "Both sources derive their measurements from Landsat satellite imagery but use different classification algorithms and reporting periods."
+      ],
+      "expected_mode": "disputed",
+      "description": "2023 government data shows deforestation declining while 2024 analysis shows it rising again",
+      "rationale": "The INPE report describes a 22.3% decline in deforestation for 2022-2023, while Global Forest Watch reports a 14% increase in the first half of 2024. These point in opposite directions on the trajectory of Amazon deforestation, making the current trend genuinely disputed."
+    },
+    {
+      "id": "t1_dispute_hard_554",
+      "category": "dispute",
+      "subcategory": "temporal_conflict",
+      "difficulty": "hard",
+      "query": "What is the current regulatory status of kratom in the United States?",
+      "contexts": [
+        "DEA Federal Register Notice (August 2023): 'The DEA has concluded its review and determined that kratom does not meet the criteria for scheduling under the Controlled Substances Act at this time. Kratom remains legal at the federal level. The agency will continue monitoring adverse event reports and may revisit this determination.'",
+        "FDA Safety Communication (March 2025): 'The FDA has issued an import alert and moved to classify kratom-containing products as unapproved new drugs. Multiple states have enacted the Kratom Consumer Protection Act, but six states have banned kratom outright since 2024. The regulatory landscape has shifted substantially, with the FDA now actively pursuing enforcement actions against kratom vendors making therapeutic claims.'",
+        "Kratom regulation varies by state, with some states banning it entirely while others have enacted consumer protection frameworks."
+      ],
+      "expected_mode": "disputed",
+      "description": "2023 DEA ruling leaves kratom unscheduled while 2025 FDA communication describes active enforcement",
+      "rationale": "The 2023 DEA determination says kratom does not meet scheduling criteria and remains legal federally, while the 2025 FDA communication describes an import alert, classification as unapproved drugs, and active enforcement. These federal agencies present contradictory pictures of kratom's regulatory standing."
+    },
+    {
+      "id": "t1_dispute_hard_555",
+      "category": "dispute",
+      "subcategory": "temporal_conflict",
+      "difficulty": "hard",
+      "query": "Is the company's data stored in compliance with GDPR requirements?",
+      "contexts": [
+        "Annual Compliance Audit Report (March 2024): 'The company achieved full GDPR compliance across all data processing activities. Data residency requirements are met through EU-based Azure data centers in Frankfurt and Amsterdam. Cross-border transfer mechanisms use Standard Contractual Clauses approved by the European Commission. No compliance gaps were identified.'",
+        "Data Protection Officer Incident Report (November 2024): 'Following the Azure Frankfurt region outage on October 15, disaster recovery procedures automatically failed over customer data to the US East region for 72 hours. Approximately 340,000 EU customer records were processed on US-based infrastructure without valid transfer mechanisms in place. The Irish DPC has been notified as required under Article 33.'",
+        "The company processes personal data of approximately 2.1 million EU residents across 14 member states."
+      ],
+      "expected_mode": "disputed",
+      "description": "March audit confirms GDPR compliance while November incident report reveals unauthorized US data transfer",
+      "rationale": "The March 2024 audit report certifies full GDPR compliance with EU data residency, while the November 2024 incident report reveals that 340,000 EU customer records were processed on US infrastructure without valid transfer mechanisms, triggering a DPC notification. The compliance status is directly contradicted by the subsequent breach."
+    },
+    {
+      "id": "t1_dispute_hard_557",
+      "category": "dispute",
+      "subcategory": "temporal_conflict",
+      "difficulty": "hard",
+      "query": "What is the population of the critically endangered Sumatran rhinoceros?",
+      "contexts": [
+        "IUCN Red List Assessment (2022): 'The Sumatran rhinoceros (Dicerorhinus sumatrensis) has an estimated wild population of 80 individuals across fragmented habitats in Sumatra and Indonesian Borneo. While the species remains critically endangered, the population appears to have stabilized following intensive anti-poaching efforts and the establishment of the Sumatran Rhino Rescue program.'",
+        "Indonesian Ministry of Environment Survey (October 2024): 'The latest comprehensive field survey using camera traps, DNA analysis from dung samples, and footprint tracking estimates only 34-40 Sumatran rhinos remain in the wild. The Bornean population is now considered functionally extinct, with no confirmed sightings since 2022. The decline is attributed to habitat fragmentation accelerating genetic isolation between remaining groups.'",
+        "Conservation programs including captive breeding at Way Kambas and Kelian facilities are ongoing."
+      ],
+      "expected_mode": "disputed",
+      "description": "2022 IUCN assessment estimates 80 rhinos with stable population while 2024 survey finds only 34-40 with continued decline",
+      "rationale": "The IUCN lists 80 individuals with a stabilized population trajectory, while the 2024 Indonesian survey counts only 34-40 and reports the Bornean population functionally extinct. These sources provide contradictory assessments of both the population size and the conservation trend."
+    },
+    {
+      "id": "t1_dispute_medium_558",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "medium",
+      "query": "What is the load capacity of the Ridgeway Overpass?",
+      "contexts": [
+        "State Department of Transportation Bridge Inventory (2023): 'Ridgeway Overpass, Structure No. 4718-B. Load rating: HS-25 (40 tons). Posting status: No posting required. The structure can safely accommodate standard commercial vehicle traffic including tractor-trailers.'",
+        "County Highway Department Weight Restriction Notice (2024): 'The Ridgeway Overpass has been posted with a maximum load limit of 25 tons following the biennial structural evaluation. Vehicles exceeding 25 tons must use the alternate Route 44 crossing. Signs have been installed at both approaches.'",
+        "The overpass was built in 1985 and last underwent structural rehabilitation in 2009."
+      ],
+      "expected_mode": "disputed",
+      "description": "State inventory rates the overpass at 40 tons while county notice restricts it to 25 tons",
+      "rationale": "The state bridge inventory lists a 40-ton load rating while the county weight restriction limits the bridge to 25 tons. This is a 37.5% difference that directly affects whether heavy vehicles can use the crossing, representing a real conflict between authoritative sources."
+    },
+    {
+      "id": "t1_dispute_hard_559",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "hard",
+      "query": "What is the average response latency of the OrderService API?",
+      "contexts": [
+        "Platform Engineering Performance Report (Q3 2024): 'OrderService API performance remains within SLA targets. Average response latency: 145ms (p50), 210ms (p95), 380ms (p99). These metrics are based on production traffic sampling at 1% over the full quarter, representing approximately 2.8 million sampled requests.'",
+        "QA Load Testing Report (Q3 2024): 'Under simulated production load (5,000 concurrent users), OrderService API exhibited average response latency of 487ms (p50), 1,240ms (p95), 3,100ms (p99). Testing was conducted against the staging environment using production-equivalent hardware and dataset copies.'",
+        "Both reports cover the same service version (v3.7.2) and were produced during Q3 2024."
+      ],
+      "expected_mode": "disputed",
+      "description": "Production sampling shows 145ms latency while load testing shows 487ms under equivalent conditions",
+      "rationale": "The production report measures p50 latency at 145ms while the load test measures it at 487ms, a 3.4x difference. At p95 the gap widens to 210ms vs 1,240ms. Both claim to represent the same service version and equivalent conditions, making this a meaningful numerical conflict about actual API performance."
+    },
+    {
+      "id": "t1_dispute_medium_560",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "medium",
+      "query": "How much revenue did NovaTech generate in fiscal year 2024?",
+      "contexts": [
+        "NovaTech CEO Letter to Shareholders (March 2025): 'I am pleased to report that NovaTech achieved record revenue of $2.4 billion in fiscal year 2024, representing 18% growth over the prior year. Our cloud services division was the primary growth driver, contributing $1.1 billion.'",
+        "NovaTech 10-K Filing with the SEC (March 2025): 'Total revenue for the fiscal year ended December 31, 2024 was $1.87 billion, an increase of 7.2% from $1.74 billion in the prior year. Revenue from cloud services was $842 million. The CEO letter includes projected revenue from the pending AcquiTech acquisition, which had not closed as of the reporting date.'",
+        "NovaTech's fiscal year aligns with the calendar year ending December 31."
+      ],
+      "expected_mode": "disputed",
+      "description": "CEO letter reports $2.4B revenue while SEC filing reports $1.87B for the same fiscal year",
+      "rationale": "The CEO letter claims $2.4 billion in revenue while the audited SEC filing reports $1.87 billion, a $530 million (28%) discrepancy. The SEC filing suggests the CEO included unfinalized acquisition revenue. Both are official company communications presenting materially different revenue figures."
+    },
+    {
+      "id": "t1_dispute_medium_562",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "medium",
+      "query": "How many active users does the Pulse messaging platform have?",
+      "contexts": [
+        "Pulse Q4 2024 Earnings Call Transcript: 'Pulse ended Q4 with 182 million monthly active users globally, up from 164 million in Q3. Our definition of monthly active user includes any account that sends or receives at least one message during the calendar month.'",
+        "Sensor Tower Mobile Analytics Report (Q4 2024): 'Pulse monthly active users reached 127 million in Q4 2024 based on SDK telemetry data from mobile devices. Desktop and web usage accounted for an additional estimated 14 million users, bringing the total addressable user base to approximately 141 million.'",
+        "Pulse is available on iOS, Android, desktop, and web platforms."
+      ],
+      "expected_mode": "disputed",
+      "description": "Pulse reports 182M MAU in earnings call while third-party analytics measures 141M",
+      "rationale": "Pulse claims 182 million MAU while Sensor Tower's independent measurement shows approximately 141 million, a 29% discrepancy. This gap of 41 million users is too large to attribute to measurement methodology alone and represents a real conflict about the platform's scale."
+    },
+    {
+      "id": "t1_dispute_hard_563",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "hard",
+      "query": "What is the energy efficiency rating of the Solaris X200 heat pump?",
+      "contexts": [
+        "Solaris X200 Product Specification Sheet: 'The Solaris X200 achieves an industry-leading Coefficient of Performance (COP) of 4.8 at 7C outdoor temperature, verified by TUV Rheinland. Seasonal Energy Efficiency Ratio (SEER) rated at 22.5. The X200 delivers 12kW heating output while consuming only 2.5kW of electrical input under standard test conditions (EN 14511).'",
+        "Energy Star Independent Testing Report (2024): 'The Solaris X200 was tested at the Oak Ridge National Laboratory under AHRI 210/240 conditions. Measured COP: 3.1 at 8.3C (47F) outdoor temperature. SEER: 16.8. Heating output measured at 9.7kW with 3.13kW electrical input. Results were 33-35% below manufacturer specifications across all measured parameters.'",
+        "Both sources tested the same model but used different regional test standards (EN 14511 vs AHRI 210/240)."
+      ],
+      "expected_mode": "disputed",
+      "description": "Manufacturer claims COP of 4.8 while independent lab measures COP of 3.1 for the same heat pump",
+      "rationale": "The manufacturer specification lists a COP of 4.8 and SEER of 22.5 while Oak Ridge Lab measures a COP of 3.1 and SEER of 16.8. The 35% gap across all parameters is far beyond what different test standards would explain, representing a meaningful conflict about the product's actual energy efficiency."
+    },
+    {
+      "id": "t1_dispute_medium_564",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "medium",
+      "query": "What is the unemployment rate in the Springfield metropolitan area?",
+      "contexts": [
+        "Bureau of Labor Statistics Local Area Unemployment Statistics (October 2024): 'The Springfield, IL metropolitan statistical area recorded an unemployment rate of 5.8% (seasonally adjusted) for October 2024. Total nonfarm employment was 107,400, with 6,600 persons classified as unemployed out of a labor force of 114,000.'",
+        "Springfield Chamber of Commerce Economic Report (Q4 2024): 'Springfield's unemployment rate stands at 3.9%, reflecting the region's strong economic recovery. The metro area added 4,200 jobs in the past year, with healthcare, logistics, and professional services leading gains. Labor force participation reached 64.2%.'",
+        "Both reports reference the same geographic area and overlapping time periods."
+      ],
+      "expected_mode": "disputed",
+      "description": "BLS reports 5.8% unemployment while Chamber of Commerce claims 3.9% for the same metro area",
+      "rationale": "The federal BLS data shows 5.8% unemployment while the Chamber of Commerce reports 3.9%, a 1.9 percentage point difference representing a 33% relative discrepancy. This gap is too large for seasonal adjustment differences and presents conflicting pictures of the local economy's health."
+    },
+    {
+      "id": "t1_dispute_hard_565",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "hard",
+      "query": "What is the battery range of the Elara EV-7 electric sedan?",
+      "contexts": [
+        "Elara Motors Press Release (September 2024): 'The Elara EV-7 achieves an EPA-estimated range of 385 miles on a single charge with its 95 kWh battery pack. The vehicle's advanced thermal management system and regenerative braking contribute to an efficiency rating of 3.9 miles per kWh. The EV-7 offers the longest range in its segment.'",
+        "Edmunds Real-World Range Testing (November 2024): 'In Edmunds' standardized 115-mile real-world evaluation loop (mixed highway and city driving at ambient temperatures between 45-55F), the Elara EV-7 achieved a projected range of 271 miles, consuming energy at a rate of 2.85 miles per kWh. This represents a 29.6% shortfall from the EPA estimate, the largest gap in the mid-size EV segment this year.'",
+        "EPA range testing follows the 5-cycle methodology including city, highway, high-speed, air conditioning, and cold-temperature tests."
+      ],
+      "expected_mode": "disputed",
+      "description": "Manufacturer claims 385-mile range while Edmunds real-world testing measures only 271 miles",
+      "rationale": "The manufacturer cites 385 miles of EPA-estimated range while Edmunds measures 271 miles in real-world conditions, a 114-mile (29.6%) shortfall. This is not a minor variance from testing methodology differences; it represents a material disagreement about the vehicle's practical capability that would directly affect purchase decisions."
+    },
+    {
+      "id": "t1_dispute_hard_566",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "hard",
+      "query": "How much water does the proposed Clearwater desalination plant produce?",
+      "contexts": [
+        "Clearwater Desalination Project Environmental Impact Statement (2024): 'The proposed facility will produce 50 million gallons per day (MGD) of potable water at full capacity, sufficient to serve approximately 400,000 residents. Energy consumption is projected at 14.2 kWh per 1,000 gallons, utilizing reverse osmosis membrane technology with an expected recovery rate of 50%.'",
+        "Independent Engineering Review commissioned by the Coastal Conservation Alliance (2024): 'Analysis of the proposed intake water quality and membrane specifications indicates maximum sustainable production of 31 MGD, serving approximately 250,000 residents. The 50 MGD figure assumes optimal feedwater conditions that occur less than 15% of the year. Realistic average energy consumption would be 19.8 kWh per 1,000 gallons due to higher-than-projected salinity in the intake zone.'",
+        "The project requires California Coastal Commission approval and is currently in the public comment period."
+      ],
+      "expected_mode": "disputed",
+      "description": "Project EIS claims 50 MGD production capacity while independent review calculates only 31 MGD",
+      "rationale": "The official EIS projects 50 million gallons per day while the independent engineering review calculates 31 MGD as the realistic maximum, a 38% discrepancy. The energy cost estimates also diverge significantly (14.2 vs 19.8 kWh per 1,000 gallons). These differences would materially affect project feasibility and cost assessments."
+    },
+    {
+      "id": "t1_dispute_hard_567",
+      "category": "dispute",
+      "subcategory": "numerical_conflict",
+      "difficulty": "hard",
+      "query": "What is the failure rate of the Titan-class turbine blades in offshore wind installations?",
+      "contexts": [
+        "Titan Energy Systems Annual Reliability Report (2024): 'The Titan-class composite turbine blade has achieved a cumulative failure rate of 0.4% across 12,000 installed units over 5 operating years. Root cause analysis of the 48 blade failures identified manufacturing defects (62%), lightning strikes (25%), and extreme weather events (13%). The blade design exceeds IEC 61400-1 Class I requirements.'",
+        "Lloyd's Register Marine & Offshore Wind Inspection Database (2024): 'Inspection records across 8 North Sea and Baltic Sea wind farms (4,200 Titan-class blades, 3-7 years in service) document structural deficiencies in 3.8% of blades inspected, including leading-edge erosion requiring repair (2.1%), trailing-edge bond-line separation (1.2%), and spar cap delamination (0.5%). Twelve blades (0.29%) required full replacement. The deficiency rate is 2.3x the fleet average for comparable blade designs.'",
+        "Offshore wind blade failures can cause cascading damage to drivetrain components and require specialized jack-up vessels costing $150,000-$250,000 per day for replacement."
+      ],
+      "expected_mode": "disputed",
+      "description": "Manufacturer reports 0.4% failure rate while independent inspection finds 3.8% structural deficiency rate",
+      "rationale": "The manufacturer reports a 0.4% cumulative failure rate while Lloyd's Register documents a 3.8% structural deficiency rate, nearly a 10x difference. While the metrics are not identical (outright failure vs structural deficiency requiring intervention), both bear on the question of blade reliability. The 2.3x fleet-average deficiency rate further contradicts the manufacturer's reliability claims."
     }
   ]
 }

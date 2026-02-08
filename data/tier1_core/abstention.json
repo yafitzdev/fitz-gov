@@ -3,7 +3,7 @@
   "tier_description": "Primary benchmark for model discrimination",
   "category": "abstention",
   "description": "Queries where context is irrelevant or insufficient - system should ABSTAIN from answering",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "mode_rationale": "ABSTAIN because context is completely irrelevant to the query or discusses wrong entity/time period. System should refuse to answer rather than speculate.",
   "cases": [
     {
@@ -2758,6 +2758,677 @@
       "expected_mode": "abstain",
       "description": "Query asks about two diabetes medications (Metformin, Glipizide) but contexts contain information about a cholesterol drug and a blood pressure drug",
       "rationale": "The contexts describe Atorvastatin (a statin for cholesterol) and Lisinopril (an ACE inhibitor for hypertension). Neither Metformin nor Glipizide appears anywhere in the provided context. While all four drugs are commonly prescribed, the contexts contain zero information about the two medications being compared."
+    },
+    {
+      "id": "t1_abstain_hard_906",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "hard",
+      "query": "What is the maximum payload capacity of the Boeing 777-300ER?",
+      "contexts": [
+        "Boeing 787-9 Dreamliner Specifications (Boeing Commercial, 2024): The 787-9 is a wide-body twin-engine jet optimized for long-haul efficiency. Maximum payload capacity is 53,700 kg (118,400 lbs) with a maximum takeoff weight of 254,011 kg. Typical seating ranges from 242 (3-class) to 290 (2-class) passengers. Range is 14,140 km (7,635 nmi) at full passenger load. The aircraft uses GEnx-1B or Rolls-Royce Trent 1000 engines and features a composite fuselage reducing weight by approximately 20% compared to aluminum construction.",
+        "Boeing 787-10 Dreamliner Specifications (Boeing Commercial, 2024): The stretched 787-10 offers a maximum payload of 58,967 kg (130,000 lbs) and seats 300-330 passengers in typical configurations. Maximum takeoff weight is 254,011 kg, identical to the 787-9. Range is shorter at 11,910 km (6,430 nmi) due to the increased fuselage length and passenger capacity. Cargo volume is 175.4 cubic meters across the lower-deck holds. The 787-10 shares 95% commonality with the 787-9 for pilot type rating.",
+        "Boeing 777X Development Program (Aviation Weekly Report): The 777X family, comprising the 777-8 and 777-9, represents Boeing's newest wide-body aircraft. The 777-9 features GE9X engines, the world's largest commercial engine at 134 inches diameter. Folding wingtips allow the 777-9 to use existing 777-compatible gates despite a 235-foot wingspan. First delivery to Lufthansa is expected in 2025. The 777X includes a composite wing and updated flight deck from the 787 program."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the 777-300ER but contexts cover the 787 Dreamliner variants and the future 777X program",
+      "rationale": "The 777-300ER is a distinct existing aircraft model from the 787 Dreamliner family and the forthcoming 777X. The 787-9 and 787-10 payload figures apply to completely different airframes. The 777X context discusses a development program, not the current 777-300ER. No payload data for the specific aircraft asked about exists in these contexts."
+    },
+    {
+      "id": "t1_abstain_hard_907",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "hard",
+      "query": "What are the key pharmacological differences between sertraline and fluoxetine for treating depression?",
+      "contexts": [
+        "Venlafaxine (Effexor XR) Clinical Profile: Venlafaxine is a serotonin-norepinephrine reuptake inhibitor (SNRI) approved for major depressive disorder, generalized anxiety disorder, social anxiety disorder, and panic disorder. Starting dose is 37.5-75 mg/day, titrated to 150-225 mg/day. Half-life is 5 hours (active metabolite O-desmethylvenlafaxine: 11 hours). Common side effects include nausea (31%), headache (34%), dizziness (20%), dry mouth (22%), and insomnia (17%). Notable risk: dose-dependent hypertension requires blood pressure monitoring. Discontinuation syndrome is significant; taper over 2-4 weeks minimum.",
+        "Duloxetine (Cymbalta) Prescribing Summary: Duloxetine is an SNRI indicated for MDD, GAD, diabetic peripheral neuropathy, fibromyalgia, and chronic musculoskeletal pain. Dosing: 30 mg/day for one week, then 60 mg/day. Maximum 120 mg/day. Half-life is 12 hours. Hepatically metabolized via CYP1A2 and CYP2D6. Contraindicated with MAOIs and in severe hepatic impairment. Side effects: nausea (24%), dry mouth (15%), constipation (11%), fatigue (10%). Unlike venlafaxine, duloxetine has a more balanced serotonin/norepinephrine ratio at standard doses.",
+        "SNRI Class Overview (Pharmacology Textbook, 8th Ed): Serotonin-norepinephrine reuptake inhibitors block both SERT and NET transporters, providing dual-mechanism antidepressant action. This class shows particular efficacy for depression with comorbid pain conditions. Head-to-head trials suggest comparable efficacy to SSRIs for depression alone but potential advantages in cases with prominent fatigue, pain, or cognitive symptoms. The norepinephrine component may contribute to side effects including elevated heart rate, increased blood pressure, and urinary hesitancy not typically seen with pure serotonin agents."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about sertraline and fluoxetine (SSRIs) but contexts describe venlafaxine and duloxetine (SNRIs)",
+      "rationale": "Sertraline (Zoloft) and fluoxetine (Prozac) are SSRIs, a different drug class from the SNRIs described in the contexts. While both classes treat depression, the pharmacological profiles, side effects, dosing, and mechanisms differ fundamentally. The SNRI class overview mentions SSRIs generically in comparison but provides no specific data about sertraline or fluoxetine."
+    },
+    {
+      "id": "t1_abstain_medium_908",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "medium",
+      "query": "What is the population of Toronto, Canada according to the 2021 census?",
+      "contexts": [
+        "City of Vancouver Census Profile (Statistics Canada, 2021): The City of Vancouver had a population of 662,248 in the 2021 Census, a 6.4% increase from 2016. The Census Metropolitan Area (CMA) of Vancouver, which includes surrounding municipalities like Burnaby, Surrey, and Richmond, recorded 2,642,825 residents. Vancouver's population density is 5,749.1 persons per square kilometer, making it the most densely populated city in Canada. The median age is 39.9 years with 15.1% of the population aged 65 and older.",
+        "City of Montreal Census Profile (Statistics Canada, 2021): Montreal's population was 1,762,949 in 2021, growing 3.4% from 2016. The Montreal CMA reached 4,291,732 residents, making it the second-largest metropolitan area in Canada. Population density is 4,662.1 per square kilometer. The city has significant linguistic diversity with 53.4% speaking French most often at home, 18.2% English, and 17.8% non-official languages. The median household income was $52,000 in 2020.",
+        "City of Calgary Census Profile (Statistics Canada, 2021): Calgary's 2021 census population was 1,306,784, a 5.5% increase from 2016. The Calgary CMA population was 1,481,806. With an area of 825.56 square kilometers, the population density is 1,582.8 per square kilometer. Calgary has a younger demographic profile with a median age of 37.0 years. The city experienced rapid growth driven by the energy sector, though diversification into technology and logistics has been a priority since the 2014 oil price decline."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Toronto's population but contexts provide census data for Vancouver, Montreal, and Calgary",
+      "rationale": "The contexts contain 2021 census data for three Canadian cities but none of them is Toronto. Despite being from the same data source (Statistics Canada 2021 Census), the population figures for Vancouver, Montreal, and Calgary cannot be used to answer a question about Toronto's population."
+    },
+    {
+      "id": "t1_abstain_medium_909",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "medium",
+      "query": "What are the admission requirements for Stanford University's MBA program?",
+      "contexts": [
+        "Harvard Business School MBA Admissions (2024-2025): Applicants must submit GMAT or GRE scores (median GMAT is 740), transcripts from all post-secondary institutions, three letters of recommendation, a personal essay, and a $250 application fee. HBS uses a two-round admissions process with deadlines in September and January. The 2+2 Deferred Enrollment program accepts graduating seniors. Interviews are by invitation only and conducted on campus or via video. Work experience average is 5 years. Class size is approximately 930 students across nine sections.",
+        "Wharton MBA Admissions (University of Pennsylvania, 2024-2025): Wharton requires GMAT/GRE scores (median GMAT 733), two professional recommendations, essays, transcripts, and a resume. Application fee is $275. Three admissions rounds with deadlines in September, January, and March. Team-based discussion interviews are a distinctive part of the Wharton process. Average work experience is 5 years. Approximately 895 students per class. Dual-degree programs available with Penn Law, Penn Engineering, and the Lauder Institute for international studies."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Stanford GSB's MBA admissions but contexts only describe Harvard and Wharton MBA programs",
+      "rationale": "While Harvard Business School and Wharton are peer institutions to Stanford GSB, their specific admission requirements (deadlines, essay formats, interview processes, class sizes) are distinct to each school. Stanford's requirements cannot be inferred from Harvard or Wharton data."
+    },
+    {
+      "id": "t1_abstain_medium_910",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "medium",
+      "query": "What is the fuel efficiency of the 2024 Honda CR-V Hybrid?",
+      "contexts": [
+        "2024 Toyota RAV4 Hybrid Specifications (EPA Fuel Economy Guide): The 2024 RAV4 Hybrid achieves 41 mpg city, 38 mpg highway, and 40 mpg combined in LE and XLE trims. The SE and XLE Premium trims are rated at 41/38/40 mpg. All-wheel drive is standard. The powertrain combines a 2.5L four-cylinder engine with two electric motors for a total system output of 219 horsepower. The 54.5-liter fuel tank provides an estimated range of 600 miles on a single fill-up.",
+        "2024 Hyundai Tucson Hybrid Specifications (EPA Fuel Economy Guide): The Tucson Hybrid is rated at 38 mpg city, 38 mpg highway, and 38 mpg combined for the Blue trim. The SEL, Limited, and N Line trims achieve 37/36/37 mpg. All-wheel drive is standard on all trims. The hybrid system pairs a 1.6L turbocharged four-cylinder with a 44.2 kW electric motor for 226 combined horsepower. A 13.8-gallon fuel tank yields an approximate range of 520 miles.",
+        "2024 Compact SUV Hybrid Market Overview (Automotive Trends Report): The compact hybrid SUV segment has seen significant growth, with hybrid models accounting for 28% of all compact SUV sales in 2024, up from 19% in 2022. Key competitors include the Toyota RAV4 Hybrid (market leader at 34% segment share), Hyundai Tucson Hybrid (18%), Ford Escape Hybrid (12%), and others. The segment average fuel economy is 37 mpg combined. Consumer surveys indicate fuel economy is the primary purchase driver for 62% of hybrid SUV buyers, followed by environmental concern (23%) and available tax credits (15%)."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the Honda CR-V Hybrid fuel efficiency but contexts cover the RAV4 Hybrid, Tucson Hybrid, and a market overview that does not include CR-V specific data",
+      "rationale": "The contexts provide detailed fuel economy data for the Toyota RAV4 Hybrid and Hyundai Tucson Hybrid but not for the Honda CR-V Hybrid. The market overview mentions segment averages without individual CR-V figures. Competitor data cannot substitute for the specific vehicle asked about."
+    },
+    {
+      "id": "t1_abstain_hard_911",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "hard",
+      "query": "What are the side effects and drug interactions of rosuvastatin at the 40mg dose?",
+      "contexts": [
+        "Atorvastatin (Lipitor) High-Dose Safety Data (FDA Label Update, 2023): At the 80mg maximum dose, atorvastatin shows increased incidence of elevated aminotransferases (2.3% vs 0.6% at 10mg). Myalgia occurs in 5.6% of patients at 80mg compared to 3.8% at lower doses. The SPARCL trial found a small increase in hemorrhagic stroke risk (2.3% vs 1.4% placebo) in patients with prior stroke. CYP3A4 interactions are clinically significant: clarithromycin increases atorvastatin AUC by 4.4-fold. Maximum dose should be reduced to 20mg when co-administered with cyclosporine. Rhabdomyolysis risk increases when combined with fibrates, particularly gemfibrozil.",
+        "Simvastatin (Zocor) Dose-Dependent Risk Profile (FDA Safety Communication, 2023): The 80mg dose of simvastatin carries significantly elevated myopathy risk (incidence 0.9% at 80mg vs 0.02% at 20mg). The FDA recommends limiting 80mg use to patients who have been on this dose for 12+ months without evidence of muscle toxicity. CYP3A4 interactions: verapamil and diltiazem limit maximum simvastatin dose to 10mg. Amiodarone limits maximum dose to 20mg. Amlodipine limits maximum dose to 20mg. Grapefruit juice consumption should be limited to less than 1 quart daily. The SEARCH trial showed no additional cardiovascular benefit of 80mg vs 20mg.",
+        "Statin Pharmacology Overview (Clinical Pharmacology Review): Statins inhibit HMG-CoA reductase, the rate-limiting enzyme in cholesterol biosynthesis. They are classified by their metabolism: CYP3A4-dependent (atorvastatin, simvastatin, lovastatin) vs CYP2C9-dependent (fluvastatin) vs minimally hepatically metabolized (pravastatin, rosuvastatin, pitavastatin). This metabolic classification has significant implications for drug interactions. Hydrophilic statins (rosuvastatin, pravastatin) may have fewer extra-hepatic effects. All statins carry class warnings for myopathy, rhabdomyolysis, hepatotoxicity, and new-onset diabetes."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about rosuvastatin 40mg specifically but contexts detail atorvastatin 80mg, simvastatin 80mg, and a general statin overview without rosuvastatin-specific data",
+      "rationale": "While rosuvastatin is briefly mentioned in the pharmacology overview as minimally hepatically metabolized, no specific side effect rates, drug interactions, or dose-dependent safety data for the 40mg dose are provided. Atorvastatin and simvastatin have different metabolic pathways (CYP3A4) than rosuvastatin, so their interaction profiles cannot be transferred. The class-level warnings are too generic to answer the dose-specific question."
+    },
+    {
+      "id": "t1_abstain_hard_912",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "hard",
+      "query": "What is the pricing structure for AWS Lambda including free tier and per-request charges?",
+      "contexts": [
+        "Azure Functions Pricing (Microsoft Azure, January 2025): Azure Functions uses a consumption plan with pricing based on executions and resource consumption. The first 1 million executions per month are free. Beyond that, pricing is $0.20 per million executions. Resource consumption is measured in GB-seconds: the first 400,000 GB-seconds per month are free, then $0.000016 per GB-second. Premium plan starts at $0.173/vCPU-hour and $0.0123/GB-hour for pre-warmed instances. Azure Functions also offers a Dedicated (App Service) plan for predictable workloads starting at $54.75/month for the B1 tier.",
+        "Google Cloud Functions Pricing (Google Cloud, January 2025): Cloud Functions (2nd gen) pricing includes the first 2 million invocations per month free. Beyond free tier: $0.40 per million invocations. Compute is priced at $0.00001667 per GB-second and $0.00000250 per GHz-second for CPU. Networking: 5 GB outbound free, then $0.12/GB. Cloud Functions 2nd gen is built on Cloud Run and inherits its pricing model. The free tier includes 400,000 GB-seconds of compute per month. Minimum instance charges apply for always-on instances.",
+        "Serverless Computing Market Comparison (Gartner Infrastructure Report, 2024): The serverless functions market is dominated by three providers: AWS Lambda (market share 54%), Azure Functions (28%), and Google Cloud Functions (14%). Key differentiators include cold start performance (Lambda graviton2 averages 120ms, Azure 200ms, GCF 250ms), maximum execution time (Lambda 15 minutes, Azure 230 seconds on consumption, GCF 540 seconds), and ecosystem integration. All three offer generous free tiers, though exact pricing structures differ significantly in how they measure compute consumption."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about AWS Lambda pricing but contexts only detail Azure Functions and Google Cloud Functions pricing, plus a market overview without Lambda-specific pricing",
+      "rationale": "The Azure Functions and Google Cloud Functions pricing structures are fully detailed, but AWS Lambda's specific pricing (per-request cost, free tier quantities, GB-second rates) is never stated. The Gartner report mentions Lambda's market share and cold start times but omits pricing. Each cloud provider's pricing model is unique and cannot be inferred from competitors."
+    },
+    {
+      "id": "t1_abstain_medium_913",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "medium",
+      "query": "What are the nutritional facts for a Chipotle chicken burrito?",
+      "contexts": [
+        "Taco Bell Nutrition Information (Updated October 2024): The Chicken Burrito Supreme contains 400 calories, 14g fat, 51g carbohydrates, 20g protein, and 1,170mg sodium. The Beefy 5-Layer Burrito has 500 calories, 20g fat, 62g carbohydrates, 18g protein, and 1,300mg sodium. The Chicken Quesadilla contains 510 calories, 26g fat, 40g carbohydrates, 28g protein, and 1,250mg sodium. All items can be customized via the app to remove or add ingredients, with updated nutrition calculated at checkout.",
+        "Qdoba Mexican Eats Nutrition Guide (2024): A Qdoba Grilled Chicken Burrito (flour tortilla, cilantro-lime rice, black beans, grilled chicken, cheese, pico de gallo) totals approximately 820 calories, 29g fat, 91g carbohydrates, 44g protein, and 1,880mg sodium. Adding queso increases calories by 120 and sodium by 470mg. Qdoba offers a bowl option that eliminates the 300-calorie tortilla. All proteins are antibiotic-free, and the chicken is marinated in a citrus-chili blend."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Chipotle's chicken burrito nutrition but contexts provide data from Taco Bell and Qdoba",
+      "rationale": "Chipotle, Taco Bell, and Qdoba are different restaurant chains with distinct recipes, portion sizes, and ingredients. Taco Bell's Chicken Burrito Supreme and Qdoba's Grilled Chicken Burrito have completely different nutritional profiles from a Chipotle chicken burrito. The data from these competitors cannot answer the specific question about Chipotle."
+    },
+    {
+      "id": "t1_abstain_hard_914",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "hard",
+      "query": "What are the key differences between Kubernetes Deployments and StatefulSets for managing pods?",
+      "contexts": [
+        "Docker Swarm Service Types (Docker Documentation, v25): Docker Swarm supports two service modes: replicated and global. Replicated services run a specified number of task replicas distributed across the swarm. Global services run one task on every node meeting placement constraints. Services can be updated with rolling updates using --update-parallelism and --update-delay flags. Docker Swarm handles service discovery through an internal DNS server that assigns each service a DNS entry. Load balancing uses an ingress routing mesh that routes external requests to any node running the service.",
+        "Apache Mesos and Marathon (Mesosphere DC/OS Guide): Marathon is a container orchestration framework for Apache Mesos that supports stateless and stateful applications. Stateless apps use standard Marathon application definitions with instance counts. Stateful services require persistent volumes declared in the application JSON: {\"persistent\": {\"type\": \"root\", \"size\": 1024}}. Marathon assigns stable hostnames for stateful tasks and supports health checks, readiness checks, and upgrade strategies. Unlike Kubernetes, Mesos uses a two-level scheduling architecture where frameworks (like Marathon) make scheduling decisions on resources offered by the Mesos master.",
+        "Nomad Job Types (HashiCorp Nomad Documentation, v1.7): Nomad supports three job types: service (long-running), batch (short-lived), and system (runs on all nodes). The service scheduler places tasks and reschedules on failure. For stateful workloads, Nomad provides host volumes and CSI plugins. Task groups define sets of co-located tasks similar to pods. Update stanzas control rolling deployments with configurable max_parallel, health_check, and min_healthy_time parameters. Nomad's multi-region federation enables workload placement across datacenters."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Kubernetes-specific concepts (Deployments vs StatefulSets) but contexts describe Docker Swarm, Apache Mesos/Marathon, and HashiCorp Nomad",
+      "rationale": "Deployments and StatefulSets are Kubernetes-specific resource types with distinct behaviors around pod identity, storage, and ordering guarantees. Docker Swarm's replicated/global modes, Marathon's stateful applications, and Nomad's job types are conceptually analogous but architecturally different. The specific Kubernetes semantics (e.g., stable network identifiers, ordered scaling, PersistentVolumeClaim templates) cannot be derived from competing orchestrators."
+    },
+    {
+      "id": "t1_abstain_hard_915",
+      "category": "abstention",
+      "subcategory": "wrong_entity",
+      "difficulty": "hard",
+      "query": "What are the terms and interest rates for SBA 7(a) loans for small businesses in 2024?",
+      "contexts": [
+        "SBA 504 Loan Program (U.S. Small Business Administration, 2024): The 504 loan program provides long-term, fixed-rate financing for major fixed assets such as real estate and equipment. Loans are structured with a bank providing 50%, a Certified Development Company (CDC) providing 40% backed by an SBA-guaranteed debenture, and the borrower contributing 10% equity. Current 504 debenture rates are approximately 5.87% for 20-year terms and 5.62% for 25-year terms (as of March 2024). Maximum debenture is $5.5 million ($5 million for most projects). Processing time averages 45-60 days. Eligible uses: land, buildings, equipment; not working capital or inventory.",
+        "SBA Microloan Program (U.S. Small Business Administration, 2024): The Microloan program provides loans up to $50,000 to small businesses and certain nonprofit childcare centers. Average microloan is approximately $13,000. Loans are made through SBA-approved intermediary lenders (community-based organizations). Interest rates range from 8% to 13% depending on the intermediary, loan amount, and borrower risk profile. Maximum term is 6 years. Funds can be used for working capital, inventory, supplies, furniture, fixtures, machinery, or equipment. Microloans cannot be used to pay existing debts or purchase real estate.",
+        "USDA Business and Industry Loans (Rural Development, 2024): The B&I Guaranteed Loan Program supports rural businesses with populations of 50,000 or less. Maximum loan guarantee is $25 million. Interest rates are negotiated between borrower and lender but typically range from prime + 1% to prime + 3%. Loan terms vary: up to 30 years for real estate, 15 years for equipment, and 7 years for working capital. The USDA guarantees 60-80% of the loan depending on size. Eligible uses include business acquisitions, construction, equipment, and working capital."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the SBA 7(a) loan program but contexts describe the SBA 504, SBA Microloan, and USDA B&I programs instead",
+      "rationale": "The SBA 7(a) program has its own distinct terms, rate structure (variable rates tied to prime or LIBOR), maximum loan amounts ($5 million), and eligible uses that differ from the 504 (fixed-asset only), Microloan (max $50K), and USDA programs. Each program has unique guaranty percentages, fee structures, and eligibility criteria. The 504 and Microloan programs are under SBA but are separate programs with different rules."
+    },
+    {
+      "id": "t1_abstain_medium_916",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "medium",
+      "query": "What is the speed of light in a vacuum?",
+      "contexts": [
+        "Fiber Optic Cable Specifications (Corning Technical Bulletin, 2024): Single-mode fiber optic cables transmit light at approximately 200,000 km/s, roughly 2/3 the speed of light in vacuum, due to the refractive index of glass (approximately 1.47). The attenuation rate is 0.18 dB/km at 1550nm wavelength. Modern submarine cables use multiple fiber pairs, each capable of carrying 20 Tbps using dense wavelength-division multiplexing (DWDM). Typical fiber core diameter is 9 micrometers for single-mode.",
+        "Wireless Signal Propagation (IEEE 802.11 Technical Report): Radio waves travel at the speed of light through air, but indoor propagation introduces significant losses. At 2.4 GHz, signal attenuation through drywall is approximately 3 dB, through concrete 12-15 dB, and through brick 8-10 dB. Multi-path interference causes constructive and destructive interference patterns. WiFi 6E at 6 GHz provides higher bandwidth but shorter effective range (approximately 30% less than 5 GHz). Some engineers argue that 6 GHz adoption will stall due to range limitations.",
+        "5G mmWave vs Sub-6 GHz Debate (Telecom Industry Analysis): There is significant disagreement about the practical deployment of 5G millimeter wave (mmWave) technology. Proponents cite theoretical speeds of 10 Gbps and ultra-low latency of 1ms. Critics counter that mmWave signals cannot penetrate buildings, are blocked by foliage, and require line-of-sight with base stations every 150-200 meters. T-Mobile's sub-6 GHz strategy has achieved wider coverage at lower cost, while Verizon's mmWave focus provides faster speeds in limited urban areas. The industry remains divided on which approach will dominate."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for the speed of light in vacuum but contexts discuss fiber optic transmission speeds and a debate about 5G deployment strategies",
+      "rationale": "While fiber optics and radio waves are related to light, neither context states the actual speed of light in a vacuum (299,792,458 m/s). The fiber optic context mentions '2/3 the speed of light' but does not give the base figure. The contradiction between 5G strategies is entirely irrelevant to the physics constant being asked about."
+    },
+    {
+      "id": "t1_abstain_medium_917",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "medium",
+      "query": "What is the recommended daily intake of vitamin D for adults?",
+      "contexts": [
+        "Vitamin D and Calcium Supplement Industry Trends (Market Research, 2024): The global vitamin D supplement market reached $1.8 billion in 2023 and is projected to grow at 7.2% CAGR through 2030. North America accounts for 38% of sales. Some studies suggest supplementation is unnecessary for most adults with adequate sun exposure, arguing that the supplement industry overstates deficiency rates. Others point to widespread deficiency, with an estimated 42% of U.S. adults having insufficient levels (below 20 ng/mL).",
+        "Vitamin D Testing Controversy (Journal of Clinical Endocrinology, 2023): The threshold for defining vitamin D deficiency remains contentious. The Endocrine Society recommends a target of 30 ng/mL, while the National Academy of Medicine considers 20 ng/mL sufficient for bone health. Critics argue that the 30 ng/mL threshold medicalizes a large portion of the healthy population, driving unnecessary testing that costs the U.S. healthcare system an estimated $365 million annually. Proponents counter that lower thresholds miss individuals at risk for osteoporosis and fractures.",
+        "Sunscreen and Vitamin D Synthesis Debate (Dermatology Review, 2024): Dermatologists disagree about whether sunscreen use significantly reduces vitamin D synthesis. Some argue that typical sunscreen application reduces vitamin D production by up to 95%, creating a public health trade-off between skin cancer prevention and vitamin D adequacy. Others cite real-world studies showing that sunscreen users do not have significantly lower vitamin D levels, likely because application is typically incomplete and intermittent."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for specific recommended daily intake of vitamin D but contexts debate supplement industry economics, deficiency thresholds, and sunscreen effects",
+      "rationale": "None of the contexts states an actual recommended daily intake in IU (International Units) for vitamin D. The contexts discuss whether supplementation is needed, what blood level thresholds to use, and whether sunscreen blocks synthesis, but these debates are tangential to the specific dosage recommendation being asked about."
+    },
+    {
+      "id": "t1_abstain_hard_918",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "hard",
+      "query": "What is the standard process for filing a patent application with the USPTO?",
+      "contexts": [
+        "Patent Trolls and Reform Debate (Congressional Research Service, 2024): Patent assertion entities (PAEs), often called patent trolls, acquire patents primarily to license or litigate rather than to manufacture products. Proponents of reform argue that PAEs impose $29 billion annually in direct costs to defendants. The PREVAIL Act (proposed 2024) would limit PAE filings to districts where they have a physical presence. Opponents counter that PAEs provide a market for patents from individual inventors and small companies who lack resources to enforce their own patents. Technology companies generally support reform while pharmaceutical companies and universities often oppose it.",
+        "Trade Secret vs Patent Protection Strategy (Corporate IP Strategy Guide): Companies face a strategic choice between patenting inventions (which requires public disclosure) and keeping them as trade secrets. Patents provide 20 years of exclusivity but publish the invention details, enabling competitors to design around them. Trade secrets provide potentially unlimited protection but are lost if independently discovered or reverse-engineered. The Coca-Cola formula is the most cited trade secret example. Some IP attorneys recommend a hybrid approach where core innovations are patented while manufacturing processes are kept as trade secrets.",
+        "International Patent Harmonization Efforts (WIPO Report, 2024): The Patent Prosecution Highway (PPH) allows applicants to leverage positive examination results from one patent office in applications to participating offices. As of 2024, 63 patent offices participate. The European Patent Office (EPO) and Japan Patent Office (JPO) have different substantive examination standards than the USPTO, particularly regarding software patents and business methods. China's CNIPA has become the world's largest patent office by filing volume, processing 1.59 million applications in 2023."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the specific process for filing a USPTO patent but contexts discuss patent trolls, trade secrets vs patents strategy, and international harmonization",
+      "rationale": "The contexts discuss policy debates around patent enforcement, strategic choices between IP protection methods, and international harmonization efforts. None describes the actual procedural steps for filing a patent application with the USPTO (provisional vs non-provisional application, specification requirements, claims drafting, fees, examination process). The WIPO report mentions 'examination' but does not detail the USPTO filing process."
+    },
+    {
+      "id": "t1_abstain_medium_919",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "medium",
+      "query": "How do I configure a NGINX reverse proxy for a Node.js application?",
+      "contexts": [
+        "Apache vs NGINX Performance Debate (DevOps Weekly, 2024): The choice between Apache and NGINX remains contentious. NGINX advocates cite its event-driven architecture, claiming 10x better performance under concurrent connections. Apache supporters argue that mod_php integration is simpler and Apache's .htaccess files provide per-directory configuration that NGINX lacks. Benchmark results vary widely: NGINX serves static files 2.5x faster in some tests, while Apache with MPM Event mode closes the gap to within 15% for dynamic content. Some organizations run both, using NGINX as a front-end proxy with Apache backend.",
+        "Caddy Server vs Traefik for Automatic HTTPS (Infrastructure Blog): Caddy and Traefik both offer automatic TLS certificate management via Let's Encrypt. Caddy users praise its simple Caddyfile syntax and automatic HTTPS by default. Traefik proponents value its Docker-native service discovery and Kubernetes Ingress support. Performance benchmarks show Caddy handles approximately 85,000 requests/second versus Traefik's 72,000 requests/second for simple reverse proxy scenarios. However, Traefik's middleware ecosystem is more extensive. Some teams report that Caddy's simplicity reduces configuration errors by 60% compared to Traefik."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for specific NGINX reverse proxy configuration steps but contexts debate Apache vs NGINX performance and compare Caddy vs Traefik",
+      "rationale": "Neither context provides actual NGINX configuration directives (server blocks, proxy_pass, upstream definitions) for proxying to a Node.js application. The Apache vs NGINX debate discusses general performance characteristics, and the Caddy vs Traefik comparison covers alternative tools entirely. Knowing that NGINX is performant does not tell you how to configure it."
+    },
+    {
+      "id": "t1_abstain_hard_920",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "hard",
+      "query": "What is the molecular structure of caffeine and how does it bind to adenosine receptors?",
+      "contexts": [
+        "Coffee Processing Methods and Flavor Profiles (Specialty Coffee Association): The four main processing methods are washed (wet), natural (dry), honey (pulped natural), and anaerobic fermentation. Washed coffees typically exhibit brighter acidity and cleaner flavors, while natural-processed beans develop fruit-forward, wine-like characteristics. Some cuppers argue that anaerobic fermentation produces artificial-tasting flavors that mask terroir. Others contend it unlocks unique flavor compounds (particularly esters and organic acids) impossible to achieve through traditional methods. The debate intensified after anaerobic lots dominated competition scores in 2023.",
+        "Caffeine Content Variability in Coffee (Food Chemistry Journal, 2024): Caffeine levels vary significantly by preparation method: espresso contains 63mg per 1-ounce shot, drip coffee averages 95mg per 8-ounce cup, and cold brew concentrate ranges from 150-250mg per 8 ounces. Robusta beans contain roughly twice the caffeine of Arabica (2.2% vs 1.2% by weight). Some researchers argue that standardized caffeine labeling should be mandatory on all coffee products, similar to nutrition labels. The coffee industry opposes this, citing natural variability making accurate labeling impractical and costly.",
+        "Decaffeination Process Debate (Consumer Reports, 2024): The three main decaf methods are Swiss Water Process (chemical-free, uses water and osmosis), carbon dioxide extraction (supercritical CO2 solvent), and methylene chloride solvent. Consumer advocates argue methylene chloride poses health risks despite FDA-approved residual levels of 10 ppm. The coffee industry contends that roasting at 400F evaporates virtually all solvent residue. Swiss Water Process removes 99.9% of caffeine but some tasters claim it also removes desirable flavor compounds. A 2024 blind tasting found no statistically significant difference."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about caffeine's molecular structure and receptor binding mechanism but contexts discuss coffee processing, caffeine quantities in beverages, and decaffeination methods",
+      "rationale": "The query requires biochemistry information: caffeine's chemical structure (C8H10N4O2, a xanthine derivative) and its mechanism of action as a competitive adenosine receptor antagonist. The contexts discuss coffee industry topics that mention caffeine quantitatively but never address its molecular structure, chemical bonds, or receptor pharmacology. The caffeine content data cannot explain how the molecule interacts with neural receptors."
+    },
+    {
+      "id": "t1_abstain_hard_921",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "hard",
+      "query": "What are the structural engineering requirements for earthquake-resistant building foundations?",
+      "contexts": [
+        "Building Insulation Standards Debate (Energy Efficiency Council, 2024): Updated building codes require minimum R-38 insulation in attic spaces and R-20 in walls for climate zones 5-8. Spray foam manufacturers argue closed-cell foam (R-6.5 per inch) outperforms fiberglass batts (R-3.7 per inch) and provides additional structural rigidity. Fiberglass industry representatives counter that spray foam's higher cost ($1.50-$3.50/sqft vs $0.64-$1.19/sqft) is not justified by marginal performance gains and cite potential off-gassing concerns. Some builders report moisture issues with improper spray foam installation.",
+        "LEED vs Passive House Certification Debate (Sustainable Architecture Forum): LEED and Passive House represent competing approaches to green building certification. LEED uses a point-based system across categories (energy, water, materials, indoor air quality) and allows trade-offs between categories. Passive House demands specific thermal performance metrics: maximum heating demand of 15 kWh/m2/year and air tightness below 0.6 ACH50. Critics of LEED argue it allows energy-intensive buildings to achieve certification through non-energy credits. Passive House advocates contend their standard delivers measurably lower energy consumption.",
+        "Concrete vs Mass Timber Construction (Engineering News, 2024): The construction industry debates whether mass timber can replace concrete and steel in tall buildings. CLT (cross-laminated timber) supporters cite carbon sequestration (1 ton CO2 stored per cubic meter), faster construction times (25-30% faster erection), and comparable fire resistance (charring rate of 0.65mm/minute). Concrete industry advocates argue that concrete's compressive strength (4,000-10,000 psi typical) and mass provide superior resistance to lateral loads and vibration. The tallest mass timber building is Ascent in Milwaukee at 25 stories."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about seismic foundation engineering requirements but contexts discuss insulation standards, green building certification, and concrete vs timber structural debates",
+      "rationale": "None of the contexts addresses earthquake-resistant foundation design (base isolation, pile foundations, mat foundations, soil liquefaction mitigation, or seismic building codes like IBC seismic categories). The insulation and certification discussions are about energy performance, not structural integrity. The concrete vs timber debate mentions lateral load resistance peripherally but provides no seismic foundation engineering requirements."
+    },
+    {
+      "id": "t1_abstain_hard_922",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "hard",
+      "query": "How does the Federal Reserve set the federal funds rate and what factors influence their decision?",
+      "contexts": [
+        "Cryptocurrency Regulation Debate (Financial Times, 2024): U.S. financial regulators disagree on how to classify and regulate cryptocurrencies. The SEC argues most tokens are securities under the Howey test and should be regulated accordingly, as demonstrated by enforcement actions against Coinbase and Binance. The CFTC considers Bitcoin and Ethereum commodities and advocates for its own oversight framework. Industry lobbyists push for a dedicated regulatory framework through the Financial Innovation and Technology Act (FIT21). Some economists argue that stablecoin regulation should be prioritized over token classification.",
+        "Central Bank Digital Currency Debate (Bank for International Settlements, 2024): 130 countries representing 98% of global GDP are exploring CBDCs. Proponents argue CBDCs would improve payment efficiency, reduce costs for cross-border transactions, and provide financial inclusion for the unbanked. Critics warn of surveillance risks, potential bank disintermediation (deposits shifting from commercial banks to the central bank), and implementation complexity. The European Central Bank plans a digital euro pilot in 2025. China's e-CNY has reached 260 million wallets but daily transaction volumes remain a fraction of Alipay and WeChat Pay.",
+        "Dollar Dominance and De-dollarization (Council on Foreign Relations, 2024): Some analysts argue that BRICS nations' efforts to establish alternative payment systems and bilateral currency swaps threaten the dollar's reserve currency status. The dollar's share of global reserves has declined from 72% in 2000 to 58% in 2024. Counter-arguments note that no alternative currency has the depth, liquidity, and legal infrastructure to replace the dollar. Treasury markets process $700 billion daily with no substitute. Some economists argue de-dollarization is a gradual structural shift while others call it a temporary trend driven by geopolitics."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the Fed's rate-setting mechanism but contexts discuss crypto regulation, CBDCs, and de-dollarization",
+      "rationale": "The Federal Open Market Committee (FOMC) process, dual mandate (maximum employment and price stability), dot plots, open market operations, and economic indicators that influence rate decisions are entirely absent from the contexts. While all contexts relate to monetary systems and financial policy, crypto regulation, digital currencies, and reserve currency status are distinct topics from domestic monetary policy mechanics."
+    },
+    {
+      "id": "t1_abstain_medium_923",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "medium",
+      "query": "What vaccinations are required for international travel to Kenya?",
+      "contexts": [
+        "Travel Insurance Comparison (Consumer Finance Review, 2024): Comprehensive travel insurance policies vary significantly. Allianz Global Assistance offers trip cancellation coverage up to $50,000, while World Nomads caps at $10,000. Medical evacuation coverage ranges from $100,000 (basic policies) to $1 million (premium). Some travel advisors argue that credit card travel insurance is sufficient for most trips, citing Chase Sapphire Reserve's $10,000 trip cancellation benefit. Others counter that credit card coverage has significant exclusions and recommend standalone policies for trips exceeding $5,000.",
+        "Kenya Safari Lodge Reviews (Travel Magazine, 2024): The Masai Mara ecosystem offers exceptional wildlife viewing from July to October during the Great Migration. Top-rated lodges include Angama Mara ($1,200-$2,800/night), Governors' Camp ($950-$1,800/night), and Mara Serena Safari Lodge ($350-$700/night). Some reviewers argue that conservancy camps provide a more exclusive experience with lower tourist density compared to the main reserve. Others prefer the central reserve for its higher concentration of big cats and guaranteed river crossing sightings. Budget travelers can find acceptable options from $150/night outside the conservancies."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about vaccination requirements for Kenya travel but contexts cover travel insurance comparisons and safari lodge reviews",
+      "rationale": "The contexts discuss financial preparation (insurance) and accommodation choices for travel but contain no medical or health information. Vaccination requirements for Kenya (such as yellow fever, recommended boosters, malaria prophylaxis) are health authority mandates not mentioned in either travel insurance or lodge review content."
+    },
+    {
+      "id": "t1_abstain_hard_924",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "hard",
+      "query": "What is the step-by-step procedure for performing a lumbar puncture?",
+      "contexts": [
+        "Cerebrospinal Fluid Biomarkers in Alzheimer's Disease (Neurology Research, 2024): CSF analysis reveals distinct biomarker patterns in Alzheimer's disease: decreased amyloid-beta 42 (below 500 pg/mL), elevated total tau (above 400 pg/mL), and elevated phosphorylated tau (above 60 pg/mL). Some researchers argue that the amyloid/tau ratio provides better diagnostic accuracy (92%) than individual biomarkers (78-85%). Critics contend that plasma biomarkers (particularly p-tau217) are approaching CSF-level accuracy and will eliminate the need for invasive CSF collection in clinical practice. A 2024 meta-analysis found plasma p-tau217 sensitivity of 89% vs CSF sensitivity of 94%.",
+        "Meningitis Diagnosis and CSF Interpretation (Emergency Medicine Review): CSF findings differentiate bacterial from viral meningitis. Bacterial meningitis: WBC > 1000/microL (predominantly neutrophils), glucose < 40 mg/dL, protein > 250 mg/dL, positive Gram stain in 60-90% of cases. Viral meningitis: WBC 10-500/microL (predominantly lymphocytes), normal glucose, protein 50-200 mg/dL. Some emergency physicians argue that Gram stain-negative cases with ambiguous CSF results should receive empiric antibiotics and admission. Others advocate for PCT (procalcitonin) testing to guide antibiotic decisions, citing studies showing 96% negative predictive value.",
+        "Post-Lumbar Puncture Headache Management (Pain Medicine, 2024): Post-LP headache occurs in 10-30% of patients and is caused by persistent CSF leak through the dural puncture site. Positional quality (worse upright, improves supine) is pathognomonic. Conservative management includes bed rest, hydration, caffeine (300-500mg oral), and analgesics. Epidural blood patch is 85-95% effective for refractory cases. Some anesthesiologists advocate routine use of atraumatic (Sprotte or Whitacre) needles, claiming a 60% reduction in PDPH incidence. Others argue that the higher cost ($15 vs $2) and longer procedure time do not justify routine use in all patient populations."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for the procedural steps of performing a lumbar puncture but contexts cover CSF analysis results, meningitis interpretation, and post-procedure headache management",
+      "rationale": "The contexts discuss what to do with CSF results after collection, how to interpret findings, and how to manage complications, but none describes the actual procedure: patient positioning, landmark identification, needle insertion technique, opening pressure measurement, or sample collection steps. Knowing about post-LP headache or CSF biomarkers does not teach someone how to perform the procedure."
+    },
+    {
+      "id": "t1_abstain_hard_925",
+      "category": "abstention",
+      "subcategory": "off_topic_contradiction",
+      "difficulty": "hard",
+      "query": "What syntax and options does the PostgreSQL COPY command support for bulk data import?",
+      "contexts": [
+        "PostgreSQL Replication Strategies (DBA Handbook, 2024): Streaming replication provides real-time standby databases using write-ahead log (WAL) shipping. Synchronous replication guarantees zero data loss but adds latency (typically 1-5ms per transaction). Some DBAs advocate for synchronous replication in financial systems where data loss is unacceptable. Others argue that asynchronous replication with automated failover (using Patroni or repmgr) provides better availability with negligible data loss risk. Logical replication, introduced in PostgreSQL 10, enables selective table replication and cross-version upgrades but does not replicate DDL changes.",
+        "PostgreSQL Query Optimization Debate (Database Performance Blog): The planner's choice between sequential scan and index scan depends on table statistics, selectivity estimates, and random_page_cost settings. Some experts recommend lowering random_page_cost from the default 4.0 to 1.1-1.5 for SSD storage to encourage index usage. Others warn that aggressive index usage can harm OLAP workloads where sequential scans with parallel workers are faster. The work_mem parameter also significantly affects query plans: higher values enable in-memory sorts and hash joins but excessive settings can cause OOM under high concurrency.",
+        "PostgreSQL Extension Ecosystem (PGConf Talk Summary, 2024): The extension ecosystem divides into data types (PostGIS, pgvector, hstore), foreign data wrappers (postgres_fdw, oracle_fdw, mysql_fdw), and functionality extensions (pg_cron, pg_partman, pg_stat_statements). Some community members argue that core should absorb popular extensions like pg_stat_statements to ensure consistent availability. Others prefer the modular approach, citing faster development cycles and reduced core complexity. The pg_vector extension has seen 400% growth in installations since 2023, driven by AI/ML workloads requiring similarity search."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the COPY command syntax for bulk import but contexts discuss replication, query optimization, and extensions",
+      "rationale": "The PostgreSQL COPY command (COPY FROM, COPY TO, format options like CSV/TEXT/BINARY, DELIMITER, HEADER, NULL string, ENCODING) is a specific data loading feature not mentioned in any context. Replication strategies, query plan optimization, and extension management are entirely different PostgreSQL topics. Being about the same database system does not make these contexts relevant to the COPY command."
+    },
+    {
+      "id": "t1_abstain_medium_926",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "medium",
+      "query": "What were Apple's total revenue and net income for fiscal year 2024?",
+      "contexts": [
+        "Apple Inc. Annual Report (Fiscal Year 2021): Apple reported total net revenue of $365.8 billion for fiscal year 2021, a 33% increase from fiscal year 2020. Net income was $94.7 billion, up 65% year-over-year. iPhone revenue was $191.97 billion (52.5% of total), Services revenue was $68.43 billion (18.7%), and Mac revenue was $35.19 billion (9.6%). The company returned $101 billion to shareholders through dividends ($14.5 billion) and share repurchases ($85.5 billion). Gross margin was 41.8%, up from 38.2% in FY2020.",
+        "Apple Inc. Annual Report (Fiscal Year 2022): Apple's fiscal year 2022 revenue reached $394.3 billion, up 7.8% from FY2021. Net income was $99.8 billion. iPhone revenue grew to $205.49 billion, while Services reached $78.13 billion. Mac revenue declined to $40.18 billion due to post-pandemic normalization. Greater China revenue grew 9% to $74.2 billion. Operating expenses increased to $51.3 billion due to R&D investments in AR/VR technology and autonomous vehicle projects. Cash and equivalents stood at $48.3 billion.",
+        "Apple Inc. Q1 FY2023 Earnings (October-December 2022): Apple reported Q1 FY2023 revenue of $117.2 billion, a 5% decline from the year-ago quarter, marking the first revenue decline since Q2 FY2019. iPhone revenue was $65.78 billion, down 8%. Services set a record at $20.77 billion, up 6%. Mac revenue dropped 29% to $7.74 billion. The company attributed the decline to foreign exchange headwinds, supply constraints in China due to COVID lockdowns, and a challenging macroeconomic environment."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Apple's FY2024 financials but contexts only contain FY2021, FY2022, and Q1 FY2023 data",
+      "rationale": "The most recent data in the contexts is from Q1 FY2023 (October-December 2022), which is nearly two years before the fiscal year 2024 period asked about. Revenue and net income figures from FY2021-2022 cannot be used to state FY2024 results, as these are historical figures not projections."
+    },
+    {
+      "id": "t1_abstain_medium_927",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "medium",
+      "query": "What is the current U.S. federal minimum wage as of 2025?",
+      "contexts": [
+        "U.S. Federal Minimum Wage History (Department of Labor, 2015): The federal minimum wage has been $7.25 per hour since July 24, 2009, when it was increased from $6.55 as the final step of the Fair Minimum Wage Act of 2007. Prior increases: $5.85 (2007), $6.55 (2008), $7.25 (2009). The minimum wage for tipped employees has remained at $2.13 per hour since 1991, provided tips bring total compensation to at least $7.25. Twenty-nine states and the District of Columbia have minimum wages above the federal level.",
+        "Minimum Wage Debate (Economic Policy Institute, 2016): Proponents of a $15 federal minimum wage argue it would lift 1.3 million workers out of poverty. Opponents cite CBO estimates that a $15 minimum could eliminate 1.3 million jobs. The Raise the Wage Act of 2015 proposed incremental increases reaching $12 by 2020. Some economists advocate for regional minimum wages indexed to local cost of living rather than a single national rate. The debate remains highly partisan, with most Republicans opposing increases and most Democrats supporting them.",
+        "State Minimum Wage Comparison (National Conference of State Legislatures, 2017): As of January 2017, minimum wages ranged from $7.25 (federal level, 21 states) to $11.00 (Washington state and Massachusetts). California enacted a path to $15/hour by 2022 for large employers. New York's minimum varies by region: $11.00 in New York City (large employers), $10.50 (small employers), $10.00 (rest of state). Thirteen states have no state minimum wage law and default to the federal rate. Five states (Alabama, Louisiana, Mississippi, South Carolina, Tennessee) have no minimum wage law at all."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the 2025 federal minimum wage but contexts are from 2015-2017 with the most recent data being state rates from January 2017",
+      "rationale": "The contexts are 8-10 years old and describe the minimum wage landscape as of 2015-2017. While the federal minimum wage may not have changed since 2009, these contexts do not confirm the 2025 rate and do not account for any legislative changes that may have occurred between 2017 and 2025. The state-level data is also severely outdated."
+    },
+    {
+      "id": "t1_abstain_medium_928",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "medium",
+      "query": "Which teams qualified for the 2024 UEFA European Championship knockout stage?",
+      "contexts": [
+        "UEFA Euro 2016 Group Stage Results (UEFA Official): Group A: France and Switzerland advanced. Group B: Wales (1st) and England (2nd) qualified. Group C: Germany and Poland advanced. Group D: Croatia topped the group with Spain finishing second. Group E: Italy and Belgium qualified. Group F: Hungary and Iceland advanced in a surprise result, eliminating Portugal from automatic qualification (Portugal qualified as best third-place team). The tournament held in France featured 24 teams for the first time, expanding from the 16-team format used since 1996.",
+        "UEFA Euro 2020 (Played 2021) Group Stage Summary: Group A: Italy topped with 3 wins, Wales second. Group B: Belgium (1st), Denmark (2nd) advanced. Group C: Netherlands won all three matches, Austria qualified second. Group D: England and Czech Republic progressed. Group E: Sweden and Spain advanced. Group F was the 'Group of Death' with Germany, France, Portugal, and Hungary; all four results went to the final matchday, with France and Germany advancing. The tournament was held across 11 host cities due to COVID-19 pandemic postponement.",
+        "UEFA Euro 2024 Qualifying Draw Results (October 2022): The qualifying draw for Euro 2024 in Germany placed teams into 10 groups. Group A: Spain, Scotland, Norway, Georgia, Cyprus. Group B: Netherlands, France, Republic of Ireland, Greece, Gibraltar. Notable groups include Group C with Italy, England, Ukraine, North Macedonia, and Malta. Host nation Germany qualifies automatically. The qualifying campaign runs from March 2023 to November 2023, with playoffs in March 2024 for remaining spots. 53 teams compete for 23 qualifying places."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the 2024 Euro knockout stage qualifiers but contexts only have 2016 and 2020 group results plus the 2024 qualifying draw without actual tournament results",
+      "rationale": "The 2016 and 2020 tournament results are from previous editions and do not apply to 2024. The qualifying draw context describes which teams were in qualifying groups before the tournament, not which teams qualified from the actual Euro 2024 group stage. The actual tournament results from the group phase of Euro 2024 are entirely absent."
+    },
+    {
+      "id": "t1_abstain_medium_929",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "medium",
+      "query": "What are the current 2025 contribution limits for 401(k) retirement accounts?",
+      "contexts": [
+        "IRS Retirement Plan Contribution Limits (2021): For 2021, the 401(k) employee elective deferral limit is $19,500, with a $6,500 catch-up contribution for those age 50 and older. The total annual contribution limit (employee + employer) is $58,000 ($64,500 with catch-up). IRA contribution limit is $6,000 ($7,000 with catch-up). The income phase-out for Roth IRA eligibility begins at $125,000 for single filers and $198,000 for married filing jointly.",
+        "IRS Retirement Plan Contribution Limits (2022): For 2022, the 401(k) elective deferral limit increased to $20,500, up $1,000 from 2021. Catch-up contributions remain at $6,500 for those 50 and older. The total annual contribution limit rose to $61,000 ($67,500 with catch-up). IRA limits remained at $6,000 ($7,000 catch-up). Roth IRA income phase-outs increased to $129,000 (single) and $204,000 (married filing jointly). SIMPLE IRA limits increased to $14,000.",
+        "Retirement Savings Trends (Fidelity Investments Report, Q2 2022): The average 401(k) balance declined to $103,800 in Q2 2022, down 20% from the Q4 2021 peak of $130,700. Only 14.5% of participants contributed the maximum allowable amount. Employer match averaged 4.6% of salary. Auto-enrollment adoption reached 64% of plans. Target-date funds held 57% of all 401(k) assets. The average savings rate (employee + employer) was 13.9%, approaching the recommended 15%. Baby Boomers' average balance was $230,900 while Gen Z averaged $10,500."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for 2025 401(k) limits but contexts only have 2021 and 2022 IRS limits plus mid-2022 savings trends",
+      "rationale": "The IRS adjusts 401(k) contribution limits annually based on inflation. The 2021 ($19,500) and 2022 ($20,500) limits are three to four years outdated and cannot represent 2025 limits, which would reflect several additional inflation adjustments. The Fidelity report discusses savings behaviors, not IRS contribution limits."
+    },
+    {
+      "id": "t1_abstain_hard_930",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "hard",
+      "query": "What is the latest stable version of Python and what new features does it include?",
+      "contexts": [
+        "Python 3.9 Release Notes (October 2020): Python 3.9 introduced dictionary merge operators (| and |=), string methods removeprefix() and removesuffix(), type hinting generics in standard collections (list[int] instead of List[int]), and a new parser based on PEG instead of LL(1). The zoneinfo module was added for IANA time zone support. The math module gained new functions including gcd() supporting multiple arguments and lcm(). Python 3.9 requires minimum C99 support for compilation. End of security support is scheduled for October 2025.",
+        "Python 3.10 Release Notes (October 2021): Python 3.10 added structural pattern matching (match/case statements), parenthesized context managers, and improved error messages with precise line indicators. Type union syntax using X | Y was introduced as an alternative to Union[X, Y]. The dataclasses module gained a slots parameter and kw_only fields. Strict mode was added to zip(). Deprecation warnings were added for obsolete modules scheduled for removal in 3.12.",
+        "Python 3.11 Release Notes (October 2022): Python 3.11 delivered 10-60% performance improvements over 3.10 through the Faster CPython project. Exception groups and the except* syntax for handling multiple exceptions were added. Fine-grained error locations in tracebacks now point to the exact expression causing the error. The tomllib module was added to the standard library for parsing TOML files. The Self type for annotating methods returning the enclosing class was added to typing."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the latest stable Python version but contexts only cover Python 3.9 through 3.11, released in 2020-2022",
+      "rationale": "Python releases a new version annually. The contexts end at Python 3.11 (October 2022), which is several versions behind the actual latest version at the time this question would be asked. Python 3.12, 3.13, and potentially later versions with their own new features are not represented. Stating that 3.11 is the latest would be incorrect."
+    },
+    {
+      "id": "t1_abstain_hard_931",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "hard",
+      "query": "What is the current market capitalization of NVIDIA as of January 2025?",
+      "contexts": [
+        "NVIDIA Corporation Financial Overview (Q4 FY2022, January 2022): NVIDIA's market capitalization was approximately $690 billion as of January 2022. The company reported Q4 FY2022 revenue of $7.64 billion, with Gaming at $3.42 billion (44.8%) and Data Center at $3.26 billion (42.7%). Year-over-year revenue growth was 53%. P/E ratio was 68x trailing earnings. The stock traded at approximately $270 per share with 2.5 billion shares outstanding.",
+        "NVIDIA AI Chip Dominance (Technology Analysis, March 2023): NVIDIA controls an estimated 80-95% of the AI training GPU market through its A100 and H100 chips. The H100 (Hopper architecture) launched at $25,000-$40,000 per unit with severe supply constraints. Market cap reached approximately $650 billion in March 2023. Revenue from Data Center surpassed Gaming for the first time in FY2023. Analyst consensus projects significant revenue growth driven by generative AI infrastructure spending, with some forecasting Data Center revenue could triple by 2025.",
+        "Semiconductor Industry Outlook (Morgan Stanley Research, June 2023): The semiconductor industry is expected to reach $600 billion in revenue by 2025, driven by AI, automotive, and IoT demand. NVIDIA leads the AI accelerator segment; its market cap was approximately $1.05 trillion in June 2023, making it the first chipmaker to exceed $1 trillion. AMD and Intel are developing competing AI chips (MI300X and Gaudi3 respectively), but neither is expected to challenge NVIDIA's dominance before 2025. Capital expenditure by hyperscalers (AWS, Azure, GCP) on AI infrastructure is projected at $150 billion in 2024."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for NVIDIA's market cap in January 2025 but contexts only have data through June 2023 showing rapid changes ($690B to $1.05T in 18 months)",
+      "rationale": "NVIDIA's market cap was evolving rapidly during the AI boom, moving from $690B (January 2022) to $1.05T (June 2023). The most recent context is 18 months before the date asked about, during a period of extreme volatility. The June 2023 figure cannot represent January 2025 given the dramatic market cap changes observed. Projections in the contexts are about revenue, not market capitalization."
+    },
+    {
+      "id": "t1_abstain_hard_932",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "hard",
+      "query": "What are the current 2024 guidelines for managing type 2 diabetes from the American Diabetes Association?",
+      "contexts": [
+        "ADA Standards of Medical Care in Diabetes (2019): The 2019 guidelines recommend metformin as first-line therapy for type 2 diabetes, with an A1C target of <7% for most adults. Second-line agents should be selected based on patient-specific factors: GLP-1 receptor agonists or SGLT2 inhibitors preferred for patients with established atherosclerotic cardiovascular disease. Sulfonylureas remain an option when cost is a barrier. Self-monitoring of blood glucose is recommended for patients on insulin. A1C testing should be performed at least twice yearly for patients meeting goals and quarterly for those not meeting targets.",
+        "ADA Standards of Medical Care in Diabetes (2020): Updated 2020 guidelines strengthened recommendations for SGLT2 inhibitors in heart failure and chronic kidney disease, independent of A1C. The cardiovascular section was expanded to include specific agent recommendations: empagliflozin, canagliflozin, or dapagliflozin for heart failure with reduced ejection fraction. The obesity management section was expanded to emphasize weight loss as a treatment target. Technology recommendations were updated to include continuous glucose monitoring (CGM) for most patients on intensive insulin regimens.",
+        "ADA Standards of Medical Care in Diabetes (2021): The 2021 update introduced a dedicated section on 'Social Determinants of Health' affecting diabetes management. Glycemic targets were individualized more explicitly: <7% for most adults, <6.5% for select individuals (short duration, long life expectancy), <8% for elderly or those with significant comorbidities. CGM guidance expanded: time-in-range (70-180 mg/dL) target of >70% as an alternative to A1C. The chapter on diabetic kidney disease was significantly revised to recommend finerenone for patients with CKD and type 2 diabetes."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for 2024 ADA guidelines but contexts only contain 2019-2021 guidelines",
+      "rationale": "ADA updates its Standards of Care annually, and each year brings meaningful changes based on new clinical trial data. The 2019-2021 guidelines are 3-5 years old and cannot represent 2024 recommendations. Significant advances in GLP-1 agonists (tirzepatide), updated cardiovascular risk algorithms, and new medication approvals between 2021 and 2024 mean these older guidelines are substantively outdated."
+    },
+    {
+      "id": "t1_abstain_hard_933",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "hard",
+      "query": "What are the current entry requirements and visa policies for U.S. citizens traveling to Japan in 2025?",
+      "contexts": [
+        "Japan Travel Requirements (U.S. State Department, February 2020): U.S. citizens can enter Japan for tourism or business without a visa for stays of up to 90 days. A valid U.S. passport with at least six months validity is required. Travelers must present a return or onward ticket. Japan maintains strict drug laws: possession of even small amounts of marijuana is a serious criminal offense with potential prison time. The Embassy recommends registering with the Smart Traveler Enrollment Program (STEP).",
+        "Japan COVID-19 Entry Restrictions (Updated March 2022): Japan remains closed to most foreign tourists. Only Japanese nationals, permanent residents, and specific categories of visa holders (business, students, technical interns) may enter. All entrants must provide a negative PCR test within 72 hours, undergo a test on arrival, and quarantine at a designated facility for 3 days followed by 4 days of self-quarantine (total 7 days). The Visit Japan Web system is required for pre-registration. The Japan National Tourism Organization projects tourism recovery to pre-pandemic levels by 2025.",
+        "Japan Tourism Recovery Update (Ministry of Land, Infrastructure, Transport and Tourism, September 2022): Japan partially reopened borders on June 10, 2022, for package tours only. Individual tourism resumed on October 11, 2022, with the visa waiver suspended. As of September 2022, all visitors must apply for a visa through the ERFS system. Proof of vaccination (3 doses) OR negative PCR test within 72 hours is required. Quarantine was eliminated for vaccinated travelers on September 7, 2022. The weakened yen (148 JPY/USD) is expected to boost tourism spending."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2025 Japan entry requirements but contexts are from pre-pandemic 2020 and mid-pandemic 2022 with evolving COVID restrictions",
+      "rationale": "Japan's entry policies changed dramatically and frequently during 2020-2023 as COVID restrictions were imposed, modified, and eventually lifted. The most recent context (September 2022) describes policies that were still evolving, including suspended visa waivers and vaccination requirements. The 2025 policies likely differ significantly as Japan has since fully reopened, but these contexts cannot confirm what the current requirements are."
+    },
+    {
+      "id": "t1_abstain_hard_934",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "hard",
+      "query": "What is the current interest rate on Series I Savings Bonds issued in 2024?",
+      "contexts": [
+        "U.S. Series I Savings Bonds Rate Announcement (November 2021): The I Bond composite rate for bonds issued from November 2021 through April 2022 is 7.12%, the highest since the bond was introduced in 1998. The rate comprises a fixed rate of 0.00% and a semiannual inflation rate of 3.56% based on CPI-U data from March to September 2021. Purchase limit is $10,000 per person per calendar year electronically via TreasuryDirect, plus up to $5,000 in paper bonds via tax refund.",
+        "U.S. Series I Savings Bonds Rate Announcement (May 2022): The composite rate for I Bonds issued from May through October 2022 is 9.62%, an all-time record. The fixed rate remains 0.00% with a semiannual inflation rate of 4.81% reflecting CPI increases from September 2021 to March 2022. TreasuryDirect experienced website crashes and long queue times due to unprecedented demand. An estimated $16 billion in I Bonds were purchased in the first half of 2022, compared to $1.2 billion in all of 2020.",
+        "U.S. Series I Savings Bonds Rate Announcement (November 2022): The composite rate for bonds issued November 2022 through April 2023 decreased to 6.89%. The fixed rate rose to 0.40%, the first non-zero fixed rate since May 2020. The semiannual inflation rate is 3.24%. Financial advisors note that the new non-zero fixed rate benefits long-term holders, as the fixed rate remains for the 30-year life of the bond. Some argue I Bonds remain attractive compared to bank CDs, while others note that 5-year Treasury rates above 4% offer comparable returns with more liquidity."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2024 I Bond rates but contexts only have rates from November 2021 through April 2023",
+      "rationale": "I Bond rates are reset every six months (May and November) by the Treasury based on CPI data. The most recent rate in the contexts is for November 2022-April 2023 (6.89%). The 2024 rate would have been set in May 2024 and November 2024 based on inflation data not available in these contexts. Given that inflation patterns changed substantially between late 2022 and 2024, the historical rates cannot predict the 2024 rate."
+    },
+    {
+      "id": "t1_abstain_hard_935",
+      "category": "abstention",
+      "subcategory": "temporal_mismatch",
+      "difficulty": "hard",
+      "query": "What are the 2025 electric vehicle tax credits available under the Inflation Reduction Act?",
+      "contexts": [
+        "Inflation Reduction Act EV Tax Credits Overview (August 2022): The IRA, signed August 16, 2022, replaces the existing $7,500 EV tax credit with new requirements effective January 1, 2023. New clean vehicles must have a MSRP below $55,000 (sedans) or $80,000 (SUVs/trucks). Income limits: $150,000 AGI for single filers, $300,000 for joint filers. Critical mineral requirements begin in 2024: 40% of battery minerals must be extracted or processed in the U.S. or FTA countries. Battery component requirements: 50% manufactured in North America starting 2024.",
+        "IRA EV Credit Implementation - Phase 1 (Treasury Department Guidance, March 2023): The Treasury issued proposed rules for the critical mineral and battery component requirements. For 2023, the $7,500 credit is split into two $3,750 components: one for critical minerals, one for battery components. Vehicles failing both tests get $0; failing one test gets $3,750. Initial qualifying vehicles include certain Tesla, Chevrolet, Ford, and Rivian models. Foreign Entity of Concern (FEOC) restrictions are deferred to 2024, meaning Chinese battery materials are temporarily permitted. The used EV credit of $4,000 (30% of sale price) applies to vehicles over 2 years old priced below $25,000.",
+        "IRA EV Credit Update (December 2023): Starting January 2024, the $7,500 credit can be transferred to the dealer at point of sale, effectively becoming a discount. FEOC restrictions take effect: no battery components from Chinese entities (including CATL and BYD subsidiaries) qualify. This reduced the number of qualifying vehicles from 43 to 13 as of January 2024. Some automakers are restructuring supply chains to avoid Chinese minerals and components. The 2024 critical mineral threshold increases to 50% from 40% in 2023."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2025 EV credits but contexts only cover the law as enacted (2022) through implementation as of December 2023",
+      "rationale": "The IRA's EV credit requirements escalate each year with increasing critical mineral thresholds (40% in 2023, 50% in 2024, higher in 2025), tightening FEOC restrictions, and changing lists of qualifying vehicles. The December 2023 context is the most recent but describes 2024 rules. The 2025 mineral thresholds, qualifying vehicle list, and any regulatory updates issued during 2024-2025 are missing from these contexts."
+    },
+    {
+      "id": "t1_abstain_medium_936",
+      "category": "abstention",
+      "subcategory": "wrong_specificity",
+      "difficulty": "medium",
+      "query": "What is the maximum file upload size limit for the Slack Enterprise Grid plan?",
+      "contexts": [
+        "Slack Overview and Features (Product Marketing, 2024): Slack is a channel-based messaging platform designed for team collaboration. Key features include channels (public and private), direct messaging, file sharing, app integrations (2,600+ apps in the Slack App Directory), Slack Connect for cross-organization communication, and Huddles for audio/video calls. Slack offers workflow automation through Workflow Builder, allowing no-code automations. The search functionality indexes all messages and files. Slack is available on Windows, macOS, Linux, iOS, and Android with consistent feature parity across platforms.",
+        "Slack Security and Compliance (Enterprise Whitepaper): Slack maintains SOC 2 Type II, SOC 3, ISO 27001, and ISO 27018 certifications. Data is encrypted in transit (TLS 1.2+) and at rest (AES-256). Enterprise Grid provides organization-level controls including enterprise key management (EKM) with customer-managed keys via AWS KMS, data loss prevention (DLP) integrations with partners like Netskope and Symantec, and eDiscovery support. HIPAA compliance is available for Enterprise Grid customers with a signed BAA. Data residency options allow customers to store data in specific geographic regions.",
+        "Slack Plan Comparison Overview (Sales Documentation): Slack offers four tiers: Free, Pro, Business+, and Enterprise Grid. Free includes 90 days of message history and 10 app integrations. Pro adds unlimited history, group video calls, and guest access at $8.75/user/month. Business+ includes SAML SSO, data exports for compliance, and 24/7 support at $15/user/month. Enterprise Grid provides unlimited workspaces, HIPAA compliance, custom retention policies, and dedicated support. Pricing for Enterprise Grid is custom and requires contacting Slack sales."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for the specific file upload size limit on Enterprise Grid but contexts only provide general feature overviews without file size limits",
+      "rationale": "None of the contexts mention file upload size limits for any plan. The product overview mentions file sharing as a feature without specifying limits. The security whitepaper covers encryption and compliance. The plan comparison lists plan features at a high level but does not include storage or file size specifications. The specific technical limit asked about is simply not present."
+    },
+    {
+      "id": "t1_abstain_hard_937",
+      "category": "abstention",
+      "subcategory": "wrong_specificity",
+      "difficulty": "hard",
+      "query": "What is the exact latency in milliseconds for a Redis GET operation on a cache miss with a 256-byte key?",
+      "contexts": [
+        "Redis Architecture Overview (Redis University): Redis is an in-memory data structure store used as a database, cache, and message broker. It supports strings, hashes, lists, sets, sorted sets, streams, and geospatial indexes. Single-threaded command processing ensures atomic operations without locks. Persistence options include RDB snapshots (point-in-time) and AOF (append-only file) for durability. Redis Cluster provides horizontal scaling across up to 1,000 nodes with 16,384 hash slots. The pub/sub system delivers messages to subscribers in O(N+M) time where N is subscribers and M is message patterns.",
+        "Redis Performance Characteristics (Documentation): Redis is designed for sub-millisecond response times for most operations. Benchmarks show throughput of 100,000+ operations per second on a single node. Performance depends on network latency, key size, value size, and the number of connected clients. The SLOWLOG command records operations exceeding a configurable threshold. Pipeline mode batches multiple commands to reduce network round trips. Memory optimization techniques include using hashes for small objects (ziplist encoding), configuring maxmemory-policy for eviction, and using OBJECT ENCODING to verify optimal data structures.",
+        "Redis Caching Patterns (Software Architecture Blog): Common caching patterns include cache-aside (lazy loading), write-through, and write-behind. In cache-aside, the application checks Redis first; on a cache miss, it queries the database, stores the result in Redis, and returns it. TTL values should balance freshness against database load. Thundering herd can be mitigated using probabilistic early expiration or distributed locks. Cache warming strategies pre-populate hot keys at startup. The choice between Redis and Memcached depends on data structure needs (Redis wins) versus simplicity and multi-threaded performance (Memcached wins)."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for exact latency numbers for a specific operation scenario but contexts only provide general performance characteristics",
+      "rationale": "The contexts describe Redis as 'sub-millisecond' and capable of '100,000+ operations per second' but do not provide the exact latency for a GET on a cache miss with a 256-byte key. Moreover, a cache miss in Redis returns nil instantly (the miss is not inherently slower), but the actual latency depends on network, hardware, and configuration. The caching pattern context discusses what happens at the application level on a miss but not Redis's internal latency."
+    },
+    {
+      "id": "t1_abstain_medium_938",
+      "category": "abstention",
+      "subcategory": "wrong_specificity",
+      "difficulty": "medium",
+      "query": "What is the specific dosage of amoxicillin for treating acute otitis media in children aged 2-5 years?",
+      "contexts": [
+        "Antibiotic Resistance in Pediatrics (Pediatric Infectious Disease Journal, 2024): Antibiotic resistance is a growing concern in pediatric infections. Streptococcus pneumoniae, a common cause of otitis media, shows increasing resistance to penicillin (25-35% of isolates in some regions) and macrolides (30-40%). Amoxicillin remains effective against most strains at high doses due to its pharmacokinetic properties. Watchful waiting strategies for mild acute otitis media in children over 2 years may reduce unnecessary antibiotic use by 30-40%. The CDC recommends first-line amoxicillin for AOM but notes rising treatment failure rates.",
+        "Otitis Media Pathophysiology (ENT Textbook, 6th Edition): Acute otitis media (AOM) results from bacterial or viral infection of the middle ear, typically preceded by upper respiratory infection causing eustachian tube dysfunction. The most common bacterial pathogens are Streptococcus pneumoniae (25-50%), non-typeable Haemophilus influenzae (15-30%), and Moraxella catarrhalis (3-20%). Children aged 6 months to 2 years are most susceptible due to shorter, more horizontal eustachian tubes. Diagnosis requires acute onset, middle ear effusion, and signs of inflammation (bulging, erythema of tympanic membrane).",
+        "Amoxicillin Pharmacology (Clinical Pharmacology Reference): Amoxicillin is a broad-spectrum aminopenicillin antibiotic. Mechanism: inhibits bacterial cell wall synthesis by binding penicillin-binding proteins. Bioavailability is 89% (oral). Half-life is 1-1.3 hours in adults, 1-2 hours in neonates. Renal excretion accounts for 60% of elimination. Available formulations: 250mg and 500mg capsules, 125mg/5mL and 250mg/5mL suspensions, 775mg extended-release tablets. Common side effects include diarrhea (9%), rash (5%), and nausea (3%). Cross-reactivity with penicillin allergy is expected."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for the specific mg/kg dosage of amoxicillin for AOM in 2-5 year olds but contexts cover resistance patterns, pathophysiology, and general pharmacology without dosing guidelines",
+      "rationale": "None of the contexts provides the specific dosage (typically 80-90 mg/kg/day divided into two doses for high-dose or 40-45 mg/kg/day for standard dose). The resistance context mentions 'high doses' without specifying them. The pharmacology context lists available formulations but not pediatric dosing guidelines. The pathophysiology context discusses the disease mechanism, not treatment protocols."
+    },
+    {
+      "id": "t1_abstain_hard_939",
+      "category": "abstention",
+      "subcategory": "wrong_specificity",
+      "difficulty": "hard",
+      "query": "What is the exact thread pitch and torque specification for the cylinder head bolts on a 2020 Toyota Camry 2.5L engine?",
+      "contexts": [
+        "Toyota Camry 2.5L Dynamic Force Engine Overview (Toyota Technical Review): The A25A-FKS engine features a high compression ratio of 13:1, D-4S dual injection (port and direct), variable valve timing on intake and exhaust (VVT-iE and VVT-i), and a thermal efficiency of 40% (41% in hybrid variant). Bore and stroke are 87.5mm x 103.4mm with a displacement of 2,487cc. Maximum output is 203 hp at 6,600 rpm and 184 lb-ft at 5,000 rpm. The engine uses a lightweight aluminum block with cast iron cylinder liners and an aluminum cylinder head.",
+        "Toyota Camry Scheduled Maintenance Guide (2020): Maintenance intervals include oil and filter change every 10,000 miles or 12 months (0W-16 synthetic oil, capacity 4.8 quarts with filter). Air filter replacement every 30,000 miles. Spark plug replacement every 60,000 miles (iridium-tipped). Coolant replacement at 100,000 miles then every 50,000. Transmission fluid inspection every 60,000 miles. Brake fluid replacement every 30,000 miles. The maintenance schedule assumes normal driving conditions; severe conditions (towing, dusty environments, short trips) require halved intervals.",
+        "Toyota Engine Family Comparison (Automotive Engineering Magazine): Toyota's TNGA engine family includes the A25A-FKS (2.5L), M20A-FKS (2.0L), and G16E-GTS (1.6L turbo). All share the TNGA design philosophy of long stroke ratios, high compression, and laser-clad valve seats. The 2.5L achieves the highest thermal efficiency in the naturally aspirated segment. Compared to the previous 2AR-FE engine, the A25A-FKS is 10% lighter, produces 6% more power, and improves fuel efficiency by 25%. The engine block uses a closed-deck design for rigidity, and the head uses direct-acting valvetrain to reduce friction."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for precise bolt specifications (thread pitch and torque values) but contexts only provide general engine specs, maintenance schedules, and engine family comparisons",
+      "rationale": "The thread pitch (e.g., M11x1.5) and multi-step torque sequence (typically found in a factory service manual) for cylinder head bolts are highly specific repair specifications not present in general engine overviews, scheduled maintenance guides, or engineering comparisons. The contexts describe what the engine is and how to maintain it, but not the detailed fastener specifications needed for internal engine repair."
+    },
+    {
+      "id": "t1_abstain_hard_940",
+      "category": "abstention",
+      "subcategory": "wrong_specificity",
+      "difficulty": "hard",
+      "query": "What are the specific WCAG 2.1 AA color contrast ratio requirements for text overlaid on images?",
+      "contexts": [
+        "Web Accessibility Overview (W3C WAI Introduction): Web accessibility ensures people with disabilities can perceive, understand, navigate, and interact with websites. The four principles of WCAG are Perceivable, Operable, Understandable, and Robust (POUR). WCAG 2.1, published June 2018, adds 17 new success criteria to WCAG 2.0, addressing mobile accessibility, low vision, and cognitive disabilities. Three conformance levels exist: A (minimum), AA (recommended), and AAA (enhanced). Most legal requirements reference WCAG 2.1 AA as the standard.",
+        "Accessible Design Best Practices (UX Design Handbook): Designing for accessibility benefits all users, not just those with disabilities. Key practices include providing sufficient color contrast, using semantic HTML, ensuring keyboard navigability, and adding alternative text to images. Color should never be the sole means of conveying information. Focus indicators should be visible for keyboard users. Forms need associated labels and error messages. Responsive design should accommodate text resizing up to 200% without loss of functionality. Testing with screen readers (NVDA, JAWS, VoiceOver) is recommended.",
+        "Color Theory in Web Design (Design Systems Blog): Effective color palettes consider hierarchy, emotion, and brand identity. Primary colors establish brand recognition, secondary colors support navigation, and neutral colors provide content readability. Tools like Adobe Color, Coolors, and Colorable help designers create palettes. Dark mode design requires inverting the luminance hierarchy rather than simply swapping foreground and background colors. High contrast themes should be offered as an alternative for users with visual impairments. Color psychology varies across cultures: red signifies danger in Western contexts but luck in Chinese culture."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for the specific WCAG 2.1 AA contrast ratio numbers for text on images but contexts only provide general accessibility overviews without the specific ratio requirements",
+      "rationale": "The specific WCAG 2.1 AA contrast ratios (4.5:1 for normal text, 3:1 for large text) and the particular challenge of text overlaid on variable-background images are not stated in any context. The W3C overview mentions WCAG levels without specifying ratios. The UX handbook mentions 'sufficient color contrast' generically. The color theory article discusses palettes and high contrast themes but never cites the WCAG numerical requirements."
+    },
+    {
+      "id": "t1_abstain_medium_941",
+      "category": "abstention",
+      "subcategory": "wrong_specificity",
+      "difficulty": "medium",
+      "query": "What is the interest rate on a Chase Sapphire Preferred credit card for balance transfers?",
+      "contexts": [
+        "Chase Sapphire Preferred Card Overview (Chase Marketing): The Chase Sapphire Preferred is a travel rewards credit card with a $95 annual fee. Earn 5x points on travel through Chase Travel, 3x on dining and select streaming services, 2x on other travel, and 1x on everything else. New cardholders earn 60,000 bonus points after spending $4,000 in the first 3 months. Points transfer 1:1 to 11 airline and hotel partners including United, Hyatt, and Southwest. Points are worth 25% more when redeemed through Chase Travel Portal.",
+        "Travel Credit Card Comparison Guide (NerdWallet, 2024): Premium travel cards offer various perks beyond earning rates. The Chase Sapphire Preferred provides trip cancellation/interruption insurance, primary rental car coverage, no foreign transaction fees, and DoorDash DashPass membership. Compared to the Sapphire Reserve ($550 annual fee), the Preferred lacks lounge access, higher earning rates on travel (10x vs 5x through Chase), and the $300 annual travel credit. Both share the Ultimate Rewards ecosystem and transfer partner network.",
+        "Credit Card Rewards Optimization (Points Strategy Blog): To maximize Chase Ultimate Rewards, pair the Sapphire Preferred or Reserve with the Chase Freedom Unlimited (1.5x all purchases) and Chase Freedom Flex (5x rotating categories). Points earned on Freedom cards transfer to the Sapphire at 1:1 and gain the 25% travel portal bonus. Annual breakeven for the Sapphire Preferred is approximately $380 in travel spending at 5x rates. The Sapphire Reserve breaks even at approximately $1,100 after the $300 travel credit."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for the specific balance transfer interest rate but contexts only cover rewards, perks, and points strategy",
+      "rationale": "None of the contexts mentions APR, interest rates, or balance transfer terms for the Chase Sapphire Preferred. The marketing overview focuses on earning rates and sign-up bonuses. The comparison guide discusses travel perks and insurance. The optimization blog covers points strategy. The specific balance transfer APR (which varies by applicant creditworthiness) is entirely absent."
+    },
+    {
+      "id": "t1_abstain_hard_942",
+      "category": "abstention",
+      "subcategory": "wrong_specificity",
+      "difficulty": "hard",
+      "query": "What are the specific memory allocation limits and garbage collection tuning parameters for the G1GC collector in JDK 21?",
+      "contexts": [
+        "Java Virtual Machine Overview (Oracle Documentation): The JVM executes Java bytecode on multiple platforms. It consists of the class loader subsystem, runtime data areas (heap, stack, method area, PC register, native method stack), and execution engine (interpreter, JIT compiler). The heap stores objects and is divided into generations: young (Eden, Survivor spaces) and old (Tenured). The JVM supports multiple garbage collectors optimized for different workloads. JDK 21 is a long-term support (LTS) release with new features including virtual threads, pattern matching for switch, and string templates.",
+        "Garbage Collection Concepts (Java Performance Guide): Garbage collection reclaims memory from unreachable objects. Key metrics are throughput (% of time not spent in GC), latency (pause duration), and footprint (memory usage). Generational hypothesis: most objects die young, justifying generational collection. Stop-the-world pauses occur during certain GC phases. Concurrent collectors (G1, ZGC, Shenandoah) aim to minimize pause times by performing most work alongside application threads. G1GC has been the default collector since JDK 9.",
+        "Java Garbage Collector Selection Guide (DevOps Reference): Choosing the right GC depends on application requirements. Serial GC: suitable for single-core machines and small heaps. Parallel GC: maximizes throughput for batch processing. G1GC: balances throughput and latency for most applications with heaps from 6GB to multi-TB. ZGC: sub-millisecond pauses regardless of heap size, ideal for latency-sensitive applications. Shenandoah: similar to ZGC with concurrent compaction. Consider G1GC as the starting point and switch to ZGC if pause times exceed application SLAs."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for specific G1GC tuning parameters and memory limits in JDK 21 but contexts only provide conceptual overviews of GC and collector selection guidance",
+      "rationale": "The specific JVM flags for G1GC tuning (e.g., -XX:G1HeapRegionSize, -XX:MaxGCPauseMillis, -XX:G1NewSizePercent, -XX:InitiatingHeapOccupancyPercent) and JDK 21-specific changes to G1GC are not mentioned. The contexts explain what G1GC is conceptually and when to use it, but none provides the actual tuning parameters, their default values, or the memory allocation limits. This is the difference between understanding a concept and having the specific configuration reference."
+    },
+    {
+      "id": "t1_abstain_hard_943",
+      "category": "abstention",
+      "subcategory": "wrong_specificity",
+      "difficulty": "hard",
+      "query": "What is the specific API rate limit for the OpenAI GPT-4 Turbo model on the Tier 3 usage plan?",
+      "contexts": [
+        "OpenAI API Overview (Developer Documentation): The OpenAI API provides access to language models including GPT-4, GPT-4 Turbo, GPT-3.5 Turbo, and DALL-E 3. Authentication uses API keys with organization-level billing. The API supports chat completions, embeddings, image generation, audio transcription, and fine-tuning endpoints. SDKs are available for Python and Node.js. Streaming responses use server-sent events (SSE). The API follows semantic versioning with model snapshots pinned to specific dates (e.g., gpt-4-0125-preview).",
+        "OpenAI Pricing Summary (January 2024): GPT-4 Turbo (128K context) is priced at $10.00 per 1M input tokens and $30.00 per 1M output tokens. GPT-4 (8K context) costs $30.00/$60.00 per 1M tokens (input/output). GPT-3.5 Turbo (16K context) is $0.50/$1.50 per 1M tokens. DALL-E 3 image generation costs $0.040 per standard image (1024x1024). Embedding model text-embedding-3-small costs $0.020 per 1M tokens. Fine-tuning GPT-3.5 Turbo costs $8.00 per 1M training tokens. Volume discounts are available for enterprise customers.",
+        "OpenAI Usage Tiers Overview (Developer Documentation): OpenAI organizes API access into usage tiers (Free, Tier 1 through Tier 5) based on payment history and usage. Higher tiers unlock increased rate limits and access to newer models. Tier advancement is automatic based on total spend and account age. Free tier has limited access. Tier 1 requires a $5 payment and provides basic rate limits. Each subsequent tier increases limits across requests per minute (RPM), tokens per minute (TPM), and requests per day (RPD). Enterprise plans offer custom limits negotiated with the sales team."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for exact Tier 3 rate limits for GPT-4 Turbo but contexts only provide pricing, general API overview, and a tier system description without specific numbers per tier",
+      "rationale": "The usage tiers overview describes the tier system conceptually (tiers exist, higher tiers have higher limits, advancement is automatic) but does not specify the actual RPM, TPM, or RPD numbers for Tier 3 specifically for the GPT-4 Turbo model. The pricing context covers cost per token but not rate limits. Knowing that tiers exist does not tell you the specific limits for a given tier and model combination."
+    },
+    {
+      "id": "t1_abstain_medium_944",
+      "category": "abstention",
+      "subcategory": "cross_domain_insufficient",
+      "difficulty": "medium",
+      "query": "How does Python's asyncio event loop handle coroutine scheduling?",
+      "contexts": [
+        "JavaScript Event Loop Explained (MDN Web Docs): JavaScript uses a single-threaded event loop model. The call stack executes synchronous code. When an asynchronous operation (setTimeout, fetch, I/O) completes, its callback is placed in the task queue (macrotask) or microtask queue (Promises, MutationObserver). The event loop checks: if the call stack is empty, process all microtasks, then one macrotask, then render. This ensures Promises resolve before the next setTimeout callback. The event loop runs continuously, processing one task per iteration from the macrotask queue.",
+        "Node.js Event Loop Phases (Node.js Documentation): The Node.js event loop has six phases: timers (setTimeout/setInterval callbacks), pending callbacks (deferred I/O callbacks), idle/prepare (internal), poll (new I/O events), check (setImmediate callbacks), and close callbacks (socket.on('close')). Each phase has a FIFO queue. Between each phase, the microtask queue (process.nextTick, Promise callbacks) is drained. process.nextTick callbacks execute before Promise callbacks. The libuv library provides the cross-platform I/O polling mechanism underlying the poll phase.",
+        "C# async/await and Task Scheduler (Microsoft Documentation): C# uses the Task Parallel Library (TPL) for asynchronous programming. The async/await keywords enable non-blocking I/O. The SynchronizationContext determines which thread continuations run on: in UI applications, continuations resume on the UI thread; in ASP.NET Core, they use the thread pool. Task.Run() queues work to the thread pool. ConfigureAwait(false) opts out of capturing the SynchronizationContext, improving performance in library code. The default TaskScheduler uses the .NET ThreadPool with work-stealing queues."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Python's asyncio event loop but contexts cover JavaScript, Node.js, and C# async patterns",
+      "rationale": "Python's asyncio has its own event loop implementation with distinct concepts (coroutines via async def, awaitable protocol, Task objects, event loop policies, selectors-based I/O multiplexing). While JavaScript and C# have superficially similar async/await syntax, the underlying scheduling mechanisms differ fundamentally. JavaScript's microtask/macrotask model, Node.js's libuv phases, and C#'s SynchronizationContext are not equivalent to asyncio's coroutine scheduling."
+    },
+    {
+      "id": "t1_abstain_medium_945",
+      "category": "abstention",
+      "subcategory": "cross_domain_insufficient",
+      "difficulty": "medium",
+      "query": "What are the zoning requirements for building a residential deck in Portland, Oregon?",
+      "contexts": [
+        "Seattle Residential Deck Permits (City of Seattle DCI): In Seattle, residential decks over 30 inches above grade require a building permit. Setback requirements: 5 feet from side property lines, 25 feet from rear property line in SF5000 zones. Maximum lot coverage including decks is 35% in single-family zones. Structural requirements include minimum 4x4 posts, 2x6 joists at 16 inches on center for spans up to 8 feet, and ledger board attachment with 1/2-inch lag screws at 16 inches. Handrails required on any side exceeding 30 inches above grade, minimum 36 inches high with balusters spaced no more than 4 inches apart.",
+        "San Francisco Deck and Patio Regulations (SF Building Inspection): San Francisco requires permits for all elevated decks. Due to steep terrain, many decks are classified as accessory structures with height limits of 16 feet from average grade. Setbacks match the underlying zoning district, typically 5 feet side and 15 feet rear. San Francisco's microclimate zones affect material requirements: moisture-resistant lumber or composite decking is recommended in fog-belt neighborhoods. Seismic bracing is required for elevated decks per CBC Section 2308. Historic district overlay zones may impose additional design review.",
+        "Vancouver, WA Deck Construction Standards (Clark County Building Division): Clark County follows the 2018 International Residential Code with local amendments. Decks exceeding 200 square feet or 30 inches above grade require permits. Footing depth minimum is 18 inches below grade to reach below the frost line. Maximum post height without lateral bracing is 8 feet. Guard rails required at 36 inches minimum height. Engineered connections (Simpson Strong-Tie or equivalent) are required for ledger-to-house attachment in the seismic zone. Permit fees are $150-$400 depending on deck size."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Portland, Oregon deck zoning but contexts cover Seattle, San Francisco, and Vancouver, WA requirements",
+      "rationale": "Each city has its own zoning code, building department, setback requirements, seismic zones, and local amendments to the International Residential Code. Portland's specific zoning designations (R5, R7, R10), setback rules, lot coverage limits, and the City of Portland Bureau of Development Services requirements are entirely absent. Geographic proximity (Vancouver, WA is across the river from Portland) does not mean the regulations are the same."
+    },
+    {
+      "id": "t1_abstain_medium_946",
+      "category": "abstention",
+      "subcategory": "cross_domain_insufficient",
+      "difficulty": "medium",
+      "query": "How do I implement authentication middleware in a Django REST Framework API?",
+      "contexts": [
+        "Express.js Authentication Middleware (Node.js Tutorial): Express middleware functions have access to the request, response, and next objects. JWT authentication middleware:\n\nconst jwt = require('jsonwebtoken');\n\nfunction authenticateToken(req, res, next) {\n  const authHeader = req.headers['authorization'];\n  const token = authHeader && authHeader.split(' ')[1];\n  if (!token) return res.sendStatus(401);\n  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {\n    if (err) return res.sendStatus(403);\n    req.user = user;\n    next();\n  });\n}\n\nApply globally via app.use(authenticateToken) or per-route. Passport.js provides strategy-based authentication (local, OAuth, JWT) as an alternative.",
+        "Spring Security Configuration (Java/Spring Boot): Spring Security uses filter chains for authentication. JWT configuration in Spring Boot 3:\n\n@Configuration\n@EnableWebSecurity\npublic class SecurityConfig {\n  @Bean\n  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {\n    return http\n      .csrf(csrf -> csrf.disable())\n      .sessionManagement(sm -> sm.sessionCreationPolicy(STATELESS))\n      .authorizeHttpRequests(auth -> auth\n        .requestMatchers(\"/api/auth/**\").permitAll()\n        .anyRequest().authenticated())\n      .addFilterBefore(jwtAuthFilter(), UsernamePasswordAuthenticationFilter.class)\n      .build();\n  }\n}\n\nThe JwtAuthFilter extends OncePerRequestFilter and validates tokens on each request.",
+        "FastAPI Dependency Injection for Auth (Python/FastAPI): FastAPI uses dependency injection for authentication:\n\nfrom fastapi import Depends, HTTPException, Security\nfrom fastapi.security import HTTPBearer, HTTPAuthorizationCredentials\n\nsecurity = HTTPBearer()\n\nasync def verify_token(credentials: HTTPAuthorizationCredentials = Security(security)):\n    token = credentials.credentials\n    try:\n        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])\n        return payload\n    except jwt.InvalidTokenError:\n        raise HTTPException(status_code=403, detail='Invalid token')\n\n@app.get('/protected')\nasync def protected_route(user=Depends(verify_token)):\n    return {'user': user}\n\nFastAPI's automatic OpenAPI docs include the auth requirement when Security() is used."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Django REST Framework authentication but contexts show Express.js, Spring Boot, and FastAPI auth implementations",
+      "rationale": "Django REST Framework has its own authentication system (TokenAuthentication, SessionAuthentication, JWTAuthentication via djangorestframework-simplejwt, custom authentication classes inheriting from BaseAuthentication) that is architecturally different from Express middleware, Spring Security filter chains, and FastAPI dependency injection. Even the FastAPI context, while also Python, uses a fundamentally different framework with different patterns."
+    },
+    {
+      "id": "t1_abstain_hard_947",
+      "category": "abstention",
+      "subcategory": "cross_domain_insufficient",
+      "difficulty": "hard",
+      "query": "What are the FDA regulatory requirements for conducting a Phase III clinical trial for a new oncology drug?",
+      "contexts": [
+        "EMA Clinical Trial Regulation (European Medicines Agency, 2024): The EU Clinical Trials Regulation (CTR, No 536/2014) replaced the Clinical Trials Directive in January 2022. All applications are submitted through the Clinical Trials Information System (CTIS). A single application covers multiple EU member states with a reporting member state (RMS) coordinating assessment. Part I (scientific) assessment takes 45 days; Part II (national, ethics) takes 45 days in parallel. The EU clinical trial regulation requires a single ethics committee opinion per member state. Serious adverse event reporting timelines: 7 days for fatal/life-threatening SUSARs, 15 days for other SUSARs.",
+        "Health Canada Clinical Trial Application Process (2024): Health Canada requires a Clinical Trial Application (CTA) for all trials involving drugs not yet approved in Canada. The CTA includes an Investigator's Brochure, protocol, informed consent, Investigational Medicinal Product Dossier (IMPD), and chemistry and manufacturing controls (CMC). Review timeline is 30 calendar days (no objection letter model). Research Ethics Board (REB) approval must be obtained from an independent body. Health Canada may issue a Not Satisfactory Notice (NSN) requiring amendments. Good Clinical Practice (ICH E6) compliance is mandatory.",
+        "Japan PMDA Clinical Trial Requirements (Pharmaceuticals and Medical Devices Agency): Japan's pharmaceutical regulatory framework requires submission of a Clinical Trial Notification (CTN) to the PMDA 30 days before trial initiation. The Institutional Review Board (IRB) at each trial site must approve the protocol. Japan-specific requirements include: ethnic sensitivity bridging studies (ICH E5) for drugs developed primarily in non-Japanese populations, mandatory Japanese pharmacokinetic data, and the J-GCP (Japanese Good Clinical Practice) standards that differ from ICH-GCP in requirements for direct monitoring visits and source data verification. Phase I trials in Japan often require Japanese subjects."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about FDA Phase III requirements but contexts describe clinical trial regulations from the EMA, Health Canada, and Japan's PMDA",
+      "rationale": "The FDA has its own regulatory framework (IND application, 21 CFR Part 312, IRB requirements, NDA pathway) that differs substantively from the EMA's CTR, Health Canada's CTA, and Japan's CTN systems. Each regulatory body has unique application formats, review timelines, adverse event reporting requirements, and GCP interpretations. The FDA's specific Phase III requirements (adequate and well-controlled studies, pre-specified endpoints, statistical analysis plans, Data Safety Monitoring Board requirements) are not described in any of these non-U.S. regulatory contexts."
+    },
+    {
+      "id": "t1_abstain_hard_948",
+      "category": "abstention",
+      "subcategory": "cross_domain_insufficient",
+      "difficulty": "hard",
+      "query": "How does PostgreSQL's MVCC implementation handle transaction isolation levels?",
+      "contexts": [
+        "MySQL InnoDB Transaction Isolation (MySQL 8.0 Reference): InnoDB supports four isolation levels: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ (default), and SERIALIZABLE. REPEATABLE READ uses consistent reads (snapshot at first read) and next-key locking for writes. Gap locks prevent phantom reads at REPEATABLE READ level, unlike the SQL standard which only guarantees this at SERIALIZABLE. InnoDB's MVCC stores old row versions in the undo log. Each row contains a 6-byte transaction ID and a 7-byte rollback pointer to the undo log. Purge threads clean old versions when no transaction needs them.",
+        "Oracle Database Multiversion Concurrency Control (Oracle Documentation): Oracle uses MVCC with read consistency provided automatically. SELECT statements never block and never acquire locks. Oracle's undo tablespace stores before-images of modified data. Undo retention is controlled by UNDO_RETENTION parameter (default 900 seconds). The System Change Number (SCN) is a logical timestamp that orders all changes. READ COMMITTED is Oracle's default isolation. SERIALIZABLE mode uses snapshot isolation with first-committer-wins conflict detection. Oracle does not support READ UNCOMMITTED or REPEATABLE READ as named levels.",
+        "SQL Server Snapshot Isolation (Microsoft SQL Server Documentation): SQL Server offers two snapshot-based isolation modes: SNAPSHOT (statement-level) and READ_COMMITTED_SNAPSHOT (database-level setting). Row versioning stores old versions in tempdb's version store. Each row has a 14-byte version tag pointing to its version chain. When SNAPSHOT isolation is enabled, readers see a consistent view from transaction start. Write-write conflicts result in an update conflict error (Error 3960). The tempdb version store can grow significantly under heavy write workloads; monitor with sys.dm_tran_version_store. Lock-based isolation (default) uses shared/exclusive locks without MVCC."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about PostgreSQL's MVCC implementation but contexts describe MySQL InnoDB, Oracle, and SQL Server's concurrency control mechanisms",
+      "rationale": "PostgreSQL's MVCC implementation is architecturally distinct: it stores old row versions directly in the table (heap) rather than in undo logs (MySQL/Oracle) or tempdb (SQL Server), uses xmin/xmax transaction IDs in tuple headers, requires VACUUM to reclaim dead tuples, and has unique snapshot isolation semantics at the REPEATABLE READ level (true serializable with SSI since 9.1). These fundamental differences mean the other databases' MVCC descriptions cannot accurately describe PostgreSQL's behavior."
+    },
+    {
+      "id": "t1_abstain_hard_949",
+      "category": "abstention",
+      "subcategory": "cross_domain_insufficient",
+      "difficulty": "hard",
+      "query": "What are the specific structural requirements for reinforced concrete beams under the ACI 318 building code?",
+      "contexts": [
+        "Eurocode 2: Design of Concrete Structures (EN 1992-1-1): Eurocode 2 governs concrete structural design in EU member states. Concrete classes range from C12/15 to C100/115 (cylinder/cube strength in MPa). Minimum reinforcement for beams: As,min = 0.26 * (fctm/fyk) * bt * d, but not less than 0.0013 * bt * d. Shear design uses a strut-and-tie model with variable angle truss analogy (cot theta between 1.0 and 2.5). Cover requirements depend on exposure class: XC1 (dry) minimum 15mm to XS3 (tidal zone) minimum 45mm. Partial safety factors: 1.5 for concrete (gamma_c), 1.15 for reinforcement (gamma_s). Eurocode uses characteristic strength values and limit state design.",
+        "BS 8110: Structural Use of Concrete (British Standard, Superseded): BS 8110 was the UK concrete design code before Eurocode 2 adoption. Concrete grades: C25 to C50 (cube strength). Minimum reinforcement area: 0.13% of gross cross-section for rectangular beams. Shear design uses empirical equations with shear enhancement factor for loads near supports. Partial safety factors: 1.5 for concrete, 1.05 for reinforcement. Span-to-depth ratios for deflection control: 20 for simply supported beams, 26 for continuous beams. BS 8110 used cube strength exclusively (vs cylinder strength in Eurocode). The standard was officially withdrawn March 2010 but remains referenced in some Commonwealth countries.",
+        "Canadian Concrete Code CSA A23.3-19: CSA A23.3 governs concrete design in Canada. Compressive strength classes use cylinder strength (f'c) ranging from 20 MPa to 80 MPa for normal-density concrete. Minimum flexural reinforcement: As,min = 0.2 * sqrt(f'c) / fy * bw * d. Shear design uses a modified compression field theory (MCFT) with beta and theta parameters. Resistance factors: 0.65 for concrete (phi_c), 0.85 for reinforcement (phi_s). Development length for deformed bars includes modification factors for epoxy coating, bar spacing, and transverse reinforcement. Seismic provisions in Chapter 21 align with NBCC seismic hazard maps."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about ACI 318 reinforced concrete beam requirements but contexts cover Eurocode 2, BS 8110, and Canadian CSA A23.3 codes",
+      "rationale": "ACI 318 (American Concrete Institute) has its own formulas, safety factors (strength reduction factors phi rather than partial safety factors gamma), reinforcement ratio limits (rho_min, rho_max), shear design approach (simplified and detailed methods using Vc and Vs), and development length equations distinct from European, British, and Canadian codes. While all codes govern concrete design, the specific equations, factors, and requirements are different and cannot be interchanged."
+    },
+    {
+      "id": "t1_abstain_hard_950",
+      "category": "abstention",
+      "subcategory": "cross_domain_insufficient",
+      "difficulty": "hard",
+      "query": "What are the specific accounting rules for revenue recognition of long-term construction contracts under U.S. GAAP (ASC 606)?",
+      "contexts": [
+        "IFRS 15 Revenue from Contracts with Customers (International Accounting Standards Board): IFRS 15 uses a five-step model: identify the contract, identify performance obligations, determine transaction price, allocate price to obligations, and recognize revenue as obligations are satisfied. For construction contracts, revenue is recognized over time if: the customer controls the asset as it is built, the entity creates an asset with no alternative use and has an enforceable right to payment, or the customer simultaneously receives and consumes benefits. Methods for measuring progress include output methods (units delivered, milestones) and input methods (costs incurred relative to total expected costs). Variable consideration is constrained to amounts where reversal is not probable.",
+        "IAS 11 Construction Contracts (Superseded by IFRS 15, Historical Reference): Before IFRS 15, IAS 11 specifically addressed construction contracts. Under IAS 11, a fixed-price contract recognized revenue based on the percentage of completion method when the outcome could be estimated reliably. Cost-plus contracts recognized revenue based on costs incurred plus the fee percentage. If the outcome could not be estimated reliably, revenue was recognized only to the extent of contract costs incurred that were expected to be recoverable (zero-profit method). Expected losses were recognized immediately in full. IAS 11 was superseded effective January 1, 2018.",
+        "UK FRS 102 Revenue Recognition (Financial Reporting Council): FRS 102 Section 23 governs revenue recognition for UK entities not applying IFRS. For construction contracts, FRS 102 follows a percentage-of-completion approach similar to old IAS 11. Revenue and costs are recognized by reference to the stage of completion when the outcome can be estimated reliably. Stage of completion is measured by the proportion of contract costs incurred to date relative to total estimated costs. When the outcome cannot be estimated reliably, revenue is recognized only to the extent of recoverable contract costs. FRS 102 does not adopt the IFRS 15 five-step model, maintaining a simpler framework for UK SMEs."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about U.S. GAAP ASC 606 rules for construction contracts but contexts cover IFRS 15, historical IAS 11, and UK FRS 102",
+      "rationale": "While IFRS 15 and ASC 606 are converged standards with many similarities, they have specific differences in application guidance, particularly for construction contracts (e.g., the enforceability of right to payment varies by jurisdiction, variable consideration constraint uses different probability thresholds, and the SEC has issued additional implementation guidance for ASC 606). The IAS 11 and FRS 102 contexts are entirely different frameworks. A question about U.S. GAAP specifically requires ASC 606 guidance, not international standards that may differ in interpretation and application."
     }
   ]
 }

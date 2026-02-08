@@ -5397,6 +5397,51 @@
       "expected_mode": "qualified",
       "description": "Query asks about the cost of NOT having something, but contexts provide costs of having it and general performance data, not direct costs of absence",
       "rationale": "The contexts show CDN costs ($2,190/month) and some inference about bandwidth costs without CDN ($4,500/month), but the real cost of not having a CDN includes indirect impacts (conversion loss, bounce rates) that vary significantly by business type. The performance studies provide aggregate data with explicit caveats about variability. The answer requires qualification because the direct infrastructure cost comparison is incomplete and the indirect business impact is highly context-dependent."
+    },
+    {
+      "id": "t1_dispute_medium_510",
+      "category": "qualification",
+      "subcategory": "mixed_evidence",
+      "difficulty": "medium",
+      "query": "What is the unemployment rate in the manufacturing sector?",
+      "contexts": [
+        "The Bureau of Labor Statistics reported manufacturing unemployment at 3.1% for Q3 2024, reflecting continued strength in the sector.",
+        "A survey conducted by the National Association of Manufacturers found that 8.4% of manufacturing workers were actively seeking new employment during the same quarter.",
+        "Manufacturing output increased by 2.3% year over year according to Federal Reserve industrial production data."
+      ],
+      "expected_mode": "qualified",
+      "description": "Government statistics and industry survey report vastly different unemployment figures for the same period",
+      "rationale": "BLS reports 3.1% and NAM reports 8.4% for the same quarter. The methodological difference (official stats vs. industry survey) may cause the classifier to treat these as non-competing, but they directly contradict each other on the same metric for the same time period. [RELABELED from disputed: sources measure different metrics, not a genuine factual dispute. Requires qualification about what metric is being measured.]"
+    },
+    {
+      "id": "t1_dispute_medium_515",
+      "category": "qualification",
+      "subcategory": "mixed_evidence",
+      "difficulty": "medium",
+      "query": "What percentage of employees returned to the office after the mandate?",
+      "contexts": [
+        "Company HR records show 92% badge-in compliance with the return-to-office mandate during the first month of enforcement.",
+        "Building occupancy sensors recorded average daily workspace utilization at 54% capacity during the same period across all company floors.",
+        "The CEO described the return-to-office transition as smooth and well-received by the workforce."
+      ],
+      "expected_mode": "qualified",
+      "description": "Badge data shows high compliance but occupancy sensors show buildings are half empty",
+      "rationale": "HR says 92% badged in, but sensors show only 54% occupancy. This implies many employees badge in briefly and leave. The classifier may treat badge data and occupancy data as measuring different things, but both purport to measure how many employees are actually in the office, creating a factual conflict. [RELABELED from disputed: sources measure different metrics, not a genuine factual dispute. Requires qualification about what metric is being measured.]"
+    },
+    {
+      "id": "t1_dispute_hard_522",
+      "category": "qualification",
+      "subcategory": "mixed_evidence",
+      "difficulty": "hard",
+      "query": "How many residents were displaced by the flood?",
+      "contexts": [
+        "The county emergency management office reported 1,200 residents displaced by the September flooding, based on shelter registration data and emergency housing vouchers issued.",
+        "Red Cross field teams documented 4,100 individuals requesting emergency assistance in the flood-affected areas, including temporary housing, food, and medical supplies.",
+        "FEMA approved a major disaster declaration for the county on September 18th."
+      ],
+      "expected_mode": "qualified",
+      "description": "Government and relief organization report very different displacement numbers for the same flood",
+      "rationale": "The county says 1,200 displaced while Red Cross documented 4,100 seeking emergency help. Both are describing the same event's impact. The classifier may view these as different metrics (displaced vs. requesting assistance), but the more than 3x gap suggests the county undercounted the actual human impact. The different organizational framing makes it hard for the classifier to see these as contradictory. [RELABELED from disputed: sources measure different metrics, not a genuine factual dispute. Requires qualification about what metric is being measured.]"
     }
   ]
 }
