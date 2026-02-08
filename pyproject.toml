@@ -47,6 +47,9 @@ Issues = "https://github.com/yafitzdev/fitz-gov/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["fitz_gov"]
+include = [
+    "/data",
+]
 
 [tool.hatch.build.targets.sdist]
 include = [

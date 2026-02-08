@@ -39,12 +39,13 @@ GOVERNANCE_MODE_CATEGORIES = {
     FitzGovCategory.DISPUTE,
     FitzGovCategory.QUALIFICATION,
     FitzGovCategory.CONFIDENCE,
+    FitzGovCategory.RELEVANCE,  # RELEVANCE_FIX: Tests qualified vs confident mode selection
 }
 
 # Categories that test answer quality
 ANSWER_QUALITY_CATEGORIES = {
     FitzGovCategory.GROUNDING,
-    FitzGovCategory.RELEVANCE,
+    # RELEVANCE_FIX: Moved to governance (tests mode selection not text quality)
 }
 
 
