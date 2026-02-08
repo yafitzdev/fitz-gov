@@ -1,0 +1,627 @@
+[
+  {
+    "id": "t1_confident_hard_200",
+    "category": "confidence",
+    "subcategory": "clear_answer_minor_edge",
+    "difficulty": "hard",
+    "query": "Does the API support batch requests?",
+    "contexts": [
+      "BatchAPI Reference (v4.2): The platform fully supports batch processing through the /api/v4/batch endpoint. Requests can include up to 1,000 items per batch call. Authentication uses the same OAuth2 bearer token as single requests. The batch endpoint accepts JSON arrays where each element follows the standard request schema. Response format mirrors the input array with individual status codes per item, enabling partial success handling. Retry logic should target only failed items rather than resubmitting the entire batch.",
+      "API Limitations (Updated January 2025): Batch requests are limited to 1,000 items per call. For datasets exceeding 1,000 items, use pagination with the cursor parameter. Rate limiting applies: maximum 60 batch calls per minute per API key. Batch requests containing items that reference non-existent resources will return a 404 for those specific items while processing remaining items normally. Timeout for batch calls is 120 seconds, compared to 30 seconds for single requests."
+    ],
+    "expected_mode": "confident",
+    "description": "Clear answer with minor limitations documented — does not require qualification",
+    "rationale": "The API clearly supports batch requests. The limitations (1000 items, rate limiting) are standard documentation of how the feature works, not uncertainty about whether the feature exists."
+  },
+  {
+    "id": "t1_confident_hard_201",
+    "category": "confidence",
+    "subcategory": "clear_answer_minor_edge",
+    "difficulty": "hard",
+    "query": "Can I use the MRI facility during pregnancy?",
+    "contexts": [
+      "MRI Safety Guidelines (Radiology Department, 2024 Edition): MRI is considered safe during pregnancy and does not use ionizing radiation. The American College of Radiology recommends MRI as a diagnostic tool when clinically indicated for pregnant patients, particularly when ultrasound is inconclusive. No confirmed biological effects on the fetus have been documented from MRI exposure at clinical field strengths (1.5T and 3T). Gadolinium-based contrast agents should be avoided during pregnancy unless the potential benefit justifies the potential risk to the fetus, as gadolinium crosses the placental barrier.",
+      "Patient Information Sheet — MRI During Pregnancy: Your doctor may order an MRI during pregnancy when additional diagnostic information is needed. The procedure is the same as for non-pregnant patients. You will be positioned comfortably, and padding may be used to support your abdomen. Sessions typically last 30 to 60 minutes. First-trimester scanning is performed when clinically necessary, though some institutions prefer to defer elective imaging to the second or third trimester as a precautionary measure. Alert your technologist if you experience any discomfort during the scan."
+    ],
+    "expected_mode": "confident",
+    "description": "MRI is safe in pregnancy with a minor edge case about contrast agents",
+    "rationale": "Both sources clearly state MRI is safe during pregnancy. The caution about gadolinium contrast and some institutions deferring elective first-trimester scans are minor caveats that do not change the core answer: yes, you can use the MRI facility during pregnancy."
+  },
+  {
+    "id": "t1_confident_hard_202",
+    "category": "confidence",
+    "subcategory": "clear_answer_minor_edge",
+    "difficulty": "hard",
+    "query": "Is our company's data center compliant with SOC 2 Type II?",
+    "contexts": [
+      "Annual Compliance Report (December 2024): CloudMatrix completed its SOC 2 Type II audit conducted by Deloitte, covering the period from January 1 through December 31, 2024. The audit evaluated all five Trust Service Criteria: Security, Availability, Processing Integrity, Confidentiality, and Privacy. The auditor issued an unqualified opinion with no material exceptions identified. The report is available to customers under NDA through the compliance portal.",
+      "Infrastructure Security Bulletin (Q4 2024): Following the SOC 2 Type II certification, two minor observations were noted in the management letter. First, password rotation for service accounts in the staging environment was set to 120 days rather than the recommended 90 days. Second, one backup verification test in September was completed 6 hours past the scheduled window. Neither observation affected the audit opinion, and both have been remediated as of November 2024."
+    ],
+    "expected_mode": "confident",
+    "description": "SOC 2 Type II compliant with minor management letter observations already remediated",
+    "rationale": "The audit yielded an unqualified opinion with no material exceptions. The minor observations in the management letter were already remediated and did not affect compliance status. The answer is clearly yes."
+  },
+  {
+    "id": "t1_confident_hard_203",
+    "category": "confidence",
+    "subcategory": "clear_answer_minor_edge",
+    "difficulty": "hard",
+    "query": "Does the school district offer free lunch to all students?",
+    "contexts": [
+      "Westfield School District — Nutrition Services Policy (Board Approved August 2024): Effective September 2024, the Westfield School District participates in the Community Eligibility Provision (CEP) under the USDA National School Lunch Program. Under CEP, all enrolled students at all district schools are eligible for free breakfast and lunch at no cost, regardless of household income. Families are not required to submit income verification forms. This policy applies to all 14 elementary schools, 6 middle schools, and 4 high schools in the district.",
+      "Westfield District FAQ — School Meals: All students receive free meals during the regular school day. For after-school enrichment programs that extend past 5:00 PM, a supplemental dinner option is available for $3.50. Summer school meals are free for enrolled summer students. Field trip meals are provided at no cost when the trip occurs during regular school hours. Students attending weekend extracurricular events may purchase meals from the concession stand, which operates independently from the nutrition services program."
+    ],
+    "expected_mode": "confident",
+    "description": "Universal free lunch with minor edge cases for after-school and weekend events",
+    "rationale": "The district clearly offers free lunch to all students under CEP. The paid options for after-school dinner and weekend concessions are separate programs, not exceptions to the free lunch policy. The answer is unambiguously yes."
+  },
+  {
+    "id": "t1_confident_hard_204",
+    "category": "confidence",
+    "subcategory": "clear_answer_minor_edge",
+    "difficulty": "hard",
+    "query": "Can I return items purchased during the holiday sale?",
+    "contexts": [
+      "NorthStar Retail — Return Policy (Updated November 2024): All items purchased from NorthStar Retail may be returned within 60 days of purchase for a full refund to the original payment method. Items must be in unused condition with original tags attached. Holiday sale items purchased between November 15 and December 31 are eligible for the standard 60-day return window, with the return period beginning on December 26 to accommodate gift-giving. Proof of purchase is required for all returns.",
+      "NorthStar Return Exceptions: Final sale items marked with a red clearance tag are not eligible for return or exchange. Personalized or monogrammed items cannot be returned unless defective. Perishable goods, including holiday food baskets and floral arrangements, must be reported within 48 hours of delivery if damaged. Electronics purchased during the holiday sale follow the standard 60-day policy but must include all original accessories and packaging. Gift cards are non-refundable."
+    ],
+    "expected_mode": "confident",
+    "description": "Holiday sale items are clearly returnable, with standard exceptions that apply to all purchases",
+    "rationale": "The return policy explicitly states holiday sale items are returnable with an extended window. The exceptions (final sale red tags, personalized items, perishables) apply to all purchases year-round, not specifically to holiday sale items. The answer is clearly yes."
+  },
+  {
+    "id": "t1_confident_hard_205",
+    "category": "confidence",
+    "subcategory": "single_authoritative",
+    "difficulty": "hard",
+    "query": "What is the maximum occupancy for the Grand Ballroom?",
+    "contexts": [
+      "Fire Marshal Certificate of Occupancy — Grand Ballroom, Meridian Hotel (Issued March 2024, Certificate #FM-2024-08831): Maximum occupancy for the Grand Ballroom (Room 100, Ground Floor) is 850 persons under standing/reception configuration, 620 persons under banquet seating configuration, and 480 persons under theater-style seating with stage. These limits incorporate all egress pathways including the four primary exits (each 72 inches wide) and two emergency exits (each 48 inches wide). The sprinkler system (NFPA 13 compliant, last inspected January 2024) and fire alarm system (addressable with voice evacuation) are factors in the occupancy calculation. Occupancy limits must be posted at each entrance per city fire code Section 1004.3. The certificate is valid through March 2027 unless structural modifications are made to the ballroom or its egress pathways."
+    ],
+    "expected_mode": "confident",
+    "description": "Single authoritative source — fire marshal certificate — provides definitive occupancy limits",
+    "rationale": "The fire marshal certificate is the legal authority on occupancy limits. A single authoritative source is sufficient when it is the definitive regulatory document. No corroboration is needed from marketing brochures or event planners."
+  },
+  {
+    "id": "t1_confident_hard_206",
+    "category": "confidence",
+    "subcategory": "single_authoritative",
+    "difficulty": "hard",
+    "query": "What are the active ingredients in Lisinopril 10mg tablets?",
+    "contexts": [
+      "FDA-Approved Prescribing Information — Lisinopril Tablets (NDA 019777, Revised October 2024): Each Lisinopril 10mg tablet contains lisinopril dihydrate equivalent to 10mg lisinopril as the active ingredient. Inactive ingredients include calcium phosphate dibasic, mannitol, magnesium stearate, starch (corn), and colloidal silicon dioxide. Lisinopril is an angiotensin-converting enzyme (ACE) inhibitor indicated for the treatment of hypertension, heart failure, and acute myocardial infarction. The mechanism of action involves competitive inhibition of ACE, reducing the conversion of angiotensin I to angiotensin II. The tablets are white, round, and scored on one side with identification code 'L10' debossed on the other. Tablets are available in 2.5mg, 5mg, 10mg, 20mg, and 40mg strengths. Store at controlled room temperature 20-25 degrees Celsius (68-77 degrees Fahrenheit). Protect from moisture and light. Dispense in a tight container as defined in USP."
+    ],
+    "expected_mode": "confident",
+    "description": "FDA prescribing information is the single definitive source for drug composition",
+    "rationale": "The FDA-approved prescribing information is the authoritative regulatory document for drug composition. It explicitly states the active ingredient is lisinopril dihydrate equivalent to 10mg lisinopril. No second source is needed when the primary regulatory document provides the answer."
+  },
+  {
+    "id": "t1_confident_hard_207",
+    "category": "confidence",
+    "subcategory": "single_authoritative",
+    "difficulty": "hard",
+    "query": "What is the statute of limitations for filing a personal injury claim in Texas?",
+    "contexts": [
+      "Texas Civil Practice and Remedies Code, Title 2, Chapter 16, Section 16.003 (Current through 88th Legislature, 2023): A person must bring suit for personal injury not later than two years after the day the cause of action accrues. The discovery rule may toll the statute in cases where the injury was not and could not have been discovered through reasonable diligence at the time of the incident. For claims involving minors, the statute is tolled until the minor reaches 18 years of age, at which point the two-year period begins to run. Government entities require a notice of claim within six months under the Texas Tort Claims Act, Section 101.101, though the filing deadline remains two years."
+    ],
+    "expected_mode": "confident",
+    "description": "State statute directly provides the limitation period — single authoritative legal source",
+    "rationale": "The Texas Civil Practice and Remedies Code is the authoritative source for statute of limitations. It clearly states two years. The tolling provisions for discovery rule and minors are standard legal details, not uncertainty about the answer."
+  },
+  {
+    "id": "t1_confident_hard_208",
+    "category": "confidence",
+    "subcategory": "single_authoritative",
+    "difficulty": "hard",
+    "query": "What temperature should I store insulin at?",
+    "contexts": [
+      "Novo Nordisk Patient Information — Insulin Storage Guidelines (FDA-Approved Label, Revised 2024): Unopened insulin vials and pens should be stored in a refrigerator between 2 to 8 degrees Celsius (36 to 46 degrees Fahrenheit). Do not freeze. Do not use insulin that has been frozen. Once in use, insulin may be kept at room temperature below 30 degrees Celsius (86 degrees Fahrenheit) for up to 28 days. After 28 days at room temperature, the in-use vial or pen must be discarded even if it still contains insulin. Keep insulin away from direct heat and sunlight. Insulin that appears cloudy, thickened, or discolored should not be used. During travel, use an insulated case to protect insulin from temperature extremes."
+    ],
+    "expected_mode": "confident",
+    "description": "FDA-approved storage guidelines from manufacturer are definitive",
+    "rationale": "The manufacturer's FDA-approved label provides clear, specific storage temperatures. This is the single authoritative source for drug storage. The distinction between unopened (refrigerated) and in-use (room temperature) is standard guidance, not ambiguity."
+  },
+  {
+    "id": "t1_confident_hard_209",
+    "category": "confidence",
+    "subcategory": "single_authoritative",
+    "difficulty": "hard",
+    "query": "What is the minimum capital requirement to register as a limited company in the UK?",
+    "contexts": [
+      "Companies Act 2006, Part 17, Chapter 2, Section 763 (as amended through 2024): A public company must have a minimum allotted share capital of 50,000 pounds (or the prescribed euro equivalent) before it may do business or exercise any borrowing powers. For private limited companies, there is no minimum capital requirement under the Companies Act 2006. A private company limited by shares may be incorporated with a single share of any nominal value, including one penny. The subscriber to the memorandum must take at least one share. Registration fees are separate from share capital and are set by the Registrar of Companies, currently ranging from 12 pounds for standard online registration to 100 pounds for same-day incorporation."
+    ],
+    "expected_mode": "confident",
+    "description": "The Companies Act directly states there is no minimum capital for private limited companies",
+    "rationale": "The statute is the definitive legal authority. It clearly states private limited companies have no minimum capital requirement. The mention of public company minimums and registration fees provides useful context but does not create ambiguity about the answer."
+  },
+  {
+    "id": "t1_confident_hard_210",
+    "category": "confidence",
+    "subcategory": "near_complete_evidence",
+    "difficulty": "hard",
+    "query": "What benefits does the employee health plan cover?",
+    "contexts": [
+      "Acme Corp Employee Benefits Guide (2025 Plan Year): The Acme Health Plan provides comprehensive medical coverage including preventive care (annual physicals, immunizations, screenings) at no cost, primary care visits with a $25 copay, specialist visits with a $50 copay, and emergency room visits with a $250 copay (waived if admitted). Prescription drug coverage follows a three-tier formulary: generic ($10 copay), preferred brand ($35 copay), and non-preferred brand ($60 copay). Mental health and substance abuse services are covered at parity with medical benefits, including outpatient therapy sessions with a $25 copay.",
+      "Acme Corp Benefits Summary — Additional Coverage: The health plan includes dental coverage through Delta Dental (two cleanings per year, 80% coverage on basic procedures, 50% on major procedures with a $2,000 annual maximum), vision coverage through VSP (annual eye exam, $150 frame allowance every two years, contact lens allowance), and an Employee Assistance Program providing six free counseling sessions per year. Dependents are eligible for coverage, with enrollment available during annual open enrollment or within 30 days of a qualifying life event."
+    ],
+    "expected_mode": "confident",
+    "description": "Comprehensive benefits listed with only trivial details like deductible amounts missing",
+    "rationale": "The plan coverage is thoroughly described across medical, dental, vision, mental health, and prescriptions. While the annual deductible amount is not explicitly stated, the covered services and cost-sharing structure are comprehensive. The missing detail is trivial and does not prevent a confident answer about what the plan covers."
+  },
+  {
+    "id": "t1_confident_hard_211",
+    "category": "confidence",
+    "subcategory": "near_complete_evidence",
+    "difficulty": "hard",
+    "query": "What are the system requirements for running the CAD software?",
+    "contexts": [
+      "ProDesign CAD v12 — System Requirements (Official Documentation): Minimum system requirements: Windows 10 (64-bit) or Windows 11, Intel Core i5 (8th gen) or AMD Ryzen 5 3600 or higher, 16 GB RAM (32 GB recommended for complex assemblies), NVIDIA GeForce GTX 1660 or AMD Radeon RX 5600 XT with 6 GB VRAM (certified GPU list available on our website), 20 GB available disk space for installation, display resolution 1920x1080 or higher. Recommended: SSD for project files, secondary monitor for toolbars.",
+      "ProDesign CAD v12 — Installation Notes: The installer requires .NET Framework 4.8 and Visual C++ 2019 Redistributable, both included in the installation package. Internet connection is required for license activation and periodic validation (every 30 days). After activation, the software runs fully offline. macOS support is available through ProDesign CAD for Mac, a separate product with different requirements. Linux is not currently supported. Docker containerized deployment is available for enterprise render farms."
+    ],
+    "expected_mode": "confident",
+    "description": "System requirements are comprehensively listed with only the certified GPU list referenced externally",
+    "rationale": "All major system requirements are explicitly stated: OS, CPU, RAM, GPU, disk, display. The certified GPU list being on the website is a reference to additional detail, not a gap in the core requirements. The answer is comprehensive enough for a confident response."
+  },
+  {
+    "id": "t1_confident_hard_212",
+    "category": "confidence",
+    "subcategory": "near_complete_evidence",
+    "difficulty": "hard",
+    "query": "What safety features does the 2025 Meridian sedan include?",
+    "contexts": [
+      "2025 Meridian Sedan — Safety Specifications (Press Release, September 2024): The 2025 Meridian sedan comes standard with a comprehensive suite of active and passive safety features. Active safety includes forward collision warning with automatic emergency braking, lane departure warning with lane keeping assist, blind spot monitoring with rear cross-traffic alert, adaptive cruise control with stop-and-go capability, and a 360-degree surround view camera system. Passive safety includes eight airbags (front, side, curtain, and knee), a high-strength steel safety cage, three-point seatbelts with pretensioners for all five seats, and ISOFIX child seat anchors.",
+      "NHTSA Safety Rating — 2025 Meridian Sedan (Published November 2024): The 2025 Meridian sedan received a 5-star overall safety rating from NHTSA. Individual ratings: frontal crash 5 stars, side crash 5 stars, rollover 4 stars. The vehicle's automatic emergency braking system was rated Superior in the IIHS front crash prevention test. Electronic stability control, tire pressure monitoring, and anti-lock brakes are included as federally mandated equipment."
+    ],
+    "expected_mode": "confident",
+    "description": "Safety features comprehensively listed with only trim-level optional packages unmentioned",
+    "rationale": "Both sources provide extensive safety feature lists covering active safety, passive safety, and crash test ratings. The fact that higher trim levels might add features like night vision or head-up display is not mentioned, but the standard safety suite is thoroughly documented. This is near-complete evidence sufficient for a confident answer."
+  },
+  {
+    "id": "t1_confident_hard_213",
+    "category": "confidence",
+    "subcategory": "near_complete_evidence",
+    "difficulty": "hard",
+    "query": "What environmental certifications does the building hold?",
+    "contexts": [
+      "Greenleaf Tower — Sustainability Report (2024): Greenleaf Tower achieved LEED Platinum certification in March 2024 from the U.S. Green Building Council, scoring 82 out of 110 possible points. The building earned maximum points in the Energy and Atmosphere category through its ground-source heat pump system, 450 kW rooftop solar array, and triple-glazed low-E window assemblies that reduce energy consumption by 58% compared to the ASHRAE baseline. Water efficiency measures include rainwater harvesting, greywater recycling, and low-flow fixtures, reducing potable water use by 42%. The building also holds WELL Building Standard Gold certification for indoor air quality, lighting, and thermal comfort.",
+      "Greenleaf Tower — Leasing Brochure (2024): Certified LEED Platinum and WELL Gold, Greenleaf Tower represents the highest standard in sustainable commercial real estate. The building has applied for ENERGY STAR certification, with the application currently under review by the EPA. Previous-year energy performance data submitted to ENERGY STAR showed a score of 94 out of 100. Tenants benefit from reduced operating costs and can report the building's certifications in their own ESG disclosures."
+    ],
+    "expected_mode": "confident",
+    "description": "Two confirmed certifications with a third pending — the confirmed ones clearly answer the question",
+    "rationale": "LEED Platinum and WELL Gold are confirmed certifications. ENERGY STAR is pending but this does not create uncertainty about the current certifications. The answer can confidently list what the building holds now, noting the pending application as additional context."
+  },
+  {
+    "id": "t1_confident_hard_214",
+    "category": "confidence",
+    "subcategory": "near_complete_evidence",
+    "difficulty": "hard",
+    "query": "What courses are required for the data science master's degree?",
+    "contexts": [
+      "University of Lakewood — M.S. in Data Science Program Requirements (2024-2025 Catalog): The program requires 36 credit hours consisting of 8 required courses (24 credits) and 4 electives (12 credits). Required courses: DS 601 Statistical Foundations, DS 602 Machine Learning, DS 603 Data Engineering, DS 604 Deep Learning, DS 605 Natural Language Processing, DS 606 Data Visualization and Communication, DS 607 Ethics in Data Science, and DS 608 Capstone Project. Students must maintain a minimum GPA of 3.0 and complete all requirements within five years of matriculation.",
+      "Department of Data Science — Advising FAQ (Updated Fall 2024): The eight required courses should be taken in approximate sequence: DS 601 and DS 603 in the first semester, DS 602 and DS 604 in the second semester, DS 605 and DS 606 in the third semester, and DS 607 and DS 608 in the final semester. Prerequisites for DS 604 include DS 601 and DS 602. The capstone project (DS 608) requires completion of at least six required courses before enrollment. Elective courses are listed on the department website and change each semester based on faculty availability."
+    ],
+    "expected_mode": "confident",
+    "description": "All eight required courses are explicitly listed; only elective options are on a separate website",
+    "rationale": "The question asks about required courses, and all eight are enumerated with course numbers and names. The elective list being on the department website does not diminish the completeness of the required course information. The answer is fully supported."
+  },
+  {
+    "id": "t1_confident_hard_215",
+    "category": "confidence",
+    "subcategory": "slight_variation_same_answer",
+    "difficulty": "hard",
+    "query": "How long does the company's standard warranty last?",
+    "contexts": [
+      "ApexTools Product Warranty Statement (Revised January 2025): ApexTools provides a comprehensive two-year limited warranty on all power tools purchased from authorized retailers. The warranty covers defects in materials and workmanship under normal use conditions. The warranty period begins on the date of purchase as shown on the original receipt. If a product is found to be defective, ApexTools will repair or replace the unit at its discretion at no charge. The warranty does not cover damage from misuse, unauthorized modifications, or normal wear items such as brushes, blades, and bits.",
+      "ApexTools Customer Service — Warranty Information Page (Last Updated December 2024): All ApexTools power tools carry a 24-month warranty from the date of original purchase. Coverage includes manufacturing defects and component failures during normal operation. To file a warranty claim, contact customer service with your proof of purchase and a description of the issue. Products will be inspected at our service center. Warranty service options include repair, replacement with the same or equivalent model, or a store credit if the product is discontinued. Commercial or industrial use reduces the warranty period to 12 months."
+    ],
+    "expected_mode": "confident",
+    "description": "Two sources state the same warranty — one says 'two-year', the other says '24-month'",
+    "rationale": "Both sources describe the same two-year (24-month) warranty. The phrasing differs but the substance is identical. The commercial use reduction to 12 months is for a different use case, not a contradiction of the standard warranty length."
+  },
+  {
+    "id": "t1_confident_hard_216",
+    "category": "confidence",
+    "subcategory": "slight_variation_same_answer",
+    "difficulty": "hard",
+    "query": "What is the recommended daily water intake for adults?",
+    "contexts": [
+      "National Health Service (NHS) Guidelines — Hydration (2024): Adults should aim to drink 6 to 8 cups of fluid per day. This includes water, lower-fat milk, and sugar-free drinks including tea and coffee. Water from food also contributes to overall hydration. In hot weather or when exercising, additional fluid intake may be needed. Signs of adequate hydration include pale yellow urine and infrequent thirst. Individuals with certain medical conditions such as kidney disease or heart failure should consult their doctor about fluid intake.",
+      "European Food Safety Authority (EFSA) — Dietary Reference Values for Water (Scientific Opinion, 2024 Update): EFSA recommends a total water intake of 2.0 litres per day for adult women and 2.5 litres per day for adult men. These values include water from beverages and food, with food typically contributing approximately 20% of total water intake. Therefore, the recommended beverage intake is approximately 1.6 litres for women and 2.0 litres for men. These reference values apply to moderate environmental temperatures and moderate physical activity levels. Higher intakes are needed during heat exposure, high altitude, and intense physical activity."
+    ],
+    "expected_mode": "confident",
+    "description": "NHS says 6-8 cups, EFSA says 2.0-2.5 litres total — same answer in different units and framing",
+    "rationale": "6-8 cups is approximately 1.5-2.0 litres, and EFSA recommends 1.6-2.0 litres of beverages. The numbers align when unit conversion and food-water distinction are accounted for. These are the same recommendation expressed differently, not a disagreement."
+  },
+  {
+    "id": "t1_confident_hard_217",
+    "category": "confidence",
+    "subcategory": "slight_variation_same_answer",
+    "difficulty": "hard",
+    "query": "What is the company's parental leave policy?",
+    "contexts": [
+      "Vantage Inc. — Employee Handbook (2025 Edition, Section 7.4): Vantage Inc. provides 16 weeks of paid parental leave for all full-time employees following the birth, adoption, or foster placement of a child. Leave may be taken consecutively or intermittently within the first 12 months. Both birthing and non-birthing parents receive the same 16-week benefit. Employees must have completed at least 6 months of continuous employment to be eligible. During parental leave, health insurance and other benefits continue without interruption.",
+      "Vantage Inc. — Careers Page — Benefits Overview (2025): Our industry-leading parental leave policy gives new parents four months of fully paid time off to bond with their child. The policy applies equally to all parents regardless of gender or how their family grows. We also offer a gradual return-to-work program where employees may work a reduced schedule at full pay for up to four additional weeks after returning from leave. Parental leave can be combined with any accrued PTO for additional time off."
+    ],
+    "expected_mode": "confident",
+    "description": "One says '16 weeks', the other says 'four months' — same duration, different phrasing",
+    "rationale": "16 weeks and four months are functionally the same duration. Both sources describe the same policy with consistent details about equal access for all parents. The careers page adds information about the gradual return program, which supplements rather than contradicts the handbook."
+  },
+  {
+    "id": "t1_confident_hard_218",
+    "category": "confidence",
+    "subcategory": "slight_variation_same_answer",
+    "difficulty": "hard",
+    "query": "What is the melting point of titanium?",
+    "contexts": [
+      "CRC Handbook of Chemistry and Physics (105th Edition, 2024-2025): Titanium (Ti), atomic number 22. Melting point: 1668 degrees Celsius (3034 degrees Fahrenheit). Boiling point: 3287 degrees Celsius. Density at 25 degrees Celsius: 4.506 grams per cubic centimetre. Crystal structure: hexagonal close-packed (alpha phase) below 882 degrees Celsius, body-centred cubic (beta phase) above. Titanium is notable for its high strength-to-weight ratio, excellent corrosion resistance, and biocompatibility. Primary industrial applications include aerospace structural components, medical implants, and chemical processing equipment.",
+      "ASM International — Titanium Technical Data Sheet (Revised 2024): Pure titanium (Grade 1-4) has a solidus temperature of 1670 degrees Celsius plus or minus 5 degrees Celsius depending on purity and measurement method. The liquidus for commercially pure titanium is within 2 degrees of the solidus due to minimal alloying element content. Titanium alloys such as Ti-6Al-4V have significantly different melting ranges, typically 1604-1660 degrees Celsius. All melting point measurements referenced in this data sheet use differential scanning calorimetry (DSC) per ASTM E794."
+    ],
+    "expected_mode": "confident",
+    "description": "CRC says 1668C, ASM says 1670C plus or minus 5 — within measurement uncertainty",
+    "rationale": "The two-degree difference between 1668C and 1670C is well within the stated measurement uncertainty of plus or minus 5 degrees. These sources agree on the melting point of titanium. The difference is measurement precision, not a disagreement."
+  },
+  {
+    "id": "t1_confident_hard_219",
+    "category": "confidence",
+    "subcategory": "slight_variation_same_answer",
+    "difficulty": "hard",
+    "query": "How many employees does the organization have?",
+    "contexts": [
+      "Pinnacle Group Annual Report (Fiscal Year 2024): As of December 31, 2024, Pinnacle Group employed approximately 34,200 full-time equivalent employees across 28 countries. This represents a 7% increase from the prior year headcount of 31,900. The largest concentrations are in the United States (14,800), India (8,200), and the United Kingdom (4,100). Part-time and contract workers are not included in the full-time equivalent count.",
+      "Pinnacle Group — About Us Page (Updated January 2025): Pinnacle Group is a global technology services company with more than 34,000 team members serving clients across six continents. Our diverse workforce includes engineers, consultants, designers, and support professionals united by a shared mission to drive digital transformation. We have expanded from a team of 200 in 2005 to our current global footprint, reflecting two decades of consistent organic growth and strategic acquisitions."
+    ],
+    "expected_mode": "confident",
+    "description": "Annual report says 34,200 FTE, About Us page says 'more than 34,000' — same figure at different precision",
+    "rationale": "34,200 and 'more than 34,000' are the same number at different levels of precision. The annual report provides the exact figure while the marketing page rounds appropriately. There is no disagreement."
+  },
+  {
+    "id": "t1_qualify_hard_450",
+    "category": "qualification",
+    "subcategory": "old_likely_valid",
+    "difficulty": "hard",
+    "query": "What is the maximum pesticide residue level allowed on imported apples?",
+    "contexts": [
+      "Food Safety Authority Pesticide Residue Limits — Imported Fruits: The maximum residue level (MRL) for chlorpyrifos on imported apples is 0.01 mg/kg, reflecting the reduced MRL adopted following the 2019 risk reassessment. For captan, the MRL is 5.0 mg/kg. For thiabendazole, the MRL is 4.0 mg/kg. These limits apply at the point of entry and are enforced through the Import Alert Sampling Program. Shipments exceeding MRLs are subject to detention and may be refused entry or destroyed at the importer's expense.",
+      "Codex Alimentarius Commission — Pesticide MRLs for Pome Fruits (Published 2020): The Codex maximum residue limits for pome fruits including apples are established by the Joint FAO/WHO Meeting on Pesticide Residues (JMPR). Current Codex MRLs: chlorpyrifos 1.0 mg/kg, captan 5.0 mg/kg, dithianon 3.0 mg/kg. These limits serve as reference standards in international trade disputes under the WTO SPS Agreement. Member countries may set more restrictive limits based on their own risk assessments."
+    ],
+    "expected_mode": "qualified",
+    "description": "Regulatory MRL documents with no date verification — limits may have been updated since publication",
+    "rationale": "The first source has no publication date and references a 2019 reassessment. The Codex source is from 2020. Pesticide MRLs are regularly revised as new toxicological data emerges. The chlorpyrifos MRL in particular has been under active regulatory review globally. While the listed values were likely accurate when published, the answer should note that these may not reflect current regulations and recommend checking the most recent official gazette."
+  },
+  {
+    "id": "t1_qualify_hard_451",
+    "category": "qualification",
+    "subcategory": "old_likely_valid",
+    "difficulty": "hard",
+    "query": "What interest rate does the bank offer on its high-yield savings account?",
+    "contexts": [
+      "Summit Bank — High-Yield Savings Account Product Sheet: Summit Bank's High-Yield Savings Account offers an Annual Percentage Yield (APY) of 4.85% on balances of $500 or more. Balances below $500 earn the standard savings rate of 0.50% APY. Interest is compounded daily and credited monthly. There is no monthly maintenance fee and no maximum balance limit. The account includes unlimited transfers to linked Summit checking accounts and up to six external transfers per statement cycle.",
+      "Summit Bank — Deposit Rate Comparison (Undated): Summit Bank offers competitive rates across its deposit products. High-Yield Savings: 4.85% APY. Money Market: 4.50% APY on balances above $10,000. 12-Month CD: 5.10% APY. 24-Month CD: 4.75% APY. Rates are variable for savings and money market accounts and may change at any time without notice. CD rates are fixed for the term. All rates are subject to the terms and conditions of the applicable account agreement."
+    ],
+    "expected_mode": "qualified",
+    "description": "Interest rates with no publication date — rates change frequently",
+    "rationale": "Neither source includes a date, and both explicitly note that rates are variable and may change without notice. Savings account interest rates fluctuate with Federal Reserve policy changes, which have been frequent. While 4.85% APY may still be the current rate, the answer should qualify that this was the rate as of the available documentation and recommend confirming the current rate directly with the bank."
+  },
+  {
+    "id": "t1_qualify_hard_452",
+    "category": "qualification",
+    "subcategory": "old_likely_valid",
+    "difficulty": "hard",
+    "query": "What are the visa requirements for US citizens traveling to Brazil?",
+    "contexts": [
+      "US Department of State — Brazil Country Information (Last Updated September 2023): US citizens traveling to Brazil for tourism or business do not need a visa for stays of up to 90 days. A valid passport with at least six months remaining validity is required. Yellow fever vaccination is recommended but not required for entry at most ports of entry. Travelers entering from countries with yellow fever risk may be asked for proof of vaccination. The 90-day stay may be extended once for an additional 90 days by applying at the Federal Police. Entry requirements can change; travelers should verify current requirements before departure.",
+      "Brazilian Ministry of Foreign Affairs — Visa Waiver Information (Published January 2024): Brazil maintains reciprocal visa exemption agreements with numerous countries. Citizens of the United States, Canada, Australia, and Japan are exempt from tourist visa requirements, a policy that has been in effect since June 2019. The exemption covers tourism, business, transit, and artistic or sports activities for stays not exceeding 90 days. Visitors may not engage in paid employment under the visa exemption. Requirements for other visa categories, including work and student visas, remain unchanged."
+    ],
+    "expected_mode": "qualified",
+    "description": "Travel requirements from sources that are 1-2 years old — visa policies can change rapidly",
+    "rationale": "The US State Department source is from September 2023 and the Brazilian source from January 2024. Visa policies can change with little notice due to diplomatic developments, public health emergencies, or reciprocity changes. While the visa waiver has been in effect since 2019 and is likely still valid, the answer should note the age of the sources and recommend checking current requirements before travel."
+  },
+  {
+    "id": "t1_qualify_hard_453",
+    "category": "qualification",
+    "subcategory": "old_likely_valid",
+    "difficulty": "hard",
+    "query": "What are the current parking rates at the downtown garage?",
+    "contexts": [
+      "City of Maplewood — Downtown Parking Garage Rate Schedule (Effective April 2023): Hourly rate: $3.00 per hour. Daily maximum: $18.00. Monthly pass: $150.00 per month with automatic renewal. Early bird rate (enter before 8:00 AM, exit before 6:00 PM): $12.00. Weekend and holiday flat rate: $8.00. Electric vehicle charging spaces: additional $2.00 per hour for Level 2 charging. Motorcycle parking: $1.50 per hour, $9.00 daily max. Validation available from participating downtown merchants for up to 2 hours free. All rates include applicable city parking tax.",
+      "Maplewood Downtown Business Association — Parking Guide for Visitors (2023): The downtown parking garage at 100 Main Street offers affordable parking with rates starting at $3.00 per hour. Monthly passes are available for commuters. The garage is open 24 hours, 7 days a week, with attendants on duty from 6:00 AM to midnight. The garage has 1,200 spaces across 6 levels, including 48 EV charging stations. Overflow parking is available at the Convention Center lot on weekdays for $10.00 per day."
+    ],
+    "expected_mode": "qualified",
+    "description": "Parking rates from 2023 — municipal rates are updated periodically",
+    "rationale": "Both sources are from 2023 with the rate schedule specifically effective April 2023. Municipal parking rates are regularly adjusted for inflation, revenue targets, and policy changes. While the rates were accurate as of their publication, nearly two years have passed. The answer should present the documented rates while noting they are from 2023 and may have been updated since."
+  },
+  {
+    "id": "t1_qualify_hard_454",
+    "category": "qualification",
+    "subcategory": "old_likely_valid",
+    "difficulty": "hard",
+    "query": "What is the tuition fee for the MBA program?",
+    "contexts": [
+      "Lakewood Business School — MBA Program Fees (Academic Year 2023-2024): Full-time MBA tuition is $62,500 per year for a two-year program, totaling $125,000. This includes all course materials, access to the career services centre, and membership in the alumni network. Part-time MBA tuition is $2,500 per credit hour, with the program requiring 60 credit hours ($150,000 total). A non-refundable enrollment deposit of $2,000 is due upon acceptance and is applied to first-year tuition. Student health insurance is mandatory at $3,200 per year unless proof of equivalent coverage is provided.",
+      "Lakewood Business School — Financial Aid Office FAQ (Updated August 2023): Tuition for the 2023-2024 academic year is $62,500. Merit-based scholarships cover 20% to 100% of tuition. Approximately 65% of enrolled students receive some form of scholarship. Need-based grants are available through the FAFSA process. Federal student loans (Stafford and Grad PLUS) are available for US citizens and permanent residents. International students may apply for institutional loans. Tuition increases have averaged 3-4% annually over the past five years."
+    ],
+    "expected_mode": "qualified",
+    "description": "Tuition from 2023-2024 academic year with noted history of annual increases",
+    "rationale": "The tuition figure is from the 2023-2024 academic year, and the source explicitly notes 3-4% annual increases. For 2025-2026, the tuition is almost certainly higher. The answer should present the documented figure but clearly qualify that it is from a prior academic year and that the current rate is likely higher given the documented trend of annual increases."
+  },
+  {
+    "id": "t1_qualify_hard_455",
+    "category": "qualification",
+    "subcategory": "implicit_assumptions",
+    "difficulty": "hard",
+    "query": "How long does it take to fly from New York to London?",
+    "contexts": [
+      "TransAtlantic Airways Route Information — New York JFK to London Heathrow: Flight time for our daily non-stop service from JFK to Heathrow is approximately 7 hours eastbound and 8 hours westbound due to prevailing jet stream headwinds on the return journey. Our Boeing 787-9 Dreamliner cruises at Mach 0.85 at an altitude of 35,000 to 40,000 feet. During winter months, strong jet stream tailwinds can reduce eastbound flight time to as little as 6 hours 15 minutes. Conversely, severe headwinds in winter may extend westbound flights to 8 hours 45 minutes.",
+      "Flight Planning Advisory — North Atlantic Tracks (Aviation Authority Briefing): North Atlantic flight times vary significantly based on jet stream position and strength, which shifts seasonally. The jet stream typically runs from southwest to northeast at speeds of 100-200 knots. Airlines select from daily North Atlantic Organized Track System routes optimized for wind conditions. Typical scheduled block times for JFK to LHR range from 6 hours 45 minutes to 7 hours 30 minutes eastbound. Diversions due to weather, medical emergencies, or airspace restrictions can add 30 minutes to 2 hours. Connection through other airports adds ground time that varies by airport."
+    ],
+    "expected_mode": "qualified",
+    "description": "Flight time assumes direct JFK-LHR route — different airports, connections, or routing change the answer significantly",
+    "rationale": "The answer of approximately 7 hours is correct but implicitly assumes direct flight from JFK to Heathrow. 'New York' has three airports (JFK, EWR, LGA) and 'London' has six (LHR, LGW, STN, LTN, SEN, LCY). Connecting flights could double the time. The answer should provide the direct flight time while qualifying that it assumes non-stop service between JFK and LHR specifically."
+  },
+  {
+    "id": "t1_qualify_hard_456",
+    "category": "qualification",
+    "subcategory": "implicit_assumptions",
+    "difficulty": "hard",
+    "query": "What is the expected ROI for installing solar panels on a residential home?",
+    "contexts": [
+      "National Renewable Energy Laboratory (NREL) — Residential Solar Economics Report (2024): The average residential solar installation in the United States costs $16,000 after the federal Investment Tax Credit (ITC) of 30%. A typical 8 kW system generates approximately 10,000 to 12,000 kWh per year depending on location and orientation. Based on the national average electricity rate of $0.16 per kWh, annual savings range from $1,600 to $1,920. Simple payback period averages 8 to 10 years. Over the 25-year warranted lifespan, net savings after accounting for installation costs, inverter replacement at year 12, and panel degradation of 0.5% per year total approximately $22,000 to $30,000.",
+      "Solar Industry Association — Consumer Guide to Solar (2024): Solar panel ROI depends on several factors including local electricity rates, available sunlight, roof condition, panel orientation, shading, net metering policies, and local incentive programs. Homes in states with high electricity rates like California and Massachusetts typically see payback periods of 5 to 7 years, while homes in states with low rates like Louisiana may see payback periods of 12 to 15 years. Some utilities are reducing net metering compensation to wholesale rates, which significantly affects ROI. Property tax exemptions for solar installations are available in most states but vary in scope."
+    ],
+    "expected_mode": "qualified",
+    "description": "ROI depends heavily on location, rates, net metering, and incentives — national averages may not apply",
+    "rationale": "While national average figures are available, the actual ROI for any specific home depends on electricity rates (varying from $0.10 to $0.45/kWh by state), sunlight hours, roof characteristics, net metering policies (which are actively changing in many states), and local incentives. The 8-10 year payback is an average that may not apply. The answer should present the range while qualifying the location-dependent assumptions."
+  },
+  {
+    "id": "t1_qualify_hard_457",
+    "category": "qualification",
+    "subcategory": "implicit_assumptions",
+    "difficulty": "hard",
+    "query": "Is the tap water safe to drink in Barcelona?",
+    "contexts": [
+      "Barcelona Municipal Water Authority (Aigues de Barcelona) — Water Quality Report (2024): Barcelona's tap water meets all EU Drinking Water Directive standards (Directive 2020/2184) and Spanish Royal Decree 3/2023 on drinking water quality. Water undergoes comprehensive treatment including coagulation, sand filtration, ozonation, granular activated carbon filtration, and chlorination at the Sant Joan Despi and Ter treatment plants. Regular testing covers over 50 parameters including microbiological, chemical, and radiological indicators. All parameters were within regulatory limits throughout 2024.",
+      "Barcelona Tourism Board — Visitor Practical Information (2024): Barcelona's tap water is safe to drink and meets European safety standards. However, many visitors and some residents prefer bottled water due to the taste, which can have a noticeable mineral or chlorine flavor depending on the district. The water is harder (higher mineral content) in districts supplied primarily by the Llobregat River compared to those supplied by the Ter River. Hotels and restaurants in tourist areas typically serve bottled water. Some older buildings may have internal plumbing that affects water taste; running the tap for 30 seconds before drinking is recommended in such cases."
+    ],
+    "expected_mode": "qualified",
+    "description": "Water meets safety standards but the answer implicitly assumes typical healthy adults without sensitivities",
+    "rationale": "The water meets EU standards, but the answer depends on implicit assumptions: the person asking doesn't have chemical sensitivities, isn't immunocompromised (different risk tolerance), and isn't staying in a building with very old lead plumbing. The tourism source hints at building-specific variation. The answer should confirm safety per EU standards while qualifying that individual circumstances like building age and personal health conditions could affect the recommendation."
+  },
+  {
+    "id": "t1_qualify_hard_458",
+    "category": "qualification",
+    "subcategory": "implicit_assumptions",
+    "difficulty": "hard",
+    "query": "Can I run a home business from my residential property?",
+    "contexts": [
+      "City of Riverside — Zoning Code Section 19.100.050 (Home Occupation Regulations): Home occupations are permitted in all residential zones subject to the following conditions: the business must be conducted entirely within the dwelling, no more than one non-resident employee may work at the premises, business-related traffic shall not exceed that normally associated with residential use, no outdoor storage of materials or equipment, no signage visible from the street except one non-illuminated sign not exceeding one square foot, and the residential character of the dwelling must be maintained. A home occupation permit is required and costs $150 annually.",
+      "Riverside County Small Business Development Center — Starting a Home Business (Guide, 2024): Operating a business from your home requires compliance with local zoning ordinances, homeowner association rules if applicable, and state business licensing requirements. A business license from the city is required regardless of whether you have a home occupation permit. Sales tax permits are needed for businesses selling tangible goods. Some home businesses may require additional permits depending on the activity, such as food handling permits for home-based food businesses or childcare licenses for home daycares. Insurance coverage should also be reviewed, as standard homeowner policies typically exclude business liability."
+    ],
+    "expected_mode": "qualified",
+    "description": "Zoning generally allows it, but the answer depends on business type, HOA rules, and licensing",
+    "rationale": "The zoning code permits home businesses with conditions, but the answer implicitly assumes the specific business meets those conditions. HOA rules may impose additional restrictions or prohibitions not reflected in the zoning code. Certain business types (food, childcare, auto repair) face additional regulatory requirements. The answer should confirm general permissibility while qualifying that it depends on the specific business type, HOA restrictions, and applicable licensing requirements."
+  },
+  {
+    "id": "t1_qualify_hard_459",
+    "category": "qualification",
+    "subcategory": "implicit_assumptions",
+    "difficulty": "hard",
+    "query": "How much does it cost to replace a roof?",
+    "contexts": [
+      "HomeAdvisor — Roof Replacement Cost Guide (2024 National Data): The national average cost to replace a roof is $9,500 for a typical single-story home with asphalt shingles covering approximately 1,700 square feet of roof area. Costs range from $5,500 for a basic 3-tab shingle installation to $45,000 or more for premium materials like slate or standing seam metal on complex roof geometries. Cost factors include roof size (measured in squares, where one square equals 100 square feet), pitch (steeper roofs cost more due to safety equipment and labor time), number of layers to remove, and local labor rates.",
+      "National Roofing Contractors Association (NRCA) — Residential Roofing Cost Factors (2024): Roof replacement costs vary significantly by material choice, geographic region, roof complexity, and market conditions. Average costs per square: asphalt shingles $350 to $550, architectural shingles $450 to $700, metal roofing $700 to $1,200, tile $900 to $1,800, slate $1,500 to $3,000. Additional cost factors include tear-off and disposal of existing materials ($100 to $150 per square), underlayment and flashing materials, ventilation upgrades if required by current code, and structural repairs if decking damage is discovered. Permits typically range from $250 to $500 depending on municipality."
+    ],
+    "expected_mode": "qualified",
+    "description": "Cost varies enormously by material, size, location, and roof complexity — a single number is misleading",
+    "rationale": "The national average of $9,500 assumes a specific home size, material (basic asphalt), single story, and average labor market. Actual costs range from $5,500 to $45,000+ depending on factors the question doesn't specify. The answer should provide the average range while clearly qualifying that material choice, roof size, geographic location, roof complexity, and condition of existing structure all dramatically affect the final cost."
+  },
+  {
+    "id": "t1_confident_hard_220",
+    "category": "confidence",
+    "subcategory": "apparent_contradiction_granularity",
+    "difficulty": "hard",
+    "query": "Did the company's revenue grow this year?",
+    "contexts": [
+      "Orion Technologies — Q4 2024 Earnings Call Transcript: Orion Technologies delivered strong full-year 2024 results, with total revenue reaching $4.2 billion, an increase of 18% compared to $3.56 billion in fiscal year 2023. Growth was driven by cloud services, which expanded 34% year-over-year, and enterprise licensing, which grew 12%. CEO Maria Chen stated that 2024 represented a milestone year for the company, with revenue growth exceeding initial guidance of 12-15%.",
+      "Orion Technologies — Q3 2024 Earnings Press Release (October 2024): Orion Technologies reported third-quarter revenue of $980 million, a sequential decline of 4.2% from Q2 2024 revenue of $1.023 billion. The quarter-over-quarter decrease was attributed to seasonal softness in enterprise deal closings, as large contracts typically close in Q4. Despite the sequential dip, Q3 revenue was up 14% compared to Q3 2023. Management reaffirmed full-year 2024 revenue guidance of $4.1 to $4.3 billion."
+    ],
+    "expected_mode": "confident",
+    "description": "Full-year revenue grew 18% but Q3 dipped sequentially — different granularity, not a contradiction",
+    "rationale": "Annual revenue grew 18% year-over-year. The Q3 sequential decline is a quarter-to-quarter fluctuation within the growth trajectory, explicitly attributed to seasonal patterns. Both statements are true at their respective time scales. The system should confidently state that revenue grew in 2024."
+  },
+  {
+    "id": "t1_confident_hard_221",
+    "category": "confidence",
+    "subcategory": "apparent_contradiction_granularity",
+    "difficulty": "hard",
+    "query": "Is the local job market improving?",
+    "contexts": [
+      "Hennepin County Economic Development Report (Annual Summary 2024): Hennepin County added 12,400 net new jobs in 2024, bringing total employment to 894,000. The unemployment rate fell from 4.1% in January 2024 to 3.4% in December 2024, marking the lowest rate since 2019. Key growth sectors included healthcare (3,200 new positions), technology (2,800 new positions), and construction (1,900 new positions). The labor force participation rate increased by 0.8 percentage points to 69.2%, indicating that employment gains are drawing new workers into the market rather than merely redistributing existing workers.",
+      "Hennepin County Monthly Employment Bulletin (November 2024): November 2024 saw a net loss of 1,800 jobs in Hennepin County, driven by retail sector layoffs ahead of automation rollouts at two major distribution centers. The unemployment rate ticked up 0.2 percentage points to 3.6% from October's 3.4%. Construction jobs declined by 600 as seasonal weather curtailed outdoor projects. The technology sector also reported 400 fewer positions following announced restructuring at three mid-size firms. The leisure and hospitality sector was the lone bright spot, adding 350 positions ahead of the holiday season."
+    ],
+    "expected_mode": "confident",
+    "description": "Annual trend clearly positive, one month shows job losses — different granularity",
+    "rationale": "The annual data shows clear improvement: 12,400 net new jobs, unemployment falling from 4.1% to 3.4%, rising labor force participation. One month of losses (November) does not negate the annual trend, and is partly explained by seasonal factors. The system should confidently state the job market improved in 2024."
+  },
+  {
+    "id": "t1_confident_hard_222",
+    "category": "confidence",
+    "subcategory": "apparent_contradiction_granularity",
+    "difficulty": "hard",
+    "query": "Is the new drug effective for treating migraines?",
+    "contexts": [
+      "Phase III Clinical Trial Results — Seralimab for Acute Migraine (Published in The Lancet, 2024): In a double-blind, placebo-controlled trial of 2,400 patients, seralimab demonstrated statistically significant efficacy for acute migraine treatment. The primary endpoint of pain freedom at 2 hours was achieved by 38.2% of seralimab-treated patients versus 18.7% of placebo patients (p < 0.001). Secondary endpoints including most bothersome symptom freedom (nausea, photophobia, phonophobia) at 2 hours were also met. The number needed to treat (NNT) was 5.1, comparable to established triptan therapies. Treatment-emergent adverse events were mild and occurred in 12% of the treatment group versus 8% of placebo.",
+      "Seralimab Post-Marketing Surveillance — Real-World Evidence Report (Q3 2024): Analysis of 45,000 prescriptions since commercial launch found that 28% of patients reported complete pain freedom at 2 hours, lower than the 38% observed in clinical trials. However, patient-reported satisfaction was high, with 71% rating the medication as effective or very effective. Notably, 15% of patients reported that seralimab was less effective for menstrual migraines compared to non-menstrual episodes. Adherence rates were strong at 78% continuing use after the first prescription, suggesting meaningful clinical benefit."
+    ],
+    "expected_mode": "confident",
+    "description": "Trial shows 38% efficacy, real-world shows 28% — expected gap between trials and practice, not a contradiction",
+    "rationale": "The difference between clinical trial efficacy (38%) and real-world effectiveness (28%) is a well-known phenomenon in pharmacology caused by more heterogeneous patients, less controlled conditions, and different administration patterns. Both sources agree the drug is effective. The 71% patient satisfaction and 78% adherence rate corroborate real-world effectiveness. The menstrual migraine subgroup finding is a granularity detail, not a challenge to overall efficacy."
+  },
+  {
+    "id": "t1_confident_hard_223",
+    "category": "confidence",
+    "subcategory": "apparent_contradiction_granularity",
+    "difficulty": "hard",
+    "query": "Has air quality in the city improved over the past decade?",
+    "contexts": [
+      "Metropolitan Air Quality Management District — Decadal Review (2014-2024): Citywide annual average PM2.5 concentrations decreased from 18.3 micrograms per cubic metre in 2014 to 9.7 micrograms per cubic metre in 2024, a reduction of 47%. Ozone exceedance days fell from 42 in 2014 to 11 in 2024. Nitrogen dioxide annual averages dropped 35%. The improvements are attributed to fleet electrification, industrial emissions controls, and the retirement of two coal-fired power plants in the region. The city now meets all federal National Ambient Air Quality Standards for all six criteria pollutants.",
+      "Neighbourhood Air Quality Monitoring Network — Station 14 Report (Downtown Industrial Corridor, 2024): Station 14 recorded PM2.5 annual average of 14.2 micrograms per cubic metre in 2024, above the citywide average of 9.7. Three days in August exceeded the 24-hour PM2.5 standard of 35 micrograms per cubic metre due to wildfire smoke transported from northern regions. The station also recorded elevated benzene levels in March following a chemical spill at a nearby facility. Localized congestion from construction of the new transit line contributed to periodic nitrogen dioxide spikes of 60-80 ppb during morning rush hours, compared to the city average of 25 ppb."
+    ],
+    "expected_mode": "confident",
+    "description": "Citywide improvement is clear; one neighbourhood station shows higher local readings — different granularity",
+    "rationale": "The decadal trend is unambiguously positive: 47% reduction in PM2.5, 74% fewer ozone exceedance days, 35% lower NO2. One monitoring station in an industrial corridor showing above-average readings does not contradict citywide improvement. The localized issues (wildfire smoke, chemical spill, construction) are transient events, not evidence against the trend. The answer is confidently that air quality improved."
+  },
+  {
+    "id": "t1_confident_hard_224",
+    "category": "confidence",
+    "subcategory": "apparent_contradiction_granularity",
+    "difficulty": "hard",
+    "query": "Is the new school curriculum raising student performance?",
+    "contexts": [
+      "Brookfield School District — Curriculum Assessment Report (End of Year 2024): Following the adoption of the evidence-based literacy and numeracy curriculum in September 2023, district-wide standardized test scores showed significant improvement. Average reading proficiency increased from 61% to 72% across grades 3-8. Average math proficiency rose from 54% to 65%. The gains were observed across all demographic subgroups, with the largest improvements among economically disadvantaged students (15 percentage point gain in reading). Teacher survey data indicated 82% of instructors rated the new curriculum as more effective than the previous one.",
+      "Brookfield Middle School — Grade 7 Report Card Analysis (Fall 2024): Grade 7 at Brookfield Middle School experienced a temporary dip in math performance during the first semester of 2024, with the proportion of students scoring proficient or above dropping from 58% to 52%. Teachers attribute the decline to the transition period as students adapted to the new curriculum's emphasis on problem-based learning, which requires different skills than the previous drill-focused approach. By the end of the second semester, proficiency had recovered to 63%, exceeding the prior year's level. The principal noted that the adjustment period was shorter than anticipated."
+    ],
+    "expected_mode": "confident",
+    "description": "District-wide gains are clear; one grade at one school had a temporary dip that recovered — different granularity",
+    "rationale": "District-wide reading proficiency rose 11 points and math rose 11 points across all grades and demographics. A temporary first-semester dip in one grade at one school, which recovered and exceeded prior levels by year-end, does not contradict the overall positive trend. The system should confidently state the curriculum is raising performance."
+  },
+  {
+    "id": "t1_confident_hard_225",
+    "category": "confidence",
+    "subcategory": "contradiction_clear_winner",
+    "difficulty": "hard",
+    "query": "What is the speed limit on Highway 101 through the downtown corridor?",
+    "contexts": [
+      "City Transportation Department — Speed Limit Ordinance (Ordinance 2024-187, Effective July 1, 2024): Pursuant to Section 22358 of the California Vehicle Code, the City Council hereby reduces the speed limit on Highway 101 through the downtown corridor (mile marker 42.3 to mile marker 47.1) from 55 miles per hour to 45 miles per hour. This reduction is based on the traffic and engineering survey completed in May 2024, which documented pedestrian volumes, intersection density, and crash history justifying the lower limit. New signage shall be installed by August 15, 2024.",
+      "California Department of Transportation — Highway 101 Fact Sheet (Published 2021): Highway 101 through the Greenfield downtown corridor carries an average of 38,000 vehicles per day. The posted speed limit is 55 miles per hour, with advisory speed signs of 45 miles per hour at the Oak Street and Elm Street curves. The corridor includes 12 signalized intersections over 4.8 miles. A speed study conducted in 2020 found the 85th percentile speed to be 58 miles per hour. Planned improvements include median barriers and enhanced pedestrian crossings."
+    ],
+    "expected_mode": "confident",
+    "description": "2024 ordinance supersedes 2021 fact sheet — the speed limit is now 45 mph",
+    "rationale": "The 2024 ordinance is a formal legal action that changed the speed limit from 55 to 45 mph. The 2021 Caltrans fact sheet predates this change and references the old limit. When a newer authoritative legal document supersedes an older informational document, the newer one wins. The answer is confidently 45 mph."
+  },
+  {
+    "id": "t1_confident_hard_226",
+    "category": "confidence",
+    "subcategory": "contradiction_clear_winner",
+    "difficulty": "hard",
+    "query": "Does the museum offer free admission on Sundays?",
+    "contexts": [
+      "Ashford Museum of Art — Visitor Information (Official Website, Updated January 2025): General admission is $18 for adults, $12 for seniors and students, and free for children under 12. Members enjoy unlimited free admission year-round. Sunday admission is free for all visitors, supported by a generous endowment from the Hargrove Family Foundation established in 2022. The museum is open Tuesday through Sunday, 10:00 AM to 5:00 PM, with extended hours until 8:00 PM on Thursdays.",
+      "TripAdvisor — Ashford Museum of Art (Visitor Review, Posted March 2023): Beautiful museum but be warned — we went on a Sunday thinking it would be free and they charged us $15 per person. The staff said free Sundays ended in 2022 due to budget cuts. The collection is worth the price though, especially the impressionist wing on the second floor. Plan for about 2-3 hours. Parking is $10 in the garage next door."
+    ],
+    "expected_mode": "confident",
+    "description": "Official 2025 website contradicts a 2023 visitor review — the official current source wins",
+    "rationale": "The museum's official website, updated January 2025, explicitly states Sunday admission is free. The TripAdvisor review from March 2023 describes a different policy that may have been in effect at that time but has since changed with the Hargrove Foundation endowment. An official, current institutional source clearly supersedes an informal, older visitor review. The answer is confidently yes."
+  },
+  {
+    "id": "t1_confident_hard_227",
+    "category": "confidence",
+    "subcategory": "contradiction_clear_winner",
+    "difficulty": "hard",
+    "query": "Is gluten-free labeling mandatory for food products in the EU?",
+    "contexts": [
+      "EU Regulation 1169/2011 on Food Information to Consumers (Consolidated Text, Updated 2024): Under Annex II of Regulation 1169/2011, cereals containing gluten (wheat, rye, barley, oats, spelt, kamut) are classified as allergens that must be declared on the label of pre-packaged food. The allergen must be emphasised in the ingredients list through typeset that clearly distinguishes it, such as bold or uppercase. Commission Implementing Regulation 828/2014 establishes the conditions for 'gluten-free' (less than 20 mg/kg) and 'very low gluten' (less than 100 mg/kg) voluntary claims on food labeling. These claims are optional for manufacturers who wish to indicate suitability for consumers with coeliac disease.",
+      "European Food Safety Blog — Gluten Labeling Guide (Published 2019): In the EU, all food products must display gluten-free labeling if they contain less than 20 parts per million of gluten. This mandatory requirement ensures that consumers with coeliac disease can identify safe products. Manufacturers must test their products and certify gluten content before applying the label. Failure to display the gluten-free label on qualifying products can result in regulatory action."
+    ],
+    "expected_mode": "confident",
+    "description": "The EU regulation clearly states gluten-free claims are voluntary; a 2019 blog incorrectly says mandatory",
+    "rationale": "The actual EU regulation (1169/2011 and implementing regulation 828/2014) clearly states that 'gluten-free' labeling is voluntary. What is mandatory is declaring gluten-containing cereals as allergens in the ingredients list. The 2019 blog post conflates allergen declaration (mandatory) with gluten-free claims (voluntary) and is factually incorrect. The official regulation is the definitive source."
+  },
+  {
+    "id": "t1_confident_hard_228",
+    "category": "confidence",
+    "subcategory": "contradiction_clear_winner",
+    "difficulty": "hard",
+    "query": "What is the current CEO of Meridian Health Systems?",
+    "contexts": [
+      "Meridian Health Systems — Board of Directors Press Release (November 15, 2024): The Board of Directors of Meridian Health Systems is pleased to announce the appointment of Dr. Sarah Okonkwo as Chief Executive Officer, effective December 1, 2024. Dr. Okonkwo succeeds James Halstead, who served as CEO since 2018 and will transition to an advisory role through March 2025. Dr. Okonkwo previously served as Chief Operating Officer and brings 22 years of healthcare leadership experience. The appointment follows a comprehensive six-month search process.",
+      "Forbes Magazine — Healthcare Leaders Profile (Published August 2024): James Halstead has led Meridian Health Systems as CEO since 2018, transforming the organization from a regional hospital network into a national integrated health system with 34 hospitals and 200 outpatient facilities across 12 states. Under his leadership, revenue grew from $4.8 billion to $11.2 billion. Halstead was named Healthcare CEO of the Year by Modern Healthcare in 2022. He holds an MBA from Wharton and previously served as COO of Cleveland Clinic."
+    ],
+    "expected_mode": "confident",
+    "description": "November 2024 press release announces new CEO; August 2024 Forbes article references the previous CEO",
+    "rationale": "The board press release from November 2024 announces Dr. Sarah Okonkwo as CEO effective December 2024. The Forbes article from August 2024 was published before this leadership change. The more recent official announcement from the company's own board clearly supersedes the older profile article. The current CEO is Dr. Sarah Okonkwo."
+  },
+  {
+    "id": "t1_confident_hard_229",
+    "category": "confidence",
+    "subcategory": "contradiction_clear_winner",
+    "difficulty": "hard",
+    "query": "What is the recommended dosage of vitamin D for adults?",
+    "contexts": [
+      "National Institutes of Health — Office of Dietary Supplements Fact Sheet (Updated September 2024): The Recommended Dietary Allowance (RDA) for vitamin D for adults aged 19-70 is 600 IU (15 micrograms) daily. For adults over 70, the RDA increases to 800 IU (20 micrograms) daily. These values assume minimal sun exposure. The Tolerable Upper Intake Level (UL) for adults is 4,000 IU (100 micrograms) daily. Higher doses should only be taken under medical supervision. Serum 25-hydroxyvitamin D levels of 20 ng/mL or above are considered adequate for bone health in the general population.",
+      "Wellness Blog — Vitamin D: The Miracle Supplement (Published 2021): Most adults should be taking at least 5,000 IU of vitamin D daily, according to leading functional medicine practitioners. The government recommendations of 600 IU are based on outdated research and only prevent severe deficiency. Optimal blood levels should be 60-80 ng/mL, much higher than the minimum 20 ng/mL suggested by conventional medicine. Many experts recommend 10,000 IU daily during winter months for people living above the 37th parallel."
+    ],
+    "expected_mode": "confident",
+    "description": "NIH official recommendation vs. wellness blog promoting megadoses — authoritative source wins clearly",
+    "rationale": "The NIH Office of Dietary Supplements is the authoritative US government source for dietary supplement recommendations, based on systematic review of clinical evidence. The wellness blog promotes dosages that exceed the established Tolerable Upper Intake Level without clinical trial support. The official RDA of 600 IU for adults 19-70 is the correct answer. The blog's claims do not create genuine uncertainty."
+  },
+  {
+    "id": "t1_confident_hard_230",
+    "category": "confidence",
+    "subcategory": "minor_disagreement_clear_answer",
+    "difficulty": "hard",
+    "query": "What programming language is used for the backend of the platform?",
+    "contexts": [
+      "Nexus Platform Architecture Documentation (v3.0, 2024): The Nexus Platform backend is built on Python 3.11 using the FastAPI framework. Core services include the authentication service, data processing pipeline, and API gateway, all implemented in Python. The platform uses PostgreSQL 16 for relational data and Redis for caching and session management. Deployment is containerized using Docker with Kubernetes orchestration. A small number of performance-critical data transformation routines are implemented in Rust and called from Python via PyO3 bindings.",
+      "Nexus Platform Engineering Blog — Our Tech Stack (June 2024): We chose Python as our primary backend language for its ecosystem and developer productivity. FastAPI gives us async performance that handles our current scale of 50,000 requests per second with room to grow. For certain hot paths in our data pipeline — specifically the real-time aggregation engine and the geospatial indexing module — we use Cython-compiled extensions rather than pure Python, achieving 10x to 40x speedups. These compiled extensions represent approximately 3% of the total backend codebase."
+    ],
+    "expected_mode": "confident",
+    "description": "One source mentions Rust via PyO3, the other mentions Cython — minor implementation detail, both agree Python is the language",
+    "rationale": "Both sources unequivocally state the backend is Python with FastAPI. The minor disagreement about whether performance-critical code uses Rust/PyO3 or Cython is a trivial implementation detail about optimization of a small fraction of the codebase. The answer to 'what language is used for the backend' is clearly Python."
+  },
+  {
+    "id": "t1_confident_hard_231",
+    "category": "confidence",
+    "subcategory": "minor_disagreement_clear_answer",
+    "difficulty": "hard",
+    "query": "When was the hospital founded?",
+    "contexts": [
+      "St. Margaret's Hospital — History and Heritage (Official Website, 2024): St. Margaret's Hospital was founded in 1923 by Dr. Eleanor Whitfield and a consortium of civic leaders who recognized the need for a community hospital in the growing industrial district. The original facility was a converted textile warehouse on Fourth Street with 40 beds. The hospital moved to its current campus on Riverside Drive in 1962 and has since expanded to 450 beds across three interconnected buildings. A major renovation completed in 2020 added a state-of-the-art surgical pavilion.",
+      "Centennial Foundation Report — 100 Years of Healing (Published 2024): St. Margaret's Hospital celebrates its centennial in 2024, marking 100 years since its official opening on March 15, 1924. While planning and fundraising began in 1922, and the building was acquired in late 1923, the first patient was not admitted until the spring of 1924. The hospital's founding charter, signed by Dr. Eleanor Whitfield and twelve community trustees, is dated November 8, 1923. This document established the governance structure but preceded actual medical operations by several months."
+    ],
+    "expected_mode": "confident",
+    "description": "Charter signed 1923, first patient 1924 — different definitions of 'founded' but the answer is 1923/1924",
+    "rationale": "The charter was signed in November 1923 and the hospital opened to patients in March 1924. The difference is about whether 'founded' means legal incorporation or commencement of operations. Both dates are documented and consistent with each other. The system can confidently answer that the hospital was founded in 1923 (chartered) and opened in 1924, without this being a genuine dispute."
+  },
+  {
+    "id": "t1_confident_hard_232",
+    "category": "confidence",
+    "subcategory": "minor_disagreement_clear_answer",
+    "difficulty": "hard",
+    "query": "How many species of birds have been recorded in the national park?",
+    "contexts": [
+      "Cascade Ridge National Park — Wildlife Management Plan (2024): The park supports a diverse avian community with 247 confirmed bird species recorded since systematic surveys began in 1968. This includes 184 breeding species, 38 regular migrants, and 25 occasional or accidental visitors. Notable species include the endangered spotted owl (14 known nesting pairs), peregrine falcon (reintroduced in 1995, now 22 breeding pairs), and the great blue heron colony at Lake Ellis (approximately 85 nesting pairs). Annual bird surveys are conducted by park biologists in partnership with the Audubon Society.",
+      "National Park Service — Cascade Ridge Species Checklist (Database Export, December 2024): Total bird species in the Cascade Ridge National Park species database: 251. The checklist includes 4 species added in 2024: the painted bunting (first confirmed sighting October 2024), the ash-throated flycatcher (two confirmed records), the red-throated loon (single winter record at Lake Ellis), and the golden eagle (breeding confirmed for the first time via nest camera). The database is updated quarterly as new sightings are verified by the park biologist and regional ornithological review committee."
+    ],
+    "expected_mode": "confident",
+    "description": "247 vs 251 species — the difference is explained by 4 new additions in 2024",
+    "rationale": "The Wildlife Management Plan cites 247 species, and the December 2024 checklist shows 251 with 4 species added during 2024. The discrepancy is fully explained by the temporal update cycle. The system should confidently state 251 species have been recorded, noting the most recent additions."
+  },
+  {
+    "id": "t1_confident_hard_233",
+    "category": "confidence",
+    "subcategory": "minor_disagreement_clear_answer",
+    "difficulty": "hard",
+    "query": "What is the capacity of the new battery storage facility?",
+    "contexts": [
+      "Sunridge Energy — Battery Storage Project Announcement (Press Release, March 2024): Sunridge Energy today announced the completion of the Oakdale Battery Energy Storage System (BESS), the largest grid-scale battery facility in the state. The facility has a rated capacity of 400 megawatt-hours (MWh) with a power output of 100 megawatts (MW), capable of providing four hours of continuous discharge at full power. The system uses lithium iron phosphate (LFP) battery chemistry from CATL, chosen for its safety profile, longevity, and cost-effectiveness. The facility interconnects with the regional grid at the Oakdale 230kV substation.",
+      "State Public Utilities Commission — Interconnection Agreement Filing (September 2024): The Oakdale BESS operated by Sunridge Energy LLC has a nameplate energy capacity of 400 MWh and a net usable capacity of 372 MWh after accounting for auxiliary loads, round-trip efficiency losses, and the mandatory 5% state-of-charge reserve required by the grid operator for frequency regulation services. The net power delivery to the point of interconnection is 96 MW after transformer and line losses. The facility achieved commercial operation on February 28, 2024."
+    ],
+    "expected_mode": "confident",
+    "description": "400 MWh rated vs 372 MWh usable and 100 MW vs 96 MW net — standard engineering distinction, not a disagreement",
+    "rationale": "The press release cites rated/nameplate capacity (400 MWh, 100 MW) while the regulatory filing cites net usable capacity after losses (372 MWh, 96 MW). This is a standard engineering distinction between gross and net capacity, not a disagreement. Both numbers are correct in their respective contexts. The system should confidently report the facility's capacity, noting both the rated and usable figures."
+  },
+  {
+    "id": "t1_confident_hard_234",
+    "category": "confidence",
+    "subcategory": "minor_disagreement_clear_answer",
+    "difficulty": "hard",
+    "query": "How many floors does the new headquarters building have?",
+    "contexts": [
+      "Architectural Digest — Atlas Corporation Headquarters Feature (November 2024): The new Atlas Corporation headquarters rises 52 stories above the downtown skyline, making it the tallest commercial building in the metropolitan area. Designed by Foster + Partners, the tower features a distinctive faceted glass curtain wall that shifts in appearance throughout the day. The ground floor houses a public atrium with retail space, while floors 2 through 10 contain a parking structure. Office space occupies floors 11 through 48, with executive suites and a private dining facility on floors 49 through 52. A rooftop observation deck is open to employees.",
+      "Atlas Corporation — Facilities Overview (Internal Documentation, 2024): The headquarters building at 200 Commerce Street comprises 52 above-grade floors and 3 below-grade levels containing mechanical systems, building operations, and secure data centre infrastructure. The below-grade levels are accessed via a separate service entrance on the north side. Total building height is 738 feet to the structural top, 762 feet including the rooftop telecommunications array. Total floor area is 1.8 million square feet across all 55 levels. The building achieved LEED Gold certification."
+    ],
+    "expected_mode": "confident",
+    "description": "52 floors vs 55 levels — the difference is 3 below-grade levels, both sources agree on 52 above-grade",
+    "rationale": "Both sources agree on 52 above-grade floors. The internal documentation also counts 3 below-grade levels for a total of 55 levels. This is not a disagreement but a difference in what is counted. The building has 52 stories (above ground) and 55 total levels. The system can confidently answer the question."
+  }
+]
