@@ -3,7 +3,7 @@
   "tier_description": "Primary benchmark for model discrimination",
   "category": "qualification",
   "description": "Queries where context lacks sufficient evidence for confident answers - system should mark as QUALIFIED",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "mode_rationale": "QUALIFIED because context provides partial/uncertain evidence. System should answer with appropriate hedging (correlation vs causation, limited sample, etc.).",
   "cases": [
     {

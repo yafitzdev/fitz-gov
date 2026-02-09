@@ -3,7 +3,7 @@
   "tier_description": "Primary benchmark for model discrimination",
   "category": "grounding",
   "description": "Tests whether LLM stays grounded in context (hallucination traps) - system should NOT invent specific details",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "mode_rationale": "QUALIFIED because context discusses the topic but lacks specific details. System should acknowledge the topic while stating specific details are not provided - WITHOUT hallucinating them.",
   "cases": [
     {

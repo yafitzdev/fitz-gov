@@ -3,7 +3,7 @@
   "tier_description": "Primary benchmark for model discrimination",
   "category": "confidence",
   "description": "Queries where context clearly answers the question - system should be CONFIDENT",
-  "version": "1.1.0",
+  "version": "3.0.0",
   "mode_rationale": "CONFIDENT because context clearly and unambiguously answers the question. System should provide direct answer without unnecessary hedging.",
   "cases": [
     {

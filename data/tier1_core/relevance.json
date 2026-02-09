@@ -3,7 +3,7 @@
   "tier_description": "Primary benchmark for model discrimination",
   "category": "relevance",
   "description": "Tests whether LLM answers the actual question asked (not just discusses the topic)",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "mode_rationale": "QUALIFIED because context discusses the topic but doesn't contain the specific information requested. System should acknowledge what IS available while noting what's missing.",
   "cases": [
     {

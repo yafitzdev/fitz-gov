@@ -3,7 +3,7 @@
   "tier_description": "Primary benchmark for model discrimination",
   "category": "abstention",
   "description": "Queries where context is irrelevant or insufficient - system should ABSTAIN from answering",
-  "version": "1.1.0",
+  "version": "3.0.0",
   "mode_rationale": "ABSTAIN because context is completely irrelevant to the query or discusses wrong entity/time period. System should refuse to answer rather than speculate.",
   "cases": [
     {

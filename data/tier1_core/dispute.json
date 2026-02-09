@@ -3,7 +3,7 @@
   "tier_description": "Primary benchmark for model discrimination",
   "category": "dispute",
   "description": "Queries where contexts contain conflicting information - system should mark as DISPUTED",
-  "version": "1.1.0",
+  "version": "3.0.0",
   "mode_rationale": "DISPUTED because sources provide contradictory information. System should flag the conflict and present both perspectives.",
   "cases": [
     {
