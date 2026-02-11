@@ -13,13 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0] - 2026-02-11
 
-### Highlights
+### 🎉 Highlights
 
 **Massive Benchmark Expansion** - Expanded from 331 to 1173 test cases (3.5x) with 92% hard-difficulty cases targeting real-world governance failure modes. Added 54 unique subcategories, three-way ambiguity cases, and boundary cases that discriminate between good and excellent governance. Designed to support ML-based governance classifier training.
 
 **3-Mode System Alignment** - fitz-gov now uses the same 3-mode system as fitz-ai (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (qualification, confidence) remain as test categories that describe what's being tested, but both now expect TRUSTWORTHY mode. This eliminates the mode mapping complexity between fitz-ai and fitz-gov.
 
-### Test Set Changes
+### 📊 Test Set Changes
 
 - **1173 test cases** (up from 331) across 2 tiers:
   - **Tier 0 (Sanity)**: 60 cases - unchanged
@@ -39,7 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **54 unique subcategories** across all categories (consolidated from expansion phases)
 
-### New Subcategory Clusters
+### 🆕 New Subcategory Clusters
 
 **Abstention**:
 - `wrong_entity`, `wrong_domain`, `wrong_version`, `wrong_jurisdiction`, `wrong_time_period`
@@ -77,7 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `numerical_diff_methodology_explained` - Gap explained by stated methodology
 - `contradiction_with_clear_winner` - One source clearly more authoritative
 
-### Boundary Cases
+### 🔀 Boundary Cases
 
 Added ~355 boundary cases that sit at mode decision boundaries:
 
@@ -90,7 +90,7 @@ Added ~355 boundary cases that sit at mode decision boundaries:
 | Dispute <-> Confident | ~15 | Apparent contradiction resolved by context |
 | Three-way ambiguity | ~90 | Multiple competing signals |
 
-### Evaluation Changes
+### 🔧 Evaluation Changes
 
 - **3-mode system**: Collapsed CONFIDENT and QUALIFIED into TRUSTWORTHY mode (matching fitz-ai)
 - **Confusion matrix**: Now 3x3 (TRST/DISP/ABST) instead of 4x4
@@ -100,14 +100,14 @@ Added ~355 boundary cases that sit at mode decision boundaries:
 - **Expected score range**: 60-75% for production models on v3.0 (v3.0 is significantly harder than v2.0)
 - **Score interpretation**: 69% on v3.0 represents stronger governance than 72% on v2.0
 
-### Improvements
+### 🚀 Improvements
 
 - Cases designed for ML classifier training (58-feature extraction support)
 - Three-way ambiguity cases with >93% independent blind labeling agreement
 - Comprehensive boundary case coverage for dispute vs qualification distinction
 - Primary bottleneck documentation: methodology/scope differences are QUALIFIED, not DISPUTED
 
-### Migration Notes
+### ⚠️ Migration Notes
 
 - **Mode system change**: expected_mode values are now "trustworthy", "disputed", "abstain" (was "confident", "qualified", "disputed", "abstain")
 - **No mode mapping needed**: fitz-ai and fitz-gov now use identical 3-mode system
