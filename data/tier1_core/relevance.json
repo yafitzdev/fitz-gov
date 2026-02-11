@@ -14,7 +14,7 @@
       "contexts": [
         "The Merit Excellence Scholarship is open to undergraduate students with a minimum GPA of 3.5. Applicants must be enrolled full-time and demonstrate financial need. Two letters of recommendation are required along with a 500-word personal statement."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for both eligibility AND deadline, context only provides eligibility",
       "rationale": "LLM should acknowledge the deadline is missing even though eligibility is provided",
       "required_elements": [
@@ -35,7 +35,7 @@
       "contexts": [
         "The ProTab X2 features a stunning 12.9-inch OLED display with 120Hz refresh rate. It offers an impressive 14-hour battery life with fast charging support. The device weighs just 450 grams and is available in silver, space gray, and gold."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks about X1 battery life but context provides X2 specs",
       "rationale": "LLM should recognize X1 ≠ X2 and indicate X1 battery life is not provided",
       "required_elements": [
@@ -56,7 +56,7 @@
       "contexts": [
         "The company reported record Q3 2023 sales of $4.2 billion, representing a 15% year-over-year increase. The growth was driven by strong performance in the consumer electronics division. Q4 2023 projections suggest continued momentum with estimated sales of $4.5 billion."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for Q1 2024 but context only has Q3-Q4 2023",
       "rationale": "LLM should acknowledge Q1 2024 figures are not provided",
       "required_elements": [
@@ -77,7 +77,7 @@
       "contexts": [
         "Clinical trials demonstrated that ZymaCure reduces joint inflammation by 67% within 4 weeks. Patients reported significant pain relief and improved mobility. Side effects were mild, with only 8% of participants experiencing minor gastrointestinal discomfort."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for mechanism but context only shows efficacy results",
       "rationale": "LLM should acknowledge the biochemical mechanism is not explained",
       "required_elements": [
@@ -98,7 +98,7 @@
       "contexts": [
         "The marketing department has launched three successful campaigns this quarter. Brand awareness increased by 25% and social media engagement doubled. The team expanded from 12 to 18 members and opened a new regional office in Singapore."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for budget but context only discusses activities and results",
       "rationale": "LLM should acknowledge budget figures are not provided",
       "required_elements": [
@@ -125,7 +125,7 @@
       "contexts": [
         "The XtremeBlend 5000 blender features a powerful 1500-watt motor, 10 speed settings, and pulse function. It includes a 64-oz BPA-free pitcher, self-cleaning mode, and dishwasher-safe parts. The unit comes with a recipe book and measuring cup."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for warranty details but context lists product features",
       "rationale": "LLM should acknowledge warranty terms are not specified",
       "required_elements": [
@@ -146,7 +146,7 @@
       "contexts": [
         "The Texas state unemployment rate dropped to 4.1% in November 2024, below the national average of 4.3%. The state added 45,000 jobs in the last quarter, with strong growth in technology and healthcare sectors. Texas now has the second-largest economy among US states."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for Austin-specific rate but context gives state-level data",
       "rationale": "LLM should acknowledge Austin-specific data is not provided",
       "required_elements": [
@@ -167,7 +167,7 @@
       "contexts": [
         "Our cloud service provides 99.99% uptime with data centers in 12 regions worldwide. The platform supports automatic scaling and load balancing. Customers can choose between shared and dedicated infrastructure options. All data is encrypted using AES-256."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for certifications (SOC2, ISO) but context discusses infrastructure",
       "rationale": "LLM should acknowledge security certifications are not listed",
       "required_elements": [
@@ -188,7 +188,7 @@
       "contexts": [
         "NutriBar protein bars contain whey protein isolate, almonds, dark chocolate chips, honey, and oat flour. They are gluten-free and contain no artificial sweeteners. Each bar provides 20g of protein and 5g of fiber."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for both ingredients AND calories, context only has ingredients and protein",
       "rationale": "LLM should acknowledge calorie count is missing",
       "required_elements": [
@@ -208,7 +208,7 @@
       "contexts": [
         "The company's APAC region generated $2.8 billion in revenue, representing 35% of global sales. China accounted for 60% of APAC revenue while Japan contributed 25%. The company plans to expand its presence in Southeast Asia with new offices in Vietnam and Indonesia."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks about EMEA but context discusses APAC",
       "rationale": "LLM should recognize EMEA ≠ APAC and indicate EMEA figures aren't provided",
       "required_elements": [
@@ -229,7 +229,7 @@
       "contexts": [
         "Following the merger, GlobalTech now holds 34% market share in the enterprise software sector. The combined entity serves over 10,000 enterprise customers across 45 countries. Post-merger integration is expected to generate $500 million in annual synergies by 2025."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for pre-merger data but context only has post-merger figures",
       "rationale": "LLM should acknowledge pre-merger market share is not provided",
       "required_elements": [
@@ -250,7 +250,7 @@
       "contexts": [
         "The HeavyLift 9000 crane should be operated only by certified personnel. Before each use, inspect all cables and hydraulic lines for wear. The crane must be positioned on level ground with outriggers fully extended. Never exceed the manufacturer's rated capacity shown on the load chart."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for load specs but context only has operating instructions",
       "rationale": "LLM should acknowledge actual capacity numbers are not provided",
       "required_elements": [
@@ -271,7 +271,7 @@
       "contexts": [
         "The EcoSport SUV delivers excellent fuel economy for its class. Drivers consistently praise its efficiency on highway trips. The hybrid powertrain combines a turbocharged engine with an electric motor for optimal performance. The vehicle earned a Green Car certification for its environmental performance."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for specific MPG but context uses vague efficiency language",
       "rationale": "LLM should acknowledge specific MPG figure is not provided",
       "required_elements": [
@@ -298,7 +298,7 @@
       "contexts": [
         "Analysis revealed the algorithm rejected 23% more applications from minority groups. The disparity was consistent across multiple test datasets. After the bias was discovered, the model was immediately taken offline for review. The company issued a public apology and pledged to implement fairness audits."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for cause of bias but context only describes the bias and response",
       "rationale": "LLM should acknowledge the root cause of bias is not explained",
       "required_elements": [
@@ -320,7 +320,7 @@
       "contexts": [
         "The Advanced Data Science certification course requires proficiency in Python and basic statistics. Students should have completed at least one introductory machine learning course. The program covers deep learning, NLP, and computer vision with hands-on projects."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for prereqs, duration, AND exam format - only prereqs provided",
       "rationale": "LLM should acknowledge duration and exam format are not mentioned",
       "required_elements": [
@@ -342,7 +342,7 @@
       "contexts": [
         "Our business loans offer flexible repayment terms from 1 to 10 years. Borrowers can choose between fixed and variable rate options. The application process is streamlined with decisions within 48 hours. Collateral requirements depend on loan amount and business history."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for specific interest rate but context discusses loan terms without rates",
       "rationale": "LLM should acknowledge the actual interest rate percentage is not provided",
       "required_elements": [
@@ -369,7 +369,7 @@
       "contexts": [
         "Phase 1 of the construction project was completed on schedule in March 2024. Phase 2 is currently 75% complete with structural work finished. The project has maintained its safety record with zero lost-time incidents. The construction team has grown to 450 workers across all sites."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for Phase 3 date but context only covers Phase 1-2 status",
       "rationale": "LLM should acknowledge Phase 3 timeline is not provided",
       "required_elements": [
@@ -390,7 +390,7 @@
       "contexts": [
         "Our product combines cutting-edge AI with an intuitive interface. The machine learning engine continuously improves recommendations based on user behavior. Real-time analytics provide instant insights into customer patterns. The cloud-native architecture ensures 99.99% uptime and seamless scaling."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for bulleted list but context is prose",
       "rationale": "LLM should acknowledge information is available but not in requested list format, or extract and format appropriately while noting the source format",
       "required_elements": [
@@ -408,7 +408,7 @@
       "contexts": [
         "Illinois has a population of approximately 12.8 million people. The state capital is Springfield. Major cities include Chicago (2.7 million), Aurora (180,000), and Rockford (148,000). The state saw a 0.5% population decline between 2020 and 2023."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for Springfield population but context only has state and other cities",
       "rationale": "LLM should acknowledge Springfield's specific population is not provided despite it being mentioned as the capital",
       "required_elements": [
@@ -430,7 +430,7 @@
       "contexts": [
         "Our consulting services are available in three tiers: Basic, Professional, and Premium. Premium tier includes dedicated consultants, 24/7 availability, and priority response times. Pricing is based on engagement scope and typically ranges from $50,000 to $500,000 per project. Contact our sales team for a custom quote."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for hourly rate but context only has project-based pricing",
       "rationale": "LLM should acknowledge hourly rates are not provided, only project ranges",
       "required_elements": [
@@ -453,7 +453,7 @@
       "contexts": [
         "The target company has $50M in annual revenue with 15% profit margins. They have 200 employees and operate in 5 countries. Their technology stack is modern and compatible with ours. Due diligence revealed no major legal or financial red flags. Integration would take approximately 12 months."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for recommendation but context only provides facts",
       "rationale": "LLM should recognize the context provides data but no recommendation - it should not simply summarize the facts as if that answers the yes/no question",
       "required_elements": [
@@ -473,7 +473,7 @@
       "contexts": [
         "The startup has raised $20M in Series B funding. Their user base grew 300% last year. The founding team has prior exits. The market size is estimated at $50B. Two competitors have failed in this space. The burn rate is $1.5M per month with 18 months of runway."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for risk assessment but context only lists facts",
       "rationale": "LLM should not just summarize metrics as an answer to 'worth the risk' - that requires judgment not provided in context",
       "required_elements": [
@@ -493,7 +493,7 @@
       "contexts": [
         "Candidate A has 10 years of experience at Fortune 500 companies. They have an MBA from a top school. Candidate B is a self-taught developer with 5 years of startup experience. They have contributed to major open-source projects. Both candidates performed well in technical interviews."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for hiring decision but context only describes candidates",
       "rationale": "LLM should recognize it cannot make hiring recommendation from descriptions alone - role requirements and team needs are not provided",
       "required_elements": [
@@ -513,7 +513,7 @@
       "contexts": [
         "Our in-store return policy allows returns within 30 days with receipt. Items must be in original packaging and unused condition. Store credit is issued for returns without receipt. Clearance items are final sale. Our stores are open Monday through Saturday, 9 AM to 9 PM."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks about online returns but context only covers in-store",
       "rationale": "LLM should recognize online policy may differ from in-store and indicate online-specific policy is not provided",
       "required_elements": [
@@ -533,7 +533,7 @@
       "contexts": [
         "To create a new business account, visit business.example.com and click 'Sign Up'. You'll need to provide your company name, tax ID, and business address. Business accounts include advanced analytics, team management, and priority support. Pricing starts at $29/month per user."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks about upgrading existing account but context describes new account creation",
       "rationale": "LLM should recognize upgrade process may differ from new account creation",
       "required_elements": [
@@ -553,7 +553,7 @@
       "contexts": [
         "Clinical trials in adults aged 18-55 showed the following side effects: headache (12%), nausea (8%), dizziness (5%), and fatigue (4%). Most side effects resolved within 2 weeks. The medication should be taken with food. Avoid alcohol while taking this medication."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks about elderly patients but trials only included 18-55 age group",
       "rationale": "LLM should recognize elderly patients (65+) may have different side effect profiles than the studied population",
       "required_elements": [
@@ -573,7 +573,7 @@
       "contexts": [
         "TechCorp is headquartered at 100 Innovation Drive, San Francisco, CA 94105. The company was founded in 2010 by Jane Smith and has grown to 5,000 employees. They operate in 30 countries with regional offices in London, Tokyo, and Sydney. Last year's revenue was $2.3 billion."
       ],
-      "expected_mode": "confident",
+      "expected_mode": "trustworthy",
       "description": "Simple address question - should answer directly without extra info",
       "rationale": "LLM should provide the address (100 Innovation Drive, SF) without volunteering founding date, employee count, revenue, etc.",
       "required_elements": [
@@ -593,7 +593,7 @@
       "contexts": [
         "Our REST API is written in Python using the FastAPI framework. The API supports JSON and XML response formats. Authentication is handled via OAuth 2.0. Rate limits are 1000 requests per hour for free tier and unlimited for enterprise. The API documentation is available at docs.example.com."
       ],
-      "expected_mode": "confident",
+      "expected_mode": "trustworthy",
       "description": "Asks for language only - should not dump all API details",
       "rationale": "LLM should answer 'Python' or 'Python with FastAPI' without volunteering auth, rate limits, formats, etc.",
       "required_elements": [
@@ -611,7 +611,7 @@
       "contexts": [
         "Sarah Johnson became CEO in 2022 after serving as COO for five years. She holds an MBA from Harvard and previously worked at McKinsey. Under her leadership, the company has expanded into three new markets and launched two successful products. The board recently extended her contract through 2028."
       ],
-      "expected_mode": "confident",
+      "expected_mode": "trustworthy",
       "description": "Asks for CEO name only - should not provide full biography",
       "rationale": "LLM should answer 'Sarah Johnson' without volunteering MBA, McKinsey background, contract details, etc.",
       "required_elements": [
@@ -629,7 +629,7 @@
       "contexts": [
         "If you encounter sync error code E-401, clear your cache and restart the application. For error E-402, check your network connection and firewall settings. Error E-403 indicates an authentication issue - try logging out and back in. Contact support if issues persist after these steps."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks how to fix 'the' error but which error code is not specified",
       "rationale": "LLM should ask which error code or indicate that different errors have different solutions",
       "required_elements": [
@@ -649,7 +649,7 @@
       "contexts": [
         "Shipping rates vary by destination and package weight. Domestic standard shipping: $5.99 for orders under 2 lbs, $9.99 for 2-5 lbs, $14.99 for 5-10 lbs. Express shipping adds $10. International shipping starts at $24.99. Free shipping on domestic orders over $75."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for 'the' shipping cost but destination, weight, and speed not specified",
       "rationale": "LLM should indicate that shipping cost depends on factors not specified in the query",
       "required_elements": [
@@ -669,7 +669,7 @@
       "contexts": [
         "The advanced analytics feature is available on Professional and Enterprise plans. Free tier users can access basic analytics only. The feature requires admin permissions to enable. Once enabled, it takes 24 hours for historical data to populate. API access to analytics requires an additional license."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks if they can use feature but plan tier and role not specified",
       "rationale": "LLM should indicate that access depends on plan and permissions not specified in query",
       "required_elements": [

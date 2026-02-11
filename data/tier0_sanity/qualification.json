@@ -16,7 +16,7 @@
         "Survey data shows 82% of users have dark mode enabled on their devices.",
         "Dark mode adoption has increased 340% since 2019 across all major platforms."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Causal 'why' question with only usage statistics",
       "rationale": "Context shows THAT users use dark mode, not WHY they prefer it",
       "original_id": "qualify_easy_001"
@@ -30,7 +30,7 @@
         "The stock closed at $142.50, down 8.3% from the previous day's close of $155.40.",
         "Trading volume was 3x the 30-day average, with 45 million shares exchanged."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for cause but context only provides price movement",
       "rationale": "Context describes WHAT happened (price dropped) but not WHY",
       "original_id": "qualify_easy_002"
@@ -44,7 +44,7 @@
         "Last week saw temperatures ranging from 65-78°F with partly cloudy skies.",
         "Historical data shows October averages 68°F with 3.2 inches of rainfall in this region."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Prediction question with only historical data",
       "rationale": "Context has past data only - no actual forecast for next week",
       "original_id": "qualify_easy_003"
@@ -58,7 +58,7 @@
         "Python is used by 68% of data scientists according to the 2024 Stack Overflow survey.",
         "Major companies using Python for data science include Google, Netflix, and Spotify."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks WHY popular but context only shows THAT it's popular",
       "rationale": "Statistics and examples show popularity, not the reasons for it",
       "original_id": "qualify_easy_004"
@@ -72,7 +72,7 @@
         "Q3 sales reached $4.2 million, up 23% from Q2's $3.4 million.",
         "The sales team closed 147 deals compared to 112 in the previous quarter."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Sales growth shown but no explanation of cause",
       "rationale": "Context shows sales increased but doesn't explain why (new product? marketing? market conditions?)",
       "original_id": "qualify_easy_005"
@@ -87,7 +87,7 @@
         "34% of reviews are 1-star, 18% are 2-star, and 28% are 5-star.",
         "Review volume increased 200% after the product was featured on social media."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Review statistics without customer feedback content",
       "rationale": "Context shows review patterns but not the actual reasons customers give",
       "original_id": "qualify_easy_006"
@@ -102,7 +102,7 @@
         "Development took 6 months and cost approximately $200,000.",
         "Similar features from competitors launched in the past year."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Asks for prediction but no success indicators provided",
       "rationale": "Context describes development effort but no user feedback or success metrics",
       "original_id": "qualify_easy_007"
@@ -117,7 +117,7 @@
         "Page views per session remained stable at 3.2.",
         "The bounce rate increased from 42% to 58%."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Traffic metrics shown but no cause identified",
       "rationale": "Context shows WHAT happened to traffic but not WHY (algorithm change? competition? seasonal?)",
       "original_id": "qualify_easy_008"
@@ -132,7 +132,7 @@
         "The total addressable market is valued at $5 billion.",
         "Three new competitors entered the market this year."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Current market position without predictive data",
       "rationale": "Historical market share doesn't predict future share",
       "original_id": "qualify_easy_009"
@@ -147,7 +147,7 @@
         "The crash lasted 47 minutes before service was restored.",
         "This was the third outage this month."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Crash timeline without root cause",
       "rationale": "Context describes the crash event but not the technical cause",
       "original_id": "qualify_easy_010"

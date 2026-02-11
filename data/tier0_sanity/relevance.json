@@ -15,7 +15,7 @@
       "contexts": [
         "Our enterprise plan includes unlimited users, 24/7 support, custom integrations, SSO, and dedicated account management. Enterprise customers also get priority access to new features and a 99.99% SLA."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Pricing question but context only lists features",
       "rationale": "LLM should acknowledge pricing is not specified, NOT just list features",
       "required_elements": [
@@ -42,7 +42,7 @@
       "contexts": [
         "Our platform has experienced tremendous growth over the past year. Users love our intuitive interface and powerful analytics capabilities. We've expanded to 15 countries and added support for 8 new languages."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "User count question but context only discusses growth",
       "rationale": "LLM should acknowledge user count is not specified",
       "required_elements": [
@@ -67,7 +67,7 @@
       "contexts": [
         "The project is progressing well with all major milestones completed. The team has delivered the authentication module, API integration, and frontend redesign. Quality assurance testing is currently underway."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Deadline question but context only discusses progress",
       "rationale": "LLM should acknowledge deadline is not mentioned",
       "required_elements": [
@@ -93,7 +93,7 @@
       "contexts": [
         "We observed a 40% decrease in API response times last Tuesday. The engineering team immediately began investigating. Performance returned to normal by Wednesday morning after deploying a fix."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Cause question but context only describes incident timeline",
       "rationale": "LLM should acknowledge the cause is not specified",
       "required_elements": [
@@ -114,7 +114,7 @@
       "contexts": [
         "MedX is indicated for the treatment of moderate to severe pain. It should be taken with food to minimize gastrointestinal side effects. Patients should not drive or operate heavy machinery while taking this medication."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Dosage question but context only has usage instructions",
       "rationale": "LLM should acknowledge dosage is not specified",
       "required_elements": [
@@ -141,7 +141,7 @@
       "contexts": [
         "Our software features an intuitive drag-and-drop interface, real-time collaboration tools, cloud synchronization, and offline mode. The application supports Windows, macOS, and Linux operating systems with mobile apps available for iOS and Android."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "System requirements question but context only lists features and platforms",
       "rationale": "LLM should acknowledge that minimum specs (RAM, CPU, storage) are not provided",
       "required_elements": [
@@ -168,7 +168,7 @@
       "contexts": [
         "Our customer support team is known for excellent service quality. Support agents undergo extensive training and have access to comprehensive knowledge bases. Customer satisfaction surveys consistently show positive feedback about our support interactions."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Response time metric question but context discusses quality not timing",
       "rationale": "LLM should acknowledge response time metric is not specified",
       "required_elements": [
@@ -193,7 +193,7 @@
       "contexts": [
         "Our API provides comprehensive documentation with code examples. The API uses REST architecture with JSON payloads and supports OAuth 2.0 authentication. Rate limiting is set to 1000 requests per minute for standard accounts."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Language support question but context discusses API architecture",
       "rationale": "LLM should acknowledge programming language SDKs are not specified",
       "required_elements": [

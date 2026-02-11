@@ -14,7 +14,7 @@
       "contexts": [
         "Our enterprise plan includes unlimited users, 24/7 support, custom integrations, SSO, and dedicated account management. Enterprise customers also get priority access to new features and a 99.99% SLA."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Pricing question with features but no price",
       "rationale": "LLM might be tempted to estimate price based on features - must not",
       "forbidden_claims": [
@@ -35,7 +35,7 @@
       "contexts": [
         "Our platform includes robust security features including password management. Users can update their credentials through the account settings. Two-factor authentication is also available."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Process question with no specific steps",
       "rationale": "LLM should NOT invent a step-by-step password reset process",
       "forbidden_claims": [
@@ -58,7 +58,7 @@
       "contexts": [
         "The company announced its largest acquisition to date. The deal is expected to close in the coming months pending regulatory approval. Market analysts have responded positively."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Quote request with no actual quotes",
       "rationale": "LLM should NOT fabricate CEO quotes",
       "forbidden_claims": [
@@ -79,7 +79,7 @@
       "contexts": [
         "Our desktop application is designed for professional users who need advanced features. The software has been optimized for performance and includes offline capabilities."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "System requirements with no specs listed",
       "rationale": "LLM should NOT invent RAM, CPU, or OS requirements",
       "forbidden_claims": [
@@ -103,7 +103,7 @@
       "contexts": [
         "MedX is indicated for the treatment of moderate to severe pain. It should be taken with food to minimize gastrointestinal side effects. Patients should not drive or operate heavy machinery while taking this medication."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Dosage question with usage info but no dosage",
       "rationale": "LLM should NOT invent specific dosage amounts",
       "forbidden_claims": [
@@ -124,7 +124,7 @@
       "contexts": [
         "DataCorp has been a leader in data analytics for over two decades. The company has weathered multiple economic cycles and emerged stronger each time. Today it serves Fortune 500 clients worldwide."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Founding date with vague timeframe only",
       "rationale": "LLM should NOT calculate or invent a specific founding year from 'two decades'",
       "forbidden_claims": [
@@ -145,7 +145,7 @@
       "contexts": [
         "IndustryLeader Corp is one of the top players in the cloud computing market. The company competes with major tech giants and has been gaining ground in recent years. Customer satisfaction ratings are consistently high."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Market share question with no percentage",
       "rationale": "LLM should NOT invent market share percentages",
       "forbidden_claims": [
@@ -167,7 +167,7 @@
       "contexts": [
         "Our product has achieved global reach with customers on every continent. We continue to expand our international presence and localize our offerings for different markets."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Country availability with no specific countries",
       "rationale": "LLM should NOT list specific countries",
       "forbidden_claims": [
@@ -192,7 +192,7 @@
       "contexts": [
         "The new methodology has generated significant interest in the industry. Several academic papers have been published on the topic, and adoption is growing among enterprise clients."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Expert opinion request with no actual expert quotes",
       "rationale": "LLM should NOT fabricate expert names or quotes",
       "forbidden_claims": [
@@ -214,7 +214,7 @@
       "contexts": [
         "Our platform offers native integrations with popular CRM systems. Setup is straightforward and typically completed within a day. Our integration team provides dedicated support for enterprise clients."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Integration steps with no specific process",
       "rationale": "LLM should NOT invent Salesforce-specific integration steps",
       "forbidden_claims": [
@@ -238,7 +238,7 @@
       "contexts": [
         "After implementing the new checkout flow, the e-commerce team saw meaningful improvements in conversion metrics. The A/B test ran for six weeks with statistically significant results. Customer feedback was overwhelmingly positive."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Improvement percentage with qualitative results only",
       "rationale": "LLM might infer a percentage from 'meaningful' - must not",
       "forbidden_claims": [
@@ -261,7 +261,7 @@
       "contexts": [
         "Security is our top priority. All data is encrypted both in transit and at rest. We undergo annual third-party security audits and maintain SOC 2 Type II certification."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Encryption standard with security claims but no specifics",
       "rationale": "LLM should NOT assume AES-256 or other specific standards",
       "forbidden_claims": [
@@ -283,7 +283,7 @@
       "contexts": [
         "Studies have consistently shown that regular exercise improves cognitive function. The benefits appear across all age groups and persist even with moderate activity levels."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Research citation request with no specific studies",
       "rationale": "LLM should NOT fabricate study names, journals, or years",
       "forbidden_claims": [
@@ -305,7 +305,7 @@
       "contexts": [
         "The engineering team developed a novel optimization that significantly reduces processing time. Benchmarks showed consistent improvements across different workload sizes. The optimization has been deployed to production."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Performance improvement with no specific numbers",
       "rationale": "LLM should NOT invent speedup factors like '10x faster'",
       "forbidden_claims": [
@@ -329,7 +329,7 @@
       "contexts": [
         "The treatment has shown promise in clinical settings. Patients generally report positive outcomes, and the therapy is now offered at leading medical centers. Long-term follow-up studies are ongoing."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Success rate with qualitative outcomes only",
       "rationale": "LLM should NOT invent success rate percentages",
       "forbidden_claims": [
@@ -352,7 +352,7 @@
       "contexts": [
         "Our development team is actively working on the next major release. The update will include several highly requested features. Beta testing has begun with select customers."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Future release date with development status only",
       "rationale": "LLM should NOT predict a release date based on beta status",
       "forbidden_claims": [
@@ -375,7 +375,7 @@
       "contexts": [
         "Our enterprise platform includes configurable approval workflows. Administrators can customize the process to match their organization's requirements. Multiple approval levels are supported."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Workflow details with customization info only",
       "rationale": "LLM should NOT invent default workflow steps",
       "forbidden_claims": [
@@ -401,7 +401,7 @@
         "Company B's CEO outlined their growth strategy at the investor conference: expanding into emerging markets, doubling R&D investment, and acquiring smaller competitors.",
         "Industry analysts expect continued consolidation in the sector."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Question about A but strategy details are for B",
       "rationale": "LLM should NOT attribute Company B's strategy to Company A",
       "forbidden_claims": [
@@ -418,7 +418,7 @@
       "contexts": [
         "The CEO addressed employees at the annual meeting. The company announced record profits and thanked the team for their hard work. Questions about the company's future direction were discussed during the Q&A session."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "CEO mentioned but no actual quotes provided",
       "rationale": "LLM should NOT fabricate CEO quotes like 'We plan to...' or 'Our vision is...'",
       "forbidden_claims": [
@@ -437,7 +437,7 @@
       "contexts": [
         "After implementing the new support system, customer satisfaction improved significantly. Surveys showed positive feedback from users, and complaint rates dropped. The support team received recognition for their improvements."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "'Significant improvement' without quantification",
       "rationale": "LLM should NOT invent specific percentage improvements",
       "forbidden_claims": [
@@ -459,7 +459,7 @@
       "contexts": [
         "The data_utils module provides several utility functions for data processing. The process_data() function is the main entry point for data transformation workflows. It supports batch processing and can handle multiple input formats."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Function mentioned but no signature provided",
       "rationale": "LLM should NOT invent function parameters like 'input_path', 'batch_size', etc.",
       "forbidden_claims": [
@@ -479,7 +479,7 @@
       "contexts": [
         "The ConnectionManager class handles all database connections. Call initialize() before any database operations to set up the connection pool. The class also provides methods for transaction management and connection health checks."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Method mentioned but return type not specified",
       "rationale": "LLM should NOT invent return types like 'returns a Connection object' or 'returns boolean'",
       "forbidden_claims": [
@@ -499,7 +499,7 @@
       "contexts": [
         "Input validation is handled by the validate_input() function in the validators module. The function performs comprehensive checks on user input before processing. Invalid input will cause the function to raise an exception."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Function raises exceptions but types not listed",
       "rationale": "LLM should NOT invent exception types like ValueError, TypeError, ValidationError, etc.",
       "forbidden_claims": [
@@ -518,7 +518,7 @@
       "contexts": [
         "Quarterly Financial Summary:\n\n| Quarter | Revenue ($M) | Operating Costs ($M) |\n|---------|--------------|---------------------|\n| Q1 | 45.2 | 38.1 |\n| Q2 | 52.8 | 41.3 |\n| Q3 | 48.9 | 39.7 |\n| Q4 | 61.2 | 47.8 |"
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Table has revenue and costs but not profit margin",
       "rationale": "LLM should NOT calculate profit margin from the data - that would be inference beyond what's stated",
       "forbidden_claims": [
@@ -537,7 +537,7 @@
       "contexts": [
         "Product Sales by Year:\n\n| Product | 2022 Sales | 2023 Sales |\n|---------|------------|------------|\n| Widget A | $1.2M | $1.5M |\n| Widget B | $800K | $1.1M |\n| Widget C | $2.1M | $2.4M |"
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Table has sales figures but growth rate not calculated",
       "rationale": "LLM should NOT calculate growth rates - the table doesn't include them",
       "forbidden_claims": [
@@ -557,7 +557,7 @@
       "contexts": [
         "Employee Demographics:\n\n| Department | Headcount | Total Years of Service |\n|------------|-----------|------------------------|\n| Engineering | 45 | 312 |\n| Sales | 32 | 198 |\n| Marketing | 18 | 94 |\n| Operations | 28 | 175 |"
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Table has headcount and total years but not average",
       "rationale": "LLM should NOT calculate average tenure by dividing - that's inference",
       "forbidden_claims": [
@@ -575,7 +575,7 @@
       "contexts": [
         "Lead researcher Dr. Smith commented on the findings: 'The results are promising...' The study was published in the New England Journal of Medicine last month."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Partial quote with ellipsis - rest not provided",
       "rationale": "LLM should NOT complete the quote or invent what comes after 'promising...'",
       "forbidden_claims": [
@@ -594,7 +594,7 @@
       "contexts": [
         "In a brief press release, the CEO stated: 'This merger represents a new chapter for our company...' The deal is expected to close by year end pending regulatory approval."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Partial CEO quote - full statement not available",
       "rationale": "LLM should NOT extend the quote beyond what's provided",
       "forbidden_claims": [
@@ -613,7 +613,7 @@
       "contexts": [
         "Key witness Maria Garcia testified: 'I heard a loud noise and then...' Court proceedings will continue next week with additional witness testimony."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Witness testimony cut off mid-sentence",
       "rationale": "LLM should NOT complete the testimony or invent what the witness saw/heard next",
       "forbidden_claims": [
@@ -634,7 +634,7 @@
         "The new product line was unveiled at the annual conference and received positive media coverage.",
         "The CEO gave an interview on November 3, 2024 discussing future growth plans."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Multiple dates present but product announcement date not specified",
       "rationale": "LLM should NOT assign Oct 15 or Nov 3 to the product announcement",
       "forbidden_claims": [
@@ -655,7 +655,7 @@
         "2021 revenue was $3.8 billion following the pandemic recovery.",
         "Analysts project 2024 revenue to reach $6.1 billion."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "2021, 2023, and 2024 mentioned but not 2022",
       "rationale": "LLM should NOT infer or interpolate 2022 revenue from adjacent years",
       "forbidden_claims": [
@@ -676,7 +676,7 @@
         "The new economic policy was signed into law and took effect immediately.",
         "By June 2024, unemployment had dropped to 3.9%."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Policy enacted but no date given; multiple unemployment figures present",
       "rationale": "LLM should NOT assume the policy was enacted in March or June",
       "forbidden_claims": [
@@ -696,7 +696,7 @@
         "DatabaseConfig integrates with the application's environment system to load settings. The class is designed for both development and production environments.",
         "Use DatabaseConfig to configure your database connections before initializing the ORM layer."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Config class mentioned but no specific options listed",
       "rationale": "LLM should NOT invent config options like 'host', 'port', 'max_connections', 'timeout_ms', etc.",
       "forbidden_claims": [
@@ -718,7 +718,7 @@
         "Rate limiting applies to the /api/users endpoint: 100 requests per minute for standard users, 1000 for premium.",
         "All /api/users responses use JSON format with standard HTTP status codes for success and error cases."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Endpoint mentioned but supported methods not specified",
       "rationale": "LLM should NOT assume standard REST methods like GET, POST, PUT, DELETE are supported",
       "forbidden_claims": [

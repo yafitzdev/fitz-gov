@@ -25,7 +25,7 @@ class FitzGovCategory(str, Enum):
     """Cases where the system should hedge or qualify the answer."""
 
     CONFIDENCE = "confidence"
-    """Cases where the system should answer confidently."""
+    """Cases where the system should answer clearly and directly."""
 
     # Answer Quality Categories
     GROUNDING = "grounding"
@@ -38,10 +38,9 @@ class FitzGovCategory(str, Enum):
 class AnswerMode(str, Enum):
     """Expected answer modes for governance evaluation."""
 
-    ABSTAIN = "abstain"
+    TRUSTWORTHY = "trustworthy"
     DISPUTED = "disputed"
-    QUALIFIED = "qualified"
-    CONFIDENT = "confident"
+    ABSTAIN = "abstain"
 
 
 @dataclass
@@ -235,7 +234,7 @@ class FitzGovConfusionMatrix:
         """Pretty print the confusion matrix."""
         modes = [m.value for m in AnswerMode]
         # Use abbreviated headers for compact display
-        abbrev = {"abstain": "ABST", "disputed": "DISP", "qualified": "QUAL", "confident": "CONF"}
+        abbrev = {"trustworthy": "TRST", "disputed": "DISP", "abstain": "ABST"}
         lines = ["  Confusion Matrix (rows=expected, cols=actual):"]
         header = "              " + "  ".join(f"{abbrev.get(m, m[:4]):>6}" for m in modes)
         lines.append(header)

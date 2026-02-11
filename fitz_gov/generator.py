@@ -297,13 +297,13 @@ Generate {num_cases} diverse conflict scenarios."""
 
         prompt = f"""You are generating test cases for a RAG governance benchmark.
 
-Generate {num_cases} questions that should receive QUALIFIED/HEDGED answers:
+Generate {num_cases} questions that should receive HEDGED/QUALIFIED answers:
 1. "Why" questions that imply causation but context only shows correlation
 2. Prediction questions where data is limited
 3. Generalization questions where context has few examples
 
 The context should provide SOME relevant information, but not enough
-for a confident answer. The system should QUALIFY its response.
+for a decisive answer. The system should QUALIFY its response.
 
 Document excerpts (for topic inspiration):
 {self._format_chunks(chunk_texts[:5])}
@@ -337,10 +337,10 @@ Generate {num_cases} diverse qualification scenarios."""
                     subcategory="uncertain_evidence",
                     query=case_data["query"],
                     contexts=contexts,
-                    expected_mode=AnswerMode.QUALIFIED,
+                    expected_mode=AnswerMode.TRUSTWORTHY,
                     description=case_data.get("description", "Generated qualification case"),
                     rationale=case_data.get(
-                        "rationale", "Evidence is insufficient for confident answer"
+                        "rationale", "Evidence is insufficient for a decisive answer"
                     ),
                 )
             )
@@ -355,7 +355,7 @@ Generate {num_cases} diverse qualification scenarios."""
         """
         Generate confidence test cases.
 
-        Creates questions where context clearly supports a confident answer,
+        Creates questions where context clearly supports a direct answer,
         testing that the system doesn't over-hedge.
         """
         cases: list[FitzGovCase] = []
@@ -368,7 +368,7 @@ For each document excerpt below, generate a question where the answer is CLEARLY
 2. Definition questions where the term is clearly defined
 3. Procedural questions where steps are clearly listed
 
-The system should answer CONFIDENTLY without unnecessary hedging.
+The system should answer DIRECTLY without unnecessary hedging.
 
 Document excerpts (with IDs):
 {self._format_chunks_with_ids(chunks_with_ids)}
@@ -409,7 +409,7 @@ Generate {num_cases} clear-cut confidence scenarios. Include the doc_ids that co
                     subcategory="clear_evidence",
                     query=case_data["query"],
                     contexts=contexts,
-                    expected_mode=AnswerMode.CONFIDENT,
+                    expected_mode=AnswerMode.TRUSTWORTHY,
                     description=case_data.get("description", "Generated confidence case"),
                     rationale=case_data.get("rationale", "Context clearly supports the answer"),
                     relevant_doc_ids=doc_ids,
@@ -479,7 +479,7 @@ Generate {num_cases} diverse hallucination trap scenarios. Include doc_ids of th
                     subcategory="hallucination_trap",
                     query=case_data["query"],
                     contexts=contexts,
-                    expected_mode=AnswerMode.CONFIDENT,  # Should answer but stay grounded
+                    expected_mode=AnswerMode.TRUSTWORTHY,
                     description=case_data.get("description", "Generated grounding case"),
                     rationale=case_data.get("rationale", "Tests if system hallucinates details"),
                     forbidden_claims=case_data.get("forbidden_claims", []),
@@ -550,7 +550,7 @@ Generate {num_cases} diverse relevance trap scenarios. Include doc_ids of releva
                     subcategory="off_topic_trap",
                     query=case_data["query"],
                     contexts=contexts,
-                    expected_mode=AnswerMode.CONFIDENT,  # Should answer the actual question
+                    expected_mode=AnswerMode.TRUSTWORTHY,
                     description=case_data.get("description", "Generated relevance case"),
                     rationale=case_data.get("rationale", "Tests if system stays on topic"),
                     required_elements=case_data.get("required_elements", []),

@@ -16,17 +16,14 @@ from typing import Any
 class AnswerMode(str, Enum):
     """Expected answer mode for governance test cases."""
 
-    CONFIDENT = "confident"
-    """System should answer confidently."""
-
-    QUALIFIED = "qualified"
-    """System should hedge or qualify the answer."""
+    TRUSTWORTHY = "trustworthy"
+    """Evidence supports answering. Answer clearly and directly."""
 
     DISPUTED = "disputed"
-    """System should flag conflicting information."""
+    """Sources explicitly disagree; summarize the disagreement."""
 
     ABSTAIN = "abstain"
-    """System should refuse to answer."""
+    """Evidence is insufficient; do not attempt a definitive answer."""
 
 
 class FitzGovCategory(str, Enum):
@@ -43,7 +40,7 @@ class FitzGovCategory(str, Enum):
     """Cases where the system should hedge or qualify the answer."""
 
     CONFIDENCE = "confidence"
-    """Cases where the system should answer confidently."""
+    """Cases where the system should answer clearly and directly."""
 
     # Answer Quality Categories
     GROUNDING = "grounding"

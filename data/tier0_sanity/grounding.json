@@ -15,7 +15,7 @@
       "contexts": [
         "TechCorp reported strong financial performance in 2024. The company saw significant growth across all business segments. International expansion contributed to improved results."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Revenue question with no specific number in context",
       "rationale": "LLM should answer based on context but NOT hallucinate a specific revenue figure",
       "forbidden_claims": [
@@ -36,7 +36,7 @@
       "contexts": [
         "Acme Corp announced major leadership changes in 2024. The company restructured its executive team to focus on AI initiatives. Several new vice presidents were appointed."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "CEO question with no name in context",
       "rationale": "LLM should acknowledge leadership changes but NOT invent a CEO name",
       "forbidden_claims": [
@@ -59,7 +59,7 @@
       "contexts": [
         "The product team is working on the new release. Development is progressing well and the team is excited about the features. User testing has provided positive feedback."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Launch date question with no date in context",
       "rationale": "LLM should NOT invent a launch date",
       "forbidden_claims": [
@@ -81,7 +81,7 @@
       "contexts": [
         "Our API provides comprehensive documentation and SDKs for developers. Integration typically takes less than an hour. The API supports REST and GraphQL endpoints."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Language support question with no languages listed",
       "rationale": "LLM should NOT list specific programming languages",
       "forbidden_claims": [
@@ -107,7 +107,7 @@
       "contexts": [
         "DrugX is an FDA-approved medication for treating hypertension. Clinical trials showed it was well-tolerated by most patients. The drug works by relaxing blood vessels."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Side effects question with no specific effects listed",
       "rationale": "LLM should NOT list specific side effects from training data",
       "forbidden_claims": [
@@ -131,7 +131,7 @@
       "contexts": [
         "GlobalTech has grown substantially over the past decade. The company has offices in multiple countries and continues to expand its workforce. Employee satisfaction scores remain high."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Employee count question with no number in context",
       "rationale": "LLM should NOT invent an employee count",
       "forbidden_claims": [
@@ -152,7 +152,7 @@
       "contexts": [
         "MegaCorp is a multinational technology company with operations worldwide. The company was founded in the early 2000s and has grown to become a major player in the industry."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "HQ location question with no location in context",
       "rationale": "LLM should NOT invent a headquarters location",
       "forbidden_claims": [
@@ -177,7 +177,7 @@
       "contexts": [
         "StartupX was established in 2015 with a mission to revolutionize the logistics industry. The company has since raised multiple rounds of funding and expanded globally."
       ],
-      "expected_mode": "qualified",
+      "expected_mode": "trustworthy",
       "description": "Founder question with no name in context",
       "rationale": "LLM should NOT invent founder names",
       "forbidden_claims": [

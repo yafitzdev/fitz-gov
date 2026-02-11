@@ -3,7 +3,7 @@
 fitz-gov: Comprehensive RAG Governance Benchmark.
 
 A benchmark for evaluating RAG system governance - knowing when to abstain,
-dispute, qualify, or confidently answer based on available evidence.
+dispute, or answer trustworthily based on available evidence.
 
 Example:
     from fitz_gov import FitzGovEvaluator, load_cases, FitzGovCategory
@@ -36,7 +36,7 @@ Tiered Evaluation Example:
     print(result)
 """
 
-__version__ = "2.0.0"
+__version__ = "3.0.0"
 
 from .evaluator import FitzGovEvaluator
 from .loader import (

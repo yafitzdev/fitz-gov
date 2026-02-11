@@ -1,6 +1,6 @@
 # fitz-gov: Comprehensive RAG Governance Benchmark
 
-fitz-gov is a benchmark for evaluating RAG system governance - the ability to know when to abstain, dispute, qualify, or confidently answer questions.
+fitz-gov is a benchmark for evaluating RAG system governance - the ability to know when to abstain, dispute, or provide trustworthy answers.
 
 ## Why fitz-gov?
 
@@ -12,8 +12,8 @@ fitz-gov measures:
 |----------|--------------|---------|
 | **Abstention** | Refuses when context is insufficient | `ABSTAIN` mode |
 | **Dispute** | Flags conflicting sources | `DISPUTED` mode |
-| **Qualification** | Hedges uncertain claims | `QUALIFIED` mode |
-| **Confidence** | Answers confidently when evidence is clear | `CONFIDENT` mode |
+| **Qualification** | Hedges uncertain claims | `TRUSTWORTHY` mode |
+| **Confidence** | Answers confidently when evidence is clear | `TRUSTWORTHY` mode |
 | **Grounding** | Answers are grounded in context (no hallucination) | Answer quality |
 | **Relevance** | Answers address the actual question | Answer quality |
 
@@ -35,14 +35,14 @@ pip install -e path/to/fitz-gov
 
 fitz-gov uses a two-tier evaluation system:
 - **Tier 0 (Sanity)**: 60 easy cases with 95% pass threshold - gates Tier 1
-- **Tier 1 (Core)**: 271 discriminative cases with gradient scoring
+- **Tier 1 (Core)**: 1113 discriminative cases with gradient scoring
 
 ```python
 from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
 
 # Load tiered cases
 tier0_cases = load_tier(Tier.SANITY)  # 60 cases
-tier1_cases = load_tier(Tier.CORE)    # 271 cases
+tier1_cases = load_tier(Tier.CORE)    # 1113 cases
 
 # Your RAG system generates responses and modes for each tier
 tier0_responses, tier0_modes = your_rag_system.evaluate(tier0_cases)
@@ -62,13 +62,13 @@ print(result)
 # TIER 0 (Sanity Check): PASSED
 #   Threshold: 95% | Achieved: 98.3% (59/60)
 #
-# TIER 1 (Core Benchmark): 78.1%
+# TIER 1 (Core Benchmark): 69.1%
 #   By Category:
-#     abstention: 26/30 (86.7%)
-#     dispute: 22/30 (73.3%)
+#     abstention: 201/237 (84.8%)
+#     dispute: 131/196 (66.8%)
 #     ...
 #
-# Summary: Tier 0 PASSED, Tier 1 Score: 78.1%
+# Summary: Tier 0 PASSED, Tier 1 Score: 69.1%
 ```
 
 ### With Fitz RAG Engine
@@ -82,6 +82,8 @@ results = benchmark.evaluate(engine)
 
 print(results)
 ```
+
+**Note**: Both fitz-ai and fitz-gov use the same 3-mode system (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (qualification, confidence) are test categories that describe what aspect of governance is being tested, not different modes.
 
 ### Standalone Usage (Any RAG System)
 
@@ -120,8 +122,8 @@ from fitz_gov import FitzGovEvaluator, load_case_by_id
 
 evaluator = FitzGovEvaluator()
 
-# Load specific test case
-case = load_case_by_id("abstain_001")
+# Load specific test case (IDs prefixed with t0_ or t1_)
+case = load_case_by_id("t1_abstain_medium_001")
 
 # Your system's response
 response = "Based on the context provided, I cannot find information about..."
@@ -135,7 +137,7 @@ print(f"Expected: {case.expected_mode.value}, Got: {mode.value}")
 
 ## Two-Pass Validation (Answer Quality Categories)
 
-For grounding and relevance categories, fitz-gov uses **two-pass validation** to reduce false positives:
+For grounding categories, fitz-gov uses **two-pass validation** to reduce false positives:
 
 1. **Regex pass**: Fast pattern matching catches obvious violations
 2. **LLM pass**: Semantic validation for flagged cases
@@ -160,21 +162,21 @@ results = evaluator.evaluate_all(cases, responses, modes)
 
 ```
 Response contains forbidden_claim pattern?
-    │
-    ├─ No  → PASS (no hallucination detected)
-    │
-    └─ Yes → LLM validates: "Is this an actual hallucination?"
-                │
-                ├─ LLM says no (e.g., "no revenue mentioned") → PASS
-                │
-                └─ LLM says yes (fabricated specific value) → FAIL
+    |
+    +- No  -> PASS (no hallucination detected)
+    |
+    +- Yes -> LLM validates: "Is this an actual hallucination?"
+                |
+                +- LLM says no (e.g., "no revenue mentioned") -> PASS
+                |
+                +- LLM says yes (fabricated specific value) -> FAIL
 ```
 
 ### Caching
 
 LLM validation results are cached for 7 days to speed up repeated evaluations:
-- Cache location: `~/.cache/fitz_gov/`
-- Automatic cache cleanup on startup
+- Cache location: `~/.fitz/cache/llm_validation/`
+- Automatic cache cleanup on expiry
 
 ## API Reference
 
@@ -245,9 +247,9 @@ result = evaluator.evaluate_case(case, response, mode)
 ```python
 # Load by tier (recommended)
 tier0_cases = load_tier(Tier.SANITY)  # 60 sanity cases
-tier1_cases = load_tier(Tier.CORE)    # 271 core cases
+tier1_cases = load_tier(Tier.CORE)    # 1113 core cases
 
-# Load all cases (331 total)
+# Load all cases (1173 total)
 all_cases = load_cases()
 
 # Load specific categories from a tier
@@ -269,45 +271,72 @@ Test cases are organized in a tiered structure:
 
 ```
 data/
-├── tier0_sanity/          # 60 cases - baseline verification (95% threshold)
-│   ├── abstention.json    # 12 cases
-│   ├── dispute.json       # 12 cases
-│   ├── qualification.json # 10 cases
-│   ├── confidence.json    # 10 cases
-│   ├── grounding.json     # 8 cases
-│   └── relevance.json     # 8 cases
-├── tier1_core/            # 271 cases - discriminative benchmark
-│   ├── abstention.json    # 51 cases
-│   ├── dispute.json       # 43 cases
-│   ├── qualification.json # 58 cases
-│   ├── confidence.json    # 53 cases
-│   ├── grounding.json     # 34 cases
-│   └── relevance.json     # 32 cases
-└── corpus/
-    └── documents.jsonl    # 378 reference documents
++-- tier0_sanity/          # 60 cases - baseline verification (95% threshold)
+|   +-- abstention.json    # 12 cases
+|   +-- dispute.json       # 12 cases
+|   +-- qualification.json # 10 cases
+|   +-- confidence.json    # 10 cases
+|   +-- grounding.json     # 8 cases
+|   +-- relevance.json     # 8 cases
++-- tier1_core/            # 1113 cases - discriminative benchmark
+|   +-- abstention.json    # 237 cases
+|   +-- dispute.json       # 196 cases
+|   +-- qualification.json # 360 cases
+|   +-- confidence.json    # 254 cases
+|   +-- grounding.json     # 34 cases
+|   +-- relevance.json     # 32 cases
++-- corpus/
+|   +-- documents.jsonl    # 378 reference documents
++-- queries/
+    +-- query_mappings.json
 ```
 
 Each case has:
 
 ```json
 {
-  "id": "abstain_001",
+  "id": "t1_abstain_medium_001",
   "query": "What is the company's revenue for 2024?",
   "contexts": ["The company was founded in 2010..."],
   "expected_mode": "abstain",
-  "subcategory": "different_domain",
+  "category": "abstention",
+  "subcategory": "wrong_entity",
   "difficulty": "medium",
-  "mode_rationale": "Context contains no financial data",
+  "description": "Query asks about revenue but context has no financial data",
+  "rationale": "Context contains no financial data for the queried entity",
+  "forbidden_claims": ["\\$\\d"],
+  "required_elements": [],
+  "forbidden_elements": [],
   "evaluation_config": {
-    "forbidden_claims": ["\\$\\d"],
+    "use_regex": true,
+    "case_insensitive": true,
     "allowed_phrases": ["not specified", "cannot find"]
-  }
+  },
+  "metadata": {"tier": "tier1_core"}
 }
 ```
 
+### Case Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique ID (prefixed `t0_` or `t1_`) |
+| `query` | string | The question to answer |
+| `contexts` | list[str] | Context passages provided to the RAG system |
+| `expected_mode` | string | Expected governance mode (`abstain`, `disputed`, `trustworthy`) |
+| `category` | string | Evaluation category (abstention, dispute, qualification, confidence, grounding, relevance) |
+| `subcategory` | string | Specific test pattern (e.g., `wrong_entity`, `implicit_contradiction`) |
+| `difficulty` | string | `easy`, `medium`, or `hard` |
+| `description` | string | What the case tests |
+| `rationale` | string | Why this mode is expected |
+| `forbidden_claims` | list[str] | Regex patterns indicating hallucination (grounding) |
+| `required_elements` | list[str] | Elements that must appear in the answer (relevance) |
+| `forbidden_elements` | list[str] | Patterns indicating false confidence (relevance) |
+| `evaluation_config` | dict | Evaluation settings (`use_regex`, `case_insensitive`, `allowed_phrases`, `min_required`) |
+
 ## Version
 
-Current version: **2.0.0**
+Current version: **3.0.0**
 
 See [CHANGELOG.md](CHANGELOG.md) for release history and [docs/roadmap](docs/roadmap/) for implementation details.
 
@@ -319,14 +348,14 @@ fitz-gov is designed as a standalone package so that:
 2. **Evaluation logic is consistent** - all systems get identical evaluation
 3. **Test data is versioned** - reproducible benchmarks across releases
 
-For Fitz RAG engine integration, see `fitz_ai.evaluation.benchmarks.FitzGovBenchmark` which wraps this package.
+For Fitz RAG engine integration, see `fitz_ai.evaluation.benchmarks.FitzGovBenchmark` which wraps this package. Both fitz-ai and fitz-gov use the same 3-mode system (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (qualification, confidence, etc.) are test categories that describe different governance behaviors being tested, not different output modes.
 
 ## Contributing
 
 We welcome contributions! To add new test cases:
 
 1. Fork this repo
-2. Add cases to the appropriate `data/<category>/` directory
+2. Add cases to the appropriate `data/tier0_sanity/` or `data/tier1_core/` JSON file
 3. Run validation: `python scripts/validate.py`
 4. Submit a PR
 

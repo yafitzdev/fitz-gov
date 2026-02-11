@@ -130,7 +130,7 @@ def check_quality(case: dict) -> list[str]:
         issues.append(f"Too many contexts: {len(contexts)}")
 
     # Valid expected_mode
-    valid_modes = ["abstain", "disputed", "qualified", "confident"]
+    valid_modes = ["trustworthy", "disputed", "abstain"]
     mode = case.get("expected_mode", "")
     if mode not in valid_modes:
         issues.append(f"Invalid expected_mode: {mode}")
