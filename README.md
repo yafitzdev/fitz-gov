@@ -35,14 +35,14 @@ pip install -e path/to/fitz-gov
 
 fitz-gov uses a two-tier evaluation system:
 - **Tier 0 (Sanity)**: 60 easy cases with 95% pass threshold - gates Tier 1
-- **Tier 1 (Core)**: 1113 discriminative cases with gradient scoring
+- **Tier 1 (Core)**: 1,679 discriminative cases with gradient scoring
 
 ```python
 from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
 
 # Load tiered cases
 tier0_cases = load_tier(Tier.SANITY)  # 60 cases
-tier1_cases = load_tier(Tier.CORE)    # 1113 cases
+tier1_cases = load_tier(Tier.CORE)    # 1,679 cases
 
 # Your RAG system generates responses and modes for each tier
 tier0_responses, tier0_modes = your_rag_system.evaluate(tier0_cases)
@@ -247,9 +247,9 @@ result = evaluator.evaluate_case(case, response, mode)
 ```python
 # Load by tier (recommended)
 tier0_cases = load_tier(Tier.SANITY)  # 60 sanity cases
-tier1_cases = load_tier(Tier.CORE)    # 1113 core cases
+tier1_cases = load_tier(Tier.CORE)    # 1,679 core cases
 
-# Load all cases (1173 total)
+# Load all cases (1,739 total)
 all_cases = load_cases()
 
 # Load specific categories from a tier
@@ -278,18 +278,67 @@ data/
 |   +-- trustworthy_direct.json # 10 cases
 |   +-- grounding.json          # 8 cases
 |   +-- relevance.json          # 8 cases
-+-- tier1_core/                 # 1113 cases - discriminative benchmark
-|   +-- abstention.json         # 237 cases
-|   +-- dispute.json            # 196 cases
-|   +-- trustworthy_hedged.json # 360 cases
-|   +-- trustworthy_direct.json # 254 cases
-|   +-- grounding.json          # 34 cases
-|   +-- relevance.json          # 32 cases
++-- tier1_core/                 # 1,679 cases - discriminative benchmark
+|   +-- abstention.json         # 387 cases
+|   +-- dispute.json            # 346 cases
+|   +-- trustworthy_hedged.json # 330 cases
+|   +-- trustworthy_direct.json # 214 cases
+|   +-- grounding.json          # 200 cases
+|   +-- relevance.json          # 202 cases
 +-- corpus/
-|   +-- documents.jsonl    # 378 reference documents
+|   +-- documents.jsonl    # 1,420 reference documents
 +-- queries/
-    +-- query_mappings.json
+    +-- query_mappings.json  # 898 query-to-document mappings
 ```
+
+### Benchmark Distribution (v4.1)
+
+**Categories** (1,679 tier1 cases):
+
+| Category | Cases | Mode | Purpose |
+|----------|------:|------|---------|
+| Abstention | 387 | `abstain` | Refuses when evidence is insufficient |
+| Dispute | 346 | `disputed` | Flags conflicting sources |
+| Trustworthy Hedged | 330 | `trustworthy` | Hedges uncertain claims |
+| Trustworthy Direct | 214 | `trustworthy` | Answers confidently when clear |
+| Relevance | 202 | `trustworthy` | Answers address the actual question |
+| Grounding | 200 | `trustworthy` | No hallucination beyond context |
+
+**Domains** (18 domains, no domain untestable):
+
+| Domain | Cases | % | Domain | Cases | % |
+|--------|------:|--:|--------|------:|--:|
+| Technology | 531 | 31.6 | Sports | 54 | 3.2 |
+| Medicine | 183 | 10.9 | Environment | 54 | 3.2 |
+| Finance | 180 | 10.7 | History | 52 | 3.1 |
+| Science | 85 | 5.1 | HR/Workplace | 51 | 3.0 |
+| Education | 66 | 3.9 | Food | 48 | 2.9 |
+| Law | 55 | 3.3 | Agriculture | 48 | 2.9 |
+| Government | 55 | 3.3 | Real Estate | 45 | 2.7 |
+| Transportation | 55 | 3.3 | Psychology | 43 | 2.6 |
+| Social Media | 55 | 3.3 | General | 19 | 1.1 |
+
+**Query Types** (10 types):
+
+| Type | Cases | % | Type | Cases | % |
+|------|------:|--:|------|------:|--:|
+| what | 779 | 46.4 | should | 68 | 4.1 |
+| how | 264 | 15.7 | why | 67 | 4.0 |
+| is | 234 | 13.9 | when | 45 | 2.7 |
+| does | 144 | 8.6 | who | 30 | 1.8 |
+| | | | which | 29 | 1.7 |
+| | | | compare | 19 | 1.1 |
+
+**Classification Attributes** - every case has 6 structured fields for results slicing:
+
+| Field | Values | Purpose |
+|-------|--------|---------|
+| `domain` | 18 domains (technology, finance, medicine, ...) | Slice by topic area |
+| `query_type` | what, how, is, does, why, should, when, who, which, compare | Slice by question form |
+| `source_type` | single, multi_source (142 cases) | Single vs multi-source evidence |
+| `context_count` | 1-5 | Number of context passages |
+| `reasoning_type` | factual, evaluative, temporal, comparative, causal, procedural | What reasoning is tested |
+| `evidence_pattern` | direct, absent, partial, conflicting, indirect, mixed | Evidence relationship to query |
 
 Each case has:
 
@@ -306,12 +355,12 @@ Each case has:
   "rationale": "Context contains no financial data for the queried entity",
   "forbidden_claims": ["\\$\\d"],
   "required_elements": [],
-  "forbidden_elements": [],
-  "evaluation_config": {
-    "use_regex": true,
-    "case_insensitive": true,
-    "allowed_phrases": ["not specified", "cannot find"]
-  },
+  "domain": "finance",
+  "query_type": "what",
+  "source_type": "single",
+  "context_count": 1,
+  "reasoning_type": "factual",
+  "evidence_pattern": "absent",
   "metadata": {"tier": "tier1_core"}
 }
 ```
@@ -331,12 +380,16 @@ Each case has:
 | `rationale` | string | Why this mode is expected |
 | `forbidden_claims` | list[str] | Regex patterns indicating hallucination (grounding) |
 | `required_elements` | list[str] | Elements that must appear in the answer (relevance) |
-| `forbidden_elements` | list[str] | Patterns indicating false confidence (relevance) |
-| `evaluation_config` | dict | Evaluation settings (`use_regex`, `case_insensitive`, `allowed_phrases`, `min_required`) |
+| `domain` | string | Topic area (technology, finance, medicine, etc.) |
+| `query_type` | string | Question form (what, how, is, does, why, etc.) |
+| `source_type` | string | `single` or `multi_source` |
+| `context_count` | int | Number of context passages |
+| `reasoning_type` | string | factual, causal, comparative, procedural, evaluative, temporal |
+| `evidence_pattern` | string | direct, indirect, conflicting, absent, partial, mixed |
 
 ## Version
 
-Current version: **3.0.0**
+Current version: **4.1.0**
 
 See [CHANGELOG.md](CHANGELOG.md) for release history and [docs/roadmap](docs/roadmap/) for implementation details.
 
