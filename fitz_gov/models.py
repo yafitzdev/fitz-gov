@@ -87,6 +87,9 @@ class FitzGovCase:
     evaluation_config: dict[str, Any] = field(default_factory=dict)
     """Evaluation configuration (use_regex, allowed_phrases, etc.)."""
 
+    context_sources: list[dict[str, str]] = field(default_factory=list)
+    """Source metadata for multi-source cases. Each entry has source_id, source_type, authority."""
+
     metadata: dict[str, Any] = field(default_factory=dict)
     """Additional test case metadata."""
 
@@ -112,6 +115,8 @@ class FitzGovCase:
             result["forbidden_elements"] = self.forbidden_elements
         if self.evaluation_config:
             result["evaluation_config"] = self.evaluation_config
+        if self.context_sources:
+            result["context_sources"] = self.context_sources
         return result
 
     @classmethod
@@ -131,6 +136,7 @@ class FitzGovCase:
             required_elements=data.get("required_elements", []),
             forbidden_elements=data.get("forbidden_elements", []),
             evaluation_config=data.get("evaluation_config", {}),
+            context_sources=data.get("context_sources", []),
             metadata=data.get("metadata", {}),
         )
 

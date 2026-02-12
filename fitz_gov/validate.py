@@ -135,6 +135,28 @@ def check_quality(case: dict) -> list[str]:
     if mode not in valid_modes:
         issues.append(f"Invalid expected_mode: {mode}")
 
+    # context_sources validation
+    context_sources = case.get("context_sources", [])
+    if context_sources:
+        contexts = case.get("contexts", [])
+        if len(context_sources) != len(contexts):
+            issues.append(
+                f"context_sources length ({len(context_sources)}) != contexts length ({len(contexts)})"
+            )
+        valid_authorities = {"primary", "secondary", "tertiary", "official", "expert", "community"}
+        valid_source_types = {"academic", "news", "government", "industry", "blog", "reference", "report"}
+        for i, src in enumerate(context_sources):
+            if "source_id" not in src:
+                issues.append(f"context_sources[{i}] missing source_id")
+            if "source_type" not in src:
+                issues.append(f"context_sources[{i}] missing source_type")
+            elif src["source_type"] not in valid_source_types:
+                issues.append(f"context_sources[{i}] invalid source_type: {src['source_type']}")
+            if "authority" not in src:
+                issues.append(f"context_sources[{i}] missing authority")
+            elif src["authority"] not in valid_authorities:
+                issues.append(f"context_sources[{i}] invalid authority: {src['authority']}")
+
     # Category-specific checks
     category = case.get("category", "")
 

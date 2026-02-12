@@ -89,6 +89,9 @@ class FitzGovCase:
     relevant_doc_ids: list[str] = field(default_factory=list)
     """Document IDs from corpus that are relevant to this query (for Mode B)."""
 
+    context_sources: list[dict[str, str]] = field(default_factory=list)
+    """Source metadata for multi-source cases. Each entry has source_id, source_type, authority."""
+
     metadata: dict[str, Any] = field(default_factory=dict)
     """Additional test case metadata."""
 
@@ -111,6 +114,8 @@ class FitzGovCase:
             result["required_elements"] = self.required_elements
         if self.relevant_doc_ids:
             result["relevant_doc_ids"] = self.relevant_doc_ids
+        if self.context_sources:
+            result["context_sources"] = self.context_sources
         return result
 
     @classmethod
@@ -128,6 +133,7 @@ class FitzGovCase:
             forbidden_claims=data.get("forbidden_claims", []),
             required_elements=data.get("required_elements", []),
             relevant_doc_ids=data.get("relevant_doc_ids", []),
+            context_sources=data.get("context_sources", []),
             metadata=data.get("metadata", {}),
         )
 
