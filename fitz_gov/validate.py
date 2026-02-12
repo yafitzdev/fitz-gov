@@ -24,18 +24,35 @@ class ValidationResult:
 
 
 def load_all_cases(data_dir: Path) -> list[dict]:
-    """Load all cases from data directory."""
+    """Load all cases from data directory (supports both legacy and tiered structure)."""
     cases = []
-    cases_dir = data_dir / "cases"
 
-    for cat_dir in cases_dir.iterdir():
-        if cat_dir.is_dir():
-            for json_file in cat_dir.glob("*.json"):
+    # Try tiered structure first
+    tier_dirs = [data_dir / "tier0_sanity", data_dir / "tier1_core"]
+    found_tiered = any(d.exists() for d in tier_dirs)
+
+    if found_tiered:
+        for tier_dir in tier_dirs:
+            if not tier_dir.exists():
+                continue
+            for json_file in tier_dir.glob("*.json"):
                 with open(json_file, encoding="utf-8") as f:
                     data = json.load(f)
                     for case in data.get("cases", []):
                         case["_source_file"] = str(json_file)
                         cases.append(case)
+    else:
+        # Legacy flat structure
+        cases_dir = data_dir / "cases"
+        if cases_dir.exists():
+            for cat_dir in cases_dir.iterdir():
+                if cat_dir.is_dir():
+                    for json_file in cat_dir.glob("*.json"):
+                        with open(json_file, encoding="utf-8") as f:
+                            data = json.load(f)
+                            for case in data.get("cases", []):
+                                case["_source_file"] = str(json_file)
+                                cases.append(case)
 
     return cases
 
