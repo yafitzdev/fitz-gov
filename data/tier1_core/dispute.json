@@ -3810,6 +3810,1940 @@
         "converted_from": "t1_qualify_hard_137",
         "conversion_method": "remove_version_compat_context"
       }
+    },
+    {
+      "id": "t1_dispute_hard_618",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What percentage of the Amazon rainforest has been deforested since 1970?",
+      "contexts": [
+        "According to the Brazilian National Institute for Space Research (INPE) satellite analysis published in March 2024, approximately 17% of the original Amazon rainforest has been lost since 1970, with deforestation accelerating significantly between 2019 and 2022 before declining in 2023.",
+        "The World Wildlife Fund's 2024 Living Amazon Report estimates that roughly 20% of the Amazon biome has been converted to other land uses since the early 1970s, based on combined satellite imagery and ground-truth surveys across all nine Amazonian countries.",
+        "A peer-reviewed study in Nature Ecology & Evolution (January 2024) reports that 26% of the Amazon has been either deforested or severely degraded, noting that degradation from selective logging and fire damage is often missed by standard deforestation metrics."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "inpe_satellite_2024",
+          "source_type": "government",
+          "authority": "primary"
+        },
+        {
+          "source_id": "wwf_living_amazon_2024",
+          "source_type": "report",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "nature_eco_evo_2024",
+          "source_type": "academic",
+          "authority": "primary"
+        }
+      ],
+      "description": "Three credible sources provide different estimates of Amazon deforestation due to differing methodologies and scope definitions",
+      "rationale": "INPE reports 17% (pure deforestation, Brazil only), WWF reports 20% (all Amazon countries, land-use conversion), and the Nature study reports 26% (including degradation). The disagreement stems from whether degradation counts and which geographic scope is used."
+    },
+    {
+      "id": "t1_dispute_hard_619",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "How much does the ocean absorb of human CO2 emissions annually?",
+      "contexts": [
+        "The Global Carbon Budget 2024 report by the Global Carbon Project estimates that the ocean absorbs approximately 2.8 gigatons of carbon (GtC) per year, accounting for roughly 26% of total anthropogenic CO2 emissions.",
+        "A 2024 study published in Science using updated ocean circulation models and direct measurements found the ocean carbon sink to be closer to 3.6 GtC per year, suggesting previous estimates systematically undercount absorption in the Southern Ocean."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "global_carbon_budget_2024",
+          "source_type": "report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "science_ocean_sink_2024",
+          "source_type": "academic",
+          "authority": "primary"
+        }
+      ],
+      "description": "Two primary scientific sources disagree on the magnitude of annual ocean CO2 absorption by nearly 30%",
+      "rationale": "The Global Carbon Budget uses one methodology (atmospheric inversion models) yielding 2.8 GtC/yr while the Science study uses updated ocean models yielding 3.6 GtC/yr. Both are peer-reviewed and credible, but they disagree materially on a key climate metric."
+    },
+    {
+      "id": "t1_dispute_hard_620",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What is the half-life of PFAS chemicals in the human body?",
+      "contexts": [
+        "The U.S. CDC Agency for Toxic Substances and Disease Registry states that PFOS has a serum elimination half-life of approximately 5.4 years in humans, based on occupational exposure cohort studies conducted between 2000 and 2015.",
+        "A 2023 meta-analysis in Environmental Health Perspectives pooling data from 12 population studies across six countries estimated the PFOS half-life at 3.4 years (95% CI: 2.9-4.0), noting that earlier estimates were biased upward by ongoing low-level environmental exposure during the elimination period.",
+        "The European Food Safety Authority (EFSA) 2024 risk assessment uses a PFOS half-life of 4.8 years, derived from Nordic population studies where environmental exposure dropped sharply after regulatory bans."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "cdc_atsdr_pfas_profile",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "ehp_pfas_metaanalysis_2023",
+          "source_type": "academic",
+          "authority": "primary"
+        },
+        {
+          "source_id": "efsa_pfas_risk_2024",
+          "source_type": "government",
+          "authority": "official"
+        }
+      ],
+      "description": "Three authoritative sources report different half-life values for PFOS in humans: 5.4, 3.4, and 4.8 years",
+      "rationale": "CDC cites 5.4 years from occupational studies, a meta-analysis finds 3.4 years after correcting for ongoing exposure bias, and EFSA uses 4.8 years from post-ban Nordic data. All are credible but the estimates differ by up to 60%, reflecting genuine scientific uncertainty about PFAS pharmacokinetics."
+    },
+    {
+      "id": "t1_dispute_hard_621",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What is the current rate of sea level rise per year?",
+      "contexts": [
+        "NASA's Sea Level Change Portal reports that global mean sea level is currently rising at 3.7 millimeters per year, based on satellite altimetry data from the Jason-3 and Sentinel-6 missions, averaged over the 2013-2023 decade.",
+        "The IPCC Sixth Assessment Report (AR6, 2021) states the rate of global mean sea level rise was 3.1 mm/yr over the 1993-2010 period, with acceleration detected but not yet fully quantified for the most recent decade.",
+        "A 2024 study in Nature Climate Change using recalibrated tide gauge records combined with satellite data estimates the current rate at 4.4 mm/yr, arguing that previous satellite-only estimates miss coastal subsidence effects."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "nasa_sea_level_portal_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "ipcc_ar6_wg1_2021",
+          "source_type": "report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "nature_cc_sealevel_2024",
+          "source_type": "academic",
+          "authority": "primary"
+        }
+      ],
+      "description": "Three sources report different current rates of sea level rise: 3.1, 3.7, and 4.4 mm/yr",
+      "rationale": "The sources disagree because they use different time windows, measurement techniques, and definitions of 'sea level rise.' NASA's satellite altimetry gives 3.7 mm/yr, the IPCC's older period gives 3.1 mm/yr, and a newer study incorporating coastal subsidence gives 4.4 mm/yr."
+    },
+    {
+      "id": "t1_dispute_hard_622",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "Is employer monitoring of employee emails legal in the European Union?",
+      "contexts": [
+        "The European Court of Human Rights ruled in Barbulescu v. Romania (2017, Grand Chamber) that employers may not monitor employee communications without prior notice and a legitimate purpose, and that employees have a reasonable expectation of privacy even when using work devices.",
+        "A 2024 European Data Protection Board guidance document states that employers may process employee email metadata for security purposes under GDPR Article 6(1)(f) (legitimate interest), provided they conduct a data protection impact assessment and implement proportionality safeguards.",
+        "The French CNIL issued a decision in November 2023 fining a Paris-based company EUR 300,000 for systematically monitoring employee emails, ruling that even with prior notice, comprehensive email surveillance is disproportionate under French implementation of the GDPR."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "echr_barbulescu_2017",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "edpb_guidance_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "cnil_decision_2023",
+          "source_type": "government",
+          "authority": "official"
+        }
+      ],
+      "description": "EU-level court precedent, EDPB guidance, and a national regulator decision give different answers about the legality of employee email monitoring",
+      "rationale": "The ECHR allows monitoring with notice and legitimate purpose, the EDPB permits metadata processing under legitimate interest with safeguards, but the French CNIL ruled that even notified comprehensive monitoring is disproportionate. The legal landscape is genuinely fragmented."
+    },
+    {
+      "id": "t1_dispute_hard_623",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "Does the First Amendment protect hate speech in the United States?",
+      "contexts": [
+        "The Congressional Research Service report 'The First Amendment: Categories of Unprotected Speech' (updated 2024) notes that the Supreme Court has never recognized 'hate speech' as a categorical exception to the First Amendment, and that content-based restrictions are subject to strict scrutiny.",
+        "A 2023 Harvard Law Review article argues that while hate speech lacks a formal exception, the Court's decisions in cases like Virginia v. Black (2003) and Wisconsin v. Mitchell (1993) demonstrate that speech motivated by bias receives less protection when it constitutes true threats, incitement, or enhances criminal sentencing.",
+        "The ACLU's current legal position statement holds that hate speech is fully protected under the First Amendment unless it falls into an independently recognized exception such as incitement to imminent lawless action or true threats, and that there is no hate speech exception."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "crs_first_amendment_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "harvard_law_review_2023",
+          "source_type": "academic",
+          "authority": "primary"
+        },
+        {
+          "source_id": "aclu_free_speech_position",
+          "source_type": "reference",
+          "authority": "expert"
+        }
+      ],
+      "description": "Legal sources agree there is no categorical hate speech exception but disagree on the practical level of protection such speech receives",
+      "rationale": "The CRS and ACLU say hate speech is protected (no exception exists), while the Harvard Law Review argues the practical reality is more nuanced since bias-motivated expression often overlaps with less-protected categories like true threats. The formal legal answer and the practical legal landscape diverge."
+    },
+    {
+      "id": "t1_dispute_hard_624",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "Can an employer require employees to sign a non-compete agreement in California?",
+      "contexts": [
+        "California Business and Professions Code Section 16600, as amended by AB 1076 (effective January 2024), declares that every contract restraining anyone from engaging in a lawful profession, trade, or business is void, with narrow exceptions for the sale of a business or dissolution of a partnership.",
+        "A January 2024 advisory from the law firm Littler Mendelson notes that despite California's strong prohibition, employers can still protect their interests through narrowly tailored non-solicitation agreements targeting specific clients, provided the agreements do not effectively function as non-competes.",
+        "The FTC's proposed federal non-compete ban rule (published January 2023, stayed by court order August 2024) would have preempted state law and banned most non-compete agreements nationwide, but its legal status remains uncertain after the Ryan LLC v. FTC ruling in the Northern District of Texas."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "ca_bpc_16600_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "littler_advisory_2024",
+          "source_type": "industry",
+          "authority": "expert"
+        },
+        {
+          "source_id": "ftc_noncompete_rule_2023",
+          "source_type": "government",
+          "authority": "official"
+        }
+      ],
+      "description": "California law bans non-competes but sources disagree on scope of permissible alternatives and interaction with potential federal preemption",
+      "rationale": "State law clearly voids non-competes, but a law firm advisory suggests non-solicitation agreements remain viable, and the FTC's stayed federal rule creates uncertainty about the future landscape. The answer to whether an employer 'can require' such an agreement depends on exact agreement type and evolving federal law."
+    },
+    {
+      "id": "t1_dispute_hard_625",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "Is it legal to record a phone call without the other party's consent in Australia?",
+      "contexts": [
+        "The Telecommunications (Interception and Access) Act 1979 (Cth) Section 7 prohibits the interception of communications passing over a telecommunications system, but Section 7(2)(a) allows a party to the communication to record it without the other party's consent at the federal level.",
+        "The Victorian Surveillance Devices Act 1999 Section 6 makes it an offence to knowingly use a listening device to record a private conversation to which you are a party without the consent of all parties, with penalties up to 2 years imprisonment.",
+        "The Queensland Invasion of Privacy Act 1971 Section 43 similarly requires all-party consent for recording telephone conversations, while New South Wales permits single-party consent under the Surveillance Devices Act 2007 Section 7(3)(b)."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "aus_tia_act_1979",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "vic_surveillance_act_1999",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "qld_nsw_privacy_acts",
+          "source_type": "government",
+          "authority": "official"
+        }
+      ],
+      "description": "Federal Australian law permits single-party recording but several state laws require all-party consent, creating genuine legal conflict",
+      "rationale": "Federal law allows recording by a party to the call, but Victoria and Queensland require all-party consent while NSW follows the federal approach. The answer depends entirely on which state the recorder is in and which law takes precedence in a conflict."
+    },
+    {
+      "id": "t1_dispute_hard_626",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "How many people died during the Great Leap Forward famine in China (1959-1961)?",
+      "contexts": [
+        "Demographer Judith Banister's landmark 1987 study 'China's Changing Population' estimated 30 million excess deaths during the Great Leap Forward, a figure widely cited in Western scholarship and based on reconstructed census data.",
+        "Yang Jisheng, a Chinese journalist and historian, estimated 36 million deaths in his 2008 book 'Tombstone' (Mubei), drawing on provincial archives, internal Communist Party documents, and county-level mortality records that were declassified in the 1990s.",
+        "A 2017 demographic study by Cormac O Grada published in the Journal of Economic Literature reviewed all major estimates and concluded the likely range is 15-55 million, with a central estimate of approximately 22 million, arguing that earlier figures were inflated by double-counting and faulty population baseline assumptions."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "banister_china_pop_1987",
+          "source_type": "academic",
+          "authority": "primary"
+        },
+        {
+          "source_id": "yang_tombstone_2008",
+          "source_type": "reference",
+          "authority": "primary"
+        },
+        {
+          "source_id": "ograda_jel_2017",
+          "source_type": "academic",
+          "authority": "primary"
+        }
+      ],
+      "description": "Scholarly estimates of Great Leap Forward deaths range from 22 million to 36 million, with no consensus achievable due to data limitations",
+      "rationale": "Three respected sources give materially different death tolls: Banister (30M), Yang (36M), and O Grada (22M). The disagreement persists because Chinese demographic data from the period is incomplete and politically contested, making a definitive count impossible."
+    },
+    {
+      "id": "t1_dispute_hard_627",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "Who was the first person to reach the North Pole?",
+      "contexts": [
+        "The National Geographic Society officially recognized Robert Peary's claim to have reached the North Pole on April 6, 1909, awarding him a gold medal and defending his priority for over a century.",
+        "A 1988 re-analysis of Peary's navigation logs by astronomer Dennis Rawlins, published in the journal Polar Record, concluded that Peary likely fell 30-60 miles short of the pole, based on inconsistencies in his sun sighting records and an implausibly fast return speed of 135 miles in 56 hours.",
+        "Historian Robert Bryce's 1997 book 'Cook & Peary: The Polar Controversy, Resolved' argues that neither Peary nor rival claimant Frederick Cook reached the pole, and that the first verified surface attainment was Ralph Plaisted's snowmobile expedition in April 1968, confirmed by Air Force satellite navigation."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "natgeo_peary_recognition",
+          "source_type": "reference",
+          "authority": "primary"
+        },
+        {
+          "source_id": "rawlins_polar_record_1988",
+          "source_type": "academic",
+          "authority": "primary"
+        },
+        {
+          "source_id": "bryce_cook_peary_1997",
+          "source_type": "reference",
+          "authority": "primary"
+        }
+      ],
+      "description": "Historical sources disagree on whether Peary actually reached the North Pole in 1909 or whether the first verified attainment was decades later",
+      "rationale": "National Geographic upholds Peary's 1909 claim, but a navigation re-analysis suggests he fell short, and a comprehensive historical study argues neither early claimant succeeded. The first verified attainment may actually have been Plaisted in 1968."
+    },
+    {
+      "id": "t1_dispute_hard_628",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "When was the printing press invented?",
+      "contexts": [
+        "The Encyclopaedia Britannica states that Johannes Gutenberg invented the movable-type printing press in Mainz, Germany, around 1440, with the first major printed work being the Gutenberg Bible completed by 1455.",
+        "A 2001 study by Korean historian Park Byeng-Sen and UNESCO scholarship established that Jikji, a Korean Buddhist text printed with movable metal type, was produced at Heungdeok-sa temple in Cheongju in 1377, predating Gutenberg by roughly 60 years. The UNESCO Memory of the World Register lists it as the world's oldest extant book printed with movable metal type."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "britannica_gutenberg",
+          "source_type": "reference",
+          "authority": "primary"
+        },
+        {
+          "source_id": "unesco_jikji_2001",
+          "source_type": "government",
+          "authority": "official"
+        }
+      ],
+      "description": "Western and East Asian sources attribute movable-type printing to different inventors separated by 60 years",
+      "rationale": "Britannica credits Gutenberg (c. 1440) while UNESCO recognizes a Korean movable metal type print from 1377. The answer depends on whether 'invention of the printing press' means the European mechanized press or the earlier East Asian movable metal type technology."
+    },
+    {
+      "id": "t1_dispute_hard_629",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What is the fastest recorded tennis serve in professional history?",
+      "contexts": [
+        "The ATP official records list John Isner's serve of 157.2 mph (253.0 km/h) at the 2016 Davis Cup as the fastest recorded serve in professional men's tennis, measured by Hawk-Eye electronic line-calling technology.",
+        "The Guinness World Records recognizes Sam Groth's serve of 163.7 mph (263.4 km/h), hit during a 2012 Challenger event in Busan, South Korea, as the fastest tennis serve ever recorded, though this was measured by a Doppler radar gun rather than Hawk-Eye."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "atp_official_records_2024",
+          "source_type": "reference",
+          "authority": "official"
+        },
+        {
+          "source_id": "guinness_tennis_serve",
+          "source_type": "reference",
+          "authority": "official"
+        }
+      ],
+      "description": "ATP and Guinness World Records recognize different serves as the fastest due to different measurement technologies",
+      "rationale": "The ATP uses Hawk-Eye (camera-based) measuring 157.2 mph for Isner, while Guinness accepts a Doppler radar measurement of 163.7 mph for Groth. The discrepancy stems from different measurement standards and the ATP does not recognize radar gun readings for its official records."
+    },
+    {
+      "id": "t1_dispute_hard_630",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "How many career goals did Pele score?",
+      "contexts": [
+        "FIFA's official website states that Pele scored 757 goals in 831 official matches during his career with Santos FC, the New York Cosmos, and the Brazilian national team.",
+        "The Pele Foundation and the Santos FC museum count 1,283 goals when including friendly matches, exhibition games, and unofficial international tours, a figure that Pele himself frequently cited during his lifetime.",
+        "The Rec.Sport.Soccer Statistics Foundation (RSSSF), an independent football statistics organization, has documented 767 goals in official competitive matches after reviewing match reports and club records, noting that some of FIFA's early match classifications contain errors."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "fifa_pele_profile",
+          "source_type": "reference",
+          "authority": "official"
+        },
+        {
+          "source_id": "pele_foundation_records",
+          "source_type": "reference",
+          "authority": "primary"
+        },
+        {
+          "source_id": "rsssf_pele_goals",
+          "source_type": "reference",
+          "authority": "expert"
+        }
+      ],
+      "description": "FIFA, the Pele Foundation, and independent statisticians all cite different career goal totals for Pele",
+      "rationale": "The dispute centers on which matches count as 'official': FIFA says 757 in official matches, the Pele Foundation counts 1,283 including friendlies, and the RSSSF independently verified 767 in competitive play. There is no consensus even among credible sources on the correct number."
+    },
+    {
+      "id": "t1_dispute_hard_631",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What is the correct length of a marathon in miles?",
+      "contexts": [
+        "World Athletics (formerly IAAF) defines the official marathon distance as 42.195 kilometers, which it states equals 26 miles 385 yards (26.2188 miles), the standard used for all sanctioned races worldwide since 1921.",
+        "The Boston Athletic Association's course measurement documentation states the Boston Marathon course is certified at 26 miles and 385 yards via calibrated Jones Counter measurements, but notes that due to point-to-point course topology with a net elevation drop of 459 feet, times run on the course are not eligible for world records under World Athletics Rule 260.28(c).",
+        "A 2019 analysis in the Journal of Sports Sciences measured GPS data from 37,000 runners across six World Marathon Majors and found that the average distance actually run by participants was 26.4-26.7 miles due to tangent deviation, weaving, and course crowding effects."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "world_athletics_rules_2024",
+          "source_type": "reference",
+          "authority": "official"
+        },
+        {
+          "source_id": "baa_course_certification",
+          "source_type": "reference",
+          "authority": "official"
+        },
+        {
+          "source_id": "jss_marathon_gps_2019",
+          "source_type": "academic",
+          "authority": "primary"
+        }
+      ],
+      "description": "The official marathon distance is defined but sources disagree on whether commonly run marathon courses actually match that distance in practice",
+      "rationale": "While the official distance is 26.2188 miles, the Boston course has elevation issues affecting record eligibility, and GPS data shows runners actually cover 26.4-26.7 miles. The 'correct length' depends on whether you mean the defined distance, certified course distance, or distance actually run."
+    },
+    {
+      "id": "t1_dispute_hard_632",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What is the average annual return of the S&P 500?",
+      "contexts": [
+        "According to data from NYU Stern School of Business (Aswath Damodaran's dataset), the arithmetic average annual return of the S&P 500 from 1928 to 2023 was 11.66%, including dividends.",
+        "Vanguard's 2024 Market Perspectives report states that the S&P 500 has returned an average of 10.3% annually over the past 30 years (1994-2023), a figure frequently cited in retirement planning materials.",
+        "When adjusted for inflation using CPI data from the Bureau of Labor Statistics, the real (inflation-adjusted) average annual return of the S&P 500 from 1928 to 2023 was approximately 8.0%, as calculated by the Federal Reserve Bank of St. Louis FRED database."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "nyu_stern_damodaran_2024",
+          "source_type": "academic",
+          "authority": "primary"
+        },
+        {
+          "source_id": "vanguard_market_perspectives_2024",
+          "source_type": "industry",
+          "authority": "expert"
+        },
+        {
+          "source_id": "fred_sp500_real_returns",
+          "source_type": "government",
+          "authority": "official"
+        }
+      ],
+      "description": "Three financial sources cite different average annual S&P 500 returns: 11.66%, 10.3%, and 8.0%",
+      "rationale": "The disagreement stems from different time periods (1928-2023 vs 30-year), nominal vs real returns, and arithmetic vs geometric averaging. All three numbers are factually correct in their own terms but give very different impressions of stock market performance."
+    },
+    {
+      "id": "t1_dispute_hard_633",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What is the current U.S. national debt?",
+      "contexts": [
+        "The U.S. Treasury's Daily Treasury Statement for January 31, 2025 shows the total public debt outstanding at $36.22 trillion, which includes both debt held by the public ($28.91 trillion) and intragovernmental holdings ($7.31 trillion).",
+        "The Congressional Budget Office's February 2025 budget outlook reports federal debt held by the public at $28.9 trillion (approximately 99% of GDP), which it notes is the economically relevant measure because intragovernmental debt represents money the government owes to itself.",
+        "USDebtClock.org, a widely cited real-time tracker, displayed $36.4 trillion on February 1, 2025, and projects total unfunded liabilities including Social Security and Medicare obligations at over $200 trillion."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "treasury_daily_statement_2025",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "cbo_budget_outlook_2025",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "usdebtclock_2025",
+          "source_type": "reference",
+          "authority": "secondary"
+        }
+      ],
+      "description": "Sources cite U.S. national debt as $28.9T, $36.2T, or $200T+ depending on what obligations are included",
+      "rationale": "The Treasury reports total public debt ($36.2T), the CBO focuses on debt held by public ($28.9T) as the economically meaningful figure, and USDebtClock includes unfunded liabilities ($200T+). The 'national debt' depends entirely on which definition is used."
+    },
+    {
+      "id": "t1_dispute_hard_634",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What is the global inflation rate as of 2024?",
+      "contexts": [
+        "The International Monetary Fund's World Economic Outlook (October 2024) projects global headline inflation at 5.8% for 2024, down from 6.8% in 2023, using a GDP-weighted average across 196 countries.",
+        "The World Bank's Global Economic Prospects (January 2025) reports 2024 global inflation at 4.2%, calculated as a median across all countries rather than a GDP-weighted average, which reduces the influence of large emerging economies with high inflation."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "imf_weo_oct_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "world_bank_gep_jan_2025",
+          "source_type": "government",
+          "authority": "official"
+        }
+      ],
+      "description": "IMF and World Bank report different global inflation rates for 2024 (5.8% vs 4.2%) due to different aggregation methods",
+      "rationale": "The IMF uses GDP-weighted averaging (giving more weight to large high-inflation economies) yielding 5.8%, while the World Bank uses median-country inflation yielding 4.2%. Both are official international financial institutions using the same underlying country data but different statistical approaches."
+    },
+    {
+      "id": "t1_dispute_hard_635",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "How much energy does Bitcoin mining consume annually?",
+      "contexts": [
+        "The Cambridge Centre for Alternative Finance Bitcoin Electricity Consumption Index estimates Bitcoin's annualized electricity consumption at 95.5 TWh as of January 2025, based on an economic model that accounts for miner profitability and hardware efficiency.",
+        "A 2024 report by the International Energy Agency (IEA) estimates Bitcoin mining consumed approximately 130 TWh in 2024, comparable to the electricity consumption of Argentina, using top-down analysis of global hashrate and assumed power usage effectiveness.",
+        "Greenpeace's 'Change the Code, Not the Climate' campaign cites Bitcoin energy consumption at 173 TWh per year, referencing Digiconomist's index which includes estimates of embodied energy in hardware manufacturing and cooling infrastructure."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "cambridge_cbeci_2025",
+          "source_type": "academic",
+          "authority": "primary"
+        },
+        {
+          "source_id": "iea_crypto_energy_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "greenpeace_bitcoin_campaign",
+          "source_type": "report",
+          "authority": "secondary"
+        }
+      ],
+      "description": "Three sources estimate Bitcoin energy consumption at 95.5, 130, and 173 TWh/year using different methodologies and scope definitions",
+      "rationale": "Cambridge uses economic modeling (95.5 TWh), IEA uses top-down hashrate analysis (130 TWh), and Digiconomist includes hardware lifecycle energy (173 TWh). The estimates differ by nearly 2x because they define 'energy consumption' differently and use different modeling approaches."
+    },
+    {
+      "id": "t1_dispute_hard_636",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "What percentage of internet traffic is generated by bots?",
+      "contexts": [
+        "Imperva's 2024 Bad Bot Report (analyzing data from the Imperva global network) states that 49.6% of all internet traffic in 2023 was generated by bots, with bad bots accounting for 32% and good bots (search crawlers, monitoring services) accounting for 17.6%.",
+        "Cloudflare's 2024 Radar Year-in-Review report, based on traffic across its network serving approximately 20% of all websites, estimates bot traffic at 38% of total internet traffic, with automated API calls and AI training crawlers growing 40% year-over-year.",
+        "Akamai's State of the Internet Report (Q4 2024) measured bot traffic at 42% of web requests across its content delivery network, noting significant variation by industry: financial services saw 65% bot traffic while media sites averaged 35%."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "imperva_bot_report_2024",
+          "source_type": "industry",
+          "authority": "expert"
+        },
+        {
+          "source_id": "cloudflare_radar_2024",
+          "source_type": "industry",
+          "authority": "expert"
+        },
+        {
+          "source_id": "akamai_soti_q4_2024",
+          "source_type": "industry",
+          "authority": "expert"
+        }
+      ],
+      "description": "Three major CDN/security companies report bot traffic as 38%, 42%, and 49.6% of internet traffic",
+      "rationale": "Each company measures bot traffic through its own network, which has different customer composition and detection capabilities. Imperva reports 49.6%, Cloudflare 38%, and Akamai 42%. The true figure is unknowable because each vendor sees only a portion of the internet."
+    },
+    {
+      "id": "t1_dispute_hard_637",
+      "difficulty": "hard",
+      "subcategory": "cross_source_contradiction",
+      "query": "How many software developers are there worldwide?",
+      "contexts": [
+        "Evans Data Corporation's Global Developer Population and Demographics Study (2024 edition) estimates 28.7 million professional software developers worldwide, based on surveys of companies, job posting analysis, and government labor statistics across 40 countries.",
+        "GitHub's 2024 Octoverse report states that GitHub now has over 100 million developer accounts, with 31 million accounts active in the past year, though this includes hobbyists, students, and contributors who are not professional developers.",
+        "SlashData's Developer Nation survey (Q1 2025) estimates 43.1 million active software developers globally, using a broader definition that includes part-time developers, DevOps engineers, data scientists who code, and technical managers who write code regularly."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "evans_data_2024",
+          "source_type": "industry",
+          "authority": "primary"
+        },
+        {
+          "source_id": "github_octoverse_2024",
+          "source_type": "industry",
+          "authority": "primary"
+        },
+        {
+          "source_id": "slashdata_devnation_2025",
+          "source_type": "industry",
+          "authority": "primary"
+        }
+      ],
+      "description": "Industry sources estimate the global developer population at 28.7M, 31M active on GitHub, or 43.1M depending on definition",
+      "rationale": "Evans Data counts only professional developers (28.7M), GitHub reports active accounts (31M, mixing professional and hobbyist), and SlashData uses a broad definition including part-time coders (43.1M). The count depends entirely on who qualifies as a 'software developer.'"
+    },
+    {
+      "id": "t1_dispute_hard_638",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Is microwave radiation from cell phones linked to cancer?",
+      "contexts": [
+        "The World Health Organization's International Agency for Research on Cancer (IARC) classified radiofrequency electromagnetic fields as 'possibly carcinogenic to humans' (Group 2B) in 2011, based on limited evidence of increased glioma risk among heavy cell phone users from the Interphone study and Hardell group studies.",
+        "The U.S. National Toxicology Program (NTP) 2018 study, a 10-year, $30 million investigation exposing rats to cell phone radiation, found 'clear evidence' of heart tumors (schwannomas) and 'some evidence' of brain tumors (malignant gliomas) in male rats at high exposure levels.",
+        "A widely cited 2020 blog post by physicist Dr. Sabine Hossenfelder argues that the NTP study is irrelevant because the radiation levels used were far higher than typical human exposure, and that basic physics shows non-ionizing radiation at cell phone frequencies cannot break DNA bonds or cause mutations."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "who_iarc_rf_2011",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "ntp_cellphone_study_2018",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "hossenfelder_blog_2020",
+          "source_type": "blog",
+          "authority": "community"
+        }
+      ],
+      "description": "Two major government agencies found possible cancer links from cell phone radiation while a popular science blog dismisses the findings on physics grounds",
+      "rationale": "WHO/IARC (official, primary) classifies RF as possibly carcinogenic, the NTP (official) found clear evidence in rodents, but a physics blogger (community) argues the mechanism is physically impossible. The authoritative sources suggest concern while the weaker source provides a plausible physics-based counterargument."
+    },
+    {
+      "id": "t1_dispute_hard_639",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Are neonicotinoid pesticides the primary cause of bee colony collapse?",
+      "contexts": [
+        "The European Food Safety Authority (EFSA) 2018 scientific assessment concluded that three neonicotinoid pesticides (clothianidin, imidacloprid, and thiamethoxam) pose unacceptable risks to wild and managed bees, leading to the EU's outdoor use ban. The assessment was based on over 1,500 studies and found both acute and chronic effects on bee survival, reproduction, and behavior.",
+        "A 2023 position paper published by CropLife International, the global trade association representing pesticide manufacturers including Bayer and Syngenta, argues that bee population declines are primarily driven by the Varroa destructor mite, habitat loss, and climate stress, and that laboratory studies showing neonicotinoid harm use unrealistically high exposure levels that do not reflect field conditions."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "efsa_neonicotinoid_2018",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "croplife_bee_health_2023",
+          "source_type": "industry",
+          "authority": "secondary"
+        }
+      ],
+      "description": "EU food safety authority implicates neonicotinoids as a major bee threat while the pesticide industry trade group attributes decline primarily to mites and habitat loss",
+      "rationale": "EFSA (official, government) conducted a comprehensive review finding unacceptable risk, while CropLife (industry, secondary) argues the real drivers are parasites and habitat. The industry source has a clear financial interest but raises scientifically valid points about field vs lab exposure levels."
+    },
+    {
+      "id": "t1_dispute_hard_640",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Are tip pools that include managers legal under U.S. federal law?",
+      "contexts": [
+        "The U.S. Department of Labor's final rule implementing the Consolidated Appropriations Act of 2018, effective December 2021, states that employers who do not take a tip credit may include supervisors and managers in tip pools, provided those managers do not have hiring/firing authority and their 'managerial' duties constitute less than 20% of their work time in the tipped role.",
+        "A 2024 article on the restaurant industry blog 'Toast Restaurant Management' advises that 'managers can never participate in tip pools under federal law' and recommends restaurants establish separate service charge systems to supplement manager compensation, citing the Fair Labor Standards Act Section 3(m) as the controlling statute."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "dol_tip_pool_rule_2021",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "toast_blog_tip_pools_2024",
+          "source_type": "blog",
+          "authority": "community"
+        }
+      ],
+      "description": "DOL official rule allows managers in tip pools under specific conditions while an industry blog states it is categorically illegal",
+      "rationale": "The DOL's official rule (the authoritative source) permits managers in tip pools when the employer does not take a tip credit and the manager's duties meet specific thresholds. The restaurant blog (community source) states a flat prohibition that reflects the older pre-2018 rule. The blog is factually wrong but widely read in the industry, creating real-world confusion."
+    },
+    {
+      "id": "t1_dispute_hard_641",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Does the GDPR apply to companies outside the European Union?",
+      "contexts": [
+        "Article 3(2) of the General Data Protection Regulation (EU) 2016/679 explicitly states that the GDPR applies to organizations not established in the EU when they process personal data of individuals who are in the EU, if the processing relates to offering goods or services to such individuals or monitoring their behavior within the EU. The European Data Protection Board's Guidelines 3/2018 further clarify that merely having a website accessible from the EU is insufficient to trigger GDPR applicability.",
+        "A 2024 analysis published on the Forbes Technology Council contributor platform argues that the GDPR's extraterritorial reach is 'largely theoretical' for small and medium businesses outside the EU, noting that no enforcement action has been successfully executed against a non-EU company with no EU establishment, no EU bank accounts, and no EU assets, and that the estimated cost of cross-border enforcement makes pursuing small violators economically impractical for data protection authorities."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "gdpr_regulation_2016_679",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "forbes_tech_council_gdpr_2024",
+          "source_type": "news",
+          "authority": "secondary"
+        }
+      ],
+      "description": "The GDPR text clearly applies extraterritorially but a business publication argues the practical enforceability is minimal for non-EU companies",
+      "rationale": "The GDPR (official) explicitly claims extraterritorial jurisdiction over non-EU companies processing EU personal data. The Forbes contributor (secondary) argues this is de facto unenforceable for small foreign companies. The legal text and practical reality genuinely diverge, creating a dispute about what 'applies' means."
+    },
+    {
+      "id": "t1_dispute_hard_642",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Is passive index investing causing a stock market bubble?",
+      "contexts": [
+        "A 2024 working paper by researchers at the Federal Reserve Board of Governors, published in the FEDS Notes series, examined whether passive fund flows distort stock prices and concluded that 'the evidence does not support the hypothesis that passive investing has created a broad market bubble,' noting that arbitrage mechanisms in the market continue to function and that passive fund inflows track economic fundamentals rather than drive them.",
+        "Michael Burry, the hedge fund manager featured in 'The Big Short' for predicting the 2008 financial crisis, told Bloomberg in a September 2024 interview that passive investing has created 'the next market bubble' because index funds buy stocks based on market cap rather than fundamentals, causing overvaluation of the largest companies and reducing price discovery. Burry compared it to the CDO crisis where 'capital allocation was divorced from analysis.'"
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "fed_feds_notes_passive_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "bloomberg_burry_interview_2024",
+          "source_type": "news",
+          "authority": "expert"
+        }
+      ],
+      "description": "Federal Reserve researchers find no evidence of a passive investing bubble while a prominent investor who predicted the 2008 crisis warns one is forming",
+      "rationale": "The Fed's research (official, methodical) finds no bubble evidence, while Michael Burry (expert with track record but individual opinion) warns of one. Both have credibility: the Fed has analytical rigor, Burry has a proven record of identifying bubbles others missed."
+    },
+    {
+      "id": "t1_dispute_hard_643",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Is cryptocurrency a good hedge against inflation?",
+      "contexts": [
+        "The Bank for International Settlements (BIS) Quarterly Review (March 2024) analyzed Bitcoin and Ethereum price behavior during the 2021-2023 global inflation surge and found that cryptocurrencies behaved as 'risk-on speculative assets rather than inflation hedges,' with correlation to NASDAQ exceeding 0.75 during high-inflation periods and significant drawdowns during monetary tightening.",
+        "ARK Invest's 'Big Ideas 2025' research report, authored by Cathie Wood's team, argues that Bitcoin is 'digital gold' and the superior inflation hedge for the 21st century, citing its fixed supply cap of 21 million coins, increasing institutional adoption, and the historical 230% annualized return from 2011-2024 which vastly outpaced inflation in any measurement period."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "bis_quarterly_mar_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "ark_invest_big_ideas_2025",
+          "source_type": "industry",
+          "authority": "secondary"
+        }
+      ],
+      "description": "The Bank for International Settlements found crypto behaves as a speculative asset during inflation while ARK Invest argues it is a superior inflation hedge",
+      "rationale": "The BIS (official, neutral) presents empirical evidence that crypto correlated with risk assets during actual inflation, while ARK Invest (industry, pro-crypto) argues theoretical properties make it an inflation hedge. The dispute is between empirical historical performance and theoretical supply-side arguments."
+    },
+    {
+      "id": "t1_dispute_hard_644",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Is intermittent fasting effective for long-term weight loss?",
+      "contexts": [
+        "A 2023 systematic review and meta-analysis published in the New England Journal of Medicine, analyzing 27 randomized controlled trials with a total of 3,912 participants followed for 12+ months, found that intermittent fasting produced weight loss statistically indistinguishable from continuous caloric restriction at the 12-month mark (mean difference: 0.4 kg, 95% CI: -0.8 to 1.6), and that dropout rates were higher in fasting groups (34% vs 26%).",
+        "A viral 2024 YouTube video by Dr. Jason Fung (6.2 million views), a nephrologist and bestselling author of 'The Obesity Code,' presents intermittent fasting as 'the most powerful weight loss tool ever discovered,' citing insulin reduction as the key mechanism and referencing individual patient case studies showing 30-50 kg weight loss maintained over 2-3 years."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "nejm_if_metaanalysis_2023",
+          "source_type": "academic",
+          "authority": "primary"
+        },
+        {
+          "source_id": "fung_youtube_if_2024",
+          "source_type": "blog",
+          "authority": "community"
+        }
+      ],
+      "description": "A major meta-analysis finds intermittent fasting no better than caloric restriction while a popular physician influencer promotes it as uniquely powerful",
+      "rationale": "The NEJM meta-analysis (primary, academic) found IF equivalent to caloric restriction with higher dropout, while Dr. Fung (community, popular) presents dramatic individual cases and a mechanistic argument. The authoritative evidence shows no special advantage but the popular source is more persuasive to the public."
+    },
+    {
+      "id": "t1_dispute_hard_645",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Should adults take a daily multivitamin supplement?",
+      "contexts": [
+        "The U.S. Preventive Services Task Force (USPSTF) 2022 recommendation statement, based on a systematic review of 84 studies with over 700,000 participants, concluded with a Grade I statement (insufficient evidence) that 'the current evidence is insufficient to assess the balance of benefits and harms of multivitamin supplementation for the prevention of cardiovascular disease, cancer, or mortality in the general adult population.'",
+        "The supplement brand Nature Made's website and marketing materials state that 'taking a daily multivitamin helps fill nutritional gaps in your diet' and that their products are 'the #1 pharmacist recommended vitamin and supplement brand,' citing a Pharmacy Times survey of pharmacist recommendations.",
+        "A 2024 post on the wellness blog MindBodyGreen, authored by a naturopathic doctor, recommends that 'every adult should take a high-quality multivitamin daily' because 'modern soil depletion has reduced nutrient density in food by up to 40% since the 1950s.'"
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "uspstf_multivitamin_2022",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "nature_made_website",
+          "source_type": "industry",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "mindbodygreen_vitamins_2024",
+          "source_type": "blog",
+          "authority": "community"
+        }
+      ],
+      "description": "USPSTF finds insufficient evidence for daily multivitamins while supplement manufacturers and wellness blogs promote them",
+      "rationale": "The USPSTF (official, systematic review) found insufficient evidence to recommend for or against multivitamins. Nature Made (industry, financial interest) markets their necessity, and a wellness blog (community) recommends them based on soil depletion claims. The authoritative source is agnostic while lower-authority sources make strong positive claims."
+    },
+    {
+      "id": "t1_dispute_hard_646",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Will artificial general intelligence (AGI) be achieved by 2030?",
+      "contexts": [
+        "A 2024 survey of 2,778 AI researchers published in the journal AI & Society, conducted by Katja Grace et al., found the median estimate for a 50% probability of human-level machine intelligence (HLMI) was 2047, with only 10% of respondents placing the date before 2030. The survey noted significant disagreement among experts, with estimates ranging from 2025 to never.",
+        "OpenAI CEO Sam Altman stated in a January 2025 blog post titled 'The Intelligence Age' that 'we are now confident that we know how to build AGI as we have traditionally understood it' and predicted that 'superintelligence could be achieved within a few thousand days,' implying AGI by approximately 2027-2028. He cited scaling laws, improved training techniques, and internal benchmark results not yet publicly disclosed."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "grace_ai_survey_2024",
+          "source_type": "academic",
+          "authority": "primary"
+        },
+        {
+          "source_id": "altman_blog_jan_2025",
+          "source_type": "blog",
+          "authority": "expert"
+        }
+      ],
+      "description": "A large survey of AI researchers puts the median AGI date at 2047 while the CEO of a leading AI lab predicts it by ~2028",
+      "rationale": "The expert survey (primary, academic, large sample) gives a median of 2047 with wide uncertainty, while Sam Altman (expert individual, interested party) predicts ~2028 based on proprietary data. The broad expert consensus is far more conservative than the leading AI company CEO's prediction."
+    },
+    {
+      "id": "t1_dispute_hard_647",
+      "difficulty": "hard",
+      "subcategory": "source_authority_conflict",
+      "query": "Is quantum computing a threat to current encryption standards?",
+      "contexts": [
+        "The National Institute of Standards and Technology (NIST) Post-Quantum Cryptography Standardization project, which published its first finalized post-quantum standards (FIPS 203, 204, 205) in August 2024, states that 'a cryptanalytically relevant quantum computer (CRQC) capable of breaking RSA-2048 or AES-256 is unlikely to exist before 2035' but that the transition to quantum-resistant algorithms should begin immediately due to 'harvest now, decrypt later' threats and the multi-year migration timeline.",
+        "A 2024 Medium article by a cybersecurity consultant titled 'Quantum Computing Will Break All Encryption Within 5 Years' claims that recent advances in quantum error correction, particularly Google's Willow chip achieving below-threshold error rates, mean that 'every major encryption standard is on the verge of being cracked' and recommends businesses immediately abandon RSA and ECC in favor of lattice-based cryptography."
+      ],
+      "expected_mode": "disputed",
+      "context_sources": [
+        {
+          "source_id": "nist_pqc_standards_2024",
+          "source_type": "government",
+          "authority": "official"
+        },
+        {
+          "source_id": "medium_quantum_threat_2024",
+          "source_type": "blog",
+          "authority": "community"
+        }
+      ],
+      "description": "NIST says quantum computers won't break current encryption before 2035 while a consultant blog claims it will happen within 5 years",
+      "rationale": "NIST (official, authoritative) assesses the timeline as pre-2035 while recommending proactive migration. The Medium blog (community, alarmist) claims encryption will be broken within 5 years based on extrapolation from recent hardware demos. The authoritative source is measured while the weaker source is sensationalist, but both agree migration is needed."
+    },
+    {
+      "id": "t1_dispute_hard_648",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How many neurons are in the human brain?",
+      "contexts": [
+        "For decades, neuroscience textbooks and reference materials have stated that the human brain contains approximately 100 billion neurons, a figure attributed to a 1988 review article and widely repeated in medical education.",
+        "Brazilian neuroscientist Suzana Herculano-Houzel's 2009 study using the isotropic fractionator method, published in the Journal of Comparative Neurology, counted approximately 86 billion neurons in the human brain, roughly 14% fewer than the commonly cited figure.",
+        "A 2024 update from Herculano-Houzel's lab incorporating samples from 15 additional brains revised the estimate to 88 billion neurons with significant individual variation (standard deviation of 8 billion), noting that neuron count decreases by approximately 10% between ages 20 and 80."
+      ],
+      "expected_mode": "disputed",
+      "description": "The commonly cited 100 billion neuron figure differs significantly from empirical counts of 86-88 billion",
+      "rationale": "Textbooks cite 100 billion neurons (a round number without clear empirical basis), while direct counting studies find 86-88 billion with substantial individual variation. The 14% discrepancy matters for quantitative neuroscience, and even the empirical studies disagree slightly between 2009 and 2024."
+    },
+    {
+      "id": "t1_dispute_hard_649",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What is the speed of gravity?",
+      "contexts": [
+        "Einstein's general theory of relativity predicts that gravitational waves propagate at exactly the speed of light: 299,792,458 meters per second (c). This is a fundamental prediction of the theory, not an approximation.",
+        "The LIGO and Virgo collaborations' measurement from the binary neutron star merger GW170817 in August 2017, combined with the simultaneous gamma-ray burst GRB 170817A detected 1.7 seconds later by the Fermi satellite, constrained the speed of gravity to be within -3 x 10^-15 to +7 x 10^-16 of the speed of light.",
+        "A 2023 preprint posted on arXiv by physicist Atsushi Nishizawa argues that modified gravity theories allowing massive gravitons predict a gravitational wave speed slightly below c, with the deviation proportional to the graviton mass. If the graviton mass is at the upper bound currently permitted by LIGO data (m_g < 1.27 x 10^-23 eV/c^2), gravity could be as much as 10^-19 slower than light."
+      ],
+      "expected_mode": "disputed",
+      "description": "Theory predicts gravity travels at exactly the speed of light, measurement confirms it to extreme precision, but a theoretical possibility of deviation remains",
+      "rationale": "General relativity predicts c exactly, LIGO confirmed it to 15 decimal places, but a preprint argues massive graviton theories permit an unmeasurably small deviation. Whether the speed of gravity is 'exactly c' or 'indistinguishable from c within current measurement precision' is a genuine scientific nuance."
+    },
+    {
+      "id": "t1_dispute_hard_650",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What was the peak unemployment rate during the 2008 financial crisis in the United States?",
+      "contexts": [
+        "The Bureau of Labor Statistics (BLS) official U-3 unemployment rate reached a peak of 10.0% in October 2009, representing 15.4 million unemployed Americans who were actively seeking work.",
+        "The BLS's broader U-6 unemployment measure, which includes discouraged workers who stopped looking for jobs and those working part-time for economic reasons, peaked at 17.1% in late 2009 and remained above 15% through most of 2010.",
+        "A 2012 study by economists at the Federal Reserve Bank of Atlanta estimated that when including workers who left the labor force entirely and were not captured even by U-6, the effective unemployment rate peaked at approximately 23% in early 2010."
+      ],
+      "expected_mode": "disputed",
+      "description": "The peak unemployment rate during the 2008 crisis is reported as 10%, 17.1%, or 23% depending on which definition of unemployment is used",
+      "rationale": "The headline U-3 rate was 10.0%, the broader U-6 was 17.1%, and including all labor force dropouts gives roughly 23%. All three are factually defensible measurements of 'unemployment' but differ by more than 2x, giving drastically different impressions of crisis severity."
+    },
+    {
+      "id": "t1_dispute_hard_651",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How much student loan debt is outstanding in the United States?",
+      "contexts": [
+        "The Federal Reserve Bank of New York's Quarterly Report on Household Debt and Credit (Q4 2024) reports total student loan balances at $1.74 trillion, based on data from Equifax consumer credit reports covering approximately 97% of the U.S. adult population with a credit file.",
+        "The U.S. Department of Education's Federal Student Aid data center reports the federal student loan portfolio at $1.61 trillion as of September 30, 2024, across 43.2 million borrowers, noting this excludes approximately $140 billion in private student loans not held or guaranteed by the federal government.",
+        "The College Board's 'Trends in Student Aid 2024' report cites total outstanding student debt at $1.77 trillion, combining Department of Education federal loan data with estimates of private student loan balances from MeasureOne and the Consumer Financial Protection Bureau."
+      ],
+      "expected_mode": "disputed",
+      "description": "Three sources report U.S. student loan debt as $1.61T, $1.74T, or $1.77T depending on scope and data source",
+      "rationale": "The Department of Education counts only federal loans ($1.61T), the NY Fed uses credit reports ($1.74T), and the College Board combines sources ($1.77T). The $160 billion spread reflects genuine disagreement about scope (federal only vs all student debt) and measurement methodology (administrative records vs credit reports)."
+    },
+    {
+      "id": "t1_dispute_hard_652",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What is the fastest a human has ever run in miles per hour?",
+      "contexts": [
+        "Usain Bolt reached a peak speed of 27.78 mph (44.72 km/h) during his 100m world record run of 9.58 seconds at the 2009 World Championships in Berlin, as measured by laser velocity tracking between the 60m and 80m marks.",
+        "The International Association of Athletics Federations (now World Athletics) recorded Bolt's top instantaneous speed at 27.44 mph (44.16 km/h) using their own split timing system, which measures 10-meter segment speeds rather than continuous laser tracking.",
+        "A 2017 biomechanical analysis published in the Journal of Sports Sciences, using high-speed camera footage at 200 frames per second, estimated Bolt's peak speed at 28.0 mph (45.07 km/h) during a specific stride between 65m and 67m, arguing that both timing systems underestimate peak velocity because they average over multi-meter segments."
+      ],
+      "expected_mode": "disputed",
+      "description": "Three different measurement methods report Usain Bolt's top speed as 27.44, 27.78, or 28.0 mph",
+      "rationale": "Laser tracking gives 27.78 mph, official split timing gives 27.44 mph, and high-speed camera analysis gives 28.0 mph. The discrepancy arises because finer temporal resolution captures higher instantaneous peaks, and no two measurement systems agree on the 'fastest' a human has run."
+    },
+    {
+      "id": "t1_dispute_hard_653",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How many people watched the 2024 Super Bowl?",
+      "contexts": [
+        "Nielsen's official ratings report for Super Bowl LVIII (Kansas City Chiefs vs. San Francisco 49ers, February 11, 2024) measured an average audience of 123.4 million viewers across CBS television broadcast and Paramount+ streaming, making it the most-watched telecast in U.S. history.",
+        "CBS parent company Paramount Global reported a total audience of 200 million viewers when including all viewing platforms and any amount of viewing time (as opposed to the Nielsen average-minute audience), along with pre-game and post-game coverage.",
+        "The NFL's own post-event release cited 'more than 130 million' viewers, a figure that includes Univision's Spanish-language simulcast and Nickelodeon's family-oriented alternate broadcast, which Nielsen tracked separately from the primary CBS measurement."
+      ],
+      "expected_mode": "disputed",
+      "description": "Super Bowl LVIII viewership is reported as 123.4M, 130M+, or 200M depending on measurement methodology",
+      "rationale": "Nielsen's standard average-minute audience was 123.4M, adding alternate broadcasts gives 130M+, and counting any amount of viewing across all platforms yields 200M. The 'correct' viewership depends entirely on whether you mean sustained viewership or any-touch reach."
+    },
+    {
+      "id": "t1_dispute_hard_654",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How much data does the world generate per day?",
+      "contexts": [
+        "IDC's Global DataSphere Forecast (2024 update) estimates that the world generates approximately 402 exabytes of data per day (147 zettabytes per year), counting all data created, captured, copied, and consumed across enterprise and consumer segments.",
+        "Statista's Digital Economy Compass 2024 cites daily data creation at 328 exabytes (120 zettabytes per year), using a methodology that counts only newly created and captured data while excluding copies, replicas, and ephemeral data that is immediately discarded.",
+        "A 2024 IEEE Spectrum article estimates daily data generation at approximately 220 exabytes, noting that many commonly cited figures are inflated by counting transient data like RAM contents, network packet headers, and sensor readings that are never stored or analyzed."
+      ],
+      "expected_mode": "disputed",
+      "description": "Estimates of daily global data generation range from 220 to 402 exabytes depending on what counts as 'data'",
+      "rationale": "IDC counts all data including copies (402 EB/day), Statista excludes duplicates (328 EB/day), and IEEE Spectrum excludes ephemeral/transient data (220 EB/day). The nearly 2x spread stems from definitional differences about whether copies, duplicates, and transient data should be counted."
+    },
+    {
+      "id": "t1_dispute_hard_655",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What percentage of emails sent globally are spam?",
+      "contexts": [
+        "Cisco's Talos Intelligence 2024 Annual Report, based on analysis of approximately 600 billion emails per day passing through Cisco's email security infrastructure, reports that 85.6% of all email traffic is spam, with the remainder split between legitimate email (12.2%) and phishing/malware (2.2%).",
+        "Statista's 2024 data, sourced from Kaspersky Lab's anti-spam research, places the global spam rate at 45.6% of all email traffic for the year, noting a steady decline from over 70% in the early 2010s due to improved filtering and anti-bot enforcement by ISPs.",
+        "Google reported in its 2024 Transparency Report that Gmail blocks more than 99.9% of spam, phishing, and malware from reaching user inboxes, and estimates that approximately 50% of emails it receives are spam, based on its classification algorithms processing 1.8 billion Gmail accounts."
+      ],
+      "expected_mode": "disputed",
+      "description": "Sources report global spam rates as 45.6%, 50%, or 85.6% of all email traffic",
+      "rationale": "Cisco sees 85.6% spam at the network infrastructure level, Google sees about 50% at the consumer email level, and Kaspersky reports 45.6%. The discrepancy reflects different vantage points: network-level scanning catches spam before it reaches mailboxes, while user-facing services see a pre-filtered subset."
+    },
+    {
+      "id": "t1_dispute_hard_656",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How many people died in the Bengal famine of 1943?",
+      "contexts": [
+        "The official Famine Inquiry Commission report (1945), chaired by Sir John Woodhead and commissioned by the British colonial government, estimated 1.5 million deaths directly attributable to the famine in Bengal province.",
+        "Amartya Sen, the Nobel Prize-winning economist, in his seminal 1981 work 'Poverty and Famines: An Essay on Entitlement and Deprivation,' estimated approximately 3 million deaths, incorporating excess mortality from famine-related disease epidemics (malaria, cholera, smallpox) that persisted through 1944.",
+        "A 2019 demographic study published in the Indian Economic & Social History Review by historians Mukherjee and Vaidyanathan, using newly available provincial census records and parish burial registers, estimated total excess mortality at 3.8 million, arguing that both previous estimates undercounted rural deaths due to poor registration in remote areas."
+      ],
+      "expected_mode": "disputed",
+      "description": "Death toll estimates for the 1943 Bengal famine range from 1.5 to 3.8 million across official and academic sources",
+      "rationale": "The colonial government estimated 1.5M (narrow definition, political interest in minimizing), Sen estimated 3M (including disease sequelae), and a 2019 study found 3.8M using better data. The 2.5x range reflects both definitional disputes about what counts as a famine death and genuine data gaps in colonial-era record keeping."
+    },
+    {
+      "id": "t1_dispute_hard_657",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What was the population of the Americas before European contact?",
+      "contexts": [
+        "Alfred Kroeber's 1939 estimate, which dominated scholarship for decades, placed the pre-contact population of the Western Hemisphere at approximately 8.4 million, based on extrapolation from early colonial census records and ethnographic observations.",
+        "Henry Dobyns's 1966 study in the journal Current Anthropology estimated a pre-contact population of 90 to 112 million for the entire hemisphere, using disease-mortality ratios applied backward from known post-contact population nadirs and arguing that European diseases killed 90-95% of indigenous populations.",
+        "A 2019 study published in Quaternary Science Reviews by Koch et al. estimated a pre-contact population of approximately 60 million, based on combining archaeological site density analysis, agricultural land-use modeling, and the measurable atmospheric CO2 decline following mass depopulation (the 'Orbis spike' of 1610)."
+      ],
+      "expected_mode": "disputed",
+      "description": "Scholarly estimates of pre-Columbian population range from 8.4 million to 112 million, a 13x spread",
+      "rationale": "Kroeber estimated 8.4M (colonial extrapolation), Dobyns estimated 90-112M (disease modeling), and Koch et al. estimated 60M (atmospheric/archaeological evidence). The estimates span more than an order of magnitude because pre-contact census data does not exist and each methodology makes very different assumptions."
+    },
+    {
+      "id": "t1_dispute_hard_658",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Is this new drug candidate ready for Phase III clinical trials?",
+      "contexts": [
+        "The Phase II trial of compound BRX-4120 demonstrated a statistically significant reduction in tumor volume (38% shrinkage, p=0.003) compared to placebo in 240 patients with advanced non-small cell lung cancer over a 24-week treatment period.",
+        "The trial's Data Safety Monitoring Board flagged that 12% of patients in the treatment arm developed Grade 3 or 4 hepatotoxicity (severe liver damage), compared to 1% in the placebo arm, with two treatment-related deaths during the study.",
+        "The FDA's 2024 guidance on oncology drug development states that compounds advancing to Phase III should demonstrate 'an acceptable benefit-risk profile in the target population' and that 'serious hepatotoxicity occurring in more than 5% of patients typically requires additional dose-finding or formulation work before pivotal trial initiation.'"
+      ],
+      "expected_mode": "disputed",
+      "description": "Strong efficacy data supports Phase III readiness but hepatotoxicity rates exceed FDA's stated threshold for advancement",
+      "rationale": "The drug showed strong efficacy (38% tumor shrinkage, p=0.003), but 12% Grade 3-4 liver toxicity exceeds the FDA's 5% guidance threshold. The contexts don't directly say 'yes' or 'no' to Phase III, but the efficacy data implies readiness while the safety data implies more work is needed."
+    },
+    {
+      "id": "t1_dispute_hard_659",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Should this coastal city invest in building new seawalls?",
+      "contexts": [
+        "The city's engineering assessment estimates that a new seawall system would protect 15,000 homes and $4.2 billion in property from storm surge damage over a 50-year design life, with construction costs of $800 million and annual maintenance of $12 million.",
+        "The latest NOAA regional sea level rise projection for this section of coastline forecasts 3.5 feet of rise by 2070 under the intermediate scenario, which would overtop the proposed seawall design height of 3 feet above current high tide levels.",
+        "A University of Miami study on managed retreat economics found that relocating coastal residents before catastrophic flooding costs 40-60% less than post-disaster rebuilding and that seawall investments create 'moral hazard' by encouraging continued development in high-risk zones.",
+        "Local property tax records show that waterfront homes within the seawall's protection zone generate $180 million per year in municipal tax revenue, representing 35% of the city's total property tax base."
+      ],
+      "expected_mode": "disputed",
+      "description": "Engineering analysis supports seawall construction but climate projections suggest it will be insufficient within its design life, and economic analysis favors retreat",
+      "rationale": "The engineering case (protect $4.2B in property for $800M) implies building is worthwhile. But the NOAA projection implies the seawall will be overtopped before its 50-year design life ends. The retreat study implies building is counterproductive. And the tax revenue data implies abandoning the area would devastate city finances. Each context points in a different direction."
+    },
+    {
+      "id": "t1_dispute_hard_660",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Can the employer terminate this employee?",
+      "contexts": [
+        "The employee's annual performance review, completed on January 15, 2025, rated them 'Exceeds Expectations' with a score of 4.2 out of 5.0, including specific praise from their direct manager for 'exceptional client relationship management and consistent delivery of high-quality work product.'",
+        "The company announced a reduction in force (RIF) on February 1, 2025, eliminating 15% of positions company-wide. The RIF selection criteria, documented in the HR policy manual, prioritize eliminating positions based on business need rather than individual performance.",
+        "The employee signed an employment agreement on their hire date that includes a clause stating: 'Employee may be terminated at any time, with or without cause, subject to 30 days written notice and applicable severance as defined in Section 8.'",
+        "The employee filed a formal complaint with the company's ethics hotline on January 28, 2025, alleging that their department head was falsifying quarterly revenue reports submitted to investors."
+      ],
+      "expected_mode": "disputed",
+      "description": "At-will employment allows termination but strong performance, whistleblower timing, and RIF context create legal risk",
+      "rationale": "The at-will agreement permits termination. The RIF provides business justification. But the employee has excellent performance (undermining 'cause'), and terminating them 3 days after they filed a whistleblower complaint creates potential retaliation liability. No context directly contradicts another, but together they imply an extremely risky termination."
+    },
+    {
+      "id": "t1_dispute_hard_661",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Is this contract enforceable?",
+      "contexts": [
+        "The services agreement between Apex Consulting LLC and DataStream Corp., executed on March 1, 2024, contains all required elements of a valid contract under New York law: offer, acceptance, consideration ($450,000 for 12 months of consulting services), mutual assent, and signatures of authorized representatives of both parties.",
+        "Section 14.2 of the agreement states: 'This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws principles.'",
+        "DataStream Corp. is incorporated in Delaware but operates exclusively from offices in California. Apex Consulting LLC is a New York limited liability company. Neither party has any operations, employees, or registered agents in Delaware.",
+        "California Civil Code Section 1717 and California Business and Professions Code Section 16600 contain mandatory provisions that cannot be waived by choice-of-law clauses, including limits on non-compete enforcement and mandatory fee-shifting in contract disputes."
+      ],
+      "expected_mode": "disputed",
+      "description": "Contract has all formal validity elements but choice-of-law clause selecting Delaware may be overridden by California mandatory law",
+      "rationale": "The contract appears facially valid with all required elements. But the Delaware choice-of-law clause may be unenforceable because neither party operates in Delaware, and California's mandatory statutes could override the chosen law for a company operating exclusively in California. The contexts don't say the contract is invalid but together imply serious enforceability questions."
+    },
+    {
+      "id": "t1_dispute_hard_662",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Is this company a good investment at its current valuation?",
+      "contexts": [
+        "NovaTech Inc. reported revenue growth of 42% year-over-year in its Q4 2024 earnings, reaching $2.1 billion in annual recurring revenue, with net revenue retention of 135% indicating strong expansion within existing customers.",
+        "The company's current market capitalization of $85 billion implies a price-to-sales ratio of 40x, compared to the SaaS industry median of 12x and the top-quartile of 22x.",
+        "NovaTech's CEO disclosed in the earnings call that the company expects to achieve GAAP profitability by Q3 2026, after burning through $340 million in cash during 2024, with $1.2 billion in cash reserves remaining.",
+        "Three of NovaTech's five board members sold a combined $28 million in stock through 10b5-1 plans during Q4 2024, representing approximately 60% of their vested holdings."
+      ],
+      "expected_mode": "disputed",
+      "description": "Strong growth metrics suggest upside but extreme valuation, cash burn, and insider selling imply downside risk",
+      "rationale": "Revenue growth (42%) and retention (135%) signal a strong business. But 40x P/S (vs 12x median) implies the stock is extremely expensive. Cash burn of $340M/year with $1.2B remaining creates a 3.5-year runway. And heavy insider selling (60% of holdings) suggests those closest to the company are reducing exposure. The bullish and bearish signals are both strong but point in opposite directions."
+    },
+    {
+      "id": "t1_dispute_hard_663",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Should this pension fund increase its allocation to private equity?",
+      "contexts": [
+        "The pension fund's private equity portfolio has generated a net internal rate of return (IRR) of 14.2% over the past decade, compared to 10.8% for its public equity portfolio and 4.1% for fixed income, making it the top-performing asset class.",
+        "An analysis by pension consultant Callan Associates notes that private equity returns are typically reported using IRR, which can be inflated by early capital distributions and leverage. When measured on a public market equivalent (PME) basis, the fund's PE portfolio outperformed public equities by only 1.1% annually, before accounting for management fees of 1.5% and carried interest of 20%.",
+        "The fund currently has 22% of its $45 billion portfolio allocated to private equity, with $3.8 billion in unfunded commitments that could be called over the next 3-5 years. Its actuarial liability requires maintaining a 7.5% annual return on assets to remain fully funded.",
+        "The fund's board fiduciary counsel advised that increasing illiquid holdings above 25% of total assets may impair the fund's ability to meet monthly benefit payments of $320 million without selling assets at a discount during market downturns."
+      ],
+      "expected_mode": "disputed",
+      "description": "Private equity appears to outperform other assets but adjusted returns are marginal, and liquidity constraints limit further allocation",
+      "rationale": "The IRR data (14.2%) implies PE is the best performer and should be increased. But on a fee-adjusted PME basis, the outperformance shrinks to near zero. The unfunded commitments create future liquidity demands. And fiduciary counsel warns that exceeding 25% illiquid assets risks benefit payment disruption. Each fact is consistent but they imply incompatible conclusions about the investment decision."
+    },
+    {
+      "id": "t1_dispute_hard_664",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Should this hospital implement AI-assisted radiology diagnosis?",
+      "contexts": [
+        "A 2024 randomized controlled trial at Johns Hopkins, published in The Lancet Digital Health, found that AI-assisted chest X-ray interpretation reduced diagnostic errors by 28% compared to radiologist-only reads, with the greatest improvement in detecting early-stage lung nodules under 6mm.",
+        "The hospital's radiology department currently has 12 radiologists reading an average of 45,000 studies per month, with an average turnaround time of 2.8 hours. Three radiologists are within 5 years of retirement and the department has been unable to fill two open positions for over 18 months.",
+        "The FDA-cleared AI system under consideration (Vendor: RadAssist Pro) carries an annual license fee of $1.2 million and requires integration with the existing PACS infrastructure at an estimated implementation cost of $800,000, plus ongoing IT support estimated at $200,000 per year.",
+        "The hospital's malpractice insurer notified all clients in January 2025 that AI-assisted diagnoses create 'novel liability questions' and that premiums for institutions using AI diagnostic tools will increase by 15-25% pending development of case law around AI liability allocation."
+      ],
+      "expected_mode": "disputed",
+      "description": "AI radiology reduces errors and addresses staffing gaps but creates significant costs and unresolved liability exposure",
+      "rationale": "Better accuracy (28% fewer errors) and a worsening staffing crisis both argue for AI adoption. But $2.2M first-year costs and 15-25% malpractice premium increases argue against it. The staffing context implies urgency while the liability context implies caution. No source directly contradicts another but they lead to incompatible recommendations."
+    },
+    {
+      "id": "t1_dispute_hard_665",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Is this patient's lab result clinically significant?",
+      "contexts": [
+        "The patient's fasting blood glucose test returned a result of 118 mg/dL. The laboratory's reference range for normal fasting glucose is 70-100 mg/dL, and the American Diabetes Association defines prediabetes as fasting glucose of 100-125 mg/dL.",
+        "The patient's previous three fasting glucose tests over the past 18 months were 95, 102, and 108 mg/dL respectively, showing a consistent upward trend of approximately 8 mg/dL every six months.",
+        "The patient's HbA1c test, drawn on the same day, was 5.4%, which falls within the normal range (below 5.7%) and reflects average blood glucose control over the preceding 2-3 months.",
+        "The patient reports having consumed a small amount of juice approximately 3 hours before the 'fasting' blood draw due to a miscommunication about fasting requirements."
+      ],
+      "expected_mode": "disputed",
+      "description": "The glucose result is elevated into prediabetic range but may be invalidated by non-fasting status, and the HbA1c is normal",
+      "rationale": "The glucose of 118 mg/dL is in the prediabetic range, and the upward trend (95->102->108->118) is concerning. But the patient wasn't truly fasting, which could explain the elevation. And the HbA1c of 5.4% (normal) suggests long-term glucose control is fine. The contexts imply both 'yes, this is prediabetes progressing' and 'no, this is a testing artifact.'"
+    },
+    {
+      "id": "t1_dispute_hard_666",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Should this university eliminate its standardized test requirement for admissions?",
+      "contexts": [
+        "A 2024 study by the National Bureau of Economic Research found that SAT/ACT scores are the single strongest predictor of first-year college GPA (r=0.54) and four-year graduation rates (r=0.48) among commonly used admissions criteria, outperforming high school GPA (r=0.42 and r=0.39 respectively).",
+        "The university's own internal analysis of its three-year test-optional pilot (2021-2024) found that students admitted without test scores had a first-year GPA only 0.08 points lower (3.24 vs 3.32) than those who submitted scores, and that six-year graduation rates were not yet available.",
+        "During the test-optional period, applications from underrepresented minority students increased 34% and first-generation college student enrollment increased 22%, while the overall acceptance rate decreased from 32% to 24% due to the larger applicant pool.",
+        "The university's U.S. News & World Report ranking dropped from #42 to #58 during the test-optional period, partially because the methodology penalizes institutions that cannot report median test scores for the full incoming class."
+      ],
+      "expected_mode": "disputed",
+      "description": "Test scores predict success and rankings reward them, but removing the requirement boosted diversity with minimal academic impact",
+      "rationale": "The NBER study implies tests are valuable predictors and should be kept. The university's own data shows minimal GPA difference without them. Diversity increased substantially during the test-optional period. But the ranking dropped 16 places. Each context supports a different conclusion and the tradeoffs between prediction, equity, and institutional reputation point in different directions."
+    },
+    {
+      "id": "t1_dispute_hard_667",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Is this school district's teacher retention strategy working?",
+      "contexts": [
+        "The district implemented a $5,000 annual retention bonus for teachers with 5+ years of experience in January 2023. Since implementation, the resignation rate for eligible teachers dropped from 18% to 11% year-over-year.",
+        "An exit survey of the 47 teachers who still resigned despite the bonus found that 78% cited 'lack of administrative support' and 'excessive non-teaching duties' as their primary reasons for leaving, with only 6% mentioning compensation.",
+        "The district's total spending on retention bonuses was $3.2 million in the 2023-2024 school year, paid from a federal ESSER grant that expires in September 2025. The district's general fund budget has a projected deficit of $4.8 million for 2025-2026.",
+        "Neighboring districts have begun offering $7,000-$8,000 retention bonuses and signing bonuses of up to $10,000 for experienced teachers in shortage subjects (math, science, special education), funded by permanent local bond measures."
+      ],
+      "expected_mode": "disputed",
+      "description": "Retention improved after the bonus but the root causes are non-financial, funding is temporary, and competitors are outbidding the district",
+      "rationale": "The resignation rate dropped from 18% to 11%, implying the strategy works. But exit surveys show the real issues are administrative, not financial, suggesting the bonus masks the problem. The funding expires in 2025 with no replacement budget. And neighboring districts are offering more, creating a future retention arms race. Success by one metric, failure by underlying analysis."
+    },
+    {
+      "id": "t1_dispute_hard_668",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "What is the recommended treatment for mild depression?",
+      "contexts": [
+        "A 2019 clinical practice guideline from the American Psychiatric Association states that SSRIs remain the first-line treatment for mild to moderate depression, citing response rates of 60-70% across multiple randomized trials.",
+        "A 2024 meta-analysis published in The Lancet Psychiatry, covering 47 trials and 12,000 patients, concludes that psychotherapy alone is as effective as SSRIs for mild depression, with significantly fewer side effects and lower relapse rates at 12-month follow-up."
+      ],
+      "expected_mode": "disputed",
+      "description": "Newer meta-analysis challenges the established guideline on first-line treatment for mild depression.",
+      "rationale": "The 2019 guideline recommends SSRIs as first-line, but the 2024 meta-analysis of 47 trials argues psychotherapy alone is equally effective with fewer side effects, creating a temporal conflict between authoritative sources.",
+      "context_sources": [
+        {
+          "source_id": "apa_guideline_2019",
+          "source_type": "clinical_guideline",
+          "authority": "primary"
+        },
+        {
+          "source_id": "lancet_meta_analysis_2024",
+          "source_type": "academic",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_669",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "How old is the universe?",
+      "contexts": [
+        "NASA's 2020 measurement using the Planck satellite's cosmic microwave background data places the age of the universe at 13.77 billion years, with a margin of error of just 40 million years.",
+        "A 2023 study led by Dr. Rajendra Gupta at the University of Ottawa, published in Monthly Notices of the Royal Astronomical Society, proposes that the universe may be 26.7 billion years old, nearly double the accepted estimate, based on a model incorporating tired light theory and evolving coupling constants."
+      ],
+      "expected_mode": "disputed",
+      "description": "A 2023 cosmological model challenges the widely accepted Planck satellite age estimate of the universe.",
+      "rationale": "The established 13.77-billion-year estimate from Planck data directly conflicts with a newer 26.7-billion-year proposal, representing a fundamental disagreement about cosmological models and measurement interpretation.",
+      "context_sources": [
+        {
+          "source_id": "nasa_planck_2020",
+          "source_type": "government_agency",
+          "authority": "primary"
+        },
+        {
+          "source_id": "gupta_mnras_2023",
+          "source_type": "academic",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_670",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "Can employers monitor employees' personal devices used for work?",
+      "contexts": [
+        "The 2018 EU General Data Protection Regulation (GDPR) Article 6 permits employers to process employee data, including device monitoring, when there is a legitimate business interest, provided employees are informed and the monitoring is proportionate.",
+        "A January 2024 ruling by the European Court of Human Rights in Lopez Ribalda v. Spain established that covert monitoring of employees, even on work devices, violates Article 8 of the European Convention on Human Rights unless strictly necessary and pre-authorized by a judicial body.",
+        "The French CNIL issued updated guidance in March 2024 stating that any employer monitoring of personal devices used in BYOD arrangements requires explicit, freely given consent that cannot be a condition of employment."
+      ],
+      "expected_mode": "disputed",
+      "description": "Recent court rulings and regulatory guidance restrict the employer monitoring latitude previously allowed under GDPR.",
+      "rationale": "GDPR's 2018 framework allowed monitoring under legitimate interest, but the 2024 ECHR ruling and CNIL guidance impose stricter consent and necessity requirements, creating a temporal conflict in the legal landscape.",
+      "context_sources": [
+        {
+          "source_id": "gdpr_2018_article6",
+          "source_type": "legislation",
+          "authority": "primary"
+        },
+        {
+          "source_id": "echr_lopez_ribalda_2024",
+          "source_type": "court_ruling",
+          "authority": "primary"
+        },
+        {
+          "source_id": "cnil_byod_guidance_2024",
+          "source_type": "regulatory_guidance",
+          "authority": "secondary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_671",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "Is non-compete enforcement legal for low-wage workers in the United States?",
+      "contexts": [
+        "Under common law principles reaffirmed by many state courts through 2020, non-compete agreements are generally enforceable if they are reasonable in scope, duration, and geographic area, regardless of the worker's wage level.",
+        "The FTC's April 2024 final rule bans virtually all non-compete clauses nationwide, with limited exceptions for senior executives earning above $151,164 annually, effectively making non-competes illegal for low-wage workers."
+      ],
+      "expected_mode": "disputed",
+      "description": "FTC's 2024 non-compete ban conflicts with longstanding common law enforcement tradition.",
+      "rationale": "State courts have historically enforced reasonable non-competes at all wage levels, but the FTC's 2024 rule effectively bans them for low-wage workers, creating a direct temporal conflict between established precedent and new federal regulation.",
+      "context_sources": [
+        {
+          "source_id": "state_common_law_2020",
+          "source_type": "legal_precedent",
+          "authority": "primary"
+        },
+        {
+          "source_id": "ftc_noncompete_rule_2024",
+          "source_type": "federal_regulation",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_672",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "Should healthy adults take a daily aspirin to prevent heart attacks?",
+      "contexts": [
+        "The 2016 U.S. Preventive Services Task Force recommendation stated that low-dose aspirin (81 mg) is beneficial for adults aged 50-59 with a 10% or greater 10-year cardiovascular risk, receiving a B-grade recommendation.",
+        "The USPSTF's updated 2022 recommendation reversed its position, stating that the evidence no longer supports routine aspirin use for primary prevention in adults over 60, and that the decision for adults 40-59 should be individual, downgrading to a C-grade recommendation due to bleeding risks."
+      ],
+      "expected_mode": "disputed",
+      "description": "USPSTF reversed its own aspirin recommendation within six years based on new bleeding risk evidence.",
+      "rationale": "The same authoritative body (USPSTF) gave a B-grade recommendation for aspirin in 2016 but then effectively reversed it in 2022, with the updated guidance citing bleeding risks that outweigh cardiovascular benefits for most healthy adults.",
+      "context_sources": [
+        {
+          "source_id": "uspstf_aspirin_2016",
+          "source_type": "clinical_guideline",
+          "authority": "primary"
+        },
+        {
+          "source_id": "uspstf_aspirin_2022",
+          "source_type": "clinical_guideline",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_673",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "Is vaping a safe alternative to cigarettes for smoking cessation?",
+      "contexts": [
+        "Public Health England's 2018 evidence review concluded that e-cigarettes are approximately 95% less harmful than combustible cigarettes and should be promoted as a cessation tool, recommending that NHS stop-smoking services offer vaping support.",
+        "A 2024 WHO technical report found that e-cigarettes contain at least 2,000 chemicals, including known carcinogens like formaldehyde and acrolein, and stated there is insufficient evidence that they aid cessation, recommending that countries ban or strictly regulate them."
+      ],
+      "expected_mode": "disputed",
+      "description": "WHO's 2024 position on e-cigarette safety directly contradicts Public Health England's 2018 endorsement.",
+      "rationale": "PHE's 2018 report endorsed vaping as 95% safer and a cessation aid, while WHO's 2024 report highlights thousands of harmful chemicals and insufficient cessation evidence, representing a stark temporal disagreement between major health authorities.",
+      "context_sources": [
+        {
+          "source_id": "phe_vaping_review_2018",
+          "source_type": "government_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "who_ecig_report_2024",
+          "source_type": "international_organization",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_674",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "Is blockchain technology suitable for enterprise supply chain management?",
+      "contexts": [
+        "Gartner's 2019 Hype Cycle report predicted that blockchain would reach mainstream enterprise adoption within 5-10 years, citing pilot programs at Walmart, Maersk, and De Beers as evidence that supply chain transparency use cases were near production-ready.",
+        "Gartner's 2024 updated analysis found that 80% of enterprise blockchain supply chain projects launched between 2018 and 2022 were abandoned or mothballed, with most organizations reverting to centralized databases, citing scalability limitations, interoperability failures, and governance complexities."
+      ],
+      "expected_mode": "disputed",
+      "description": "Gartner's own enterprise blockchain predictions from 2019 were contradicted by their 2024 adoption data.",
+      "rationale": "The same analyst firm predicted mainstream blockchain adoption for supply chains in 2019, but their 2024 data shows 80% of those projects failed, creating a temporal conflict about blockchain's enterprise viability.",
+      "context_sources": [
+        {
+          "source_id": "gartner_hype_cycle_2019",
+          "source_type": "industry_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "gartner_blockchain_review_2024",
+          "source_type": "industry_report",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_675",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "Is quantum computing a near-term threat to current encryption standards?",
+      "contexts": [
+        "The National Security Agency's 2021 cybersecurity advisory stated that quantum computers capable of breaking RSA-2048 encryption were at least 20-30 years away, and recommended organizations begin planning for post-quantum migration on a gradual timeline.",
+        "IBM's December 2023 Quantum Development Roadmap announced achieving a 1,121-qubit processor and projected reaching 100,000 logical qubits by 2033, with cryptographically relevant quantum computing potentially achievable within 10 years, prompting NIST to accelerate its post-quantum cryptography standardization to 2024."
+      ],
+      "expected_mode": "disputed",
+      "description": "IBM's 2023 quantum roadmap challenges NSA's 2021 assessment of the timeline for encryption-breaking quantum computers.",
+      "rationale": "The NSA estimated 20-30 years in 2021, but IBM's 2023 hardware advances and NIST's accelerated standardization suggest the threat may materialize within 10 years, creating a significant temporal conflict on quantum computing timelines.",
+      "context_sources": [
+        {
+          "source_id": "nsa_quantum_advisory_2021",
+          "source_type": "government_advisory",
+          "authority": "primary"
+        },
+        {
+          "source_id": "ibm_quantum_roadmap_2023",
+          "source_type": "industry_report",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_676",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "Are index funds always the best investment strategy for retail investors?",
+      "contexts": [
+        "The 2019 S&P SPIVA Scorecard showed that over 15 years, 92.2% of large-cap active fund managers underperformed the S&P 500 after fees, strongly supporting passive index investing as the optimal strategy for most retail investors.",
+        "A 2024 Morningstar analysis found that during the 2022-2023 period of rising interest rates and sector rotation, 55% of active large-cap managers outperformed their benchmark index, and that index concentration risk (the top 7 stocks representing 30% of the S&P 500) introduced systematic risk that active managers could avoid."
+      ],
+      "expected_mode": "disputed",
+      "description": "Recent active management outperformance challenges the long-standing dominance of passive index funds.",
+      "rationale": "The 2019 SPIVA data overwhelmingly favored index funds over 15 years, but the 2024 Morningstar analysis shows active managers outperformed during recent market stress and highlights concentration risk in indices, creating a temporal conflict about optimal investment strategy.",
+      "context_sources": [
+        {
+          "source_id": "sp_spiva_2019",
+          "source_type": "financial_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "morningstar_active_2024",
+          "source_type": "financial_report",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_677",
+      "difficulty": "hard",
+      "subcategory": "temporal_source_conflict",
+      "query": "Is cryptocurrency a viable store of value?",
+      "contexts": [
+        "A 2021 Goldman Sachs research note argued that Bitcoin's extreme volatility (annualized at 80%), lack of intrinsic yield, and correlation with risk assets during market stress made it unsuitable as a store of value, recommending clients avoid allocation.",
+        "BlackRock's January 2024 Bitcoin ETF filing and subsequent SEC approval argued that Bitcoin had matured as a store of value, citing declining volatility (annualized at 45% in 2023), institutional custody solutions, and its 15-year track record of outperforming gold and equities on a risk-adjusted basis over rolling 4-year periods."
+      ],
+      "expected_mode": "disputed",
+      "description": "BlackRock's 2024 Bitcoin ETF thesis contradicts Goldman Sachs' 2021 rejection of Bitcoin as a store of value.",
+      "rationale": "Goldman Sachs dismissed Bitcoin's store-of-value potential in 2021 citing 80% volatility, while BlackRock's 2024 ETF filing argues Bitcoin has matured with lower volatility at 45% and superior risk-adjusted returns, representing conflicting assessments from major financial institutions across time.",
+      "context_sources": [
+        {
+          "source_id": "goldman_crypto_note_2021",
+          "source_type": "financial_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "blackrock_btc_etf_2024",
+          "source_type": "regulatory_filing",
+          "authority": "primary"
+        }
+      ]
+    },
+    {
+      "id": "t1_dispute_hard_678",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Can the Mars rover complete its extended mission objectives?",
+      "contexts": [
+        "NASA's Perseverance rover has been operating on Mars for over 1,200 sols and its nuclear power source (MMRTG) is designed to provide at least 110 watts for 14 Earth years.",
+        "The extended mission plan requires the rover to traverse 28 kilometers of terrain with elevation changes exceeding 600 meters to reach the Jezero crater rim sampling sites.",
+        "Engineering telemetry shows the rover's left front wheel has sustained 62% tread degradation after covering only 18 kilometers on relatively flat terrain.",
+        "Mission scientists estimate the remaining sampling campaign requires a minimum of 45 operational wheel-kilometers."
+      ],
+      "expected_mode": "disputed",
+      "description": "Power supply is sufficient but wheel degradation rate implies mechanical failure before mission completion.",
+      "rationale": "The power source supports 14 years of operation, but the wheel has lost 62% tread in 18 km, while the mission needs 45 more km on harder terrain -- implying the rover may not physically survive to use its ample power supply."
+    },
+    {
+      "id": "t1_dispute_hard_679",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Can the defendant's confession be used as evidence at trial?",
+      "contexts": [
+        "The defendant signed a written confession at the police station at 3:47 AM on October 12, admitting to the robbery in detail.",
+        "Police body camera footage shows officers arrived at the defendant's home at 11:15 PM on October 11 and immediately placed him in handcuffs.",
+        "The booking record indicates the defendant was formally read his Miranda rights at 3:30 AM on October 12, seventeen minutes before signing the confession.",
+        "The defendant has no prior criminal record and speaks English as a second language with limited proficiency."
+      ],
+      "expected_mode": "disputed",
+      "description": "Confession was signed after Miranda rights were read, but defendant was restrained for over four hours before that.",
+      "rationale": "While Miranda rights were technically administered before the confession, the 4+ hour custodial detention without rights notification, combined with the suspect's limited English proficiency, implicitly contradicts the voluntariness of the confession."
+    },
+    {
+      "id": "t1_dispute_hard_680",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Is TechVenture Inc. a good investment based on its latest earnings report?",
+      "contexts": [
+        "TechVenture Inc. reported Q4 revenue of $2.3 billion, beating analyst estimates of $2.1 billion by 9.5%, marking the eighth consecutive quarter of revenue beats.",
+        "The company announced a $500 million stock buyback program and raised its 2025 revenue guidance by 12% to $10.5 billion.",
+        "The CFO sold 85% of her vested stock options, totaling $14.2 million, during a pre-announced 10b5-1 trading window that opened three days after the earnings release.",
+        "Three independent board members also filed Form 4 disclosures showing combined sales of $8.7 million in the same window."
+      ],
+      "expected_mode": "disputed",
+      "description": "Strong earnings and raised guidance conflict with massive insider selling by the CFO and board members.",
+      "rationale": "The company beat estimates and raised guidance, which signals confidence, but the CFO selling 85% of her options and board members unloading $8.7M implicitly contradicts the bullish narrative -- insiders are acting as if the stock is overvalued despite publicly optimistic signals."
+    },
+    {
+      "id": "t1_dispute_hard_681",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Is the hospital's new patient safety initiative working?",
+      "contexts": [
+        "Memorial Regional Hospital's 2024 annual report states that reported medication errors decreased by 34% following the implementation of their AI-assisted prescribing system in January 2024.",
+        "The same report notes that the hospital increased its nursing staff-to-patient ratio from 1:6 to 1:4 during the same period as part of a broader hiring initiative.",
+        "A CMS audit found that the hospital's voluntary error reporting rate dropped by 28% in 2024, with staff citing 'alert fatigue' from the new AI system as a barrier to completing incident reports.",
+        "Patient readmission rates for medication-related complications remained unchanged at 4.7% year-over-year."
+      ],
+      "expected_mode": "disputed",
+      "description": "Reported medication errors dropped, but so did the reporting rate, and patient outcomes did not improve.",
+      "rationale": "The 34% decrease in reported errors looks positive, but the 28% drop in reporting rates suggests errors are being underreported rather than prevented, and unchanged readmission rates implicitly contradict any real safety improvement."
+    },
+    {
+      "id": "t1_dispute_hard_682",
+      "difficulty": "hard",
+      "subcategory": "implicit_contradiction",
+      "query": "Has the school district's new literacy program improved reading outcomes?",
+      "contexts": [
+        "The Greenfield School District reported that average 3rd-grade reading scores on the state standardized test increased from 62% to 71% proficiency after one year of implementing the Foundations First phonics curriculum.",
+        "The district also reported that 15% of students were reclassified from special education reading services to general education during the same year.",
+        "State records show the district's 3rd-grade enrollment dropped from 2,400 to 1,950 students between the two testing years, with the superintendent citing 'families relocating due to housing costs.'",
+        "The neighboring district, which absorbed many of Greenfield's transferring families, saw its 3rd-grade reading proficiency drop from 68% to 59% in the same period."
+      ],
+      "expected_mode": "disputed",
+      "description": "Reading scores improved but enrollment dropped significantly, and the receiving district's scores declined.",
+      "rationale": "The 9-point proficiency gain and special education reclassifications look positive, but losing 450 students (19%) while the receiving district's scores dropped by 9 points implicitly suggests the improvement came from lower-performing students leaving rather than from the new curriculum."
+    },
+    {
+      "id": "t1_dispute_hard_683",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Is Pluto a planet?",
+      "contexts": [
+        "The International Astronomical Union's 2006 Resolution 5A formally reclassified Pluto as a 'dwarf planet' because it has not cleared its orbital neighborhood of other debris, failing one of three criteria for full planet status.",
+        "NASA administrator Jim Bridenstine stated in 2019: 'I am here to tell you, as the NASA administrator, I believe Pluto is a planet,' arguing that the IAU definition is arbitrary and that geological complexity should be the primary criterion.",
+        "A 2022 petition signed by over 300 planetary scientists called for reinstating Pluto's planet status, citing that the 'clearing the neighborhood' criterion would also disqualify Earth and Jupiter."
+      ],
+      "expected_mode": "disputed",
+      "description": "The IAU says Pluto is not a planet, but NASA's administrator and hundreds of scientists disagree.",
+      "rationale": "The IAU formally declassified Pluto in 2006, but NASA's own administrator and 300+ scientists dispute the definition itself, creating a binary yes/no conflict backed by credible authorities on both sides."
+    },
+    {
+      "id": "t1_dispute_hard_684",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Do humans have a fixed number of brain cells that cannot regenerate?",
+      "contexts": [
+        "A landmark 2018 study published in Nature by Sorrells et al. examined post-mortem hippocampal tissue from 59 subjects and found no evidence of new neuron formation in the adult human hippocampus, concluding that neurogenesis ceases in childhood.",
+        "A competing 2019 study in Nature Medicine by Moreno-Jimenez et al. used improved tissue preservation techniques on 13 deceased adults and detected thousands of immature neurons in the hippocampus, arguing that adult neurogenesis persists throughout life but is methodologically difficult to detect."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two Nature-published studies reach opposite conclusions about whether adult human brains generate new neurons.",
+      "rationale": "Sorrells et al. (2018) found zero new neurons in adults, while Moreno-Jimenez et al. (2019) found thousands using different methods -- a direct binary conflict about whether adult neurogenesis occurs at all."
+    },
+    {
+      "id": "t1_dispute_hard_685",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Can an employer fire an employee for off-duty marijuana use in a legal state?",
+      "contexts": [
+        "Under federal law, marijuana remains a Schedule I controlled substance, and the Drug-Free Workplace Act of 1988 permits employers receiving federal contracts to terminate employees who test positive for THC regardless of state legalization.",
+        "California's AB 2188, effective January 2024, prohibits employers from discriminating against employees for off-duty cannabis use and bars the use of THC metabolite tests (which detect past use) in employment decisions, with exceptions only for federal contractors and safety-sensitive positions."
+      ],
+      "expected_mode": "disputed",
+      "description": "Federal law permits termination for marijuana use while California state law prohibits it.",
+      "rationale": "Federal law explicitly allows firing for THC-positive tests, while California AB 2188 explicitly prohibits discrimination for off-duty use -- a direct binary conflict between federal and state law for non-federal-contractor employers."
+    },
+    {
+      "id": "t1_dispute_hard_686",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Is it legal to record a phone conversation without the other party's consent?",
+      "contexts": [
+        "Under federal law (18 U.S.C. 2511), the United States follows a one-party consent rule: recording a phone call is legal as long as one participant (including the person recording) consents, and no court order is required.",
+        "California Penal Code Section 632 requires all-party consent for recording confidential communications, making it a criminal offense punishable by a fine of up to $2,500 and up to one year in jail to record a call without the other party's knowledge."
+      ],
+      "expected_mode": "disputed",
+      "description": "Federal law allows one-party consent recording while California law criminalizes it.",
+      "rationale": "Federal statute says yes (one-party consent is sufficient), California statute says no (all parties must consent) -- a direct binary legal conflict depending on which jurisdiction's law applies."
+    },
+    {
+      "id": "t1_dispute_hard_687",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Should you feed a cold and starve a fever?",
+      "contexts": [
+        "A 2002 study by Dutch researchers at the Academic Medical Center in Amsterdam found that eating stimulated the immune response needed to fight viral infections (colds), while fasting activated the immune response needed to fight bacterial infections (fevers), providing scientific support for the adage.",
+        "The American College of Physicians and Harvard Medical School's 2023 patient guidance states that adequate nutrition and hydration are essential during any illness, that caloric restriction during fever can impair immune function and delay recovery, and that there is no clinical evidence supporting dietary restriction based on symptom type."
+      ],
+      "expected_mode": "disputed",
+      "description": "A peer-reviewed study supports the folk wisdom while major medical institutions reject it entirely.",
+      "rationale": "The 2002 Amsterdam study found scientific support for differentiated eating based on illness type, but the ACP and Harvard 2023 guidance directly rejects caloric restriction during fever as harmful -- a binary conflict between a research finding and clinical consensus."
+    },
+    {
+      "id": "t1_dispute_hard_688",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Is sitting for long periods as dangerous as smoking?",
+      "contexts": [
+        "A 2014 meta-analysis published in the Journal of the National Cancer Institute, analyzing 43 studies covering 4 million participants, found that prolonged sitting increased cancer risk by 24%, heart disease mortality by 18%, and all-cause mortality by 24%, leading lead author Dr. Daniela Schmid to call sitting 'the new smoking.'",
+        "A 2024 rebuttal published in the British Journal of Sports Medicine by Professor Terry Boyle of the University of South Australia argues that the comparison is 'scientifically inaccurate and harmful,' noting that smoking causes 7 million deaths annually versus an estimated 400,000 attributable to sedentary behavior, and that the risks are not comparable in magnitude, mechanism, or dose-response relationship."
+      ],
+      "expected_mode": "disputed",
+      "description": "One major study equates sitting risks to smoking while another rejects the comparison as grossly misleading.",
+      "rationale": "The 2014 meta-analysis found sitting increased mortality by 24% and called it 'the new smoking,' but the 2024 rebuttal argues the comparison is inaccurate since smoking kills 17x more people -- a binary conflict about whether the equivalence is valid."
+    },
+    {
+      "id": "t1_dispute_hard_689",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Does static stretching before exercise prevent injuries?",
+      "contexts": [
+        "The American College of Sports Medicine's 2018 guidelines recommend pre-exercise static stretching as part of a comprehensive warm-up routine, citing evidence that it improves range of motion and may reduce the incidence of muscle strains and joint injuries.",
+        "A 2021 systematic review in the British Medical Journal covering 12 randomized controlled trials with 8,806 participants concluded that pre-exercise static stretching does not reduce overall injury risk, and may actually impair performance by reducing muscle force production by 5-8% and decreasing vertical jump height."
+      ],
+      "expected_mode": "disputed",
+      "description": "ACSM recommends pre-exercise static stretching while a BMJ systematic review says it does not prevent injuries.",
+      "rationale": "ACSM guidelines endorse static stretching for injury prevention, but a BMJ systematic review of 12 RCTs finds no injury reduction and 5-8% performance impairment -- directly opposite conclusions on whether the practice is beneficial."
+    },
+    {
+      "id": "t1_dispute_hard_690",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Should youth athletes specialize in a single sport early?",
+      "contexts": [
+        "USA Hockey's long-term athlete development model recommends early sport specialization beginning at age 10-12 for competitive-track athletes, arguing that the 10,000-hour rule requires early focused training to develop elite-level skills before physical maturation windows close.",
+        "The American Academy of Pediatrics' 2023 clinical report on youth sports recommends against single-sport specialization before age 15-16, citing evidence that early specializers have 81% higher overuse injury rates, 36% higher burnout rates, and are no more likely to reach elite levels than multi-sport athletes."
+      ],
+      "expected_mode": "disputed",
+      "description": "A major sports federation recommends early specialization while the AAP advises against it.",
+      "rationale": "USA Hockey says specialize by age 10-12 citing skill development windows, while the AAP says wait until 15-16 citing 81% higher injury rates and no elite advantage -- a direct binary conflict between sports development and medical organizations."
+    },
+    {
+      "id": "t1_dispute_hard_691",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Is dark mode better for your eyes?",
+      "contexts": [
+        "A 2023 study by the University of Tubingen's Institute for Ophthalmic Research found that reading in dark mode reduced eye strain markers by 22% in a controlled trial of 120 participants who used screens for 6+ hours daily, with participants reporting less visual fatigue and fewer headaches.",
+        "Researchers at the University of British Columbia published a 2024 study in the Journal of Experimental Psychology showing that dark mode actually reduces reading comprehension by 11% and increases error rates by 14%, and found no measurable difference in eye strain biomarkers between light and dark modes using objective pupillometry."
+      ],
+      "expected_mode": "disputed",
+      "description": "One study shows dark mode reduces eye strain while another finds no objective benefit and reduced comprehension.",
+      "rationale": "The Tubingen study found 22% less eye strain with dark mode, while the UBC study found no objective strain difference and 11% worse reading comprehension -- directly conflicting findings on whether dark mode helps or hinders."
+    },
+    {
+      "id": "t1_dispute_hard_692",
+      "difficulty": "hard",
+      "subcategory": "binary_conflict",
+      "query": "Does using a VPN make you anonymous online?",
+      "contexts": [
+        "ExpressVPN's independent audit conducted by PricewaterhouseCoopers in 2023 confirmed that its TrustedServer technology stores no user logs, runs entirely in RAM, and that even a government subpoena cannot retrieve user browsing data, supporting its claim that VPN users are effectively anonymous.",
+        "The Electronic Frontier Foundation's 2024 technical analysis states that VPNs do not provide anonymity because browser fingerprinting, DNS leaks, WebRTC leaks, and traffic correlation attacks can identify users even through a VPN connection, and that at least 26 VPN providers claiming 'no-log' policies were found to retain identifiable user data when subpoenaed."
+      ],
+      "expected_mode": "disputed",
+      "description": "A VPN provider's audit claims effective anonymity while the EFF says VPNs fundamentally cannot provide it.",
+      "rationale": "ExpressVPN's PwC audit confirms no-log anonymity, while the EFF argues VPNs cannot provide anonymity due to fingerprinting, leak vectors, and documented cases of 'no-log' providers retaining data -- a binary conflict about whether VPN anonymity is real."
+    },
+    {
+      "id": "t1_dispute_hard_693",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Is the decline of insect populations a crisis?",
+      "contexts": [
+        "A 2019 global meta-analysis in Biological Conservation found that 40% of insect species are declining, with total insect biomass decreasing by 2.5% per year, and warned of a potential 'insect apocalypse' within decades that could collapse pollination networks and food webs.",
+        "A 2023 reanalysis of the same underlying datasets published in Nature Ecology & Evolution found that while certain insect groups (butterflies, beetles) are declining, freshwater insects have increased by 11% since 1990, and that the '40% declining' figure was inflated by geographic bias toward Western European studies, calling the apocalypse framing 'not supported by the totality of evidence.'"
+      ],
+      "expected_mode": "disputed",
+      "description": "Same insect data interpreted as either an impending ecological apocalypse or a geographically biased exaggeration.",
+      "rationale": "Both analyses reference overlapping datasets but draw opposite conclusions: one sees a 2.5% annual decline as catastrophic, the other identifies geographic bias and rising freshwater insect populations as evidence against the crisis narrative."
+    },
+    {
+      "id": "t1_dispute_hard_694",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Does the discovery of phosphine on Venus indicate extraterrestrial life?",
+      "contexts": [
+        "A 2020 paper in Nature Astronomy by Greaves et al. reported detecting 20 parts per billion of phosphine in Venus's atmosphere using the James Clerk Maxwell Telescope, arguing that no known abiotic chemical process can account for the observed concentration and that a biological source is the most plausible explanation.",
+        "A 2022 reanalysis by Villanueva et al. using the same spectral data but different calibration techniques estimated the phosphine concentration at less than 1 part per billion, well within the range explainable by volcanic activity and photochemistry, and concluded that the detection does not require a biological explanation."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same spectral data from Venus interpreted as either evidence for life or an artifact of calibration error.",
+      "rationale": "Greaves et al. interpret the spectral signal as 20 ppb phosphine requiring biological origin, while Villanueva et al. reanalyze the same data and find less than 1 ppb explainable by geology -- same data, opposite interpretations about extraterrestrial life."
+    },
+    {
+      "id": "t1_dispute_hard_695",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Is the economy recovering?",
+      "contexts": [
+        "The Bureau of Economic Analysis reported that U.S. GDP grew 2.1% in Q3 2024, unemployment fell to 3.8%, consumer spending rose 1.5%, and the economy added 254,000 jobs in September, marking the 33rd consecutive month of job gains.",
+        "Analysis by the Economic Policy Institute using the same government data notes that real wages declined 0.4% year-over-year when adjusted for housing costs, household debt reached a record $17.7 trillion, the growth was driven primarily by a 4.6% increase in government spending, and the labor force participation rate remained 0.8 points below pre-pandemic levels."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same economic data interpreted as either a strong recovery or a fragile expansion masking structural weakness.",
+      "rationale": "The headline numbers (GDP up, unemployment down, jobs added) suggest recovery, but the same data reframed (declining real wages, record debt, government-driven growth, low participation) suggests underlying weakness -- identical facts supporting opposite conclusions."
+    },
+    {
+      "id": "t1_dispute_hard_696",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Is the housing market overvalued?",
+      "contexts": [
+        "The National Association of Realtors' 2024 Q3 report highlights that median home prices rose 4.2% year-over-year to $412,300, existing home inventory reached its highest level in 3 years at 4.2 months of supply, and mortgage rates at 6.8% are stabilizing, characterizing the market as 'normalizing toward sustainable growth.'",
+        "An analysis by the Federal Reserve Bank of Dallas using the same price and income data calculates that the price-to-income ratio reached 7.1x in Q3 2024, exceeding the 2006 pre-crisis peak of 6.8x, that the 4.2 months of inventory represents a 58% increase from the prior year signaling weakening demand, and that affordability for first-time buyers has reached its lowest point since 1984."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same housing data interpreted as healthy normalization by one source and pre-crisis overvaluation by another.",
+      "rationale": "NAR interprets rising prices and increased inventory as normalization, while the Dallas Fed interprets the same metrics as price-to-income exceeding 2006 levels and historic unaffordability -- identical data framed as either stability or a bubble."
+    },
+    {
+      "id": "t1_dispute_hard_697",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Are ultra-processed foods responsible for the obesity epidemic?",
+      "contexts": [
+        "A 2024 Lancet study analyzing dietary data from 197 countries found that ultra-processed food consumption increased by 48% globally between 2000 and 2020, correlating with a 65% increase in obesity rates, and concluded that ultra-processed foods are 'the primary dietary driver of the global obesity epidemic.'",
+        "Nutrition researchers at the University of Cambridge published a 2024 rebuttal in the BMJ arguing that the correlation is confounded by sedentary lifestyles, increased portion sizes, and urbanization occurring over the same period, and that controlled metabolic ward studies show calorie-matched diets of processed and unprocessed foods produce identical weight outcomes when total calories are controlled."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same global trend data interpreted as proof of ultra-processed food harm or as a confounded correlation.",
+      "rationale": "The Lancet study interprets the parallel rise in processed food consumption and obesity as causal, while Cambridge researchers argue the correlation is confounded and that calorie-controlled studies show processing itself does not cause weight gain -- same data, conflicting causal interpretations."
+    },
+    {
+      "id": "t1_dispute_hard_698",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Does moderate alcohol consumption have health benefits?",
+      "contexts": [
+        "A 2022 observational study in JAMA Network Open analyzing 371,463 UK Biobank participants found that moderate drinkers (7-14 drinks/week) had 14% lower all-cause mortality than non-drinkers, with the strongest protective association for cardiovascular death, consistent with decades of J-curve epidemiological findings.",
+        "A 2023 meta-analysis in JAMA by Dr. Tim Stockwell re-examined 107 studies including the UK Biobank data and found that after correcting for 'abstainer bias' (former drinkers and ill people in the non-drinker reference group), the apparent protective effect disappeared entirely, with even light drinking associated with slightly increased mortality."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same cohort data shows either protective effects of moderate drinking or an artifact of flawed reference groups.",
+      "rationale": "The 2022 study finds a 14% mortality benefit for moderate drinkers, but the 2023 meta-analysis reanalyzes overlapping data and argues the benefit vanishes when the non-drinker control group is corrected for abstainer bias -- same data, opposite health conclusions."
+    },
+    {
+      "id": "t1_dispute_hard_699",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Has No Child Left Behind improved American education?",
+      "contexts": [
+        "NAEP data from 2002 to 2013 shows that 4th-grade math scores increased by 11 points and 8th-grade math scores by 9 points nationally, with Black and Hispanic students showing gains of 14 and 16 points respectively, narrowing the achievement gap by 8-10 points during the NCLB era.",
+        "Analysis by the Brookings Institution of the same NAEP data notes that the rate of improvement actually slowed during NCLB compared to the pre-NCLB period of 1996-2002, that reading scores showed no significant gains, that gains were concentrated in low-stakes 4th-grade assessments, and that 12th-grade scores remained flat, suggesting the improvements reflected test preparation rather than genuine learning."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same NAEP test data interpreted as evidence that NCLB narrowed gaps or merely produced test-prep artifacts.",
+      "rationale": "The raw NAEP data shows 11-point math gains and gap narrowing, but reanalysis of the same data shows gains slowed relative to pre-NCLB trends, were absent in reading, and did not reach 12th grade -- identical data supporting opposite conclusions about policy effectiveness."
+    },
+    {
+      "id": "t1_dispute_hard_700",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Do charter schools outperform traditional public schools?",
+      "contexts": [
+        "Stanford University's CREDO 2023 national study of 2.7 million charter school students found they gained the equivalent of 16 additional days of learning in reading and 6 days in math per year compared to matched peers in traditional public schools, with urban charter students gaining 40 additional reading days.",
+        "The National Education Policy Center at the University of Colorado reviewed the same CREDO data and argued that 16 extra days (4% of the school year) is educationally negligible, that the matching methodology fails to account for selection bias from motivated families, that 37% of charters performed worse than traditional schools, and that the urban gains are driven by a handful of high-performing networks like KIPP and Success Academy that serve only 3% of charter students."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same CREDO dataset interpreted as demonstrating charter school superiority or as showing negligible, uneven results.",
+      "rationale": "CREDO's data shows 16 extra learning days for charter students, but reinterpretation of the same data frames this as a trivial 4% difference driven by selection bias and a few elite networks, with 37% of charters actually underperforming -- identical data, opposite policy conclusions."
+    },
+    {
+      "id": "t1_dispute_hard_701",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Did immigration increase or decrease crime rates in the United States in the 2010s?",
+      "contexts": [
+        "FBI Uniform Crime Report data shows that between 2010 and 2020, the foreign-born population in the United States increased by 4.3 million while violent crime rates fell 15% and property crime rates fell 25%, consistent with peer-reviewed studies finding immigrants commit crimes at lower rates than native-born citizens.",
+        "The Federation for American Immigration Reform analyzed the same FBI crime data alongside ICE enforcement records and found that non-citizen arrests for drug offenses increased 42%, that border counties experienced a 17% increase in aggravated assaults, and that the decline in national crime rates was driven by demographic and policing changes unrelated to immigration patterns."
+      ],
+      "expected_mode": "disputed",
+      "description": "Same FBI crime data interpreted as showing immigration reduces crime or as masking localized crime increases.",
+      "rationale": "National FBI data shows crime falling as immigration rose, but disaggregated analysis of the same data highlights rising drug arrests and border county assaults, with the national decline attributed to other factors -- identical datasets supporting opposite conclusions about immigration's effect on crime."
+    },
+    {
+      "id": "t1_dispute_hard_702",
+      "difficulty": "hard",
+      "subcategory": "interpretation_conflict",
+      "query": "Has remote voting (vote-by-mail) increased election fraud?",
+      "contexts": [
+        "The Heritage Foundation's election fraud database documents 1,465 proven cases of voter fraud across the United States since 2000, with mail-in ballot fraud comprising 24% of all cases, and argues this represents a 'significant and growing threat' to election integrity as mail voting expanded after 2020.",
+        "The Brennan Center for Justice analyzed the same Heritage database and noted that 1,465 cases across 24 years and billions of ballots cast represents a fraud rate of 0.00006%, that mail ballot fraud declined from 0.00004% to 0.00003% even as mail voting doubled between 2016 and 2022, and characterized the fraud threat as 'infinitesimally rare and declining.'"
+      ],
+      "expected_mode": "disputed",
+      "description": "Same Heritage fraud database interpreted as showing a growing threat or as proof that fraud is vanishingly rare.",
+      "rationale": "Heritage presents 1,465 cases and 24% mail-ballot share as a significant threat, while Brennan Center takes the same 1,465 cases and divides by billions of ballots to get 0.00006%, framing it as negligible -- identical data, opposite conclusions about the severity of mail voting fraud."
+    },
+    {
+      "id": "t1_dispute_hard_703",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Does intermittent fasting improve cognitive function?",
+      "contexts": [
+        "A 2022 randomized controlled trial at Johns Hopkins University enrolled 200 adults aged 55-75 in a 16:8 intermittent fasting protocol and found that working memory scores improved by 15% and executive function by 11% over 12 weeks compared to controls eating regular meals.",
+        "A 2024 pre-registered replication study at the University of Sydney with 500 participants aged 55-75 using the identical 16:8 protocol and cognitive battery found no significant difference in working memory (p=0.71) or executive function (p=0.43) between fasting and control groups over 16 weeks."
+      ],
+      "expected_mode": "disputed",
+      "description": "A well-powered replication study failed to reproduce cognitive benefits of intermittent fasting found in the original trial.",
+      "rationale": "The Johns Hopkins trial found 15% working memory improvement with intermittent fasting, but the larger Sydney replication with identical protocol found no effect (p=0.71) -- a direct replication failure on the same research question."
+    },
+    {
+      "id": "t1_dispute_hard_704",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Does vitamin D supplementation reduce the risk of respiratory infections?",
+      "contexts": [
+        "A 2017 meta-analysis in the BMJ pooling 25 randomized controlled trials with 11,321 participants found that vitamin D supplementation reduced the risk of acute respiratory infections by 12% overall and by 70% in participants with severe deficiency (serum levels below 25 nmol/L).",
+        "The VITAL randomized trial published in the BMJ in 2022, enrolling 25,871 participants over 5 years, found no significant reduction in respiratory infections with 2,000 IU daily vitamin D supplementation (HR 0.97, 95% CI 0.93-1.01), including in the subgroup with baseline deficiency."
+      ],
+      "expected_mode": "disputed",
+      "description": "The largest-ever vitamin D respiratory trial contradicted the meta-analytic finding of protective benefit.",
+      "rationale": "The 2017 meta-analysis of 25 trials found a 12% infection reduction (70% in deficient individuals), but the much larger 2022 VITAL trial of 25,871 people found no benefit even in deficient subgroups -- conflicting results from rigorous studies on the same question."
+    },
+    {
+      "id": "t1_dispute_hard_705",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Do statins reduce mortality in elderly patients without prior heart disease?",
+      "contexts": [
+        "The PROSPER trial (2002) enrolled 5,804 patients aged 70-82 with cardiovascular risk factors but no prior heart events and found that pravastatin reduced cardiac events by 19% but showed no reduction in all-cause mortality (HR 0.97, p=0.74) over 3.2 years.",
+        "A 2020 Australian study (STAREE pilot data) of 1,800 patients aged 70+ without prior cardiovascular disease found that statin use was associated with a 25% reduction in all-cause mortality and a 35% reduction in cardiovascular events over 4.5 years, leading researchers to conclude that statins provide meaningful survival benefit in healthy elderly populations."
+      ],
+      "expected_mode": "disputed",
+      "description": "One trial finds statins reduce cardiac events but not mortality in the elderly, while another finds a significant mortality benefit.",
+      "rationale": "PROSPER found no mortality benefit (HR 0.97) for statins in the elderly, while the STAREE pilot data found a 25% mortality reduction in a similar population -- directly conflicting results on whether statins extend life in healthy older adults."
+    },
+    {
+      "id": "t1_dispute_hard_706",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Does power posing increase confidence and testosterone levels?",
+      "contexts": [
+        "The original 2010 study by Amy Cuddy and colleagues at Harvard, published in Psychological Science, found that holding expansive 'power poses' for two minutes increased testosterone by 20%, decreased cortisol by 25%, and increased self-reported feelings of power and willingness to take risks in a sample of 42 participants.",
+        "A 2017 pre-registered replication by Ranehill et al. published in Psychological Science with 200 participants found no significant effect of power posing on testosterone (p=0.49), cortisol (p=0.35), or risk-taking behavior, and a 2018 P-curve analysis by Simmons and Simonsohn concluded the original study's results were likely false positives driven by researcher degrees of freedom."
+      ],
+      "expected_mode": "disputed",
+      "description": "The famous power posing study's hormonal findings failed to replicate in a larger pre-registered study.",
+      "rationale": "Cuddy's 2010 study found 20% testosterone increase from power posing, but the 2017 replication with 5x the sample found no hormonal effects (p=0.49) and a P-curve analysis suggested the original was a false positive -- a high-profile replication failure."
+    },
+    {
+      "id": "t1_dispute_hard_707",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Does the marshmallow test predict long-term life outcomes?",
+      "contexts": [
+        "Walter Mischel's original 1972 marshmallow test and subsequent follow-ups through 2011 found that children who delayed gratification at age 4 had SAT scores 210 points higher, lower BMI, lower divorce rates, and higher educational attainment decades later, suggesting that early self-control is a powerful predictor of life success.",
+        "A 2018 conceptual replication by Watts, Duncan, and Quan published in Psychological Science tested 918 children (10x the original sample) and found that the marshmallow test's predictive power dropped by over 50% when controlling for the child's family socioeconomic status and home environment, and became statistically insignificant for most outcomes when maternal education was included as a covariate."
+      ],
+      "expected_mode": "disputed",
+      "description": "The iconic marshmallow test's predictive power was substantially diminished when a larger study controlled for socioeconomic factors.",
+      "rationale": "Mischel's studies found a strong link between childhood delay of gratification and life success, but Watts et al. showed the effect dropped 50%+ and became non-significant when controlling for SES -- conflicting conclusions about whether self-control or socioeconomic background drives outcomes."
+    },
+    {
+      "id": "t1_dispute_hard_708",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Does unconscious priming influence complex behavior?",
+      "contexts": [
+        "John Bargh's famous 1996 experiment published in the Journal of Personality and Social Psychology found that participants primed with elderly-related words (Florida, bingo, wrinkle) walked significantly more slowly down a hallway afterward, demonstrating that unconscious semantic priming can influence complex motor behavior.",
+        "Doyen et al.'s 2012 direct replication published in PLOS ONE with 120 participants found no effect of elderly priming on walking speed when experimenter expectations were controlled using a double-blind protocol, suggesting the original result was driven by experimenter expectancy effects rather than unconscious priming."
+      ],
+      "expected_mode": "disputed",
+      "description": "The landmark elderly priming study failed to replicate when experimenter expectancy effects were controlled.",
+      "rationale": "Bargh's 1996 study found elderly-word priming slowed walking speed, but Doyen et al.'s double-blind replication found no effect, attributing the original finding to unblinded experimenters unconsciously influencing participant behavior -- conflicting results on unconscious behavioral priming."
+    },
+    {
+      "id": "t1_dispute_hard_709",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Do artificial sweeteners cause weight gain?",
+      "contexts": [
+        "A 2023 WHO-commissioned systematic review of 56 studies found that long-term use of non-sugar sweeteners was associated with a 76% increased risk of type 2 diabetes, increased BMI, and higher cardiovascular mortality, leading the WHO to recommend against their use for weight control.",
+        "A 2024 randomized controlled trial published in the New England Journal of Medicine, following 1,548 overweight adults for 2 years, found that replacing sugary drinks with artificially sweetened alternatives resulted in 5.3 kg average weight loss, improved insulin sensitivity, and no increase in metabolic disease markers, and criticized the WHO review for relying heavily on observational data subject to reverse causation."
+      ],
+      "expected_mode": "disputed",
+      "description": "A WHO review links artificial sweeteners to weight gain and diabetes while a large RCT shows they aid weight loss.",
+      "rationale": "The WHO review of 56 studies finds 76% increased diabetes risk with artificial sweeteners, but a 2-year RCT of 1,548 adults finds 5.3 kg weight loss and improved insulin sensitivity -- conflicting evidence likely due to the difference between observational and experimental study designs."
+    },
+    {
+      "id": "t1_dispute_hard_710",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Does eating red meat increase cancer risk?",
+      "contexts": [
+        "The International Agency for Research on Cancer (IARC), part of the WHO, classified processed meat as a Group 1 carcinogen and red meat as a Group 2A probable carcinogen in 2015, based on a review of 800 epidemiological studies finding that 50g of processed meat daily increases colorectal cancer risk by 18%.",
+        "The NutriRECS consortium published a 2019 systematic review in the Annals of Internal Medicine covering 61 studies with 4 million participants and concluded that the evidence linking red and processed meat to cancer is 'low-certainty,' that the absolute risk increase is 'very small' (7 fewer cancer cases per 1,000 people with reduced consumption), and recommended that adults continue current meat consumption levels."
+      ],
+      "expected_mode": "disputed",
+      "description": "IARC classifies red meat as a probable carcinogen while NutriRECS says the evidence is low-certainty and the risk is trivial.",
+      "rationale": "IARC reviewed 800 studies and classified processed meat as a definite carcinogen, but NutriRECS reviewed 61 studies with 4M participants and called the evidence 'low-certainty' with negligible absolute risk -- same research question, opposing conclusions and dietary recommendations."
+    },
+    {
+      "id": "t1_dispute_hard_711",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Are microplastics in drinking water harmful to human health?",
+      "contexts": [
+        "A 2024 study published in the New England Journal of Medicine analyzed carotid artery plaques from 312 patients and found that patients with detectable microplastics in their plaques had a 4.5-fold increased risk of heart attack, stroke, or death over 34 months, providing the first direct evidence linking microplastics to cardiovascular disease in humans.",
+        "The WHO's 2023 systematic review of microplastics in drinking water concluded that current levels of microplastic exposure through drinking water 'do not appear to pose a health risk' based on available toxicological evidence, that the concentrations found in tap water are orders of magnitude below levels shown to cause harm in animal studies, and that there is 'no evidence of human health concern' at current exposure levels."
+      ],
+      "expected_mode": "disputed",
+      "description": "A NEJM study links microplastics to cardiovascular death while a WHO review says current exposures pose no health risk.",
+      "rationale": "The NEJM study found 4.5x increased cardiovascular mortality in patients with microplastics in arterial plaques, but the WHO concluded microplastics in drinking water pose no health risk at current levels -- directly conflicting assessments of microplastic danger to humans."
+    },
+    {
+      "id": "t1_dispute_hard_712",
+      "difficulty": "hard",
+      "subcategory": "scientific_replication",
+      "query": "Is ocean acidification killing coral reefs?",
+      "contexts": [
+        "A 2020 study in Nature Climate Change measuring carbonate chemistry across 22 reef systems found that ocean pH has decreased by 0.1 units since pre-industrial times, causing a 30% reduction in coral calcification rates, and projected that 70% of tropical reefs would experience net dissolution by 2050 under current emission trends.",
+        "A 2023 field study published in Science examined coral communities near natural CO2 seeps in Papua New Guinea where pH levels already match 2100 projections, and found thriving coral communities with 85% cover, diverse species composition, and normal calcification rates, suggesting that many reef species can adapt to acidified conditions over generational timescales."
+      ],
+      "expected_mode": "disputed",
+      "description": "One study predicts acidification will dissolve 70% of reefs by 2050 while field observations show reefs thriving at projected pH levels.",
+      "rationale": "The 2020 Nature study projects catastrophic reef dissolution from acidification, but the 2023 Science field study finds thriving reefs at even lower pH levels near CO2 seeps -- directly conflicting predictions about coral survival under ocean acidification."
+    },
+    {
+      "id": "t1_dispute_hard_713",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How much has global sea level risen since 1900?",
+      "contexts": [
+        "The IPCC Sixth Assessment Report (2021) states that global mean sea level rose approximately 20 centimeters (0.20 meters) between 1901 and 2018, based on tide gauge records and satellite altimetry data.",
+        "A 2023 study by researchers at the University of Siegen published in Nature Communications, using revised satellite calibrations and updated tide gauge corrections, estimates that global sea level rise since 1900 was approximately 28 centimeters (0.28 meters), noting that the IPCC figure underestimates acceleration in recent decades."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two authoritative sources disagree on total sea level rise since 1900 by a 40% margin.",
+      "rationale": "The IPCC reports 20 cm of sea level rise since 1900, while the 2023 Nature Communications study estimates 28 cm using revised calibrations -- a 40% discrepancy on the same physical measurement, with significant implications for projections."
+    },
+    {
+      "id": "t1_dispute_hard_714",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "What is the average annual return of the S&P 500?",
+      "contexts": [
+        "Vanguard's 2024 investor education materials state that the S&P 500 has delivered an average annual return of 10.3% since its inception in 1957, using arithmetic mean total returns including dividends.",
+        "Professor Robert Shiller's dataset at Yale, widely used in academic research, reports the S&P 500's compound annual growth rate (CAGR) as 7.0% in real terms (inflation-adjusted) since 1957, or approximately 10.1% nominal, but notes that the geometric mean (actual investor experience) is 9.4% nominal due to the difference between arithmetic and geometric averaging."
+      ],
+      "expected_mode": "disputed",
+      "description": "Reported S&P 500 average returns range from 7.0% to 10.3% depending on methodology and inflation adjustment.",
+      "rationale": "Vanguard reports 10.3% using arithmetic mean nominal returns, Shiller reports 7.0% real or 9.4% geometric nominal -- the 'average return' differs by up to 47% depending on whether you use arithmetic vs. geometric mean and nominal vs. real values."
+    },
+    {
+      "id": "t1_dispute_hard_715",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How many concussions occur in the NFL each season?",
+      "contexts": [
+        "The NFL's official 2023 injury report stated that there were 174 diagnosed concussions during the regular season and postseason combined, representing a 10% decline from the previous year, attributing the improvement to enhanced helmet safety standards and updated tackling protocols.",
+        "A 2024 independent analysis by Boston University's CTE Center, using sideline video review, undiagnosed symptom data from player surveys, and post-career neurological assessments, estimated that the actual concussion count for the same 2023 season was between 450 and 600, noting that approximately 60% of concussions go unreported due to player reluctance, inadequate sideline screening, and the league's Return to Play protocol incentivizing underreporting."
+      ],
+      "expected_mode": "disputed",
+      "description": "The NFL reports 174 concussions while an independent analysis estimates 450-600 for the same season.",
+      "rationale": "The NFL's official count of 174 concussions is 2.5-3.5x lower than Boston University's estimate of 450-600, representing a fundamental disagreement about the true injury rate with significant player safety implications."
+    },
+    {
+      "id": "t1_dispute_hard_716",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How much energy does Bitcoin mining consume annually?",
+      "contexts": [
+        "The Cambridge Centre for Alternative Finance's Bitcoin Electricity Consumption Index estimated Bitcoin's annual energy consumption at 95.5 terawatt-hours (TWh) as of December 2023, roughly equivalent to the energy consumption of the Philippines.",
+        "The Bitcoin Mining Council's Q4 2023 survey of its members, who represent 48% of the global Bitcoin mining network, extrapolated total network consumption at 63.5 TWh annually, noting that 58.9% of mining energy comes from sustainable sources and that the Cambridge model overestimates consumption by using outdated hardware efficiency assumptions."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two tracking organizations report Bitcoin energy consumption figures differing by 50%.",
+      "rationale": "Cambridge estimates Bitcoin uses 95.5 TWh annually while the Bitcoin Mining Council estimates 63.5 TWh -- a 50% disagreement on the same metric, driven by different hardware efficiency assumptions and methodological approaches."
+    },
+    {
+      "id": "t1_dispute_hard_717",
+      "difficulty": "hard",
+      "subcategory": "numerical_conflict",
+      "query": "How many people died in the Bengal famine of 1943?",
+      "contexts": [
+        "The official Famine Inquiry Commission report published in 1945 by the British colonial government estimated that 1.5 million people died in the Bengal famine of 1943, attributing the cause primarily to natural crop failure from a cyclone and flooding, with wartime disruptions as a secondary factor.",
+        "Nobel laureate economist Amartya Sen's research, published in his 1981 book 'Poverty and Famines,' estimated the death toll at approximately 3 million people, based on demographic analysis of excess mortality data, and attributed the famine primarily to wartime policy failures including rice exports, military requisitioning, and denial of food imports by the British War Cabinet."
+      ],
+      "expected_mode": "disputed",
+      "description": "The official colonial report and Nobel laureate research disagree on the Bengal famine death toll by a factor of two.",
+      "rationale": "The British commission reported 1.5 million deaths blaming natural causes, while Sen estimated 3 million using demographic data and blamed colonial policy -- a 2x discrepancy in death toll with fundamentally different causal attributions."
     }
   ]
 }
