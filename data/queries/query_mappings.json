@@ -1,6 +1,6 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "mappings": {
     "abstention": {
       "abstain_easy_001": {
@@ -4060,316 +4060,1726 @@
       "grounding_medium_001": {
         "query": "What is the price of the enterprise plan?",
         "relevant_docs": [
-          "enterprise_plan_001"
+          "grounding_doc_grounding_001_1"
         ],
-        "forbidden_claims": [
-          "$",
-          "per month",
-          "per year",
-          "annually",
-          "costs",
-          "priced at",
-          "starting at",
-          "contact sales"
-        ],
-        "notes": "Features listed but no pricing"
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
       },
       "grounding_medium_002": {
         "query": "What are the steps to reset my password?",
         "relevant_docs": [
-          "password_security_001"
+          "grounding_doc_grounding_002_1"
         ],
-        "forbidden_claims": [
-          "click",
-          "select",
-          "enter",
-          "step 1",
-          "step 2",
-          "first",
-          "then",
-          "navigate to",
-          "go to"
-        ],
-        "notes": "Password management mentioned but no specific steps"
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
       },
       "grounding_medium_003": {
         "query": "What did the CEO say about the acquisition?",
         "relevant_docs": [
-          "acquisition_news_001"
+          "grounding_doc_grounding_003_1"
         ],
-        "forbidden_claims": [
-          "said",
-          "stated",
-          "commented",
-          "announced",
-          "according to",
-          "quote"
-        ],
-        "notes": "Acquisition announced but no CEO quotes"
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
       },
       "grounding_medium_004": {
         "query": "What are the system requirements?",
         "relevant_docs": [
-          "desktop_app_001"
+          "grounding_doc_grounding_004_1"
         ],
-        "forbidden_claims": [
-          "GB",
-          "RAM",
-          "processor",
-          "CPU",
-          "Windows",
-          "macOS",
-          "Linux",
-          "minimum",
-          "recommended",
-          "requires"
-        ],
-        "notes": "Desktop app but no system requirements"
+        "decoy_docs": [],
+        "notes": "grounding test case - technical_hallucination subcategory"
       },
       "grounding_medium_005": {
         "query": "What is the recommended dosage?",
         "relevant_docs": [
-          "medx_001"
+          "grounding_doc_grounding_005_1"
         ],
-        "forbidden_claims": [
-          "mg",
-          "milligram",
-          "tablet",
-          "capsule",
-          "once daily",
-          "twice daily",
-          "every",
-          "hours",
-          "take"
-        ],
-        "notes": "Usage info but no specific dosage"
+        "decoy_docs": [],
+        "notes": "grounding test case - medical_hallucination subcategory"
       },
       "grounding_medium_006": {
         "query": "When was the company founded?",
         "relevant_docs": [
-          "datacorp_history_001"
+          "grounding_doc_grounding_006_1"
         ],
-        "forbidden_claims": [
-          "1990",
-          "1995",
-          "1998",
-          "1999",
-          "2000",
-          "2001",
-          "2002",
-          "2003",
-          "2004",
-          "founded in",
-          "established in",
-          "started in"
-        ],
-        "notes": "Two decades mentioned but no specific year"
+        "decoy_docs": [],
+        "notes": "grounding test case - date_hallucination subcategory"
       },
       "grounding_medium_007": {
         "query": "What is the company's market share?",
         "relevant_docs": [
-          "industryleader_001"
+          "grounding_doc_grounding_007_1"
         ],
-        "forbidden_claims": [
-          "%",
-          "percent",
-          "share of",
-          "market share",
-          "controls",
-          "dominates",
-          "leads with"
-        ],
-        "notes": "Top player but no market share percentage"
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
       },
       "grounding_medium_008": {
         "query": "Which countries is the product available in?",
         "relevant_docs": [
-          "global_product_001"
+          "grounding_doc_grounding_008_1"
         ],
-        "forbidden_claims": [
-          "United States",
-          "UK",
-          "Germany",
-          "France",
-          "Japan",
-          "Canada",
-          "Australia",
-          "available in",
-          "launched in",
-          "countries including"
-        ],
-        "notes": "Global reach but no specific countries"
+        "decoy_docs": [],
+        "notes": "grounding test case - location_hallucination subcategory"
       },
       "grounding_medium_009": {
         "query": "What do experts say about this approach?",
         "relevant_docs": [
-          "methodology_interest_001"
+          "grounding_doc_grounding_009_1"
         ],
-        "forbidden_claims": [
-          "Dr.",
-          "Professor",
-          "expert",
-          "researcher",
-          "according to",
-          "says",
-          "believes",
-          "argues",
-          "Harvard",
-          "MIT",
-          "Stanford"
-        ],
-        "notes": "Industry interest but no expert quotes"
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
       },
       "grounding_medium_010": {
         "query": "How do I integrate with Salesforce?",
         "relevant_docs": [
-          "crm_integration_001"
+          "grounding_doc_grounding_010_1"
         ],
-        "forbidden_claims": [
-          "API key",
-          "OAuth",
-          "connected app",
-          "install",
-          "configure",
-          "step",
-          "click",
-          "navigate",
-          "settings"
-        ],
-        "notes": "CRM integration but no specific steps"
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
       },
       "grounding_hard_001": {
         "query": "What was the conversion rate improvement?",
         "relevant_docs": [
-          "checkout_improvement_001"
+          "grounding_doc_grounding_001_1"
         ],
-        "forbidden_claims": [
-          "%",
-          "percent",
-          "increased by",
-          "improved by",
-          "from",
-          "to",
-          "conversion rate of",
-          "lift of"
-        ],
-        "notes": "Meaningful improvements but no numbers"
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
       },
       "grounding_hard_002": {
         "query": "What encryption standard does the platform use?",
         "relevant_docs": [
-          "security_priority_001"
+          "grounding_doc_grounding_002_1"
         ],
-        "forbidden_claims": [
-          "AES",
-          "RSA",
-          "256",
-          "128",
-          "bit",
-          "TLS",
-          "SSL",
-          "encryption standard",
-          "encrypted using",
-          "algorithm"
-        ],
-        "notes": "Encrypted but no specific standard"
+        "decoy_docs": [],
+        "notes": "grounding test case - technical_hallucination subcategory"
       },
       "grounding_hard_003": {
         "query": "What research supports this claim?",
         "relevant_docs": [
-          "exercise_cognitive_001"
+          "grounding_doc_grounding_003_1"
         ],
-        "forbidden_claims": [
-          "study by",
-          "research from",
-          "published in",
-          "journal",
-          "university",
-          "found that",
-          "showed that",
-          "2020",
-          "2021",
-          "2022",
-          "2023"
-        ],
-        "notes": "Studies mentioned but no specific citations"
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
       },
       "grounding_hard_004": {
         "query": "How much faster is the new algorithm?",
         "relevant_docs": [
-          "algorithm_optimization_001"
+          "grounding_doc_grounding_004_1"
         ],
-        "forbidden_claims": [
-          "x faster",
-          "times faster",
-          "% faster",
-          "percent",
-          "milliseconds",
-          "seconds",
-          "reduced by",
-          "from",
-          "to",
-          "speedup"
-        ],
-        "notes": "Significantly faster but no specific numbers"
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
       },
       "grounding_hard_005": {
         "query": "What is the success rate of this treatment?",
         "relevant_docs": [
-          "treatment_promise_001"
+          "grounding_doc_grounding_005_1"
         ],
-        "forbidden_claims": [
-          "%",
-          "percent",
-          "success rate",
-          "effective in",
-          "patients",
-          "out of",
-          "cure rate",
-          "remission rate"
-        ],
-        "notes": "Promising but no success rate"
+        "decoy_docs": [],
+        "notes": "grounding test case - medical_hallucination subcategory"
       },
       "grounding_hard_006": {
         "query": "When will the next version be released?",
         "relevant_docs": [
-          "next_release_001"
+          "grounding_doc_grounding_006_1"
         ],
-        "forbidden_claims": [
-          "Q1",
-          "Q2",
-          "Q3",
-          "Q4",
-          "2024",
-          "2025",
-          "2026",
-          "month",
-          "week",
-          "expected",
-          "planned for",
-          "releasing in",
-          "coming in"
-        ],
-        "notes": "Beta testing but no release date"
+        "decoy_docs": [],
+        "notes": "grounding test case - date_hallucination subcategory"
       },
       "grounding_hard_007": {
         "query": "What is the exact approval workflow?",
         "relevant_docs": [
-          "approval_workflow_001"
+          "grounding_doc_grounding_007_1"
         ],
-        "forbidden_claims": [
-          "submitter",
-          "reviewer",
-          "approver",
-          "manager",
-          "step 1",
-          "first",
-          "then",
-          "finally",
-          "routed to",
-          "escalated to"
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_008": {
+        "query": "What is Company A's revenue growth strategy?",
+        "relevant_docs": [
+          "grounding_doc_grounding_008_1",
+          "grounding_doc_grounding_008_2",
+          "grounding_doc_grounding_008_3"
         ],
-        "notes": "Configurable workflows but no default process"
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_009": {
+        "query": "What did the CEO say about future plans?",
+        "relevant_docs": [
+          "grounding_doc_grounding_009_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_010": {
+        "query": "By how much did customer satisfaction improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_010_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_011": {
+        "query": "What parameters does the process_data() function accept?",
+        "relevant_docs": [
+          "grounding_doc_grounding_011_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_012": {
+        "query": "What does the initialize() method return?",
+        "relevant_docs": [
+          "grounding_doc_grounding_012_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_013": {
+        "query": "What exceptions can the validate_input() function raise?",
+        "relevant_docs": [
+          "grounding_doc_grounding_013_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_014": {
+        "query": "What was the profit margin for Q2?",
+        "relevant_docs": [
+          "grounding_doc_grounding_014_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_015": {
+        "query": "Which product has the highest growth rate?",
+        "relevant_docs": [
+          "grounding_doc_grounding_015_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_016": {
+        "query": "What is the average employee tenure?",
+        "relevant_docs": [
+          "grounding_doc_grounding_016_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_017": {
+        "query": "What did the researcher conclude about the treatment?",
+        "relevant_docs": [
+          "grounding_doc_grounding_017_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_extension subcategory"
+      },
+      "grounding_hard_018": {
+        "query": "What was the CEO's full statement about the merger?",
+        "relevant_docs": [
+          "grounding_doc_grounding_018_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_extension subcategory"
+      },
+      "grounding_hard_019": {
+        "query": "What did the witness testify about the incident?",
+        "relevant_docs": [
+          "grounding_doc_grounding_019_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_extension subcategory"
+      },
+      "grounding_hard_020": {
+        "query": "When did the company announce the product launch?",
+        "relevant_docs": [
+          "grounding_doc_grounding_020_1",
+          "grounding_doc_grounding_020_2",
+          "grounding_doc_grounding_020_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_021": {
+        "query": "What was the company's revenue in 2022?",
+        "relevant_docs": [
+          "grounding_doc_grounding_021_1",
+          "grounding_doc_grounding_021_2",
+          "grounding_doc_grounding_021_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_022": {
+        "query": "What was the unemployment rate when the policy was enacted?",
+        "relevant_docs": [
+          "grounding_doc_grounding_022_1",
+          "grounding_doc_grounding_022_2",
+          "grounding_doc_grounding_022_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_023": {
+        "query": "What configuration options does the DatabaseConfig class support?",
+        "relevant_docs": [
+          "grounding_doc_grounding_023_1",
+          "grounding_doc_grounding_023_2",
+          "grounding_doc_grounding_023_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_grounding subcategory"
+      },
+      "grounding_hard_024": {
+        "query": "What HTTP methods does the /api/users endpoint support?",
+        "relevant_docs": [
+          "grounding_doc_grounding_024_1",
+          "grounding_doc_grounding_024_2",
+          "grounding_doc_grounding_024_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_grounding subcategory"
+      },
+      "grounding_hard_025": {
+        "query": "What is the total cost of the cloud migration project?",
+        "relevant_docs": [
+          "grounding_doc_grounding_025_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_026": {
+        "query": "What is the total cost of the quarterly earnings?",
+        "relevant_docs": [
+          "grounding_doc_grounding_026_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_027": {
+        "query": "What is the total cost of the clinical trial results?",
+        "relevant_docs": [
+          "grounding_doc_grounding_027_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_028": {
+        "query": "What is the total cost of the quantum computing?",
+        "relevant_docs": [
+          "grounding_doc_grounding_028_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_029": {
+        "query": "What is the total cost of the patent dispute?",
+        "relevant_docs": [
+          "grounding_doc_grounding_029_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_030": {
+        "query": "What is the total cost of the university enrollment?",
+        "relevant_docs": [
+          "grounding_doc_grounding_030_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_031": {
+        "query": "What is the total cost of the renewable energy adoption?",
+        "relevant_docs": [
+          "grounding_doc_grounding_031_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_032": {
+        "query": "What is the total cost of the player statistics?",
+        "relevant_docs": [
+          "grounding_doc_grounding_032_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_033": {
+        "query": "What is the total cost of the nutrition research?",
+        "relevant_docs": [
+          "grounding_doc_grounding_033_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_034": {
+        "query": "What is the total cost of the platform engagement?",
+        "relevant_docs": [
+          "grounding_doc_grounding_034_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_035": {
+        "query": "What is the total cost of the archaeological discovery?",
+        "relevant_docs": [
+          "grounding_doc_grounding_035_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_036": {
+        "query": "What is the total cost of the municipal budget?",
+        "relevant_docs": [
+          "grounding_doc_grounding_036_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_037": {
+        "query": "What is the total cost of the cognitive study?",
+        "relevant_docs": [
+          "grounding_doc_grounding_037_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_038": {
+        "query": "What is the total cost of the employee satisfaction?",
+        "relevant_docs": [
+          "grounding_doc_grounding_038_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_039": {
+        "query": "What is the total cost of the crop yield study?",
+        "relevant_docs": [
+          "grounding_doc_grounding_039_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_040": {
+        "query": "What is the total cost of the fleet management?",
+        "relevant_docs": [
+          "grounding_doc_grounding_040_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_041": {
+        "query": "What is the total cost of the housing market?",
+        "relevant_docs": [
+          "grounding_doc_grounding_041_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_042": {
+        "query": "What is the total cost of the API gateway performance?",
+        "relevant_docs": [
+          "grounding_doc_grounding_042_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_043": {
+        "query": "What is the total cost of the venture capital round?",
+        "relevant_docs": [
+          "grounding_doc_grounding_043_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_044": {
+        "query": "What is the total cost of the drug efficacy study?",
+        "relevant_docs": [
+          "grounding_doc_grounding_044_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - numerical_hallucination subcategory"
+      },
+      "grounding_hard_045": {
+        "query": "What did Science specifically report about the space exploration?",
+        "relevant_docs": [
+          "grounding_doc_grounding_045_1",
+          "grounding_doc_grounding_045_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_046": {
+        "query": "What did GDPR specifically report about the regulatory compliance?",
+        "relevant_docs": [
+          "grounding_doc_grounding_046_1",
+          "grounding_doc_grounding_046_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_047": {
+        "query": "What did OECD specifically report about the standardized testing?",
+        "relevant_docs": [
+          "grounding_doc_grounding_047_1",
+          "grounding_doc_grounding_047_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_048": {
+        "query": "What did BP specifically report about the deforestation tracking?",
+        "relevant_docs": [
+          "grounding_doc_grounding_048_1",
+          "grounding_doc_grounding_048_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_049": {
+        "query": "What did Premier League specifically report about the team performance?",
+        "relevant_docs": [
+          "grounding_doc_grounding_049_1",
+          "grounding_doc_grounding_049_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_050": {
+        "query": "What did FDA specifically report about the food safety recall?",
+        "relevant_docs": [
+          "grounding_doc_grounding_050_1",
+          "grounding_doc_grounding_050_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_051": {
+        "query": "What did TikTok specifically report about the content moderation?",
+        "relevant_docs": [
+          "grounding_doc_grounding_051_1",
+          "grounding_doc_grounding_051_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_052": {
+        "query": "What did Ottoman Empire specifically report about the military history?",
+        "relevant_docs": [
+          "grounding_doc_grounding_052_1",
+          "grounding_doc_grounding_052_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_053": {
+        "query": "What did CBO specifically report about the census data?",
+        "relevant_docs": [
+          "grounding_doc_grounding_053_1",
+          "grounding_doc_grounding_053_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_054": {
+        "query": "What did Harvard specifically report about the behavioral research?",
+        "relevant_docs": [
+          "grounding_doc_grounding_054_1",
+          "grounding_doc_grounding_054_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_055": {
+        "query": "What did McKinsey specifically report about the remote work study?",
+        "relevant_docs": [
+          "grounding_doc_grounding_055_1",
+          "grounding_doc_grounding_055_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_056": {
+        "query": "What did Syngenta specifically report about the livestock management?",
+        "relevant_docs": [
+          "grounding_doc_grounding_056_1",
+          "grounding_doc_grounding_056_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_057": {
+        "query": "What did FAA specifically report about the aviation safety?",
+        "relevant_docs": [
+          "grounding_doc_grounding_057_1",
+          "grounding_doc_grounding_057_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_058": {
+        "query": "What did HUD specifically report about the commercial property?",
+        "relevant_docs": [
+          "grounding_doc_grounding_058_1",
+          "grounding_doc_grounding_058_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_059": {
+        "query": "What did GraphQL specifically report about the cybersecurity audit?",
+        "relevant_docs": [
+          "grounding_doc_grounding_059_1",
+          "grounding_doc_grounding_059_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_060": {
+        "query": "What did Goldman Sachs specifically report about the stock market analysis?",
+        "relevant_docs": [
+          "grounding_doc_grounding_060_1",
+          "grounding_doc_grounding_060_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_061": {
+        "query": "What did WHO specifically report about the surgical outcomes?",
+        "relevant_docs": [
+          "grounding_doc_grounding_061_1",
+          "grounding_doc_grounding_061_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_062": {
+        "query": "What did MIT specifically report about the climate research?",
+        "relevant_docs": [
+          "grounding_doc_grounding_062_1",
+          "grounding_doc_grounding_062_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - attribution_hallucination subcategory"
+      },
+      "grounding_hard_063": {
+        "query": "What were the antitrust investigation outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_063_1",
+          "grounding_doc_grounding_063_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_064": {
+        "query": "What were the online learning outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_064_1",
+          "grounding_doc_grounding_064_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_065": {
+        "query": "What were the electric vehicle impact outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_065_1",
+          "grounding_doc_grounding_065_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_066": {
+        "query": "What were the transfer market outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_066_1",
+          "grounding_doc_grounding_066_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_067": {
+        "query": "What were the organic farming outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_067_1",
+          "grounding_doc_grounding_067_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_068": {
+        "query": "What were the influencer marketing outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_068_1",
+          "grounding_doc_grounding_068_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_069": {
+        "query": "What were the ancient civilization outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_069_1",
+          "grounding_doc_grounding_069_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_070": {
+        "query": "What were the infrastructure project outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_070_1",
+          "grounding_doc_grounding_070_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_071": {
+        "query": "What were the developmental psychology outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_071_1",
+          "grounding_doc_grounding_071_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_072": {
+        "query": "What were the compensation benchmark outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_072_1",
+          "grounding_doc_grounding_072_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_073": {
+        "query": "What were the soil health research outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_073_1",
+          "grounding_doc_grounding_073_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_074": {
+        "query": "What were the rail infrastructure outcomes in the most recent period?",
+        "relevant_docs": [
+          "grounding_doc_grounding_074_1",
+          "grounding_doc_grounding_074_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_075": {
+        "query": "How has the construction costs changed over the measured timeframe?",
+        "relevant_docs": [
+          "grounding_doc_grounding_075_1",
+          "grounding_doc_grounding_075_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_076": {
+        "query": "How has the machine learning pipeline changed over the measured timeframe?",
+        "relevant_docs": [
+          "grounding_doc_grounding_076_1",
+          "grounding_doc_grounding_076_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_077": {
+        "query": "How has the corporate merger changed over the measured timeframe?",
+        "relevant_docs": [
+          "grounding_doc_grounding_077_1",
+          "grounding_doc_grounding_077_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_078": {
+        "query": "How has the vaccine development changed over the measured timeframe?",
+        "relevant_docs": [
+          "grounding_doc_grounding_078_1",
+          "grounding_doc_grounding_078_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_079": {
+        "query": "How has the particle physics changed over the measured timeframe?",
+        "relevant_docs": [
+          "grounding_doc_grounding_079_1",
+          "grounding_doc_grounding_079_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_080": {
+        "query": "How has the employment law case changed over the measured timeframe?",
+        "relevant_docs": [
+          "grounding_doc_grounding_080_1",
+          "grounding_doc_grounding_080_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - temporal_confusion subcategory"
+      },
+      "grounding_hard_081": {
+        "query": "How does Stanford's STEM education strategy differ from UNESCO's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_081_1",
+          "grounding_doc_grounding_081_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_082": {
+        "query": "How does NOAA's carbon capture strategy differ from Tesla's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_082_1",
+          "grounding_doc_grounding_082_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_083": {
+        "query": "How does MLB's Olympic results strategy differ from Adidas's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_083_1",
+          "grounding_doc_grounding_083_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_084": {
+        "query": "How does Impossible Foods's dietary supplement strategy differ from Kraft's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_084_1",
+          "grounding_doc_grounding_084_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_085": {
+        "query": "How does Snapchat's algorithm impact strategy differ from Meta's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_085_1",
+          "grounding_doc_grounding_085_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_086": {
+        "query": "How does Mesopotamia's colonial era strategy differ from Egypt's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_086_1",
+          "grounding_doc_grounding_086_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_087": {
+        "query": "How does HUD's public health program strategy differ from White House's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_087_1",
+          "grounding_doc_grounding_087_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_088": {
+        "query": "How does DSM-5's clinical trial strategy differ from Stanford's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_088_1",
+          "grounding_doc_grounding_088_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_089": {
+        "query": "How does ADP's diversity initiative strategy differ from Gallup's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_089_1",
+          "grounding_doc_grounding_089_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_090": {
+        "query": "How does USDA's irrigation efficiency strategy differ from ADM's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_090_1",
+          "grounding_doc_grounding_090_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_091": {
+        "query": "How does Airbus's autonomous vehicles strategy differ from NTSB's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_091_1",
+          "grounding_doc_grounding_091_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_092": {
+        "query": "How does Redfin's rental market strategy differ from Freddie Mac's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_092_1",
+          "grounding_doc_grounding_092_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_093": {
+        "query": "How does Kubernetes's database optimization strategy differ from Nginx's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_093_1",
+          "grounding_doc_grounding_093_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_094": {
+        "query": "How does Berkshire Hathaway's credit risk assessment strategy differ from NYSE's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_094_1",
+          "grounding_doc_grounding_094_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_095": {
+        "query": "How does Pfizer's diagnostic imaging strategy differ from FDA's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_095_1",
+          "grounding_doc_grounding_095_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_096": {
+        "query": "How does ESA's genetic research strategy differ from CERN's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_096_1",
+          "grounding_doc_grounding_096_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_097": {
+        "query": "How does CCPA's intellectual property strategy differ from FTC's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_097_1",
+          "grounding_doc_grounding_097_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_098": {
+        "query": "How does Common Core's early childhood strategy differ from College Board's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_098_1",
+          "grounding_doc_grounding_098_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - entity_blending subcategory"
+      },
+      "grounding_hard_099": {
+        "query": "How is the wildlife conservation process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_099_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_100": {
+        "query": "How is the sports science process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_100_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_101": {
+        "query": "How is the restaurant industry process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_101_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_102": {
+        "query": "How is the creator economy process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_102_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_103": {
+        "query": "How is the industrial revolution process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_103_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_104": {
+        "query": "How is the election results process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_104_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_105": {
+        "query": "How is the social psychology process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_105_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_106": {
+        "query": "How is the hiring trends process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_106_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_107": {
+        "query": "How is the pest management process implemented step by step?",
+        "relevant_docs": [
+          "grounding_doc_grounding_107_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_108": {
+        "query": "Is there a verification step in the shipping industry process?",
+        "relevant_docs": [
+          "grounding_doc_grounding_108_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_109": {
+        "query": "Is there a verification step in the property development process?",
+        "relevant_docs": [
+          "grounding_doc_grounding_109_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_110": {
+        "query": "Is there a verification step in the container orchestration process?",
+        "relevant_docs": [
+          "grounding_doc_grounding_110_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_111": {
+        "query": "Is there a verification step in the cryptocurrency market process?",
+        "relevant_docs": [
+          "grounding_doc_grounding_111_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_112": {
+        "query": "Is there a verification step in the mental health treatment process?",
+        "relevant_docs": [
+          "grounding_doc_grounding_112_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - process_hallucination subcategory"
+      },
+      "grounding_hard_113": {
+        "query": "Is there an official statement from Caltech on the astronomy discovery?",
+        "relevant_docs": [
+          "grounding_doc_grounding_113_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_114": {
+        "query": "Is there an official statement from DOJ on the environmental regulation?",
+        "relevant_docs": [
+          "grounding_doc_grounding_114_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_115": {
+        "query": "Is there an official statement from Department of Education on the teacher retention?",
+        "relevant_docs": [
+          "grounding_doc_grounding_115_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_116": {
+        "query": "Is there an official statement from UNEP on the ocean pollution?",
+        "relevant_docs": [
+          "grounding_doc_grounding_116_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_117": {
+        "query": "Is there an official statement from Nike on the stadium development?",
+        "relevant_docs": [
+          "grounding_doc_grounding_117_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_118": {
+        "query": "Is there an official statement from Coca-Cola on the food technology?",
+        "relevant_docs": [
+          "grounding_doc_grounding_118_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_119": {
+        "query": "Is there an official statement from ByteDance on the misinformation study?",
+        "relevant_docs": [
+          "grounding_doc_grounding_119_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_120": {
+        "query": "Is there an official statement from Rome on the civil rights movement?",
+        "relevant_docs": [
+          "grounding_doc_grounding_120_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_121": {
+        "query": "Is there an official statement from Senate on the welfare program?",
+        "relevant_docs": [
+          "grounding_doc_grounding_121_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_122": {
+        "query": "Is there an official statement from NIH on the neuropsychology?",
+        "relevant_docs": [
+          "grounding_doc_grounding_122_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_123": {
+        "query": "Is there an official statement from Indeed on the employee benefits?",
+        "relevant_docs": [
+          "grounding_doc_grounding_123_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_124": {
+        "query": "Is there an official statement from Cargill on the organic certification?",
+        "relevant_docs": [
+          "grounding_doc_grounding_124_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_125": {
+        "query": "Is there an official statement from Maersk on the public transit?",
+        "relevant_docs": [
+          "grounding_doc_grounding_125_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_126": {
+        "query": "Is there an official statement from Fannie Mae on the REIT performance?",
+        "relevant_docs": [
+          "grounding_doc_grounding_126_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - quote_fabrication subcategory"
+      },
+      "grounding_hard_127": {
+        "query": "Is the DevOps pipeline trend likely to continue?",
+        "relevant_docs": [
+          "grounding_doc_grounding_127_1",
+          "grounding_doc_grounding_127_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_128": {
+        "query": "Does the data suggest pension fund performance will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_128_1",
+          "grounding_doc_grounding_128_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_129": {
+        "query": "Does the data suggest pediatric care study will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_129_1",
+          "grounding_doc_grounding_129_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_130": {
+        "query": "Does the data suggest materials science will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_130_1",
+          "grounding_doc_grounding_130_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_131": {
+        "query": "Does the data suggest contract dispute will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_131_1",
+          "grounding_doc_grounding_131_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_132": {
+        "query": "Does the data suggest special education will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_132_1",
+          "grounding_doc_grounding_132_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_133": {
+        "query": "Does the data suggest air quality monitoring will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_133_1",
+          "grounding_doc_grounding_133_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_134": {
+        "query": "Does the data suggest coaching strategy will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_134_1",
+          "grounding_doc_grounding_134_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_135": {
+        "query": "Does the data suggest beverage trends will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_135_1",
+          "grounding_doc_grounding_135_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_136": {
+        "query": "Does the data suggest digital advertising will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_136_1",
+          "grounding_doc_grounding_136_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_137": {
+        "query": "Does the data suggest medieval period will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_137_1",
+          "grounding_doc_grounding_137_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_138": {
+        "query": "Does the data suggest tax policy will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_138_1",
+          "grounding_doc_grounding_138_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_139": {
+        "query": "Does the data suggest educational psychology will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_139_1",
+          "grounding_doc_grounding_139_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_140": {
+        "query": "Does the data suggest workplace safety will improve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_140_1",
+          "grounding_doc_grounding_140_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - statistical_inference subcategory"
+      },
+      "grounding_hard_141": {
+        "query": "How do you configure the advanced settings for agricultural technology?",
+        "relevant_docs": [
+          "grounding_doc_grounding_141_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_142": {
+        "query": "How do you configure the advanced settings for electric fleet?",
+        "relevant_docs": [
+          "grounding_doc_grounding_142_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_143": {
+        "query": "How do you configure the advanced settings for green building?",
+        "relevant_docs": [
+          "grounding_doc_grounding_143_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_144": {
+        "query": "How do you configure the advanced settings for frontend framework?",
+        "relevant_docs": [
+          "grounding_doc_grounding_144_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_145": {
+        "query": "How do you configure the advanced settings for mortgage market trends?",
+        "relevant_docs": [
+          "grounding_doc_grounding_145_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_146": {
+        "query": "How do you configure the advanced settings for cardiology research?",
+        "relevant_docs": [
+          "grounding_doc_grounding_146_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_147": {
+        "query": "How do you configure the advanced settings for oceanography study?",
+        "relevant_docs": [
+          "grounding_doc_grounding_147_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_148": {
+        "query": "How do you configure the advanced settings for privacy legislation?",
+        "relevant_docs": [
+          "grounding_doc_grounding_148_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_149": {
+        "query": "How do you configure the advanced settings for student debt?",
+        "relevant_docs": [
+          "grounding_doc_grounding_149_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_150": {
+        "query": "How do you configure the advanced settings for sustainable agriculture?",
+        "relevant_docs": [
+          "grounding_doc_grounding_150_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - code_hallucination subcategory"
+      },
+      "grounding_hard_151": {
+        "query": "Why did the injury recovery metrics shift as shown?",
+        "relevant_docs": [
+          "grounding_doc_grounding_151_1",
+          "grounding_doc_grounding_151_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_152": {
+        "query": "Why did the food labeling metrics shift as shown?",
+        "relevant_docs": [
+          "grounding_doc_grounding_152_1",
+          "grounding_doc_grounding_152_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_153": {
+        "query": "Why did the user privacy metrics shift as shown?",
+        "relevant_docs": [
+          "grounding_doc_grounding_153_1",
+          "grounding_doc_grounding_153_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_154": {
+        "query": "Why did the exploration era metrics shift as shown?",
+        "relevant_docs": [
+          "grounding_doc_grounding_154_1",
+          "grounding_doc_grounding_154_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_155": {
+        "query": "Why did the immigration policy metrics shift as shown?",
+        "relevant_docs": [
+          "grounding_doc_grounding_155_1",
+          "grounding_doc_grounding_155_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_156": {
+        "query": "Why did the personality research metrics shift as shown?",
+        "relevant_docs": [
+          "grounding_doc_grounding_156_1",
+          "grounding_doc_grounding_156_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_157": {
+        "query": "Why did the training effectiveness metrics shift as shown?",
+        "relevant_docs": [
+          "grounding_doc_grounding_157_1",
+          "grounding_doc_grounding_157_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_158": {
+        "query": "What caused the changes shown in the dairy production data?",
+        "relevant_docs": [
+          "grounding_doc_grounding_158_1",
+          "grounding_doc_grounding_158_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_159": {
+        "query": "What caused the changes shown in the traffic management data?",
+        "relevant_docs": [
+          "grounding_doc_grounding_159_1",
+          "grounding_doc_grounding_159_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_160": {
+        "query": "What caused the changes shown in the property valuation data?",
+        "relevant_docs": [
+          "grounding_doc_grounding_160_1",
+          "grounding_doc_grounding_160_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - table_inference subcategory"
+      },
+      "grounding_hard_161": {
+        "query": "Why did the network infrastructure outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_161_1",
+          "grounding_doc_grounding_161_2",
+          "grounding_doc_grounding_161_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_162": {
+        "query": "Why did the IPO filing outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_162_1",
+          "grounding_doc_grounding_162_2",
+          "grounding_doc_grounding_162_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_163": {
+        "query": "Why did the oncology treatment outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_163_1",
+          "grounding_doc_grounding_163_2",
+          "grounding_doc_grounding_163_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_164": {
+        "query": "Why did the paleontology find outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_164_1",
+          "grounding_doc_grounding_164_2",
+          "grounding_doc_grounding_164_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_165": {
+        "query": "Why did the criminal sentencing outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_165_1",
+          "grounding_doc_grounding_165_2",
+          "grounding_doc_grounding_165_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_166": {
+        "query": "Why did the curriculum reform outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_166_1",
+          "grounding_doc_grounding_166_2",
+          "grounding_doc_grounding_166_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_167": {
+        "query": "Why did the water resources outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_167_1",
+          "grounding_doc_grounding_167_2",
+          "grounding_doc_grounding_167_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_168": {
+        "query": "Why did the draft analysis outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_168_1",
+          "grounding_doc_grounding_168_2",
+          "grounding_doc_grounding_168_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_169": {
+        "query": "Why did the fermentation science outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_169_1",
+          "grounding_doc_grounding_169_2",
+          "grounding_doc_grounding_169_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_170": {
+        "query": "Why did the viral content analysis outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_170_1",
+          "grounding_doc_grounding_170_2",
+          "grounding_doc_grounding_170_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_171": {
+        "query": "Why did the diplomatic history outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_171_1",
+          "grounding_doc_grounding_171_2",
+          "grounding_doc_grounding_171_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_172": {
+        "query": "Why did the public safety outcomes change?",
+        "relevant_docs": [
+          "grounding_doc_grounding_172_1",
+          "grounding_doc_grounding_172_2",
+          "grounding_doc_grounding_172_3"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - causal_hallucination subcategory"
+      },
+      "grounding_hard_173": {
+        "query": "How does Stanford's addiction study compare to Bandura's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_173_1",
+          "grounding_doc_grounding_173_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_174": {
+        "query": "Which is better for retention analysis: Gallup or EEOC?",
+        "relevant_docs": [
+          "grounding_doc_grounding_174_1",
+          "grounding_doc_grounding_174_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_175": {
+        "query": "Which is better for harvest logistics: ADM or CGIAR?",
+        "relevant_docs": [
+          "grounding_doc_grounding_175_1",
+          "grounding_doc_grounding_175_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_176": {
+        "query": "Which is better for freight logistics: NTSB or Boeing?",
+        "relevant_docs": [
+          "grounding_doc_grounding_176_1",
+          "grounding_doc_grounding_176_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_177": {
+        "query": "Which is better for zoning changes: Freddie Mac or Zillow?",
+        "relevant_docs": [
+          "grounding_doc_grounding_177_1",
+          "grounding_doc_grounding_177_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_178": {
+        "query": "Which is better for open source project: Nginx or Azure?",
+        "relevant_docs": [
+          "grounding_doc_grounding_178_1",
+          "grounding_doc_grounding_178_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_179": {
+        "query": "Which is better for hedge fund strategy: NYSE or Vanguard?",
+        "relevant_docs": [
+          "grounding_doc_grounding_179_1",
+          "grounding_doc_grounding_179_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_180": {
+        "query": "Which is better for epidemiological data: FDA or Johns Hopkins?",
+        "relevant_docs": [
+          "grounding_doc_grounding_180_1",
+          "grounding_doc_grounding_180_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_181": {
+        "query": "Which is better for renewable energy: CERN or Science?",
+        "relevant_docs": [
+          "grounding_doc_grounding_181_1",
+          "grounding_doc_grounding_181_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_182": {
+        "query": "How does FTC's corporate governance compare to GDPR's?",
+        "relevant_docs": [
+          "grounding_doc_grounding_182_1",
+          "grounding_doc_grounding_182_2"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - comparative_hallucination subcategory"
+      },
+      "grounding_hard_183": {
+        "query": "What region does the campus safety primarily serve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_183_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - geographic_hallucination subcategory"
+      },
+      "grounding_hard_184": {
+        "query": "What region does the biodiversity assessment primarily serve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_184_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - geographic_hallucination subcategory"
+      },
+      "grounding_hard_185": {
+        "query": "What region does the league expansion primarily serve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_185_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - geographic_hallucination subcategory"
+      },
+      "grounding_hard_186": {
+        "query": "What region does the food waste primarily serve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_186_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - geographic_hallucination subcategory"
+      },
+      "grounding_hard_187": {
+        "query": "What region does the platform regulation primarily serve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_187_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - geographic_hallucination subcategory"
+      },
+      "grounding_hard_188": {
+        "query": "What region does the immigration history primarily serve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_188_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - geographic_hallucination subcategory"
+      },
+      "grounding_hard_189": {
+        "query": "What region does the housing initiative primarily serve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_189_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - geographic_hallucination subcategory"
+      },
+      "grounding_hard_190": {
+        "query": "What region does the child psychology primarily serve?",
+        "relevant_docs": [
+          "grounding_doc_grounding_190_1"
+        ],
+        "decoy_docs": [],
+        "notes": "grounding test case - geographic_hallucination subcategory"
       }
     },
     "relevance": {
@@ -4493,258 +5903,1714 @@
       "relevance_medium_001": {
         "query": "What are the ELIGIBILITY requirements AND application deadline for the scholarship?",
         "relevant_docs": [
-          "rel_009"
+          "relevance_doc_relevance_001_1"
         ],
-        "required_elements": [
-          "deadline",
-          "not specified",
-          "not mentioned",
-          "when",
-          "date",
-          "not provided"
-        ],
-        "notes": "Eligibility provided but deadline missing"
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
       },
       "relevance_medium_002": {
         "query": "What is the battery life of the ProTab X1?",
         "relevant_docs": [
-          "rel_010"
+          "relevance_doc_relevance_002_1"
         ],
-        "required_elements": [
-          "X1",
-          "not specified",
-          "not mentioned",
-          "X2",
-          "different",
-          "not provided"
-        ],
-        "notes": "X2 specs provided, not X1"
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
       },
       "relevance_medium_003": {
         "query": "What were Q1 2024 sales figures?",
         "relevant_docs": [
-          "rel_011"
+          "relevance_doc_relevance_003_1"
         ],
-        "required_elements": [
-          "Q1 2024",
-          "not specified",
-          "not mentioned",
-          "not provided",
-          "2023",
-          "different period"
-        ],
-        "notes": "Q3-Q4 2023 figures only"
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
       },
       "relevance_medium_004": {
         "query": "What MECHANISM allows the drug to reduce inflammation?",
         "relevant_docs": [
-          "rel_012"
+          "relevance_doc_relevance_004_1"
         ],
-        "required_elements": [
-          "mechanism",
-          "not specified",
-          "how",
-          "not explained",
-          "pathway",
-          "not mentioned"
-        ],
-        "notes": "Efficacy results but no mechanism"
+        "decoy_docs": [],
+        "notes": "relevance test case - symptom_only subcategory"
       },
       "relevance_medium_005": {
         "query": "What is the BUDGET allocation for the marketing department?",
         "relevant_docs": [
-          "rel_013"
+          "relevance_doc_relevance_005_1"
         ],
-        "required_elements": [
-          "budget",
-          "not specified",
-          "amount",
-          "not mentioned",
-          "dollars",
-          "not provided"
-        ],
-        "notes": "Activities discussed but no budget figures"
+        "decoy_docs": [],
+        "notes": "relevance test case - status_dump subcategory"
       },
       "relevance_medium_006": {
         "query": "What is the WARRANTY coverage for manufacturer defects?",
         "relevant_docs": [
-          "rel_014"
+          "relevance_doc_relevance_006_1"
         ],
-        "required_elements": [
-          "warranty",
-          "not specified",
-          "coverage",
-          "not mentioned",
-          "years",
-          "not provided"
-        ],
-        "notes": "Product features but no warranty info"
+        "decoy_docs": [],
+        "notes": "relevance test case - feature_dump subcategory"
       },
       "relevance_medium_007": {
         "query": "What is the unemployment rate in Austin, Texas specifically?",
         "relevant_docs": [
-          "rel_015"
+          "relevance_doc_relevance_007_1"
         ],
-        "required_elements": [
-          "Austin",
-          "not specified",
-          "city",
-          "state-level",
-          "not mentioned",
-          "local"
-        ],
-        "notes": "State-level data only, not city-specific"
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
       },
       "relevance_medium_008": {
         "query": "What security certifications does the cloud service have?",
         "relevant_docs": [
-          "rel_016"
+          "relevance_doc_relevance_008_1"
         ],
-        "required_elements": [
-          "certification",
-          "not specified",
-          "SOC",
-          "ISO",
-          "compliance",
-          "not mentioned"
-        ],
-        "notes": "Infrastructure discussed but no certifications"
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
       },
       "relevance_medium_009": {
         "query": "What are the INGREDIENTS and CALORIE count per serving?",
         "relevant_docs": [
-          "rel_017"
+          "relevance_doc_relevance_009_1"
         ],
-        "required_elements": [
-          "calorie",
-          "not specified",
-          "not mentioned",
-          "not provided",
-          "energy"
-        ],
-        "notes": "Ingredients provided but no calorie count"
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
       },
       "relevance_hard_001": {
         "query": "What is the revenue breakdown for the EMEA region?",
         "relevant_docs": [
-          "rel_018"
+          "relevance_doc_relevance_001_1"
         ],
-        "required_elements": [
-          "EMEA",
-          "not specified",
-          "Europe",
-          "not mentioned",
-          "APAC",
-          "different region"
-        ],
-        "notes": "APAC data provided, not EMEA"
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
       },
       "relevance_hard_002": {
         "query": "What was the company's market share BEFORE the merger?",
         "relevant_docs": [
-          "rel_019"
+          "relevance_doc_relevance_002_1"
         ],
-        "required_elements": [
-          "before",
-          "pre-merger",
-          "not specified",
-          "prior",
-          "not mentioned",
-          "post-merger"
-        ],
-        "notes": "Post-merger figures only"
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
       },
       "relevance_hard_003": {
         "query": "What are the LOAD CAPACITY specifications for the industrial crane?",
         "relevant_docs": [
-          "rel_020"
+          "relevance_doc_relevance_003_1"
         ],
-        "required_elements": [
-          "capacity",
-          "not specified",
-          "tons",
-          "weight",
-          "not mentioned",
-          "load chart"
-        ],
-        "notes": "Operating instructions but no capacity specs"
+        "decoy_docs": [],
+        "notes": "relevance test case - instruction_only subcategory"
       },
       "relevance_hard_004": {
         "query": "What is the EXACT fuel efficiency in miles per gallon?",
         "relevant_docs": [
-          "rel_021"
+          "relevance_doc_relevance_004_1"
         ],
-        "required_elements": [
-          "MPG",
-          "miles per gallon",
-          "not specified",
-          "specific",
-          "number",
-          "not mentioned"
-        ],
-        "notes": "Vague efficiency praise but no MPG figure"
+        "decoy_docs": [],
+        "notes": "relevance test case - metric_avoidance subcategory"
       },
       "relevance_hard_005": {
         "query": "WHY did the algorithm produce biased outputs?",
         "relevant_docs": [
-          "rel_022"
+          "relevance_doc_relevance_005_1"
         ],
-        "required_elements": [
-          "why",
-          "cause",
-          "not specified",
-          "reason",
-          "not explained",
-          "training data",
-          "not mentioned"
-        ],
-        "notes": "Bias described but cause not explained"
+        "decoy_docs": [],
+        "notes": "relevance test case - symptom_only subcategory"
       },
       "relevance_hard_006": {
         "query": "What are the PREREQUISITES, duration, AND certification exam format for the course?",
         "relevant_docs": [
-          "rel_023"
+          "relevance_doc_relevance_006_1"
         ],
-        "required_elements": [
-          "duration",
-          "exam",
-          "not specified",
-          "weeks",
-          "format",
-          "not mentioned",
-          "how long"
-        ],
-        "notes": "Prerequisites only, missing duration and exam format"
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
       },
       "relevance_hard_007": {
         "query": "What is the INTEREST RATE for the business loan?",
         "relevant_docs": [
-          "rel_024"
+          "relevance_doc_relevance_007_1"
         ],
-        "required_elements": [
-          "interest rate",
-          "not specified",
-          "percent",
-          "APR",
-          "not mentioned",
-          "rate"
-        ],
-        "notes": "Loan terms but no interest rate"
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
       },
       "relevance_hard_008": {
         "query": "What is the TARGET completion date for Phase 3?",
         "relevant_docs": [
-          "rel_025"
+          "relevance_doc_relevance_008_1"
         ],
-        "required_elements": [
-          "Phase 3",
-          "not specified",
-          "date",
-          "target",
-          "not mentioned",
-          "completion"
+        "decoy_docs": [],
+        "notes": "relevance test case - status_dump subcategory"
+      },
+      "relevance_hard_009": {
+        "query": "Give me a BULLETED LIST of the key features.",
+        "relevant_docs": [
+          "relevance_doc_relevance_009_1"
         ],
-        "notes": "Phase 1-2 status but no Phase 3 timeline"
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_010": {
+        "query": "What is the population of Springfield, Illinois specifically?",
+        "relevant_docs": [
+          "relevance_doc_relevance_010_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_011": {
+        "query": "What are the HOURLY rates for the premium consulting service?",
+        "relevant_docs": [
+          "relevance_doc_relevance_011_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_012": {
+        "query": "Should we proceed with the acquisition?",
+        "relevant_docs": [
+          "relevance_doc_relevance_012_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_013": {
+        "query": "Is this investment worth the risk?",
+        "relevant_docs": [
+          "relevance_doc_relevance_013_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_014": {
+        "query": "Which candidate should we hire?",
+        "relevant_docs": [
+          "relevance_doc_relevance_014_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_015": {
+        "query": "What is the return policy for online purchases?",
+        "relevant_docs": [
+          "relevance_doc_relevance_015_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_016": {
+        "query": "How do I upgrade my personal account to business?",
+        "relevant_docs": [
+          "relevance_doc_relevance_016_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_017": {
+        "query": "What are the side effects of this medication for elderly patients?",
+        "relevant_docs": [
+          "relevance_doc_relevance_017_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_018": {
+        "query": "What is the company's headquarters address?",
+        "relevant_docs": [
+          "relevance_doc_relevance_018_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_019": {
+        "query": "What programming language is the API written in?",
+        "relevant_docs": [
+          "relevance_doc_relevance_019_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_020": {
+        "query": "Who is the current CEO?",
+        "relevant_docs": [
+          "relevance_doc_relevance_020_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_021": {
+        "query": "How do I fix the synchronization error?",
+        "relevant_docs": [
+          "relevance_doc_relevance_021_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_022": {
+        "query": "What is the shipping cost?",
+        "relevant_docs": [
+          "relevance_doc_relevance_022_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_023": {
+        "query": "Can I use this feature?",
+        "relevant_docs": [
+          "relevance_doc_relevance_023_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_024": {
+        "query": "What are the specific metrics AND the timeline for the cloud platform migration?",
+        "relevant_docs": [
+          "relevance_doc_relevance_024_1",
+          "relevance_doc_relevance_024_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_025": {
+        "query": "What are the specific metrics AND the timeline for the quarterly earnings report?",
+        "relevant_docs": [
+          "relevance_doc_relevance_025_1",
+          "relevance_doc_relevance_025_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_026": {
+        "query": "What are the specific metrics AND the timeline for the clinical trial Phase III?",
+        "relevant_docs": [
+          "relevance_doc_relevance_026_1",
+          "relevance_doc_relevance_026_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_027": {
+        "query": "What are the specific metrics AND the timeline for the quantum entanglement experiment?",
+        "relevant_docs": [
+          "relevance_doc_relevance_027_1",
+          "relevance_doc_relevance_027_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_028": {
+        "query": "What are the specific metrics AND the timeline for the patent claim construction?",
+        "relevant_docs": [
+          "relevance_doc_relevance_028_1",
+          "relevance_doc_relevance_028_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_029": {
+        "query": "What are the specific metrics AND the timeline for the standardized test redesign?",
+        "relevant_docs": [
+          "relevance_doc_relevance_029_1",
+          "relevance_doc_relevance_029_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_030": {
+        "query": "What are the specific metrics AND the timeline for the solar farm performance?",
+        "relevant_docs": [
+          "relevance_doc_relevance_030_1",
+          "relevance_doc_relevance_030_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_031": {
+        "query": "What are the specific metrics AND the timeline for the player performance analytics?",
+        "relevant_docs": [
+          "relevance_doc_relevance_031_1",
+          "relevance_doc_relevance_031_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_032": {
+        "query": "What are the specific metrics AND the timeline for the food allergen labeling?",
+        "relevant_docs": [
+          "relevance_doc_relevance_032_1",
+          "relevance_doc_relevance_032_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_033": {
+        "query": "What are the specific metrics AND the timeline for the content algorithm update?",
+        "relevant_docs": [
+          "relevance_doc_relevance_033_1",
+          "relevance_doc_relevance_033_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_034": {
+        "query": "What are the specific metrics AND the timeline for the archaeological excavation?",
+        "relevant_docs": [
+          "relevance_doc_relevance_034_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_035": {
+        "query": "What are the specific metrics AND the timeline for the municipal budget allocation?",
+        "relevant_docs": [
+          "relevance_doc_relevance_035_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_036": {
+        "query": "What are the specific metrics AND the timeline for the cognitive load experiment?",
+        "relevant_docs": [
+          "relevance_doc_relevance_036_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_037": {
+        "query": "What are the specific metrics AND the timeline for the employee engagement survey?",
+        "relevant_docs": [
+          "relevance_doc_relevance_037_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_038": {
+        "query": "What are the specific metrics AND the timeline for the precision agriculture trial?",
+        "relevant_docs": [
+          "relevance_doc_relevance_038_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_039": {
+        "query": "What are the specific metrics AND the timeline for the autonomous vehicle test?",
+        "relevant_docs": [
+          "relevance_doc_relevance_039_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - partial_answer subcategory"
+      },
+      "relevance_hard_040": {
+        "query": "What is CompanyB's approach to appraisal methodology?",
+        "relevant_docs": [
+          "relevance_doc_relevance_040_1",
+          "relevance_doc_relevance_040_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_041": {
+        "query": "What is CompanyB's approach to API rate limiting?",
+        "relevant_docs": [
+          "relevance_doc_relevance_041_1",
+          "relevance_doc_relevance_041_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_042": {
+        "query": "What is CompanyB's approach to portfolio allocation?",
+        "relevant_docs": [
+          "relevance_doc_relevance_042_1",
+          "relevance_doc_relevance_042_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_043": {
+        "query": "What is CompanyB's approach to drug interaction study?",
+        "relevant_docs": [
+          "relevance_doc_relevance_043_1",
+          "relevance_doc_relevance_043_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_044": {
+        "query": "What is CompanyB's approach to exoplanet characterization?",
+        "relevant_docs": [
+          "relevance_doc_relevance_044_1",
+          "relevance_doc_relevance_044_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_045": {
+        "query": "What is CompanyB's approach to GDPR compliance audit?",
+        "relevant_docs": [
+          "relevance_doc_relevance_045_1",
+          "relevance_doc_relevance_045_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_046": {
+        "query": "What is CompanyB's approach to curriculum alignment?",
+        "relevant_docs": [
+          "relevance_doc_relevance_046_1",
+          "relevance_doc_relevance_046_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_047": {
+        "query": "What is CompanyB's approach to wetland restoration?",
+        "relevant_docs": [
+          "relevance_doc_relevance_047_1",
+          "relevance_doc_relevance_047_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_048": {
+        "query": "What is CompanyB's approach to team salary cap?",
+        "relevant_docs": [
+          "relevance_doc_relevance_048_1",
+          "relevance_doc_relevance_048_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_049": {
+        "query": "What is CompanyB's approach to organic certification?",
+        "relevant_docs": [
+          "relevance_doc_relevance_049_1",
+          "relevance_doc_relevance_049_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_050": {
+        "query": "What is CompanyB's approach to influencer marketing ROI?",
+        "relevant_docs": [
+          "relevance_doc_relevance_050_1",
+          "relevance_doc_relevance_050_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_051": {
+        "query": "What is CompanyB's approach to census historical records?",
+        "relevant_docs": [
+          "relevance_doc_relevance_051_1",
+          "relevance_doc_relevance_051_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_052": {
+        "query": "What is CompanyB's approach to census methodology?",
+        "relevant_docs": [
+          "relevance_doc_relevance_052_1",
+          "relevance_doc_relevance_052_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_053": {
+        "query": "What is CompanyB's approach to attachment style assessment?",
+        "relevant_docs": [
+          "relevance_doc_relevance_053_1",
+          "relevance_doc_relevance_053_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - wrong_entity_focus subcategory"
+      },
+      "relevance_hard_054": {
+        "query": "What are the current 2025 figures for compensation benchmarking?",
+        "relevant_docs": [
+          "relevance_doc_relevance_054_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_055": {
+        "query": "What are the current 2025 figures for soil amendment study?",
+        "relevant_docs": [
+          "relevance_doc_relevance_055_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_056": {
+        "query": "What are the current 2025 figures for airline on-time data?",
+        "relevant_docs": [
+          "relevance_doc_relevance_056_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_057": {
+        "query": "What are the current 2025 figures for vacancy rate analysis?",
+        "relevant_docs": [
+          "relevance_doc_relevance_057_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_058": {
+        "query": "What are the current 2025 figures for database sharding?",
+        "relevant_docs": [
+          "relevance_doc_relevance_058_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_059": {
+        "query": "What are the current 2025 figures for credit risk model?",
+        "relevant_docs": [
+          "relevance_doc_relevance_059_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_060": {
+        "query": "What are the current 2025 figures for diagnostic accuracy?",
+        "relevant_docs": [
+          "relevance_doc_relevance_060_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_061": {
+        "query": "What are the current 2025 figures for CRISPR gene editing?",
+        "relevant_docs": [
+          "relevance_doc_relevance_061_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_062": {
+        "query": "What are the current 2025 figures for antitrust merger review?",
+        "relevant_docs": [
+          "relevance_doc_relevance_062_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_063": {
+        "query": "What are the current 2025 figures for student retention program?",
+        "relevant_docs": [
+          "relevance_doc_relevance_063_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_064": {
+        "query": "What are the current 2025 figures for emissions reduction plan?",
+        "relevant_docs": [
+          "relevance_doc_relevance_064_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_065": {
+        "query": "What are the current 2025 figures for injury prevention program?",
+        "relevant_docs": [
+          "relevance_doc_relevance_065_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_066": {
+        "query": "What are the current 2025 figures for sodium reduction initiative?",
+        "relevant_docs": [
+          "relevance_doc_relevance_066_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_067": {
+        "query": "What are the current 2025 figures for platform moderation policy?",
+        "relevant_docs": [
+          "relevance_doc_relevance_067_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - temporal_mismatch subcategory"
+      },
+      "relevance_hard_068": {
+        "query": "What are the specific trade route analysis implementation details?",
+        "relevant_docs": [
+          "relevance_doc_relevance_068_1",
+          "relevance_doc_relevance_068_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_069": {
+        "query": "What are the specific infrastructure spending bill implementation details?",
+        "relevant_docs": [
+          "relevance_doc_relevance_069_1",
+          "relevance_doc_relevance_069_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_070": {
+        "query": "What are the specific PTSD treatment trial implementation details?",
+        "relevant_docs": [
+          "relevance_doc_relevance_070_1",
+          "relevance_doc_relevance_070_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_071": {
+        "query": "What are the specific remote work productivity implementation details?",
+        "relevant_docs": [
+          "relevance_doc_relevance_071_1",
+          "relevance_doc_relevance_071_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_072": {
+        "query": "What are the specific livestock feed optimization implementation details?",
+        "relevant_docs": [
+          "relevance_doc_relevance_072_1",
+          "relevance_doc_relevance_072_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_073": {
+        "query": "What are the specific fleet electrification implementation details?",
+        "relevant_docs": [
+          "relevance_doc_relevance_073_1",
+          "relevance_doc_relevance_073_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_074": {
+        "query": "What are the specific construction cost estimate implementation details?",
+        "relevant_docs": [
+          "relevance_doc_relevance_074_1",
+          "relevance_doc_relevance_074_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_075": {
+        "query": "How exactly is CI/CD pipeline configured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_075_1",
+          "relevance_doc_relevance_075_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_076": {
+        "query": "How exactly is startup valuation configured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_076_1",
+          "relevance_doc_relevance_076_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_077": {
+        "query": "How exactly is surgical technique configured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_077_1",
+          "relevance_doc_relevance_077_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_078": {
+        "query": "How exactly is climate model projection configured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_078_1",
+          "relevance_doc_relevance_078_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_079": {
+        "query": "How exactly is employment discrimination case configured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_079_1",
+          "relevance_doc_relevance_079_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_080": {
+        "query": "How exactly is online learning platform configured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_080_1",
+          "relevance_doc_relevance_080_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_081": {
+        "query": "How exactly is species conservation configured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_081_1",
+          "relevance_doc_relevance_081_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - tangent_drift subcategory"
+      },
+      "relevance_hard_082": {
+        "query": "How is the primary draft prospect evaluation KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_082_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_083": {
+        "query": "How is the primary food safety inspection KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_083_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_084": {
+        "query": "How is the primary user data privacy KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_084_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_085": {
+        "query": "How is the primary battle casualties KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_085_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_086": {
+        "query": "How is the primary public health program KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_086_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_087": {
+        "query": "How is the primary developmental milestone study KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_087_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_088": {
+        "query": "How is the primary hiring funnel analysis KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_088_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_089": {
+        "query": "How is the primary irrigation scheduling KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_089_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_090": {
+        "query": "How is the primary freight rail efficiency KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_090_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_091": {
+        "query": "How is the primary rental yield calculation KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_091_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_092": {
+        "query": "How is the primary microservices architecture KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_092_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_093": {
+        "query": "How is the primary mortgage underwriting KPI measured?",
+        "relevant_docs": [
+          "relevance_doc_relevance_093_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - over_answering subcategory"
+      },
+      "relevance_hard_094": {
+        "query": "How would you rate treatment guidelines success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_094_1",
+          "relevance_doc_relevance_094_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_095": {
+        "query": "How would you rate particle accelerator success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_095_1",
+          "relevance_doc_relevance_095_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_096": {
+        "query": "How would you rate environmental impact assessment success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_096_1",
+          "relevance_doc_relevance_096_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_097": {
+        "query": "How would you rate teacher professional development success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_097_1",
+          "relevance_doc_relevance_097_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_098": {
+        "query": "How would you rate water treatment facility success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_098_1",
+          "relevance_doc_relevance_098_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_099": {
+        "query": "How would you rate stadium economics success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_099_1",
+          "relevance_doc_relevance_099_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_100": {
+        "query": "How would you rate plant-based protein success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_100_1",
+          "relevance_doc_relevance_100_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_101": {
+        "query": "How would you rate creator monetization success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_101_1",
+          "relevance_doc_relevance_101_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_102": {
+        "query": "How would you rate colonial economic records success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_102_1",
+          "relevance_doc_relevance_102_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_103": {
+        "query": "How would you rate welfare reform evaluation success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_103_1",
+          "relevance_doc_relevance_103_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_104": {
+        "query": "How would you rate addiction recovery research success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_104_1",
+          "relevance_doc_relevance_104_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_105": {
+        "query": "How would you rate diversity metrics success in one sentence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_105_1",
+          "relevance_doc_relevance_105_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - summarization_vs_answer subcategory"
+      },
+      "relevance_hard_106": {
+        "query": "How will pest resistance study evolve over the next 5 years?",
+        "relevant_docs": [
+          "relevance_doc_relevance_106_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_107": {
+        "query": "How will traffic signal optimization evolve over the next 5 years?",
+        "relevant_docs": [
+          "relevance_doc_relevance_107_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_108": {
+        "query": "How will zoning variance application evolve over the next 5 years?",
+        "relevant_docs": [
+          "relevance_doc_relevance_108_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_109": {
+        "query": "What is the long-term strategic vision for cybersecurity framework?",
+        "relevant_docs": [
+          "relevance_doc_relevance_109_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_110": {
+        "query": "What is the long-term strategic vision for derivatives pricing?",
+        "relevant_docs": [
+          "relevance_doc_relevance_110_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_111": {
+        "query": "What is the long-term strategic vision for vaccine efficacy?",
+        "relevant_docs": [
+          "relevance_doc_relevance_111_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_112": {
+        "query": "What is the long-term strategic vision for materials synthesis?",
+        "relevant_docs": [
+          "relevance_doc_relevance_112_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_113": {
+        "query": "What is the long-term strategic vision for contract interpretation?",
+        "relevant_docs": [
+          "relevance_doc_relevance_113_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_114": {
+        "query": "What is the long-term strategic vision for special education evaluation?",
+        "relevant_docs": [
+          "relevance_doc_relevance_114_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_115": {
+        "query": "What is the long-term strategic vision for carbon offset program?",
+        "relevant_docs": [
+          "relevance_doc_relevance_115_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_116": {
+        "query": "What is the long-term strategic vision for coaching tactical analysis?",
+        "relevant_docs": [
+          "relevance_doc_relevance_116_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_117": {
+        "query": "What is the long-term strategic vision for fermented food study?",
+        "relevant_docs": [
+          "relevance_doc_relevance_117_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - related_but_different subcategory"
+      },
+      "relevance_hard_118": {
+        "query": "Is the misinformation detection producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_118_1",
+          "relevance_doc_relevance_118_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_119": {
+        "query": "Is the medieval manuscript producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_119_1",
+          "relevance_doc_relevance_119_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_120": {
+        "query": "Is the housing assistance program producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_120_1",
+          "relevance_doc_relevance_120_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_121": {
+        "query": "Is the social conformity experiment producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_121_1",
+          "relevance_doc_relevance_121_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_122": {
+        "query": "Is the benefits utilization producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_122_1",
+          "relevance_doc_relevance_122_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_123": {
+        "query": "Is the crop rotation trial producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_123_1",
+          "relevance_doc_relevance_123_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_124": {
+        "query": "Is the port throughput analysis producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_124_1",
+          "relevance_doc_relevance_124_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_125": {
+        "query": "Is the energy audit results producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_125_1",
+          "relevance_doc_relevance_125_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_126": {
+        "query": "Is the machine learning model producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_126_1",
+          "relevance_doc_relevance_126_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_127": {
+        "query": "Is the tax optimization producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_127_1",
+          "relevance_doc_relevance_127_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_128": {
+        "query": "Is the imaging protocol producing measurable results?",
+        "relevant_docs": [
+          "relevance_doc_relevance_128_1",
+          "relevance_doc_relevance_128_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_129": {
+        "query": "Does the protein folding deliver on its promises?",
+        "relevant_docs": [
+          "relevance_doc_relevance_129_1",
+          "relevance_doc_relevance_129_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - prerequisite_missing subcategory"
+      },
+      "relevance_hard_130": {
+        "query": "What are the day-by-day details of the securities fraud allegation over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_130_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_131": {
+        "query": "What are the day-by-day details of the STEM pipeline program over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_131_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_132": {
+        "query": "What are the day-by-day details of the air quality monitoring over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_132_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_133": {
+        "query": "What are the day-by-day details of the youth development academy over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_133_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_134": {
+        "query": "What are the day-by-day details of the school lunch program over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_134_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_135": {
+        "query": "What are the day-by-day details of the social commerce over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_135_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_136": {
+        "query": "What are the day-by-day details of the industrial output data over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_136_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_137": {
+        "query": "What are the day-by-day details of the emergency response plan over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_137_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_138": {
+        "query": "What are the day-by-day details of the IQ test norming study over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_138_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_139": {
+        "query": "What are the day-by-day details of the performance management overhaul over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_139_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_140": {
+        "query": "What are the day-by-day details of the greenhouse automation over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_140_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_141": {
+        "query": "What are the day-by-day details of the bus rapid transit ridership over the past week?",
+        "relevant_docs": [
+          "relevance_doc_relevance_141_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - granularity_mismatch subcategory"
+      },
+      "relevance_hard_142": {
+        "query": "Does the market absorption study approach apply globally?",
+        "relevant_docs": [
+          "relevance_doc_relevance_142_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_143": {
+        "query": "What are the global trends in DevOps toolchain?",
+        "relevant_docs": [
+          "relevance_doc_relevance_143_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_144": {
+        "query": "What are the global trends in ESG investing?",
+        "relevant_docs": [
+          "relevance_doc_relevance_144_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_145": {
+        "query": "What are the global trends in rehabilitation program?",
+        "relevant_docs": [
+          "relevance_doc_relevance_145_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_146": {
+        "query": "What are the global trends in seismological survey?",
+        "relevant_docs": [
+          "relevance_doc_relevance_146_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_147": {
+        "query": "What are the global trends in immigration proceedings?",
+        "relevant_docs": [
+          "relevance_doc_relevance_147_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_148": {
+        "query": "What are the global trends in school nutrition program?",
+        "relevant_docs": [
+          "relevance_doc_relevance_148_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_149": {
+        "query": "What are the global trends in recycling program?",
+        "relevant_docs": [
+          "relevance_doc_relevance_149_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_150": {
+        "query": "What are the global trends in broadcasting rights deal?",
+        "relevant_docs": [
+          "relevance_doc_relevance_150_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_151": {
+        "query": "What are the global trends in caffeine research?",
+        "relevant_docs": [
+          "relevance_doc_relevance_151_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_152": {
+        "query": "What are the global trends in mental health impact study?",
+        "relevant_docs": [
+          "relevance_doc_relevance_152_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_153": {
+        "query": "What are the global trends in diplomatic correspondence?",
+        "relevant_docs": [
+          "relevance_doc_relevance_153_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - scope_mismatch subcategory"
+      },
+      "relevance_hard_154": {
+        "query": "How do you implement public transit funding? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_154_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_155": {
+        "query": "How do you implement sleep deprivation effects? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_155_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_156": {
+        "query": "How do you implement workplace safety audit? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_156_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_157": {
+        "query": "How do you implement harvest loss assessment? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_157_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_158": {
+        "query": "How do you implement aviation fuel efficiency? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_158_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_159": {
+        "query": "How do you implement property tax assessment? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_159_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_160": {
+        "query": "How do you implement frontend performance? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_160_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_161": {
+        "query": "How do you implement forex trading? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_161_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_162": {
+        "query": "How do you implement genetic screening? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_162_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_163": {
+        "query": "How do you implement battery chemistry? Provide numbered steps.",
+        "relevant_docs": [
+          "relevance_doc_relevance_163_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - format_mismatch subcategory"
+      },
+      "relevance_hard_164": {
+        "query": "What is the overall assessment of zoning variance request?",
+        "relevant_docs": [
+          "relevance_doc_relevance_164_1",
+          "relevance_doc_relevance_164_2",
+          "relevance_doc_relevance_164_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_165": {
+        "query": "What is the overall assessment of bilingual education model?",
+        "relevant_docs": [
+          "relevance_doc_relevance_165_1",
+          "relevance_doc_relevance_165_2",
+          "relevance_doc_relevance_165_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_166": {
+        "query": "What is the overall assessment of electric grid integration?",
+        "relevant_docs": [
+          "relevance_doc_relevance_166_1",
+          "relevance_doc_relevance_166_2",
+          "relevance_doc_relevance_166_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_167": {
+        "query": "What is the overall assessment of anti-doping testing?",
+        "relevant_docs": [
+          "relevance_doc_relevance_167_1",
+          "relevance_doc_relevance_167_2",
+          "relevance_doc_relevance_167_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_168": {
+        "query": "What is the overall assessment of food preservation method?",
+        "relevant_docs": [
+          "relevance_doc_relevance_168_1",
+          "relevance_doc_relevance_168_2",
+          "relevance_doc_relevance_168_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_169": {
+        "query": "What is the overall assessment of bot detection system?",
+        "relevant_docs": [
+          "relevance_doc_relevance_169_1",
+          "relevance_doc_relevance_169_2",
+          "relevance_doc_relevance_169_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_170": {
+        "query": "What is the overall assessment of immigration records?",
+        "relevant_docs": [
+          "relevance_doc_relevance_170_1",
+          "relevance_doc_relevance_170_2",
+          "relevance_doc_relevance_170_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_171": {
+        "query": "What is the overall assessment of voter registration data?",
+        "relevant_docs": [
+          "relevance_doc_relevance_171_1",
+          "relevance_doc_relevance_171_2",
+          "relevance_doc_relevance_171_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_172": {
+        "query": "What is the overall assessment of phobia treatment?",
+        "relevant_docs": [
+          "relevance_doc_relevance_172_1",
+          "relevance_doc_relevance_172_2",
+          "relevance_doc_relevance_172_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_173": {
+        "query": "What is the overall assessment of L&D program evaluation?",
+        "relevant_docs": [
+          "relevance_doc_relevance_173_1",
+          "relevance_doc_relevance_173_2",
+          "relevance_doc_relevance_173_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_174": {
+        "query": "What is the overall assessment of dairy herd genetics?",
+        "relevant_docs": [
+          "relevance_doc_relevance_174_1",
+          "relevance_doc_relevance_174_2",
+          "relevance_doc_relevance_174_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_175": {
+        "query": "What is the overall assessment of last-mile delivery?",
+        "relevant_docs": [
+          "relevance_doc_relevance_175_1",
+          "relevance_doc_relevance_175_2",
+          "relevance_doc_relevance_175_3"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - cherry_picking subcategory"
+      },
+      "relevance_hard_176": {
+        "query": "What is the exact figure for flood risk evaluation?",
+        "relevant_docs": [
+          "relevance_doc_relevance_176_1",
+          "relevance_doc_relevance_176_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_177": {
+        "query": "What is the exact figure for data pipeline?",
+        "relevant_docs": [
+          "relevance_doc_relevance_177_1",
+          "relevance_doc_relevance_177_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_178": {
+        "query": "What is the exact figure for insurance actuarial?",
+        "relevant_docs": [
+          "relevance_doc_relevance_178_1",
+          "relevance_doc_relevance_178_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_179": {
+        "query": "What is the exact figure for antimicrobial stewardship?",
+        "relevant_docs": [
+          "relevance_doc_relevance_179_1",
+          "relevance_doc_relevance_179_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_180": {
+        "query": "What is the exact figure for fusion reactor?",
+        "relevant_docs": [
+          "relevance_doc_relevance_180_1",
+          "relevance_doc_relevance_180_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_181": {
+        "query": "What is the exact figure for criminal sentencing?",
+        "relevant_docs": [
+          "relevance_doc_relevance_181_1",
+          "relevance_doc_relevance_181_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_182": {
+        "query": "What is the exact figure for campus mental health services?",
+        "relevant_docs": [
+          "relevance_doc_relevance_182_1",
+          "relevance_doc_relevance_182_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_183": {
+        "query": "What is the exact figure for biodiversity survey?",
+        "relevant_docs": [
+          "relevance_doc_relevance_183_1",
+          "relevance_doc_relevance_183_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_184": {
+        "query": "What is the exact figure for athlete nutrition protocol?",
+        "relevant_docs": [
+          "relevance_doc_relevance_184_1",
+          "relevance_doc_relevance_184_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_185": {
+        "query": "What is the exact figure for artificial sweetener review?",
+        "relevant_docs": [
+          "relevance_doc_relevance_185_1",
+          "relevance_doc_relevance_185_2"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - false_precision subcategory"
+      },
+      "relevance_hard_186": {
+        "query": "Should ad targeting precision be expanded to new regions?",
+        "relevant_docs": [
+          "relevance_doc_relevance_186_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - assumption_injection subcategory"
+      },
+      "relevance_hard_187": {
+        "query": "Should plague mortality data be expanded to new regions?",
+        "relevant_docs": [
+          "relevance_doc_relevance_187_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - assumption_injection subcategory"
+      },
+      "relevance_hard_188": {
+        "query": "Should education funding formula be expanded to new regions?",
+        "relevant_docs": [
+          "relevance_doc_relevance_188_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - assumption_injection subcategory"
+      },
+      "relevance_hard_189": {
+        "query": "Should memory reconsolidation be expanded to new regions?",
+        "relevant_docs": [
+          "relevance_doc_relevance_189_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - assumption_injection subcategory"
+      },
+      "relevance_hard_190": {
+        "query": "Should attrition analysis be expanded to new regions?",
+        "relevant_docs": [
+          "relevance_doc_relevance_190_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - assumption_injection subcategory"
+      },
+      "relevance_hard_191": {
+        "query": "Should cover crop study be expanded to new regions?",
+        "relevant_docs": [
+          "relevance_doc_relevance_191_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - assumption_injection subcategory"
+      },
+      "relevance_hard_192": {
+        "query": "Should highway safety audit be expanded to new regions?",
+        "relevant_docs": [
+          "relevance_doc_relevance_192_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - assumption_injection subcategory"
+      },
+      "relevance_hard_193": {
+        "query": "Should HOA financial analysis be expanded to new regions?",
+        "relevant_docs": [
+          "relevance_doc_relevance_193_1"
+        ],
+        "decoy_docs": [],
+        "notes": "relevance test case - assumption_injection subcategory"
       }
     }
   }
