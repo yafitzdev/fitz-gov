@@ -25,7 +25,13 @@
         "date",
         "not provided"
       ],
-      "original_id": "relevance_medium_001"
+      "original_id": "relevance_medium_001",
+      "domain": "education",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
     },
     {
       "id": "t1_relevance_medium_002",
@@ -46,7 +52,13 @@
         "different",
         "not provided"
       ],
-      "original_id": "relevance_medium_002"
+      "original_id": "relevance_medium_002",
+      "domain": "environment",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent"
     },
     {
       "id": "t1_relevance_medium_003",
@@ -67,7 +79,13 @@
         "2023",
         "different period"
       ],
-      "original_id": "relevance_medium_003"
+      "original_id": "relevance_medium_003",
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent"
     },
     {
       "id": "t1_relevance_medium_004",
@@ -88,7 +106,13 @@
         "pathway",
         "not mentioned"
       ],
-      "original_id": "relevance_medium_004"
+      "original_id": "relevance_medium_004",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_medium_005",
@@ -115,7 +139,13 @@
         "allocated \\$?\\d",
         "\\d+\\s*(million|thousand|billion)"
       ],
-      "original_id": "relevance_medium_005"
+      "original_id": "relevance_medium_005",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_medium_006",
@@ -136,7 +166,13 @@
         "years",
         "not provided"
       ],
-      "original_id": "relevance_medium_006"
+      "original_id": "relevance_medium_006",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_medium_007",
@@ -157,7 +193,13 @@
         "not mentioned",
         "local"
       ],
-      "original_id": "relevance_medium_007"
+      "original_id": "relevance_medium_007",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_medium_008",
@@ -178,7 +220,13 @@
         "compliance",
         "not mentioned"
       ],
-      "original_id": "relevance_medium_008"
+      "original_id": "relevance_medium_008",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
     },
     {
       "id": "t1_relevance_medium_009",
@@ -198,7 +246,13 @@
         "not provided",
         "energy"
       ],
-      "original_id": "relevance_medium_009"
+      "original_id": "relevance_medium_009",
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
     },
     {
       "id": "t1_relevance_hard_001",
@@ -219,7 +273,13 @@
         "APAC",
         "different region"
       ],
-      "original_id": "relevance_hard_001"
+      "original_id": "relevance_hard_001",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent"
     },
     {
       "id": "t1_relevance_hard_002",
@@ -240,7 +300,13 @@
         "not mentioned",
         "post-merger"
       ],
-      "original_id": "relevance_hard_002"
+      "original_id": "relevance_hard_002",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent"
     },
     {
       "id": "t1_relevance_hard_003",
@@ -261,7 +327,13 @@
         "not mentioned",
         "load chart"
       ],
-      "original_id": "relevance_hard_003"
+      "original_id": "relevance_hard_003",
+      "domain": "general",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_004",
@@ -288,7 +360,13 @@
         "gets \\d+\\s*(city|highway)",
         "achieves \\d+"
       ],
-      "original_id": "relevance_hard_004"
+      "original_id": "relevance_hard_004",
+      "domain": "transportation",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_005",
@@ -310,7 +388,13 @@
         "training data",
         "not mentioned"
       ],
-      "original_id": "relevance_hard_005"
+      "original_id": "relevance_hard_005",
+      "domain": "technology",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_006",
@@ -332,7 +416,13 @@
         "not mentioned",
         "how long"
       ],
-      "original_id": "relevance_hard_006"
+      "original_id": "relevance_hard_006",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
     },
     {
       "id": "t1_relevance_hard_007",
@@ -359,7 +449,13 @@
         "APR (is|of) \\d",
         "\\d+(\\.\\d+)?\\s*percent"
       ],
-      "original_id": "relevance_hard_007"
+      "original_id": "relevance_hard_007",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
     },
     {
       "id": "t1_relevance_hard_008",
@@ -380,7 +476,13 @@
         "not mentioned",
         "completion"
       ],
-      "original_id": "relevance_hard_008"
+      "original_id": "relevance_hard_008",
+      "domain": "real_estate",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_009",
@@ -398,7 +500,13 @@
         "analytics",
         "machine learning",
         "cloud"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_010",
@@ -420,7 +528,13 @@
       ],
       "forbidden_elements": [
         "Springfield.*(population|has|is).*(\\d{2,3},?\\d{3}|hundred thousand)"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_011",
@@ -443,7 +557,13 @@
       "forbidden_elements": [
         "\\$\\d+[\\d,]*\\s*(per|/|an?)\\s*hour",
         "hourly rate (is|of) \\$"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_012",
@@ -463,7 +583,13 @@
         "not provided",
         "depends",
         "consider"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_013",
@@ -483,7 +609,13 @@
         "judgment",
         "depends",
         "evaluate"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_014",
@@ -503,7 +635,13 @@
         "depends",
         "requirements",
         "role"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_015",
@@ -523,7 +661,13 @@
         "not mentioned",
         "different",
         "not provided"
-      ]
+      ],
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_016",
@@ -543,7 +687,13 @@
         "not mentioned",
         "existing",
         "convert"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_017",
@@ -563,7 +713,13 @@
         "age",
         "not studied",
         "adult"
-      ]
+      ],
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_018",
@@ -583,7 +739,13 @@
       ],
       "forbidden_elements": [
         "founded|employees|revenue|billion|countries"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_019",
@@ -601,7 +763,13 @@
       ],
       "forbidden_elements": [
         "OAuth|rate limit|1000|JSON|XML|documentation"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_020",
@@ -619,7 +787,13 @@
       ],
       "forbidden_elements": [
         "Harvard|McKinsey|COO|2028|markets|products"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_021",
@@ -639,7 +813,13 @@
         "E-402",
         "E-403",
         "depends"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_022",
@@ -659,7 +839,13 @@
         "domestic",
         "international",
         "need"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_relevance_hard_023",
@@ -679,7 +865,13 @@
         "Enterprise",
         "admin",
         "permissions"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
     }
   ],
   "evaluation_config": {

@@ -25,7 +25,13 @@
         "starting at \\$?\\d",
         "pricing (is|starts|begins) (at )?\\$?\\d"
       ],
-      "original_id": "grounding_medium_001"
+      "original_id": "grounding_medium_001",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_002",
@@ -48,7 +54,13 @@
         "navigate to (the )?['\"]?\\w+['\"]?",
         "go to (the )?(settings|menu|page|account)"
       ],
-      "original_id": "grounding_medium_002"
+      "original_id": "grounding_medium_002",
+      "domain": "general",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_003",
@@ -69,7 +81,13 @@
         "quote[d]?[,:]? ['\"]",
         "['\"][A-Z][^'\"]{10,}['\"]"
       ],
-      "original_id": "grounding_medium_003"
+      "original_id": "grounding_medium_003",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_004",
@@ -93,7 +111,13 @@
         "requires (at least )?\\d",
         "(at least|minimum) \\d+\\s*(GB|cores)"
       ],
-      "original_id": "grounding_medium_004"
+      "original_id": "grounding_medium_004",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_005",
@@ -114,7 +138,13 @@
         "take \\d+\\s*(mg|tablet|capsule)",
         "(recommended |typical |standard )?dos(e|age) (is|of) \\d"
       ],
-      "original_id": "grounding_medium_005"
+      "original_id": "grounding_medium_005",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_006",
@@ -135,7 +165,13 @@
         "since (19|20)\\d{2}",
         "in (19|20)\\d{2}"
       ],
-      "original_id": "grounding_medium_006"
+      "original_id": "grounding_medium_006",
+      "domain": "technology",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_007",
@@ -157,7 +193,13 @@
         "leads with \\d",
         "holds \\d"
       ],
-      "original_id": "grounding_medium_007"
+      "original_id": "grounding_medium_007",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_008",
@@ -182,7 +224,13 @@
         "launched in",
         "countries including"
       ],
-      "original_id": "grounding_medium_008"
+      "original_id": "grounding_medium_008",
+      "domain": "finance",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_009",
@@ -204,7 +252,13 @@
         "(he|she|they) (says|said|believes|argues)",
         "(Harvard|MIT|Stanford|Berkeley|Oxford|Cambridge) (study|research|professor)"
       ],
-      "original_id": "grounding_medium_009"
+      "original_id": "grounding_medium_009",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_medium_010",
@@ -228,7 +282,13 @@
         "navigate to (the )?\\w+",
         "(in |under |go to )(the )?settings"
       ],
-      "original_id": "grounding_medium_010"
+      "original_id": "grounding_medium_010",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_001",
@@ -251,7 +311,13 @@
         "lift of \\d",
         "\\d+x (improvement|increase|lift)"
       ],
-      "original_id": "grounding_hard_001"
+      "original_id": "grounding_hard_001",
+      "domain": "law",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_002",
@@ -273,7 +339,13 @@
         "encrypted (using|with) (AES|RSA|TLS)",
         "encryption (standard|algorithm) (is|uses)"
       ],
-      "original_id": "grounding_hard_002"
+      "original_id": "grounding_hard_002",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_003",
@@ -295,7 +367,13 @@
         "(study |research )?(found|showed) that \\d",
         "(in |from )(20[12]\\d)"
       ],
-      "original_id": "grounding_hard_003"
+      "original_id": "grounding_hard_003",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_004",
@@ -319,7 +397,13 @@
         "speedup of \\d",
         "\\d+x (speedup|improvement|faster)"
       ],
-      "original_id": "grounding_hard_004"
+      "original_id": "grounding_hard_004",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_005",
@@ -342,7 +426,13 @@
         "remission rate (of|is|was) \\d",
         "\\d+\\s*% (success|effective|cure|remission)"
       ],
-      "original_id": "grounding_hard_005"
+      "original_id": "grounding_hard_005",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_006",
@@ -365,7 +455,13 @@
         "coming (in|this|next)",
         "will (be released|launch|ship) (in|by)"
       ],
-      "original_id": "grounding_hard_006"
+      "original_id": "grounding_hard_006",
+      "domain": "sports",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_007",
@@ -389,7 +485,13 @@
         "routed to (the |a |your )?\\w+",
         "escalated to (the |a |your )?\\w+"
       ],
-      "original_id": "grounding_hard_007"
+      "original_id": "grounding_hard_007",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_008",
@@ -408,7 +510,13 @@
         "Company A('s)?( plan| strateg| approach)?.*(emerging markets|expand|acquisition|R&D)",
         "(their|its) (strategy|plan|approach) (is|includes|involves)",
         "A (is|will be|plans to) (expand|acquir|invest|double)"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_009",
@@ -427,7 +535,13 @@
         "(the CEO|he|she) (said|stated|mentioned|announced|declared) (that |\"|\\')",
         "according to the CEO[,:]? (\"|\\'|we|the|our)",
         "(his|her) (exact )?words were"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_010",
@@ -449,7 +563,13 @@
         "went (up|from) \\d",
         "\\d+ (point|pts|percentage)",
         "(from|by) \\d+(\\.|\\d)*( percent| points| %| to)"
-      ]
+      ],
+      "domain": "law",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_011",
@@ -469,7 +589,13 @@
         "def process_data\\(",
         "parameter (is|are|include)",
         "(first|second|third) (parameter|argument)"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_012",
@@ -489,7 +615,13 @@
         "(True|False|None|bool|int|str|dict|list|Connection|Pool)",
         "returns? (True|False|None|nothing|void)",
         "the (return |returned )?(value|type|object)"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_013",
@@ -508,7 +640,13 @@
         "(ValueError|TypeError|ValidationError|InvalidInput|InputError)",
         "exception (type|is|are|include)",
         "can (raise|throw) (a |an |the )?\\w+"
-      ]
+      ],
+      "domain": "general",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_014",
@@ -527,7 +665,13 @@
         "margin (is|was|of) \\d",
         "(Q2|second quarter)('s)? (profit )?margin",
         "calculated|computed|derived"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_015",
@@ -547,7 +691,13 @@
         "highest growth.*(Widget [ABC]|is|was)",
         "(Widget [ABC]).*(highest|most|fastest) growth",
         "calculated|computed"
-      ]
+      ],
+      "domain": "general",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_016",
@@ -565,7 +715,13 @@
         "\\d+(\\.\\d+)?\\s*(years|months) (on )?average",
         "tenure (is|averages?) \\d",
         "calculated|computed|divided|divide"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_017",
@@ -584,7 +740,13 @@
         "'The results are promising[^']{10,}'",
         "\"The results are promising[^\"]{10,}\"",
         "(he|she|they) (also |further )?(said|stated|added|concluded|noted)"
-      ]
+      ],
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_018",
@@ -603,7 +765,13 @@
         "'This merger represents a new chapter[^']{15,}'",
         "\"This merger represents a new chapter[^\"]{15,}\"",
         "full (quote|statement) (is|was|reads)"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_019",
@@ -622,7 +790,13 @@
         "'I heard a loud noise and then[^']{10,}'",
         "\"I heard a loud noise and then[^\"]{10,}\"",
         "(she|witness) (also |further )?(said|saw|heard|testified)"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_020",
@@ -643,7 +817,13 @@
         "product (launch|announcement|unveil).*(October|November|\\d{1,2},? 2024)",
         "on (October 15|November 3)",
         "(15|3)(st|nd|rd|th)? (of )?(October|November)"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_021",
@@ -664,7 +844,13 @@
         "(\\$|billion|million).*in 2022",
         "\\$[\\d.]+ (billion|million) in 2022",
         "2022.*(\\$[\\d.]+|revenue)"
-      ]
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_022",
@@ -684,7 +870,13 @@
         "(4\\.2|3\\.9)\\s*%.*(when|at the time|policy|enacted)",
         "when.*(enacted|signed).*(4\\.2|3\\.9)",
         "unemployment (was|at) (4\\.2|3\\.9).*(when|policy)"
-      ]
+      ],
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_023",
@@ -706,7 +898,13 @@
         "(you can |allows? you to )(set|configure|specify) (the )?\\w+",
         "DatabaseConfig\\.(\\w+)\\s*=",
         "(max|min|default)_(connections?|pool|size|timeout)"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t1_grounding_hard_024",
@@ -727,7 +925,13 @@
         "supports? (GET|POST|PUT|PATCH|DELETE)",
         "(methods?|verbs?) (include|are|supported|available)",
         "you can (GET|POST|PUT|DELETE|send|make)"
-      ]
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     }
   ],
   "evaluation_config": {
