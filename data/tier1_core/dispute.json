@@ -2914,6 +2914,902 @@
       "expected_mode": "disputed",
       "description": "Manufacturer reports 0.4% failure rate while independent inspection finds 3.8% structural deficiency rate",
       "rationale": "The manufacturer reports a 0.4% cumulative failure rate while Lloyd's Register documents a 3.8% structural deficiency rate, nearly a 10x difference. While the metrics are not identical (outright failure vs structural deficiency requiring intervention), both bear on the question of blade reliability. The 2.3x fleet-average deficiency rate further contradicts the manufacturer's reliability claims."
+    },
+    {
+      "id": "t1_dispute_hard_568",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "How long does the company's standard warranty last?",
+      "contexts": [
+        "ApexTools Product Warranty Statement (Revised January 2025): ApexTools provides a comprehensive two-year limited warranty on all power tools purchased from authorized retailers. The warranty covers defects in materials and workmanship under normal use conditions. The warranty period begins on the date of purchase as shown on the original receipt. If a product is found to be defective, ApexTools will repair or replace the unit at its discretion at no charge. The warranty does not cover damage from misuse, unauthorized modifications, or normal wear items such as brushes, blades, and bits."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Two sources state the same warranty — one says 'two-year', the other says '24-month'",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Both sources describe the same two-year (24-month) warranty. The phrasing differs but the substance is identical. The commercial use reduction to 12 months is for a different use case, not a contradiction of the standard warranty length.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_215",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_569",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the recommended daily water intake for adults?",
+      "contexts": [
+        "National Health Service (NHS) Guidelines — Hydration (2024): Adults should aim to drink 6 to 8 cups of fluid per day. This includes water, lower-fat milk, and sugar-free drinks including tea and coffee. Water from food also contributes to overall hydration. In hot weather or when exercising, additional fluid intake may be needed. Signs of adequate hydration include pale yellow urine and infrequent thirst. Individuals with certain medical conditions such as kidney disease or heart failure should consult their doctor about fluid intake."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: NHS says 6-8 cups, EFSA says 2.0-2.5 litres total — same answer in different units and framing",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: 6-8 cups is approximately 1.5-2.0 litres, and EFSA recommends 1.6-2.0 litres of beverages. The numbers align when unit conversion and food-water distinction are accounted for. These are the same recommendation expressed differently, not a disagreement.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_216",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_570",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the company's parental leave policy?",
+      "contexts": [
+        "Vantage Inc. — Employee Handbook (2025 Edition, Section 7.4): Vantage Inc. provides 16 weeks of paid parental leave for all full-time employees following the birth, adoption, or foster placement of a child. Leave may be taken consecutively or intermittently within the first 12 months. Both birthing and non-birthing parents receive the same 16-week benefit. Employees must have completed at least 6 months of continuous employment to be eligible. During parental leave, health insurance and other benefits continue without interruption."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: One says '16 weeks', the other says 'four months' — same duration, different phrasing",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: 16 weeks and four months are functionally the same duration. Both sources describe the same policy with consistent details about equal access for all parents. The careers page adds information about the gradual return program, which supplements rather than contradicts the handbook.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_217",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_571",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the melting point of titanium?",
+      "contexts": [
+        "CRC Handbook of Chemistry and Physics (105th Edition, 2024-2025): Titanium (Ti), atomic number 22. Melting point: 1668 degrees Celsius (3034 degrees Fahrenheit). Boiling point: 3287 degrees Celsius. Density at 25 degrees Celsius: 4.506 grams per cubic centimetre. Crystal structure: hexagonal close-packed (alpha phase) below 882 degrees Celsius, body-centred cubic (beta phase) above. Titanium is notable for its high strength-to-weight ratio, excellent corrosion resistance, and biocompatibility. Primary industrial applications include aerospace structural components, medical implants, and chemical processing equipment."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: CRC says 1668C, ASM says 1670C plus or minus 5 — within measurement uncertainty",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The two-degree difference between 1668C and 1670C is well within the stated measurement uncertainty of plus or minus 5 degrees. These sources agree on the melting point of titanium. The difference is measurement precision, not a disagreement.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_218",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_572",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "How many employees does the organization have?",
+      "contexts": [
+        "Pinnacle Group Annual Report (Fiscal Year 2024): As of December 31, 2024, Pinnacle Group employed approximately 34,200 full-time equivalent employees across 28 countries. This represents a 7% increase from the prior year headcount of 31,900. The largest concentrations are in the United States (14,800), India (8,200), and the United Kingdom (4,100). Part-time and contract workers are not included in the full-time equivalent count."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Annual report says 34,200 FTE, About Us page says 'more than 34,000' — same figure at different precision",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: 34,200 and 'more than 34,000' are the same number at different levels of precision. The annual report provides the exact figure while the marketing page rounds appropriately. There is no disagreement.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_219",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_573",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the speed limit on Highway 101 through the downtown corridor?",
+      "contexts": [
+        "City Transportation Department — Speed Limit Ordinance (Ordinance 2024-187, Effective July 1, 2024): Pursuant to Section 22358 of the California Vehicle Code, the City Council hereby reduces the speed limit on Highway 101 through the downtown corridor (mile marker 42.3 to mile marker 47.1) from 55 miles per hour to 45 miles per hour. This reduction is based on the traffic and engineering survey completed in May 2024, which documented pedestrian volumes, intersection density, and crash history justifying the lower limit. New signage shall be installed by August 15, 2024."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: 2024 ordinance supersedes 2021 fact sheet — the speed limit is now 45 mph",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The 2024 ordinance is a formal legal action that changed the speed limit from 55 to 45 mph. The 2021 Caltrans fact sheet predates this change and references the old limit. When a newer authoritative legal document supersedes an older informational document, the newer one wins. The answer is confidently 45 mph.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_225",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_574",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "Does the museum offer free admission on Sundays?",
+      "contexts": [
+        "Ashford Museum of Art — Visitor Information (Official Website, Updated January 2025): General admission is $18 for adults, $12 for seniors and students, and free for children under 12. Members enjoy unlimited free admission year-round. Sunday admission is free for all visitors, supported by a generous endowment from the Hargrove Family Foundation established in 2022. The museum is open Tuesday through Sunday, 10:00 AM to 5:00 PM, with extended hours until 8:00 PM on Thursdays."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Official 2025 website contradicts a 2023 visitor review — the official current source wins",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The museum's official website, updated January 2025, explicitly states Sunday admission is free. The TripAdvisor review from March 2023 describes a different policy that may have been in effect at that time but has since changed with the Hargrove Foundation endowment. An official, current institutional source clearly supersedes an informal, older visitor review. The answer is confidently yes.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_226",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_575",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "Is gluten-free labeling mandatory for food products in the EU?",
+      "contexts": [
+        "EU Regulation 1169/2011 on Food Information to Consumers (Consolidated Text, Updated 2024): Under Annex II of Regulation 1169/2011, cereals containing gluten (wheat, rye, barley, oats, spelt, kamut) are classified as allergens that must be declared on the label of pre-packaged food. The allergen must be emphasised in the ingredients list through typeset that clearly distinguishes it, such as bold or uppercase. Commission Implementing Regulation 828/2014 establishes the conditions for 'gluten-free' (less than 20 mg/kg) and 'very low gluten' (less than 100 mg/kg) voluntary claims on food labeling. These claims are optional for manufacturers who wish to indicate suitability for consumers with coeliac disease."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: The EU regulation clearly states gluten-free claims are voluntary; a 2019 blog incorrectly says mandatory",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The actual EU regulation (1169/2011 and implementing regulation 828/2014) clearly states that 'gluten-free' labeling is voluntary. What is mandatory is declaring gluten-containing cereals as allergens in the ingredients list. The 2019 blog post conflates allergen declaration (mandatory) with gluten-free claims (voluntary) and is factually incorrect. The official regulation is the definitive source.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_227",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_576",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the current CEO of Meridian Health Systems?",
+      "contexts": [
+        "Meridian Health Systems — Board of Directors Press Release (November 15, 2024): The Board of Directors of Meridian Health Systems is pleased to announce the appointment of Dr. Sarah Okonkwo as Chief Executive Officer, effective December 1, 2024. Dr. Okonkwo succeeds James Halstead, who served as CEO since 2018 and will transition to an advisory role through March 2025. Dr. Okonkwo previously served as Chief Operating Officer and brings 22 years of healthcare leadership experience. The appointment follows a comprehensive six-month search process."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: November 2024 press release announces new CEO; August 2024 Forbes article references the previous CEO",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The board press release from November 2024 announces Dr. Sarah Okonkwo as CEO effective December 2024. The Forbes article from August 2024 was published before this leadership change. The more recent official announcement from the company's own board clearly supersedes the older profile article. The current CEO is Dr. Sarah Okonkwo.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_228",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_577",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the recommended dosage of vitamin D for adults?",
+      "contexts": [
+        "National Institutes of Health — Office of Dietary Supplements Fact Sheet (Updated September 2024): The Recommended Dietary Allowance (RDA) for vitamin D for adults aged 19-70 is 600 IU (15 micrograms) daily. For adults over 70, the RDA increases to 800 IU (20 micrograms) daily. These values assume minimal sun exposure. The Tolerable Upper Intake Level (UL) for adults is 4,000 IU (100 micrograms) daily. Higher doses should only be taken under medical supervision. Serum 25-hydroxyvitamin D levels of 20 ng/mL or above are considered adequate for bone health in the general population."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: NIH official recommendation vs. wellness blog promoting megadoses — authoritative source wins clearly",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The NIH Office of Dietary Supplements is the authoritative US government source for dietary supplement recommendations, based on systematic review of clinical evidence. The wellness blog promotes dosages that exceed the established Tolerable Upper Intake Level without clinical trial support. The official RDA of 600 IU for adults 19-70 is the correct answer. The blog's claims do not create genuine uncertainty.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_229",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_578",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What was Meridian Corp's total revenue for fiscal year 2024?",
+      "contexts": [
+        "Meridian Corp 10-K Annual Report (filed March 2025, SEC audited): Total revenue for fiscal year ending December 31, 2024 was $5,023,456,000. This figure was audited by Deloitte & Touche LLP in accordance with PCAOB standards. The audit opinion was unqualified. Revenue recognition followed ASC 606, with performance obligations satisfied at a point in time for product sales and over time for service contracts. The company restated Q2 revenue by $12M due to a contract modification that should have been treated as a separate performance obligation.",
+        "Meridian Corp Preliminary Earnings Press Release (January 2025, unaudited): Meridian Corporation announces preliminary fiscal year 2024 revenue of approximately $5.2 billion, exceeding analyst consensus of $5.1 billion. CEO Janet Morrison stated: 'Our strong performance reflects the momentum in our cloud services division.' Note: These figures are preliminary and unaudited. Final audited results may differ. Certain revenue recognition timing adjustments and year-end contract reviews are still being finalized."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: audited 10-K, preliminary press release, and Bloomberg explaining the discrepancy",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: three different numbers ($5.02B, $5.2B, $5.15B estimate). Qualify signal: the methodology difference (audited vs preliminary vs estimate) could suggest uncertainty. Confident signal: the audited 10-K is the definitive authoritative source, the Bloomberg data confirms the audited number and explains why the preliminary differed. Correct mode is CONFIDENT because the audited SEC filing is the gold standard for reported revenue, the preliminary number was explicitly flagged as subject to change, and Bloomberg confirms the audited figure while explaining the adjustment.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_600",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_579",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the unemployment rate in the United States as of December 2024?",
+      "contexts": [
+        "Bureau of Labor Statistics Employment Situation Report (January 2025, official release): Total nonfarm payroll employment increased by 256,000 in December 2024, and the unemployment rate (U-3) was 4.1 percent. The number of unemployed persons was 6.8 million. The labor force participation rate was 62.5 percent. These estimates are derived from the Current Population Survey (CPS), a monthly sample survey of approximately 60,000 eligible households conducted by the U.S. Census Bureau for the BLS.",
+        "ShadowStats Alternative Economic Analysis (2024): The real unemployment rate in December 2024 is 24.8%, not the government's fraudulent 4.1%. By including long-term discouraged workers and those forced into part-time work, the true picture of American unemployment is catastrophic. The BLS stopped counting millions of people as unemployed in 1994 when they changed the methodology. Our proprietary measure restores the pre-1994 methodology to show what the government is hiding from the public."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: official BLS report, alternative economics site claiming much higher rate, and Fed data confirming with context",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: dramatically different numbers (4.1% vs 24.8% vs 4.1%/7.5%). Qualify signal: the concept of unemployment is genuinely multi-dimensional (U-3 vs U-6), and the alternative site raises a real methodological question about discouraged workers. Confident signal: two official government sources agree on 4.1% using standard methodology, and FRED provides the broader U-6 context. Correct mode is CONFIDENT because the standard U-3 unemployment rate is clearly and consistently reported as 4.1% by the definitive sources, ShadowStats uses a non-standard proprietary methodology rejected by the economics profession, and the FRED data provides the broader U-6 measure that addresses the legitimate concern about undercount.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_601",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_580",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the melting point of pure gold?",
+      "contexts": [
+        "CRC Handbook of Chemistry and Physics, 105th Edition (2024, reference standard): The melting point of gold (Au, atomic number 79) is 1064.18 degrees Celsius (1947.52 degrees Fahrenheit). This value is an ITS-90 fixed point used in the International Temperature Scale of 1990 as a defining calibration point for high-temperature thermometry. The uncertainty is +/- 0.01 degrees Celsius. Gold's melting point is one of the most precisely known physical constants.",
+        "GoldInvestorForum.com (2023): Real gold melts at around 1,000 degrees Celsius. I've tested this myself with a propane torch and a crucible, and my gold coins started melting well before my thermocouple read 1064. Either the textbooks are wrong or most gold products have impurities that lower the melting point. Some dealers sell gold that melts as low as 950C which proves it's not pure. If your gold melts too early, it's probably fake or alloyed."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: authoritative reference handbook, hobbyist forum with anecdotal experience, and NIST standard confirming",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: different melting points claimed (~1000C vs 1064.18C vs 1064.18C). Qualify signal: the forum user's observation about gold products melting at lower temperatures is actually explained by alloys, which NIST confirms. Confident signal: two definitive scientific sources agree precisely on 1064.18C, and this is literally a defining calibration point of the international temperature scale. Correct mode is CONFIDENT because this is one of the most precisely known physical constants, the two authoritative sources agree to hundredths of a degree, and the forum user's confusion is clearly explained by the alloy distinction.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_602",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_581",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "How tall is Mount Everest?",
+      "contexts": [
+        "Survey of India and Chinese Academy of Sciences Joint Announcement (December 2020, official survey): The height of Mount Everest (Sagarmatha/Chomolungma) has been jointly determined as 8,848.86 meters above sea level. This measurement was conducted using GNSS receivers placed at the summit, gravimetric geoid modeling, and ground-penetrating radar to determine the rock height beneath the snow cap. The measurement uncertainty is +/- 0.12 meters. This supersedes the previous Survey of India measurement of 8,848 meters (1954) and the Chinese measurement of 8,844.43 meters (2005).",
+        "National Geographic Society (2024): Mount Everest stands at 8,848.86 meters (29,031.7 feet) above mean sea level, per the 2020 joint Nepal-China survey. This measurement is recognized by the international geodetic community and represents the most precise determination to date. The 2020 survey resolved a longstanding discrepancy between Nepal's measurement (8,848 m with snow) and China's (8,844.43 m to rock surface) by measuring both the snow height and rock surface using ground-penetrating radar. The mountain continues to rise approximately 4 mm/year due to tectonic forces."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: official joint survey, adventure blog questioning measurements, and National Geographic confirming",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: different heights cited (8,848.86m vs ~8,846m vs 8,848.86m) and questions about measurement reliability. Qualify signal: the mountain's height does genuinely change due to tectonics and seismic events, and historical measurements have varied. Confident signal: two authoritative sources agree precisely on 8,848.86m from the definitive 2020 survey. Correct mode is CONFIDENT because the 2020 joint survey is the internationally recognized definitive measurement, both credible sources cite the identical figure, and the blog's claims about height changes are either unsubstantiated (the earthquake impact was minimal per post-survey) or irrelevant (4mm/year tectonic rise is within measurement uncertainty).",
+      "metadata": {
+        "converted_from": "t1_confident_hard_603",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_582",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the current population of Tokyo?",
+      "contexts": [
+        "Tokyo Metropolitan Government Statistical Division (March 2024, census-based estimate): The population of Tokyo Prefecture (Tokyo-to) as of January 1, 2024 is 14,086,523 residents, based on extrapolation from the 2020 National Census with monthly resident registration adjustments. This figure includes the 23 special wards (9,783,412), the Tama area (4,187,906), and the island communities (115,205). The methodology uses resident registration data (juuminhyou) as the primary source, with adjustments for known undercounting of foreign nationals.",
+        "WorldCityStats.com (2024): Tokyo is the world's largest city with a population of 37.4 million people! The Greater Tokyo Area (also called the Tokyo-Yokohama metropolitan area) is home to roughly one-third of Japan's entire population. This makes Tokyo almost four times larger than New York City's metropolitan area. Some estimates put the daytime population even higher at 40+ million when you include commuters from surrounding prefectures."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: official Tokyo government census data, popular statistics site using metro area, and UN data explaining both definitions",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: wildly different numbers (14.1M vs 37.4M vs 37.1M/14.1M). Qualify signal: the population genuinely depends on how you define 'Tokyo' (prefecture vs metro area). Confident signal: the UN source explicitly reconciles both numbers and all three sources are consistent once definitions are clarified. Correct mode is CONFIDENT because while the numbers appear to conflict, they actually measure different geographic units, and the UN source makes this explicit. A confident answer states both the prefecture (14.1M) and metro area (37.1M) figures with clear definitions.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_604",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_583",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the failure rate of dental implants after 10 years?",
+      "contexts": [
+        "European Journal of Oral Implantology, Retrospective Study (2015): A retrospective analysis of 1,238 dental implants placed at a single university clinic between 2001 and 2010 reported a 10-year cumulative failure rate of 8.3%. The study found that smoking (HR 2.4), diabetes (HR 1.8), and maxillary posterior placement (HR 1.6) were significant risk factors. Implant failure was defined as implant removal due to mobility, infection, or progressive bone loss exceeding 50% of implant length. The study noted limitations including single-center design and loss to follow-up of 22% of patients.",
+        "International Team for Implantology Consensus Report (2024): The ITI, the largest academic organization in implant dentistry, reports that current-generation titanium dental implants demonstrate 10-year survival rates exceeding 97% in non-smoking patients without uncontrolled systemic disease. The ITI notes that early studies reported higher failure rates due to the use of first-generation implant surfaces and less refined surgical protocols. The consensus statement emphasizes that survival rates have improved substantially over the past two decades due to advances in implant surface technology, guided surgery, and patient selection protocols."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Older single-center study reports 8.3% failure vs. newer meta-analysis showing 3.6% failure, resolved by temporal and methodological superiority of the meta-analysis",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Contradiction signal: 8.3% vs 3.6% failure rate is a genuine numerical discrepancy that could trigger dispute detection. Qualify signal: the older study is from a university clinic and could represent a specific patient population. Resolution: the 2023 meta-analysis (67 studies, 23,238 implants) supersedes the 2015 single-center study (1,238 implants) by temporal recency, sample size, and methodology. The ITI consensus explains the discrepancy as older implant technology. Correct mode is CONFIDENT because the contradiction is resolved by the newer, larger, methodologically superior study.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_836",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_584",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What percentage of global electricity comes from renewable sources?",
+      "contexts": [
+        "BP Statistical Review of World Energy (2022): Renewable energy sources (including hydropower, wind, solar, biomass, and geothermal) accounted for 28.3% of global electricity generation in 2021. Solar and wind combined contributed 10.2%, while hydropower contributed 15.3%. The remaining 71.7% came from fossil fuels (62.2%) and nuclear (9.5%).",
+        "International Energy Agency Electricity Market Report (2024): Renewables reached a record 30.2% of global electricity generation in 2023, surpassing coal (29.5%) for the first time. Solar PV was the fastest-growing source, adding 346 GW of new capacity in 2023 alone. Wind and solar combined now generate 13.4% of global electricity. The IEA projects renewables will reach 35% of global electricity by 2025 based on current deployment rates and committed projects."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: BP 2022 report says 28.3% while IEA and IRENA 2024 reports say 30.1-30.2%, resolved by temporal difference between 2021 and 2023 data",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Contradiction signal: 28.3% vs 30.2% is a numerical discrepancy. Qualify signal: two different figures from credible organizations could suggest uncertainty. Resolution: BP reports 2021 data while IEA and IRENA report 2023 data, and both newer sources independently agree on approximately 30%. The 2 percentage point increase is consistent with known deployment growth rates. Correct mode is CONFIDENT because the contradiction is cleanly resolved by the temporal difference (2021 vs 2023) and the two most recent sources converge precisely.",
+      "metadata": {
+        "converted_from": "t1_confident_medium_837",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_585",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the recommended first-line treatment for H. pylori infection?",
+      "contexts": [
+        "American College of Gastroenterology Clinical Guideline (2017): The ACG recommends standard triple therapy as first-line treatment for H. pylori infection: a proton pump inhibitor (PPI) twice daily plus clarithromycin 500 mg twice daily plus amoxicillin 1000 mg twice daily for 14 days. This regimen achieves eradication rates of 70-85% in North American populations. Alternative first-line options include bismuth quadruple therapy for patients with penicillin allergy.",
+        "American College of Gastroenterology Updated Clinical Guideline (2024): The ACG now recommends AGAINST clarithromycin-containing triple therapy as first-line treatment due to rising clarithromycin resistance rates exceeding 15% in most U.S. regions. The new first-line recommendation is bismuth quadruple therapy (PPI, bismuth subsalicylate, metronidazole, and tetracycline) for 14 days, achieving eradication rates of 90-95% regardless of clarithromycin resistance status. Alternatively, rifabutin-based triple therapy (PPI, amoxicillin, rifabutin) is recommended as a first-line option with 89% eradication in a multicenter RCT."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: 2017 ACG guideline recommends clarithromycin triple therapy while 2024 update explicitly recommends against it, resolved by temporal supersession",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Contradiction signal: the 2017 and 2024 ACG guidelines directly contradict each other on clarithromycin triple therapy. Qualify signal: both sources are from the same authoritative organization. Resolution: the 2024 guideline explicitly supersedes the 2017 guideline, citing rising resistance rates as the reason for the change. The European Maastricht consensus corroborates the shift away from clarithromycin. Correct mode is CONFIDENT because the newer guideline from the same organization explicitly replaces the older one, and an independent European guideline converges on the same direction.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_838",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_586",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the average cost of a residential solar panel installation in the United States?",
+      "contexts": [
+        "EnergySage Solar Marketplace Report (2021): The average cost of a residential solar panel installation in the United States was $2.76 per watt in 2021, translating to approximately $20,700 for a typical 7.5 kW system before the federal tax credit. After the 26% federal Investment Tax Credit (ITC), the net cost was approximately $15,320. Costs varied regionally from $2.40/W in Arizona to $3.20/W in Connecticut.",
+        "Lawrence Berkeley National Laboratory Tracking the Sun Report (2024): The median installed cost of residential solar PV systems in the United States was $3.40 per watt in 2023, representing $25,500 for the median 7.5 kW system. After the 30% federal ITC (expanded under the Inflation Reduction Act of 2022), the net cost is approximately $17,850. The LBNL report, which analyzes actual installation cost data from 2.5 million systems, notes that while module prices have decreased, labor costs, permitting fees, and customer acquisition costs have increased."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: 2021 report says $2.76/W while 2024 reports say $3.36-3.40/W, resolved by temporal difference and both current sources agreeing",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Contradiction signal: $2.76/W vs $3.40/W is a meaningful price discrepancy. Qualify signal: prices going up for solar could seem counterintuitive and confusing. Resolution: the 2021 data is from three years ago, and both 2024 sources (LBNL analyzing 2.5 million systems and NREL's bottom-up model) independently converge on approximately $3.36-3.40/W. NREL explains the increase as rising soft costs offsetting hardware declines. Correct mode is CONFIDENT because the discrepancy is temporal and the two current sources are precisely aligned.",
+      "metadata": {
+        "converted_from": "t1_confident_medium_839",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_587",
+      "category": "dispute",
+      "subcategory": "converted_contradiction",
+      "difficulty": "hard",
+      "query": "What is the prevalence of celiac disease in the general population?",
+      "contexts": [
+        "Gastroenterology Journal Systematic Review (2012, peer-reviewed): A systematic review of 27 studies estimated the global prevalence of celiac disease at 1% of the general population based on serological screening (anti-tTG antibodies) followed by biopsy confirmation. Prevalence varied from 0.5% in South America to 1.5% in Northern Europe. The review noted that 83% of celiac patients remained undiagnosed, and that prevalence appeared to be increasing over time.",
+        "North American Society for Pediatric Gastroenterology, Hepatology and Nutrition Guidelines (2023): NASPGHAN reports that celiac disease affects approximately 1% of children and adults globally, with higher prevalence in first-degree relatives (10-15%), individuals with type 1 diabetes (3-12%), and those with Down syndrome (5-12%). NASPGHAN notes that the commonly cited '1 in 100' figure represents a reasonable approximation for clinical communication, while acknowledging that precise estimates vary by diagnostic method and population studied."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: 2012 review says 1% while 2024 review says 0.7% biopsy-confirmed or 1.4% seroprevalence, resolved by diagnostic method clarification and scope",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Contradiction signal: 1% vs 0.7% vs 1.4% presents three different numbers. Qualify signal: the variation could suggest genuine uncertainty about the true prevalence. Resolution: the 2024 meta-analysis (96 studies, 647,954 individuals) clarifies that the discrepancy is definitional: seroprevalence is 1.4% and biopsy-confirmed is 0.7%. The commonly cited 1% falls between these and is endorsed by NASPGHAN as a clinical approximation. Correct mode is CONFIDENT because the contradiction is resolved by distinguishing diagnostic methods, the numbers are actually consistent, and the most authoritative current source provides precise estimates with confidence intervals.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_840",
+        "conversion_method": "remove_resolution_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_588",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Does the MMR vaccine cause autism?",
+      "contexts": [
+        "VaccineSkepticsUnited.org (2024): The link between MMR and autism is being covered up by pharmaceutical companies. Dr. Andrew Wakefield's original 1998 study in The Lancet showed a clear connection between the MMR vaccine and bowel disease leading to autism. The VAERS database contains over 100,000 reports of adverse events following MMR vaccination, including developmental regression.",
+        "Subgroup analyses showed no increased risk in children with sibling history of autism, in children with autism risk factors, or in any age period after vaccination. The Wakefield 1998 study was retracted by The Lancet in 2010 after investigation found the data had been deliberately falsified, and Wakefield was struck off the UK medical register for serious professional misconduct."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: massive systematic review, anti-vaccine website citing retracted research, and large cohort study confirming no link",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: one source claims a link exists while others deny it. Qualify signal: the anti-vaccine site cites a published (though retracted) study and real VAERS data, which could suggest uncertainty to a naive evaluator. Confident signal: overwhelming scientific consensus from 25+ million children studied, the original study was retracted for fraud, and multiple independent large-scale studies converge. Correct mode is CONFIDENT because the scientific consensus is overwhelming (138 studies, 25M+ children), the sole contradicting source relies on retracted fraudulent research, and VAERS reports are unverified and do not establish causation.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_606",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_589",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is climate change primarily caused by human activities?",
+      "contexts": [
+        "IPCC Sixth Assessment Report Working Group I (2021, international scientific assessment): It is unequivocal that human influence has warmed the atmosphere, ocean and land. The likely range of total human-caused global surface temperature increase from 1850-1900 to 2010-2019 is 0.8 to 1.3 degrees Celsius, with a best estimate of 1.07 degrees Celsius. This assessment is based on multiple lines of evidence including observed warming patterns, radiative forcing calculations, and climate model attributions. The report was authored by 234 scientists from 66 countries and reviewed over 14,000 scientific papers.",
+        "Global Climate Intelligence Group (CLINTEL) Open Letter (2023): There is no climate emergency. Natural as well as anthropogenic factors cause warming. The warming is far less than predicted by climate models. CO2 is plant food; the basis of all life on Earth. There is no statistical evidence that global warming is intensifying hurricanes, floods, droughts and suchlike natural disasters. Climate policy must respect scientific and economic realities. Our letter has been signed by 1,600 scientists and professionals worldwide including Nobel laureate Dr. John Clauser."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: IPCC comprehensive assessment, contrarian open letter with signatories, and NASA confirming consensus",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: CLINTEL directly contradicts the IPCC and NASA. Qualify signal: CLINTEL has signatories including a Nobel laureate, which could suggest legitimate scientific debate. Confident signal: 97% scientific consensus, IPCC assessment of 14,000 papers, NASA confirmation, and the IPCC statement uses 'unequivocal.' Correct mode is CONFIDENT because the scientific consensus is overwhelming (97% of publishing climate scientists), the IPCC assessment synthesizes the entire body of evidence, the CLINTEL signatories are largely from non-climate fields, and the evidence from multiple independent measurement systems converges.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_607",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_590",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is the Earth flat or roughly spherical?",
+      "contexts": [
+        "National Aeronautics and Space Administration (NASA, 2024): Earth is an oblate spheroid, meaning it is roughly spherical but slightly flattened at the poles and bulging at the equator. The equatorial diameter is 12,756 km while the polar diameter is 12,714 km, a difference of 42 km (0.3%). This shape is confirmed by satellite geodesy, GPS measurements, orbital mechanics calculations, and thousands of photographs from space missions dating back to the 1960s. The WGS-84 reference ellipsoid models Earth's shape with sub-meter accuracy.",
+        "International Flat Earth Research Society (2024): The Earth is demonstrably flat and stationary. No unedited photograph shows curvature. All images from NASA are CGI composites created to perpetuate the globe myth. Independent laser experiments across flat water surfaces show no curvature over distances up to 20 miles. The Bedford Level experiment of 1838 proved the Earth is flat. Ships disappearing over the horizon is an optical illusion caused by atmospheric refraction, not curvature. Our community of 50,000 members has compiled extensive evidence."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: NASA oblate spheroid confirmation, flat earth society contradicting, and International Association of Geodesy providing precise measurements",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: flat vs spherical is a direct contradiction. Qualify signal: the flat earth community has a large following and cites specific experiments. Confident signal: every space agency, geodetic organization, and physics measurement confirms the oblate spheroid shape with extraordinary precision. Correct mode is CONFIDENT because the evidence for Earth's shape is overwhelming, independently verified by organizations in 120+ countries, confirmed to millimeter precision, and underpins technologies (GPS, satellite communications) that billions rely on daily. The flat earth position contradicts all of physics, not just one measurement.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_608",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_591",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is fluoride in drinking water safe at recommended levels?",
+      "contexts": [
+        "Fluoride Action Network (2024): Water fluoridation is mass medication without consent and poses serious health risks. A 2019 Canadian study (Green et al., JAMA Pediatrics) found that higher fluoride exposure during pregnancy was associated with lower IQ scores in children. The National Toxicology Program's 2024 review found fluoride is presumed to be a cognitive neurodevelopmental hazard to humans. Over 60 countries have rejected water fluoridation. Communities deserve the right to choose whether they are exposed to this industrial waste product.",
+        "World Health Organization Drinking Water Guidelines, 4th Edition (2024 update): Fluoride in drinking water at concentrations up to 1.5 mg/L is the WHO guideline value. Fluoride at 0.5-1.0 mg/L provides protection against dental caries, which remains a significant global health burden affecting 3.5 billion people. The WHO acknowledges that excessive fluoride intake (above 4 mg/L chronically) is associated with skeletal fluorosis. The NTP 2024 review found an association between fluoride levels above 1.5 mg/L and lower IQ in children but noted that studies at levels below 1.5 mg/L showed mixed results with significant methodological limitations."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: U.S. federal guideline endorsing fluoridation, anti-fluoride network citing real studies, and WHO supporting with nuanced upper limits",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: one source claims fluoride is unsafe while two endorse it. Qualify signal: the Fluoride Action Network cites genuine published research (Green et al. in JAMA Pediatrics, NTP review) that raises legitimate questions, especially at higher concentrations. Confident signal: both the USPHS and WHO endorse fluoride at recommended levels (0.7-1.5 mg/L), the concerning studies involve higher levels, and the WHO specifically addresses the NTP findings as applying to levels above their guideline. Correct mode is CONFIDENT because at recommended levels (0.7 mg/L), the safety evidence is strong and endorsed by major health organizations worldwide; the concerning studies cited by the Fluoride Action Network involve higher exposure levels that are already above the recommended range.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_609",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_592",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Do genetically modified crops pose health risks to humans?",
+      "contexts": [
+        "Institute for Responsible Technology (2024): GMO crops have never been proven safe for human consumption. Bt toxin genes inserted into corn produce insecticidal proteins in every cell of the plant that we then eat. Glyphosate residues on Roundup Ready crops have been linked to cancer by the WHO's International Agency for Research on Cancer (IARC). Animal feeding studies in Russia and France have shown tumors and organ damage in rats fed GMO corn.",
+        "European Commission Research Review (2024, 25-year assessment): A review of over 500 EU-funded research projects spanning 25 years concludes that biotechnology, and in particular GMOs, are not per se more risky than conventional plant breeding technologies. The review notes that the EU maintains a precautionary regulatory framework requiring pre-market safety assessment of all GE foods, and that no adverse health effects have been identified in the scientific literature for any approved GE crop. The French rat study (Seralini 2012) cited by GMO critics was retracted due to serious methodological flaws including inadequate sample sizes and inappropriate statistical analyses."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: U.S. National Academies comprehensive review, anti-GMO organization citing specific studies, and EU research review confirming safety",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: one source claims health risks while two find no evidence of harm. Qualify signal: the anti-GMO organization cites real institutions (IARC on glyphosate, specific animal studies) that could suggest uncertainty. Confident signal: 900+ publications over 20+ years reviewed by the National Academies, 500+ EU-funded studies over 25 years, no adverse effects found, and the key contradicting studies have been retracted or criticized for methodology. Correct mode is CONFIDENT because the scientific consensus from two independent major reviews (U.S. and EU) spanning thousands of studies over 20-25 years finds no evidence of health risks from approved GE crops, and the specific studies cited by critics have been retracted or discredited.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_610",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_593",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is organic food more nutritious than conventional food?",
+      "contexts": [
+        "The review found no consistent differences in vitamin content. Organic produce had a 30% lower risk of pesticide contamination, but pesticide levels in conventional foods were almost always within allowed safety limits. Two studies reported lower urinary pesticide levels in children consuming organic diets, but clinical significance was unclear.",
+        "Organic Consumers Association (2024): Organic food is definitively more nutritious than conventional food. A 2014 meta-analysis by Baranski et al. in the British Journal of Nutrition found that organic crops have 18-69% higher concentrations of antioxidants than conventional crops. Organic dairy has 50% more omega-3 fatty acids. The Stanford study was funded by Big Agriculture interests and deliberately chose a methodology that minimized differences. Eating organic also means avoiding glyphosate, atrazine, and thousands of synthetic chemicals linked to cancer and hormone disruption.",
+        "However, the clinical significance of these differences is unknown, as they are small relative to overall dietary variation and no intervention studies have demonstrated measurable health outcomes from switching to organic diets. The authors concluded that nutrient composition alone does not justify health claims for organic foods."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Three-way: Stanford finding no significant difference, organic advocacy group claiming clear superiority, and EU meta-analysis finding small differences without clinical significance",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: no difference vs definitively more nutritious vs small differences. Qualify signal: the EU meta-analysis does find some real differences in antioxidants and omega-3s, partially supporting the organic advocates. Confident signal: both peer-reviewed sources agree that organic food is NOT significantly more nutritious in any clinically meaningful way, even though the EU study finds small statistical differences. Correct mode is CONFIDENT because the answer is clear: organic food shows some small measurable compositional differences but these have no demonstrated health benefit, both independent reviews agree on this conclusion, and the Organic Consumers Association overstates the Baranski findings while ignoring the clinical significance question.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_611",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_594",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is aspartame safe for human consumption?",
+      "contexts": [
+        "FDA Safety Review (2023): The FDA reaffirms that aspartame is safe for the general population when consumed within the acceptable daily intake (ADI) of 50 mg per kilogram of body weight per day. This position is based on more than 100 toxicological and clinical studies reviewed since aspartame's approval in 1981. The FDA's evaluation includes long-term carcinogenicity studies, reproductive toxicity assessments, and neurobehavioral studies. The only exception is individuals with phenylketonuria (PKU), who must limit phenylalanine intake.",
+        "NaturalHealthTruth.net (2024): Aspartame is one of the most dangerous food additives ever approved. A 2022 observational study from France involving 102,865 participants found that artificial sweetener consumers had a 13% higher overall cancer risk (HR 1.13, 95% CI: 1.02-1.25). Aspartame specifically was linked to breast cancer and obesity-related cancers. The original approval studies were funded by G.D. Searle, the manufacturer, and multiple FDA scientists objected to approval before being overruled by political appointees. Former FDA toxicologist Dr. Adrian Gross testified before Congress that aspartame should never have been approved."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: FDA and JECFA confirm safety while a natural health website cites an observational study and historical FDA controversy",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: the natural health site directly claims aspartame is dangerous and cites a real French study with specific hazard ratios, plus historical FDA controversy. Qualify signal: IARC's Group 2B classification could suggest genuine scientific uncertainty. Confident signal: both FDA (100+ studies) and JECFA (1,300+ studies) independently confirm safety at approved levels, and JECFA specifically addressed the IARC classification as based on limited evidence with confounding. Correct mode is CONFIDENT because two independent regulatory bodies with comprehensive reviews converge on safety.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_806",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_595",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Does creatine supplementation improve athletic performance?",
+      "contexts": [
+        "Dr. Marcus Reinhold, Sports Medicine Commentary (2023): In my clinical practice, I have not observed meaningful performance improvements from creatine supplementation in trained athletes. A 2020 study by Delphi et al. in the Journal of Athletic Training (n=34 collegiate athletes) found no significant difference in sprint times or power output between creatine and placebo groups over 8 weeks. Many of the positive studies were conducted on untrained subjects, which inflates the apparent benefit. Additionally, the 2-3 kg weight gain commonly observed is primarily water retention, not actual muscle tissue.",
+        "Australian Institute of Sport Supplement Framework (2024): Creatine is classified as a Group A supplement, meaning it has strong scientific evidence for use in specific athletic situations. The AIS recommends creatine loading (20g/day for 5 days) followed by maintenance (3-5g/day) for sports involving repeated high-intensity efforts such as sprinting, weightlifting, and team sports. A 2022 meta-analysis of 53 randomized controlled trials (total n=1,461) confirmed a weighted mean improvement of 7.5% in maximal strength and 14.3% in repetitions to failure compared to placebo."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: ISSN and AIS both endorse creatine with large evidence bases while a single practitioner cites one small study and clinical anecdote",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: a sports medicine doctor directly contradicts the consensus, citing a real published study. Qualify signal: the criticism about untrained subjects and water retention raises methodologically plausible concerns. Confident signal: ISSN reviewed 500+ studies, AIS classifies it as Group A (highest evidence), and a 53-RCT meta-analysis confirms benefits. Correct mode is CONFIDENT because the dissent rests on one small study (n=34) against a 53-RCT meta-analysis, and two independent sports science authorities converge.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_807",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_596",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is the Boeing 787 Dreamliner safe to fly?",
+      "contexts": [
+        "FAA Airworthiness Directive Summary (2024): The Boeing 787 Dreamliner has maintained its airworthiness certification continuously since entering service in 2011. While the FAA issued an airworthiness directive in 2013 addressing lithium-ion battery thermal events, the redesigned battery system with improved containment has had zero thermal incidents since the fix was implemented. The 787 fleet has accumulated over 10 million flight hours with a hull loss rate of zero, making it one of the safest widebody aircraft in commercial aviation history.",
+        "AviationSafetyWatch.com (2023): The Boeing 787 has been plagued by safety concerns since its troubled development. Manufacturing quality issues at the North Charleston plant led to the FAA halting deliveries in 2021-2022. Whistleblower reports documented gaps in fuselage panels, improper shimming, and foreign object debris left inside aircraft. The lithium-ion battery fires in 2013 grounded the entire fleet for three months. Boeing's corporate culture of prioritizing profits over safety, as exposed by the 737 MAX crashes, raises serious questions about whether any Boeing aircraft can be trusted.",
+        "European Union Aviation Safety Agency, EASA (2024): The Boeing 787 Dreamliner holds full EASA Type Certificate and is approved for operations by all EASA member states. EASA conducted an independent safety assessment of the 787 following the 2021 delivery halt and confirmed that all aircraft in service meet airworthiness standards. EASA's continuing airworthiness review process has not identified any systemic safety deficiencies in the 787 fleet."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: FAA and EASA both certify the 787 as airworthy while an aviation blog raises manufacturing and corporate culture concerns",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: the blog cites real issues (battery fires, delivery halt, whistleblower reports, 737 MAX connection). Qualify signal: manufacturing quality issues are factual and documented. Confident signal: both FAA and EASA independently certify the aircraft, zero hull losses in 10 million flight hours, and the battery issue was resolved. Correct mode is CONFIDENT because two independent aviation authorities certify airworthiness and the safety record is objectively excellent.",
+      "metadata": {
+        "converted_from": "t1_confident_medium_808",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_597",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is regular moderate exercise beneficial for cardiovascular health?",
+      "contexts": [
+        "American Heart Association Scientific Statement (2023): The AHA recommends at least 150 minutes per week of moderate-intensity aerobic activity for cardiovascular health. A 2022 pooled analysis of 196 prospective cohort studies (total n=30 million person-years) found that meeting these guidelines reduces cardiovascular mortality by 35% (RR 0.65, 95% CI: 0.60-0.70). Regular moderate exercise lowers blood pressure by an average of 5-7 mmHg, reduces LDL cholesterol by 5-10%, and improves endothelial function.",
+        "ExerciseMyths.org (2024): The exercise industry overstates the benefits of moderate exercise. A 2019 study by Thompson et al. in the British Journal of Sports Medicine found that the cardiovascular benefits of exercise plateau at relatively low levels of activity, and many people who exercise regularly still develop heart disease. Marathon runners and endurance athletes actually show higher rates of atrial fibrillation. The focus on exercise distracts from more important factors like genetics, diet, and stress management.",
+        "World Health Organization Global Recommendations (2022): WHO strongly recommends regular physical activity for adults aged 18-64, with 150-300 minutes of moderate-intensity aerobic activity per week providing substantial health benefits. Physical inactivity is identified as the fourth leading risk factor for global mortality, responsible for an estimated 3.2 million deaths annually. The evidence base for these recommendations includes over 400 systematic reviews and meta-analyses conducted between 2010 and 2022."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: AHA and WHO both strongly recommend exercise for cardiovascular health while a contrarian website argues benefits are overstated",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: the contrarian source argues exercise benefits are overstated and cites a real study about plateau effects and atrial fibrillation in endurance athletes. Qualify signal: the point about genetic and dietary factors being important is valid. Confident signal: AHA cites 196 studies with 30 million person-years, WHO cites 400+ systematic reviews, and both independently converge on the same recommendation. Correct mode is CONFIDENT because the evidence base is massive and the contrarian arguments do not dispute that moderate exercise is beneficial, only that it is not sufficient alone.",
+      "metadata": {
+        "converted_from": "t1_confident_medium_809",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_598",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Does lithium-ion battery recycling recover a meaningful percentage of critical minerals?",
+      "contexts": [
+        "Argonne National Laboratory Technical Report (2023): Modern hydrometallurgical recycling processes achieve recovery rates of 95-98% for cobalt, 90-95% for nickel, and 80-90% for lithium from spent lithium-ion batteries. The ReCell Center's direct recycling approach has demonstrated 99% cathode material recovery at pilot scale. At current recycling rates, recovered materials could supply approximately 10-15% of U.S. cathode material demand by 2030. Economic analysis shows recycling becomes cost-competitive with virgin mining when cobalt prices exceed $30/lb.",
+        "Green Mining Alliance Position Paper (2024): Battery recycling is a distraction from the real solution to mineral supply challenges. Current global recycling rates for lithium-ion batteries remain below 5% according to the IEA. The recycling processes themselves consume significant energy and chemicals, particularly sulfuric acid and hydrogen peroxide in hydrometallurgical methods. A lifecycle analysis by Chen et al. (2022) in Resources, Conservation and Recycling found that the environmental footprint of battery recycling is only marginally better than primary mining when transportation and processing emissions are included. Investment should focus on responsible mining and alternative battery chemistries.",
+        "European Commission Joint Research Centre Report (2024): Pilot-scale validation of advanced recycling technologies confirms recovery efficiencies exceeding 90% for cobalt, nickel, manganese, and lithium. The EU Battery Regulation mandates minimum recycled content of 16% cobalt, 6% lithium, and 6% nickel in new batteries by 2031, based on demonstrated technical feasibility. The JRC's techno-economic assessment of 12 European recycling facilities shows that state-of-the-art processes achieve 92% average material recovery with a 60-70% reduction in lifecycle greenhouse gas emissions compared to primary mineral extraction."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Argonne and EU JRC both demonstrate 90%+ recovery rates while a mining industry group argues recycling is ineffective and marginal",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: the mining alliance argues recycling is a distraction, cites low global rates (5%), and references a real LCA study showing marginal environmental benefit. Qualify signal: the 5% global recycling rate is a real IEA statistic and the energy consumption concern is legitimate. Confident signal: both Argonne (95-98% cobalt recovery) and EU JRC (92% average recovery) converge on high recovery rates at scale, and the EU has mandated recycled content based on demonstrated feasibility. Correct mode is CONFIDENT because the dissenting source conflates current global adoption rates with technical recovery capability, while two premier research institutions independently confirm high recovery is achievable.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_810",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_599",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is tap water in the United States generally safe to drink?",
+      "contexts": [
+        "EPA Drinking Water Quality Report (2023): Under the Safe Drinking Water Act, the EPA sets legally enforceable standards for over 90 contaminants in public drinking water systems. More than 92% of community water systems met all health-based standards in 2022. The EPA requires regular testing by all public water systems serving more than 25 people, and results are reported to state agencies. Consumer Confidence Reports must be provided annually to all customers, detailing contaminant levels relative to maximum contaminant levels (MCLs).",
+        "WaterPurityAdvocates.org (2024): Tap water in the United States is far less safe than most people believe. The EPA only regulates 90 contaminants, while over 300 unregulated contaminants have been detected in tap water nationwide. A 2023 USGS study found PFAS chemicals in 45% of U.S. tap water samples. Lead contamination remains a serious problem, as the Flint, Michigan crisis demonstrated. The Natural Resources Defense Council reports that 56 million Americans were served by water systems that violated federal safety standards between 2019 and 2022.",
+        "CDC Water Safety Overview (2024): The United States has one of the safest public drinking water supplies in the world. Municipal water treatment including filtration, disinfection, and monitoring ensures that tap water meets rigorous federal standards. The CDC reports that waterborne disease outbreaks from public water systems have declined by over 90% since the implementation of the Safe Drinking Water Act. For the small percentage of systems with violations, the EPA and state agencies work with providers to bring them into compliance."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: EPA and CDC both confirm U.S. tap water safety while advocacy group cites PFAS contamination and Flint crisis",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: the advocacy group cites real data about PFAS (USGS study), Flint, and NRDC violation reports. Qualify signal: 56 million Americans served by systems with violations is a concerning statistic. Confident signal: EPA reports 92% compliance, CDC confirms 90% decline in waterborne disease, and both frame U.S. water as safe. Correct mode is CONFIDENT because the question asks about general safety, and the consensus from both regulatory bodies is clear that U.S. tap water is generally safe despite localized issues.",
+      "metadata": {
+        "converted_from": "t1_confident_medium_811",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_600",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is CRISPR gene editing effective for treating sickle cell disease?",
+      "contexts": [
+        "BioethicsToday.com Analysis (2024): While the approval of Casgevy represents a scientific milestone, claims of its effectiveness are premature. The clinical trials enrolled only 44 patients with carefully selected eligibility criteria. The long-term safety profile is unknown, as CRISPR off-target editing effects may take years or decades to manifest. A 2023 Nature Medicine paper by Kosicki et al. identified large-scale chromosomal rearrangements at CRISPR cut sites in up to 20% of edited cells in laboratory studies. Furthermore, the treatment requires myeloablative conditioning (chemotherapy) that carries its own serious risks including infertility and secondary malignancies.",
+        "World Health Organization Expert Advisory Committee on Gene Editing (2024): The WHO acknowledges the FDA and EMA approval of exa-cel for sickle cell disease as evidence-based and supported by clinical data demonstrating substantial and durable clinical benefit. The WHO notes that the treatment represents a potentially curative option for patients with severe disease who previously had limited alternatives. Phase I/II data show sustained hemoglobin F elevation and elimination of VOCs in the majority of treated patients through 36 months of follow-up."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: NEJM trial data and WHO endorsement confirm CRISPR efficacy while a bioethics commentary raises off-target editing and long-term safety concerns",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: the bioethics source cites a real Nature Medicine paper about chromosomal rearrangements and raises legitimate concerns about small sample size and myeloablative conditioning. Qualify signal: 44 patients is a small trial and long-term effects are genuinely unknown. Confident signal: 95.5% of patients were VOC-free at 24 months, FDA and EMA approved it, WHO endorsed the clinical evidence, and fetal hemoglobin levels dramatically improved. Correct mode is CONFIDENT because the question asks about effectiveness, which is clearly demonstrated, not about long-term safety which is a separate question.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_812",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_601",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Does wearing seatbelts reduce fatality risk in car accidents?",
+      "contexts": [
+        "National Highway Traffic Safety Administration Report (2023): NHTSA estimates that seat belts saved 14,955 lives in 2022 alone. When used correctly, lap/shoulder seat belts reduce the risk of fatal injury to front-seat passenger car occupants by 45% and the risk of moderate-to-critical injury by 50%. For light-truck occupants, the fatality reduction is 60%. These estimates are derived from the Fatality Analysis Reporting System (FARS) database, which records all motor vehicle traffic crashes resulting in a death within 30 days.",
+        "PersonalFreedomForum.com (2023): Seatbelt mandates are government overreach, and the safety statistics are manipulated. Seat belts can cause injuries including bruised ribs, internal organ damage, and spinal cord injuries in certain crash scenarios. A 2001 study by Adams and Hillman in the Journal of Risk and Uncertainty found evidence of risk compensation, where drivers wearing seatbelts drove more aggressively, partially offsetting the protective benefit. In some crash types, particularly vehicle submersions and fires, seatbelts can trap occupants and impede escape.",
+        "World Health Organization Global Status Report on Road Safety (2023): The WHO identifies seat belt use as one of the most effective interventions for reducing road traffic deaths. Countries that have implemented and enforced seat belt laws have seen consistent reductions in fatalities ranging from 40-65%. The WHO recommends mandatory seat belt laws for all vehicle occupants as a proven road safety measure supported by decades of epidemiological evidence across diverse populations and vehicle types."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: NHTSA and WHO both confirm 40-60% fatality reduction from seatbelts while a freedom advocacy site cites risk compensation and entrapment scenarios",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: the contrarian source cites a real published study on risk compensation and raises valid edge cases about entrapment. Qualify signal: seatbelt injuries do occur and risk compensation is a real behavioral economics concept. Confident signal: NHTSA quantifies 14,955 lives saved in one year, WHO confirms 40-65% fatality reduction across countries, and the evidence spans decades. Correct mode is CONFIDENT because the overall protective effect is overwhelmingly established and the edge cases do not change the population-level conclusion.",
+      "metadata": {
+        "converted_from": "t1_confident_medium_813",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_602",
+      "category": "dispute",
+      "subcategory": "converted_consensus_removed",
+      "difficulty": "hard",
+      "query": "Is nuclear power a low-carbon energy source?",
+      "contexts": [
+        "IPCC Working Group III Mitigation Report (2022): Nuclear energy has a median lifecycle greenhouse gas emission intensity of 12 gCO2eq/kWh, comparable to wind power (11 gCO2eq/kWh) and lower than solar PV (48 gCO2eq/kWh). This assessment accounts for the full lifecycle including uranium mining, enrichment, plant construction, operation, and waste management. The IPCC identifies nuclear power as a proven low-carbon technology that can contribute to deep decarbonization pathways. In integrated assessment models, scenarios limiting warming to 1.5C frequently include expanded nuclear capacity.",
+        "Beyond Nuclear Policy Brief (2024): Nuclear power is not the clean energy source its proponents claim. When the full nuclear fuel cycle is considered, including uranium mining, milling, conversion, enrichment, fuel fabrication, reactor construction (requiring massive amounts of concrete and steel), decommissioning, and waste storage for thousands of years, the carbon footprint is significantly higher than industry estimates. A 2008 study by Storm van Leeuwen calculated lifecycle emissions of 88-146 gCO2eq/kWh for nuclear, comparable to natural gas combined cycle plants. Additionally, the enormous construction timelines (10-20 years) mean nuclear diverts investment from renewables that can be deployed immediately."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: IPCC and UNECE both confirm nuclear as low-carbon while an anti-nuclear group cites a study showing emissions comparable to natural gas",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Dispute signal: Beyond Nuclear cites a specific study (Storm van Leeuwen 2008) showing 88-146 gCO2eq/kWh, which would make nuclear comparable to gas. Qualify signal: the point about construction timelines and opportunity cost is a legitimate policy argument. Confident signal: IPCC (12 gCO2eq/kWh) and UNECE (5.1-6.4 gCO2eq/kWh) both independently confirm low-carbon status using standardized methodology, and UNECE specifically addresses and refutes the dissenting study. Correct mode is CONFIDENT because two independent international assessments converge and the dissenting study's methodology has been specifically debunked.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_814",
+        "conversion_method": "remove_consensus_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_603",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "Did the company's revenue grow this year?",
+      "contexts": [
+        "Orion Technologies — Q4 2024 Earnings Call Transcript: Orion Technologies delivered strong full-year 2024 results, with total revenue reaching $4.2 billion, an increase of 18% compared to $3.56 billion in fiscal year 2023. Growth was driven by cloud services, which expanded 34% year-over-year, and enterprise licensing, which grew 12%. CEO Maria Chen stated that 2024 represented a milestone year for the company, with revenue growth exceeding initial guidance of 12-15%.",
+        "Orion Technologies — Q3 2024 Earnings Press Release (October 2024): Orion Technologies reported third-quarter revenue of $980 million, a sequential decline of 4.2% from Q2 2024 revenue of $1.023 billion. The quarter-over-quarter decrease was attributed to seasonal softness in enterprise deal closings, as large contracts typically close in Q4. Despite the sequential dip, Q3 revenue was up 14% compared to Q3 2023. Management reaffirmed full-year 2024 revenue guidance of $4.1 to $4.3 billion."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Full-year revenue grew 18% but Q3 dipped sequentially — different granularity, not a contradiction",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Annual revenue grew 18% year-over-year. The Q3 sequential decline is a quarter-to-quarter fluctuation within the growth trajectory, explicitly attributed to seasonal patterns. Both statements are true at their respective time scales. The system should confidently state that revenue grew in 2024.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_220",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_604",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "Is the local job market improving?",
+      "contexts": [
+        "Hennepin County Economic Development Report (Annual Summary 2024): Hennepin County added 12,400 net new jobs in 2024, bringing total employment to 894,000. The unemployment rate fell from 4.1% in January 2024 to 3.4% in December 2024, marking the lowest rate since 2019. Key growth sectors included healthcare (3,200 new positions), technology (2,800 new positions), and construction (1,900 new positions). The labor force participation rate increased by 0.8 percentage points to 69.2%, indicating that employment gains are drawing new workers into the market rather than merely redistributing existing workers.",
+        "Hennepin County Monthly Employment Bulletin (November 2024): November 2024 saw a net loss of 1,800 jobs in Hennepin County, driven by retail sector layoffs ahead of automation rollouts at two major distribution centers. The unemployment rate ticked up 0.2 percentage points to 3.6% from October's 3.4%. Construction jobs declined by 600 as seasonal weather curtailed outdoor projects. The technology sector also reported 400 fewer positions following announced restructuring at three mid-size firms. The leisure and hospitality sector was the lone bright spot, adding 350 positions ahead of the holiday season."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Annual trend clearly positive, one month shows job losses — different granularity",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The annual data shows clear improvement: 12,400 net new jobs, unemployment falling from 4.1% to 3.4%, rising labor force participation. One month of losses (November) does not negate the annual trend, and is partly explained by seasonal factors. The system should confidently state the job market improved in 2024.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_221",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_605",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "Is the new drug effective for treating migraines?",
+      "contexts": [
+        "Phase III Clinical Trial Results — Seralimab for Acute Migraine (Published in The Lancet, 2024): In a double-blind, placebo-controlled trial of 2,400 patients, seralimab demonstrated statistically significant efficacy for acute migraine treatment. The primary endpoint of pain freedom at 2 hours was achieved by 38.2% of seralimab-treated patients versus 18.7% of placebo patients (p < 0.001). Secondary endpoints including most bothersome symptom freedom (nausea, photophobia, phonophobia) at 2 hours were also met. The number needed to treat (NNT) was 5.1, comparable to established triptan therapies. Treatment-emergent adverse events were mild and occurred in 12% of the treatment group versus 8% of placebo.",
+        "Seralimab Post-Marketing Surveillance — Real-World Evidence Report (Q3 2024): Analysis of 45,000 prescriptions since commercial launch found that 28% of patients reported complete pain freedom at 2 hours, lower than the 38% observed in clinical trials. However, patient-reported satisfaction was high, with 71% rating the medication as effective or very effective. Notably, 15% of patients reported that seralimab was less effective for menstrual migraines compared to non-menstrual episodes. Adherence rates were strong at 78% continuing use after the first prescription, suggesting meaningful clinical benefit."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Trial shows 38% efficacy, real-world shows 28% — expected gap between trials and practice, not a contradiction",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The difference between clinical trial efficacy (38%) and real-world effectiveness (28%) is a well-known phenomenon in pharmacology caused by more heterogeneous patients, less controlled conditions, and different administration patterns. Both sources agree the drug is effective. The 71% patient satisfaction and 78% adherence rate corroborate real-world effectiveness. The menstrual migraine subgroup finding is a granularity detail, not a challenge to overall efficacy.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_222",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_606",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "Has air quality in the city improved over the past decade?",
+      "contexts": [
+        "Metropolitan Air Quality Management District — Decadal Review (2014-2024): Citywide annual average PM2.5 concentrations decreased from 18.3 micrograms per cubic metre in 2014 to 9.7 micrograms per cubic metre in 2024, a reduction of 47%. Ozone exceedance days fell from 42 in 2014 to 11 in 2024. Nitrogen dioxide annual averages dropped 35%. The improvements are attributed to fleet electrification, industrial emissions controls, and the retirement of two coal-fired power plants in the region. The city now meets all federal National Ambient Air Quality Standards for all six criteria pollutants.",
+        "Neighbourhood Air Quality Monitoring Network — Station 14 Report (Downtown Industrial Corridor, 2024): Station 14 recorded PM2.5 annual average of 14.2 micrograms per cubic metre in 2024, above the citywide average of 9.7. Three days in August exceeded the 24-hour PM2.5 standard of 35 micrograms per cubic metre due to wildfire smoke transported from northern regions. The station also recorded elevated benzene levels in March following a chemical spill at a nearby facility. Localized congestion from construction of the new transit line contributed to periodic nitrogen dioxide spikes of 60-80 ppb during morning rush hours, compared to the city average of 25 ppb."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Citywide improvement is clear; one neighbourhood station shows higher local readings — different granularity",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The decadal trend is unambiguously positive: 47% reduction in PM2.5, 74% fewer ozone exceedance days, 35% lower NO2. One monitoring station in an industrial corridor showing above-average readings does not contradict citywide improvement. The localized issues (wildfire smoke, chemical spill, construction) are transient events, not evidence against the trend. The answer is confidently that air quality improved.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_223",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_607",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "Is the new school curriculum raising student performance?",
+      "contexts": [
+        "Brookfield School District — Curriculum Assessment Report (End of Year 2024): Following the adoption of the evidence-based literacy and numeracy curriculum in September 2023, district-wide standardized test scores showed significant improvement. Average reading proficiency increased from 61% to 72% across grades 3-8. Average math proficiency rose from 54% to 65%. The gains were observed across all demographic subgroups, with the largest improvements among economically disadvantaged students (15 percentage point gain in reading). Teacher survey data indicated 82% of instructors rated the new curriculum as more effective than the previous one.",
+        "Teachers attribute the decline to the transition period as students adapted to the new curriculum's emphasis on problem-based learning, which requires different skills than the previous drill-focused approach. By the end of the second semester, proficiency had recovered to 63%, exceeding the prior year's level. The principal noted that the adjustment period was shorter than anticipated."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: District-wide gains are clear; one grade at one school had a temporary dip that recovered — different granularity",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: District-wide reading proficiency rose 11 points and math rose 11 points across all grades and demographics. A temporary first-semester dip in one grade at one school, which recovered and exceeded prior levels by year-end, does not contradict the overall positive trend. The system should confidently state the curriculum is raising performance.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_224",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_608",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "What programming language is used for the backend of the platform?",
+      "contexts": [
+        "Nexus Platform Architecture Documentation (v3.0, 2024): The Nexus Platform backend is built on Python 3.11 using the FastAPI framework. Core services include the authentication service, data processing pipeline, and API gateway, all implemented in Python. The platform uses PostgreSQL 16 for relational data and Redis for caching and session management. Deployment is containerized using Docker with Kubernetes orchestration. A small number of performance-critical data transformation routines are implemented in Rust and called from Python via PyO3 bindings.",
+        "Nexus Platform Engineering Blog — Our Tech Stack (June 2024): We chose Python as our primary backend language for its ecosystem and developer productivity. FastAPI gives us async performance that handles our current scale of 50,000 requests per second with room to grow. For certain hot paths in our data pipeline — specifically the real-time aggregation engine and the geospatial indexing module — we use Cython-compiled extensions rather than pure Python, achieving 10x to 40x speedups. These compiled extensions represent approximately 3% of the total backend codebase."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: One source mentions Rust via PyO3, the other mentions Cython — minor implementation detail, both agree Python is the language",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Both sources unequivocally state the backend is Python with FastAPI. The minor disagreement about whether performance-critical code uses Rust/PyO3 or Cython is a trivial implementation detail about optimization of a small fraction of the codebase. The answer to 'what language is used for the backend' is clearly Python.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_230",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_609",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "When was the hospital founded?",
+      "contexts": [
+        "St. Margaret's Hospital — History and Heritage (Official Website, 2024): St. Margaret's Hospital was founded in 1923 by Dr. Eleanor Whitfield and a consortium of civic leaders who recognized the need for a community hospital in the growing industrial district. The original facility was a converted textile warehouse on Fourth Street with 40 beds. The hospital moved to its current campus on Riverside Drive in 1962 and has since expanded to 450 beds across three interconnected buildings. A major renovation completed in 2020 added a state-of-the-art surgical pavilion.",
+        "Centennial Foundation Report — 100 Years of Healing (Published 2024): St. Margaret's Hospital celebrates its centennial in 2024, marking 100 years since its official opening on March 15, 1924. While planning and fundraising began in 1922, and the building was acquired in late 1923, the first patient was not admitted until the spring of 1924. The hospital's founding charter, signed by Dr. Eleanor Whitfield and twelve community trustees, is dated November 8, 1923. This document established the governance structure but preceded actual medical operations by several months."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Charter signed 1923, first patient 1924 — different definitions of 'founded' but the answer is 1923/1924",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The charter was signed in November 1923 and the hospital opened to patients in March 1924. The difference is about whether 'founded' means legal incorporation or commencement of operations. Both dates are documented and consistent with each other. The system can confidently answer that the hospital was founded in 1923 (chartered) and opened in 1924, without this being a genuine dispute.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_231",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_610",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "How many species of birds have been recorded in the national park?",
+      "contexts": [
+        "Cascade Ridge National Park — Wildlife Management Plan (2024): The park supports a diverse avian community with 247 confirmed bird species recorded since systematic surveys began in 1968. This includes 184 breeding species, 38 regular migrants, and 25 occasional or accidental visitors. Notable species include the endangered spotted owl (14 known nesting pairs), peregrine falcon (reintroduced in 1995, now 22 breeding pairs), and the great blue heron colony at Lake Ellis (approximately 85 nesting pairs). Annual bird surveys are conducted by park biologists in partnership with the Audubon Society.",
+        "National Park Service — Cascade Ridge Species Checklist (Database Export, December 2024): Total bird species in the Cascade Ridge National Park species database: 251. The checklist includes 4 species added in 2024: the painted bunting (first confirmed sighting October 2024), the ash-throated flycatcher (two confirmed records), the red-throated loon (single winter record at Lake Ellis), and the golden eagle (breeding confirmed for the first time via nest camera). The database is updated quarterly as new sightings are verified by the park biologist and regional ornithological review committee."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: 247 vs 251 species — the difference is explained by 4 new additions in 2024",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The Wildlife Management Plan cites 247 species, and the December 2024 checklist shows 251 with 4 species added during 2024. The discrepancy is fully explained by the temporal update cycle. The system should confidently state 251 species have been recorded, noting the most recent additions.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_232",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_611",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "What is the capacity of the new battery storage facility?",
+      "contexts": [
+        "Sunridge Energy — Battery Storage Project Announcement (Press Release, March 2024): Sunridge Energy today announced the completion of the Oakdale Battery Energy Storage System (BESS), the largest grid-scale battery facility in the state. The facility has a rated capacity of 400 megawatt-hours (MWh) with a power output of 100 megawatts (MW), capable of providing four hours of continuous discharge at full power. The system uses lithium iron phosphate (LFP) battery chemistry from CATL, chosen for its safety profile, longevity, and cost-effectiveness. The facility interconnects with the regional grid at the Oakdale 230kV substation.",
+        "State Public Utilities Commission — Interconnection Agreement Filing (September 2024): The Oakdale BESS operated by Sunridge Energy LLC has a nameplate energy capacity of 400 MWh and a net usable capacity of 372 MWh after accounting for auxiliary loads, round-trip efficiency losses, and the mandatory 5% state-of-charge reserve required by the grid operator for frequency regulation services. The net power delivery to the point of interconnection is 96 MW after transformer and line losses. The facility achieved commercial operation on February 28, 2024."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: 400 MWh rated vs 372 MWh usable and 100 MW vs 96 MW net — standard engineering distinction, not a disagreement",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The press release cites rated/nameplate capacity (400 MWh, 100 MW) while the regulatory filing cites net usable capacity after losses (372 MWh, 96 MW). This is a standard engineering distinction between gross and net capacity, not a disagreement. Both numbers are correct in their respective contexts. The system should confidently report the facility's capacity, noting both the rated and usable figures.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_233",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_612",
+      "category": "dispute",
+      "subcategory": "converted_framing_conflict",
+      "difficulty": "hard",
+      "query": "How many floors does the new headquarters building have?",
+      "contexts": [
+        "Architectural Digest — Atlas Corporation Headquarters Feature (November 2024): The new Atlas Corporation headquarters rises 52 stories above the downtown skyline, making it the tallest commercial building in the metropolitan area. Designed by Foster + Partners, the tower features a distinctive faceted glass curtain wall that shifts in appearance throughout the day. The ground floor houses a public atrium with retail space, while floors 2 through 10 contain a parking structure. Office space occupies floors 11 through 48, with executive suites and a private dining facility on floors 49 through 52. A rooftop observation deck is open to employees.",
+        "Atlas Corporation — Facilities Overview (Internal Documentation, 2024): The headquarters building at 200 Commerce Street comprises 52 above-grade floors and 3 below-grade levels containing mechanical systems, building operations, and secure data centre infrastructure. The below-grade levels are accessed via a separate service entrance on the north side. Total building height is 738 feet to the structural top, 762 feet including the rooftop telecommunications array. Total floor area is 1.8 million square feet across all 55 levels. The building achieved LEED Gold certification."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: 52 floors vs 55 levels — the difference is 3 below-grade levels, both sources agree on 52 above-grade",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Both sources agree on 52 above-grade floors. The internal documentation also counts 3 below-grade levels for a total of 55 levels. This is not a disagreement but a difference in what is counted. The building has 52 stories (above ground) and 55 total levels. The system can confidently answer the question.",
+      "metadata": {
+        "converted_from": "t1_confident_hard_234",
+        "conversion_method": "remove_reconciling_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_613",
+      "category": "dispute",
+      "subcategory": "converted_version_conflict",
+      "difficulty": "hard",
+      "query": "How do I use the componentWillMount lifecycle method in React?",
+      "contexts": [
+        "componentWillMount() is invoked immediately before mounting occurs. It is called before render().",
+        "As of React 16.3, componentWillMount is deprecated. The React team recommends using componentDidMount or the constructor instead."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Question about deprecated API that still exists but shouldn't be used",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Context explicitly states the method is deprecated and should be avoided - answer must include this qualification rather than simply explaining usage",
+      "metadata": {
+        "converted_from": "t1_qualify_hard_026",
+        "conversion_method": "remove_version_compat_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_614",
+      "category": "dispute",
+      "subcategory": "converted_version_conflict",
+      "difficulty": "hard",
+      "query": "How do I make HTTP requests using the request library in Node.js?",
+      "contexts": [
+        "The request library provides a simple way to make HTTP calls in Node.js: request('http://example.com', (err, res, body) => { ... })",
+        "The maintainers recommend migrating to alternatives like node-fetch, axios, or the built-in fetch API (Node 18+)."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Question about deprecated library that technically still works",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The library is explicitly deprecated - any answer must qualify that users should consider alternatives rather than providing usage instructions without warning",
+      "metadata": {
+        "converted_from": "t1_qualify_hard_027",
+        "conversion_method": "remove_version_compat_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_615",
+      "category": "dispute",
+      "subcategory": "converted_version_conflict",
+      "difficulty": "hard",
+      "query": "How do I use componentWillMount in React?",
+      "contexts": [
+        "React's componentWillMount lifecycle method was available in class components from React's initial public release through React 16.x. The method is invoked immediately before a component mounts (before the initial render). In the React 16.3 release (March 2018), componentWillMount was renamed to UNSAFE_componentWillMount as part of the async rendering preparation. The React documentation states: 'This method is called before render(), therefore calling setState() synchronously in this method will not trigger an extra rendering.' A typical usage pattern was initializing state or performing side effects before the first render. The UNSAFE_ prefix was added to draw attention to code that may have subtle bugs in React's concurrent rendering mode, where render may be called multiple times before committing to the DOM.",
+        "Avoid it in new code.' For state initialization, the recommended approach is to use the constructor or class property initializers. For side effects, useEffect (in function components) or componentDidMount (in class components) are the prescribed replacements. React 18's Strict Mode intentionally double-invokes UNSAFE_componentWillMount in development to surface bugs. Dan Abramov's widely-referenced blog post 'Update on Async Rendering' explains that the method is unsafe because it may be called multiple times in concurrent mode without committing, leading to resource leaks and inconsistent state."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: The method works with UNSAFE_ prefix but is deprecated with planned removal, and alternatives are recommended",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The method technically still functions but is deprecated, triggers warnings, and will be removed — answering 'how to use it' without qualifying the deprecation would be irresponsible",
+      "metadata": {
+        "converted_from": "t1_qualify_hard_135",
+        "conversion_method": "remove_version_compat_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_616",
+      "category": "dispute",
+      "subcategory": "converted_version_conflict",
+      "difficulty": "hard",
+      "query": "How do I configure TLS 1.0 for our web server?",
+      "contexts": [
+        "TLS 1.0, defined in RFC 2246 (January 1999), can be configured in Apache HTTP Server 2.4.x by setting the SSLProtocol directive in the virtual host configuration. The syntax is: SSLProtocol +TLSv1 in the <VirtualHost> block, along with appropriate SSLCipherSuite settings. For Nginx, the configuration is: ssl_protocols TLSv1; in the server block. Microsoft IIS allows TLS 1.0 through the Windows Registry by navigating to HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.0\\Server and setting the Enabled DWORD to 1 and DisabledByDefault to 0. The configuration process is well-documented across all major web servers and has been functional since the late 1990s.",
+        "The NIST SP 800-52 Rev 2 guidelines state that TLS 1.0 'shall not be used' in federal information systems. Major browsers have disabled TLS 1.0 support: Chrome 84 (July 2020), Firefox 78 (June 2020), Safari 13.1 (March 2020), and Edge 84 (July 2020). SSL Labs now assigns an automatic F rating to any server supporting TLS 1.0. Known vulnerabilities affecting TLS 1.0 include BEAST (CVE-2011-3389), POODLE variants, and weaknesses in the CBC cipher suites. The minimum recommended protocol version is TLS 1.2, with TLS 1.3 (RFC 8446) strongly preferred for new deployments."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: TLS 1.0 is technically configurable but formally deprecated, banned by compliance frameworks, and has known vulnerabilities",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: While the technical configuration steps exist and work, TLS 1.0 is deprecated by IETF, banned by PCI DSS, and has known exploits — providing configuration instructions requires strong qualification",
+      "metadata": {
+        "converted_from": "t1_qualify_hard_136",
+        "conversion_method": "remove_version_compat_context"
+      }
+    },
+    {
+      "id": "t1_dispute_hard_617",
+      "category": "dispute",
+      "subcategory": "converted_version_conflict",
+      "difficulty": "hard",
+      "query": "How do I use the Python 2 print statement?",
+      "contexts": [
+        "In Python 2.x, print is a statement rather than a function. The basic syntax is: print 'Hello, World!' (without parentheses). For printing multiple values, they are separated by commas: print 'Name:', name, 'Age:', age, which automatically inserts spaces between items. To suppress the trailing newline, add a trailing comma: print 'Loading...', . To redirect output to a file: print >> sys.stderr, 'Error message'. The print statement handles string formatting via the % operator: print 'Found %d items in %s' % (count, directory). The Python 2.7 documentation (the final Python 2.x release) describes these features in Section 6.6 'The print statement.' The __future__ import from __future__ import print_function enables Python 3-style print() function syntax in Python 2.6+ for gradual migration.",
+        "That means that we will not improve it anymore after that day, even if someone finds a security problem in it.' No security patches have been released since Python 2.7.18 (April 20, 2020, the absolute final release). Major package maintainers have dropped Python 2 support: NumPy (1.17, 2019), Django (2.0, 2017), pip (21.0, 2021), and requests (2.28, 2022). PyPI statistics show Python 2 downloads declining to 2.3% of total traffic as of October 2024. NIST CVE database lists 47 unpatched vulnerabilities in Python 2.7.18."
+      ],
+      "expected_mode": "disputed",
+      "description": "Converted dispute: Print statement syntax works in Python 2 but Python 2 is end-of-life with unpatched security vulnerabilities",
+      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: The syntax is documented and correct, but Python 2 has been EOL for years with known unpatched vulnerabilities — answering without strongly qualifying the EOL status would be negligent",
+      "metadata": {
+        "converted_from": "t1_qualify_hard_137",
+        "conversion_method": "remove_version_compat_context"
+      }
     }
   ]
 }
