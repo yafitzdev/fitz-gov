@@ -95,6 +95,27 @@ class FitzGovCase:
     metadata: dict[str, Any] = field(default_factory=dict)
     """Additional test case metadata."""
 
+    # Classification attributes for results slicing
+    domain: str = ""
+    """Domain/topic area: technology, finance, medicine, science, law, education, environment,
+       sports, food, social_media, real_estate, hr_workplace, transportation, agriculture,
+       history, psychology, government, general."""
+
+    query_type: str = ""
+    """Query form: what, how, why, is, does, should, when, who, which, compare."""
+
+    source_type: str = "single"
+    """Source configuration: single, multi_source."""
+
+    context_count: int = 0
+    """Number of context passages."""
+
+    reasoning_type: str = ""
+    """What reasoning the case tests: factual, causal, comparative, procedural, evaluative, temporal."""
+
+    evidence_pattern: str = ""
+    """Evidence relationship to query: direct, indirect, conflicting, absent, partial, mixed."""
+
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
         result = {
@@ -116,6 +137,18 @@ class FitzGovCase:
             result["relevant_doc_ids"] = self.relevant_doc_ids
         if self.context_sources:
             result["context_sources"] = self.context_sources
+        if self.domain:
+            result["domain"] = self.domain
+        if self.query_type:
+            result["query_type"] = self.query_type
+        if self.source_type and self.source_type != "single":
+            result["source_type"] = self.source_type
+        if self.context_count:
+            result["context_count"] = self.context_count
+        if self.reasoning_type:
+            result["reasoning_type"] = self.reasoning_type
+        if self.evidence_pattern:
+            result["evidence_pattern"] = self.evidence_pattern
         return result
 
     @classmethod
@@ -135,6 +168,12 @@ class FitzGovCase:
             relevant_doc_ids=data.get("relevant_doc_ids", []),
             context_sources=data.get("context_sources", []),
             metadata=data.get("metadata", {}),
+            domain=data.get("domain", ""),
+            query_type=data.get("query_type", ""),
+            source_type=data.get("source_type", "single"),
+            context_count=data.get("context_count", 0),
+            reasoning_type=data.get("reasoning_type", ""),
+            evidence_pattern=data.get("evidence_pattern", ""),
         )
 
     def __str__(self) -> str:
