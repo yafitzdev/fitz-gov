@@ -174,10 +174,10 @@ def cmd_generate(args: argparse.Namespace) -> int:
         cases = generator.generate_abstention_cases(chunks, num_cases)
     elif category == "dispute":
         cases = generator.generate_dispute_cases(chunks, num_cases)
-    elif category == "qualification":
-        cases = generator.generate_qualification_cases(chunks, num_cases)
-    elif category == "confidence":
-        cases = generator.generate_confidence_cases(chunks, num_cases)
+    elif category == "trustworthy_hedged":
+        cases = generator.generate_trustworthy_hedged_cases(chunks, num_cases)
+    elif category == "trustworthy_direct":
+        cases = generator.generate_trustworthy_direct_cases(chunks, num_cases)
     elif category == "grounding":
         cases = generator.generate_grounding_cases(chunks, num_cases)
     elif category == "relevance":
@@ -454,7 +454,7 @@ def main() -> int:
 
     # generate command
     gen_parser = subparsers.add_parser("generate", help="Generate test cases from corpus")
-    gen_parser.add_argument("category", choices=["all", "abstention", "dispute", "qualification", "confidence", "grounding", "relevance"], help="Category to generate")
+    gen_parser.add_argument("category", choices=["all", "abstention", "dispute", "trustworthy_hedged", "trustworthy_direct", "grounding", "relevance"], help="Category to generate")
     gen_parser.add_argument("--corpus", required=True, help="Directory containing corpus text files")
     gen_parser.add_argument("--output", default="./generated_data", help="Output directory")
     gen_parser.add_argument("--num-cases", type=int, default=20, help="Cases per category")
@@ -477,7 +477,7 @@ def main() -> int:
     build_parser.add_argument("--llm-model", help="LLM model name (default depends on provider)")
     build_parser.add_argument(
         "--category",
-        choices=["abstention", "dispute", "qualification", "confidence", "grounding", "relevance"],
+        choices=["abstention", "dispute", "trustworthy_hedged", "trustworthy_direct", "grounding", "relevance"],
         help="Generate only this category (for retries)",
     )
 

@@ -37,8 +37,8 @@ logger = logging.getLogger(__name__)
 GOVERNANCE_MODE_CATEGORIES = {
     FitzGovCategory.ABSTENTION,
     FitzGovCategory.DISPUTE,
-    FitzGovCategory.QUALIFICATION,
-    FitzGovCategory.CONFIDENCE,
+    FitzGovCategory.TRUSTWORTHY_HEDGED,
+    FitzGovCategory.TRUSTWORTHY_DIRECT,
     FitzGovCategory.RELEVANCE,
 }
 

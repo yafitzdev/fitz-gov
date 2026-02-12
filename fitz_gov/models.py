@@ -21,11 +21,11 @@ class FitzGovCategory(str, Enum):
     DISPUTE = "dispute"
     """Cases where the system should flag conflicting information."""
 
-    QUALIFICATION = "qualification"
-    """Cases where the system should hedge or qualify the answer."""
+    TRUSTWORTHY_HEDGED = "trustworthy_hedged"
+    """Cases where the system should hedge or qualify the answer (maps to TRUSTWORTHY mode)."""
 
-    CONFIDENCE = "confidence"
-    """Cases where the system should answer clearly and directly."""
+    TRUSTWORTHY_DIRECT = "trustworthy_direct"
+    """Cases where the system should answer clearly and directly (maps to TRUSTWORTHY mode)."""
 
     # Answer Quality Categories
     GROUNDING = "grounding"
@@ -295,8 +295,8 @@ class FitzGovResult:
         gov_cats = [
             FitzGovCategory.ABSTENTION,
             FitzGovCategory.DISPUTE,
-            FitzGovCategory.QUALIFICATION,
-            FitzGovCategory.CONFIDENCE,
+            FitzGovCategory.TRUSTWORTHY_HEDGED,
+            FitzGovCategory.TRUSTWORTHY_DIRECT,
         ]
         lines.append("Governance Mode Categories:")
         for cat in gov_cats:

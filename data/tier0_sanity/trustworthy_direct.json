@@ -2,10 +2,10 @@
   "tier": "sanity",
   "tier_description": "Baseline functionality verification - models should score 95%+",
   "passing_threshold": 0.95,
-  "category": "confidence",
-  "description": "Queries where context clearly answers the question - system should be CONFIDENT",
-  "version": "1.0.0",
-  "mode_rationale": "CONFIDENT because context clearly and unambiguously answers the question. System should provide direct answer without unnecessary hedging.",
+  "category": "trustworthy_direct",
+  "description": "Queries where context clearly answers the question - system should answer directly (TRUSTWORTHY mode, direct behavior)",
+  "version": "3.0.1",
+  "mode_rationale": "TRUSTWORTHY (direct) because context clearly and unambiguously answers the question. System should provide direct answer without unnecessary hedging.",
   "cases": [
     {
       "id": "t0_confident_easy_001",

@@ -12,8 +12,8 @@ fitz-gov measures:
 |----------|--------------|---------|
 | **Abstention** | Refuses when context is insufficient | `ABSTAIN` mode |
 | **Dispute** | Flags conflicting sources | `DISPUTED` mode |
-| **Qualification** | Hedges uncertain claims | `TRUSTWORTHY` mode |
-| **Confidence** | Answers confidently when evidence is clear | `TRUSTWORTHY` mode |
+| **Trustworthy Hedged** | Hedges uncertain claims | `TRUSTWORTHY` mode |
+| **Trustworthy Direct** | Answers confidently when evidence is clear | `TRUSTWORTHY` mode |
 | **Grounding** | Answers are grounded in context (no hallucination) | Answer quality |
 | **Relevance** | Answers address the actual question | Answer quality |
 
@@ -83,7 +83,7 @@ results = benchmark.evaluate(engine)
 print(results)
 ```
 
-**Note**: Both fitz-ai and fitz-gov use the same 3-mode system (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (qualification, confidence) are test categories that describe what aspect of governance is being tested, not different modes.
+**Note**: Both fitz-ai and fitz-gov use the same 3-mode system (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (trustworthy_hedged, trustworthy_direct) are test categories that describe what aspect of governance is being tested, not different modes.
 
 ### Standalone Usage (Any RAG System)
 
@@ -271,20 +271,20 @@ Test cases are organized in a tiered structure:
 
 ```
 data/
-+-- tier0_sanity/          # 60 cases - baseline verification (95% threshold)
-|   +-- abstention.json    # 12 cases
-|   +-- dispute.json       # 12 cases
-|   +-- qualification.json # 10 cases
-|   +-- confidence.json    # 10 cases
-|   +-- grounding.json     # 8 cases
-|   +-- relevance.json     # 8 cases
-+-- tier1_core/            # 1113 cases - discriminative benchmark
-|   +-- abstention.json    # 237 cases
-|   +-- dispute.json       # 196 cases
-|   +-- qualification.json # 360 cases
-|   +-- confidence.json    # 254 cases
-|   +-- grounding.json     # 34 cases
-|   +-- relevance.json     # 32 cases
++-- tier0_sanity/               # 60 cases - baseline verification (95% threshold)
+|   +-- abstention.json         # 12 cases
+|   +-- dispute.json            # 12 cases
+|   +-- trustworthy_hedged.json # 10 cases
+|   +-- trustworthy_direct.json # 10 cases
+|   +-- grounding.json          # 8 cases
+|   +-- relevance.json          # 8 cases
++-- tier1_core/                 # 1113 cases - discriminative benchmark
+|   +-- abstention.json         # 237 cases
+|   +-- dispute.json            # 196 cases
+|   +-- trustworthy_hedged.json # 360 cases
+|   +-- trustworthy_direct.json # 254 cases
+|   +-- grounding.json          # 34 cases
+|   +-- relevance.json          # 32 cases
 +-- corpus/
 |   +-- documents.jsonl    # 378 reference documents
 +-- queries/
@@ -324,7 +324,7 @@ Each case has:
 | `query` | string | The question to answer |
 | `contexts` | list[str] | Context passages provided to the RAG system |
 | `expected_mode` | string | Expected governance mode (`abstain`, `disputed`, `trustworthy`) |
-| `category` | string | Evaluation category (abstention, dispute, qualification, confidence, grounding, relevance) |
+| `category` | string | Evaluation category (abstention, dispute, trustworthy_hedged, trustworthy_direct, grounding, relevance) |
 | `subcategory` | string | Specific test pattern (e.g., `wrong_entity`, `implicit_contradiction`) |
 | `difficulty` | string | `easy`, `medium`, or `hard` |
 | `description` | string | What the case tests |
@@ -348,7 +348,7 @@ fitz-gov is designed as a standalone package so that:
 2. **Evaluation logic is consistent** - all systems get identical evaluation
 3. **Test data is versioned** - reproducible benchmarks across releases
 
-For Fitz RAG engine integration, see `fitz_ai.evaluation.benchmarks.FitzGovBenchmark` which wraps this package. Both fitz-ai and fitz-gov use the same 3-mode system (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (qualification, confidence, etc.) are test categories that describe different governance behaviors being tested, not different output modes.
+For Fitz RAG engine integration, see `fitz_ai.evaluation.benchmarks.FitzGovBenchmark` which wraps this package. Both fitz-ai and fitz-gov use the same 3-mode system (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (trustworthy_hedged, trustworthy_direct, etc.) are test categories that describe different governance behaviors being tested, not different output modes.
 
 ## Contributing
 

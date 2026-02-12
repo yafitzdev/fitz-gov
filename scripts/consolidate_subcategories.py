@@ -206,9 +206,9 @@ QUALIFICATION_MAP = {
 
 CATEGORY_MAPS = {
     "abstention": ABSTENTION_MAP,
-    "confidence": CONFIDENCE_MAP,
+    "trustworthy_direct": CONFIDENCE_MAP,
     "dispute": DISPUTE_MAP,
-    "qualification": QUALIFICATION_MAP,
+    "trustworthy_hedged": QUALIFICATION_MAP,
 }
 
 

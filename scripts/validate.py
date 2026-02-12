@@ -38,7 +38,7 @@ def validate_case_schema(case: dict, category: str) -> list[str]:
         errors.append(f"{case.get('id')}: Invalid difficulty '{case.get('difficulty')}'")
 
     # Validate expected_mode value
-    valid_modes = ["abstain", "disputed", "qualified", "confident"]
+    valid_modes = ["abstain", "disputed", "trustworthy"]
     if case.get("expected_mode") not in valid_modes:
         errors.append(f"{case.get('id')}: Invalid expected_mode '{case.get('expected_mode')}'")
 
@@ -116,7 +116,7 @@ def validate_category(base_path: Path, category: str) -> tuple[list[str], dict]:
 def main():
     """Run validation on all categories."""
     base_path = Path(__file__).parent.parent / "data"
-    categories = ["abstention", "dispute", "qualification", "confidence", "grounding", "relevance"]
+    categories = ["abstention", "dispute", "trustworthy_hedged", "trustworthy_direct", "grounding", "relevance"]
 
     all_errors = []
     all_stats = {}

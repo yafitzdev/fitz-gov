@@ -2,10 +2,10 @@
   "tier": "sanity",
   "tier_description": "Baseline functionality verification - models should score 95%+",
   "passing_threshold": 0.95,
-  "category": "qualification",
-  "description": "Queries where context lacks sufficient evidence for confident answers - system should mark as QUALIFIED",
-  "version": "1.0.0",
-  "mode_rationale": "QUALIFIED because context provides partial/uncertain evidence. System should answer with appropriate hedging (correlation vs causation, limited sample, etc.).",
+  "category": "trustworthy_hedged",
+  "description": "Queries where context provides partial/uncertain evidence - system should answer with hedging (TRUSTWORTHY mode, hedged behavior)",
+  "version": "3.0.1",
+  "mode_rationale": "TRUSTWORTHY (hedged) because context provides partial/uncertain evidence. System should answer with appropriate hedging (correlation vs causation, limited sample, etc.).",
   "cases": [
     {
       "id": "t0_qualify_easy_001",

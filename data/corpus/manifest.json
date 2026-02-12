@@ -45,8 +45,8 @@
   "purpose": {
     "abstention": "Documents in unrelated domains (e.g., biology docs for business queries)",
     "dispute": "Multiple documents with conflicting information on the same topic",
-    "qualification": "Documents showing correlations/effects without causal explanations",
-    "confidence": "Documents with clear, unambiguous answers",
+    "trustworthy_hedged": "Documents showing correlations/effects without causal explanations",
+    "trustworthy_direct": "Documents with clear, unambiguous answers",
     "grounding": "Documents discussing topics but lacking specific details (hallucination traps)",
     "relevance": "Documents with tangential information (off-topic traps)"
   },

@@ -79,8 +79,8 @@ class FitzGovGenerator:
         categories = [
             ("abstention", self.generate_abstention_cases),
             ("dispute", self.generate_dispute_cases),
-            ("qualification", self.generate_qualification_cases),
-            ("confidence", self.generate_confidence_cases),
+            ("trustworthy_hedged", self.generate_trustworthy_hedged_cases),
+            ("trustworthy_direct", self.generate_trustworthy_direct_cases),
             ("grounding", self.generate_grounding_cases),
             ("relevance", self.generate_relevance_cases),
         ]
@@ -108,8 +108,8 @@ class FitzGovGenerator:
         gen_funcs = {
             "abstention": self.generate_abstention_cases,
             "dispute": self.generate_dispute_cases,
-            "qualification": self.generate_qualification_cases,
-            "confidence": self.generate_confidence_cases,
+            "trustworthy_hedged": self.generate_trustworthy_hedged_cases,
+            "trustworthy_direct": self.generate_trustworthy_direct_cases,
             "grounding": self.generate_grounding_cases,
             "relevance": self.generate_relevance_cases,
         }
@@ -279,7 +279,7 @@ Generate {num_cases} diverse conflict scenarios."""
 
         return cases
 
-    def generate_qualification_cases(
+    def generate_trustworthy_hedged_cases(
         self,
         chunks: list[Any],
         num_cases: int = 20,
@@ -333,7 +333,7 @@ Generate {num_cases} diverse qualification scenarios."""
             cases.append(
                 FitzGovCase(
                     id=f"gen_qualify_{i:03d}",
-                    category=FitzGovCategory.QUALIFICATION,
+                    category=FitzGovCategory.TRUSTWORTHY_HEDGED,
                     subcategory="uncertain_evidence",
                     query=case_data["query"],
                     contexts=contexts,
@@ -347,7 +347,7 @@ Generate {num_cases} diverse qualification scenarios."""
 
         return cases
 
-    def generate_confidence_cases(
+    def generate_trustworthy_direct_cases(
         self,
         chunks: list[Any],
         num_cases: int = 20,
@@ -405,7 +405,7 @@ Generate {num_cases} clear-cut confidence scenarios. Include the doc_ids that co
             cases.append(
                 FitzGovCase(
                     id=f"gen_confident_{i:03d}",
-                    category=FitzGovCategory.CONFIDENCE,
+                    category=FitzGovCategory.TRUSTWORTHY_DIRECT,
                     subcategory="clear_evidence",
                     query=case_data["query"],
                     contexts=contexts,

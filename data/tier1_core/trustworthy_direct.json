@@ -1,10 +1,10 @@
 {
   "tier": "core",
   "tier_description": "Primary benchmark for model discrimination",
-  "category": "confidence",
-  "description": "Queries where context clearly answers the question - system should be CONFIDENT",
-  "version": "3.0.0",
-  "mode_rationale": "CONFIDENT because context clearly and unambiguously answers the question. System should provide direct answer without unnecessary hedging.",
+  "category": "trustworthy_direct",
+  "description": "Queries where context clearly answers the question - system should answer directly (TRUSTWORTHY mode, direct behavior)",
+  "version": "3.0.1",
+  "mode_rationale": "TRUSTWORTHY (direct) because context clearly and unambiguously answers the question. System should provide direct answer without unnecessary hedging.",
   "cases": [
     {
       "id": "t1_confident_hard_001",
@@ -591,7 +591,7 @@
     },
     {
       "id": "t1_confident_hard_100",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "direct_factual",
       "difficulty": "hard",
       "query": "What programming language is the Linux kernel primarily written in?",
@@ -606,7 +606,7 @@
     },
     {
       "id": "t1_confident_hard_101",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "direct_factual",
       "difficulty": "hard",
       "query": "What database engine does Wikipedia use?",
@@ -621,7 +621,7 @@
     },
     {
       "id": "t1_confident_hard_102",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "direct_factual",
       "difficulty": "hard",
       "query": "What encryption standard does the US government require for protecting classified information?",
@@ -636,7 +636,7 @@
     },
     {
       "id": "t1_confident_hard_103",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "direct_factual",
       "difficulty": "hard",
       "query": "What is the boiling point of water at standard atmospheric pressure?",
@@ -651,7 +651,7 @@
     },
     {
       "id": "t1_confident_hard_105",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "multi_source_convergence",
       "difficulty": "hard",
       "query": "What is the maximum payload capacity of a Boeing 737-800?",
@@ -667,7 +667,7 @@
     },
     {
       "id": "t1_confident_hard_106",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "multi_source_convergence",
       "difficulty": "hard",
       "query": "What is the half-life of carbon-14?",
@@ -683,7 +683,7 @@
     },
     {
       "id": "t1_confident_hard_107",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "multi_source_convergence",
       "difficulty": "hard",
       "query": "What is the speed of light in a vacuum?",
@@ -698,7 +698,7 @@
     },
     {
       "id": "t1_confident_hard_108",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "multi_source_convergence",
       "difficulty": "hard",
       "query": "What year did the Titanic sink?",
@@ -714,7 +714,7 @@
     },
     {
       "id": "t1_confident_hard_109",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "multi_source_convergence",
       "difficulty": "hard",
       "query": "How many chromosomes do humans have?",
@@ -729,7 +729,7 @@
     },
     {
       "id": "t1_confident_hard_110",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "How do I configure a PostgreSQL database for SSL/TLS encrypted connections?",
@@ -744,7 +744,7 @@
     },
     {
       "id": "t1_confident_hard_111",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "How do I perform CPR on an adult?",
@@ -759,7 +759,7 @@
     },
     {
       "id": "t1_confident_hard_112",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "How do I set up SSH key-based authentication on a Linux server?",
@@ -774,7 +774,7 @@
     },
     {
       "id": "t1_confident_hard_113",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "How do I file a provisional patent application with the USPTO?",
@@ -789,7 +789,7 @@
     },
     {
       "id": "t1_confident_hard_114",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "How do I calculate the weighted average cost of capital (WACC) for a company?",
@@ -804,7 +804,7 @@
     },
     {
       "id": "t1_confident_hard_115",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "What was the company's gross margin for fiscal year 2024?",
@@ -819,7 +819,7 @@
     },
     {
       "id": "t1_confident_hard_116",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "What is the maximum occupancy of the conference center's main ballroom?",
@@ -834,7 +834,7 @@
     },
     {
       "id": "t1_confident_hard_117",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "What are the API rate limits for the production tier?",
@@ -849,7 +849,7 @@
     },
     {
       "id": "t1_confident_hard_118",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "What is the minimum required Python version for Django 5.0?",
@@ -864,7 +864,7 @@
     },
     {
       "id": "t1_confident_hard_119",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "What is the tensile strength of Grade 8 bolts?",
@@ -879,7 +879,7 @@
     },
     {
       "id": "t1_confident_hard_120",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What consensus algorithm does Bitcoin use?",
@@ -894,7 +894,7 @@
     },
     {
       "id": "t1_confident_hard_121",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What is the time complexity of binary search?",
@@ -909,7 +909,7 @@
     },
     {
       "id": "t1_confident_hard_122",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What HTTP status code indicates a resource was not found?",
@@ -924,7 +924,7 @@
     },
     {
       "id": "t1_confident_hard_123",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What is the default port number for HTTPS connections?",
@@ -939,7 +939,7 @@
     },
     {
       "id": "t1_confident_hard_124",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What type of bond forms between sodium and chlorine in table salt?",
@@ -954,7 +954,7 @@
     },
     {
       "id": "t1_confident_hard_125",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What caused the 2021 Texas power grid failure?",
@@ -969,7 +969,7 @@
     },
     {
       "id": "t1_confident_hard_126",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What caused the Challenger space shuttle disaster?",
@@ -984,7 +984,7 @@
     },
     {
       "id": "t1_confident_hard_127",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What caused the CrowdStrike global IT outage in July 2024?",
@@ -999,7 +999,7 @@
     },
     {
       "id": "t1_confident_hard_128",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What causes tides on Earth?",
@@ -1014,7 +1014,7 @@
     },
     {
       "id": "t1_confident_hard_129",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What caused the global financial crisis of 2008?",
@@ -1029,7 +1029,7 @@
     },
     {
       "id": "t1_confident_hard_130",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "How many employees does Costco have?",
@@ -1044,7 +1044,7 @@
     },
     {
       "id": "t1_confident_hard_131",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "What is the distance from the Earth to the Moon?",
@@ -1059,7 +1059,7 @@
     },
     {
       "id": "t1_confident_hard_133",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "What is the storage capacity of a standard Blu-ray disc?",
@@ -1074,7 +1074,7 @@
     },
     {
       "id": "t1_confident_hard_134",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
       "difficulty": "hard",
       "query": "What is the melting point of gold?",
@@ -1089,7 +1089,7 @@
     },
     {
       "id": "t1_confident_hard_200",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "Does the API support batch requests?",
@@ -1104,7 +1104,7 @@
     },
     {
       "id": "t1_confident_hard_201",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "Can I use the MRI facility during pregnancy?",
@@ -1119,7 +1119,7 @@
     },
     {
       "id": "t1_confident_hard_202",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "Is our company's data center compliant with SOC 2 Type II?",
@@ -1134,7 +1134,7 @@
     },
     {
       "id": "t1_confident_hard_203",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "Does the school district offer free lunch to all students?",
@@ -1149,7 +1149,7 @@
     },
     {
       "id": "t1_confident_hard_204",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "Can I return items purchased during the holiday sale?",
@@ -1164,7 +1164,7 @@
     },
     {
       "id": "t1_confident_hard_205",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
       "query": "What is the maximum occupancy for the Grand Ballroom?",
@@ -1178,7 +1178,7 @@
     },
     {
       "id": "t1_confident_hard_206",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
       "query": "What are the active ingredients in Lisinopril 10mg tablets?",
@@ -1192,7 +1192,7 @@
     },
     {
       "id": "t1_confident_hard_207",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
       "query": "What is the statute of limitations for filing a personal injury claim in Texas?",
@@ -1206,7 +1206,7 @@
     },
     {
       "id": "t1_confident_hard_208",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
       "query": "What temperature should I store insulin at?",
@@ -1220,7 +1220,7 @@
     },
     {
       "id": "t1_confident_hard_209",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
       "query": "What is the minimum capital requirement to register as a limited company in the UK?",
@@ -1234,7 +1234,7 @@
     },
     {
       "id": "t1_confident_hard_210",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "What benefits does the employee health plan cover?",
@@ -1248,7 +1248,7 @@
     },
     {
       "id": "t1_confident_hard_211",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "What are the system requirements for running the CAD software?",
@@ -1262,7 +1262,7 @@
     },
     {
       "id": "t1_confident_hard_212",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "What safety features does the 2025 Meridian sedan include?",
@@ -1276,7 +1276,7 @@
     },
     {
       "id": "t1_confident_hard_213",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "What environmental certifications does the building hold?",
@@ -1290,7 +1290,7 @@
     },
     {
       "id": "t1_confident_hard_214",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
       "query": "What courses are required for the data science master's degree?",
@@ -1304,7 +1304,7 @@
     },
     {
       "id": "t1_confident_hard_215",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "How long does the company's standard warranty last?",
@@ -1319,7 +1319,7 @@
     },
     {
       "id": "t1_confident_hard_216",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the recommended daily water intake for adults?",
@@ -1334,7 +1334,7 @@
     },
     {
       "id": "t1_confident_hard_217",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the company's parental leave policy?",
@@ -1349,7 +1349,7 @@
     },
     {
       "id": "t1_confident_hard_218",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the melting point of titanium?",
@@ -1364,7 +1364,7 @@
     },
     {
       "id": "t1_confident_hard_219",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "How many employees does the organization have?",
@@ -1379,7 +1379,7 @@
     },
     {
       "id": "t1_confident_hard_220",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "Did the company's revenue grow this year?",
@@ -1394,7 +1394,7 @@
     },
     {
       "id": "t1_confident_hard_221",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "Is the local job market improving?",
@@ -1409,7 +1409,7 @@
     },
     {
       "id": "t1_confident_hard_222",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "Is the new drug effective for treating migraines?",
@@ -1424,7 +1424,7 @@
     },
     {
       "id": "t1_confident_hard_223",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "Has air quality in the city improved over the past decade?",
@@ -1439,7 +1439,7 @@
     },
     {
       "id": "t1_confident_hard_224",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "Is the new school curriculum raising student performance?",
@@ -1454,7 +1454,7 @@
     },
     {
       "id": "t1_confident_hard_225",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the speed limit on Highway 101 through the downtown corridor?",
@@ -1469,7 +1469,7 @@
     },
     {
       "id": "t1_confident_hard_226",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "Does the museum offer free admission on Sundays?",
@@ -1484,7 +1484,7 @@
     },
     {
       "id": "t1_confident_hard_227",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "Is gluten-free labeling mandatory for food products in the EU?",
@@ -1499,7 +1499,7 @@
     },
     {
       "id": "t1_confident_hard_228",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the current CEO of Meridian Health Systems?",
@@ -1514,7 +1514,7 @@
     },
     {
       "id": "t1_confident_hard_229",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the recommended dosage of vitamin D for adults?",
@@ -1529,7 +1529,7 @@
     },
     {
       "id": "t1_confident_hard_230",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "What programming language is used for the backend of the platform?",
@@ -1544,7 +1544,7 @@
     },
     {
       "id": "t1_confident_hard_231",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "When was the hospital founded?",
@@ -1559,7 +1559,7 @@
     },
     {
       "id": "t1_confident_hard_232",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How many species of birds have been recorded in the national park?",
@@ -1574,7 +1574,7 @@
     },
     {
       "id": "t1_confident_hard_233",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "What is the capacity of the new battery storage facility?",
@@ -1589,7 +1589,7 @@
     },
     {
       "id": "t1_confident_hard_234",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How many floors does the new headquarters building have?",
@@ -1604,7 +1604,7 @@
     },
     {
       "id": "t1_confident_hard_300",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How did Quantum Computing Corp perform in Q3 2024?",
@@ -1619,7 +1619,7 @@
     },
     {
       "id": "t1_confident_hard_301",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "What is the crime rate trend in the city?",
@@ -1634,7 +1634,7 @@
     },
     {
       "id": "t1_confident_hard_302",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "Is the new trade agreement beneficial for the country?",
@@ -1649,7 +1649,7 @@
     },
     {
       "id": "t1_confident_hard_303",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How is the hospital performing on patient outcomes?",
@@ -1664,7 +1664,7 @@
     },
     {
       "id": "t1_confident_hard_304",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How did the new education funding formula affect schools?",
@@ -1679,7 +1679,7 @@
     },
     {
       "id": "t1_confident_hard_305",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "What was the outcome of the clinical trial for Neurexal?",
@@ -1694,7 +1694,7 @@
     },
     {
       "id": "t1_confident_hard_306",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "What is the state of the housing market?",
@@ -1709,7 +1709,7 @@
     },
     {
       "id": "t1_confident_hard_307",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "Was the corporate restructuring successful?",
@@ -1724,7 +1724,7 @@
     },
     {
       "id": "t1_confident_hard_308",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How much water does the state's agriculture sector use?",
@@ -1739,7 +1739,7 @@
     },
     {
       "id": "t1_confident_hard_309",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "Is the new immigration policy working?",
@@ -1754,7 +1754,7 @@
     },
     {
       "id": "t1_confident_hard_600",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What was Meridian Corp's total revenue for fiscal year 2024?",
@@ -1770,7 +1770,7 @@
     },
     {
       "id": "t1_confident_hard_601",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the unemployment rate in the United States as of December 2024?",
@@ -1786,7 +1786,7 @@
     },
     {
       "id": "t1_confident_hard_602",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the melting point of pure gold?",
@@ -1802,7 +1802,7 @@
     },
     {
       "id": "t1_confident_hard_603",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "How tall is Mount Everest?",
@@ -1818,7 +1818,7 @@
     },
     {
       "id": "t1_confident_hard_604",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the current population of Tokyo?",
@@ -1834,7 +1834,7 @@
     },
     {
       "id": "t1_confident_hard_606",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Does the MMR vaccine cause autism?",
@@ -1849,7 +1849,7 @@
     },
     {
       "id": "t1_confident_hard_607",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is climate change primarily caused by human activities?",
@@ -1864,7 +1864,7 @@
     },
     {
       "id": "t1_confident_hard_608",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is the Earth flat or roughly spherical?",
@@ -1879,7 +1879,7 @@
     },
     {
       "id": "t1_confident_hard_609",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is fluoride in drinking water safe at recommended levels?",
@@ -1894,7 +1894,7 @@
     },
     {
       "id": "t1_confident_hard_610",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Do genetically modified crops pose health risks to humans?",
@@ -1909,7 +1909,7 @@
     },
     {
       "id": "t1_confident_hard_611",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is organic food more nutritious than conventional food?",
@@ -2065,7 +2065,7 @@
     },
     {
       "id": "t1_confident_hard_750",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "short_query",
       "query": "Price?",
@@ -2078,7 +2078,7 @@
     },
     {
       "id": "t1_confident_hard_751",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "short_query",
       "query": "Deadline?",
@@ -2091,7 +2091,7 @@
     },
     {
       "id": "t1_confident_hard_752",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "long_context",
       "query": "What is the maximum allowable debt-to-equity ratio under the credit facility's financial covenants?",
@@ -2105,7 +2105,7 @@
     },
     {
       "id": "t1_confident_hard_753",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "long_context",
       "query": "What hashing algorithm does the system use for password storage?",
@@ -2119,7 +2119,7 @@
     },
     {
       "id": "t1_confident_hard_754",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "long_context",
       "query": "What is the contractual notice period required before either party can terminate the service agreement?",
@@ -2133,7 +2133,7 @@
     },
     {
       "id": "t1_confident_hard_755",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "long_context",
       "query": "What machine learning framework was used to train the recommendation model?",
@@ -2147,7 +2147,7 @@
     },
     {
       "id": "t1_confident_hard_800",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "technical_documented",
       "query": "What parameters does the transform_payload function accept and what does it return?",
@@ -2161,7 +2161,7 @@
     },
     {
       "id": "t1_confident_hard_801",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "technical_documented",
       "query": "What is the default value for the max_connections setting in the database pool configuration?",
@@ -2175,7 +2175,7 @@
     },
     {
       "id": "t1_confident_hard_802",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "technical_documented",
       "query": "What happens when the payment processing service encounters a timeout from the gateway?",
@@ -2189,7 +2189,7 @@
     },
     {
       "id": "t1_confident_hard_803",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "technical_documented",
       "query": "What is the route and handler for the POST /api/projects endpoint?",
@@ -2203,7 +2203,7 @@
     },
     {
       "id": "t1_confident_hard_804",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "technical_documented",
       "query": "What fields does the InventoryItem data model contain and what are their types?",
@@ -2217,7 +2217,7 @@
     },
     {
       "id": "t1_confident_hard_805",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "different_framing",
       "query": "How do React and Vue handle state management for component-level state?",
@@ -2231,7 +2231,7 @@
     },
     {
       "id": "t1_confident_hard_806",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is aspartame safe for human consumption?",
@@ -2246,7 +2246,7 @@
     },
     {
       "id": "t1_confident_hard_807",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Does creatine supplementation improve athletic performance?",
@@ -2261,7 +2261,7 @@
     },
     {
       "id": "t1_confident_medium_808",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is the Boeing 787 Dreamliner safe to fly?",
@@ -2276,7 +2276,7 @@
     },
     {
       "id": "t1_confident_medium_809",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is regular moderate exercise beneficial for cardiovascular health?",
@@ -2291,7 +2291,7 @@
     },
     {
       "id": "t1_confident_hard_810",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Does lithium-ion battery recycling recover a meaningful percentage of critical minerals?",
@@ -2306,7 +2306,7 @@
     },
     {
       "id": "t1_confident_medium_811",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is tap water in the United States generally safe to drink?",
@@ -2321,7 +2321,7 @@
     },
     {
       "id": "t1_confident_hard_812",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is CRISPR gene editing effective for treating sickle cell disease?",
@@ -2336,7 +2336,7 @@
     },
     {
       "id": "t1_confident_medium_813",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Does wearing seatbelts reduce fatality risk in car accidents?",
@@ -2351,7 +2351,7 @@
     },
     {
       "id": "t1_confident_hard_814",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is nuclear power a low-carbon energy source?",
@@ -2366,7 +2366,7 @@
     },
     {
       "id": "t1_confident_medium_815",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is the Mediterranean diet effective for reducing heart disease risk?",
@@ -2381,7 +2381,7 @@
     },
     {
       "id": "t1_confident_hard_816",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is Kubernetes more suitable than Docker Swarm for large-scale production deployments?",
@@ -2396,7 +2396,7 @@
     },
     {
       "id": "t1_confident_medium_817",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is Python a good language for data science?",
@@ -2411,7 +2411,7 @@
     },
     {
       "id": "t1_confident_hard_818",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Does cognitive behavioral therapy effectively treat generalized anxiety disorder?",
@@ -2426,7 +2426,7 @@
     },
     {
       "id": "t1_confident_medium_819",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Are electric vehicles better for the environment than gasoline cars over their full lifecycle?",
@@ -2441,7 +2441,7 @@
     },
     {
       "id": "t1_confident_hard_820",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is the current scientific consensus that the universe is approximately 13.8 billion years old?",
@@ -2456,7 +2456,7 @@
     },
     {
       "id": "t1_confident_medium_821",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is multifactor authentication effective at preventing account compromises?",
@@ -2471,7 +2471,7 @@
     },
     {
       "id": "t1_confident_hard_822",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Does the evidence support that microplastics are present in human blood?",
@@ -2486,7 +2486,7 @@
     },
     {
       "id": "t1_confident_medium_823",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is TypeScript beneficial for large-scale JavaScript projects?",
@@ -2501,7 +2501,7 @@
     },
     {
       "id": "t1_confident_hard_824",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is breastfeeding associated with health benefits for infants compared to formula feeding?",
@@ -2516,7 +2516,7 @@
     },
     {
       "id": "t1_confident_medium_825",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Does regular sunscreen use prevent skin cancer?",
@@ -2531,7 +2531,7 @@
     },
     {
       "id": "t1_confident_hard_826",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is the evidence sufficient to conclude that lead exposure in children causes cognitive deficits?",
@@ -2546,7 +2546,7 @@
     },
     {
       "id": "t1_confident_medium_827",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is PostgreSQL suitable for production use in enterprise applications?",
@@ -2561,7 +2561,7 @@
     },
     {
       "id": "t1_confident_hard_828",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Does the evidence show that masks reduce transmission of respiratory viruses in community settings?",
@@ -2576,7 +2576,7 @@
     },
     {
       "id": "t1_confident_hard_829",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Are automated code review tools useful for catching bugs in software development?",
@@ -2591,7 +2591,7 @@
     },
     {
       "id": "t1_confident_hard_830",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Does the gut microbiome influence mental health outcomes?",
@@ -2606,7 +2606,7 @@
     },
     {
       "id": "t1_confident_hard_831",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is cloud computing more cost-effective than on-premises infrastructure for most organizations?",
@@ -2621,7 +2621,7 @@
     },
     {
       "id": "t1_confident_hard_832",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is spaced repetition more effective than massed practice for long-term retention?",
@@ -2636,7 +2636,7 @@
     },
     {
       "id": "t1_confident_hard_833",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Is the James Webb Space Telescope primarily an infrared observatory?",
@@ -2651,7 +2651,7 @@
     },
     {
       "id": "t1_confident_hard_834",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "hard",
       "query": "Does the evidence support that statins reduce cardiovascular events in patients with established heart disease?",
@@ -2666,7 +2666,7 @@
     },
     {
       "id": "t1_confident_medium_835",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
       "query": "Is Rust a memory-safe programming language?",
@@ -2681,7 +2681,7 @@
     },
     {
       "id": "t1_confident_hard_836",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the failure rate of dental implants after 10 years?",
@@ -2696,7 +2696,7 @@
     },
     {
       "id": "t1_confident_medium_837",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "What percentage of global electricity comes from renewable sources?",
@@ -2711,7 +2711,7 @@
     },
     {
       "id": "t1_confident_hard_838",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the recommended first-line treatment for H. pylori infection?",
@@ -2726,7 +2726,7 @@
     },
     {
       "id": "t1_confident_medium_839",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "What is the average cost of a residential solar panel installation in the United States?",
@@ -2741,7 +2741,7 @@
     },
     {
       "id": "t1_confident_hard_840",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the prevalence of celiac disease in the general population?",
@@ -2756,7 +2756,7 @@
     },
     {
       "id": "t1_confident_medium_841",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "How much RAM does the PlayStation 5 have?",
@@ -2771,7 +2771,7 @@
     },
     {
       "id": "t1_confident_hard_842",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the carbon footprint of producing one kilogram of beef?",
@@ -2786,7 +2786,7 @@
     },
     {
       "id": "t1_confident_medium_843",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "What is the speed of sound in air?",
@@ -2801,7 +2801,7 @@
     },
     {
       "id": "t1_confident_hard_844",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the effectiveness of the seasonal influenza vaccine?",
@@ -2816,7 +2816,7 @@
     },
     {
       "id": "t1_confident_medium_845",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "What is the population of Tokyo?",
@@ -2831,7 +2831,7 @@
     },
     {
       "id": "t1_confident_hard_846",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the half-life of caffeine in the human body?",
@@ -2846,7 +2846,7 @@
     },
     {
       "id": "t1_confident_hard_847",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What percentage of software projects fail?",
@@ -2861,7 +2861,7 @@
     },
     {
       "id": "t1_confident_medium_848",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "How much water should you drink per day?",
@@ -2876,7 +2876,7 @@
     },
     {
       "id": "t1_confident_hard_849",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the thermal conductivity of copper?",
@@ -2891,7 +2891,7 @@
     },
     {
       "id": "t1_confident_medium_850",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "When did the Roman Empire fall?",
@@ -2906,7 +2906,7 @@
     },
     {
       "id": "t1_confident_hard_851",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the current global rate of deforestation?",
@@ -2921,7 +2921,7 @@
     },
     {
       "id": "t1_confident_hard_852",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the maximum safe dosage of acetaminophen (paracetamol) per day for adults?",
@@ -2936,7 +2936,7 @@
     },
     {
       "id": "t1_confident_medium_853",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "What is the average lifespan of a domestic cat?",
@@ -2951,7 +2951,7 @@
     },
     {
       "id": "t1_confident_hard_854",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the error rate of DNA replication in human cells?",
@@ -2966,7 +2966,7 @@
     },
     {
       "id": "t1_confident_hard_855",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the unemployment rate in the United States?",
@@ -2981,7 +2981,7 @@
     },
     {
       "id": "t1_confident_hard_856",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the recidivism rate for sex offenders?",
@@ -2996,7 +2996,7 @@
     },
     {
       "id": "t1_confident_medium_857",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "How far is the Moon from Earth?",
@@ -3011,7 +3011,7 @@
     },
     {
       "id": "t1_confident_hard_858",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "What is the median household income in the United States?",
@@ -3026,7 +3026,7 @@
     },
     {
       "id": "t1_confident_hard_859",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "Is intermittent fasting effective for weight loss?",
@@ -3041,7 +3041,7 @@
     },
     {
       "id": "t1_confident_medium_860",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "What percentage of the Earth's surface is covered by water?",
@@ -3056,7 +3056,7 @@
     },
     {
       "id": "t1_confident_hard_861",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does TLS establish a secure connection?",
@@ -3071,7 +3071,7 @@
     },
     {
       "id": "t1_confident_hard_862",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
       "query": "What causes type 2 diabetes?",
@@ -3086,7 +3086,7 @@
     },
     {
       "id": "t1_confident_hard_863",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does garbage collection work in Java?",
@@ -3101,7 +3101,7 @@
     },
     {
       "id": "t1_confident_hard_864",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
       "query": "Why do lithium-ion batteries degrade over time?",
@@ -3116,7 +3116,7 @@
     },
     {
       "id": "t1_confident_hard_865",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does mRNA vaccination produce immunity?",
@@ -3131,7 +3131,7 @@
     },
     {
       "id": "t1_confident_hard_866",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
       "query": "What is the purpose of a load balancer in web architecture?",
@@ -3146,7 +3146,7 @@
     },
     {
       "id": "t1_confident_hard_867",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does CRISPR-Cas9 gene editing work?",
@@ -3161,7 +3161,7 @@
     },
     {
       "id": "t1_confident_hard_868",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
       "query": "Why does a company need version control for its code?",
@@ -3176,7 +3176,7 @@
     },
     {
       "id": "t1_confident_hard_869",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does a blockchain ensure transaction integrity?",
@@ -3191,7 +3191,7 @@
     },
     {
       "id": "t1_confident_hard_870",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
       "query": "What causes ocean tides?",
@@ -3206,7 +3206,7 @@
     },
     {
       "id": "t1_confident_hard_871",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does a relational database ensure data consistency during concurrent transactions?",
@@ -3221,7 +3221,7 @@
     },
     {
       "id": "t1_confident_hard_872",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does the human kidney filter blood?",
@@ -3236,7 +3236,7 @@
     },
     {
       "id": "t1_confident_hard_873",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "What is the legal doctrine of promissory estoppel?",
@@ -3251,7 +3251,7 @@
     },
     {
       "id": "t1_confident_hard_874",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
       "query": "How do neural networks learn from data?",
@@ -3266,7 +3266,7 @@
     },
     {
       "id": "t1_confident_hard_875",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
       "query": "What is the principle behind how an MRI scanner produces images?",
@@ -3281,7 +3281,7 @@
     },
     {
       "id": "t1_confident_hard_876",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does public key cryptography enable secure communication?",
@@ -3296,7 +3296,7 @@
     },
     {
       "id": "t1_confident_hard_877",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does the carbon cycle regulate atmospheric CO2?",
@@ -3311,7 +3311,7 @@
     },
     {
       "id": "t1_confident_hard_878",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does a compiler transform source code into machine code?",
@@ -3326,7 +3326,7 @@
     },
     {
       "id": "t1_confident_hard_879",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
       "query": "Why do airplanes generate lift?",
@@ -3341,7 +3341,7 @@
     },
     {
       "id": "t1_confident_hard_880",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
       "query": "How does a CDN improve website performance?",
@@ -3356,7 +3356,7 @@
     },
     {
       "id": "t1_confident_hard_881",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "medium",
       "query": "What is the company's annual revenue growth rate?",
@@ -3371,7 +3371,7 @@
     },
     {
       "id": "t1_confident_hard_882",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What is the recommended dosage of metformin for type 2 diabetes?",
@@ -3386,7 +3386,7 @@
     },
     {
       "id": "t1_confident_hard_883",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "medium",
       "query": "How much memory does the application server require?",
@@ -3401,7 +3401,7 @@
     },
     {
       "id": "t1_confident_hard_884",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What is the employee retention rate at the company?",
@@ -3416,7 +3416,7 @@
     },
     {
       "id": "t1_confident_hard_885",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What is the latency of the payment processing API?",
@@ -3431,7 +3431,7 @@
     },
     {
       "id": "t1_confident_hard_886",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "medium",
       "query": "What percentage of the population has been vaccinated?",
@@ -3446,7 +3446,7 @@
     },
     {
       "id": "t1_confident_hard_887",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What is the thermal design power of the new processor?",
@@ -3461,7 +3461,7 @@
     },
     {
       "id": "t1_confident_hard_888",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "medium",
       "query": "How far is it from the office to the data center?",
@@ -3476,7 +3476,7 @@
     },
     {
       "id": "t1_confident_hard_889",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What is the error rate of the machine learning model in production?",
@@ -3491,7 +3491,7 @@
     },
     {
       "id": "t1_confident_hard_890",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "clear_explanation",
       "difficulty": "hard",
       "query": "What is the duration of the company's standard warranty?",
@@ -3506,7 +3506,7 @@
     },
     {
       "id": "t1_confident_hard_891",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "medium",
       "query": "What is the maximum file upload size for the REST API?",
@@ -3521,7 +3521,7 @@
     },
     {
       "id": "t1_confident_hard_892",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What encryption algorithm does the platform use for data at rest?",
@@ -3536,7 +3536,7 @@
     },
     {
       "id": "t1_confident_hard_893",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "medium",
       "query": "What HTTP status code should be returned for a rate-limited request?",
@@ -3551,7 +3551,7 @@
     },
     {
       "id": "t1_confident_hard_894",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What is the default isolation level in PostgreSQL?",
@@ -3566,7 +3566,7 @@
     },
     {
       "id": "t1_confident_hard_895",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "medium",
       "query": "What is the maximum number of characters allowed in a tweet?",
@@ -3581,7 +3581,7 @@
     },
     {
       "id": "t1_confident_hard_896",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What is the minimum TLS version supported by the payment gateway?",
@@ -3596,7 +3596,7 @@
     },
     {
       "id": "t1_confident_hard_897",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "medium",
       "query": "What is the default port for MongoDB?",
@@ -3611,7 +3611,7 @@
     },
     {
       "id": "t1_confident_hard_898",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What is the SLA uptime guarantee for the cloud platform?",
@@ -3626,7 +3626,7 @@
     },
     {
       "id": "t1_confident_hard_899",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What character encoding does the XML parser use by default?",
@@ -3641,7 +3641,7 @@
     },
     {
       "id": "t1_confident_hard_900",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "technical_documented",
       "difficulty": "hard",
       "query": "What hashing algorithm does Git use for object identification?",
@@ -3656,7 +3656,7 @@
     },
     {
       "id": "t1_dispute_medium_548",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "Does the Meridian API support batch processing of transactions?",
@@ -3671,7 +3671,7 @@
     },
     {
       "id": "t1_dispute_hard_549",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
       "query": "Is the Greenfield Bridge safe for heavy vehicle traffic?",
@@ -3686,7 +3686,7 @@
     },
     {
       "id": "t1_dispute_medium_551",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "Does the TerraForm framework support Python 3.8?",
@@ -3701,7 +3701,7 @@
     },
     {
       "id": "t1_dispute_medium_553",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "Is the company's Denver office open for client meetings?",
@@ -3716,7 +3716,7 @@
     },
     {
       "id": "t1_dispute_medium_556",
-      "category": "confidence",
+      "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
       "query": "What interest rate does First National Bank offer on its savings accounts?",

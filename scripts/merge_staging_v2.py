@@ -19,25 +19,25 @@ STAGING_DIR = os.path.join(DATA_DIR, "staging_v2")
 # Relabels from blind validation
 RELABELS = {
     "t1_dispute_hard_407": {
-        "category": "qualification",
+        "category": "trustworthy_hedged",
         "expected_mode": "qualified",
         "subcategory": "methodology_difference",
         "relabel_reason": "EPA vs ACC use transparently different definitions of 'recycled'; structurally identical to qualified methodology_difference cases",
     },
     "t1_dispute_hard_419": {
-        "category": "qualification",
+        "category": "trustworthy_hedged",
         "expected_mode": "qualified",
         "subcategory": "methodology_difference",
         "relabel_reason": "ONS vs Fawcett Society measure different metrics (median hourly FT vs total annual all-workers); policy disagreement, not factual dispute",
     },
     "t1_abstain_hard_867": {
-        "category": "qualification",
+        "category": "trustworthy_hedged",
         "expected_mode": "qualified",
         "subcategory": "partial_answer",
         "relabel_reason": "Engineering practices (CI/CD, code review, monitoring) ARE compliance controls under SOC 2/ISO 27001; context is relevant but needs framework qualification",
     },
     "t1_dispute_hard_506": {
-        "category": "qualification",
+        "category": "trustworthy_hedged",
         "expected_mode": "qualified",
         "subcategory": "different_framing",
         "relabel_reason": "Both sources unanimously refute the query's false premise (revenue grew, not declined); structurally identical to qualified false-premise cases 907/908",
@@ -48,8 +48,8 @@ RELABELS = {
 CATEGORY_FILE_MAP = {
     "abstention": "abstention.json",
     "dispute": "dispute.json",
-    "qualification": "qualification.json",
-    "confidence": "confidence.json",
+    "trustworthy_hedged": "trustworthy_hedged.json",
+    "trustworthy_direct": "trustworthy_direct.json",
 }
 
 

@@ -11,6 +11,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [3.0.1] - 2026-02-11
+
+### Changed
+
+- **Category rename**: `qualification` → `trustworthy_hedged`, `confidence` → `trustworthy_direct`
+  - Eliminates ambiguity between test category names and the old 4-class mode names (QUALIFIED, CONFIDENT)
+  - Both categories still map to TRUSTWORTHY mode — the rename makes this relationship obvious
+  - Data files renamed: `qualification.json` → `trustworthy_hedged.json`, `confidence.json` → `trustworthy_direct.json`
+  - Case IDs unchanged (`t1_qualify_*`, `t1_confident_*`) — stable identifiers
+
+### Fixed
+
+- **validate.py**: `valid_modes` list now correctly uses 3-mode values (`["abstain", "disputed", "trustworthy"]`) instead of stale 4-mode values
+
+---
+
 ## [3.0.0] - 2026-02-11
 
 ### 🎉 Highlights
@@ -336,7 +352,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.1...HEAD
+[3.0.1]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/yafitzdev/fitz-gov/compare/v1.0.0...v1.1.0

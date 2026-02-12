@@ -446,7 +446,7 @@
         "notes": "No nutritional difference but less pesticide"
       }
     },
-    "qualification": {
+    "trustworthy_hedged": {
       "qualify_easy_001": {
         "query": "Why do users prefer dark mode?",
         "relevant_docs": ["darkmode_001", "darkmode_002"],
@@ -648,7 +648,7 @@
         "notes": "Security assessment with significant gaps"
       }
     },
-    "confidence": {
+    "trustworthy_direct": {
       "confident_easy_001": {
         "query": "What is the capital of France?",
         "relevant_docs": ["conf_001"],

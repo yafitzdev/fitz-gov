@@ -14,7 +14,7 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 TIER0_DIR = DATA_DIR / "tier0_sanity"
 TIER1_DIR = DATA_DIR / "tier1_core"
 
-CATEGORIES = ["abstention", "dispute", "qualification", "confidence", "grounding", "relevance"]
+CATEGORIES = ["abstention", "dispute", "trustworthy_hedged", "trustworthy_direct", "grounding", "relevance"]
 
 
 def migrate_category(category: str) -> tuple[int, int]:
