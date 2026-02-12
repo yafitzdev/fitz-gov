@@ -872,6 +872,4846 @@
       "context_count": 1,
       "reasoning_type": "evaluative",
       "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_024",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the cloud platform migration?",
+      "contexts": [
+        "The cloud platform migration: supports auto-scaling, load balancing, and containerization. Additional performance metrics are being tracked.",
+        "A second analysis of cloud platform migration confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for technology topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_024_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_024_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_025",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the quarterly earnings report?",
+      "contexts": [
+        "The quarterly earnings report: revenue of $3.8B with EBITDA margin of 28%. Additional performance metrics are being tracked.",
+        "A second analysis of quarterly earnings report confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for finance topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_025_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_025_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_026",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the clinical trial Phase III?",
+      "contexts": [
+        "The clinical trial Phase III: primary endpoint: progression-free survival of 14.2 months. Additional performance metrics are being tracked.",
+        "A second analysis of clinical trial Phase III confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for medicine topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_026_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_026_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_027",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the quantum entanglement experiment?",
+      "contexts": [
+        "The quantum entanglement experiment: Bell inequality violation at 4.2 sigma significance. Additional performance metrics are being tracked.",
+        "A second analysis of quantum entanglement experiment confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for science topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_027_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_027_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_028",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the patent claim construction?",
+      "contexts": [
+        "The patent claim construction: claim 1 recites a method comprising 4 specific steps. Additional performance metrics are being tracked.",
+        "A second analysis of patent claim construction confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for law topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "law",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_028_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_028_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_029",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the standardized test redesign?",
+      "contexts": [
+        "The standardized test redesign: new format: 2 hours, 54 questions, adaptive difficulty. Additional performance metrics are being tracked.",
+        "A second analysis of standardized test redesign confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for education topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "education",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_029_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_029_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_030",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the solar farm performance?",
+      "contexts": [
+        "The solar farm performance: capacity factor of 24.3% generating 285 GWh annually. Additional performance metrics are being tracked.",
+        "A second analysis of solar farm performance confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for environment topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "environment",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_030_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_030_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_031",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the player performance analytics?",
+      "contexts": [
+        "The player performance analytics: WAR of 7.2 with .312/.405/.589 slash line. Additional performance metrics are being tracked.",
+        "A second analysis of player performance analytics confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for sports topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "sports",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_031_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_031_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_032",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the food allergen labeling?",
+      "contexts": [
+        "The food allergen labeling: Top 9 allergens required on labels affecting 85% of packaged foods. Additional performance metrics are being tracked.",
+        "A second analysis of food allergen labeling confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for food topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_032_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_032_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_033",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the content algorithm update?",
+      "contexts": [
+        "The content algorithm update: new ranking prioritizes engagement quality over quantity, reducing clickbait 23%. Additional performance metrics are being tracked.",
+        "A second analysis of content algorithm update confirmed the primary metrics but did not address timeline."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for social_media topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "social_media",
+      "query_type": "what",
+      "source_type": "multi_source",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_033_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_033_b",
+          "source_type": "study",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_034",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the archaeological excavation?",
+      "contexts": [
+        "The archaeological excavation: stratigraphy reveals 5 occupation layers spanning 2000 years. Additional performance metrics are being tracked."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for history topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "history",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_035",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the municipal budget allocation?",
+      "contexts": [
+        "The municipal budget allocation: public safety 38%, education 24%, infrastructure 18%, other 20%. Additional performance metrics are being tracked."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for government topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_036",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the cognitive load experiment?",
+      "contexts": [
+        "The cognitive load experiment: dual-task paradigm showing 34% performance degradation under high load. Additional performance metrics are being tracked."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for psychology topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "psychology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_037",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the employee engagement survey?",
+      "contexts": [
+        "The employee engagement survey: 72% engaged, 18% neutral, 10% disengaged across 8,400 respondents. Additional performance metrics are being tracked."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for hr_workplace topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_038",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the precision agriculture trial?",
+      "contexts": [
+        "The precision agriculture trial: variable-rate seeding increased yield 12% while reducing seed cost 8%. Additional performance metrics are being tracked."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for agriculture topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "agriculture",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_039",
+      "difficulty": "hard",
+      "subcategory": "partial_answer",
+      "query": "What are the specific metrics AND the timeline for the autonomous vehicle test?",
+      "contexts": [
+        "The autonomous vehicle test: 4.2M miles with 0.3 reportable incidents per 100K miles. Additional performance metrics are being tracked."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about both metrics AND timeline for transportation topic, context only has metrics",
+      "rationale": "LLM should acknowledge that timeline information is not provided",
+      "required_elements": [
+        "timeline",
+        "not mentioned",
+        "not specified",
+        "not provided",
+        "no information",
+        "not available"
+      ],
+      "domain": "transportation",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_040",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to appraisal methodology?",
+      "contexts": [
+        "CompanyA's appraisal methodology: comparable sales within 0.5 miles adjusted for age, size, and condition. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in appraisal methodology show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the real_estate context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "real_estate",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_041",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to API rate limiting?",
+      "contexts": [
+        "CompanyA's API rate limiting: throttles requests at 1000/min per API key with exponential backoff. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in API rate limiting show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the technology context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_042",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to portfolio allocation?",
+      "contexts": [
+        "CompanyA's portfolio allocation: 60% equities, 25% bonds, 10% alternatives, 5% cash. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in portfolio allocation show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the finance context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_043",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to drug interaction study?",
+      "contexts": [
+        "CompanyA's drug interaction study: CYP3A4 inhibitor increases plasma concentration 3.2-fold. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in drug interaction study show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the medicine context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_044",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to exoplanet characterization?",
+      "contexts": [
+        "CompanyA's exoplanet characterization: transit spectroscopy detecting water vapor at 3.6 sigma. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in exoplanet characterization show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the science context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_045",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to GDPR compliance audit?",
+      "contexts": [
+        "CompanyA's GDPR compliance audit: data processing agreements with 23 third-party processors. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in GDPR compliance audit show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the law context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "law",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_046",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to curriculum alignment?",
+      "contexts": [
+        "CompanyA's curriculum alignment: 85% alignment with state standards across 12 subject areas. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in curriculum alignment show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the education context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "education",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_047",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to wetland restoration?",
+      "contexts": [
+        "CompanyA's wetland restoration: 300 acres restored with native plantings and hydrological reconnection. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in wetland restoration show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the environment context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "environment",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_048",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to team salary cap?",
+      "contexts": [
+        "CompanyA's team salary cap: $224M cap with $45M in dead money from prior contracts. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in team salary cap show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the sports context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "sports",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_049",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to organic certification?",
+      "contexts": [
+        "CompanyA's organic certification: USDA organic requires 3-year transition with annual inspections. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in organic certification show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the food context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_050",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to influencer marketing ROI?",
+      "contexts": [
+        "CompanyA's influencer marketing ROI: average ROI of $5.20 per $1 spent with micro-influencers outperforming. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in influencer marketing ROI show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the social_media context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "social_media",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_051",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to census historical records?",
+      "contexts": [
+        "CompanyA's census historical records: population grew from 3.9M in 1790 to 31.4M in 1860. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in census historical records show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the history context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "history",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_052",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to census methodology?",
+      "contexts": [
+        "CompanyA's census methodology: 100% count of households plus 1% sample for detailed demographics. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in census methodology show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the government context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_053",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity_focus",
+      "query": "What is CompanyB's approach to attachment style assessment?",
+      "contexts": [
+        "CompanyA's attachment style assessment: 54% secure, 22% anxious, 18% avoidant, 6% disorganized in sample. CompanyA has been a leader in this area for over a decade.",
+        "Industry-wide trends in attachment style assessment show increasing adoption across all major players."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a different entity than what the psychology context describes",
+      "rationale": "Context describes CompanyA but question asks about CompanyB/another entity — LLM should note this",
+      "required_elements": [
+        "CompanyA",
+        "not about",
+        "different",
+        "does not address",
+        "no information about",
+        "not mentioned"
+      ],
+      "domain": "psychology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_054",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for compensation benchmarking?",
+      "contexts": [
+        "2022 Annual Report on compensation benchmarking: median total compensation at 75th percentile of market for senior roles. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 hr_workplace data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_055",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for soil amendment study?",
+      "contexts": [
+        "2022 Annual Report on soil amendment study: biochar application at 10 tons/hectare increased CEC by 22%. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 agriculture data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "agriculture",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_056",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for airline on-time data?",
+      "contexts": [
+        "2022 Annual Report on airline on-time data: 87.3% on-time arrival rate with average delay of 14 minutes. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 transportation data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "transportation",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_057",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for vacancy rate analysis?",
+      "contexts": [
+        "2022 Annual Report on vacancy rate analysis: office vacancy 19.6% with Class A at 14.2% and Class B at 24.8%. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 real_estate data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "real_estate",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_058",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for database sharding?",
+      "contexts": [
+        "2022 Annual Report on database sharding: horizontal partitioning across 8 nodes using consistent hashing. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 technology data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_059",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for credit risk model?",
+      "contexts": [
+        "2022 Annual Report on credit risk model: probability of default model using logistic regression on 45 features. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 finance data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_060",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for diagnostic accuracy?",
+      "contexts": [
+        "2022 Annual Report on diagnostic accuracy: sensitivity 94.2%, specificity 87.6%, PPV 89.3%. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 medicine data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_061",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for CRISPR gene editing?",
+      "contexts": [
+        "2022 Annual Report on CRISPR gene editing: on-target efficiency of 78% with <2% off-target events. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 science data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_062",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for antitrust merger review?",
+      "contexts": [
+        "2022 Annual Report on antitrust merger review: HHI increase of 400 points in the relevant market. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 law data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "law",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_063",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for student retention program?",
+      "contexts": [
+        "2022 Annual Report on student retention program: first-year retention rate improved from 72% to 84%. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 education data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "education",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_064",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for emissions reduction plan?",
+      "contexts": [
+        "2022 Annual Report on emissions reduction plan: 42% reduction target by 2030 from 2005 baseline. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 environment data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "environment",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_065",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for injury prevention program?",
+      "contexts": [
+        "2022 Annual Report on injury prevention program: ACL injury rate reduced 42% with neuromuscular training. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 sports data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "sports",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_066",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for sodium reduction initiative?",
+      "contexts": [
+        "2022 Annual Report on sodium reduction initiative: voluntary target of 2,300mg/day from current average of 3,400mg. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 food data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_067",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current 2025 figures for platform moderation policy?",
+      "contexts": [
+        "2022 Annual Report on platform moderation policy: AI flags 94% of violating content before user reports. This report covers the fiscal year ending December 2022."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for current/2025 social_media data but context is from 2022",
+      "rationale": "Context is 3 years old — LLM should flag the temporal gap rather than presenting outdated data as current",
+      "required_elements": [
+        "2022",
+        "outdated",
+        "not current",
+        "older",
+        "may have changed",
+        "from 2022"
+      ],
+      "domain": "social_media",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_068",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What are the specific trade route analysis implementation details?",
+      "contexts": [
+        "Overview of trade route analysis: Silk Road merchants averaged 15-20 miles per day across 4,000 miles. Moving to broader context, modern globalization and international trade agreements has become increasingly important in the industry.",
+        "Industry analysts note that modern globalization and international trade agreements represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with trade route analysis but drifts into modern globalization and international trade agreements",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "trade",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "history",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_069",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What are the specific infrastructure spending bill implementation details?",
+      "contexts": [
+        "Overview of infrastructure spending bill: $1.2T over 10 years: roads $110B, broadband $65B, rail $66B. Moving to broader context, lobbying industry and special interest group influence has become increasingly important in the industry.",
+        "Industry analysts note that lobbying industry and special interest group influence represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with infrastructure spending bill but drifts into lobbying industry and special interest group influence",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "infrastructure",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_070",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What are the specific PTSD treatment trial implementation details?",
+      "contexts": [
+        "Overview of PTSD treatment trial: EMDR showed 68% remission at 12 months vs 42% for control. Moving to broader context, military veteran support organizations and advocacy has become increasingly important in the industry.",
+        "Industry analysts note that military veteran support organizations and advocacy represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with PTSD treatment trial but drifts into military veteran support organizations and advocacy",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "PTSD",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "psychology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_071",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What are the specific remote work productivity implementation details?",
+      "contexts": [
+        "Overview of remote work productivity: 18% output increase with 23% reduction in unplanned absences. Moving to broader context, co-working space industry growth and WeWork history has become increasingly important in the industry.",
+        "Industry analysts note that co-working space industry growth and WeWork history represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with remote work productivity but drifts into co-working space industry growth and WeWork history",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "remote",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_072",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What are the specific livestock feed optimization implementation details?",
+      "contexts": [
+        "Overview of livestock feed optimization: adding 2% seaweed supplement reduced methane emissions 42%. Moving to broader context, animal welfare organizations and ethical farming debates has become increasingly important in the industry.",
+        "Industry analysts note that animal welfare organizations and ethical farming debates represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with livestock feed optimization but drifts into animal welfare organizations and ethical farming debates",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "livestock",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "agriculture",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_073",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What are the specific fleet electrification implementation details?",
+      "contexts": [
+        "Overview of fleet electrification: TCO analysis shows EV breakeven at 62,000 miles vs diesel. Moving to broader context, charging infrastructure investment and government incentives has become increasingly important in the industry.",
+        "Industry analysts note that charging infrastructure investment and government incentives represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with fleet electrification but drifts into charging infrastructure investment and government incentives",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "fleet",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "transportation",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_074",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "What are the specific construction cost estimate implementation details?",
+      "contexts": [
+        "Overview of construction cost estimate: $285/sqft for Type III construction including FF&E. Moving to broader context, construction worker shortage and immigration policy effects has become increasingly important in the industry.",
+        "Industry analysts note that construction worker shortage and immigration policy effects represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with construction cost estimate but drifts into construction worker shortage and immigration policy effects",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "construction",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "real_estate",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_075",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "How exactly is CI/CD pipeline configured?",
+      "contexts": [
+        "Overview of CI/CD pipeline: runs 450 unit tests and 120 integration tests per build. Moving to broader context, software testing methodologies and code coverage metrics has become increasingly important in the industry.",
+        "Industry analysts note that software testing methodologies and code coverage metrics represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with CI/CD pipeline but drifts into software testing methodologies and code coverage metrics",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "CI/CD",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_076",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "How exactly is startup valuation configured?",
+      "contexts": [
+        "Overview of startup valuation: Series C at $2.1B with 15x revenue multiple. Moving to broader context, venture capital fund structures and LP/GP dynamics has become increasingly important in the industry.",
+        "Industry analysts note that venture capital fund structures and LP/GP dynamics represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with startup valuation but drifts into venture capital fund structures and LP/GP dynamics",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "startup",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "finance",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_077",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "How exactly is surgical technique configured?",
+      "contexts": [
+        "Overview of surgical technique: laparoscopic approach with 3 trocar sites and 45-minute operative time. Moving to broader context, surgical residency training requirements and board certification has become increasingly important in the industry.",
+        "Industry analysts note that surgical residency training requirements and board certification represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with surgical technique but drifts into surgical residency training requirements and board certification",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "surgical",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_078",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "How exactly is climate model projection configured?",
+      "contexts": [
+        "Overview of climate model projection: RCP 4.5 scenario projects 1.8°C warming by 2100. Moving to broader context, climate policy negotiations and international agreements has become increasingly important in the industry.",
+        "Industry analysts note that climate policy negotiations and international agreements represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with climate model projection but drifts into climate policy negotiations and international agreements",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "climate",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "science",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_079",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "How exactly is employment discrimination case configured?",
+      "contexts": [
+        "Overview of employment discrimination case: statistical analysis showing 2.3 standard deviation disparity. Moving to broader context, workplace diversity training programs and effectiveness has become increasingly important in the industry.",
+        "Industry analysts note that workplace diversity training programs and effectiveness represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with employment discrimination case but drifts into workplace diversity training programs and effectiveness",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "employment",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "law",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_080",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "How exactly is online learning platform configured?",
+      "contexts": [
+        "Overview of online learning platform: completion rate of 34% across 450 courses with 2M enrollments. Moving to broader context, digital divide and internet access disparities has become increasingly important in the industry.",
+        "Industry analysts note that digital divide and internet access disparities represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with online learning platform but drifts into digital divide and internet access disparities",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "online",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "education",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_081",
+      "difficulty": "hard",
+      "subcategory": "tangent_drift",
+      "query": "How exactly is species conservation configured?",
+      "contexts": [
+        "Overview of species conservation: population census counted 847 breeding pairs up from 312. Moving to broader context, wildlife photography and nature documentary production has become increasingly important in the industry.",
+        "Industry analysts note that wildlife photography and nature documentary production represents a significant area of investment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context starts with species conservation but drifts into wildlife photography and nature documentary production",
+      "rationale": "Only the first sentence addresses the question — LLM should focus on that and note limited detail",
+      "required_elements": [
+        "species",
+        "limited",
+        "brief",
+        "does not detail",
+        "not elaborated",
+        "specific"
+      ],
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_082",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary draft prospect evaluation KPI measured?",
+      "contexts": [
+        "The draft prospect evaluation: 4.38s 40-yard dash, 38\" vertical, 6.72s 3-cone drill. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but sports context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "sports",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_083",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary food safety inspection KPI measured?",
+      "contexts": [
+        "The food safety inspection: HACCP plan with 7 critical control points and daily monitoring. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but food context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "food",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_084",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary user data privacy KPI measured?",
+      "contexts": [
+        "The user data privacy: platform collects location, contacts, browsing history, and device data. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but social_media context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "social_media",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_085",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary battle casualties KPI measured?",
+      "contexts": [
+        "The battle casualties: 32,000 total casualties over 3 days including 7,000 killed in action. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but history context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "history",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_086",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary public health program KPI measured?",
+      "contexts": [
+        "The public health program: vaccination coverage: 94% for MMR, 87% for flu, 72% for COVID booster. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but government context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "government",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_087",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary developmental milestone study KPI measured?",
+      "contexts": [
+        "The developmental milestone study: mean age for first words: 12 months, two-word combinations: 24 months. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but psychology context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "psychology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_088",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary hiring funnel analysis KPI measured?",
+      "contexts": [
+        "The hiring funnel analysis: 1,200 applications → 85 phone screens → 24 on-sites → 8 offers → 6 hires. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but hr_workplace context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_089",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary irrigation scheduling KPI measured?",
+      "contexts": [
+        "The irrigation scheduling: soil moisture sensors reduced water usage 35% without yield impact. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but agriculture context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "agriculture",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_090",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary freight rail efficiency KPI measured?",
+      "contexts": [
+        "The freight rail efficiency: fuel consumption of 0.87 gallons per ton-mile on the corridor. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but transportation context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "transportation",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_091",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary rental yield calculation KPI measured?",
+      "contexts": [
+        "The rental yield calculation: gross yield 6.2% with NOI after expenses at 4.1% cap rate. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but real_estate context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "real_estate",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_092",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary microservices architecture KPI measured?",
+      "contexts": [
+        "The microservices architecture: 12 services communicating via gRPC with circuit breakers. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but technology context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_093",
+      "difficulty": "hard",
+      "subcategory": "over_answering",
+      "query": "How is the primary mortgage underwriting KPI measured?",
+      "contexts": [
+        "The mortgage underwriting: DTI ratio maximum of 43% with 3.5% minimum down payment. Multiple KPIs are tracked including efficiency, quality, cost, and timeline adherence."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for ONE specific metric but finance context lists many",
+      "rationale": "LLM should identify the most relevant single metric rather than listing everything available",
+      "required_elements": [
+        "primary",
+        "key",
+        "most important",
+        "main",
+        "single",
+        "principal"
+      ],
+      "domain": "finance",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_094",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate treatment guidelines success in one sentence?",
+      "contexts": [
+        "Comprehensive report on treatment guidelines: first-line therapy: metformin 500mg BID titrated to 2000mg. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on treatment guidelines has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a medicine summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_095",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate particle accelerator success in one sentence?",
+      "contexts": [
+        "Comprehensive report on particle accelerator: center-of-mass energy of 13.6 TeV with luminosity of 2×10^34. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on particle accelerator has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a science summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "science",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_096",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate environmental impact assessment success in one sentence?",
+      "contexts": [
+        "Comprehensive report on environmental impact assessment: NOx emissions projected at 145 tons/year requiring offset credits. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on environmental impact assessment has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a law summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "law",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_097",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate teacher professional development success in one sentence?",
+      "contexts": [
+        "Comprehensive report on teacher professional development: 40 hours annually with coaching observation cycles. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on teacher professional development has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a education summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "education",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_098",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate water treatment facility success in one sentence?",
+      "contexts": [
+        "Comprehensive report on water treatment facility: processes 50 million gallons daily with UV disinfection. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on water treatment facility has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a environment summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_099",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate stadium economics success in one sentence?",
+      "contexts": [
+        "Comprehensive report on stadium economics: 30-year lease at $12M/year with $450M in public financing. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on stadium economics has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a sports summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "sports",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_100",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate plant-based protein success in one sentence?",
+      "contexts": [
+        "Comprehensive report on plant-based protein: pea protein isolate with 85% protein content and complete amino acid profile. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on plant-based protein has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a food summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "food",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_101",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate creator monetization success in one sentence?",
+      "contexts": [
+        "Comprehensive report on creator monetization: top 500 creators average $47K/month from platform ad revenue share. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on creator monetization has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a social_media summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "social_media",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_102",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate colonial economic records success in one sentence?",
+      "contexts": [
+        "Comprehensive report on colonial economic records: tobacco exports valued at £500,000 annually by 1770. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on colonial economic records has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a history summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "history",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_103",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate welfare reform evaluation success in one sentence?",
+      "contexts": [
+        "Comprehensive report on welfare reform evaluation: TANF enrollment declined 65% while poverty rate decreased 4 points. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on welfare reform evaluation has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a government summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "government",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_104",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate addiction recovery research success in one sentence?",
+      "contexts": [
+        "Comprehensive report on addiction recovery research: CBT + MAT achieved 58% abstinence at 1 year vs 32% for MAT alone. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on addiction recovery research has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a psychology summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "psychology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_105",
+      "difficulty": "hard",
+      "subcategory": "summarization_vs_answer",
+      "query": "How would you rate diversity metrics success in one sentence?",
+      "contexts": [
+        "Comprehensive report on diversity metrics: women in leadership up from 24% to 35% over 3 years. The program has been in operation for 3 years with annual reviews.",
+        "Stakeholder feedback on diversity metrics has been mixed, with supporters citing measurable outcomes and critics noting implementation challenges."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a direct yes/no or bottom-line answer, not a hr_workplace summary",
+      "rationale": "LLM should provide a direct answer, not just summarize all the context provided",
+      "required_elements": [
+        "yes",
+        "no",
+        "overall",
+        "conclusion",
+        "bottom line",
+        "in summary"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_106",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "How will pest resistance study evolve over the next 5 years?",
+      "contexts": [
+        "Current operational status of pest resistance study: Bt corn showed 98% European corn borer mortality through season. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but agriculture context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "agriculture",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_107",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "How will traffic signal optimization evolve over the next 5 years?",
+      "contexts": [
+        "Current operational status of traffic signal optimization: adaptive signals reduced travel time 14% on the 8-mile corridor. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but transportation context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "transportation",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_108",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "How will zoning variance application evolve over the next 5 years?",
+      "contexts": [
+        "Current operational status of zoning variance application: requesting increase from 35ft to 48ft height limit on 2.3-acre parcel. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but real_estate context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "real_estate",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_109",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for cybersecurity framework?",
+      "contexts": [
+        "Current operational status of cybersecurity framework: zero-trust model with multi-factor authentication. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but technology context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "technology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_110",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for derivatives pricing?",
+      "contexts": [
+        "Current operational status of derivatives pricing: Black-Scholes model with implied volatility of 22%. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but finance context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "finance",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_111",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for vaccine efficacy?",
+      "contexts": [
+        "Current operational status of vaccine efficacy: 88.7% efficacy against symptomatic infection at 6-month follow-up. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but medicine context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "medicine",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_112",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for materials synthesis?",
+      "contexts": [
+        "Current operational status of materials synthesis: CVD graphene on copper substrate with 99.4% monolayer coverage. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but science context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "science",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_113",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for contract interpretation?",
+      "contexts": [
+        "Current operational status of contract interpretation: force majeure clause covering pandemic, natural disaster, and civil unrest. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but law context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "law",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_114",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for special education evaluation?",
+      "contexts": [
+        "Current operational status of special education evaluation: psychoeducational assessment battery taking 6-8 hours. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but education context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "education",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_115",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for carbon offset program?",
+      "contexts": [
+        "Current operational status of carbon offset program: verified carbon credits from 12,000 acres of reforestation. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but environment context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "environment",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_116",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for coaching tactical analysis?",
+      "contexts": [
+        "Current operational status of coaching tactical analysis: 3-4 defense generating 2.1 sacks/game and 28% pressure rate. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but sports context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "sports",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_117",
+      "difficulty": "hard",
+      "subcategory": "related_but_different",
+      "query": "What is the long-term strategic vision for fermented food study?",
+      "contexts": [
+        "Current operational status of fermented food study: 4 servings/week associated with improved gut microbiome diversity. Quarterly review confirmed all systems operating within parameters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about strategy/vision but food context only has current operational data",
+      "rationale": "Context covers operations but not strategy — related topic but different question",
+      "required_elements": [
+        "strategic",
+        "vision",
+        "long-term",
+        "future",
+        "not addressed",
+        "operational"
+      ],
+      "domain": "food",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_118",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the misinformation detection producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for misinformation detection: fact-checking partnership covers 14 languages across 45 countries. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The misinformation detection launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but social_media context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "social_media",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_119",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the medieval manuscript producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for medieval manuscript: illuminated text dated to 1250 CE with 342 vellum pages. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The medieval manuscript launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but history context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "history",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_120",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the housing assistance program producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for housing assistance program: Section 8 vouchers serve 2.3M households with 4.6M person waitlist. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The housing assistance program launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but government context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "government",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_121",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the social conformity experiment producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for social conformity experiment: 74% of participants conformed at least once across 12 trials. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The social conformity experiment launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but psychology context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "psychology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_122",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the benefits utilization producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for benefits utilization: HSA participation 43%, 401k enrollment 89%, FSA usage 31%. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The benefits utilization launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but hr_workplace context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_123",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the crop rotation trial producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for crop rotation trial: 3-year corn-soybean-wheat rotation improved soil N by 28%. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The crop rotation trial launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but agriculture context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "agriculture",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_124",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the port throughput analysis producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for port throughput analysis: container moves per hour increased 22% with new crane system. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The port throughput analysis launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but transportation context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "transportation",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_125",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the energy audit results producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for energy audit results: LEED Gold certification with Energy Star score of 87. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The energy audit results launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but real_estate context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "real_estate",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_126",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the machine learning model producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for machine learning model: transformer with 175M parameters fine-tuned on domain data. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The machine learning model launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but technology context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "technology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_127",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the tax optimization producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for tax optimization: Roth conversion ladder strategy for early retirement. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The tax optimization launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but finance context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "finance",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_128",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Is the imaging protocol producing measurable results?",
+      "contexts": [
+        "Pre-implementation plan for imaging protocol: contrast-enhanced MRI with T1 and T2-weighted sequences. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The imaging protocol launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but medicine context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "medicine",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_129",
+      "difficulty": "hard",
+      "subcategory": "prerequisite_missing",
+      "query": "Does the protein folding deliver on its promises?",
+      "contexts": [
+        "Pre-implementation plan for protein folding: AlphaFold prediction with median GDT score of 92.4. Requirements gathering, stakeholder alignment, and resource allocation phases were completed.",
+        "The protein folding launch prerequisites include training, documentation, and pilot testing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for outcomes but science context only describes planning/prerequisites",
+      "rationale": "Context has planning details but no actual outcomes — LLM should distinguish prerequisites from results",
+      "required_elements": [
+        "outcomes",
+        "results",
+        "not yet",
+        "planning",
+        "pre-implementation",
+        "no outcome data"
+      ],
+      "domain": "science",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_130",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the securities fraud allegation over the past week?",
+      "contexts": [
+        "Annual summary of securities fraud allegation: alleged material misstatement in Q2 earnings call regarding revenue recognition. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but law context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "law",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_131",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the STEM pipeline program over the past week?",
+      "contexts": [
+        "Annual summary of STEM pipeline program: 48% female enrollment vs 22% national average in CS. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but education context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "education",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_132",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the air quality monitoring over the past week?",
+      "contexts": [
+        "Annual summary of air quality monitoring: 23 stations measuring PM2.5, ozone, and NO2 continuously. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but environment context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "environment",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_133",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the youth development academy over the past week?",
+      "contexts": [
+        "Annual summary of youth development academy: 18 players promoted to first team over 5 years from 240 intake. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but sports context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "sports",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_134",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the school lunch program over the past week?",
+      "contexts": [
+        "Annual summary of school lunch program: must provide 1/3 of DRI for calories, protein, and key vitamins. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but food context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "food",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_135",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the social commerce over the past week?",
+      "contexts": [
+        "Annual summary of social commerce: in-app purchases grew 42% to $1.2B in Q3 2024. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but social_media context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "social_media",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_136",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the industrial output data over the past week?",
+      "contexts": [
+        "Annual summary of industrial output data: steel production tripled from 1870 to 1900 reaching 11.2M tons. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but history context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "history",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_137",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the emergency response plan over the past week?",
+      "contexts": [
+        "Annual summary of emergency response plan: FEMA staging areas within 500 miles of all major metropolitan areas. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but government context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "government",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_138",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the IQ test norming study over the past week?",
+      "contexts": [
+        "Annual summary of IQ test norming study: Flynn effect: 3 IQ points per decade from 1930 to 2000. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but psychology context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "psychology",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_139",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the performance management overhaul over the past week?",
+      "contexts": [
+        "Annual summary of performance management overhaul: shift from annual reviews to quarterly check-ins with OKR framework. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but hr_workplace context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_140",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the greenhouse automation over the past week?",
+      "contexts": [
+        "Annual summary of greenhouse automation: automated climate control maintaining ±0.5°C and ±3% humidity. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but agriculture context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "agriculture",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_141",
+      "difficulty": "hard",
+      "subcategory": "granularity_mismatch",
+      "query": "What are the day-by-day details of the bus rapid transit ridership over the past week?",
+      "contexts": [
+        "Annual summary of bus rapid transit ridership: 45,000 daily riders with 97% schedule adherence. Year-end review covers aggregate performance across all divisions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for granular detail but transportation context only has high-level summary",
+      "rationale": "Question asks for daily/component-level detail but context is annual/aggregate — granularity mismatch",
+      "required_elements": [
+        "aggregate",
+        "summary",
+        "annual",
+        "not broken down",
+        "high-level",
+        "detailed breakdown"
+      ],
+      "domain": "transportation",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_142",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "Does the market absorption study approach apply globally?",
+      "contexts": [
+        "Regional report on market absorption study for the Northeast district: 12-month absorption rate of 85% for new multifamily units. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but real_estate context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "real_estate",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_143",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in DevOps toolchain?",
+      "contexts": [
+        "Regional report on DevOps toolchain for the Northeast district: Terraform for IaC, Prometheus for monitoring, Grafana for dashboards. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but technology context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "technology",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_144",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in ESG investing?",
+      "contexts": [
+        "Regional report on ESG investing for the Northeast district: scoring methodology weights governance 40%, environmental 35%, social 25%. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but finance context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "finance",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_145",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in rehabilitation program?",
+      "contexts": [
+        "Regional report on rehabilitation program for the Northeast district: 8-week protocol with progressive loading and ROM targets. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but medicine context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "medicine",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_146",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in seismological survey?",
+      "contexts": [
+        "Regional report on seismological survey for the Northeast district: P-wave velocity of 6.8 km/s at 25km depth indicating basaltic composition. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but science context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "science",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_147",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in immigration proceedings?",
+      "contexts": [
+        "Regional report on immigration proceedings for the Northeast district: asylum claim under INA § 208 based on political persecution. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but law context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "law",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_148",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in school nutrition program?",
+      "contexts": [
+        "Regional report on school nutrition program for the Northeast district: free/reduced lunch eligibility at 64% with 78% participation. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but education context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "education",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_149",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in recycling program?",
+      "contexts": [
+        "Regional report on recycling program for the Northeast district: diversion rate of 48% with contamination rate under 12%. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but environment context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "environment",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_150",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in broadcasting rights deal?",
+      "contexts": [
+        "Regional report on broadcasting rights deal for the Northeast district: $7.5B over 7 years covering all regular season and playoff games. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but sports context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "sports",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_151",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in caffeine research?",
+      "contexts": [
+        "Regional report on caffeine research for the Northeast district: 400mg/day maximum recommendation with half-life of 5-6 hours. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but food context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "food",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_152",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in mental health impact study?",
+      "contexts": [
+        "Regional report on mental health impact study for the Northeast district: teens using platform 3+ hours daily showed 30% higher anxiety scores. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but social_media context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "social_media",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_153",
+      "difficulty": "hard",
+      "subcategory": "scope_mismatch",
+      "query": "What are the global trends in diplomatic correspondence?",
+      "contexts": [
+        "Regional report on diplomatic correspondence for the Northeast district: 237 letters exchanged between the two heads of state over 8 years. This analysis covers operations within the district's 12-county service area."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for global/broad scope but history context is regional/local",
+      "rationale": "Question asks about global trends but context covers only one region — scope mismatch",
+      "required_elements": [
+        "regional",
+        "local",
+        "Northeast",
+        "district",
+        "not global",
+        "limited scope"
+      ],
+      "domain": "history",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect"
+    },
+    {
+      "id": "t1_relevance_hard_154",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement public transit funding? Provide numbered steps.",
+      "contexts": [
+        "General overview of public transit funding: $18.4B federal allocation with 80/20 federal/local match. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but government context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "government",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_155",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement sleep deprivation effects? Provide numbered steps.",
+      "contexts": [
+        "General overview of sleep deprivation effects: reaction time increased 25% after 24 hours without sleep. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but psychology context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "psychology",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_156",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement workplace safety audit? Provide numbered steps.",
+      "contexts": [
+        "General overview of workplace safety audit: OSHA recordable rate of 2.1 per 100 workers, down from 3.8. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but hr_workplace context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_157",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement harvest loss assessment? Provide numbered steps.",
+      "contexts": [
+        "General overview of harvest loss assessment: combine header losses averaged 1.2 bu/acre with proper adjustment. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but agriculture context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "agriculture",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_158",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement aviation fuel efficiency? Provide numbered steps.",
+      "contexts": [
+        "General overview of aviation fuel efficiency: new engine design reduces fuel burn 15% vs previous generation. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but transportation context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "transportation",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_159",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement property tax assessment? Provide numbered steps.",
+      "contexts": [
+        "General overview of property tax assessment: assessed at $4.2M with effective rate of 1.23% yielding $51,660 annually. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but real_estate context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "real_estate",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_160",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement frontend performance? Provide numbered steps.",
+      "contexts": [
+        "General overview of frontend performance: First Contentful Paint of 1.2s with code splitting and lazy loading. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but technology context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "technology",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_161",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement forex trading? Provide numbered steps.",
+      "contexts": [
+        "General overview of forex trading: EUR/USD pair with 12-pip average daily range. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but finance context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "finance",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_162",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement genetic screening? Provide numbered steps.",
+      "contexts": [
+        "General overview of genetic screening: panel tests 84 genes associated with hereditary cancer syndromes. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but medicine context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "medicine",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_163",
+      "difficulty": "hard",
+      "subcategory": "format_mismatch",
+      "query": "How do you implement battery chemistry? Provide numbered steps.",
+      "contexts": [
+        "General overview of battery chemistry: solid-state lithium with 400 Wh/kg energy density at 500 cycles. The approach has been refined based on industry experience."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for structured format (list/steps/table) but science context is prose",
+      "rationale": "Question specifies output format — answer should attempt to match the requested structure",
+      "required_elements": [
+        "1.",
+        "step",
+        "first",
+        "priority",
+        "rank",
+        "pros"
+      ],
+      "domain": "science",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct"
+    },
+    {
+      "id": "t1_relevance_hard_164",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of zoning variance request?",
+      "contexts": [
+        "Positive findings: setback reduction from 25ft to 15ft for mixed-use development. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that zoning variance request shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative law evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "law",
+      "query_type": "who",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_164_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_164_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_164_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_165",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of bilingual education model?",
+      "contexts": [
+        "Positive findings: dual-language immersion 50/50 split English/Spanish. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that bilingual education model shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative education evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "education",
+      "query_type": "who",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_165_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_165_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_165_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_166",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of electric grid integration?",
+      "contexts": [
+        "Positive findings: 15% renewable penetration with 200MW battery storage. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that electric grid integration shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative environment evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "environment",
+      "query_type": "who",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_166_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_166_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_166_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_167",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of anti-doping testing?",
+      "contexts": [
+        "Positive findings: 6,000 out-of-competition tests annually with 1.2% adverse findings. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that anti-doping testing shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative sports evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "sports",
+      "query_type": "who",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_167_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_167_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_167_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_168",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of food preservation method?",
+      "contexts": [
+        "Positive findings: high-pressure processing at 600 MPa extending shelf life 2-3x. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that food preservation method shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative food evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "food",
+      "query_type": "who",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_168_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_168_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_168_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_169",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of bot detection system?",
+      "contexts": [
+        "Positive findings: removed 1.8B fake accounts in Q2 2024 using behavioral analysis. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that bot detection system shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative social_media evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "social_media",
+      "query_type": "who",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_169_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_169_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_169_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_170",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of immigration records?",
+      "contexts": [
+        "Positive findings: 12.7M immigrants processed between 1892 and 1924 at the facility. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that immigration records shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative history evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "history",
+      "query_type": "who",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_170_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_170_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_170_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_171",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of voter registration data?",
+      "contexts": [
+        "Positive findings: 72.7% of eligible population registered with 66.8% turnout. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that voter registration data shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative government evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "government",
+      "query_type": "which",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_171_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_171_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_171_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_172",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of phobia treatment?",
+      "contexts": [
+        "Positive findings: exposure therapy: 85% significant improvement over 12 sessions. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that phobia treatment shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative psychology evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "psychology",
+      "query_type": "which",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_172_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_172_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_172_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_173",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of L&D program evaluation?",
+      "contexts": [
+        "Positive findings: leadership program graduates promoted 2.3x faster than peers. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that L&D program evaluation shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative hr_workplace evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "which",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_173_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_173_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_173_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_174",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of dairy herd genetics?",
+      "contexts": [
+        "Positive findings: genomic selection improved milk yield 450 lbs/lactation over 5 years. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that dairy herd genetics shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative agriculture evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "agriculture",
+      "query_type": "which",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_174_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_174_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_174_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_175",
+      "difficulty": "hard",
+      "subcategory": "cherry_picking",
+      "query": "What is the overall assessment of last-mile delivery?",
+      "contexts": [
+        "Positive findings: drone delivery completes within 15 minutes for packages under 5 lbs. The program exceeded its primary targets.",
+        "Challenges identified: implementation costs were 40% over budget, staff turnover increased 25%, and three key milestones were missed by 2+ months.",
+        "The independent review concluded that last-mile delivery shows promise but requires significant adjustments before scaling."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tests whether answer includes BOTH positive and negative transportation evidence",
+      "rationale": "Answer should not cherry-pick only positive or only negative findings — must present balanced view",
+      "required_elements": [
+        "challenges",
+        "over budget",
+        "adjustments",
+        "both",
+        "however",
+        "mixed"
+      ],
+      "domain": "transportation",
+      "query_type": "which",
+      "source_type": "multi_source",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "mixed",
+      "context_sources": [
+        {
+          "source_id": "src_relevance_175_a",
+          "source_type": "report",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_175_b",
+          "source_type": "audit",
+          "authority": "high"
+        },
+        {
+          "source_id": "src_relevance_175_c",
+          "source_type": "review",
+          "authority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "t1_relevance_hard_176",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for flood risk evaluation?",
+      "contexts": [
+        "Preliminary estimates suggest flood risk evaluation falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate flood risk evaluation outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but real_estate data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "real_estate",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_177",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for data pipeline?",
+      "contexts": [
+        "Preliminary estimates suggest data pipeline falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate data pipeline outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but technology data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "technology",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_178",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for insurance actuarial?",
+      "contexts": [
+        "Preliminary estimates suggest insurance actuarial falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate insurance actuarial outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but finance data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "finance",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_179",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for antimicrobial stewardship?",
+      "contexts": [
+        "Preliminary estimates suggest antimicrobial stewardship falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate antimicrobial stewardship outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but medicine data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "medicine",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_180",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for fusion reactor?",
+      "contexts": [
+        "Preliminary estimates suggest fusion reactor falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate fusion reactor outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but science data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "science",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_181",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for criminal sentencing?",
+      "contexts": [
+        "Preliminary estimates suggest criminal sentencing falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate criminal sentencing outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but law data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "law",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_182",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for campus mental health services?",
+      "contexts": [
+        "Preliminary estimates suggest campus mental health services falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate campus mental health services outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but education data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "education",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_183",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for biodiversity survey?",
+      "contexts": [
+        "Preliminary estimates suggest biodiversity survey falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate biodiversity survey outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but environment data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "environment",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_184",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for athlete nutrition protocol?",
+      "contexts": [
+        "Preliminary estimates suggest athlete nutrition protocol falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate athlete nutrition protocol outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but sports data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "sports",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_185",
+      "difficulty": "hard",
+      "subcategory": "false_precision",
+      "query": "What is the exact figure for artificial sweetener review?",
+      "contexts": [
+        "Preliminary estimates suggest artificial sweetener review falls in the range of typical industry performance. Exact figures are pending final audit.",
+        "Industry sources indicate artificial sweetener review outcomes vary significantly depending on methodology and sample selection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for exact figures but food data is approximate/preliminary",
+      "rationale": "LLM should convey the imprecision of the source data rather than providing false precision",
+      "required_elements": [
+        "estimate",
+        "preliminary",
+        "approximate",
+        "range",
+        "pending",
+        "varies"
+      ],
+      "domain": "food",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_186",
+      "difficulty": "hard",
+      "subcategory": "assumption_injection",
+      "query": "Should ad targeting precision be expanded to new regions?",
+      "contexts": [
+        "Performance data for ad targeting precision in the pilot region: lookalike audiences achieve 2.8x conversion rate vs broad targeting. The pilot operated under specific conditions including dedicated staffing and executive sponsorship."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about scaling social_media initiative but context is pilot-only",
+      "rationale": "LLM should note that pilot conditions may not replicate elsewhere rather than assuming they will",
+      "required_elements": [
+        "pilot",
+        "specific conditions",
+        "may not",
+        "assumption",
+        "dedicated",
+        "cannot assume"
+      ],
+      "domain": "social_media",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_187",
+      "difficulty": "hard",
+      "subcategory": "assumption_injection",
+      "query": "Should plague mortality data be expanded to new regions?",
+      "contexts": [
+        "Performance data for plague mortality data in the pilot region: estimated 30-60% population mortality across affected regions. The pilot operated under specific conditions including dedicated staffing and executive sponsorship."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about scaling history initiative but context is pilot-only",
+      "rationale": "LLM should note that pilot conditions may not replicate elsewhere rather than assuming they will",
+      "required_elements": [
+        "pilot",
+        "specific conditions",
+        "may not",
+        "assumption",
+        "dedicated",
+        "cannot assume"
+      ],
+      "domain": "history",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_188",
+      "difficulty": "hard",
+      "subcategory": "assumption_injection",
+      "query": "Should education funding formula be expanded to new regions?",
+      "contexts": [
+        "Performance data for education funding formula in the pilot region: per-pupil spending of $13,600 with equity adjustments for poverty. The pilot operated under specific conditions including dedicated staffing and executive sponsorship."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about scaling government initiative but context is pilot-only",
+      "rationale": "LLM should note that pilot conditions may not replicate elsewhere rather than assuming they will",
+      "required_elements": [
+        "pilot",
+        "specific conditions",
+        "may not",
+        "assumption",
+        "dedicated",
+        "cannot assume"
+      ],
+      "domain": "government",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_189",
+      "difficulty": "hard",
+      "subcategory": "assumption_injection",
+      "query": "Should memory reconsolidation be expanded to new regions?",
+      "contexts": [
+        "Performance data for memory reconsolidation in the pilot region: recall accuracy decreased 23% when memories were reactivated and modified. The pilot operated under specific conditions including dedicated staffing and executive sponsorship."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about scaling psychology initiative but context is pilot-only",
+      "rationale": "LLM should note that pilot conditions may not replicate elsewhere rather than assuming they will",
+      "required_elements": [
+        "pilot",
+        "specific conditions",
+        "may not",
+        "assumption",
+        "dedicated",
+        "cannot assume"
+      ],
+      "domain": "psychology",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_190",
+      "difficulty": "hard",
+      "subcategory": "assumption_injection",
+      "query": "Should attrition analysis be expanded to new regions?",
+      "contexts": [
+        "Performance data for attrition analysis in the pilot region: voluntary turnover 13.2% concentrated in 6-18 month tenure band. The pilot operated under specific conditions including dedicated staffing and executive sponsorship."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about scaling hr_workplace initiative but context is pilot-only",
+      "rationale": "LLM should note that pilot conditions may not replicate elsewhere rather than assuming they will",
+      "required_elements": [
+        "pilot",
+        "specific conditions",
+        "may not",
+        "assumption",
+        "dedicated",
+        "cannot assume"
+      ],
+      "domain": "hr_workplace",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_191",
+      "difficulty": "hard",
+      "subcategory": "assumption_injection",
+      "query": "Should cover crop study be expanded to new regions?",
+      "contexts": [
+        "Performance data for cover crop study in the pilot region: crimson clover fixed 120 lbs N/acre reducing fertilizer need 40%. The pilot operated under specific conditions including dedicated staffing and executive sponsorship."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about scaling agriculture initiative but context is pilot-only",
+      "rationale": "LLM should note that pilot conditions may not replicate elsewhere rather than assuming they will",
+      "required_elements": [
+        "pilot",
+        "specific conditions",
+        "may not",
+        "assumption",
+        "dedicated",
+        "cannot assume"
+      ],
+      "domain": "agriculture",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_192",
+      "difficulty": "hard",
+      "subcategory": "assumption_injection",
+      "query": "Should highway safety audit be expanded to new regions?",
+      "contexts": [
+        "Performance data for highway safety audit in the pilot region: rumble strips reduced run-off-road crashes 45% on the segment. The pilot operated under specific conditions including dedicated staffing and executive sponsorship."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about scaling transportation initiative but context is pilot-only",
+      "rationale": "LLM should note that pilot conditions may not replicate elsewhere rather than assuming they will",
+      "required_elements": [
+        "pilot",
+        "specific conditions",
+        "may not",
+        "assumption",
+        "dedicated",
+        "cannot assume"
+      ],
+      "domain": "transportation",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial"
+    },
+    {
+      "id": "t1_relevance_hard_193",
+      "difficulty": "hard",
+      "subcategory": "assumption_injection",
+      "query": "Should HOA financial analysis be expanded to new regions?",
+      "contexts": [
+        "Performance data for HOA financial analysis in the pilot region: reserve fund at 72% funded with special assessment risk for roof. The pilot operated under specific conditions including dedicated staffing and executive sponsorship."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about scaling real_estate initiative but context is pilot-only",
+      "rationale": "LLM should note that pilot conditions may not replicate elsewhere rather than assuming they will",
+      "required_elements": [
+        "pilot",
+        "specific conditions",
+        "may not",
+        "assumption",
+        "dedicated",
+        "cannot assume"
+      ],
+      "domain": "real_estate",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial"
     }
   ],
   "evaluation_config": {
