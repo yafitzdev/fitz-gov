@@ -4346,6 +4346,1601 @@
         "converted_from": "t1_confident_hard_309",
         "conversion_method": "insufficient_replacement"
       }
+    },
+    {
+      "id": "t1_abstain_hard_1001",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What is the half-life of carbon-14 and how is it used in archaeological dating?",
+      "contexts": [
+        "Carbon fiber composites are increasingly used in aerospace manufacturing due to their high strength-to-weight ratio. Boeing's 787 Dreamliner uses approximately 50% carbon fiber by weight.",
+        "Carbon capture and storage (CCS) technology involves trapping CO2 emissions from power plants and injecting them into underground geological formations for long-term storage.",
+        "Activated carbon filters are widely used in water purification systems, removing chlorine, sediment, and volatile organic compounds through adsorption."
+      ],
+      "context_sources": [
+        {
+          "source_id": "aerospace_materials_review",
+          "source_type": "industry_journal",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "doe_ccs_report_2024",
+          "source_type": "government_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "water_treatment_handbook",
+          "source_type": "technical_manual",
+          "authority": "secondary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about carbon-14 dating but all three contexts discuss unrelated carbon topics (fiber, capture, filters)",
+      "rationale": "None of the sources discuss carbon-14 isotope, radioactive decay, or archaeological dating methods despite all mentioning 'carbon'"
+    },
+    {
+      "id": "t1_abstain_hard_1002",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What is the current atmospheric concentration of methane and its trend over the past decade?",
+      "contexts": [
+        "Natural gas extraction using hydraulic fracturing has increased US domestic production by 40% since 2010. The Permian Basin alone produces over 5 billion cubic feet per day.",
+        "Cattle ranching is the leading driver of deforestation in the Amazon basin, with approximately 80% of cleared land converted to pasture for beef production."
+      ],
+      "context_sources": [
+        {
+          "source_id": "eia_natgas_production_2024",
+          "source_type": "government_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "wwf_deforestation_brief",
+          "source_type": "ngo_report",
+          "authority": "secondary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about atmospheric methane concentration but sources cover gas extraction and deforestation",
+      "rationale": "Neither source provides atmospheric methane measurements in parts per billion or concentration trends, despite both relating to methane-linked activities"
+    },
+    {
+      "id": "t1_abstain_hard_1003",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What are the mandatory sentencing guidelines for federal drug trafficking offenses?",
+      "contexts": [
+        "The Drug Enforcement Administration (DEA) employs over 10,000 agents and maintains offices in 69 countries. Its annual budget exceeded $3.1 billion in fiscal year 2024.",
+        "Drug scheduling under the Controlled Substances Act classifies substances into five schedules based on medical use, abuse potential, and safety profile. Schedule I includes heroin, LSD, and marijuana.",
+        "Prescription drug monitoring programs (PDMPs) are state-run databases that track controlled substance prescriptions to identify potential misuse patterns."
+      ],
+      "context_sources": [
+        {
+          "source_id": "dea_annual_report_2024",
+          "source_type": "government_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "csa_scheduling_overview",
+          "source_type": "legal_reference",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "pdmp_state_comparison",
+          "source_type": "policy_brief",
+          "authority": "secondary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about federal sentencing guidelines for trafficking but sources cover DEA operations, drug scheduling, and PDMPs",
+      "rationale": "None of the sources address sentencing minimums, penalty ranges, or US Sentencing Commission guidelines for drug trafficking convictions"
+    },
+    {
+      "id": "t1_abstain_hard_1004",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What is the statute of limitations for filing a medical malpractice lawsuit in New York?",
+      "contexts": [
+        "New York's no-fault auto insurance law requires all drivers to carry personal injury protection (PIP) coverage with a minimum of $50,000 in benefits.",
+        "The New York State Board for Professional Medical Conduct investigates complaints against physicians and can impose sanctions including license revocation."
+      ],
+      "context_sources": [
+        {
+          "source_id": "ny_insurance_law_guide",
+          "source_type": "legal_reference",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "opmc_annual_report",
+          "source_type": "government_report",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about malpractice statute of limitations but sources cover auto insurance and medical board conduct",
+      "rationale": "Neither source discusses civil litigation timelines, filing deadlines, or statute of limitations provisions for malpractice claims in New York"
+    },
+    {
+      "id": "t1_abstain_hard_1005",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What are the current interest rates for 30-year fixed mortgages?",
+      "contexts": [
+        "Commercial lending rates for business loans averaged 7.2% in Q3 2024, with SBA 7(a) loans ranging from 6.5% to 9.0% depending on loan amount and term.",
+        "Housing starts increased 12% year-over-year in September 2024, with new construction concentrated in the Sun Belt states. Single-family permits rose to an annualized rate of 970,000 units."
+      ],
+      "context_sources": [
+        {
+          "source_id": "bank_report_q3_2024",
+          "source_type": "industry_report",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "realestate_quarterly_q3",
+          "source_type": "market_report",
+          "authority": "secondary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about residential mortgage rates but sources cover commercial lending rates and housing construction",
+      "rationale": "Commercial loan rates differ from residential mortgage rates, and housing start data provides no interest rate information"
+    },
+    {
+      "id": "t1_abstain_hard_1006",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What is the current federal funds rate and when is the next FOMC meeting?",
+      "contexts": [
+        "The US national debt surpassed $34 trillion in January 2024, with annual interest payments exceeding $1 trillion for the first time in fiscal year 2024.",
+        "Treasury yield curves have been inverted since July 2022, with the 2-year yield exceeding the 10-year yield by as much as 108 basis points.",
+        "The Bureau of Labor Statistics reported nonfarm payrolls increased by 216,000 in December 2023, exceeding economist estimates of 170,000."
+      ],
+      "context_sources": [
+        {
+          "source_id": "treasury_debt_report_2024",
+          "source_type": "government_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "bond_market_analysis_q1",
+          "source_type": "financial_analysis",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "bls_employment_dec2023",
+          "source_type": "government_data",
+          "authority": "authoritative"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about federal funds rate and FOMC schedule but sources cover national debt, yield curves, and employment",
+      "rationale": "None of the sources state the current federal funds rate target or provide FOMC meeting dates despite all being macroeconomic data"
+    },
+    {
+      "id": "t1_abstain_hard_1007",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What is the recommended vaccination schedule for infants in their first year?",
+      "contexts": [
+        "Breastfeeding provides infants with essential antibodies, particularly immunoglobulin A (IgA), which helps protect against gastrointestinal infections during the first six months of life.",
+        "The American Academy of Pediatrics recommends introducing solid foods at approximately six months of age, starting with iron-fortified cereals and pureed vegetables.",
+        "Sudden Infant Death Syndrome (SIDS) risk is reduced by placing infants on their backs to sleep, using a firm mattress, and keeping soft objects out of the crib."
+      ],
+      "context_sources": [
+        {
+          "source_id": "aap_breastfeeding_guide",
+          "source_type": "clinical_guideline",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "aap_nutrition_2024",
+          "source_type": "clinical_guideline",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "nichd_safe_sleep_campaign",
+          "source_type": "public_health",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about infant vaccination schedule but sources cover breastfeeding, solid food introduction, and SIDS prevention",
+      "rationale": "All three sources are about infant health but none provide vaccination timelines, vaccine names, or immunization schedules"
+    },
+    {
+      "id": "t1_abstain_hard_1008",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What are the diagnostic criteria for Type 2 diabetes?",
+      "contexts": [
+        "Diabetic retinopathy affects approximately one-third of people with diabetes and is the leading cause of blindness among working-age adults in developed countries.",
+        "Continuous glucose monitors (CGMs) measure interstitial glucose every 5 minutes and transmit readings to a smartphone app. The Dexcom G7 and Abbott FreeStyle Libre 3 are the most commonly prescribed models."
+      ],
+      "context_sources": [
+        {
+          "source_id": "aao_retinopathy_review",
+          "source_type": "medical_journal",
+          "authority": "primary"
+        },
+        {
+          "source_id": "cgm_device_comparison_2024",
+          "source_type": "device_review",
+          "authority": "secondary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about diabetes diagnostic criteria but sources cover complications and monitoring devices",
+      "rationale": "Neither source provides diagnostic thresholds (HbA1c >= 6.5%, fasting glucose >= 126 mg/dL, etc.) or diagnostic criteria for Type 2 diabetes"
+    },
+    {
+      "id": "t1_abstain_hard_1009",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "How do I configure HTTPS with TLS 1.3 on an Nginx reverse proxy?",
+      "contexts": [
+        "Nginx load balancing supports round-robin, least connections, and IP hash algorithms. The upstream block defines backend server pools with optional weight parameters.",
+        "HTTP/2 server push allows servers to proactively send resources to clients before they are requested, reducing page load times. However, Chrome removed support for server push in version 106.",
+        "Content Security Policy (CSP) headers mitigate cross-site scripting by restricting which sources can load scripts, styles, and other resources on a web page."
+      ],
+      "context_sources": [
+        {
+          "source_id": "nginx_loadbalancing_docs",
+          "source_type": "documentation",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "http2_performance_guide",
+          "source_type": "technical_blog",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "owasp_csp_cheatsheet",
+          "source_type": "security_guide",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about TLS 1.3 configuration but sources cover load balancing, HTTP/2, and CSP headers",
+      "rationale": "None of the sources address TLS configuration, certificate setup, cipher suites, or ssl_protocols directives for Nginx"
+    },
+    {
+      "id": "t1_abstain_hard_1010",
+      "difficulty": "hard",
+      "subcategory": "cross_source_irrelevant",
+      "query": "What are the hardware requirements and setup process for running a local Kubernetes cluster?",
+      "contexts": [
+        "Docker Compose uses YAML files to define multi-container applications. Services, networks, and volumes are declared in a single docker-compose.yml file.",
+        "Terraform is an infrastructure-as-code tool that provisions cloud resources using declarative configuration files written in HashiCorp Configuration Language (HCL)."
+      ],
+      "context_sources": [
+        {
+          "source_id": "docker_compose_reference",
+          "source_type": "documentation",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "terraform_getting_started",
+          "source_type": "documentation",
+          "authority": "authoritative"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about local Kubernetes setup but sources cover Docker Compose and Terraform",
+      "rationale": "Neither source discusses Kubernetes, minikube, kind, or k3s; Docker Compose and Terraform are different tools that do not answer Kubernetes cluster setup questions"
+    },
+    {
+      "id": "t1_abstain_hard_1011",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What is the exact orbital period of the newly discovered exoplanet Kepler-442b?",
+      "contexts": [
+        "Kepler-442b is a super-Earth exoplanet located in the habitable zone of its host star, approximately 1,206 light-years from Earth. It has an Earth Similarity Index of 0.84, making it one of the most Earth-like planets discovered.",
+        "The Kepler space telescope identified over 2,600 confirmed exoplanets during its primary and extended missions. Its transit photometry method detects planets by measuring periodic dips in stellar brightness.",
+        "Habitable zone exoplanets must receive between 25% and 200% of Earth's solar flux to potentially support liquid water on their surfaces."
+      ],
+      "context_sources": [
+        {
+          "source_id": "nasa_exoplanet_catalog",
+          "source_type": "database_entry",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "kepler_mission_summary",
+          "source_type": "mission_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "habitable_zone_criteria",
+          "source_type": "peer_reviewed",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for exact orbital period but sources only describe the planet's characteristics, discovery method, and habitability criteria",
+      "rationale": "Despite extensive information about Kepler-442b, none of the sources state its orbital period (which is approximately 112 days)"
+    },
+    {
+      "id": "t1_abstain_hard_1012",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What is the tensile strength of graphene in gigapascals?",
+      "contexts": [
+        "Graphene is a single layer of carbon atoms arranged in a two-dimensional hexagonal lattice. It was first isolated in 2004 by Andre Geim and Konstantin Novoselov at the University of Manchester, who received the 2010 Nobel Prize in Physics.",
+        "Graphene exhibits exceptional electrical conductivity, with electron mobility exceeding 200,000 cm2/Vs at room temperature. It is also the thinnest known material at one atom thick.",
+        "Potential applications of graphene include flexible electronics, water filtration membranes, high-capacity batteries, and composite materials for aerospace."
+      ],
+      "context_sources": [
+        {
+          "source_id": "nature_graphene_review",
+          "source_type": "peer_reviewed",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "graphene_properties_overview",
+          "source_type": "technical_review",
+          "authority": "primary"
+        },
+        {
+          "source_id": "graphene_applications_2024",
+          "source_type": "industry_report",
+          "authority": "secondary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for tensile strength value but sources cover discovery, electrical properties, and applications",
+      "rationale": "None of the sources provide the mechanical strength measurement despite describing graphene's other exceptional properties"
+    },
+    {
+      "id": "t1_abstain_hard_1013",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What is the maximum penalty for insider trading under SEC Rule 10b-5?",
+      "contexts": [
+        "SEC Rule 10b-5 prohibits any act of fraud or deceit in connection with the purchase or sale of securities. It was adopted in 1942 under the authority of Section 10(b) of the Securities Exchange Act of 1934.",
+        "The SEC's enforcement division investigates potential violations including insider trading, accounting fraud, and market manipulation. In fiscal year 2024, the SEC filed 784 enforcement actions resulting in $4.6 billion in penalties.",
+        "Material nonpublic information (MNPI) includes earnings results, merger announcements, and regulatory decisions that a reasonable investor would consider important in making an investment decision."
+      ],
+      "context_sources": [
+        {
+          "source_id": "sec_rule_10b5_text",
+          "source_type": "regulation",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "sec_enforcement_annual_2024",
+          "source_type": "government_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "mnpi_compliance_guide",
+          "source_type": "legal_guide",
+          "authority": "secondary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for maximum penalties but sources explain the rule, enforcement activity, and MNPI definition",
+      "rationale": "None of the sources state the specific maximum criminal penalties (up to 20 years imprisonment, $5M fine for individuals) or civil penalties for insider trading violations"
+    },
+    {
+      "id": "t1_abstain_hard_1014",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What are the specific requirements for forming an LLC in Delaware?",
+      "contexts": [
+        "Delaware is the most popular state for business incorporation, with over 1.8 million legal entities registered there. The state's Court of Chancery specializes in corporate law and does not use jury trials.",
+        "Limited liability companies combine the liability protection of corporations with the tax flexibility of partnerships. Members are generally not personally liable for the company's debts and obligations.",
+        "Delaware's franchise tax is calculated using either the authorized shares method or the assumed par value capital method, whichever results in a lower tax."
+      ],
+      "context_sources": [
+        {
+          "source_id": "delaware_business_overview",
+          "source_type": "state_publication",
+          "authority": "primary"
+        },
+        {
+          "source_id": "llc_structure_guide",
+          "source_type": "legal_guide",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "de_franchise_tax_guide",
+          "source_type": "tax_guide",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for specific LLC formation requirements but sources cover Delaware's popularity, LLC structure overview, and franchise taxes",
+      "rationale": "None of the sources list the actual formation steps: filing Certificate of Formation, registered agent requirements, filing fees, or operating agreement provisions"
+    },
+    {
+      "id": "t1_abstain_hard_1015",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What dosage of melatonin is recommended for children with ADHD?",
+      "contexts": [
+        "Melatonin is a naturally occurring hormone produced by the pineal gland that regulates the circadian rhythm. It is available as an over-the-counter supplement in the United States but requires a prescription in most European countries.",
+        "Children with ADHD often experience sleep difficulties, with studies showing 25-50% have clinically significant sleep problems. Sleep onset delay is the most common complaint among parents of children with ADHD."
+      ],
+      "context_sources": [
+        {
+          "source_id": "sleep_medicine_review_2024",
+          "source_type": "peer_reviewed",
+          "authority": "primary"
+        },
+        {
+          "source_id": "adhd_sleep_comorbidity",
+          "source_type": "clinical_study",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for specific melatonin dosage for ADHD children but sources only describe melatonin generally and ADHD sleep issues",
+      "rationale": "Neither source provides pediatric dosing recommendations, effective dose ranges, or clinical guidelines for melatonin use in ADHD populations"
+    },
+    {
+      "id": "t1_abstain_hard_1016",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What is the five-year survival rate for stage IIIA non-small cell lung cancer?",
+      "contexts": [
+        "Non-small cell lung cancer (NSCLC) accounts for approximately 85% of all lung cancers. The three main subtypes are adenocarcinoma, squamous cell carcinoma, and large cell carcinoma.",
+        "Staging of NSCLC uses the TNM system, where T describes tumor size, N indicates lymph node involvement, and M denotes metastasis. Stage IIIA includes tumors with ipsilateral mediastinal lymph node involvement.",
+        "Treatment options for advanced NSCLC include chemotherapy, targeted therapy, immunotherapy, and radiation. Pembrolizumab combined with platinum-based chemotherapy is a first-line standard of care."
+      ],
+      "context_sources": [
+        {
+          "source_id": "nccn_nsclc_guidelines",
+          "source_type": "clinical_guideline",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "ajcc_staging_manual_8e",
+          "source_type": "reference_manual",
+          "authority": "authoritative"
+        },
+        {
+          "source_id": "nsclc_treatment_update_2024",
+          "source_type": "medical_journal",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for specific survival rate but sources cover NSCLC types, staging definitions, and treatment options",
+      "rationale": "Despite detailed NSCLC information including Stage IIIA staging criteria, none of the sources provide the actual five-year survival rate percentage"
+    },
+    {
+      "id": "t1_abstain_hard_1017",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What is the acceptance rate for Stanford's computer science PhD program?",
+      "contexts": [
+        "Stanford University's Computer Science Department offers specializations in artificial intelligence, systems, theory, and human-computer interaction. The department has 48 tenure-track faculty members.",
+        "Stanford's overall graduate acceptance rate across all programs was approximately 5.2% for the 2024-2025 admissions cycle, with over 50,000 applications received.",
+        "The GRE is optional for Stanford's computer science PhD applicants starting from the 2024 admissions cycle. The department emphasizes research experience and letters of recommendation."
+      ],
+      "context_sources": [
+        {
+          "source_id": "stanford_cs_dept_overview",
+          "source_type": "university_page",
+          "authority": "primary"
+        },
+        {
+          "source_id": "stanford_grad_admissions_2024",
+          "source_type": "admissions_report",
+          "authority": "primary"
+        },
+        {
+          "source_id": "stanford_cs_phd_faq",
+          "source_type": "university_page",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for CS PhD acceptance rate but sources provide department overview, university-wide rate, and application requirements",
+      "rationale": "The university-wide 5.2% rate cannot be applied to the CS PhD program specifically, and no source provides the department-level acceptance rate"
+    },
+    {
+      "id": "t1_abstain_hard_1018",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What is the average starting salary for graduates of MIT's MBA program?",
+      "contexts": [
+        "MIT Sloan School of Management offers MBA, Master of Finance, and Executive MBA programs. The full-time MBA class of 2024 had 410 students from 60 countries.",
+        "MIT Sloan's MBA tuition for the 2024-2025 academic year is $82,000 per year, with estimated total cost of attendance including living expenses at approximately $115,000 annually.",
+        "MIT Sloan MBA graduates enter careers in consulting (28%), technology (25%), finance (22%), and healthcare (8%). The school's career development office reports a 96% employment rate within three months of graduation."
+      ],
+      "context_sources": [
+        {
+          "source_id": "mit_sloan_program_overview",
+          "source_type": "university_page",
+          "authority": "primary"
+        },
+        {
+          "source_id": "mit_sloan_financial_aid",
+          "source_type": "university_page",
+          "authority": "primary"
+        },
+        {
+          "source_id": "mit_sloan_employment_2024",
+          "source_type": "career_report",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for average starting salary but sources cover program details, tuition, and employment sectors",
+      "rationale": "Despite detailed career outcomes data including sector breakdown and employment rate, no source provides the actual average or median starting salary figure"
+    },
+    {
+      "id": "t1_abstain_hard_1019",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What is the maximum context window size for GPT-4 Turbo in tokens?",
+      "contexts": [
+        "GPT-4 Turbo was announced at OpenAI DevDay in November 2023. It offers lower pricing than GPT-4 at $0.01 per 1K input tokens and $0.03 per 1K output tokens.",
+        "Large language models use tokenization to break text into subword units. GPT-4 uses the cl100k_base tokenizer, which typically represents English text at approximately 0.75 words per token.",
+        "OpenAI's API rate limits for GPT-4 Turbo depend on usage tier, with Tier 1 users limited to 500 requests per minute and 30,000 tokens per minute."
+      ],
+      "context_sources": [
+        {
+          "source_id": "openai_devday_2023_recap",
+          "source_type": "news_article",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "tokenization_explainer",
+          "source_type": "technical_blog",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "openai_rate_limits_docs",
+          "source_type": "documentation",
+          "authority": "authoritative"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for max context window size but sources cover pricing, tokenization basics, and rate limits",
+      "rationale": "None of the sources state the maximum context window (128K tokens); pricing, tokenizer details, and rate limits are related but do not answer the context window question"
+    },
+    {
+      "id": "t1_abstain_hard_1020",
+      "difficulty": "hard",
+      "subcategory": "multi_source_gap",
+      "query": "What encryption algorithm does Signal use for end-to-end message encryption?",
+      "contexts": [
+        "Signal is a privacy-focused messaging app recommended by security researchers and journalists. It is operated by the Signal Foundation, a 501(c)(3) nonprofit organization founded by Moxie Marlinspike and Brian Acton.",
+        "End-to-end encryption ensures that only the sender and recipient can read message contents. The encryption keys are generated and stored on user devices rather than on centralized servers.",
+        "Signal's open-source code is published on GitHub and has been independently audited by multiple security firms. The app is available on iOS, Android, Windows, macOS, and Linux."
+      ],
+      "context_sources": [
+        {
+          "source_id": "signal_foundation_about",
+          "source_type": "organization_page",
+          "authority": "primary"
+        },
+        {
+          "source_id": "e2ee_encryption_primer",
+          "source_type": "technical_guide",
+          "authority": "secondary"
+        },
+        {
+          "source_id": "signal_security_audit_2024",
+          "source_type": "audit_report",
+          "authority": "primary"
+        }
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for the specific encryption algorithm but sources cover Signal's background, general E2EE concepts, and audit status",
+      "rationale": "None of the sources name the Signal Protocol, Double Ratchet Algorithm, or specific cryptographic primitives (X3DH, AES-256, Curve25519) used by Signal"
+    },
+    {
+      "id": "t1_abstain_hard_1021",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the market capitalization of Mercury?",
+      "contexts": [
+        "Mercury Insurance Group reported total assets of $6.2 billion and net premiums earned of $4.8 billion in fiscal year 2024. The company operates primarily in California and is headquartered in Los Angeles.",
+        "Mercury Systems, Inc. is a defense electronics company specializing in secure signal processing subsystems. Its 2024 revenue was $890 million, down 12% from the prior year due to contract delays."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 'Mercury' without specifying which entity, and two different companies named Mercury are discussed",
+      "rationale": "The query is ambiguous between Mercury Insurance and Mercury Systems (and potentially the planet or element), and neither context provides market capitalization data"
+    },
+    {
+      "id": "t1_abstain_hard_1022",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "How do I install and configure Apollo Server for my GraphQL API?",
+      "contexts": [
+        "Apollo 11 was the first crewed mission to land on the Moon on July 20, 1969. Neil Armstrong and Buzz Aldrin spent approximately 2 hours and 15 minutes on the lunar surface.",
+        "The Apollo spacecraft consisted of three parts: the Command Module, Service Module, and Lunar Module. The Command Module was the only section designed to return to Earth."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Apollo Server (GraphQL library) but contexts discuss the Apollo space program",
+      "rationale": "The Apollo space missions are an entirely different entity from the Apollo Server JavaScript library; lunar mission details cannot answer GraphQL configuration questions"
+    },
+    {
+      "id": "t1_abstain_hard_1023",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What are the pricing tiers for Elastic Cloud managed Elasticsearch?",
+      "contexts": [
+        "Elastic bandages are commonly used to wrap sprains and strains, providing compression to reduce swelling. They should be applied in a spiral pattern, starting below the injury and wrapping upward.",
+        "Elastic demand in economics refers to goods where a small change in price leads to a proportionally larger change in quantity demanded. Luxury goods typically exhibit elastic demand with price elasticity greater than 1."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Elastic (the search company) but contexts discuss elastic bandages and economic elasticity",
+      "rationale": "Neither medical elastic bandages nor economic demand elasticity relates to Elasticsearch or Elastic Cloud pricing"
+    },
+    {
+      "id": "t1_abstain_hard_1024",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the current dividend yield of Vanguard Total Stock Market ETF (VTI)?",
+      "contexts": [
+        "Vanguard Group, founded by John Bogle in 1975, pioneered low-cost index investing and currently manages over $8.6 trillion in global assets. The company is owned by its funds, which are in turn owned by their shareholders.",
+        "The Vanguard 500 Index Fund (VFIAX) tracks the S&P 500 and has an expense ratio of 0.04%. It requires a minimum investment of $3,000 and had a 12-month trailing yield of 1.35% as of September 2024."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about VTI (Total Stock Market ETF) but context discusses Vanguard the company and VFIAX (S&P 500 fund)",
+      "rationale": "VTI tracks the total US stock market (~4,000 stocks) while VFIAX tracks only the S&P 500 (~500 stocks) - they are different funds with different yields, holdings, and performance"
+    },
+    {
+      "id": "t1_abstain_hard_1025",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What are the terms of Chase Sapphire Reserve's travel insurance coverage?",
+      "contexts": [
+        "Chase Sapphire Preferred cardholders earn 2x points on travel and dining purchases, with a $95 annual fee. The card includes primary rental car insurance and no foreign transaction fees.",
+        "Chase Freedom Unlimited offers 1.5% cash back on all purchases with no annual fee. Cardholders can transfer Freedom Unlimited points to Sapphire cards if they hold both products."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Sapphire Reserve but context discusses Sapphire Preferred and Freedom Unlimited",
+      "rationale": "The Sapphire Reserve is a different card from Sapphire Preferred with different benefits, fees ($550 vs $95), and travel insurance provisions"
+    },
+    {
+      "id": "t1_abstain_hard_1026",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is Goldman Sachs' revenue for fiscal year 2024?",
+      "contexts": [
+        "Morgan Stanley reported net revenue of $54.1 billion for fiscal year 2024, a 14% increase year-over-year. Wealth management contributed $28.4 billion, making it the firm's largest business segment.",
+        "JPMorgan Chase posted record net revenue of $162.4 billion in 2024, driven by strong net interest income of $91.6 billion. The firm's return on tangible common equity was 21%."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Goldman Sachs but contexts provide financials for Morgan Stanley and JPMorgan Chase",
+      "rationale": "Morgan Stanley and JPMorgan Chase are different investment banks from Goldman Sachs; their financial results cannot be used to answer questions about Goldman's revenue"
+    },
+    {
+      "id": "t1_abstain_hard_1027",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the mass of the Higgs boson in GeV/c2?",
+      "contexts": [
+        "The W boson has a mass of approximately 80.4 GeV/c2 and mediates the weak nuclear force along with the Z boson. In 2022, the CDF experiment at Fermilab reported a W boson mass measurement of 80.4335 GeV/c2, significantly higher than the Standard Model prediction.",
+        "The Z boson has a mass of 91.19 GeV/c2 and was discovered at CERN in 1983. It is electrically neutral and decays into lepton-antilepton or quark-antiquark pairs."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for the Higgs boson mass but contexts describe W and Z boson masses",
+      "rationale": "The W boson (80.4 GeV) and Z boson (91.2 GeV) are different fundamental particles from the Higgs boson (~125 GeV); their masses cannot answer the Higgs mass question"
+    },
+    {
+      "id": "t1_abstain_hard_1028",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the genome size of Arabidopsis thaliana?",
+      "contexts": [
+        "Arabidopsis lyrata is a perennial flowering plant with a genome of approximately 207 Mb distributed across 8 chromosomes. It is a close relative of the model organism A. thaliana and is used to study genome evolution.",
+        "Arabidopsis halleri is a zinc and cadmium hyperaccumulator native to Europe. Its genome has been partially sequenced to identify genes responsible for heavy metal tolerance."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about A. thaliana but contexts discuss A. lyrata and A. halleri",
+      "rationale": "Different Arabidopsis species have different genome sizes; A. lyrata's 207 Mb genome cannot be used to answer questions about A. thaliana (~135 Mb)"
+    },
+    {
+      "id": "t1_abstain_hard_1029",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the maximum depth of Lake Superior?",
+      "contexts": [
+        "Lake Michigan has a maximum depth of 923 feet (281 meters) and a surface area of 22,404 square miles. It is the only Great Lake located entirely within the United States.",
+        "Lake Huron reaches a maximum depth of 750 feet (229 meters) and contains Manitoulin Island, the largest freshwater island in the world at 1,068 square miles."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Lake Superior but contexts provide depth data for Lake Michigan and Lake Huron",
+      "rationale": "Lake Michigan and Lake Huron are different Great Lakes from Lake Superior; their depth measurements cannot answer questions about Superior's maximum depth (1,332 feet)"
+    },
+    {
+      "id": "t1_abstain_hard_1030",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the population of Portland, Oregon?",
+      "contexts": [
+        "Portland, Maine has a population of approximately 68,400 as of the 2020 census, making it the most populous city in Maine. The greater Portland metropolitan area has roughly 538,000 residents.",
+        "Portland, Maine's economy is driven by healthcare, education, tourism, and a growing craft brewery industry. The city's median home price rose to $485,000 in 2024."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Portland, Oregon but both contexts discuss Portland, Maine",
+      "rationale": "Portland, Maine (population ~68K) is a different city from Portland, Oregon (population ~635K); Maine data cannot answer Oregon population questions"
+    },
+    {
+      "id": "t1_abstain_hard_1031",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the elevation and climate of Springfield, Illinois?",
+      "contexts": [
+        "Springfield, Missouri has an elevation of 1,300 feet and a humid subtropical climate with hot summers and mild winters. Average annual rainfall is 44 inches.",
+        "Springfield, Massachusetts is located along the Connecticut River at an elevation of 70 feet. The city experiences a humid continental climate with average January temperatures of 24 degrees F."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Springfield, Illinois but contexts describe Springfield, Missouri and Springfield, Massachusetts",
+      "rationale": "There are over 30 cities named Springfield in the US; data from Missouri and Massachusetts cannot answer questions about the Illinois capital"
+    },
+    {
+      "id": "t1_abstain_hard_1032",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What are the major industries in the state of Georgia?",
+      "contexts": [
+        "Georgia (the country) has a population of 3.7 million and is located in the Caucasus region at the crossroads of Europe and Asia. Its GDP was approximately $25 billion in 2024.",
+        "Georgia's wine industry dates back over 8,000 years, with traditional qvevri clay vessel fermentation recognized as a UNESCO Intangible Cultural Heritage. The country produces over 250 grape varieties."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query likely refers to the US state of Georgia but contexts discuss the country of Georgia",
+      "rationale": "The Republic of Georgia (Caucasus country) has entirely different industries from the US state of Georgia; Caucasian qvevri winemaking is irrelevant to the state's economy"
+    },
+    {
+      "id": "t1_abstain_hard_1033",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What are the key provisions of the SECURE Act for retirement savings?",
+      "contexts": [
+        "The SECURE 2.0 Act, signed into law in December 2022, raised the required minimum distribution (RMD) age to 73 starting in 2023 and to 75 starting in 2033. It also increased catch-up contribution limits for participants aged 60-63.",
+        "SECURE 2.0 introduced automatic enrollment for new 401(k) and 403(b) plans starting in 2025, requiring employers to auto-enroll eligible employees at a contribution rate of at least 3%."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the original SECURE Act (2019) but contexts describe SECURE 2.0 Act (2022)",
+      "rationale": "The SECURE Act of 2019 and SECURE 2.0 Act of 2022 are different legislation with different provisions; SECURE 2.0 details cannot answer questions about the original SECURE Act"
+    },
+    {
+      "id": "t1_abstain_hard_1034",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What were the holdings in Marbury v. Madison?",
+      "contexts": [
+        "In McCulloch v. Maryland (1819), Chief Justice John Marshall ruled that Congress had implied powers under the Necessary and Proper Clause to establish a national bank. The Court also held that states could not tax federal institutions.",
+        "Gibbons v. Ogden (1824) established that the Commerce Clause grants Congress broad authority to regulate interstate commerce, including navigation. The decision struck down New York's monopoly on steamboat operations."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Marbury v. Madison but contexts discuss McCulloch v. Maryland and Gibbons v. Ogden",
+      "rationale": "McCulloch and Gibbons are different Marshall Court cases from Marbury v. Madison; implied powers and commerce clause holdings are unrelated to judicial review doctrine"
+    },
+    {
+      "id": "t1_abstain_hard_1035",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What does Article III of the US Constitution establish?",
+      "contexts": [
+        "Article I of the US Constitution establishes the legislative branch, vesting all legislative powers in a bicameral Congress consisting of the Senate and the House of Representatives. Section 8 enumerates 18 specific powers granted to Congress.",
+        "Article II establishes the executive branch and vests executive power in the President of the United States. It specifies eligibility requirements, the Electoral College process, and the President's powers as Commander in Chief."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Article III (judiciary) but contexts describe Articles I and II (legislature and executive)",
+      "rationale": "Articles I and II cover the legislative and executive branches respectively; they cannot answer questions about Article III's establishment of the federal judiciary"
+    },
+    {
+      "id": "t1_abstain_hard_1036",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is Apple's gross margin percentage for Q4 2024?",
+      "contexts": [
+        "Apple Inc. reported Q4 2024 revenue of $94.9 billion, up 6% year-over-year. iPhone revenue was $46.2 billion, Services revenue reached $25.0 billion, and Mac revenue was $7.7 billion.",
+        "Apple's Q4 2024 operating expenses included $7.8 billion in research and development and $6.5 billion in selling, general, and administrative costs."
+      ],
+      "expected_mode": "abstain",
+      "description": "Revenue and OpEx are provided but cost of goods sold and gross margin are absent",
+      "rationale": "Without cost of goods sold (COGS) data, gross margin cannot be determined from revenue and operating expenses alone"
+    },
+    {
+      "id": "t1_abstain_hard_1037",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the current ratio of Tesla as of the most recent quarter?",
+      "contexts": [
+        "Tesla's balance sheet as of Q3 2024 showed total assets of $106.6 billion and total liabilities of $43.1 billion. Stockholders' equity was $63.5 billion.",
+        "Tesla reported Q3 2024 free cash flow of $2.7 billion and capital expenditures of $2.8 billion. The company held $33.6 billion in cash, cash equivalents, and investments."
+      ],
+      "expected_mode": "abstain",
+      "description": "Balance sheet totals and cash flow data present but current assets and current liabilities breakdown missing",
+      "rationale": "Current ratio requires current assets divided by current liabilities; total assets/liabilities and cash flow data do not provide the current vs. non-current breakdown needed"
+    },
+    {
+      "id": "t1_abstain_hard_1038",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the average expense ratio for Fidelity's target-date retirement funds?",
+      "contexts": [
+        "Fidelity Investments manages over $4.5 trillion in discretionary assets and serves 43 million individual investors. The company offers more than 560 mutual funds across equity, bond, and hybrid categories.",
+        "Fidelity's target-date funds, branded as Fidelity Freedom Funds, automatically adjust asset allocation from stocks to bonds as the target retirement date approaches. The funds are available in five-year increments from 2010 to 2070."
+      ],
+      "expected_mode": "abstain",
+      "description": "Fund family overview and target-date strategy described but no expense ratio data provided",
+      "rationale": "Neither source provides expense ratios for any Fidelity fund; asset allocation strategy description cannot substitute for fee data"
+    },
+    {
+      "id": "t1_abstain_hard_1039",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What are the contraindications for administering the Moderna COVID-19 booster?",
+      "contexts": [
+        "The Moderna COVID-19 booster (mRNA-1273.815) was authorized by the FDA in September 2024, targeting the XBB.1.5 variant. Clinical trials showed it elicited a strong neutralizing antibody response in adults aged 18 and older.",
+        "Common side effects of the Moderna booster include injection site pain (87%), fatigue (56%), headache (43%), and muscle pain (38%). Most side effects were mild to moderate and resolved within 2-3 days.",
+        "The updated booster can be administered at least 2 months after the most recent COVID-19 vaccine dose. It is available as a single 0.5 mL intramuscular injection."
+      ],
+      "expected_mode": "abstain",
+      "description": "Authorization, side effects, and dosing schedule provided but contraindications not listed",
+      "rationale": "None of the sources list contraindications such as severe allergic reaction to a previous dose, known allergy to vaccine components, or polyethylene glycol sensitivity"
+    },
+    {
+      "id": "t1_abstain_hard_1040",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the bioavailability of oral versus intravenous iron supplementation?",
+      "contexts": [
+        "Iron deficiency anemia affects approximately 1.2 billion people worldwide and is the most common nutritional deficiency globally. It is particularly prevalent in premenopausal women, pregnant women, and young children.",
+        "Oral iron supplements include ferrous sulfate, ferrous gluconate, and ferrous fumarate. Ferrous sulfate is the most commonly prescribed form, typically given at 325 mg three times daily.",
+        "Intravenous iron formulations include iron sucrose, ferric carboxymaltose, and iron dextran. IV iron is indicated when oral iron is not tolerated or absorption is impaired."
+      ],
+      "expected_mode": "abstain",
+      "description": "Iron deficiency prevalence and supplement types described but bioavailability percentages not provided",
+      "rationale": "None of the sources compare bioavailability rates between oral and IV iron; listing available formulations does not answer the absorption percentage question"
+    },
+    {
+      "id": "t1_abstain_hard_1041",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the number needed to treat (NNT) for statins in primary prevention of cardiovascular events?",
+      "contexts": [
+        "Statins inhibit HMG-CoA reductase, the rate-limiting enzyme in cholesterol biosynthesis. This mechanism reduces LDL cholesterol by 30-50% depending on the specific statin and dose.",
+        "Common statins include atorvastatin (Lipitor), rosuvastatin (Crestor), and simvastatin (Zocor). Atorvastatin and rosuvastatin are considered high-intensity statins.",
+        "The 2018 ACC/AHA cholesterol guidelines recommend statin therapy for adults aged 40-75 with LDL cholesterol above 190 mg/dL, diabetes, or a 10-year ASCVD risk of 7.5% or higher."
+      ],
+      "expected_mode": "abstain",
+      "description": "Statin mechanism, types, and prescribing guidelines provided but NNT values absent",
+      "rationale": "None of the sources provide NNT statistics for primary prevention; mechanism of action and prescribing guidelines are different from treatment efficacy metrics"
+    },
+    {
+      "id": "t1_abstain_hard_1042",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the thermal conductivity of diamond at room temperature?",
+      "contexts": [
+        "Diamond is the hardest known natural material, scoring 10 on the Mohs hardness scale. It is composed of carbon atoms arranged in a face-centered cubic crystal structure with sp3 hybridized bonds.",
+        "Industrial diamonds account for approximately 80% of diamond production by weight. They are used in cutting, grinding, drilling, and polishing applications across construction, mining, and manufacturing."
+      ],
+      "expected_mode": "abstain",
+      "description": "Diamond hardness, crystal structure, and industrial uses described but thermal conductivity value not provided",
+      "rationale": "Hardness and crystal structure cannot substitute for thermal conductivity data (approximately 2,200 W/mK); these are different physical properties"
+    },
+    {
+      "id": "t1_abstain_hard_1043",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the Curie temperature of iron?",
+      "contexts": [
+        "Iron is the most commonly used metal by mass, accounting for 95% of all metal produced worldwide. It has an atomic number of 26 and an atomic mass of 55.845 g/mol.",
+        "Iron exists in several allotropic forms: alpha-iron (BCC structure below 912 degrees C), gamma-iron (FCC structure between 912 and 1394 degrees C), and delta-iron (BCC structure above 1394 degrees C).",
+        "Iron is ferromagnetic, meaning it can be magnetized and attracted to magnets. This property makes it essential in electric motors, transformers, and magnetic storage media."
+      ],
+      "expected_mode": "abstain",
+      "description": "Iron's atomic properties, allotropes, and magnetic behavior described but Curie temperature value absent",
+      "rationale": "Despite discussing ferromagnetism and structural transitions, none of the sources provide the Curie temperature (770 degrees C) at which iron loses its ferromagnetic properties"
+    },
+    {
+      "id": "t1_abstain_hard_1044",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the pH of human blood under normal physiological conditions?",
+      "contexts": [
+        "Human blood consists of approximately 55% plasma and 45% formed elements (red blood cells, white blood cells, and platelets). An average adult has approximately 5 liters of blood.",
+        "Blood performs multiple functions including oxygen transport via hemoglobin, immune defense through white blood cells, nutrient delivery, waste removal, and temperature regulation.",
+        "Arterial blood gas analysis measures oxygen partial pressure (PaO2), carbon dioxide partial pressure (PaCO2), bicarbonate concentration, and oxygen saturation. Normal PaO2 is 80-100 mmHg."
+      ],
+      "expected_mode": "abstain",
+      "description": "Blood composition, functions, and arterial blood gas values provided but pH value absent",
+      "rationale": "Despite discussing blood gas analysis, none of the sources state the normal blood pH range (7.35-7.45); PaO2 and PaCO2 values are different measurements"
+    },
+    {
+      "id": "t1_abstain_hard_1045",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the read latency in milliseconds for Amazon DynamoDB in the us-east-1 region?",
+      "contexts": [
+        "Amazon DynamoDB is a fully managed NoSQL database service that supports key-value and document data models. It provides consistent single-digit millisecond latency at any scale.",
+        "DynamoDB pricing is based on read capacity units (RCU) and write capacity units (WCU). One RCU provides one strongly consistent read per second for items up to 4 KB. On-demand capacity mode charges $1.25 per million read request units.",
+        "DynamoDB supports global tables for multi-region replication, point-in-time recovery for the last 35 days, and integration with AWS Lambda for event-driven processing."
+      ],
+      "expected_mode": "abstain",
+      "description": "DynamoDB features, pricing, and capabilities described but specific regional latency measurement absent",
+      "rationale": "The marketing claim of 'single-digit millisecond latency' is not the same as actual measured p50/p99 latency data for us-east-1; no specific latency benchmark is provided"
+    },
+    {
+      "id": "t1_abstain_hard_1046",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "How many monthly active users does Slack have as of 2024?",
+      "contexts": [
+        "Slack was acquired by Salesforce in July 2021 for $27.7 billion, the largest acquisition in Salesforce's history. The platform is now integrated with the Salesforce Customer 360 ecosystem.",
+        "Slack supports over 2,600 third-party app integrations through its App Directory. The platform processes over 1 billion messages per week and supports channels, direct messages, and huddles for communication.",
+        "Slack's paid plans include Pro ($7.25/user/month), Business+ ($12.50/user/month), and Enterprise Grid (custom pricing). Free plan limits include 90 days of message history and 10 app integrations."
+      ],
+      "expected_mode": "abstain",
+      "description": "Slack's acquisition, integrations, message volume, and pricing listed but monthly active user count absent",
+      "rationale": "Message volume (1 billion per week) and pricing tiers do not reveal monthly active user counts; none of the sources provide MAU figures"
+    },
+    {
+      "id": "t1_abstain_hard_1047",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the power consumption in watts of the NVIDIA H100 GPU?",
+      "contexts": [
+        "The NVIDIA H100 GPU is built on the Hopper architecture and manufactured on TSMC's 4N process node. It contains 80 billion transistors and features 80 GB of HBM3 memory with 3.35 TB/s bandwidth.",
+        "The H100 delivers up to 4 petaflops of FP8 training performance, a 6x improvement over the A100. It supports the Transformer Engine for accelerated large language model training and inference.",
+        "NVIDIA's H100 is available in SXM and PCIe form factors. The SXM variant requires the HGX H100 baseboard and supports NVLink 4.0 with 900 GB/s bidirectional bandwidth per GPU."
+      ],
+      "expected_mode": "abstain",
+      "description": "H100 architecture, memory, performance, and form factors described but power consumption (TDP) absent",
+      "rationale": "Despite detailed H100 specifications, none of the sources provide the thermal design power (700W SXM / 350W PCIe) or power consumption figures"
+    },
+    {
+      "id": "t1_abstain_hard_1048",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the filing fee for a trademark application with the USPTO?",
+      "contexts": [
+        "The United States Patent and Trademark Office (USPTO) processes trademark applications under the Lanham Act. Trademarks can be registered for goods, services, or both across 45 international classes.",
+        "Trademark registration provides nationwide constructive notice of ownership, the right to use the registered symbol, and the ability to bring infringement actions in federal court. Registration is valid for 10-year renewable terms.",
+        "The trademark application process includes an initial review by an examining attorney, publication for opposition in the Official Gazette, and issuance of a registration certificate if no opposition is filed."
+      ],
+      "expected_mode": "abstain",
+      "description": "USPTO trademark process, benefits, and registration terms described but filing fee amounts absent",
+      "rationale": "None of the sources state the actual filing fees (TEAS Plus $250, TEAS Standard $350 per class); process descriptions cannot substitute for fee schedules"
+    },
+    {
+      "id": "t1_abstain_hard_1049",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the maximum small claims court limit in California?",
+      "contexts": [
+        "California's small claims court provides a streamlined process for resolving disputes without attorneys. Plaintiffs file claims at the courthouse in the county where the defendant lives or where the dispute occurred.",
+        "Small claims court hearings in California are typically scheduled within 30-70 days of filing. The judge's decision is usually announced immediately after the hearing, and defendants have 30 days to file an appeal.",
+        "To file a small claims case in California, the plaintiff must attempt to resolve the dispute before filing, complete form SC-100, and serve the defendant at least 15 days before the hearing."
+      ],
+      "expected_mode": "abstain",
+      "description": "Small claims court procedures, timelines, and filing requirements described but dollar limit not provided",
+      "rationale": "Despite detailed procedural information, none of the sources state the maximum claim amount ($12,500 for individuals, $6,250 for businesses)"
+    },
+    {
+      "id": "t1_abstain_hard_1050",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the standard of proof required in federal civil rights cases under Section 1983?",
+      "contexts": [
+        "Section 1983 of Title 42 of the United States Code provides a cause of action against any person who, acting under color of state law, deprives another of their federal constitutional or statutory rights.",
+        "Qualified immunity shields government officials from Section 1983 liability unless the plaintiff demonstrates that the official violated a clearly established constitutional right. The Supreme Court has made qualified immunity increasingly difficult to overcome.",
+        "Section 1983 claims can be brought against individual state actors, municipalities, and local government entities. However, states and state agencies are protected by Eleventh Amendment sovereign immunity."
+      ],
+      "expected_mode": "abstain",
+      "description": "Section 1983 scope, qualified immunity, and defendant types described but standard of proof not stated",
+      "rationale": "None of the sources specify the evidentiary standard (preponderance of the evidence for most claims, clear and convincing for punitive damages); procedural scope and immunity doctrines are different legal concepts"
+    },
+    {
+      "id": "t1_abstain_hard_1051",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was Tesla's revenue in Q4 2025?",
+      "contexts": [
+        "Tesla reported Q4 2023 revenue of $25.17 billion, representing a 3% increase year-over-year. The company delivered 484,507 vehicles during the quarter, slightly below analyst expectations of 490,000 units."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Q4 2025 but context only contains Q4 2023 data",
+      "rationale": "The context provides Q4 2023 revenue figures, which cannot be used to answer a question about Q4 2025 revenue two years later."
+    },
+    {
+      "id": "t1_abstain_hard_1052",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was the US federal funds rate in March 2025?",
+      "contexts": [
+        "The Federal Reserve held the federal funds rate at 5.25%-5.50% at its March 2024 meeting, citing persistent inflation above the 2% target. Chair Powell indicated that rate cuts would depend on further progress in bringing inflation down."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about March 2025 rate but context only has March 2024 data",
+      "rationale": "The context describes the March 2024 federal funds rate, not March 2025. Interest rates change frequently based on economic conditions, so 2024 data cannot answer a 2025 question."
+    },
+    {
+      "id": "t1_abstain_hard_1053",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What features were included in iOS 19?",
+      "contexts": [
+        "iOS 17, released in September 2023, introduced StandBy mode, interactive widgets, and NameDrop for contact sharing. The update also brought significant improvements to the autocorrect system using transformer language models."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about iOS 19 features but context describes iOS 17",
+      "rationale": "The context covers iOS 17 features from 2023, which has no bearing on what iOS 19 would include. Each major iOS release introduces different features."
+    },
+    {
+      "id": "t1_abstain_hard_1054",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What is the current market share of GPT-5 compared to other LLMs in 2026?",
+      "contexts": [
+        "As of Q2 2024, OpenAI's GPT-4 held approximately 65% of the enterprise LLM market share, followed by Anthropic's Claude at 18% and Google's Gemini at 12%. The remaining 5% was split among open-source alternatives."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about GPT-5 market share in 2026 but context has 2024 GPT-4 data",
+      "rationale": "The context provides 2024 market share for GPT-4, not GPT-5 in 2026. Market dynamics shift rapidly in AI, and a different model generation in a later year cannot be inferred from older data."
+    },
+    {
+      "id": "t1_abstain_hard_1055",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What penalties does the 2025 US Data Privacy Act impose for violations?",
+      "contexts": [
+        "The proposed American Data Privacy and Protection Act (ADPPA) of 2022 included penalties of up to $42,530 per violation for large data holders. The bill passed the House Energy and Commerce Committee in July 2022 but stalled in the Senate."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a 2025 act but context covers a 2022 proposal that stalled",
+      "rationale": "The context describes a 2022 proposed bill that never became law. A 2025 act would be different legislation with potentially different penalty structures."
+    },
+    {
+      "id": "t1_abstain_hard_1056",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was the Supreme Court's ruling in the 2025 term on student loan forgiveness?",
+      "contexts": [
+        "In Biden v. Nebraska (2023), the Supreme Court ruled 6-3 that the HEROES Act did not authorize the Biden administration's $430 billion student loan forgiveness plan. Chief Justice Roberts wrote the majority opinion, finding the plan exceeded the Secretary of Education's authority."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the 2025 Supreme Court term but context covers a 2023 ruling",
+      "rationale": "The context describes a 2023 Supreme Court decision. The 2025 term would involve different cases and potentially different legal questions about student loans."
+    },
+    {
+      "id": "t1_abstain_hard_1057",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What were the results of the Artemis III crewed lunar landing?",
+      "contexts": [
+        "Artemis I, an uncrewed test flight, launched on November 16, 2022, and successfully completed a 25-day mission orbiting the Moon. The Orion capsule traveled 1.4 million miles and splashed down in the Pacific Ocean on December 11, 2022."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Artemis III crewed landing but context only covers Artemis I uncrewed test",
+      "rationale": "The context describes the Artemis I uncrewed test flight, not the Artemis III crewed lunar landing. These are different missions with different objectives and outcomes."
+    },
+    {
+      "id": "t1_abstain_hard_1058",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What discoveries did the James Webb Space Telescope make about exoplanet atmospheres in 2026?",
+      "contexts": [
+        "In its first year of operation (2022-2023), the James Webb Space Telescope detected carbon dioxide in the atmosphere of WASP-39b, a hot gas giant 700 light-years from Earth. JWST also identified dimethyl sulfide on exoplanet K2-18b, a potential biosignature."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2026 JWST discoveries but context covers 2022-2023 findings",
+      "rationale": "The context describes JWST discoveries from 2022-2023. Telescope observations in 2026 would target different exoplanets and produce different results that cannot be inferred from earlier data."
+    },
+    {
+      "id": "t1_abstain_hard_1059",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "Who won the 2026 FIFA World Cup final?",
+      "contexts": [
+        "Argentina defeated France 4-2 on penalties after a 3-3 draw in the 2022 FIFA World Cup final in Qatar. Lionel Messi scored twice, while Kylian Mbappe netted a hat trick in a dramatic match widely considered one of the greatest finals in history."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the 2026 World Cup final but context covers the 2022 final",
+      "rationale": "The context describes the 2022 World Cup final result. The 2026 tournament is a completely separate event with different participating teams and outcomes."
+    },
+    {
+      "id": "t1_abstain_hard_1060",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was Shohei Ohtani's batting average in the 2025 MLB season?",
+      "contexts": [
+        "Shohei Ohtani batted .304 with 44 home runs and 95 RBIs during the 2023 MLB season with the Los Angeles Angels. He also recorded a 10-5 pitching record with a 3.14 ERA before a torn UCL ended his pitching season in August."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2025 season stats but context only has 2023 data",
+      "rationale": "The context provides Ohtani's 2023 statistics. Player performance varies significantly year to year, so 2023 numbers cannot answer a question about the 2025 season."
+    },
+    {
+      "id": "t1_abstain_hard_1061",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What are the current EU regulations on AI systems as of 2025?",
+      "contexts": [
+        "As of 2021, the European Commission proposed the Artificial Intelligence Act framework, establishing a risk-based approach to AI regulation with four tiers: unacceptable, high-risk, limited, and minimal risk.",
+        "The 2020 White Paper on AI outlined the Commission's approach to regulating high-risk AI applications, focusing on safety, transparency, and human oversight requirements."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 AI regulations but both contexts predate the EU AI Act adoption",
+      "rationale": "Both contexts are from 2020-2021 and describe early proposals. The EU AI Act was adopted in 2024 with significant changes from the original proposals, making these outdated sources unreliable for answering about current regulations."
+    },
+    {
+      "id": "t1_abstain_hard_1062",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current state of quantum computing error correction in 2025?",
+      "contexts": [
+        "A 2021 Nature paper by Google Quantum AI demonstrated that their Sycamore processor could detect and correct certain types of quantum errors using a surface code approach with 72 qubits.",
+        "IBM's 2022 roadmap projected achieving 4,000+ qubit systems by 2025, with error correction capabilities improving through modular architectures and middleware called Qiskit Runtime."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2025 quantum error correction but contexts are from 2021-2022 projections",
+      "rationale": "The contexts contain 2021 experimental results and 2022 projections. Quantum computing advances rapidly, and roadmap projections often change. The actual 2025 state of error correction cannot be determined from these outdated sources."
+    },
+    {
+      "id": "t1_abstain_hard_1063",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current yield on 10-year US Treasury bonds?",
+      "contexts": [
+        "In January 2023, the 10-year US Treasury yield stood at 3.5%, having fallen from its October 2022 peak of 4.25%. Analysts at Goldman Sachs predicted the yield would stabilize between 3.0% and 3.5% through mid-2023.",
+        "The Federal Reserve's aggressive rate hiking cycle in 2022 pushed Treasury yields to their highest levels in over a decade, with the 2-year/10-year yield curve remaining deeply inverted at -78 basis points."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current Treasury yields but contexts are from early 2023",
+      "rationale": "Both contexts provide Treasury yield data from 2022-2023. Bond yields fluctuate daily based on economic conditions, Fed policy, and market sentiment, making two-year-old data completely unreliable for current yields."
+    },
+    {
+      "id": "t1_abstain_hard_1064",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is Bitcoin's current price and market capitalization in 2025?",
+      "contexts": [
+        "Bitcoin reached an all-time high of $69,044 on November 10, 2021, before declining sharply throughout 2022. By June 2022, Bitcoin had fallen to approximately $20,000, wiping out over $1.2 trillion in market value.",
+        "Analysts at JPMorgan noted in their December 2022 report that Bitcoin's fair value was approximately $38,000 based on production cost models, though volatility remained extreme with 90-day realized volatility at 65%."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 Bitcoin price but contexts are from 2021-2022",
+      "rationale": "Cryptocurrency prices are extremely volatile and change by the minute. Data from 2021-2022 has no predictive value for Bitcoin's 2025 price or market cap."
+    },
+    {
+      "id": "t1_abstain_hard_1065",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What COVID-19 variants are currently circulating and what vaccines are recommended in 2025?",
+      "contexts": [
+        "As of December 2022, the Omicron subvariant BQ.1.1 accounted for approximately 35% of US cases, followed by XBB at 18%. The bivalent booster targeting BA.4/BA.5 was the most recent vaccine update available.",
+        "The WHO reported in January 2023 that global COVID-19 deaths had declined 89% from their January 2022 peak, though surveillance gaps in many countries made accurate tracking difficult."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 COVID variants and vaccines but contexts are from late 2022",
+      "rationale": "COVID-19 variants evolve rapidly and vaccine recommendations are updated regularly. Data from late 2022 about BQ.1.1 and XBB variants and BA.4/BA.5 boosters has no relevance to the 2025 variant landscape or current vaccine guidance."
+    },
+    {
+      "id": "t1_abstain_hard_1066",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What are the current FDA-approved GLP-1 receptor agonists for weight loss in 2025?",
+      "contexts": [
+        "As of mid-2023, semaglutide (Wegovy) was the primary FDA-approved GLP-1 agonist for chronic weight management, showing average weight loss of 15% in clinical trials. Supply shortages persisted due to unprecedented demand.",
+        "Eli Lilly's tirzepatide (Mounjaro) received FDA approval for type 2 diabetes in May 2022 and was undergoing phase 3 trials for obesity indication. The SURMOUNT-1 trial showed 22.5% weight loss at the highest dose."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 FDA approvals but contexts are from 2022-2023",
+      "rationale": "The GLP-1 drug landscape has been evolving rapidly with new approvals, indications, and competitors entering the market. 2022-2023 information about available drugs and pending trials cannot reliably reflect the 2025 approval landscape."
+    },
+    {
+      "id": "t1_abstain_hard_1067",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current legal status of noncompete agreements across US states in 2025?",
+      "contexts": [
+        "In January 2023, the FTC proposed a rule to ban most noncompete clauses nationwide, affecting an estimated 30 million workers. The proposal was met with strong opposition from business groups and the US Chamber of Commerce.",
+        "As of 2022, California, Oklahoma, and North Dakota had near-total bans on noncompete agreements, while most other states enforced them with varying restrictions on duration and geographic scope."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 noncompete law but contexts are from 2022-2023 proposals",
+      "rationale": "The FTC rule was only proposed in 2023 and faced legal challenges. The actual 2025 legal landscape depends on whether the rule was finalized, survived court challenges, and what individual states did in the interim."
+    },
+    {
+      "id": "t1_abstain_hard_1068",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What are the current US sanctions against Russia as of 2025?",
+      "contexts": [
+        "Following Russia's February 2022 invasion of Ukraine, the US imposed sweeping sanctions including freezing the Central Bank of Russia's $300 billion in reserves, cutting major Russian banks from SWIFT, and imposing export controls on advanced semiconductors.",
+        "By December 2022, the G7 and EU implemented a $60 per barrel price cap on Russian seaborne crude oil, while the US expanded its sanctions list to include over 1,500 Russian individuals and entities."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 sanctions but contexts only cover 2022 actions",
+      "rationale": "Sanctions regimes are dynamic and change based on geopolitical developments. The 2022 sanctions are a starting point, but sanctions may have been expanded, modified, or partially lifted by 2025 depending on diplomatic developments."
+    },
+    {
+      "id": "t1_abstain_hard_1069",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current status of ITER fusion reactor construction and first plasma date?",
+      "contexts": [
+        "As of 2022, the ITER project in southern France was approximately 75% complete, with first plasma originally targeted for December 2025. However, the project had already experienced multiple delays and cost overruns, with total costs exceeding 22 billion euros.",
+        "ITER's Director General Pietro Barabaschi acknowledged in early 2023 that the first plasma date would need to be pushed back, citing pandemic-related supply chain disruptions and welding defects discovered in the thermal shield."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current ITER status but contexts are from 2022-2023 with known schedule changes",
+      "rationale": "The contexts acknowledge the schedule was already slipping in 2023. Major construction projects experience ongoing changes, and the actual 2025 status of ITER cannot be determined from outdated progress reports."
+    },
+    {
+      "id": "t1_abstain_hard_1070",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the latest global average temperature anomaly and climate outlook for 2025?",
+      "contexts": [
+        "NASA's Goddard Institute reported that 2022 was the fifth-warmest year on record, with a global average temperature anomaly of +0.89 degrees Celsius above the 1951-1980 baseline. The ten warmest years have all occurred since 2010.",
+        "The World Meteorological Organization's 2022 report projected a 50% chance that at least one of the next five years would temporarily exceed 1.5 degrees Celsius above pre-industrial levels, driven by a potential return of El Nino conditions."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2025 temperature data and outlook but contexts are from 2022",
+      "rationale": "Climate data for 2025 requires actual measurements from that year. The 2022 temperature anomaly and probabilistic projections cannot provide specific 2025 figures or the current climate outlook."
+    },
+    {
+      "id": "t1_abstain_hard_1071",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What percentage of employees received bonuses at Acme Corp this year?",
+      "contexts": [
+        "Acme Corp's employee satisfaction survey showed a 15% increase in overall satisfaction scores this year. The company's total compensation expenses rose 8% while headcount grew only 2%, and the CEO publicly thanked employees for an outstanding year."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context implies bonuses may have been paid but never states the specific percentage",
+      "rationale": "While rising compensation expenses above headcount growth and a satisfied workforce suggest bonuses were distributed, the exact percentage of employees who received them is never stated and cannot be calculated from the available data."
+    },
+    {
+      "id": "t1_abstain_hard_1072",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the profit margin on Samsung's Galaxy S24 Ultra smartphone?",
+      "contexts": [
+        "Samsung's Mobile Experience division reported Q1 2024 revenue of 28.4 trillion won with an operating profit of 3.5 trillion won. The Galaxy S24 Ultra retails for $1,299, while industry analysts estimate the bill of materials for flagship smartphones typically ranges from $400 to $570."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides divisional financials and general cost estimates but not the specific product margin",
+      "rationale": "The divisional profit includes all mobile products, not just the S24 Ultra. The bill-of-materials estimate is a general industry range that excludes R&D, marketing, distribution, and software costs, making an accurate product-level margin impossible to determine."
+    },
+    {
+      "id": "t1_abstain_hard_1073",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the five-year survival rate for stage 3 pancreatic cancer patients treated with FOLFIRINOX?",
+      "contexts": [
+        "FOLFIRINOX has become a standard first-line treatment for pancreatic cancer in patients with good performance status. A 2023 meta-analysis found significantly improved median overall survival compared to gemcitabine alone (11.1 vs 6.8 months), with higher but manageable toxicity rates."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides median overall survival data but not the specific five-year survival rate",
+      "rationale": "Median overall survival (11.1 months) is a different statistic from five-year survival rate. Additionally, the data covers all stages, not specifically stage 3, and median survival cannot be converted to a five-year percentage without the full survival curve."
+    },
+    {
+      "id": "t1_abstain_hard_1074",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "How many patients died from medical errors at Johns Hopkins Hospital last year?",
+      "contexts": [
+        "Johns Hopkins Hospital maintained a 99.2% patient safety index score in its most recent evaluation. The hospital invested $12 million in new safety monitoring systems and reduced preventable adverse events by 23% compared to the prior year, according to its annual quality report."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context shows safety improvements and metrics but never states actual death figures",
+      "rationale": "The safety index score, investment in safety systems, and reduction in adverse events suggest efforts to minimize harm, but none of these figures reveal the actual number of deaths from medical errors. A 23% reduction tells nothing without the baseline count."
+    },
+    {
+      "id": "t1_abstain_hard_1075",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the exact orbital period of the newly discovered exoplanet TOI-700 e?",
+      "contexts": [
+        "TOI-700 e orbits within the optimistic habitable zone of its M-dwarf host star, receiving approximately 93% of Earth's stellar irradiance. The planet has a radius of 0.95 Earth radii and is the fourth planet discovered in the TOI-700 system, located between planets c and d."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes the planet's size, location, and habitability but not its orbital period",
+      "rationale": "While the context provides the planet's radius, stellar irradiance, and position within the system, the orbital period is a distinct measurement that is never stated and cannot be reliably derived from the given information alone."
+    },
+    {
+      "id": "t1_abstain_hard_1076",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the thermal conductivity of the new graphene-copper composite developed at MIT?",
+      "contexts": [
+        "Researchers at MIT published a 2024 paper describing a novel graphene-copper composite that showed remarkable heat dissipation properties. In benchmark tests, the composite cooled 40% faster than pure copper heat sinks and maintained structural integrity at temperatures exceeding 800 degrees Celsius."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes cooling performance and heat resistance but not the specific thermal conductivity value",
+      "rationale": "Cooling 40% faster than copper in a benchmark test is a relative performance comparison, not a thermal conductivity measurement in W/(m*K). The actual thermal conductivity depends on geometry, airflow, and measurement conditions not provided."
+    },
+    {
+      "id": "t1_abstain_hard_1077",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What was the exact settlement amount in the Uber driver misclassification lawsuit in California?",
+      "contexts": [
+        "Uber agreed to settle a major driver misclassification lawsuit in California, with the company describing it as a 'significant resolution.' Legal analysts noted the settlement was larger than the $100 million Uber paid in a similar 2016 settlement, and Uber's stock dropped 3.2% on the announcement day."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context confirms a settlement occurred and implies it was large but never states the exact amount",
+      "rationale": "The context uses vague language ('significant resolution') and only provides a lower bound by comparison to a previous $100 million settlement. The stock drop provides market reaction but not the dollar figure."
+    },
+    {
+      "id": "t1_abstain_hard_1078",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "How many wiretap warrants did the FBI obtain under FISA in 2024?",
+      "contexts": [
+        "The FBI's use of FISA surveillance authorities remained controversial in 2024, with multiple congressional hearings examining compliance failures. The FISA Court reported a decrease in applications compared to 2023, and the Director of National Intelligence noted that Section 702 queries involving US persons dropped by approximately 30%."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context discusses FISA controversies and trends but never provides the specific warrant count",
+      "rationale": "The context mentions a decrease in applications and a 30% drop in Section 702 queries, but neither figure reveals the actual number of wiretap warrants obtained. Percentage changes and trend descriptions cannot substitute for absolute counts."
+    },
+    {
+      "id": "t1_abstain_hard_1079",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the training compute cost in dollars for Meta's Llama 3 model?",
+      "contexts": [
+        "Meta trained Llama 3 on a cluster of 16,384 NVIDIA H100 GPUs over a period of several months. The model was trained on over 15 trillion tokens of publicly available data, making it one of the largest training runs ever conducted. Meta CEO Mark Zuckerberg stated the company's AI infrastructure spending would reach $35 billion in 2024."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides GPU count, data scale, and overall spending but not the specific training cost",
+      "rationale": "While 16,384 H100 GPUs and months of training time suggest an enormous cost, the exact dollar amount depends on electricity rates, amortized hardware costs, and training duration, none of which are specified. The $35 billion figure is total AI infrastructure spending, not Llama 3's training cost."
+    },
+    {
+      "id": "t1_abstain_hard_1080",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the false positive rate of Apple's on-device CSAM detection system?",
+      "contexts": [
+        "Apple's on-device CSAM detection system uses NeuralHash to compare photos against a database of known CSAM hashes before iCloud upload. Apple stated the system was designed with an 'extremely high level of accuracy' and that the threshold was set so that the chance of an incorrect flag was one in one trillion accounts per year."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides an account-level error rate but not the per-image false positive rate",
+      "rationale": "The one-in-one-trillion figure describes the probability of an account being incorrectly flagged, not the per-image false positive rate. These are fundamentally different metrics since an account can contain thousands of images, and the per-image rate cannot be derived without knowing the threshold and images-per-account distribution."
+    },
+    {
+      "id": "t1_abstain_hard_1081",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the concentration of dissolved oxygen in Lake Baikal at a depth of 400 meters?",
+      "contexts": [
+        "Global oceanic dissolved oxygen concentrations have declined by approximately 2% since 1960, driven by warming waters and changing circulation patterns. The average dissolved oxygen in freshwater lakes worldwide ranges from 6 to 14 mg/L depending on temperature, altitude, and biological activity."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a specific lake at a specific depth but context only provides global averages",
+      "rationale": "The global oceanic and general freshwater oxygen ranges cannot answer a question about a specific depth in a specific lake. Lake Baikal is the world's deepest lake with unique limnological properties, and dissolved oxygen at 400m depends on local conditions."
+    },
+    {
+      "id": "t1_abstain_hard_1082",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the average annual rainfall in the Atacama Desert?",
+      "contexts": [
+        "South America receives an average of 1,564 mm of precipitation annually, making it the wettest continent. The continent's rainfall is heavily influenced by the Intertropical Convergence Zone, the Amazon basin's transpiration, and orographic effects along the Andes mountain range."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a hyper-arid desert but context provides continent-wide average rainfall",
+      "rationale": "South America's continental average of 1,564 mm is dominated by the Amazon basin's massive rainfall. The Atacama Desert is one of the driest places on Earth, and a continent-level average is useless for answering about this extreme microclimate."
+    },
+    {
+      "id": "t1_abstain_hard_1083",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the average home price in the Noe Valley neighborhood of San Francisco?",
+      "contexts": [
+        "The US median home price reached $412,000 in Q3 2024, according to the National Association of Realtors. Western states continued to have the highest median prices, with the Pacific region averaging $615,000. California's statewide median was $843,000."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a specific San Francisco neighborhood but context only has national and state-level data",
+      "rationale": "National ($412K), regional ($615K), and statewide ($843K) home price data cannot answer a question about Noe Valley, one of San Francisco's most expensive neighborhoods where prices are typically multiples of these broader averages."
+    },
+    {
+      "id": "t1_abstain_hard_1084",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the revenue breakdown by product line for Procter & Gamble's fabric care division?",
+      "contexts": [
+        "Procter & Gamble reported fiscal year 2024 total revenue of $84.0 billion, with the Fabric & Home Care segment generating $29.4 billion (35% of total). The segment saw 3% organic growth driven by pricing actions and mix improvements across the portfolio."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for product-line breakdown within fabric care but context only provides segment-level totals",
+      "rationale": "The context provides the Fabric & Home Care segment total of $29.4 billion but does not break this down by individual product lines (Tide, Downy, Gain, etc.). Segment-level data cannot be decomposed into product-level revenue without additional information."
+    },
+    {
+      "id": "t1_abstain_hard_1085",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the infection rate of methicillin-resistant Staphylococcus aureus (MRSA) at Massachusetts General Hospital?",
+      "contexts": [
+        "Hospital-acquired infections affect approximately 3.2% of hospitalized patients in the United States, according to the CDC's 2023 National Healthcare Safety Network report. MRSA accounts for roughly 8% of all healthcare-associated infections nationally, with rates declining 30% over the past decade due to improved hand hygiene and screening protocols."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about MRSA at a specific hospital but context only provides national statistics",
+      "rationale": "National MRSA infection rates and trends cannot answer a question about a specific hospital. Individual hospital rates vary enormously based on patient population, infection control practices, and local resistance patterns."
+    },
+    {
+      "id": "t1_abstain_hard_1086",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the survival rate for the specific BRCA2 c.6174delT mutation carriers who undergo prophylactic mastectomy?",
+      "contexts": [
+        "Women with BRCA1 or BRCA2 mutations have a 45-72% lifetime risk of developing breast cancer. Prophylactic bilateral mastectomy reduces breast cancer risk by approximately 90-95% in high-risk women, according to a meta-analysis of 18 studies published in the Journal of Clinical Oncology."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a specific mutation variant and procedure combination but context only provides general BRCA statistics",
+      "rationale": "The context provides aggregate data for all BRCA1/BRCA2 mutations combined. The c.6174delT is a specific founder mutation with potentially different penetrance and outcomes than the group average, and the 90-95% risk reduction figure is for all high-risk women, not this specific variant."
+    },
+    {
+      "id": "t1_abstain_hard_1087",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the P99 latency for DynamoDB read operations in the us-east-1 region under a 10,000 RCU workload?",
+      "contexts": [
+        "Amazon DynamoDB is a fully managed NoSQL database service that provides single-digit millisecond performance at any scale. AWS states that DynamoDB delivers consistent, single-digit millisecond response times for both reads and writes, and supports tables that store more than 10 TB of data."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for specific P99 latency under precise conditions but context only provides marketing-level performance claims",
+      "rationale": "AWS's marketing statement of 'single-digit millisecond performance' is a general claim, not a specific P99 latency measurement for a particular region and workload. Actual latency depends on item size, partition key distribution, DAX usage, and regional capacity."
+    },
+    {
+      "id": "t1_abstain_hard_1088",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the memory usage of a single Kubernetes pod running the nginx:1.25 image with default configuration?",
+      "contexts": [
+        "Kubernetes cluster resource utilization at Spotify averaged 62% CPU and 71% memory across their 3,200 production nodes in 2024. The platform team found that implementing vertical pod autoscaling reduced over-provisioning by 35%, saving approximately $8 million annually in cloud infrastructure costs."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about single-pod memory for a specific image but context provides cluster-level averages",
+      "rationale": "Cluster-wide resource utilization percentages at Spotify say nothing about the memory consumption of a single nginx pod with default configuration. Cluster averages encompass thousands of different workloads and cannot be used to determine individual pod resource usage."
+    },
+    {
+      "id": "t1_abstain_hard_1089",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the murder rate in Chicago's South Side neighborhoods?",
+      "contexts": [
+        "The United States had an overall homicide rate of 6.3 per 100,000 people in 2023, according to FBI Uniform Crime Report data. The Midwest region reported a rate of 6.8 per 100,000, slightly above the national average. Illinois ranked 14th among states with a rate of 7.8 per 100,000."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about specific Chicago neighborhoods but context only provides national, regional, and state-level data",
+      "rationale": "National (6.3), Midwest (6.8), and Illinois (7.8) per-100,000 rates cannot answer a question about Chicago's South Side, where murder rates in some neighborhoods are dramatically higher than any of these broader averages."
+    },
+    {
+      "id": "t1_abstain_hard_1090",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the soil pH level in the vineyards of Burgundy's Cote de Nuits appellation?",
+      "contexts": [
+        "France has diverse soil types ranging from the limestone plateaus of the Paris Basin to the granite formations of the Massif Central. French agricultural soils have an average pH of 6.5, with significant regional variation. The country's wine regions span over 750,000 hectares across 16 major appellations."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about soil pH in a specific wine sub-region but context only provides national agricultural data",
+      "rationale": "France's national average soil pH of 6.5 is meaningless for a specific Burgundy appellation. Cote de Nuits vineyards sit on distinctive Jurassic limestone with specific soil chemistry that differs dramatically from national averages."
+    },
+    {
+      "id": "t1_abstain_hard_1091",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the tensile strength of spider silk produced by Nephila clavipes?",
+      "contexts": [
+        "Researchers at the University of Cambridge developed a synthetic spider silk analogue in 2024 using a soy protein isolation process. The synthetic material demonstrated a tensile strength of 1.2 GPa and 98% water content, comparable to natural spider silk in some properties but with different molecular architecture."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about natural spider silk but context describes a synthetic analogue with different properties",
+      "rationale": "The synthetic analogue has different molecular architecture than natural Nephila clavipes silk. While the synthetic version's 1.2 GPa tensile strength is noted as 'comparable,' it is explicitly acknowledged as a different material, and the actual tensile strength of the natural silk is never stated."
+    },
+    {
+      "id": "t1_abstain_hard_1092",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the half-life of mRNA vaccines in human muscle tissue?",
+      "contexts": [
+        "A 2023 study in Cell Reports tracked mRNA persistence in mouse muscle tissue after intramuscular injection, finding that luciferase-encoding mRNA was detectable for up to 10 days with a half-life of approximately 18 hours. The study used a standard lipid nanoparticle formulation similar to those in clinical mRNA vaccines."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about mRNA half-life in human tissue but context only provides mouse model data",
+      "rationale": "Mouse muscle tissue pharmacokinetics do not directly translate to humans due to differences in cellular machinery, immune responses, and tissue composition. The 18-hour half-life in mice is from a different species and uses a different mRNA payload (luciferase, not vaccine antigen)."
+    },
+    {
+      "id": "t1_abstain_hard_1093",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the expected return on investment for commercial office real estate in downtown Manhattan?",
+      "contexts": [
+        "Residential real estate in Manhattan saw average returns of 4.2% in 2024, with luxury condominiums above $5 million appreciating at 6.1%. The Manhattan rental market maintained a vacancy rate of 2.4%, with average monthly rents reaching $4,500 for one-bedroom apartments."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about commercial office ROI but context only covers residential real estate",
+      "rationale": "Residential and commercial real estate are fundamentally different asset classes with different return profiles, risk factors, and market dynamics. Residential appreciation and rental data in Manhattan cannot predict commercial office returns, especially given the post-pandemic office market upheaval."
+    },
+    {
+      "id": "t1_abstain_hard_1094",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the default rate on leveraged loans in the US market?",
+      "contexts": [
+        "The US corporate bond default rate reached 3.8% in 2024, according to Moody's annual report. High-yield bonds experienced a 5.2% default rate, while investment-grade defaults remained at 0.1%. Moody's noted that rising interest rates and tightening credit conditions were primary drivers of increased defaults."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about leveraged loan defaults but context only provides corporate bond default data",
+      "rationale": "Leveraged loans and corporate bonds are distinct credit instruments with different seniority, covenants, recovery rates, and default dynamics. Bond default rates, even high-yield, cannot be used as a proxy for leveraged loan default rates."
+    },
+    {
+      "id": "t1_abstain_hard_1095",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the effectiveness of cognitive behavioral therapy for treating PTSD in military veterans?",
+      "contexts": [
+        "A 2024 meta-analysis in The Lancet Psychiatry found that cognitive behavioral therapy (CBT) was effective for treating generalized anxiety disorder in civilian populations, with a weighted effect size of 0.82 (95% CI: 0.71-0.93). The study analyzed 47 randomized controlled trials with a combined 3,842 participants."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about CBT for veteran PTSD but context covers CBT for civilian anxiety disorder",
+      "rationale": "The effectiveness of CBT for generalized anxiety in civilians cannot answer a question about CBT for PTSD in veterans. These differ in condition (anxiety vs. PTSD), population (civilian vs. military), and the specific trauma-focused CBT protocols used for combat-related PTSD."
+    },
+    {
+      "id": "t1_abstain_hard_1096",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What are the side effects of radiation therapy for prostate cancer?",
+      "contexts": [
+        "Radiation therapy for breast cancer commonly causes skin irritation, fatigue, and lymphedema in the treated arm. A 2024 study at MD Anderson Cancer Center found that 34% of breast cancer patients experienced radiation-induced dermatitis grade 2 or higher, while 18% reported persistent fatigue lasting more than six months."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about radiation side effects for prostate cancer but context covers breast cancer radiation",
+      "rationale": "Radiation therapy side effects are highly site-specific. Breast radiation causes skin irritation, arm lymphedema, and cardiac risks, while prostate radiation causes urinary, bowel, and sexual side effects. Breast cancer radiation data cannot answer a prostate cancer radiation question."
+    },
+    {
+      "id": "t1_abstain_hard_1097",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What are the legal requirements for informed consent in clinical drug trials in the United States?",
+      "contexts": [
+        "The European Medicines Agency (EMA) requires that informed consent for clinical trials comply with the EU Clinical Trials Regulation (CTR) 536/2014, which mandates written consent in the participant's native language, a cooling-off period of at least 7 days for non-emergency trials, and explicit disclosure of all known risks and potential commercial benefits."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about US informed consent law but context only covers EU regulations",
+      "rationale": "EU clinical trial regulations under the EMA are a different legal framework than US regulations under the FDA and 21 CFR Part 50. While both cover informed consent, the specific requirements, cooling-off periods, and disclosure standards differ between jurisdictions."
+    },
+    {
+      "id": "t1_abstain_hard_1098",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What are the penalties for insider trading under US securities law?",
+      "contexts": [
+        "The UK Financial Conduct Authority (FCA) imposed record fines of 284 million pounds for market abuse violations in 2024. Under the UK's Criminal Justice Act 1993, insider dealing carries a maximum sentence of 7 years imprisonment and unlimited fines. The FCA's surveillance system, SMARTS, monitors over 30 million transactions daily."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about US insider trading penalties but context only covers UK market abuse law",
+      "rationale": "UK penalties under the Criminal Justice Act 1993 and FCA enforcement are different from US penalties under the Securities Exchange Act of 1934 and SEC enforcement. Maximum sentences, fine structures, and enforcement mechanisms differ between the two jurisdictions."
+    },
+    {
+      "id": "t1_abstain_hard_1099",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the power consumption of NVIDIA's H100 GPU during deep learning training workloads?",
+      "contexts": [
+        "NVIDIA's RTX 4090, designed for gaming and creative workloads, has a thermal design power (TDP) of 450W and delivers 82.6 TFLOPS of FP32 compute. The card uses TSMC's 4N process node and features 16,384 CUDA cores with 24GB of GDDR6X memory running at 21 Gbps."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about H100 datacenter GPU power consumption but context only covers the RTX 4090 consumer GPU",
+      "rationale": "The RTX 4090 is a consumer gaming GPU with fundamentally different architecture, power delivery, and use case than the H100 datacenter accelerator. The 4090's 450W TDP and specifications cannot be used to determine H100 power consumption, which uses a different GPU die (GH100 vs AD102) and memory type (HBM3 vs GDDR6X)."
+    },
+    {
+      "id": "t1_abstain_hard_1100",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the maximum concurrent connection limit for PostgreSQL 16?",
+      "contexts": [
+        "MySQL 8.0's default max_connections setting is 151, though production deployments typically configure this between 500 and 2,000 depending on available memory. Each MySQL connection consumes approximately 256KB of memory by default, and connection pooling via ProxySQL or MySQL Router is recommended for workloads exceeding 1,000 concurrent connections."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about PostgreSQL connection limits but context only covers MySQL",
+      "rationale": "MySQL and PostgreSQL are different database systems with different connection handling architectures, default limits, and memory models. MySQL's default of 151 connections and its per-connection memory usage do not apply to PostgreSQL, which has its own max_connections default and connection overhead."
     }
   ]
 }

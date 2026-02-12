@@ -1,0 +1,614 @@
+{
+  "cases": [
+    {
+      "id": "t1_abstain_hard_1051",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was Tesla's revenue in Q4 2025?",
+      "contexts": [
+        "Tesla reported Q4 2023 revenue of $25.17 billion, representing a 3% increase year-over-year. The company delivered 484,507 vehicles during the quarter, slightly below analyst expectations of 490,000 units."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Q4 2025 but context only contains Q4 2023 data",
+      "rationale": "The context provides Q4 2023 revenue figures, which cannot be used to answer a question about Q4 2025 revenue two years later."
+    },
+    {
+      "id": "t1_abstain_hard_1052",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was the US federal funds rate in March 2025?",
+      "contexts": [
+        "The Federal Reserve held the federal funds rate at 5.25%-5.50% at its March 2024 meeting, citing persistent inflation above the 2% target. Chair Powell indicated that rate cuts would depend on further progress in bringing inflation down."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about March 2025 rate but context only has March 2024 data",
+      "rationale": "The context describes the March 2024 federal funds rate, not March 2025. Interest rates change frequently based on economic conditions, so 2024 data cannot answer a 2025 question."
+    },
+    {
+      "id": "t1_abstain_hard_1053",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What features were included in iOS 19?",
+      "contexts": [
+        "iOS 17, released in September 2023, introduced StandBy mode, interactive widgets, and NameDrop for contact sharing. The update also brought significant improvements to the autocorrect system using transformer language models."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about iOS 19 features but context describes iOS 17",
+      "rationale": "The context covers iOS 17 features from 2023, which has no bearing on what iOS 19 would include. Each major iOS release introduces different features."
+    },
+    {
+      "id": "t1_abstain_hard_1054",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What is the current market share of GPT-5 compared to other LLMs in 2026?",
+      "contexts": [
+        "As of Q2 2024, OpenAI's GPT-4 held approximately 65% of the enterprise LLM market share, followed by Anthropic's Claude at 18% and Google's Gemini at 12%. The remaining 5% was split among open-source alternatives."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about GPT-5 market share in 2026 but context has 2024 GPT-4 data",
+      "rationale": "The context provides 2024 market share for GPT-4, not GPT-5 in 2026. Market dynamics shift rapidly in AI, and a different model generation in a later year cannot be inferred from older data."
+    },
+    {
+      "id": "t1_abstain_hard_1055",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What penalties does the 2025 US Data Privacy Act impose for violations?",
+      "contexts": [
+        "The proposed American Data Privacy and Protection Act (ADPPA) of 2022 included penalties of up to $42,530 per violation for large data holders. The bill passed the House Energy and Commerce Committee in July 2022 but stalled in the Senate."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a 2025 act but context covers a 2022 proposal that stalled",
+      "rationale": "The context describes a 2022 proposed bill that never became law. A 2025 act would be different legislation with potentially different penalty structures."
+    },
+    {
+      "id": "t1_abstain_hard_1056",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was the Supreme Court's ruling in the 2025 term on student loan forgiveness?",
+      "contexts": [
+        "In Biden v. Nebraska (2023), the Supreme Court ruled 6-3 that the HEROES Act did not authorize the Biden administration's $430 billion student loan forgiveness plan. Chief Justice Roberts wrote the majority opinion, finding the plan exceeded the Secretary of Education's authority."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the 2025 Supreme Court term but context covers a 2023 ruling",
+      "rationale": "The context describes a 2023 Supreme Court decision. The 2025 term would involve different cases and potentially different legal questions about student loans."
+    },
+    {
+      "id": "t1_abstain_hard_1057",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What were the results of the Artemis III crewed lunar landing?",
+      "contexts": [
+        "Artemis I, an uncrewed test flight, launched on November 16, 2022, and successfully completed a 25-day mission orbiting the Moon. The Orion capsule traveled 1.4 million miles and splashed down in the Pacific Ocean on December 11, 2022."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about Artemis III crewed landing but context only covers Artemis I uncrewed test",
+      "rationale": "The context describes the Artemis I uncrewed test flight, not the Artemis III crewed lunar landing. These are different missions with different objectives and outcomes."
+    },
+    {
+      "id": "t1_abstain_hard_1058",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What discoveries did the James Webb Space Telescope make about exoplanet atmospheres in 2026?",
+      "contexts": [
+        "In its first year of operation (2022-2023), the James Webb Space Telescope detected carbon dioxide in the atmosphere of WASP-39b, a hot gas giant 700 light-years from Earth. JWST also identified dimethyl sulfide on exoplanet K2-18b, a potential biosignature."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2026 JWST discoveries but context covers 2022-2023 findings",
+      "rationale": "The context describes JWST discoveries from 2022-2023. Telescope observations in 2026 would target different exoplanets and produce different results that cannot be inferred from earlier data."
+    },
+    {
+      "id": "t1_abstain_hard_1059",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "Who won the 2026 FIFA World Cup final?",
+      "contexts": [
+        "Argentina defeated France 4-2 on penalties after a 3-3 draw in the 2022 FIFA World Cup final in Qatar. Lionel Messi scored twice, while Kylian Mbappe netted a hat trick in a dramatic match widely considered one of the greatest finals in history."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about the 2026 World Cup final but context covers the 2022 final",
+      "rationale": "The context describes the 2022 World Cup final result. The 2026 tournament is a completely separate event with different participating teams and outcomes."
+    },
+    {
+      "id": "t1_abstain_hard_1060",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What was Shohei Ohtani's batting average in the 2025 MLB season?",
+      "contexts": [
+        "Shohei Ohtani batted .304 with 44 home runs and 95 RBIs during the 2023 MLB season with the Los Angeles Angels. He also recorded a 10-5 pitching record with a 3.14 ERA before a torn UCL ended his pitching season in August."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2025 season stats but context only has 2023 data",
+      "rationale": "The context provides Ohtani's 2023 statistics. Player performance varies significantly year to year, so 2023 numbers cannot answer a question about the 2025 season."
+    },
+    {
+      "id": "t1_abstain_hard_1061",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What are the current EU regulations on AI systems as of 2025?",
+      "contexts": [
+        "As of 2021, the European Commission proposed the Artificial Intelligence Act framework, establishing a risk-based approach to AI regulation with four tiers: unacceptable, high-risk, limited, and minimal risk.",
+        "The 2020 White Paper on AI outlined the Commission's approach to regulating high-risk AI applications, focusing on safety, transparency, and human oversight requirements."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 AI regulations but both contexts predate the EU AI Act adoption",
+      "rationale": "Both contexts are from 2020-2021 and describe early proposals. The EU AI Act was adopted in 2024 with significant changes from the original proposals, making these outdated sources unreliable for answering about current regulations."
+    },
+    {
+      "id": "t1_abstain_hard_1062",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current state of quantum computing error correction in 2025?",
+      "contexts": [
+        "A 2021 Nature paper by Google Quantum AI demonstrated that their Sycamore processor could detect and correct certain types of quantum errors using a surface code approach with 72 qubits.",
+        "IBM's 2022 roadmap projected achieving 4,000+ qubit systems by 2025, with error correction capabilities improving through modular architectures and middleware called Qiskit Runtime."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2025 quantum error correction but contexts are from 2021-2022 projections",
+      "rationale": "The contexts contain 2021 experimental results and 2022 projections. Quantum computing advances rapidly, and roadmap projections often change. The actual 2025 state of error correction cannot be determined from these outdated sources."
+    },
+    {
+      "id": "t1_abstain_hard_1063",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current yield on 10-year US Treasury bonds?",
+      "contexts": [
+        "In January 2023, the 10-year US Treasury yield stood at 3.5%, having fallen from its October 2022 peak of 4.25%. Analysts at Goldman Sachs predicted the yield would stabilize between 3.0% and 3.5% through mid-2023.",
+        "The Federal Reserve's aggressive rate hiking cycle in 2022 pushed Treasury yields to their highest levels in over a decade, with the 2-year/10-year yield curve remaining deeply inverted at -78 basis points."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current Treasury yields but contexts are from early 2023",
+      "rationale": "Both contexts provide Treasury yield data from 2022-2023. Bond yields fluctuate daily based on economic conditions, Fed policy, and market sentiment, making two-year-old data completely unreliable for current yields."
+    },
+    {
+      "id": "t1_abstain_hard_1064",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is Bitcoin's current price and market capitalization in 2025?",
+      "contexts": [
+        "Bitcoin reached an all-time high of $69,044 on November 10, 2021, before declining sharply throughout 2022. By June 2022, Bitcoin had fallen to approximately $20,000, wiping out over $1.2 trillion in market value.",
+        "Analysts at JPMorgan noted in their December 2022 report that Bitcoin's fair value was approximately $38,000 based on production cost models, though volatility remained extreme with 90-day realized volatility at 65%."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 Bitcoin price but contexts are from 2021-2022",
+      "rationale": "Cryptocurrency prices are extremely volatile and change by the minute. Data from 2021-2022 has no predictive value for Bitcoin's 2025 price or market cap."
+    },
+    {
+      "id": "t1_abstain_hard_1065",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What COVID-19 variants are currently circulating and what vaccines are recommended in 2025?",
+      "contexts": [
+        "As of December 2022, the Omicron subvariant BQ.1.1 accounted for approximately 35% of US cases, followed by XBB at 18%. The bivalent booster targeting BA.4/BA.5 was the most recent vaccine update available.",
+        "The WHO reported in January 2023 that global COVID-19 deaths had declined 89% from their January 2022 peak, though surveillance gaps in many countries made accurate tracking difficult."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 COVID variants and vaccines but contexts are from late 2022",
+      "rationale": "COVID-19 variants evolve rapidly and vaccine recommendations are updated regularly. Data from late 2022 about BQ.1.1 and XBB variants and BA.4/BA.5 boosters has no relevance to the 2025 variant landscape or current vaccine guidance."
+    },
+    {
+      "id": "t1_abstain_hard_1066",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What are the current FDA-approved GLP-1 receptor agonists for weight loss in 2025?",
+      "contexts": [
+        "As of mid-2023, semaglutide (Wegovy) was the primary FDA-approved GLP-1 agonist for chronic weight management, showing average weight loss of 15% in clinical trials. Supply shortages persisted due to unprecedented demand.",
+        "Eli Lilly's tirzepatide (Mounjaro) received FDA approval for type 2 diabetes in May 2022 and was undergoing phase 3 trials for obesity indication. The SURMOUNT-1 trial showed 22.5% weight loss at the highest dose."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 FDA approvals but contexts are from 2022-2023",
+      "rationale": "The GLP-1 drug landscape has been evolving rapidly with new approvals, indications, and competitors entering the market. 2022-2023 information about available drugs and pending trials cannot reliably reflect the 2025 approval landscape."
+    },
+    {
+      "id": "t1_abstain_hard_1067",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current legal status of noncompete agreements across US states in 2025?",
+      "contexts": [
+        "In January 2023, the FTC proposed a rule to ban most noncompete clauses nationwide, affecting an estimated 30 million workers. The proposal was met with strong opposition from business groups and the US Chamber of Commerce.",
+        "As of 2022, California, Oklahoma, and North Dakota had near-total bans on noncompete agreements, while most other states enforced them with varying restrictions on duration and geographic scope."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 noncompete law but contexts are from 2022-2023 proposals",
+      "rationale": "The FTC rule was only proposed in 2023 and faced legal challenges. The actual 2025 legal landscape depends on whether the rule was finalized, survived court challenges, and what individual states did in the interim."
+    },
+    {
+      "id": "t1_abstain_hard_1068",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What are the current US sanctions against Russia as of 2025?",
+      "contexts": [
+        "Following Russia's February 2022 invasion of Ukraine, the US imposed sweeping sanctions including freezing the Central Bank of Russia's $300 billion in reserves, cutting major Russian banks from SWIFT, and imposing export controls on advanced semiconductors.",
+        "By December 2022, the G7 and EU implemented a $60 per barrel price cap on Russian seaborne crude oil, while the US expanded its sanctions list to include over 1,500 Russian individuals and entities."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current 2025 sanctions but contexts only cover 2022 actions",
+      "rationale": "Sanctions regimes are dynamic and change based on geopolitical developments. The 2022 sanctions are a starting point, but sanctions may have been expanded, modified, or partially lifted by 2025 depending on diplomatic developments."
+    },
+    {
+      "id": "t1_abstain_hard_1069",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current status of ITER fusion reactor construction and first plasma date?",
+      "contexts": [
+        "As of 2022, the ITER project in southern France was approximately 75% complete, with first plasma originally targeted for December 2025. However, the project had already experienced multiple delays and cost overruns, with total costs exceeding 22 billion euros.",
+        "ITER's Director General Pietro Barabaschi acknowledged in early 2023 that the first plasma date would need to be pushed back, citing pandemic-related supply chain disruptions and welding defects discovered in the thermal shield."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about current ITER status but contexts are from 2022-2023 with known schedule changes",
+      "rationale": "The contexts acknowledge the schedule was already slipping in 2023. Major construction projects experience ongoing changes, and the actual 2025 status of ITER cannot be determined from outdated progress reports."
+    },
+    {
+      "id": "t1_abstain_hard_1070",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the latest global average temperature anomaly and climate outlook for 2025?",
+      "contexts": [
+        "NASA's Goddard Institute reported that 2022 was the fifth-warmest year on record, with a global average temperature anomaly of +0.89 degrees Celsius above the 1951-1980 baseline. The ten warmest years have all occurred since 2010.",
+        "The World Meteorological Organization's 2022 report projected a 50% chance that at least one of the next five years would temporarily exceed 1.5 degrees Celsius above pre-industrial levels, driven by a potential return of El Nino conditions."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about 2025 temperature data and outlook but contexts are from 2022",
+      "rationale": "Climate data for 2025 requires actual measurements from that year. The 2022 temperature anomaly and probabilistic projections cannot provide specific 2025 figures or the current climate outlook."
+    },
+    {
+      "id": "t1_abstain_hard_1071",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What percentage of employees received bonuses at Acme Corp this year?",
+      "contexts": [
+        "Acme Corp's employee satisfaction survey showed a 15% increase in overall satisfaction scores this year. The company's total compensation expenses rose 8% while headcount grew only 2%, and the CEO publicly thanked employees for an outstanding year."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context implies bonuses may have been paid but never states the specific percentage",
+      "rationale": "While rising compensation expenses above headcount growth and a satisfied workforce suggest bonuses were distributed, the exact percentage of employees who received them is never stated and cannot be calculated from the available data."
+    },
+    {
+      "id": "t1_abstain_hard_1072",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the profit margin on Samsung's Galaxy S24 Ultra smartphone?",
+      "contexts": [
+        "Samsung's Mobile Experience division reported Q1 2024 revenue of 28.4 trillion won with an operating profit of 3.5 trillion won. The Galaxy S24 Ultra retails for $1,299, while industry analysts estimate the bill of materials for flagship smartphones typically ranges from $400 to $570."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides divisional financials and general cost estimates but not the specific product margin",
+      "rationale": "The divisional profit includes all mobile products, not just the S24 Ultra. The bill-of-materials estimate is a general industry range that excludes R&D, marketing, distribution, and software costs, making an accurate product-level margin impossible to determine."
+    },
+    {
+      "id": "t1_abstain_hard_1073",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the five-year survival rate for stage 3 pancreatic cancer patients treated with FOLFIRINOX?",
+      "contexts": [
+        "FOLFIRINOX has become a standard first-line treatment for pancreatic cancer in patients with good performance status. A 2023 meta-analysis found significantly improved median overall survival compared to gemcitabine alone (11.1 vs 6.8 months), with higher but manageable toxicity rates."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides median overall survival data but not the specific five-year survival rate",
+      "rationale": "Median overall survival (11.1 months) is a different statistic from five-year survival rate. Additionally, the data covers all stages, not specifically stage 3, and median survival cannot be converted to a five-year percentage without the full survival curve."
+    },
+    {
+      "id": "t1_abstain_hard_1074",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "How many patients died from medical errors at Johns Hopkins Hospital last year?",
+      "contexts": [
+        "Johns Hopkins Hospital maintained a 99.2% patient safety index score in its most recent evaluation. The hospital invested $12 million in new safety monitoring systems and reduced preventable adverse events by 23% compared to the prior year, according to its annual quality report."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context shows safety improvements and metrics but never states actual death figures",
+      "rationale": "The safety index score, investment in safety systems, and reduction in adverse events suggest efforts to minimize harm, but none of these figures reveal the actual number of deaths from medical errors. A 23% reduction tells nothing without the baseline count."
+    },
+    {
+      "id": "t1_abstain_hard_1075",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the exact orbital period of the newly discovered exoplanet TOI-700 e?",
+      "contexts": [
+        "TOI-700 e orbits within the optimistic habitable zone of its M-dwarf host star, receiving approximately 93% of Earth's stellar irradiance. The planet has a radius of 0.95 Earth radii and is the fourth planet discovered in the TOI-700 system, located between planets c and d."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes the planet's size, location, and habitability but not its orbital period",
+      "rationale": "While the context provides the planet's radius, stellar irradiance, and position within the system, the orbital period is a distinct measurement that is never stated and cannot be reliably derived from the given information alone."
+    },
+    {
+      "id": "t1_abstain_hard_1076",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the thermal conductivity of the new graphene-copper composite developed at MIT?",
+      "contexts": [
+        "Researchers at MIT published a 2024 paper describing a novel graphene-copper composite that showed remarkable heat dissipation properties. In benchmark tests, the composite cooled 40% faster than pure copper heat sinks and maintained structural integrity at temperatures exceeding 800 degrees Celsius."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes cooling performance and heat resistance but not the specific thermal conductivity value",
+      "rationale": "Cooling 40% faster than copper in a benchmark test is a relative performance comparison, not a thermal conductivity measurement in W/(m*K). The actual thermal conductivity depends on geometry, airflow, and measurement conditions not provided."
+    },
+    {
+      "id": "t1_abstain_hard_1077",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What was the exact settlement amount in the Uber driver misclassification lawsuit in California?",
+      "contexts": [
+        "Uber agreed to settle a major driver misclassification lawsuit in California, with the company describing it as a 'significant resolution.' Legal analysts noted the settlement was larger than the $100 million Uber paid in a similar 2016 settlement, and Uber's stock dropped 3.2% on the announcement day."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context confirms a settlement occurred and implies it was large but never states the exact amount",
+      "rationale": "The context uses vague language ('significant resolution') and only provides a lower bound by comparison to a previous $100 million settlement. The stock drop provides market reaction but not the dollar figure."
+    },
+    {
+      "id": "t1_abstain_hard_1078",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "How many wiretap warrants did the FBI obtain under FISA in 2024?",
+      "contexts": [
+        "The FBI's use of FISA surveillance authorities remained controversial in 2024, with multiple congressional hearings examining compliance failures. The FISA Court reported a decrease in applications compared to 2023, and the Director of National Intelligence noted that Section 702 queries involving US persons dropped by approximately 30%."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context discusses FISA controversies and trends but never provides the specific warrant count",
+      "rationale": "The context mentions a decrease in applications and a 30% drop in Section 702 queries, but neither figure reveals the actual number of wiretap warrants obtained. Percentage changes and trend descriptions cannot substitute for absolute counts."
+    },
+    {
+      "id": "t1_abstain_hard_1079",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the training compute cost in dollars for Meta's Llama 3 model?",
+      "contexts": [
+        "Meta trained Llama 3 on a cluster of 16,384 NVIDIA H100 GPUs over a period of several months. The model was trained on over 15 trillion tokens of publicly available data, making it one of the largest training runs ever conducted. Meta CEO Mark Zuckerberg stated the company's AI infrastructure spending would reach $35 billion in 2024."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides GPU count, data scale, and overall spending but not the specific training cost",
+      "rationale": "While 16,384 H100 GPUs and months of training time suggest an enormous cost, the exact dollar amount depends on electricity rates, amortized hardware costs, and training duration, none of which are specified. The $35 billion figure is total AI infrastructure spending, not Llama 3's training cost."
+    },
+    {
+      "id": "t1_abstain_hard_1080",
+      "difficulty": "hard",
+      "subcategory": "implicit_only",
+      "query": "What is the false positive rate of Apple's on-device CSAM detection system?",
+      "contexts": [
+        "Apple's on-device CSAM detection system uses NeuralHash to compare photos against a database of known CSAM hashes before iCloud upload. Apple stated the system was designed with an 'extremely high level of accuracy' and that the threshold was set so that the chance of an incorrect flag was one in one trillion accounts per year."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides an account-level error rate but not the per-image false positive rate",
+      "rationale": "The one-in-one-trillion figure describes the probability of an account being incorrectly flagged, not the per-image false positive rate. These are fundamentally different metrics since an account can contain thousands of images, and the per-image rate cannot be derived without knowing the threshold and images-per-account distribution."
+    },
+    {
+      "id": "t1_abstain_hard_1081",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the concentration of dissolved oxygen in Lake Baikal at a depth of 400 meters?",
+      "contexts": [
+        "Global oceanic dissolved oxygen concentrations have declined by approximately 2% since 1960, driven by warming waters and changing circulation patterns. The average dissolved oxygen in freshwater lakes worldwide ranges from 6 to 14 mg/L depending on temperature, altitude, and biological activity."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a specific lake at a specific depth but context only provides global averages",
+      "rationale": "The global oceanic and general freshwater oxygen ranges cannot answer a question about a specific depth in a specific lake. Lake Baikal is the world's deepest lake with unique limnological properties, and dissolved oxygen at 400m depends on local conditions."
+    },
+    {
+      "id": "t1_abstain_hard_1082",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the average annual rainfall in the Atacama Desert?",
+      "contexts": [
+        "South America receives an average of 1,564 mm of precipitation annually, making it the wettest continent. The continent's rainfall is heavily influenced by the Intertropical Convergence Zone, the Amazon basin's transpiration, and orographic effects along the Andes mountain range."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a hyper-arid desert but context provides continent-wide average rainfall",
+      "rationale": "South America's continental average of 1,564 mm is dominated by the Amazon basin's massive rainfall. The Atacama Desert is one of the driest places on Earth, and a continent-level average is useless for answering about this extreme microclimate."
+    },
+    {
+      "id": "t1_abstain_hard_1083",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the average home price in the Noe Valley neighborhood of San Francisco?",
+      "contexts": [
+        "The US median home price reached $412,000 in Q3 2024, according to the National Association of Realtors. Western states continued to have the highest median prices, with the Pacific region averaging $615,000. California's statewide median was $843,000."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a specific San Francisco neighborhood but context only has national and state-level data",
+      "rationale": "National ($412K), regional ($615K), and statewide ($843K) home price data cannot answer a question about Noe Valley, one of San Francisco's most expensive neighborhoods where prices are typically multiples of these broader averages."
+    },
+    {
+      "id": "t1_abstain_hard_1084",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the revenue breakdown by product line for Procter & Gamble's fabric care division?",
+      "contexts": [
+        "Procter & Gamble reported fiscal year 2024 total revenue of $84.0 billion, with the Fabric & Home Care segment generating $29.4 billion (35% of total). The segment saw 3% organic growth driven by pricing actions and mix improvements across the portfolio."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for product-line breakdown within fabric care but context only provides segment-level totals",
+      "rationale": "The context provides the Fabric & Home Care segment total of $29.4 billion but does not break this down by individual product lines (Tide, Downy, Gain, etc.). Segment-level data cannot be decomposed into product-level revenue without additional information."
+    },
+    {
+      "id": "t1_abstain_hard_1085",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the infection rate of methicillin-resistant Staphylococcus aureus (MRSA) at Massachusetts General Hospital?",
+      "contexts": [
+        "Hospital-acquired infections affect approximately 3.2% of hospitalized patients in the United States, according to the CDC's 2023 National Healthcare Safety Network report. MRSA accounts for roughly 8% of all healthcare-associated infections nationally, with rates declining 30% over the past decade due to improved hand hygiene and screening protocols."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about MRSA at a specific hospital but context only provides national statistics",
+      "rationale": "National MRSA infection rates and trends cannot answer a question about a specific hospital. Individual hospital rates vary enormously based on patient population, infection control practices, and local resistance patterns."
+    },
+    {
+      "id": "t1_abstain_hard_1086",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the survival rate for the specific BRCA2 c.6174delT mutation carriers who undergo prophylactic mastectomy?",
+      "contexts": [
+        "Women with BRCA1 or BRCA2 mutations have a 45-72% lifetime risk of developing breast cancer. Prophylactic bilateral mastectomy reduces breast cancer risk by approximately 90-95% in high-risk women, according to a meta-analysis of 18 studies published in the Journal of Clinical Oncology."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about a specific mutation variant and procedure combination but context only provides general BRCA statistics",
+      "rationale": "The context provides aggregate data for all BRCA1/BRCA2 mutations combined. The c.6174delT is a specific founder mutation with potentially different penetrance and outcomes than the group average, and the 90-95% risk reduction figure is for all high-risk women, not this specific variant."
+    },
+    {
+      "id": "t1_abstain_hard_1087",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the P99 latency for DynamoDB read operations in the us-east-1 region under a 10,000 RCU workload?",
+      "contexts": [
+        "Amazon DynamoDB is a fully managed NoSQL database service that provides single-digit millisecond performance at any scale. AWS states that DynamoDB delivers consistent, single-digit millisecond response times for both reads and writes, and supports tables that store more than 10 TB of data."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for specific P99 latency under precise conditions but context only provides marketing-level performance claims",
+      "rationale": "AWS's marketing statement of 'single-digit millisecond performance' is a general claim, not a specific P99 latency measurement for a particular region and workload. Actual latency depends on item size, partition key distribution, DAX usage, and regional capacity."
+    },
+    {
+      "id": "t1_abstain_hard_1088",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the memory usage of a single Kubernetes pod running the nginx:1.25 image with default configuration?",
+      "contexts": [
+        "Kubernetes cluster resource utilization at Spotify averaged 62% CPU and 71% memory across their 3,200 production nodes in 2024. The platform team found that implementing vertical pod autoscaling reduced over-provisioning by 35%, saving approximately $8 million annually in cloud infrastructure costs."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about single-pod memory for a specific image but context provides cluster-level averages",
+      "rationale": "Cluster-wide resource utilization percentages at Spotify say nothing about the memory consumption of a single nginx pod with default configuration. Cluster averages encompass thousands of different workloads and cannot be used to determine individual pod resource usage."
+    },
+    {
+      "id": "t1_abstain_hard_1089",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the murder rate in Chicago's South Side neighborhoods?",
+      "contexts": [
+        "The United States had an overall homicide rate of 6.3 per 100,000 people in 2023, according to FBI Uniform Crime Report data. The Midwest region reported a rate of 6.8 per 100,000, slightly above the national average. Illinois ranked 14th among states with a rate of 7.8 per 100,000."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about specific Chicago neighborhoods but context only provides national, regional, and state-level data",
+      "rationale": "National (6.3), Midwest (6.8), and Illinois (7.8) per-100,000 rates cannot answer a question about Chicago's South Side, where murder rates in some neighborhoods are dramatically higher than any of these broader averages."
+    },
+    {
+      "id": "t1_abstain_hard_1090",
+      "difficulty": "hard",
+      "subcategory": "wrong_granularity",
+      "query": "What is the soil pH level in the vineyards of Burgundy's Cote de Nuits appellation?",
+      "contexts": [
+        "France has diverse soil types ranging from the limestone plateaus of the Paris Basin to the granite formations of the Massif Central. French agricultural soils have an average pH of 6.5, with significant regional variation. The country's wine regions span over 750,000 hectares across 16 major appellations."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about soil pH in a specific wine sub-region but context only provides national agricultural data",
+      "rationale": "France's national average soil pH of 6.5 is meaningless for a specific Burgundy appellation. Cote de Nuits vineyards sit on distinctive Jurassic limestone with specific soil chemistry that differs dramatically from national averages."
+    },
+    {
+      "id": "t1_abstain_hard_1091",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the tensile strength of spider silk produced by Nephila clavipes?",
+      "contexts": [
+        "Researchers at the University of Cambridge developed a synthetic spider silk analogue in 2024 using a soy protein isolation process. The synthetic material demonstrated a tensile strength of 1.2 GPa and 98% water content, comparable to natural spider silk in some properties but with different molecular architecture."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about natural spider silk but context describes a synthetic analogue with different properties",
+      "rationale": "The synthetic analogue has different molecular architecture than natural Nephila clavipes silk. While the synthetic version's 1.2 GPa tensile strength is noted as 'comparable,' it is explicitly acknowledged as a different material, and the actual tensile strength of the natural silk is never stated."
+    },
+    {
+      "id": "t1_abstain_hard_1092",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the half-life of mRNA vaccines in human muscle tissue?",
+      "contexts": [
+        "A 2023 study in Cell Reports tracked mRNA persistence in mouse muscle tissue after intramuscular injection, finding that luciferase-encoding mRNA was detectable for up to 10 days with a half-life of approximately 18 hours. The study used a standard lipid nanoparticle formulation similar to those in clinical mRNA vaccines."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about mRNA half-life in human tissue but context only provides mouse model data",
+      "rationale": "Mouse muscle tissue pharmacokinetics do not directly translate to humans due to differences in cellular machinery, immune responses, and tissue composition. The 18-hour half-life in mice is from a different species and uses a different mRNA payload (luciferase, not vaccine antigen)."
+    },
+    {
+      "id": "t1_abstain_hard_1093",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the expected return on investment for commercial office real estate in downtown Manhattan?",
+      "contexts": [
+        "Residential real estate in Manhattan saw average returns of 4.2% in 2024, with luxury condominiums above $5 million appreciating at 6.1%. The Manhattan rental market maintained a vacancy rate of 2.4%, with average monthly rents reaching $4,500 for one-bedroom apartments."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about commercial office ROI but context only covers residential real estate",
+      "rationale": "Residential and commercial real estate are fundamentally different asset classes with different return profiles, risk factors, and market dynamics. Residential appreciation and rental data in Manhattan cannot predict commercial office returns, especially given the post-pandemic office market upheaval."
+    },
+    {
+      "id": "t1_abstain_hard_1094",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the default rate on leveraged loans in the US market?",
+      "contexts": [
+        "The US corporate bond default rate reached 3.8% in 2024, according to Moody's annual report. High-yield bonds experienced a 5.2% default rate, while investment-grade defaults remained at 0.1%. Moody's noted that rising interest rates and tightening credit conditions were primary drivers of increased defaults."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about leveraged loan defaults but context only provides corporate bond default data",
+      "rationale": "Leveraged loans and corporate bonds are distinct credit instruments with different seniority, covenants, recovery rates, and default dynamics. Bond default rates, even high-yield, cannot be used as a proxy for leveraged loan default rates."
+    },
+    {
+      "id": "t1_abstain_hard_1095",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the effectiveness of cognitive behavioral therapy for treating PTSD in military veterans?",
+      "contexts": [
+        "A 2024 meta-analysis in The Lancet Psychiatry found that cognitive behavioral therapy (CBT) was effective for treating generalized anxiety disorder in civilian populations, with a weighted effect size of 0.82 (95% CI: 0.71-0.93). The study analyzed 47 randomized controlled trials with a combined 3,842 participants."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about CBT for veteran PTSD but context covers CBT for civilian anxiety disorder",
+      "rationale": "The effectiveness of CBT for generalized anxiety in civilians cannot answer a question about CBT for PTSD in veterans. These differ in condition (anxiety vs. PTSD), population (civilian vs. military), and the specific trauma-focused CBT protocols used for combat-related PTSD."
+    },
+    {
+      "id": "t1_abstain_hard_1096",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What are the side effects of radiation therapy for prostate cancer?",
+      "contexts": [
+        "Radiation therapy for breast cancer commonly causes skin irritation, fatigue, and lymphedema in the treated arm. A 2024 study at MD Anderson Cancer Center found that 34% of breast cancer patients experienced radiation-induced dermatitis grade 2 or higher, while 18% reported persistent fatigue lasting more than six months."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about radiation side effects for prostate cancer but context covers breast cancer radiation",
+      "rationale": "Radiation therapy side effects are highly site-specific. Breast radiation causes skin irritation, arm lymphedema, and cardiac risks, while prostate radiation causes urinary, bowel, and sexual side effects. Breast cancer radiation data cannot answer a prostate cancer radiation question."
+    },
+    {
+      "id": "t1_abstain_hard_1097",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What are the legal requirements for informed consent in clinical drug trials in the United States?",
+      "contexts": [
+        "The European Medicines Agency (EMA) requires that informed consent for clinical trials comply with the EU Clinical Trials Regulation (CTR) 536/2014, which mandates written consent in the participant's native language, a cooling-off period of at least 7 days for non-emergency trials, and explicit disclosure of all known risks and potential commercial benefits."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about US informed consent law but context only covers EU regulations",
+      "rationale": "EU clinical trial regulations under the EMA are a different legal framework than US regulations under the FDA and 21 CFR Part 50. While both cover informed consent, the specific requirements, cooling-off periods, and disclosure standards differ between jurisdictions."
+    },
+    {
+      "id": "t1_abstain_hard_1098",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What are the penalties for insider trading under US securities law?",
+      "contexts": [
+        "The UK Financial Conduct Authority (FCA) imposed record fines of 284 million pounds for market abuse violations in 2024. Under the UK's Criminal Justice Act 1993, insider dealing carries a maximum sentence of 7 years imprisonment and unlimited fines. The FCA's surveillance system, SMARTS, monitors over 30 million transactions daily."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about US insider trading penalties but context only covers UK market abuse law",
+      "rationale": "UK penalties under the Criminal Justice Act 1993 and FCA enforcement are different from US penalties under the Securities Exchange Act of 1934 and SEC enforcement. Maximum sentences, fine structures, and enforcement mechanisms differ between the two jurisdictions."
+    },
+    {
+      "id": "t1_abstain_hard_1099",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the power consumption of NVIDIA's H100 GPU during deep learning training workloads?",
+      "contexts": [
+        "NVIDIA's RTX 4090, designed for gaming and creative workloads, has a thermal design power (TDP) of 450W and delivers 82.6 TFLOPS of FP32 compute. The card uses TSMC's 4N process node and features 16,384 CUDA cores with 24GB of GDDR6X memory running at 21 Gbps."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about H100 datacenter GPU power consumption but context only covers the RTX 4090 consumer GPU",
+      "rationale": "The RTX 4090 is a consumer gaming GPU with fundamentally different architecture, power delivery, and use case than the H100 datacenter accelerator. The 4090's 450W TDP and specifications cannot be used to determine H100 power consumption, which uses a different GPU die (GH100 vs AD102) and memory type (HBM3 vs GDDR6X)."
+    },
+    {
+      "id": "t1_abstain_hard_1100",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "What is the maximum concurrent connection limit for PostgreSQL 16?",
+      "contexts": [
+        "MySQL 8.0's default max_connections setting is 151, though production deployments typically configure this between 500 and 2,000 depending on available memory. Each MySQL connection consumes approximately 256KB of memory by default, and connection pooling via ProxySQL or MySQL Router is recommended for workloads exceeding 1,000 concurrent connections."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about PostgreSQL connection limits but context only covers MySQL",
+      "rationale": "MySQL and PostgreSQL are different database systems with different connection handling architectures, default limits, and memory models. MySQL's default of 151 connections and its per-connection memory usage do not apply to PostgreSQL, which has its own max_connections default and connection overhead."
+    }
+  ]
+}
