@@ -19,7 +19,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: success vs failure",
       "rationale": "One source says success, another says failure - cannot both be true",
-      "original_id": "dispute_easy_001"
+      "original_id": "dispute_easy_001",
+      "domain": "education",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_002",
@@ -33,7 +39,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: profitable vs loss-making",
       "rationale": "One source reports profits, another reports losses for the same period",
-      "original_id": "dispute_easy_002"
+      "original_id": "dispute_easy_002",
+      "domain": "finance",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_003",
@@ -47,7 +59,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: approved vs rejected",
       "rationale": "One source says approved, another says rejected - mutually exclusive",
-      "original_id": "dispute_easy_003"
+      "original_id": "dispute_easy_003",
+      "domain": "medicine",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_004",
@@ -61,7 +79,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: increase vs decrease",
       "rationale": "One source reports increase, another reports decrease",
-      "original_id": "dispute_easy_004"
+      "original_id": "dispute_easy_004",
+      "domain": "finance",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_005",
@@ -75,7 +99,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: leaving vs staying",
       "rationale": "One source says resigning, another says staying",
-      "original_id": "dispute_easy_005"
+      "original_id": "dispute_easy_005",
+      "domain": "finance",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_006",
@@ -89,7 +119,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: guilty vs not guilty plea",
       "rationale": "One source says guilty plea, another says not guilty",
-      "original_id": "dispute_easy_006"
+      "original_id": "dispute_easy_006",
+      "domain": "law",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_007",
@@ -103,7 +139,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: cancelled vs proceeded",
       "rationale": "One source says cancelled, another says it proceeded",
-      "original_id": "dispute_easy_007"
+      "original_id": "dispute_easy_007",
+      "domain": "science",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_008",
@@ -117,7 +159,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: passed vs failed",
       "rationale": "One source says passed, another says failed",
-      "original_id": "dispute_easy_008"
+      "original_id": "dispute_easy_008",
+      "domain": "government",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_009",
@@ -131,7 +179,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: available vs delayed",
       "rationale": "One source says pre-orders open, another says delayed indefinitely",
-      "original_id": "dispute_easy_009"
+      "original_id": "dispute_easy_009",
+      "domain": "transportation",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_010",
@@ -145,7 +199,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: won vs lost",
       "rationale": "One source says won, another says lost",
-      "original_id": "dispute_easy_010"
+      "original_id": "dispute_easy_010",
+      "domain": "sports",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_011",
@@ -159,7 +219,13 @@
       "expected_mode": "disputed",
       "description": "Direct numerical contradiction: up vs down",
       "rationale": "One source says +12%, another says -8%",
-      "original_id": "dispute_easy_011"
+      "original_id": "dispute_easy_011",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_dispute_easy_012",
@@ -173,7 +239,13 @@
       "expected_mode": "disputed",
       "description": "Direct contradiction: open vs closed",
       "rationale": "One source says open on Sundays, another says closed",
-      "original_id": "dispute_easy_012"
+      "original_id": "dispute_easy_012",
+      "domain": "technology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct"
     }
   ]
 }

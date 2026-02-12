@@ -19,7 +19,13 @@
       "expected_mode": "abstain",
       "description": "Business/finance query with biology contexts",
       "rationale": "Completely different domains - biology cannot answer business finance questions",
-      "original_id": "abstain_easy_001"
+      "original_id": "abstain_easy_001",
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_002",
@@ -33,7 +39,13 @@
       "expected_mode": "abstain",
       "description": "Sports query with history contexts",
       "rationale": "Completely different domains - European history cannot answer American sports questions",
-      "original_id": "abstain_easy_002"
+      "original_id": "abstain_easy_002",
+      "domain": "history",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_003",
@@ -47,7 +59,13 @@
       "expected_mode": "abstain",
       "description": "Technical/software query with environmental contexts",
       "rationale": "Completely different domains - ecology cannot answer server configuration questions",
-      "original_id": "abstain_easy_003"
+      "original_id": "abstain_easy_003",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_004",
@@ -61,7 +79,13 @@
       "expected_mode": "abstain",
       "description": "Medical query with programming contexts",
       "rationale": "Completely different domains - programming languages cannot answer pharmaceutical questions",
-      "original_id": "abstain_easy_004"
+      "original_id": "abstain_easy_004",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_005",
@@ -75,7 +99,13 @@
       "expected_mode": "abstain",
       "description": "Cooking query with physics contexts",
       "rationale": "Completely different domains - physics cannot answer cooking questions",
-      "original_id": "abstain_easy_005"
+      "original_id": "abstain_easy_005",
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_006",
@@ -89,7 +119,13 @@
       "expected_mode": "abstain",
       "description": "Pet care query with 20th century history contexts",
       "rationale": "Completely different domains - political history cannot answer pet training questions",
-      "original_id": "abstain_easy_006"
+      "original_id": "abstain_easy_006",
+      "domain": "history",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_007",
@@ -103,7 +139,13 @@
       "expected_mode": "abstain",
       "description": "Music query with anatomy contexts",
       "rationale": "Completely different domains - human anatomy cannot answer music questions",
-      "original_id": "abstain_easy_007"
+      "original_id": "abstain_easy_007",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_008",
@@ -117,7 +159,13 @@
       "expected_mode": "abstain",
       "description": "Finance query with geography contexts",
       "rationale": "Completely different domains - geographical features cannot answer currency questions",
-      "original_id": "abstain_easy_008"
+      "original_id": "abstain_easy_008",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_009",
@@ -131,7 +179,13 @@
       "expected_mode": "abstain",
       "description": "Home repair query with literature contexts",
       "rationale": "Completely different domains - literary history cannot answer plumbing questions",
-      "original_id": "abstain_easy_009"
+      "original_id": "abstain_easy_009",
+      "domain": "history",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_010",
@@ -145,7 +199,13 @@
       "expected_mode": "abstain",
       "description": "Game rules query with biology contexts",
       "rationale": "Completely different domains - cell biology cannot answer game rules questions",
-      "original_id": "abstain_easy_010"
+      "original_id": "abstain_easy_010",
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_011",
@@ -159,7 +219,13 @@
       "expected_mode": "abstain",
       "description": "Travel query with art history contexts",
       "rationale": "Completely different domains - art history cannot answer real-time flight availability",
-      "original_id": "abstain_easy_011"
+      "original_id": "abstain_easy_011",
+      "domain": "general",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_abstain_easy_012",
@@ -173,7 +239,13 @@
       "expected_mode": "abstain",
       "description": "Tax/legal query with chemistry contexts",
       "rationale": "Completely different domains - chemistry cannot answer tax filing questions",
-      "original_id": "abstain_easy_012"
+      "original_id": "abstain_easy_012",
+      "domain": "science",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     }
   ]
 }

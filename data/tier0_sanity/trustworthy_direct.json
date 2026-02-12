@@ -18,7 +18,13 @@
       "expected_mode": "trustworthy",
       "description": "Direct factual question with explicit answer in context",
       "rationale": "The answer 'Paris' is stated directly and unambiguously",
-      "original_id": "confident_easy_001"
+      "original_id": "confident_easy_001",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_002",
@@ -31,7 +37,13 @@
       "expected_mode": "trustworthy",
       "description": "Direct date question with explicit year in context",
       "rationale": "The founding year '1985' is stated directly",
-      "original_id": "confident_easy_002"
+      "original_id": "confident_easy_002",
+      "domain": "finance",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_003",
@@ -44,7 +56,13 @@
       "expected_mode": "trustworthy",
       "description": "Direct technical question with clear answer",
       "rationale": "React being a 'JavaScript library' directly answers the language question",
-      "original_id": "confident_easy_003"
+      "original_id": "confident_easy_003",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_004",
@@ -57,7 +75,13 @@
       "expected_mode": "trustworthy",
       "description": "Direct count question with specific number provided",
       "rationale": "The exact number '15,000 full-time employees' is explicitly stated",
-      "original_id": "confident_easy_004"
+      "original_id": "confident_easy_004",
+      "domain": "hr_workplace",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_005",
@@ -70,7 +94,13 @@
       "expected_mode": "trustworthy",
       "description": "Definition question with clear definition provided",
       "rationale": "A complete definition of machine learning is provided",
-      "original_id": "confident_easy_005"
+      "original_id": "confident_easy_005",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_006",
@@ -83,7 +113,13 @@
       "expected_mode": "trustworthy",
       "description": "Attribution question with explicit inventor named",
       "rationale": "Alexander Graham Bell is explicitly named as the inventor",
-      "original_id": "confident_easy_006"
+      "original_id": "confident_easy_006",
+      "domain": "law",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_007",
@@ -96,7 +132,13 @@
       "expected_mode": "trustworthy",
       "description": "Price question with exact figures provided",
       "rationale": "Exact prices of $29.99/month and $299/year are stated",
-      "original_id": "confident_easy_007"
+      "original_id": "confident_easy_007",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_008",
@@ -109,7 +151,13 @@
       "expected_mode": "trustworthy",
       "description": "Direct chemistry question with explicit formula",
       "rationale": "The formula H2O is directly stated",
-      "original_id": "confident_easy_008"
+      "original_id": "confident_easy_008",
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_009",
@@ -122,7 +170,13 @@
       "expected_mode": "trustworthy",
       "description": "Deadline question with precise date and time",
       "rationale": "The exact deadline of March 15, 2025 at 11:59 PM EST is stated",
-      "original_id": "confident_easy_009"
+      "original_id": "confident_easy_009",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_confident_easy_010",
@@ -135,7 +189,13 @@
       "expected_mode": "trustworthy",
       "description": "Technical definition question with clear explanation",
       "rationale": "A complete definition of API is provided with explanation",
-      "original_id": "confident_easy_010"
+      "original_id": "confident_easy_010",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     }
   ]
 }

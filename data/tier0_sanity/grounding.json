@@ -26,7 +26,13 @@
         "generated \\$?\\d",
         "\\d+ (in revenue|in sales)"
       ],
-      "original_id": "grounding_easy_001"
+      "original_id": "grounding_easy_001",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_grounding_easy_002",
@@ -49,7 +55,13 @@
         "headed by",
         "the CEO"
       ],
-      "original_id": "grounding_easy_002"
+      "original_id": "grounding_easy_002",
+      "domain": "technology",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_grounding_easy_003",
@@ -71,7 +83,13 @@
         "will launch (in|on|by)",
         "scheduled for (Q[1-4]|\\d{4}|January|February)"
       ],
-      "original_id": "grounding_easy_003"
+      "original_id": "grounding_easy_003",
+      "domain": "technology",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_grounding_easy_004",
@@ -97,7 +115,13 @@
         "available in",
         "SDKs for"
       ],
-      "original_id": "grounding_easy_004"
+      "original_id": "grounding_easy_004",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_grounding_easy_005",
@@ -121,7 +145,13 @@
         "may cause",
         "patients experienced"
       ],
-      "original_id": "grounding_easy_005"
+      "original_id": "grounding_easy_005",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_grounding_easy_006",
@@ -142,7 +172,13 @@
         "has (about |approximately |around )?\\d",
         "employs (about |approximately |around )?\\d"
       ],
-      "original_id": "grounding_easy_006"
+      "original_id": "grounding_easy_006",
+      "domain": "sports",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_grounding_easy_007",
@@ -167,7 +203,13 @@
         "based in",
         "located in"
       ],
-      "original_id": "grounding_easy_007"
+      "original_id": "grounding_easy_007",
+      "domain": "technology",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     },
     {
       "id": "t0_grounding_easy_008",
@@ -192,7 +234,13 @@
         "Sarah",
         "David"
       ],
-      "original_id": "grounding_easy_008"
+      "original_id": "grounding_easy_008",
+      "domain": "finance",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct"
     }
   ],
   "evaluation_config": {
