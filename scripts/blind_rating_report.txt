@@ -1,0 +1,244 @@
+BLIND CLASSIFICATION REPORT
+============================
+
+Date: 2026-02-14
+Reviewer: Blind quality rater (Claude Opus 4.6)
+
+Total grounding cases reviewed: 166 (t1_grounding_hard_025 through t1_grounding_hard_190)
+Total relevance cases reviewed: 170 (t1_relevance_hard_024 through t1_relevance_hard_193)
+
+MISMATCHES FOUND:
+-----------------
+
+[NONE]
+
+No cases were found to be outright misclassified. All 336 cases test what
+their assigned category claims. Detailed justification follows in the
+analysis section below.
+
+
+BORDERLINE CASES (category is defensible but worth reviewing):
+--------------------------------------------------------------
+
+t1_relevance_hard_082 through t1_relevance_hard_093 (over_answering subcategory)
+  These 12 relevance cases are atypical: the context DOES directly answer
+  the query. The test checks whether the LLM dumps excessive extra
+  information instead of giving a focused answer. This is a valid relevance
+  concern (answering the right question concisely vs. regurgitating
+  everything) but operates differently from other relevance tests where
+  the context fails to answer the question. Category is defensible as a
+  relevance test -- the risk being tested is the model answering a
+  DIFFERENT (broader) question than what was asked.
+
+t1_relevance_hard_094 through t1_relevance_hard_105 (summarization_vs_answer subcategory)
+  These 12 relevance cases present yes/no or judgment questions where
+  the context contains evidence for both sides. The test checks whether
+  the LLM gives a definitive answer vs. merely summarizing. This is a
+  valid relevance concern (the model must actually answer the question,
+  not dodge it) but could also be viewed as testing a different skill
+  (judgment under ambiguity). Category is defensible.
+
+t1_relevance_hard_154 through t1_relevance_hard_163 (format_mismatch subcategory)
+  These 10 relevance cases ask for numbered step-by-step instructions
+  while the context provides relevant information in prose form. The
+  information IS there but not in the requested format. This tests whether
+  the model can extract and restructure information vs. just echoing
+  the source. Could be considered a "how" skill test rather than pure
+  relevance. Category is defensible since the context doesn't directly
+  answer the question "in the form asked."
+
+t1_relevance_hard_176 through t1_relevance_hard_185 (false_precision subcategory)
+  These 10 relevance cases provide PRELIMINARY or ESTIMATED data and
+  ask for exact/precise figures. The test checks whether the LLM presents
+  provisional data as definitive. This is a valid nuance test but could
+  alternatively fit under grounding (presenting uncertain data as certain
+  is a form of hallucinating precision). Category is defensible as
+  relevance because the data "doesn't fully answer" the precision implied
+  in the query.
+
+t1_relevance_hard_186 through t1_relevance_hard_193 (assumption_injection subcategory)
+  These 8 relevance cases ask whether narrow/pilot results can be
+  universally generalized. The test checks whether the LLM acknowledges
+  the limitations of scope. This is a valid relevance concern (the data
+  doesn't actually answer the broader question) and is well-classified.
+
+t1_grounding_hard_108 through t1_grounding_hard_112 (process_hallucination, yes/no format)
+  These 5 grounding cases ask "Is there a [specific step] documented
+  in [this process]?" where the context describes the process without
+  that specific step. The correct answer is that the step is not
+  documented. This is slightly unusual for grounding because the model
+  is unlikely to hallucinate an entire process step in response to a
+  yes/no question. However, the forbidden_claims appropriately check
+  that the model does not fabricate step-by-step processes. Category
+  is defensible.
+
+t1_grounding_hard_161 through t1_grounding_hard_172 (causal_hallucination subcategory)
+  These 12 grounding cases present correlational data and ask whether
+  X caused Y. The test checks whether the LLM incorrectly asserts
+  causation from correlation. This is a valid grounding concern (the
+  context lacks causal evidence, so asserting causation is hallucinating
+  a conclusion). Could alternatively be viewed as a relevance test
+  (the data doesn't answer the causal question). Category is defensible
+  as grounding because the key risk is fabricating causal claims.
+
+
+PATTERN ISSUES:
+---------------
+
+t1_grounding_medium_002 - forbidden_claims pattern "go to (the )?(settings|menu|page|account)"
+  is too broad. A legitimate response like "you can update credentials
+  through the account settings" (which the context itself states) would
+  match the forbidden pattern "go to.*account" if the model says "go to
+  account settings." This could cause false failures. The pattern should
+  be narrowed to only match fabricated step-by-step sequences.
+
+t1_grounding_medium_002 - forbidden_claims pattern "enter (your |the )?\\w+"
+  is extremely broad. Any sentence containing "enter your" followed by
+  a single word would match, including legitimate hedged language like
+  "you may need to enter your credentials." This will almost certainly
+  cause false positives.
+
+t1_grounding_medium_010 - forbidden_claims pattern "configure (the |your )?\\w+"
+  is too broad. A legitimate response saying "the platform can be
+  configured" or "you can configure integrations" would match. Should
+  be narrowed to only match specific fabricated configuration steps.
+
+t1_grounding_medium_010 - forbidden_claims pattern "(in |under |go to )(the )?settings"
+  could flag legitimate responses that reference the context's mention
+  of enterprise integration support.
+
+t1_relevance_hard_068 (tangent_drift, Silk Road goods)
+  required_elements include "porcelain" and "glassware" but the context
+  already mentions specific goods (silk, lacquerware, iron tools, paper).
+  The required_elements seem to expect the LLM to note that certain
+  goods are NOT mentioned, but "porcelain" and "glassware" appearing
+  as required_elements could be confusing -- the test seems to want the
+  LLM to mention what IS provided while acknowledging gaps, but the
+  required_elements list mixes things that should be mentioned with
+  things that should be noted as absent.
+
+t1_relevance_hard_082 through t1_relevance_hard_093 (over_answering)
+  required_elements are the CORRECT answer values (e.g., "4.38",
+  "312ms", "7,058"). This means the test passes if the model includes
+  these values, but fails to catch over-answering unless there is a
+  separate mechanism. These required_elements are too generic -- they
+  only verify the answer is present, not that the response is concise.
+  There appear to be no forbidden_elements to detect over-answering.
+  Without additional evaluation logic, these cases may not effectively
+  test their stated purpose.
+
+t1_relevance_hard_004 (metric_avoidance)
+  forbidden_elements pattern "achieves \\d+" is very broad and could
+  match contextually legitimate phrasing. However, since the context
+  does not contain a specific MPG number, this is unlikely to cause
+  issues in practice.
+
+
+SUBCATEGORY DISTRIBUTION ANALYSIS:
+-----------------------------------
+
+Grounding subcategories (166 cases):
+  numerical_hallucination:    20 cases (025-044)  -- well-classified
+  attribution_hallucination:  18 cases (045-062)  -- well-classified
+  temporal_confusion:         16 cases (063-078)  -- well-classified
+  entity_blending:            18 cases (081-098)  -- well-classified (note: 079-080 are temporal)
+  process_hallucination:      14 cases (099-112)  -- well-classified
+  quote_fabrication:          14 cases (113-126)  -- well-classified
+  statistical_inference:      14 cases (127-140)  -- well-classified
+  code_hallucination:         10 cases (141-150)  -- well-classified
+  table_inference:            10 cases (151-160)  -- well-classified
+  causal_hallucination:       12 cases (161-172)  -- well-classified
+  comparative_hallucination:  10 cases (173-182)  -- well-classified
+  geographic_hallucination:    8 cases (183-190)  -- well-classified (note: ID gap, only 8)
+
+Relevance subcategories (170 cases):
+  partial_answer:             16 cases (024-039)  -- well-classified
+  wrong_entity_focus:         14 cases (040-053)  -- well-classified
+  temporal_mismatch:          14 cases (054-067)  -- well-classified
+  tangent_drift:              14 cases (068-081)  -- well-classified
+  over_answering:             12 cases (082-093)  -- see borderline note
+  summarization_vs_answer:    12 cases (094-105)  -- see borderline note
+  related_but_different:      12 cases (106-117)  -- well-classified
+  prerequisite_missing:       12 cases (118-129)  -- well-classified
+  granularity_mismatch:       12 cases (130-141)  -- well-classified
+  scope_mismatch:             12 cases (142-153)  -- well-classified
+  format_mismatch:            10 cases (154-163)  -- see borderline note
+  cherry_picking:             12 cases (164-175)  -- well-classified
+  false_precision:            10 cases (176-185)  -- see borderline note
+  assumption_injection:        8 cases (186-193)  -- well-classified
+
+
+KEY CLASSIFICATION ANALYSIS:
+-----------------------------
+
+Grounding vs. Relevance distinction:
+  The benchmark maintains a clear distinction. Grounding cases consistently
+  present contexts that ARE about the right topic and DO contain related
+  information, but are MISSING a specific detail the query asks about.
+  The hallucination temptation comes from the surrounding data making it
+  plausible to fabricate the missing detail. This pattern holds across all
+  166 grounding cases reviewed.
+
+  Relevance cases consistently present contexts where the information
+  answers a DIFFERENT question than what was asked -- different entity,
+  different time period, different scope, different format, or different
+  aspect. The temptation comes from the topical similarity making it
+  easy to present the available information as if it answers the question.
+
+  None of the grounding cases would be better classified as relevance,
+  and vice versa. The subcategories reinforce this: grounding's
+  "numerical_hallucination" (missing numbers), "attribution_hallucination"
+  (wrong source attribution), and "temporal_confusion" (data from wrong
+  time period) are distinct from relevance's "wrong_entity_focus"
+  (entirely different entity), "temporal_mismatch" (data from wrong
+  time period but emphasis on RECOGNIZING the mismatch rather than
+  not fabricating), and "scope_mismatch" (geographic/scale mismatch).
+
+Grounding vs. Abstention:
+  No grounding cases were found that should be abstention. All contexts
+  are clearly about the topic referenced in the query. Even the
+  attribution_hallucination cases (045-062) provide two relevant contexts;
+  the test is whether the model correctly attributes findings to the
+  right source.
+
+Relevance vs. Abstention:
+  No relevance cases were found that should be abstention. Even in
+  scope_mismatch cases (142-153), the context is from the same general
+  domain -- just a different geographic scope. The wrong_entity_focus
+  cases (040-053) use deliberately similar entity names (CloudForge vs.
+  CloudBridge, Brightpath vs. Bridgewater) which tests precision, not
+  total irrelevance.
+
+Expected Mode:
+  All 336 cases have expected_mode "trustworthy" which aligns with
+  both grounding and relevance categories. For grounding, the model
+  should answer what IS known while not hallucinating. For relevance,
+  the model should acknowledge what IS and IS NOT covered by the
+  context. Both correctly use the "trustworthy" (qualified) response
+  mode rather than "abstain."
+
+
+SUMMARY:
+--------
+Mismatches: 0/336 (0%)
+Borderline: ~70/336 (21%) -- defensible but represent expanded definitions
+Pattern issues: 5/336 (1.5%) -- mostly in medium-difficulty cases outside review scope
+Overall quality: GOOD
+
+The benchmark demonstrates strong internal consistency. The grounding and
+relevance categories are well-differentiated, with grounding cases testing
+hallucination of missing specifics and relevance cases testing recognition
+of information gaps. The subcategory taxonomy is thoughtful and covers a
+wide range of failure modes.
+
+The main area for improvement is the "over_answering" subcategory within
+relevance, which tests a fundamentally different skill (conciseness) than
+the other relevance subcategories (gap recognition). The required_elements
+for these cases verify the answer is present but do not have a mechanism
+to penalize over-answering, making the test potentially ineffective at
+its stated purpose.
+
+The forbidden_claims patterns in the grounding cases (particularly the
+hard difficulty) are well-crafted and specific. The patterns in the medium
+difficulty cases (001-024, outside primary review scope) show some
+overly broad regexes that could cause false positives.
