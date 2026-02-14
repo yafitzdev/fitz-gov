@@ -35,14 +35,14 @@ pip install -e path/to/fitz-gov
 
 fitz-gov uses a two-tier evaluation system:
 - **Tier 0 (Sanity)**: 60 easy cases with 95% pass threshold - gates Tier 1
-- **Tier 1 (Core)**: 1,679 discriminative cases with gradient scoring
+- **Tier 1 (Core)**: 2,054 discriminative cases with gradient scoring
 
 ```python
 from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
 
 # Load tiered cases
 tier0_cases = load_tier(Tier.SANITY)  # 60 cases
-tier1_cases = load_tier(Tier.CORE)    # 1,679 cases
+tier1_cases = load_tier(Tier.CORE)    # 2,054 cases
 
 # Your RAG system generates responses and modes for each tier
 tier0_responses, tier0_modes = your_rag_system.evaluate(tier0_cases)
@@ -247,9 +247,9 @@ result = evaluator.evaluate_case(case, response, mode)
 ```python
 # Load by tier (recommended)
 tier0_cases = load_tier(Tier.SANITY)  # 60 sanity cases
-tier1_cases = load_tier(Tier.CORE)    # 1,679 core cases
+tier1_cases = load_tier(Tier.CORE)    # 2,054 core cases
 
-# Load all cases (1,739 total)
+# Load all cases (2,114 total)
 all_cases = load_cases()
 
 # Load specific categories from a tier
@@ -409,7 +409,7 @@ We welcome contributions! To add new test cases:
 
 1. Fork this repo
 2. Add cases to the appropriate `data/tier0_sanity/` or `data/tier1_core/` JSON file
-3. Run validation: `python scripts/validate.py`
+3. Run validation: `python -m fitz_gov.cli validate --data-dir data`
 4. Submit a PR
 
 ## License
