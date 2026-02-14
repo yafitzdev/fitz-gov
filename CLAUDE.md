@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 fitz-gov is a RAG governance benchmark for evaluating whether RAG systems know when to abstain, dispute, hedge, or confidently answer based on available evidence. It focuses on epistemic honesty rather than just retrieval quality or answer correctness.
 
-**Current version:** 4.0.0 with 2,114 test cases (60 tier0 + 2,054 tier1) across 6 categories
+**Current version:** 4.0.0 with 2,488 test cases (60 tier0 + 2,428 tier1) across 6 categories
 
 ## Commands
 
@@ -45,9 +45,9 @@ python -m fitz_gov.cli stats --data-dir data --breakdown
 
 ### Evaluation Flow
 
-1. **Governance categories** (abstention, dispute, trustworthy_hedged, trustworthy_direct, relevance): Compare `actual_mode` to `expected_mode`
-2. **Quality categories** (grounding): Two-pass validation
-   - Fast regex pass checks `forbidden_claims`
+1. **Governance categories** (abstention, dispute, trustworthy_hedged, trustworthy_direct): Compare `actual_mode` to `expected_mode`
+2. **Quality categories** (grounding, relevance): Two-pass validation
+   - Fast regex pass checks `forbidden_claims` / `required_elements`
    - Optional LLM pass validates flagged responses semantically
 3. **Tiered evaluation**: Tier 0 sanity check (95% threshold) gates Tier 1 full benchmark
 
@@ -62,9 +62,9 @@ data/
 │   ├── trustworthy_direct.json      # 10 cases
 │   ├── grounding.json               # 8 cases
 │   └── relevance.json               # 8 cases
-├── tier1_core/                      # 2,054 medium+hard cases (core benchmark)
-│   ├── abstention.json              # 467 cases
-│   ├── dispute.json                 # 409 cases
+├── tier1_core/                      # 2,428 medium+hard cases (core benchmark)
+│   ├── abstention.json              # 625 cases
+│   ├── dispute.json                 # 625 cases
 │   ├── trustworthy_hedged.json      # 414 cases
 │   ├── trustworthy_direct.json      # 218 cases
 │   ├── grounding.json               # 271 cases

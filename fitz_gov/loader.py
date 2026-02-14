@@ -19,8 +19,11 @@ from .models import FitzGovCase, FitzGovCategory
 
 logger = logging.getLogger(__name__)
 
-# Package data directory
-PACKAGE_DATA_DIR = Path(__file__).parent.parent / "data"
+# Package data directory — installed wheel has data at fitz_gov/data/,
+# development checkout has it at the project root data/
+_INSTALLED_DATA = Path(__file__).parent / "data"
+_DEV_DATA = Path(__file__).parent.parent / "data"
+PACKAGE_DATA_DIR = _INSTALLED_DATA if _INSTALLED_DATA.exists() else _DEV_DATA
 
 # Tier directories
 TIER0_DIR = "tier0_sanity"

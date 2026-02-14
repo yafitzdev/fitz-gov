@@ -11912,6 +11912,3850 @@
         "mode": "governance",
         "check_mode_match": true
       }
+    },
+    {
+      "id": "t1_abstain_medium_1033",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "Why does Google use a different technology stack than Microsoft for its search engine?",
+      "contexts": [
+        "Microsoft uses C# and .NET extensively for its Azure cloud platform and Office 365 suite."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Google's tech stack but context only discusses Microsoft",
+      "rationale": "Microsoft's programming languages and cloud stack say nothing about Google's search backend",
+      "domain": "technology",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1034",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "How did JPMorgan Chase perform in Q3 2024 earnings?",
+      "contexts": [
+        "Goldman Sachs reported Q3 2024 revenue of $12.7 billion, beating analyst expectations by 8%.",
+        "Goldman Sachs expanded its consumer banking division and saw strong growth in asset management fees."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about JPMorgan but context only discusses Goldman Sachs",
+      "rationale": "Goldman Sachs earnings data cannot be used to answer about JPMorgan Chase's performance",
+      "domain": "finance",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1035",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "Does metformin cause gastrointestinal side effects in diabetes patients?",
+      "contexts": [
+        "Insulin glargine (Lantus) is a long-acting insulin analog used to treat both type 1 and type 2 diabetes.",
+        "Common side effects of insulin glargine include hypoglycemia, weight gain, and injection site reactions.",
+        "Insulin glargine is typically administered once daily via subcutaneous injection."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about metformin but context discusses insulin glargine",
+      "rationale": "Side effects of insulin glargine are unrelated to metformin's side effect profile",
+      "domain": "medicine",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1036",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "Who is the current head coach of the Los Angeles Lakers?",
+      "contexts": [
+        "The Boston Celtics hired Joe Mazzulla as head coach in 2022 after the departure of Ime Udoka."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Lakers coaching but context is about Celtics",
+      "rationale": "Boston Celtics coaching information provides no answer about the Lakers head coach",
+      "domain": "sports",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1037",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "Does Stanford University offer a part-time MBA program?",
+      "contexts": [
+        "Harvard Business School offers a full-time two-year MBA program with approximately 930 students per class.",
+        "Harvard's MBA curriculum includes the case method and field-based learning experiences."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Stanford's MBA but context describes Harvard's MBA",
+      "rationale": "Harvard Business School program details reveal nothing about Stanford's offerings",
+      "domain": "education",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1038",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "Compare Tesla's market capitalization with its revenue growth over the past year.",
+      "contexts": [
+        "Rivian Automotive went public in November 2021 with an initial market capitalization of over $100 billion.",
+        "Rivian produces the R1T pickup truck and R1S SUV, targeting the premium electric vehicle market.",
+        "Rivian reported a net loss of $5.4 billion in 2022 as it ramped up vehicle production."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Tesla's valuation but context discusses Rivian",
+      "rationale": "Rivian's IPO and financial data cannot answer about Tesla's valuation or revenue growth",
+      "domain": "finance",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1039",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "Is the Canadian healthcare system effective at managing emergency room wait times?",
+      "contexts": [
+        "The UK National Health Service (NHS) has struggled with emergency department waiting times, with some patients waiting over 12 hours."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Canadian healthcare but context describes UK NHS",
+      "rationale": "UK NHS emergency practices cannot answer about Canadian healthcare system effectiveness",
+      "domain": "government",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1040",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "Which crops does Brazil primarily export to international markets?",
+      "contexts": [
+        "Argentina is the world's third-largest soybean producer and a major exporter of beef and wheat.",
+        "Argentina's agricultural sector accounts for roughly 10% of its GDP and employs over 5% of the workforce."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Brazil's agricultural exports but context covers Argentina",
+      "rationale": "Argentina's crop exports and agricultural statistics cannot answer about Brazil's exports",
+      "domain": "agriculture",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1041",
+      "difficulty": "medium",
+      "subcategory": "wrong_entity",
+      "query": "Is the Mediterranean diet effective for heart disease prevention?",
+      "contexts": [
+        "The ketogenic diet involves drastically reducing carbohydrate intake and replacing it with fat.",
+        "Studies on the ketogenic diet have shown benefits for epilepsy management and short-term weight loss.",
+        "Long-term adherence to the ketogenic diet can be challenging due to its restrictive nature."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Mediterranean diet but context discusses ketogenic diet",
+      "rationale": "Ketogenic diet research says nothing about the Mediterranean diet's cardiovascular benefits",
+      "domain": "food",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1042",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "What is the average salary for a data scientist at Amazon?",
+      "contexts": [
+        "Amazon employs over 1.5 million people worldwide, making it one of the largest private employers.",
+        "Amazon's corporate offices are located in Seattle, with additional tech hubs in several major cities."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Amazon as employer but no salary data",
+      "rationale": "Employee count and office locations provide no salary information for data scientists",
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1043",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "How many calories are in a standard serving of Greek yogurt?",
+      "contexts": [
+        "Greek yogurt is made by straining regular yogurt to remove most of the whey, resulting in a thicker consistency.",
+        "The straining process gives Greek yogurt a higher protein content compared to regular yogurt.",
+        "Greek yogurt originated in the Mediterranean region and has become popular worldwide."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Greek yogurt production but no nutritional data",
+      "rationale": "Manufacturing process and protein comparison do not provide calorie counts",
+      "domain": "food",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1044",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "What is the current interest rate on a 30-year fixed mortgage in the US?",
+      "contexts": [
+        "A 30-year fixed-rate mortgage is the most common home loan in the United States, offering predictable monthly payments."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context explains mortgages but lacks current rate data",
+      "rationale": "General mortgage information does not state the current rate",
+      "domain": "real_estate",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1045",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "How long does it take for light to travel from the Sun to Mars?",
+      "contexts": [
+        "Mars is the fourth planet from the Sun and has a thin atmosphere composed primarily of carbon dioxide.",
+        "Mars has two small moons, Phobos and Deimos, which are believed to be captured asteroids."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Mars but no distance or light travel time data",
+      "rationale": "Mars atmospheric composition and moons do not provide light travel time information",
+      "domain": "science",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1046",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "Who makes up the largest age demographic on TikTok?",
+      "contexts": [
+        "TikTok has over 1 billion monthly active users globally and is available in over 150 countries."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about TikTok usage but no age demographic breakdown",
+      "rationale": "Total user count does not include age demographics",
+      "domain": "social_media",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1047",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "When was the first electric bus deployed in public transit in New York City?",
+      "contexts": [
+        "New York City's Metropolitan Transportation Authority operates the largest public transit system in the United States.",
+        "The MTA has announced plans to transition its entire bus fleet to zero-emission vehicles.",
+        "New York City buses serve over 2 million riders per day across more than 300 routes."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about NYC buses but no specific deployment dates for electric buses",
+      "rationale": "Fleet size and transition plans do not provide the specific date of first electric bus deployment",
+      "domain": "transportation",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1048",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "What is the dropout rate for online psychology degree programs?",
+      "contexts": [
+        "Online psychology degree programs have grown significantly in popularity since 2020."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about online psychology programs but no dropout statistics",
+      "rationale": "Program popularity data does not include dropout rates",
+      "domain": "psychology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1049",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "How much does the US government spend annually on wildfire suppression?",
+      "contexts": [
+        "Wildfires in the western United States have increased in frequency and severity due to climate change and drought conditions.",
+        "The US Forest Service manages approximately 193 million acres of national forests and grasslands."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about wildfires but no spending figures",
+      "rationale": "Wildfire trends and Forest Service acreage do not include budget or spending data",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1050",
+      "difficulty": "medium",
+      "subcategory": "missing_data",
+      "query": "What is the conviction rate for federal white-collar crime cases in the US?",
+      "contexts": [
+        "White-collar crime includes fraud, embezzlement, insider trading, and money laundering.",
+        "The FBI investigates white-collar crime through its Financial Crimes Section, working with other federal agencies.",
+        "White-collar crime costs the US economy an estimated $300 billion or more each year."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context defines white-collar crime but lacks conviction statistics",
+      "rationale": "Crime definitions, investigation details, and cost estimates do not provide conviction rate data",
+      "domain": "law",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1051",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "What is the current population of the Greater Tokyo Area in 2025?",
+      "contexts": [
+        "According to the 2010 census, the Greater Tokyo Area had a population of approximately 35.6 million people."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks for 2025 population but context has 2010 census data",
+      "rationale": "A 2010 census figure cannot provide the specific 2025 population number",
+      "domain": "general",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1052",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "How does Python 3.12 handle structural pattern matching?",
+      "contexts": [
+        "Python 2.7 was the last release of the Python 2.x series, reaching end of life on January 1, 2020.",
+        "Python 2.7 supported print as a statement rather than a function, unlike Python 3."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Python 3.12 features but context covers Python 2.7",
+      "rationale": "Python 2.7 documentation cannot describe Python 3.12's pattern matching capabilities",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1053",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "What were the results of the 2024 US presidential election?",
+      "contexts": [
+        "The 2016 US presidential election was won by Donald Trump, who defeated Hillary Clinton with 304 electoral votes.",
+        "Voter turnout in the 2016 election was approximately 55.7% of the voting-eligible population.",
+        "Key swing states in 2016 included Wisconsin, Michigan, and Pennsylvania."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about 2024 election but context covers 2016",
+      "rationale": "2016 election results and turnout say nothing about the 2024 election outcome",
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1054",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "Should I invest in cryptocurrency in 2025 given current market conditions?",
+      "contexts": [
+        "In 2017, Bitcoin reached a then all-time high of nearly $20,000 before crashing to around $3,200 in late 2018."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about 2025 crypto market but context describes 2017-2018 conditions",
+      "rationale": "2017 crypto market dynamics cannot inform 2025 investment decisions",
+      "domain": "finance",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1055",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the latest treatment guidelines for Type 2 diabetes?",
+      "contexts": [
+        "The 2012 American Diabetes Association guidelines recommended metformin as first-line therapy for Type 2 diabetes.",
+        "In 2012, sulfonylureas and thiazolidinediones were commonly prescribed as second-line treatments."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about latest guidelines but context has 2012 standards",
+      "rationale": "2012 treatment guidelines are over a decade outdated and cannot represent current standards",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1056",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "When did the Roman Republic transition to the Roman Empire?",
+      "contexts": [
+        "The fall of the Western Roman Empire in 476 CE is traditionally considered the end of ancient Rome.",
+        "The Eastern Roman Empire, known as the Byzantine Empire, continued until the fall of Constantinople in 1453.",
+        "Germanic chieftain Odoacer deposed the last Western Roman Emperor, Romulus Augustulus."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Republic-to-Empire transition but context covers the Empire's fall",
+      "rationale": "Information about the fall of Rome (476 CE and 1453) cannot answer about the Republic-to-Empire transition (27 BCE)",
+      "domain": "history",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1057",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "When did Instagram change its Reels algorithm to the current 2025 version?",
+      "contexts": [
+        "In 2019, Instagram's algorithm prioritized content from accounts users interacted with most frequently."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about 2025 Reels algorithm changes but context covers 2019 feed algorithm",
+      "rationale": "2019 feed algorithm details do not describe when or how the 2025 Reels algorithm was introduced",
+      "domain": "social_media",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1058",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "What are the current emissions standards for passenger vehicles in the EU?",
+      "contexts": [
+        "The Euro 4 emissions standard was introduced in 2005 and required significant reductions in nitrogen oxide and particulate matter.",
+        "Euro 4 applied to all new passenger cars registered in EU member states starting January 2006."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about current EU emissions standards but context covers Euro 4 from 2005",
+      "rationale": "2005 Euro 4 standards are outdated and do not reflect current EU vehicle emissions requirements",
+      "domain": "environment",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1059",
+      "difficulty": "medium",
+      "subcategory": "temporal_mismatch",
+      "query": "How has remote work adoption changed since the COVID-19 pandemic?",
+      "contexts": [
+        "A 2015 Gallup survey found that 37% of US workers had telecommuted at some point, up from 9% in 1995.",
+        "In 2015, technology companies led remote work adoption, while most industries required in-office presence.",
+        "Remote work in 2015 was most common among employees with college degrees and higher incomes."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about post-pandemic remote work but context is from 2015, pre-pandemic",
+      "rationale": "2015 telecommuting statistics predate the pandemic and cannot describe post-COVID changes",
+      "domain": "hr_workplace",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1060",
+      "difficulty": "medium",
+      "subcategory": "wrong_specificity",
+      "query": "What is the exact boiling point of ethanol at sea level?",
+      "contexts": [
+        "Ethanol is a widely used organic solvent and the intoxicating ingredient in alcoholic beverages.",
+        "Ethanol is classified as a primary alcohol with the chemical formula C2H5OH."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes ethanol generally but lacks specific physical constants",
+      "rationale": "Chemical classification and uses do not provide the specific boiling point value",
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1061",
+      "difficulty": "medium",
+      "subcategory": "wrong_specificity",
+      "query": "How do I configure a specific CORS policy for an Express.js API endpoint?",
+      "contexts": [
+        "Express.js is a popular Node.js web framework used to build APIs and web applications."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context gives Express.js overview but no CORS configuration specifics",
+      "rationale": "A general framework overview cannot provide specific CORS configuration steps",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1062",
+      "difficulty": "medium",
+      "subcategory": "wrong_specificity",
+      "query": "Which specific pesticides are banned for use on strawberries in California?",
+      "contexts": [
+        "California is the largest producer of strawberries in the United States, growing over 90% of the national crop.",
+        "Strawberry farming in California relies heavily on favorable climate conditions in the Salinas Valley and Oxnard Plain.",
+        "California strawberry growers produce approximately 2.5 billion pounds of berries annually."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about California strawberry farming but no pesticide regulation details",
+      "rationale": "Production statistics and growing regions do not identify specific banned pesticides",
+      "domain": "agriculture",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1063",
+      "difficulty": "medium",
+      "subcategory": "wrong_specificity",
+      "query": "How do I file a small claims court case step by step in Texas?",
+      "contexts": [
+        "Small claims courts exist in most US states to resolve minor civil disputes without formal legal representation.",
+        "Small claims courts typically handle cases involving amounts under a certain threshold, varying by state."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context gives general small claims overview but not Texas-specific procedures",
+      "rationale": "General US small claims court information cannot answer about Texas-specific filing procedures",
+      "domain": "law",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1064",
+      "difficulty": "medium",
+      "subcategory": "wrong_specificity",
+      "query": "Should I take vitamin D supplements if my blood level is 18 ng/mL?",
+      "contexts": [
+        "Vitamin D is important for bone health, immune function, and calcium absorption."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context gives general vitamin D info but no dosing guidance for specific blood levels",
+      "rationale": "General vitamin D benefits cannot advise on supplementation for a specific deficiency level",
+      "domain": "medicine",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1065",
+      "difficulty": "medium",
+      "subcategory": "wrong_specificity",
+      "query": "When is the garbage pickup schedule for residential addresses in Brooklyn, New York?",
+      "contexts": [
+        "New York City's Department of Sanitation is responsible for waste collection across the five boroughs.",
+        "The city collects over 12,000 tons of residential waste per day.",
+        "NYC's sanitation department employs over 10,000 workers and operates a fleet of collection trucks."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about NYC sanitation generally but no specific Brooklyn schedule",
+      "rationale": "City-wide waste statistics cannot provide the specific pickup schedule for Brooklyn",
+      "domain": "general",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1066",
+      "difficulty": "medium",
+      "subcategory": "wrong_specificity",
+      "query": "How do I appeal a property tax assessment in Cook County, Illinois?",
+      "contexts": [
+        "Property taxes are a primary source of revenue for local governments across the United States.",
+        "Property tax assessments are typically based on the fair market value of real property."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context covers property taxes generally but not Cook County appeal procedures",
+      "rationale": "General US property tax information cannot describe Cook County's specific appeal process",
+      "domain": "real_estate",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1067",
+      "difficulty": "medium",
+      "subcategory": "wrong_specificity",
+      "query": "Why do some students with ADHD perform better in project-based learning environments?",
+      "contexts": [
+        "ADHD affects approximately 5-7% of children worldwide and is characterized by inattention, hyperactivity, and impulsivity."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context gives ADHD overview but no information on learning environment outcomes",
+      "rationale": "ADHD prevalence and symptoms do not explain learning style performance differences",
+      "domain": "education",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1068",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "Why is photosynthesis essential for converting atmospheric carbon dioxide into glucose?",
+      "contexts": [
+        "The carbon credit market allows companies to offset their emissions by purchasing credits from certified projects."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about biological photosynthesis but context covers carbon trading",
+      "rationale": "Carbon credit markets are unrelated to the biochemistry of photosynthesis",
+      "domain": "science",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1069",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "What are the rules for offsides in soccer?",
+      "contexts": [
+        "International trade rules are governed by the World Trade Organization, which has 164 member countries.",
+        "Trade disputes between WTO members are resolved through a formal dispute settlement process."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about soccer rules but context discusses international trade rules",
+      "rationale": "WTO trade regulations have no connection to soccer offsides rules",
+      "domain": "sports",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1070",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "Is cognitive behavioral therapy effective for treating insomnia?",
+      "contexts": [
+        "Behavioral economics studies how psychological factors influence economic decision-making.",
+        "Nudge theory suggests that small changes in how choices are presented can significantly affect behavior.",
+        "Daniel Kahneman's work on prospect theory earned him the 2002 Nobel Prize in Economics."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about clinical therapy for insomnia but context covers behavioral economics",
+      "rationale": "Behavioral economics and nudge theory are unrelated to clinical psychology treatment of insomnia",
+      "domain": "psychology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1071",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "How do self-driving cars detect pedestrians at crosswalks?",
+      "contexts": [
+        "Pedestrian bridge design requires careful consideration of load-bearing capacity, wind resistance, and accessibility standards."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about autonomous vehicle pedestrian detection but context covers pedestrian bridges",
+      "rationale": "Bridge engineering is unrelated to autonomous vehicle sensor technology",
+      "domain": "transportation",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1072",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "Why do sourdough bread recipes require a starter culture?",
+      "contexts": [
+        "Bacterial cultures are used in wastewater treatment plants to break down organic matter and remove contaminants.",
+        "Activated sludge processes rely on aerobic microorganisms to consume biological waste in sewage."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about bread fermentation but context covers wastewater treatment cultures",
+      "rationale": "Industrial wastewater bacterial cultures are unrelated to sourdough bread fermentation",
+      "domain": "food",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1073",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "Does the Fair Housing Act apply to short-term rental platforms like Airbnb?",
+      "contexts": [
+        "The Fair Labor Standards Act establishes minimum wage, overtime pay, and child labor protections for workers.",
+        "The FLSA applies to employees of enterprises with annual gross sales of at least $500,000.",
+        "Overtime under the FLSA is calculated at 1.5 times the regular rate for hours worked beyond 40 per week."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Fair Housing Act but context discusses Fair Labor Standards Act",
+      "rationale": "The Fair Labor Standards Act regulates employment, not housing discrimination or rental platforms",
+      "domain": "law",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1074",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "What soil pH level is optimal for growing blueberries?",
+      "contexts": [
+        "Soil erosion is a major environmental concern affecting agricultural productivity worldwide."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about soil chemistry for blueberry cultivation but context covers soil erosion",
+      "rationale": "Soil erosion concerns are unrelated to the optimal pH for blueberry cultivation",
+      "domain": "agriculture",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1075",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "Should I enable multi-factor authentication for my email account?",
+      "contexts": [
+        "Email marketing campaigns can achieve open rates of 20-25% when properly segmented and personalized.",
+        "A/B testing subject lines is one of the most effective ways to improve email engagement metrics."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about email security but context covers email marketing",
+      "rationale": "Email marketing strategies and engagement metrics do not address email account security decisions",
+      "domain": "technology",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1076",
+      "difficulty": "medium",
+      "subcategory": "wrong_domain",
+      "query": "Should I invest in index funds or individual stocks for retirement savings?",
+      "contexts": [
+        "Stock photography has evolved significantly with the rise of smartphone cameras and social media platforms.",
+        "Major stock photo agencies like Getty Images and Shutterstock offer millions of licensed images.",
+        "AI-generated images are beginning to disrupt the stock photography industry."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about stock market investing but context discusses stock photography",
+      "rationale": "Stock photography industry information is entirely unrelated to financial investment strategies",
+      "domain": "finance",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1077",
+      "difficulty": "medium",
+      "subcategory": "off_topic_contradiction",
+      "query": "Is intermittent fasting safe for pregnant women?",
+      "contexts": [
+        "Intermittent fasting has shown benefits for weight loss and metabolic health in healthy adults.",
+        "Studies on intermittent fasting typically exclude pregnant women, nursing mothers, and individuals under 18."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query assumes fasting applicability to pregnancy but context explicitly excludes pregnant women from studies",
+      "rationale": "The studies exclude pregnant women, so there is no evidence to support safety claims for this population",
+      "domain": "medicine",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1078",
+      "difficulty": "medium",
+      "subcategory": "off_topic_contradiction",
+      "query": "How can I grow my business on social media while staying completely anonymous?",
+      "contexts": [
+        "Successful social media marketing requires building brand authenticity and personal connections with followers."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query asks about anonymous growth but context emphasizes authenticity and personal branding",
+      "rationale": "The context prescribes transparency and personal connection, directly contradicting anonymous operation",
+      "domain": "social_media",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1079",
+      "difficulty": "medium",
+      "subcategory": "off_topic_contradiction",
+      "query": "Does the no-carb diet improve athletic endurance performance?",
+      "contexts": [
+        "Carbohydrates are the primary fuel source for high-intensity endurance activities like marathon running.",
+        "Athletes who carb-load before events can store up to 2,000 calories of glycogen for sustained energy.",
+        "Glycogen depletion during endurance events is known as 'hitting the wall' and severely impacts performance."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query implies no-carb could help endurance but context shows carbs are essential for it",
+      "rationale": "Context establishes carbohydrates as essential for endurance, contradicting the premise of a no-carb approach",
+      "domain": "sports",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1080",
+      "difficulty": "medium",
+      "subcategory": "off_topic_contradiction",
+      "query": "Why is deforestation beneficial for local ecosystems?",
+      "contexts": [
+        "Deforestation leads to habitat loss, soil degradation, and increased carbon dioxide emissions.",
+        "The removal of forests disrupts water cycles and can lead to increased flooding in downstream areas."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query assumes deforestation is beneficial but context describes only harms",
+      "rationale": "Context documents only negative ecological impacts of deforestation, with no evidence of ecosystem benefits",
+      "domain": "environment",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1081",
+      "difficulty": "medium",
+      "subcategory": "off_topic_contradiction",
+      "query": "How does increasing class size improve student learning outcomes?",
+      "contexts": [
+        "Research consistently shows that smaller class sizes lead to better student achievement, particularly in early grades."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query implies larger classes help but context shows smaller classes are better",
+      "rationale": "Research evidence supports smaller classes, contradicting the premise that larger classes improve outcomes",
+      "domain": "education",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1082",
+      "difficulty": "medium",
+      "subcategory": "off_topic_contradiction",
+      "query": "Why should companies avoid giving employees regular feedback?",
+      "contexts": [
+        "Regular employee feedback increases engagement, reduces turnover, and helps identify performance issues early.",
+        "Companies with structured feedback programs report 14.9% lower turnover than those without.",
+        "Gallup research indicates that employees who receive regular feedback are 3.6 times more likely to be engaged."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query implies feedback should be avoided but context shows it is beneficial",
+      "rationale": "Context provides evidence that regular feedback is valuable, with no support for avoiding it",
+      "domain": "hr_workplace",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1083",
+      "difficulty": "medium",
+      "subcategory": "off_topic_contradiction",
+      "query": "Is it safe to drive a car without insurance in most US states?",
+      "contexts": [
+        "Almost all US states require drivers to carry minimum liability insurance coverage.",
+        "Penalties for driving without insurance include fines, license suspension, and vehicle impoundment."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query implies driving uninsured might be safe but context shows it is illegal and penalized",
+      "rationale": "Context establishes that insurance is legally required with penalties, contradicting the safety premise",
+      "domain": "law",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1084",
+      "difficulty": "medium",
+      "subcategory": "off_topic_contradiction",
+      "query": "How does sleep deprivation enhance cognitive performance?",
+      "contexts": [
+        "Sleep deprivation impairs attention, working memory, and decision-making abilities."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query assumes sleep deprivation enhances cognition but context shows it impairs it",
+      "rationale": "Evidence in context shows sleep deprivation harms cognition, contradicting the enhancement premise",
+      "domain": "psychology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1085",
+      "difficulty": "medium",
+      "subcategory": "wrong_product",
+      "query": "What are the camera specifications of the iPhone 15 Pro?",
+      "contexts": [
+        "The Samsung Galaxy S24 Ultra features a 200MP main camera with advanced AI-powered image processing.",
+        "Samsung's camera system includes a 12MP ultrawide lens and two telephoto lenses at 3x and 5x optical zoom.",
+        "Samsung's Nightography mode enhances low-light photography performance across all lenses."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about iPhone 15 Pro camera but context describes Samsung Galaxy S24 Ultra",
+      "rationale": "Samsung Galaxy S24 Ultra camera specifications are for a different product than the iPhone 15 Pro",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1086",
+      "difficulty": "medium",
+      "subcategory": "wrong_product",
+      "query": "Compare the Toyota Camry hybrid to its gasoline-only version in fuel economy.",
+      "contexts": [
+        "The Honda Accord hybrid achieves an EPA-estimated 48 mpg city and 47 mpg highway.",
+        "Honda's two-motor hybrid system in the Accord provides seamless transitions between electric and gas power."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query compares Toyota Camry variants but context covers Honda Accord hybrid",
+      "rationale": "Honda Accord hybrid fuel economy cannot answer about Toyota Camry hybrid vs gasoline comparison",
+      "domain": "transportation",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1087",
+      "difficulty": "medium",
+      "subcategory": "wrong_product",
+      "query": "Does the Dyson V15 vacuum perform well on hardwood floors?",
+      "contexts": [
+        "The Shark Navigator Lift-Away NV352 is a popular upright vacuum with detachable canister capability."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Dyson V15 but context discusses Shark Navigator vacuum",
+      "rationale": "Shark Navigator specifications cannot answer about Dyson V15 performance",
+      "domain": "general",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1088",
+      "difficulty": "medium",
+      "subcategory": "wrong_product",
+      "query": "What are the interest rates and annual fee on the Chase Sapphire Reserve credit card?",
+      "contexts": [
+        "The American Express Platinum Card charges a $695 annual fee and offers 5x points on flights and hotels.",
+        "Amex Platinum cardholders receive access to airport lounges, hotel elite status, and various travel credits.",
+        "The Amex Platinum card has a variable APR of 21.49% to 29.49% depending on creditworthiness."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Chase Sapphire Reserve rates but context describes Amex Platinum",
+      "rationale": "American Express Platinum card details do not provide Chase Sapphire Reserve interest rate information",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1089",
+      "difficulty": "medium",
+      "subcategory": "wrong_product",
+      "query": "Which features does Slack offer for project management and task tracking?",
+      "contexts": [
+        "Microsoft Teams integrates deeply with Office 365, offering document co-authoring, shared calendars, and video meetings.",
+        "Teams supports third-party app integrations and custom tabs for project tracking within channels."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Slack's project management features but context covers Microsoft Teams",
+      "rationale": "Microsoft Teams features and integrations cannot answer about Slack's project management capabilities",
+      "domain": "technology",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1090",
+      "difficulty": "medium",
+      "subcategory": "wrong_product",
+      "query": "How effective is the Pfizer COVID-19 booster shot for elderly patients?",
+      "contexts": [
+        "The Moderna COVID-19 vaccine uses mRNA technology to produce spike protein antibodies."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Pfizer booster effectiveness but context covers Moderna vaccine",
+      "rationale": "Moderna vaccine information cannot answer about Pfizer booster effectiveness in elderly populations",
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1091",
+      "difficulty": "medium",
+      "subcategory": "wrong_product",
+      "query": "Should I buy the Weber Genesis gas grill or the Spirit model for backyard cooking?",
+      "contexts": [
+        "The Traeger Ironwood 885 pellet grill offers WiFIRE technology for remote temperature monitoring and control.",
+        "Traeger pellet grills use hardwood pellets for fuel, producing a distinctive smoky flavor.",
+        "The Traeger Ironwood 885 has 885 square inches of cooking space and retails for approximately $1,800."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query compares Weber grill models but context discusses Traeger pellet grills",
+      "rationale": "Traeger pellet grill features cannot inform a comparison between Weber Genesis and Spirit gas grills",
+      "domain": "general",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1092",
+      "difficulty": "medium",
+      "subcategory": "wrong_product",
+      "query": "Compare the nutritional profiles of Impossible Burger and Beyond Burger patties.",
+      "contexts": [
+        "Morning Star Farms produces a range of vegetarian and vegan frozen food products including burgers and sausages.",
+        "Morning Star's black bean burger contains 110 calories per serving with 10 grams of protein."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query compares Impossible and Beyond Burger but context discusses Morning Star products",
+      "rationale": "Morning Star nutritional data cannot answer a comparison between Impossible Burger and Beyond Burger",
+      "domain": "food",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1093",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "What data privacy rights do consumers have under California's CCPA?",
+      "contexts": [
+        "The European Union's GDPR requires companies to obtain explicit consent before collecting personal data."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about California CCPA rights but context covers EU GDPR",
+      "rationale": "EU GDPR provisions are a different legal framework from California's CCPA consumer rights",
+      "domain": "law",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1094",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "How does the Australian public school system fund education?",
+      "contexts": [
+        "Japan's public education system is funded primarily through a combination of national and local government budgets.",
+        "Japanese schools follow a 6-3-3 system with six years of elementary, three years of middle, and three years of high school."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Australian education funding but context covers Japanese system",
+      "rationale": "Japanese education funding and school structure cannot answer about Australian public school financing",
+      "domain": "education",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1095",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "What is the minimum wage in Germany as of 2024?",
+      "contexts": [
+        "France's minimum wage (SMIC) was set at EUR 11.65 per hour as of January 2024.",
+        "The French minimum wage is adjusted annually based on inflation and average wage growth.",
+        "France has one of the highest minimum wages in the European Union."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about German minimum wage but context provides French minimum wage",
+      "rationale": "France's SMIC rate cannot answer about Germany's minimum wage level",
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1096",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "Does India allow genetically modified crops for commercial farming?",
+      "contexts": [
+        "Brazil is one of the world's largest producers of genetically modified soybean, corn, and cotton."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about India's GMO policy but context covers Brazil's GMO production",
+      "rationale": "Brazil's GMO crop production does not address India's GMO policies",
+      "domain": "agriculture",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1097",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "What are the property tax rates for residential homes in Toronto, Canada?",
+      "contexts": [
+        "Property tax rates in London, UK vary by borough, with the City of Westminster having some of the highest rates.",
+        "UK council tax is based on property value bands established in 1991, with Band D being the reference point."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Toronto property tax but context covers London UK council tax",
+      "rationale": "UK council tax rates and valuation bands do not apply to Toronto's property tax system",
+      "domain": "real_estate",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1098",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "Is medical marijuana legal in South Korea?",
+      "contexts": [
+        "Canada legalized recreational cannabis nationwide in October 2018 through the Cannabis Act.",
+        "Canadian provinces have varying regulations on retail cannabis sales, with some allowing private stores and others using government-run outlets.",
+        "The Cannabis Act imposes strict penalties for selling cannabis to minors and for impaired driving."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about South Korean marijuana law but context covers Canadian cannabis legalization",
+      "rationale": "Canada's Cannabis Act and provincial regulations say nothing about South Korea's drug laws",
+      "domain": "law",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1099",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "How does the public transit system work in Singapore?",
+      "contexts": [
+        "Hong Kong's Mass Transit Railway (MTR) system carries over 5 million passengers daily across 10 lines."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Singapore transit but context describes Hong Kong's MTR system",
+      "rationale": "Hong Kong's MTR details cannot describe Singapore's public transit system",
+      "domain": "transportation",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1100",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "What is the corporate tax rate in Mexico?",
+      "contexts": [
+        "Colombia's corporate tax rate was set at 35% for the 2023 fiscal year under recent tax reform legislation.",
+        "Colombia offers tax incentives for companies operating in free trade zones, including reduced corporate tax rates."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about Mexico's corporate tax but context provides Colombia's tax rate",
+      "rationale": "Colombia's corporate tax rate and incentives cannot answer about Mexico's corporate tax rate",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1101",
+      "difficulty": "medium",
+      "subcategory": "wrong_jurisdiction",
+      "query": "Who is eligible for unemployment benefits in the United Kingdom?",
+      "contexts": [
+        "In the United States, unemployment insurance is jointly administered by federal and state governments.",
+        "US unemployment benefits typically replace about 40-50% of a worker's previous earnings for up to 26 weeks.",
+        "Eligibility for US unemployment insurance requires workers to have earned a minimum amount in wages during a base period."
+      ],
+      "expected_mode": "abstain",
+      "description": "Query about UK unemployment eligibility but context covers US unemployment system",
+      "rationale": "US unemployment insurance rules and benefit levels do not describe UK eligibility requirements",
+      "domain": "government",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1102",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "Who is the current CEO of Twitter?",
+      "contexts": [
+        "Jack Dorsey co-founded Twitter in 2006 and served as CEO until November 2021.",
+        "During Dorsey's tenure, Twitter grew from a microblogging startup to a publicly traded company with over 200 million users."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context covers Dorsey's tenure ending in 2021 but company has since changed ownership and leadership",
+      "rationale": "Information ending in 2021 cannot answer about the current CEO after ownership changes",
+      "domain": "technology",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1103",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "How many subscribers does Netflix currently have worldwide?",
+      "contexts": [
+        "As of Q4 2019, Netflix had approximately 167 million paid subscribers worldwide."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has 2019 Netflix subscriber data but current numbers have changed significantly",
+      "rationale": "2019 subscriber figures are significantly outdated and cannot represent current subscriber counts",
+      "domain": "general",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1104",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "What is the current federal funds rate set by the Federal Reserve?",
+      "contexts": [
+        "In March 2020, the Federal Reserve cut the federal funds rate to a target range of 0-0.25% in response to the COVID-19 pandemic.",
+        "The near-zero rate policy was implemented alongside massive quantitative easing programs to support the economy.",
+        "The Fed's emergency rate cuts in March 2020 were the largest single cuts since the 2008 financial crisis."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has 2020 pandemic-era rate but rates have changed drastically since",
+      "rationale": "The 2020 emergency rate cut is severely outdated given subsequent rate hikes through 2022-2024",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1105",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "Should I learn to develop apps for the Windows Phone platform?",
+      "contexts": [
+        "Windows Phone 8.1 introduced Cortana virtual assistant and a notification center to compete with iOS and Android.",
+        "Microsoft's Windows Phone platform uses XAML and C# for app development through the Windows Phone SDK."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes Windows Phone development but the platform has been discontinued",
+      "rationale": "Windows Phone was discontinued in 2017 so this outdated information is not useful for current career decisions",
+      "domain": "technology",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1106",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "What are the current WHO guidelines for COVID-19 quarantine periods?",
+      "contexts": [
+        "In early 2020, the WHO recommended a 14-day quarantine period for individuals exposed to COVID-19."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has early 2020 quarantine guidelines but these have been updated multiple times",
+      "rationale": "Early 2020 quarantine recommendations for the original strain do not reflect current guidelines",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1107",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "Who holds the all-time FIFA World Cup scoring record?",
+      "contexts": [
+        "As of the 2010 World Cup, Miroslav Klose held the all-time World Cup scoring record with 14 goals across four tournaments.",
+        "The 2010 South Africa World Cup was won by Spain, who defeated the Netherlands 1-0 in the final.",
+        "Klose surpassed Ronaldo's previous record of 15 goals during the 2014 World Cup in Brazil."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has 2010 records but subsequent World Cups may have changed records",
+      "rationale": "2010 data and even 2014 data do not account for goals scored in 2018 and 2022 World Cup tournaments",
+      "domain": "sports",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1108",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "What are the current best practices for responsive web design?",
+      "contexts": [
+        "In 2013, responsive web design typically relied on CSS media queries and fluid grid layouts.",
+        "Bootstrap 3, released in 2013, was the most popular framework for building responsive websites."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes 2013 web design practices but technology has evolved significantly",
+      "rationale": "2013 responsive design practices predate CSS Grid, Flexbox, container queries, and modern frameworks",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1109",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "What is the current unemployment rate in the United States?",
+      "contexts": [
+        "The US unemployment rate peaked at 14.7% in April 2020 during the initial COVID-19 lockdowns."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has 2020 pandemic unemployment data but rates have changed significantly",
+      "rationale": "2020 pandemic-era unemployment figures are severely outdated for determining the current rate",
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_medium_1110",
+      "difficulty": "medium",
+      "subcategory": "outdated_context",
+      "query": "Which country currently leads the world in installed solar energy capacity?",
+      "contexts": [
+        "As of 2015, Germany led the world in installed solar photovoltaic capacity with approximately 40 gigawatts.",
+        "Germany's Energiewende policy drove massive investment in renewable energy throughout the 2010s.",
+        "China was rapidly expanding its solar capacity in 2015, adding over 15 gigawatts in a single year."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context shows 2015 solar leaders but global rankings have shifted dramatically",
+      "rationale": "2015 solar capacity rankings are outdated as China and other nations have since massively expanded capacity",
+      "domain": "environment",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1101",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "Why did the Roman Republic collapse into civil war under Julius Caesar?",
+      "contexts": [
+        "The Roman Empire reached its greatest territorial extent under Emperor Trajan in 117 CE, spanning from Britain to Mesopotamia.",
+        "Augustus Caesar established the Principate system of government after defeating Mark Antony at the Battle of Actium in 31 BCE."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about the Roman Empire under Trajan and Augustus, not the Republic's collapse under Julius Caesar",
+      "rationale": "Imperial expansion under Trajan and Augustus's post-civil-war Principate do not explain why the Republic collapsed into civil war in the first place",
+      "domain": "history",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1102",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "Who designed the psychological experiment known as the Robbers Cave study?",
+      "contexts": [
+        "The Stanford Prison Experiment, conducted by Philip Zimbardo in 1971, examined how assigned roles affect behavior in a simulated prison.",
+        "Stanley Milgram's obedience experiments at Yale University demonstrated that ordinary people would administer electric shocks when instructed by an authority figure."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Stanford Prison Experiment and Milgram's obedience studies, not the Robbers Cave study",
+      "rationale": "Zimbardo's prison experiment and Milgram's obedience research are different classic studies and do not identify who designed the Robbers Cave intergroup conflict experiment",
+      "domain": "psychology",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1103",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "Who founded the Mayo Clinic's Department of Neurosurgery?",
+      "contexts": [
+        "The Mayo Clinic was founded in 1889 by William Worrall Mayo and his sons William James Mayo and Charles Horace Mayo in Rochester, Minnesota.",
+        "The Mayo Clinic's Department of Cardiology has been ranked as the top heart program in the United States for multiple consecutive years.",
+        "Mayo Clinic's organizational model uses an integrated, multi-specialty group practice that was revolutionary for its time."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Mayo Clinic founding and cardiology, not neurosurgery department",
+      "rationale": "The overall clinic's founding and cardiology department ranking cannot answer who started the neurosurgery department",
+      "domain": "medicine",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1104",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "Is the Toyota Camry Hybrid's powertrain based on a CVT or a traditional automatic transmission?",
+      "contexts": [
+        "The Toyota Camry offers a 2.5-liter four-cylinder engine producing 203 horsepower paired with an 8-speed automatic transmission.",
+        "Toyota's safety suite includes pre-collision warning, lane departure alert, and adaptive cruise control across all Camry trims."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about non-hybrid Camry drivetrain, not the hybrid powertrain",
+      "rationale": "The standard Camry's 8-speed automatic does not describe the hybrid model's eCVT planetary gear system",
+      "domain": "transportation",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1105",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What fertilizer schedule does Monsanto recommend for Roundup Ready soybeans in clay soil?",
+      "contexts": [
+        "Monsanto's Roundup Ready corn varieties have been engineered to tolerate glyphosate herbicide applications during the growing season.",
+        "Recommended planting density for Roundup Ready corn is 32,000 to 36,000 seeds per acre depending on soil moisture availability."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Roundup Ready corn, not soybeans",
+      "rationale": "Corn planting density and corn herbicide programs do not provide soybean fertilizer schedules for clay soil",
+      "domain": "agriculture",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1106",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "How does Harvard Law School's clinical program differ from Yale Law School's?",
+      "contexts": [
+        "Harvard Law School offers over 300 courses across constitutional law, international law, and business law.",
+        "Yale Law School's faculty-to-student ratio of approximately 1:8 is among the lowest of any law school in the country."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about course offerings and rankings but not clinical programs specifically",
+      "rationale": "Course catalog breadth and faculty ratios do not describe the structure, scope, or differences of clinical programs at either school",
+      "domain": "education",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1107",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "What is the caloric content of a Starbucks Caramel Frappuccino grande?",
+      "contexts": [
+        "A Starbucks Grande Caffe Latte contains 190 calories with 2% milk and provides 13 grams of protein.",
+        "The Starbucks Grande Vanilla Sweet Cream Cold Brew has 110 calories and 14 grams of sugar."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about other Starbucks drinks, not Caramel Frappuccino",
+      "rationale": "Calorie counts for lattes and cold brew cannot be used to determine Caramel Frappuccino calories, which has distinct ingredients",
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1108",
+      "difficulty": "hard",
+      "subcategory": "wrong_entity",
+      "query": "Who is the current governor of Michigan?",
+      "contexts": [
+        "Michigan's two U.S. senators serve six-year terms and represent the state in the upper chamber of Congress.",
+        "The Michigan state legislature consists of a 38-member Senate and a 110-member House of Representatives."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Michigan's legislative representation, not the governor",
+      "rationale": "Information about senators and state legislature does not identify the sitting governor",
+      "domain": "government",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1109",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the error rate of GPT-4 on the MMLU benchmark broken down by subject?",
+      "contexts": [
+        "GPT-4 achieved an overall accuracy of 86.4% on the MMLU benchmark, surpassing previous models.",
+        "The MMLU benchmark covers 57 subjects spanning STEM, humanities, social sciences, and other domains."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context gives overall MMLU score but not per-subject breakdown",
+      "rationale": "An aggregate 86.4% accuracy cannot be decomposed into subject-level error rates without per-subject data",
+      "domain": "general",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1110",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "When did the Ottoman Empire first begin using gunpowder weapons in siege warfare?",
+      "contexts": [
+        "The Ottoman Empire was one of the most powerful states in the 15th and 16th centuries, controlling vast territories across three continents.",
+        "The fall of Constantinople in 1453 demonstrated the devastating effectiveness of large-caliber bombardment cannons against medieval fortifications."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context mentions the 1453 siege but not when gunpowder weapons were first adopted",
+      "rationale": "The fall of Constantinople shows gunpowder weapons were already in use by 1453, but does not identify when the Ottomans first began using them in siege warfare",
+      "domain": "history",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1111",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the five-year survival rate for stage III pancreatic cancer with FOLFIRINOX treatment?",
+      "contexts": [
+        "Pancreatic cancer has an overall five-year survival rate of approximately 12% across all stages.",
+        "FOLFIRINOX is a chemotherapy regimen combining fluorouracil, leucovorin, irinotecan, and oxaliplatin.",
+        "Clinical trials have shown FOLFIRINOX improves median overall survival in metastatic pancreatic cancer compared to gemcitabine alone.",
+        "Stage III pancreatic cancer is locally advanced, meaning the tumor has grown into nearby blood vessels or lymph nodes."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context discusses overall survival rates and FOLFIRINOX benefits but not the specific 5-year rate for stage III with FOLFIRINOX",
+      "rationale": "Overall 12% survival across all stages and general FOLFIRINOX benefit data cannot yield the specific stage III + FOLFIRINOX five-year figure",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1112",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "When did the Amazon rainforest deforestation rate first exceed 10,000 square kilometers per year?",
+      "contexts": [
+        "The Amazon rainforest covers approximately 5.5 million square kilometers across nine South American countries.",
+        "Deforestation in the Amazon has been driven by cattle ranching, soy cultivation, and illegal logging."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes Amazon deforestation drivers but not historical rate data",
+      "rationale": "Causes of deforestation do not include the year-by-year rate figures needed to answer when 10,000 sq km was first exceeded",
+      "domain": "environment",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1113",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "Should employers use structured or unstructured interviews based on predictive validity data?",
+      "contexts": [
+        "Structured interviews use predetermined questions asked consistently to all candidates with standardized scoring rubrics.",
+        "Unstructured interviews allow the interviewer to adapt questions based on the conversation flow and candidate responses."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context defines both interview types but lacks validity comparison data",
+      "rationale": "Definitions of structured and unstructured interviews do not include the predictive validity coefficients or meta-analytic data needed for a recommendation",
+      "domain": "hr_workplace",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1114",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "Which NBA team had the highest payroll in the 2023-24 season?",
+      "contexts": [
+        "The NBA salary cap for the 2023-24 season was set at $136 million, with a luxury tax threshold of $165 million.",
+        "Several teams exceeded the luxury tax threshold, incurring significant financial penalties."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context explains salary cap structure but not individual team payroll figures",
+      "rationale": "Knowing the cap and luxury tax threshold does not reveal which specific team had the highest total payroll",
+      "domain": "sports",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1115",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "Why did Instagram's user engagement decline in Q3 2023 compared to Q2?",
+      "contexts": [
+        "Instagram reported over 2 billion monthly active users as of late 2023, making it one of the largest social media platforms.",
+        "Meta Platforms invested heavily in Reels, Instagram's short-form video feature, to compete with TikTok."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Instagram's growth and features but no engagement decline data",
+      "rationale": "User count and Reels investment do not address whether engagement declined or why it might have",
+      "domain": "social_media",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1116",
+      "difficulty": "hard",
+      "subcategory": "missing_data",
+      "query": "What is the average price per square foot for commercial real estate in downtown Denver?",
+      "contexts": [
+        "Denver's commercial real estate market saw significant activity in 2023 with several major office developments breaking ground.",
+        "The vacancy rate for Class A office space in downtown Denver was approximately 18.5% as of Q4 2023."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context discusses Denver commercial real estate market conditions but not pricing data",
+      "rationale": "Vacancy rates and development activity cannot substitute for actual price-per-square-foot data",
+      "domain": "real_estate",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1117",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What is the current interest rate set by the Federal Reserve as of 2025?",
+      "contexts": [
+        "The Federal Reserve raised interest rates to a range of 5.25-5.50% in July 2023, the highest level in 22 years.",
+        "In 2022, the Federal Reserve executed the most aggressive rate-hiking cycle since the 1980s."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has 2022-2023 rate data, cannot answer about 2025",
+      "rationale": "July 2023 rate and 2022 hiking cycle data are outdated and cannot predict the 2025 rate after potential cuts or holds",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1118",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "How does the 2024 International Building Code address seismic retrofit requirements for unreinforced masonry?",
+      "contexts": [
+        "The 2018 International Building Code established performance-based seismic design requirements for new construction in Seismic Design Categories D through F.",
+        "Unreinforced masonry buildings represent a significant seismic hazard, particularly in the Pacific Northwest and central United States.",
+        "The 2015 IBC introduced updated soil classification methods for seismic site response analysis."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context references 2015 and 2018 IBC versions, not 2024",
+      "rationale": "The 2015 and 2018 code editions cannot answer what the 2024 edition specifically requires for seismic retrofit of URM buildings",
+      "domain": "law",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1119",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "Is Python still the most popular programming language in the 2025 TIOBE Index?",
+      "contexts": [
+        "Python topped the TIOBE Index in 2022, surpassing C for the first time in the index's 20-year history.",
+        "Python's rise has been fueled by growth in data science, machine learning, and web development."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about 2022 TIOBE rankings cannot answer 2025 standings",
+      "rationale": "2022 rankings and growth trends do not confirm whether Python retained the top position in the 2025 index",
+      "domain": "technology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1120",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "When did the WHO declare the COVID-19 pandemic officially over?",
+      "contexts": [
+        "The WHO declared COVID-19 a Public Health Emergency of International Concern (PHEIC) on January 30, 2020.",
+        "Global vaccination campaigns began in December 2020, with multiple vaccines receiving emergency use authorization."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context covers pandemic start and vaccinations but not the end declaration",
+      "rationale": "The PHEIC declaration and vaccination start dates do not reveal when the emergency was officially ended",
+      "domain": "medicine",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1121",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "Does the 2025 Farm Bill include provisions for regenerative agriculture subsidies?",
+      "contexts": [
+        "The 2018 Farm Bill allocated $867 billion over ten years, with the largest portion going to nutrition assistance programs.",
+        "Conservation programs under the 2018 Farm Bill included the Conservation Reserve Program and Environmental Quality Incentives Program."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about 2018 Farm Bill, not the 2025 version",
+      "rationale": "The 2018 Farm Bill's conservation programs and allocations cannot confirm what the 2025 reauthorization includes for regenerative agriculture",
+      "domain": "agriculture",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1122",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What were the results of the 2024 Paris Olympics men's 100m final?",
+      "contexts": [
+        "The 2020 Tokyo Olympics men's 100m final was won by Marcell Jacobs of Italy in a time of 9.80 seconds.",
+        "Usain Bolt's world record of 9.58 seconds, set at the 2009 World Championships in Berlin, remains unbroken."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about previous Olympics 100m results, not 2024 Paris",
+      "rationale": "Tokyo 2020 results and Bolt's 2009 record do not reveal the 2024 Paris finalists, times, or medal positions",
+      "domain": "sports",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1123",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "How has the DSM-6 revised the diagnostic criteria for autism spectrum disorder compared to DSM-5?",
+      "contexts": [
+        "The DSM-5, published in 2013, consolidated previous autism subtypes into a single autism spectrum disorder diagnosis.",
+        "DSM-5 criteria require persistent deficits in social communication and restricted, repetitive patterns of behavior."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about DSM-5 criteria; DSM-6 does not yet exist or is not referenced",
+      "rationale": "DSM-5 autism criteria cannot answer what hypothetical DSM-6 changes would be",
+      "domain": "psychology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1124",
+      "difficulty": "hard",
+      "subcategory": "temporal_mismatch",
+      "query": "What is TikTok's current content moderation policy for AI-generated deepfakes as of 2025?",
+      "contexts": [
+        "In 2023, TikTok updated its community guidelines to require labeling of AI-generated content that could be mistaken for real events.",
+        "TikTok's content moderation team removed over 113 million videos in Q1 2023 for violating community guidelines."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about 2023 policies, cannot confirm 2025 current state",
+      "rationale": "2023 labeling requirements and moderation volumes do not reflect potential 2025 policy revisions for deepfakes",
+      "domain": "social_media",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1125",
+      "difficulty": "hard",
+      "subcategory": "wrong_specificity",
+      "query": "How do you configure Kubernetes pod affinity rules to prefer GPU nodes while tolerating CPU-only fallback?",
+      "contexts": [
+        "Kubernetes is an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications.",
+        "Pods are the smallest deployable units in Kubernetes and can contain one or more containers."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context is high-level Kubernetes overview, not specific affinity configuration",
+      "rationale": "General descriptions of Kubernetes and pods cannot provide the specific YAML syntax and affinity/toleration rules for GPU-preferred scheduling",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1126",
+      "difficulty": "hard",
+      "subcategory": "wrong_specificity",
+      "query": "What are the exact minimum capital requirements for a de novo bank charter in Texas?",
+      "contexts": [
+        "Banking regulation in the United States involves federal agencies such as the OCC, FDIC, and Federal Reserve.",
+        "Capital adequacy requirements are a cornerstone of banking regulation, designed to ensure financial stability."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides general banking regulation overview, not Texas-specific de novo requirements",
+      "rationale": "General descriptions of federal banking agencies and capital adequacy principles do not specify Texas's exact minimum capital figures for new bank charters",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1127",
+      "difficulty": "hard",
+      "subcategory": "wrong_specificity",
+      "query": "Why does the specific mutation G2019S in the LRRK2 gene cause late-onset Parkinson's disease?",
+      "contexts": [
+        "Parkinson's disease is a progressive neurodegenerative disorder affecting movement, caused by loss of dopamine-producing neurons.",
+        "Genetic factors account for approximately 10-15% of Parkinson's disease cases, with several genes implicated.",
+        "The LRRK2 gene encodes a large multidomain protein involved in multiple cellular processes including autophagy and mitochondrial function."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes LRRK2 gene generally but not the G2019S mutation mechanism specifically",
+      "rationale": "General LRRK2 function and Parkinson's overview cannot explain the specific pathogenic mechanism of the G2019S kinase-activating mutation",
+      "domain": "science",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1128",
+      "difficulty": "hard",
+      "subcategory": "wrong_specificity",
+      "query": "What is the exact pH range for optimal growth of Lactobacillus acidophilus in yogurt fermentation?",
+      "contexts": [
+        "Yogurt is produced through the bacterial fermentation of milk, typically using starter cultures.",
+        "Lactic acid bacteria convert lactose in milk to lactic acid, which causes the milk proteins to coagulate.",
+        "Fermented dairy products have been consumed for thousands of years across many cultures worldwide.",
+        "The fermentation process generally takes 4 to 12 hours depending on temperature and desired consistency."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context discusses yogurt fermentation generally but lacks specific pH data for L. acidophilus",
+      "rationale": "General fermentation process descriptions and timelines do not include the specific pH range data for L. acidophilus optimal growth",
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1129",
+      "difficulty": "hard",
+      "subcategory": "wrong_specificity",
+      "query": "Why does project-based learning improve standardized test scores in K-12 schools?",
+      "contexts": [
+        "Project-based learning is an instructional approach where students learn by actively engaging in real-world projects.",
+        "Research on educational pedagogy suggests that student engagement is positively correlated with learning outcomes.",
+        "School districts across the United States are exploring various innovative teaching methods to improve student achievement."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context defines PBL and notes engagement research but lacks test score outcome data or causal mechanism",
+      "rationale": "Definitions of PBL and general engagement correlations do not provide evidence that PBL actually improves test scores or explain the causal mechanism by which it would",
+      "domain": "education",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1130",
+      "difficulty": "hard",
+      "subcategory": "wrong_specificity",
+      "query": "How do you calculate the carbon footprint of a transatlantic container ship voyage from Rotterdam to New York?",
+      "contexts": [
+        "Maritime shipping accounts for approximately 2.5% of global greenhouse gas emissions.",
+        "Container ships are the primary mode of international trade transportation, carrying over 80% of global merchandise.",
+        "The International Maritime Organization has set targets to reduce shipping emissions by at least 50% by 2050 compared to 2008 levels."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context provides industry-level emissions data but not voyage-level calculation methodology",
+      "rationale": "Global shipping emission percentages and IMO targets do not provide the specific formulas, fuel consumption rates, or emission factors needed to calculate a single voyage's carbon footprint",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1131",
+      "difficulty": "hard",
+      "subcategory": "wrong_specificity",
+      "query": "Which specific cognitive behavioral therapy techniques are most effective for social anxiety disorder in adolescents?",
+      "contexts": [
+        "Cognitive behavioral therapy is a widely used evidence-based psychotherapy approach for treating anxiety disorders.",
+        "Social anxiety disorder affects approximately 7% of the population and typically begins in adolescence.",
+        "CBT generally involves identifying and challenging negative thought patterns and gradually facing feared situations."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context gives CBT overview and social anxiety prevalence but not technique-specific efficacy data for adolescents",
+      "rationale": "General CBT principles and prevalence statistics cannot identify which specific techniques (e.g., cognitive restructuring vs. exposure hierarchy vs. social skills training) are most effective for adolescent SAD",
+      "domain": "psychology",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1132",
+      "difficulty": "hard",
+      "subcategory": "wrong_specificity",
+      "query": "What are the exact zoning setback requirements for residential construction in unincorporated Maricopa County?",
+      "contexts": [
+        "Zoning regulations control land use by designating areas for residential, commercial, industrial, and agricultural purposes.",
+        "Setback requirements define the minimum distance a building must be placed from property lines, streets, and other structures.",
+        "Maricopa County, Arizona, encompasses the Phoenix metropolitan area and is one of the most populous counties in the United States."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context defines zoning concepts and identifies the county but lacks specific setback measurements",
+      "rationale": "Generic definitions of zoning and setbacks plus county identification do not provide the specific front, side, and rear yard setback distances for Maricopa County residential zones",
+      "domain": "real_estate",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1133",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "How does the process of cheese aging affect flavor compound development?",
+      "contexts": [
+        "Wine aging in oak barrels introduces vanillin and tannin compounds that enhance flavor complexity.",
+        "The aging process for whiskey involves chemical reactions between the spirit and the charred oak barrel interior."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about aging beverages (wine, whiskey), not cheese",
+      "rationale": "Oak barrel aging chemistry for wine and whiskey involves completely different processes than cheese proteolysis and lipolysis during aging",
+      "domain": "food",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1134",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "Is vertical farming economically viable for staple grain production?",
+      "contexts": [
+        "Precision agriculture uses GPS, drones, and sensor technology to optimize field crop management and reduce input waste.",
+        "No-till farming practices reduce soil erosion and improve water retention compared to conventional tillage methods."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about field agriculture technology, not vertical farming economics",
+      "rationale": "GPS-guided field farming and no-till methods are fundamentally different from indoor vertical farming and cannot address its economic viability for grain production",
+      "domain": "agriculture",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1135",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "Why did the Battle of Thermopylae have lasting significance for Western military strategy?",
+      "contexts": [
+        "Ancient Greek philosophy, particularly the works of Plato and Aristotle, formed the foundation of Western intellectual tradition.",
+        "The Greek city-states developed early democratic institutions, with Athens establishing direct democracy in the 5th century BCE."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about ancient Greek culture and politics, not military history",
+      "rationale": "Greek philosophy and democracy are cultural achievements that do not address military tactics or strategic significance of Thermopylae",
+      "domain": "history",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1136",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "Does running a marathon increase or decrease bone mineral density over time?",
+      "contexts": [
+        "Marathon training programs typically include progressive increases in weekly mileage over 12 to 20 weeks.",
+        "Proper hydration during marathon running requires consuming approximately 400-800ml of fluid per hour.",
+        "Common marathon injuries include iliotibial band syndrome, plantar fasciitis, and stress fractures.",
+        "Marathon pacing strategies range from negative splits to even pacing depending on the runner's experience level."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about marathon training logistics, not physiological bone density effects",
+      "rationale": "Training schedules, hydration guidelines, common injuries, and pacing strategies do not address the longitudinal bone mineral density changes from marathon running",
+      "domain": "sports",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1137",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "How does quantum entanglement enable faster-than-light communication?",
+      "contexts": [
+        "Quantum computing uses qubits that can exist in superposition states, enabling parallel computation.",
+        "Quantum algorithms like Shor's algorithm threaten current RSA encryption by efficiently factoring large numbers."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about quantum computing, not quantum entanglement and communication physics",
+      "rationale": "Quantum computing hardware and algorithms are distinct from entanglement physics and the no-communication theorem that governs it",
+      "domain": "science",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1138",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "Should municipalities adopt ranked-choice voting based on voter participation evidence?",
+      "contexts": [
+        "Municipal governments provide essential services including water, sewer, waste management, and local road maintenance.",
+        "Property taxes are the primary revenue source for most municipal governments in the United States."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about municipal finance and services, not electoral systems or voting methods",
+      "rationale": "Municipal service delivery and finance mechanisms are unrelated to ranked-choice voting implementation and its effect on voter turnout",
+      "domain": "government",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1139",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "What are the key differences between diesel and electric freight locomotives for long-haul rail?",
+      "contexts": [
+        "Electric vehicles for personal transportation have seen rapid adoption, with global EV sales exceeding 10 million units in 2022.",
+        "Charging infrastructure expansion is critical for EV adoption, with fast-charging networks growing across major highways."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about personal electric vehicles, not freight rail locomotives",
+      "rationale": "Consumer EV adoption and highway charging networks are irrelevant to diesel vs. electric freight locomotive comparison for rail",
+      "domain": "transportation",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1140",
+      "difficulty": "hard",
+      "subcategory": "wrong_domain",
+      "query": "Why do some employees experience imposter syndrome despite high performance reviews?",
+      "contexts": [
+        "Employee performance reviews should be conducted at least annually and include both quantitative metrics and qualitative feedback.",
+        "Performance management systems have shifted from annual reviews to continuous feedback models in many organizations."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about performance review methodology, not imposter syndrome psychology",
+      "rationale": "HR performance review processes and systems do not explain the psychological mechanisms of imposter syndrome",
+      "domain": "hr_workplace",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1141",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "How should hospitals price their services based on pharmaceutical manufacturing cost data?",
+      "contexts": [
+        "Pharmaceutical manufacturing costs include raw materials, quality control testing, and regulatory compliance expenses.",
+        "Generic drug production typically costs 80-90% less than the original branded version once patents expire.",
+        "Active pharmaceutical ingredient sourcing from India and China accounts for a significant portion of global drug supply."
+      ],
+      "expected_mode": "abstain",
+      "description": "Drug manufacturing costs cannot determine hospital service pricing",
+      "rationale": "Pharmaceutical manufacturing economics are distinct from hospital service pricing, which involves facility costs, labor, equipment, insurance reimbursement, and overhead",
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1142",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "Is it legal for a landlord to use facial recognition technology for tenant screening in California?",
+      "contexts": [
+        "Facial recognition technology uses biometric data to identify individuals by analyzing facial features and comparing them against databases.",
+        "California's CCPA gives consumers the right to know what personal information businesses collect and to request its deletion.",
+        "Several cities including San Francisco have banned government use of facial recognition technology."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context covers facial recognition tech and general privacy law but not landlord-tenant specific legality",
+      "rationale": "General CCPA provisions and government facial recognition bans do not address the specific legality of private landlord use for tenant screening under California housing law",
+      "domain": "law",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1143",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "Should teachers use social media analytics to identify at-risk students?",
+      "contexts": [
+        "Social media analytics tools can track engagement metrics including likes, shares, comments, and follower growth rates.",
+        "Student wellness programs in K-12 education include mental health screenings, counseling services, and anti-bullying initiatives.",
+        "FERPA regulations protect the privacy of student education records and restrict disclosure without parental consent."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context from social media analytics and education separately but not their intersection",
+      "rationale": "Social media engagement metrics, student wellness programs, and FERPA rules individually do not address the ethics, legality, or effectiveness of using social media analytics for student risk identification",
+      "domain": "education",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1144",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "Compare the environmental impact of cryptocurrency mining versus traditional banking data centers",
+      "contexts": [
+        "Bitcoin mining consumes an estimated 150 terawatt-hours of electricity annually, comparable to some medium-sized countries.",
+        "Traditional banking involves extensive physical branch networks, ATM infrastructure, and employee commuting.",
+        "Data center energy efficiency is measured using Power Usage Effectiveness, where values closer to 1.0 indicate greater efficiency.",
+        "The global financial services industry has committed to net-zero emissions targets through various climate pledges."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has crypto energy use and banking physical footprint but no comparable environmental metrics for banking data centers",
+      "rationale": "Bitcoin's electricity consumption, banking's physical infrastructure, PUE definitions, and net-zero pledges do not provide comparable data center energy figures for a meaningful environmental comparison",
+      "domain": "general",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1145",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "How does soil microbiome health affect the nutritional content of food crops for human consumption?",
+      "contexts": [
+        "Soil microbiomes contain billions of bacteria, fungi, and other microorganisms that decompose organic matter and cycle nutrients.",
+        "Human dietary guidelines recommend specific daily intakes of vitamins and minerals for optimal health.",
+        "Crop yield has increased dramatically since the Green Revolution through selective breeding and chemical fertilizer use.",
+        "Organic farming practices maintain higher soil microbial diversity compared to conventional farming methods."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context covers soil science, nutrition guidelines, crop yield, and organic farming separately but not their causal linkage to crop nutrition",
+      "rationale": "Soil microbiome composition, human dietary needs, yield improvements, and organic farming diversity are four separate topics that do not connect soil health to the specific nutritional content changes in harvested crops",
+      "domain": "agriculture",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1146",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "Does exposure to violent video games cause increased aggression in adolescents based on longitudinal evidence?",
+      "contexts": [
+        "The global video game industry generated over $180 billion in revenue in 2023, with mobile gaming comprising the largest segment.",
+        "Adolescent brain development continues until approximately age 25, with the prefrontal cortex among the last regions to mature.",
+        "Media effects research has studied television violence since the 1960s, with early studies showing correlational links to aggressive behavior."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context from gaming industry, neuroscience, and TV violence research but not video game aggression longitudinal studies",
+      "rationale": "Gaming revenue, adolescent brain development timelines, and 1960s TV violence studies do not provide the longitudinal video game-aggression evidence requested",
+      "domain": "psychology",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1147",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "Which government agencies should oversee autonomous vehicle regulation in the United States?",
+      "contexts": [
+        "NHTSA is responsible for setting and enforcing motor vehicle safety standards for cars, trucks, and motorcycles.",
+        "The FAA regulates unmanned aerial systems (drones) including commercial drone operations and airspace integration.",
+        "Autonomous vehicle technology uses LIDAR, radar, cameras, and AI algorithms to navigate without human input.",
+        "The FCC manages radio frequency spectrum allocation that many autonomous systems rely on for communication."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context describes individual agency mandates and AV tech but not the regulatory framework question",
+      "rationale": "Listing what existing agencies currently do and describing AV technology does not address the normative question of which agencies should have AV oversight authority",
+      "domain": "government",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1148",
+      "difficulty": "hard",
+      "subcategory": "cross_domain_insufficient",
+      "query": "How do stock market fluctuations affect residential real estate prices in suburban markets?",
+      "contexts": [
+        "The S&P 500 index experienced significant volatility in 2022, with a cumulative decline of approximately 19% for the year.",
+        "Suburban housing inventory has tightened since 2020 as remote work policies encouraged migration from urban centers.",
+        "Mortgage interest rates are primarily influenced by the Federal Reserve's monetary policy and the 10-year Treasury yield."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context covers stock market performance, suburban housing trends, and mortgage rates separately without causal linkage",
+      "rationale": "Stock market annual returns, remote work migration patterns, and mortgage rate determinants are related topics but do not establish the causal mechanism between equity market moves and suburban home prices",
+      "domain": "real_estate",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1149",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "How does Apple's M3 chip handle neural network inference for on-device machine learning?",
+      "contexts": [
+        "Apple's machine learning framework Core ML allows developers to integrate trained models into iOS and macOS applications.",
+        "The M3 chip features an 8-core CPU with 4 performance and 4 efficiency cores, built on TSMC's 3nm process."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has keywords (M3, neural network, machine learning) but not the specific inference pipeline details",
+      "rationale": "Core ML's developer API and M3 CPU core counts do not explain how the M3 Neural Engine specifically processes inference operations",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1150",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "What is the default risk premium for BBB-rated corporate bonds in emerging markets?",
+      "contexts": [
+        "Corporate bond credit ratings range from AAA (highest quality) to D (default), with BBB being the lowest investment-grade rating.",
+        "Default risk premiums compensate investors for the probability that a bond issuer will fail to make scheduled payments."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context contains keywords (BBB, default risk premium) but in definitional frames only",
+      "rationale": "Credit rating scales and risk premium definitions do not provide the actual numerical default risk premium for BBB corporate bonds specifically in emerging markets",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1151",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "Is CRISPR gene therapy effective for treating sickle cell disease in pediatric patients?",
+      "contexts": [
+        "CRISPR-Cas9 technology enables precise editing of DNA sequences by using guide RNA to target specific genomic locations.",
+        "Sickle cell disease is caused by a mutation in the HBB gene that produces abnormal hemoglobin S, causing red blood cells to deform."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context mentions CRISPR and sickle cell separately but not CRISPR treatment efficacy for pediatric SCD",
+      "rationale": "CRISPR mechanism and SCD pathology are separate topics that do not address CRISPR therapy effectiveness for treating sickle cell disease in children",
+      "domain": "medicine",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1152",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "Why does dark matter not interact with electromagnetic radiation?",
+      "contexts": [
+        "Dark matter is estimated to comprise approximately 27% of the total mass-energy content of the universe.",
+        "Gravitational lensing observations confirm that unseen mass bends light around galaxy clusters, providing indirect evidence for dark matter."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context mentions dark matter but not the interaction mechanism explanation",
+      "rationale": "Dark matter's cosmic abundance and gravitational lensing evidence describe what dark matter does, not why it lacks electromagnetic interaction at the particle physics level",
+      "domain": "science",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1153",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "Does Instagram's algorithm penalize business accounts that don't use Reels?",
+      "contexts": [
+        "Instagram's algorithm considers engagement metrics including likes, comments, saves, and shares when determining content visibility.",
+        "Instagram Reels allows users to create and share short-form video content up to 90 seconds long.",
+        "Business accounts on Instagram have access to analytics tools showing reach, impressions, and audience demographics.",
+        "Meta has publicly stated that the algorithm does not inherently favor one content format over another."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context discusses algorithm factors, Reels features, and business tools but not algorithmic penalization of non-Reels business accounts",
+      "rationale": "General algorithm engagement signals and Meta's public statements about format neutrality do not confirm or deny whether business accounts specifically experience reduced reach for not posting Reels",
+      "domain": "social_media",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1154",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "Why does remote work reduce or increase employee productivity in the technology sector compared to in-office work?",
+      "contexts": [
+        "Remote work adoption surged during 2020, with many technology companies transitioning to fully distributed or hybrid models.",
+        "Employee productivity is measured through various metrics including output per hour, project completion rates, and quality assessments.",
+        "Technology sector employers have debated return-to-office mandates, with some requiring three or more days per week on-site."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context mentions remote work, productivity, and tech sector but contains no actual causal analysis or comparative data",
+      "rationale": "Remote work adoption statistics, productivity metric definitions, and RTO policy debates do not explain the causal mechanisms by which remote work affects tech worker productivity",
+      "domain": "hr_workplace",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "causal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1155",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "When did electric buses first achieve cost parity with diesel buses for public transit agencies?",
+      "contexts": [
+        "Electric buses produce zero tailpipe emissions and have lower fuel and maintenance costs compared to diesel equivalents.",
+        "The upfront purchase price of electric buses remains higher than diesel buses, typically ranging from $700,000 to $900,000."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context discusses electric vs. diesel bus economics but not the specific cost parity milestone date",
+      "rationale": "General cost comparisons do not identify the specific date or year when total cost of ownership reached parity",
+      "domain": "transportation",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1156",
+      "difficulty": "hard",
+      "subcategory": "decoy_keywords",
+      "query": "Who were the key merchants and intermediaries that facilitated Black Death transmission along the Silk Road?",
+      "contexts": [
+        "The Silk Road was a network of trade routes connecting China to the Mediterranean, facilitating exchange of silk, spices, and ideas.",
+        "The Black Death killed an estimated 75 to 200 million people in Eurasia during the 14th century.",
+        "Medieval trade routes also facilitated cultural exchange, spreading technologies like papermaking and gunpowder westward."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context mentions both Silk Road and Black Death but not specific merchants or intermediaries involved in plague transmission",
+      "rationale": "General descriptions of Silk Road trade and Black Death mortality do not identify specific merchant groups, caravans, or intermediaries responsible for plague transmission",
+      "domain": "history",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1157",
+      "difficulty": "hard",
+      "subcategory": "wrong_jurisdiction",
+      "query": "What are the data privacy requirements for healthcare apps under Brazil's LGPD?",
+      "contexts": [
+        "The European Union's GDPR requires explicit consent for processing personal health data and mandates data protection impact assessments.",
+        "HIPAA in the United States establishes standards for protecting individually identifiable health information held by covered entities.",
+        "Healthcare applications collect sensitive biometric and medical data that requires special regulatory treatment in most jurisdictions.",
+        "Brazil enacted the Lei Geral de Protecao de Dados in 2018, modeled in part after the GDPR framework."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about EU GDPR, US HIPAA, and LGPD's existence but not its specific healthcare app requirements",
+      "rationale": "Knowing GDPR and HIPAA rules plus the fact LGPD was modeled after GDPR does not reveal LGPD's specific healthcare app data privacy requirements",
+      "domain": "law",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1158",
+      "difficulty": "hard",
+      "subcategory": "wrong_jurisdiction",
+      "query": "How does Australia's carbon pricing mechanism work for heavy industry emitters?",
+      "contexts": [
+        "The European Union Emissions Trading System is the world's largest carbon market, covering approximately 40% of EU greenhouse gas emissions.",
+        "Carbon pricing mechanisms include cap-and-trade systems and carbon taxes, each with different administrative requirements.",
+        "Heavy industry sectors including steel, cement, and chemicals account for approximately 20% of global CO2 emissions."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about EU ETS and general carbon pricing, not Australia's specific mechanism",
+      "rationale": "The EU's cap-and-trade system and generic carbon pricing descriptions do not explain Australia's Safeguard Mechanism or its specific rules for heavy industry",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1159",
+      "difficulty": "hard",
+      "subcategory": "wrong_jurisdiction",
+      "query": "Is homeschooling legal in Germany, and what oversight requirements apply?",
+      "contexts": [
+        "Homeschooling in the United States is legal in all 50 states, though regulations vary significantly by state.",
+        "Some US states require annual standardized testing of homeschooled students, while others have no testing requirements.",
+        "The homeschool movement in the United States has grown steadily, with an estimated 3.3 million students being homeschooled.",
+        "Germany's education system is administered by the individual Bundeslaender (federal states), each with its own education ministry."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about US homeschooling laws and German education structure, not German homeschooling legality",
+      "rationale": "US homeschooling legality, state-by-state regulations, and the mention of German federated education structure cannot answer whether homeschooling is specifically legal or what oversight exists in Germany",
+      "domain": "education",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1160",
+      "difficulty": "hard",
+      "subcategory": "wrong_jurisdiction",
+      "query": "What food safety certifications are required for exporting processed meat to Japan?",
+      "contexts": [
+        "The USDA's Food Safety and Inspection Service inspects all domestic meat processing facilities for compliance with federal standards.",
+        "European food safety regulations require HACCP implementation and traceability systems for all meat products.",
+        "Processed meat exports must meet the importing country's specific standards for additives, labeling, and pathogen testing."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about US and EU meat safety standards, not Japan's import requirements",
+      "rationale": "USDA domestic inspection and EU HACCP requirements do not specify Japan's particular import certifications, additive limits, or testing protocols for processed meat",
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1161",
+      "difficulty": "hard",
+      "subcategory": "wrong_jurisdiction",
+      "query": "Should India adopt the UK's National Health Service model for universal healthcare?",
+      "contexts": [
+        "Canada's single-payer healthcare system, Medicare, provides universal coverage funded through general taxation.",
+        "The UK's NHS provides healthcare free at the point of use, funded primarily through National Insurance contributions and general taxation.",
+        "Healthcare spending in developed countries ranges from 8% to 18% of GDP."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Canada's and UK's systems but nothing about India's healthcare infrastructure or feasibility",
+      "rationale": "Canadian and British healthcare models and developed-country spending ranges do not address India's specific population, infrastructure, funding capacity, or existing Ayushman Bharat program that would determine NHS model suitability",
+      "domain": "government",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1162",
+      "difficulty": "hard",
+      "subcategory": "wrong_jurisdiction",
+      "query": "What are South Korea's regulations on using AI in employee hiring decisions?",
+      "contexts": [
+        "The European Union's AI Act classifies AI systems used in employment decisions as high-risk, requiring conformity assessments.",
+        "Illinois's Artificial Intelligence Video Interview Act requires employers to obtain consent before using AI analysis in video interviews.",
+        "AI hiring tools use natural language processing and machine learning to screen resumes and assess candidates.",
+        "South Korea's Personal Information Protection Act (PIPA) regulates the collection and processing of personal data by both public and private organizations."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about EU AI Act, Illinois state law, and South Korean data protection but not AI hiring regulations specifically",
+      "rationale": "EU high-risk classification, Illinois video interview consent, general AI tool descriptions, and South Korea's PIPA data protection law do not specifically address South Korean AI hiring regulations",
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1163",
+      "difficulty": "hard",
+      "subcategory": "wrong_jurisdiction",
+      "query": "How does the UK Competition and Markets Authority regulate tech company mergers differently from the US FTC?",
+      "contexts": [
+        "The European Commission's Directorate-General for Competition has blocked several high-profile tech mergers in recent years.",
+        "The US FTC uses the Hart-Scott-Rodino Act premerger notification process to review proposed acquisitions above $111.4 million.",
+        "Antitrust enforcement globally has increased scrutiny on technology sector mergers and acquisitions."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about EU competition enforcement and US FTC process, but not the UK CMA",
+      "rationale": "European Commission merger decisions and US HSR thresholds do not describe the UK CMA's specific merger review process, share of supply test, or phase system",
+      "domain": "law",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1164",
+      "difficulty": "hard",
+      "subcategory": "wrong_jurisdiction",
+      "query": "Should autonomous vehicles be subject to speed limits on German autobahns based on existing regulations?",
+      "contexts": [
+        "The US National Highway Traffic Safety Administration has issued guidelines for autonomous vehicle testing on public roads.",
+        "Several US states including California, Arizona, and Texas have enacted legislation permitting autonomous vehicle operation.",
+        "Germany's autobahn system is known for sections without speed limits, though approximately 30% of the network has posted limits."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about US AV regulations and general autobahn speed info but not German AV-specific rules",
+      "rationale": "US AV testing guidelines and general autobahn speed limit facts do not provide the German regulatory framework needed to determine whether AVs should be subject to autobahn speed limits",
+      "domain": "transportation",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1165",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current market capitalization of Nvidia?",
+      "contexts": [
+        "Nvidia's market capitalization reached $1.2 trillion in May 2023, driven by surging demand for AI training GPUs.",
+        "Nvidia reported data center revenue of $4.28 billion in Q1 2023, a 14% increase year-over-year."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context from May 2023 cannot answer current market cap after massive AI-driven changes",
+      "rationale": "Nvidia's $1.2T May 2023 valuation is severely outdated given the company's rapid growth; current market cap requires real-time data",
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1166",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "Who is the current Secretary-General of the United Nations?",
+      "contexts": [
+        "Ban Ki-moon served as the eighth Secretary-General of the United Nations from 2007 to 2016.",
+        "The Secretary-General is appointed by the General Assembly upon recommendation of the Security Council for a five-year term."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context covers a past Secretary-General but not the current holder",
+      "rationale": "Ban Ki-moon's tenure ended in 2016 and the appointment process description does not identify who currently holds the position",
+      "domain": "government",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1167",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "Should investors buy Tesla stock based on its current financial performance?",
+      "contexts": [
+        "Tesla delivered 936,172 vehicles in 2021, representing a 87% increase over 2020 deliveries.",
+        "Tesla's gross margin for the automotive segment was approximately 30% in 2021, significantly higher than traditional automakers.",
+        "Elon Musk's acquisition of Twitter in October 2022 raised concerns about management attention being divided."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context from 2021-2022 cannot inform current investment decisions",
+      "rationale": "2021 delivery figures, 2021 gross margins, and 2022 Twitter concerns are years outdated and cannot inform a current buy/sell recommendation based on present financial performance",
+      "domain": "finance",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1168",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "Is the Aral Sea still shrinking or has restoration efforts reversed the trend?",
+      "contexts": [
+        "By 2007, the Aral Sea had shrunk to approximately 10% of its original 1960 surface area due to Soviet-era irrigation projects.",
+        "The North Aral Sea dam, completed in 2005, was built to separate the northern and southern portions of the sea.",
+        "Kazakhstan invested in restoration efforts for the North Aral Sea, with some recovery observed by 2008."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context from 2005-2008 cannot answer the current state of the Aral Sea",
+      "rationale": "Conditions from 2005-2008 are nearly two decades old and cannot confirm whether current restoration has succeeded, stalled, or if the South Aral Sea has continued shrinking",
+      "domain": "environment",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1169",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "Which country currently has the highest per-capita solar energy generation?",
+      "contexts": [
+        "Australia led the world in per-capita solar generation as of 2021, with approximately 1,000 watts of installed capacity per person.",
+        "Global solar installations grew by 35% in 2022, with residential and utility-scale segments both expanding.",
+        "The cost of solar photovoltaic panels declined by approximately 90% between 2010 and 2020."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context from 2021-2022 cannot confirm current per-capita solar standings",
+      "rationale": "2021 per-capita figures and 2022 growth rates are outdated given rapid global adoption; current per-capita rankings require up-to-date data",
+      "domain": "science",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1170",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "Does the current US dietary guidelines recommend limiting saturated fat intake to less than 10% of calories?",
+      "contexts": [
+        "The 2015-2020 Dietary Guidelines for Americans recommended limiting saturated fat to less than 10% of daily calories.",
+        "The dietary guidelines are updated every five years by the USDA and HHS based on the latest nutrition science."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context cites 2015-2020 guidelines, which have been superseded",
+      "rationale": "The 2015-2020 edition's recommendations cannot confirm what the current guidelines state, as they are updated every five years and may have changed",
+      "domain": "general",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1171",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "What is the current world record for the marathon?",
+      "contexts": [
+        "Eliud Kipchoge set the marathon world record at 2:01:09 at the 2022 Berlin Marathon.",
+        "The sub-two-hour marathon barrier was broken by Kipchoge in the unofficial INEOS 1:59 Challenge in Vienna in 2019.",
+        "Marathon world records have improved steadily, with the record dropping by over two minutes in the past decade."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context from 2022 record may be outdated if a new record has been set",
+      "rationale": "Kipchoge's 2022 record was accurate at the time but the query asks for the 'current' record, which may have changed given the pace of improvement noted in the context",
+      "domain": "sports",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1172",
+      "difficulty": "hard",
+      "subcategory": "outdated_context",
+      "query": "How many monthly active users does Twitter/X currently have?",
+      "contexts": [
+        "Twitter reported approximately 238 million monetizable daily active users in Q2 2022, prior to the Musk acquisition.",
+        "Following Elon Musk's acquisition in October 2022, the platform was rebranded to X."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context from pre- and early post-acquisition period cannot answer current user counts",
+      "rationale": "Pre-acquisition 2022 user figures are outdated; the platform has undergone major changes and current user data is needed",
+      "domain": "social_media",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1173",
+      "difficulty": "hard",
+      "subcategory": "wrong_product",
+      "query": "What are the privacy settings available in Microsoft Teams for enterprise administrators?",
+      "contexts": [
+        "Microsoft 365 includes enterprise email through Exchange Online with advanced threat protection and data loss prevention.",
+        "SharePoint Online provides document management and collaboration features within the Microsoft 365 ecosystem."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Microsoft 365 email and SharePoint, not Teams-specific privacy settings",
+      "rationale": "Exchange Online security and SharePoint document management do not describe Teams-specific privacy controls such as meeting policies, chat retention, or guest access settings",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1174",
+      "difficulty": "hard",
+      "subcategory": "wrong_product",
+      "query": "How does the Amazon Echo Show 15 handle video calling compared to the Echo Show 10?",
+      "contexts": [
+        "The Amazon Echo Dot is a compact smart speaker featuring Alexa voice assistant with improved audio quality in its fifth generation.",
+        "Amazon Echo devices support multi-room music playback, smart home control, and voice-activated routines.",
+        "The Echo Studio delivers high-fidelity audio with Dolby Atmos support and adaptive sound technology.",
+        "Amazon's Alexa platform supports Drop In video calling and messaging features across compatible Echo devices."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Echo Dot and Echo Studio speakers plus general Alexa calling features, not Echo Show display device comparison",
+      "rationale": "Echo Dot speakers, Echo Studio audio, and general Alexa calling capabilities do not compare video calling features between the Echo Show 15 and Echo Show 10 specifically",
+      "domain": "technology",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1175",
+      "difficulty": "hard",
+      "subcategory": "wrong_product",
+      "query": "What side effects are associated with Moderna's RSV vaccine for older adults?",
+      "contexts": [
+        "Moderna's COVID-19 vaccine mRNA-1273 was authorized for emergency use in December 2020 with an efficacy rate of 94.1%.",
+        "Common side effects of the Moderna COVID-19 booster include fatigue, headache, and injection site pain lasting 1-2 days.",
+        "Moderna's mRNA platform technology has been adapted for multiple vaccine candidates across respiratory and other infectious diseases."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Moderna's COVID vaccine side effects, not RSV vaccine",
+      "rationale": "COVID-19 vaccine mRNA-1273 side effects cannot be applied to the RSV vaccine, which uses a different antigen target and may have a different safety profile",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1176",
+      "difficulty": "hard",
+      "subcategory": "wrong_product",
+      "query": "Does the Samsung Galaxy S24 Ultra support satellite emergency SOS messaging?",
+      "contexts": [
+        "The Samsung Galaxy S24 series features the Snapdragon 8 Gen 3 processor with improved AI capabilities for photo processing.",
+        "Samsung's Galaxy S24 Ultra includes a 200MP main camera sensor and a built-in S Pen stylus.",
+        "The Galaxy S24 line runs One UI 6.1 based on Android 14, with Samsung promising seven years of OS and security updates."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about S24 Ultra processor, camera, and software but not satellite messaging capability",
+      "rationale": "Camera specs, processor details, and software update promises do not address whether the device includes satellite communication hardware or emergency SOS features",
+      "domain": "technology",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1177",
+      "difficulty": "hard",
+      "subcategory": "wrong_product",
+      "query": "Which features differentiate JPMorgan Chase's Sapphire Reserve credit card from the Sapphire Preferred?",
+      "contexts": [
+        "JPMorgan Chase's Freedom Unlimited card offers 1.5% cash back on all purchases with no annual fee.",
+        "The Chase Freedom Flex card provides 5% rotating quarterly bonus categories and 3% on dining and drugstore purchases.",
+        "Chase's credit card portfolio includes cards targeted at cash back, travel rewards, and business spending."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Chase Freedom cards, not Sapphire products",
+      "rationale": "Freedom Unlimited and Freedom Flex card features, rewards structures, and annual fees are different products and cannot answer what distinguishes the Sapphire Reserve from the Sapphire Preferred",
+      "domain": "finance",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1178",
+      "difficulty": "hard",
+      "subcategory": "wrong_product",
+      "query": "How does McDonald's McPlant burger compare nutritionally to the Big Mac?",
+      "contexts": [
+        "McDonald's Quarter Pounder with Cheese contains 520 calories, 27 grams of fat, and 30 grams of protein.",
+        "The McDonald's Filet-O-Fish provides 390 calories with 19 grams of fat and 16 grams of protein.",
+        "McDonald's has expanded its menu to include various options catering to different dietary preferences and price points.",
+        "The Big Mac features two all-beef patties, special sauce, lettuce, cheese, pickles, and onions on a sesame seed bun."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context has nutrition for Quarter Pounder and Filet-O-Fish, and Big Mac ingredients but no McPlant or Big Mac nutrition data",
+      "rationale": "Quarter Pounder and Filet-O-Fish nutritional data and Big Mac ingredient description cannot provide the McPlant vs Big Mac nutritional comparison",
+      "domain": "food",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1179",
+      "difficulty": "hard",
+      "subcategory": "wrong_product",
+      "query": "What warranty coverage does John Deere provide for its X700 series residential riding mowers?",
+      "contexts": [
+        "John Deere's commercial zero-turn mowers in the Z900 series offer cutting widths from 48 to 72 inches for professional landscapers.",
+        "John Deere provides a 2-year or 2,000-hour bumper-to-bumper warranty on its compact utility tractor line.",
+        "John Deere dealer service networks cover over 2,000 locations across the United States for parts and maintenance."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Z900 commercial mowers and compact tractors, not X700 residential mowers",
+      "rationale": "Commercial zero-turn mower specs and compact tractor warranty terms are from different product lines and cannot be applied to X700 residential mower warranty coverage",
+      "domain": "general",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 3,
+      "reasoning_type": "factual",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_abstain_hard_1180",
+      "difficulty": "hard",
+      "subcategory": "wrong_product",
+      "query": "Is Zillow's Zestimate algorithm more accurate for condominiums or single-family homes?",
+      "contexts": [
+        "Zillow's rental marketplace connects landlords and tenants, listing over 135 million properties across the United States.",
+        "Zillow Group's revenue comes primarily from Premier Agent advertising, rentals, and mortgage services.",
+        "The Zestimate uses machine learning models incorporating public records, MLS data, and user-submitted information to estimate home values.",
+        "Zillow discontinued its iBuying program Zillow Offers in 2021 after significant losses from algorithmic pricing errors."
+      ],
+      "expected_mode": "abstain",
+      "description": "Context about Zillow's business and Zestimate inputs but not condo vs. single-family accuracy comparison",
+      "rationale": "Zillow's business model, Zestimate input data sources, and iBuying failure do not provide the comparative accuracy metrics between condominiums and single-family home estimates",
+      "domain": "real_estate",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 4,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "absent",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }

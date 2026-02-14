@@ -35,14 +35,14 @@ pip install -e path/to/fitz-gov
 
 fitz-gov uses a two-tier evaluation system:
 - **Tier 0 (Sanity)**: 60 easy cases with 95% pass threshold - gates Tier 1
-- **Tier 1 (Core)**: 2,054 discriminative cases with gradient scoring
+- **Tier 1 (Core)**: 2,428 discriminative cases with gradient scoring
 
 ```python
 from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
 
 # Load tiered cases
 tier0_cases = load_tier(Tier.SANITY)  # 60 cases
-tier1_cases = load_tier(Tier.CORE)    # 2,054 cases
+tier1_cases = load_tier(Tier.CORE)    # 2,428 cases
 
 # Your RAG system generates responses and modes for each tier
 tier0_responses, tier0_modes = your_rag_system.evaluate(tier0_cases)
@@ -247,9 +247,9 @@ result = evaluator.evaluate_case(case, response, mode)
 ```python
 # Load by tier (recommended)
 tier0_cases = load_tier(Tier.SANITY)  # 60 sanity cases
-tier1_cases = load_tier(Tier.CORE)    # 2,054 core cases
+tier1_cases = load_tier(Tier.CORE)    # 2,428 core cases
 
-# Load all cases (2,114 total)
+# Load all cases (2,488 total)
 all_cases = load_cases()
 
 # Load specific categories from a tier
@@ -278,7 +278,7 @@ data/
 |   +-- trustworthy_direct.json # 10 cases
 |   +-- grounding.json          # 8 cases
 |   +-- relevance.json          # 8 cases
-+-- tier1_core/                 # 2,054 cases - discriminative benchmark
++-- tier1_core/                 # 2,428 cases - discriminative benchmark
 |   +-- abstention.json         # 467 cases
 |   +-- dispute.json            # 409 cases
 |   +-- trustworthy_hedged.json # 414 cases
@@ -293,13 +293,13 @@ data/
 
 ### Benchmark Distribution (v4.0)
 
-**Categories** (2,054 tier1 cases):
+**Categories** (2,428 tier1 cases):
 
 | Category | Cases | Mode | Purpose |
 |----------|------:|------|---------|
-| Abstention | 467 | `abstain` | Refuses when evidence is insufficient |
+| Abstention | 625 | `abstain` | Refuses when evidence is insufficient |
 | Trustworthy Hedged | 414 | `trustworthy` | Hedges uncertain claims |
-| Dispute | 409 | `disputed` | Flags conflicting sources |
+| Dispute | 625 | `disputed` | Flags conflicting sources |
 | Relevance | 275 | `trustworthy` | Answers address the actual question |
 | Grounding | 271 | `trustworthy` | No hallucination beyond context |
 | Trustworthy Direct | 218 | `trustworthy` | Answers confidently when clear |
