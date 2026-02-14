@@ -25,7 +25,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_002",
@@ -49,6 +54,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -73,6 +83,11 @@
       "metadata": {
         "domain_converted_from": "psychology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -93,7 +108,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_005",
@@ -118,6 +138,11 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -138,7 +163,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_007",
@@ -161,6 +191,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -185,6 +220,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -208,6 +248,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -227,7 +272,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_011",
@@ -248,7 +298,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_012",
@@ -270,7 +325,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_013",
@@ -289,7 +349,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_014",
@@ -308,7 +373,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_015",
@@ -327,7 +397,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_016",
@@ -351,6 +426,11 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -369,7 +449,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_018",
@@ -387,7 +472,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_019",
@@ -409,7 +499,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_020",
@@ -428,7 +523,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_021",
@@ -447,7 +547,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_022",
@@ -470,6 +575,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -493,6 +603,11 @@
       "metadata": {
         "domain_converted_from": "sports",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -512,7 +627,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_025",
@@ -531,7 +651,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_026",
@@ -550,7 +675,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_027",
@@ -569,7 +699,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_028",
@@ -590,7 +725,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_029",
@@ -611,7 +751,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_030",
@@ -632,7 +777,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_031",
@@ -655,6 +805,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -677,6 +832,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -701,6 +861,11 @@
       "metadata": {
         "domain_converted_from": "government",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -723,6 +888,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -746,6 +916,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -769,6 +944,11 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -788,7 +968,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_038",
@@ -812,6 +997,11 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -831,7 +1021,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_040",
@@ -850,7 +1045,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_041",
@@ -868,7 +1068,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_042",
@@ -886,7 +1091,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_043",
@@ -908,7 +1118,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_100",
@@ -929,7 +1144,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_101",
@@ -950,7 +1169,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_102",
@@ -971,7 +1194,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_103",
@@ -992,7 +1219,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_105",
@@ -1014,7 +1245,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_106",
@@ -1036,7 +1271,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_107",
@@ -1057,7 +1296,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_108",
@@ -1079,7 +1322,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_109",
@@ -1100,7 +1347,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_110",
@@ -1124,6 +1375,10 @@
       "metadata": {
         "domain_converted_from": "transportation",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1148,6 +1403,10 @@
       "metadata": {
         "domain_converted_from": "hr_workplace",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1173,6 +1432,10 @@
       "metadata": {
         "domain_converted_from": "hr_workplace",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1197,6 +1460,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1220,6 +1487,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1243,6 +1514,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1267,6 +1542,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "real_estate"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1290,6 +1569,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1314,6 +1597,10 @@
       "metadata": {
         "domain_converted_from": "agriculture",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1338,6 +1625,10 @@
       "metadata": {
         "domain_converted_from": "government",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1363,6 +1654,10 @@
       "metadata": {
         "domain_converted_from": "social_media",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1387,6 +1682,10 @@
       "metadata": {
         "domain_converted_from": "government",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1411,6 +1710,10 @@
       "metadata": {
         "domain_converted_from": "hr_workplace",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1436,6 +1739,10 @@
       "metadata": {
         "domain_converted_from": "transportation",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1460,6 +1767,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "science"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1483,6 +1794,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1508,6 +1823,10 @@
       "metadata": {
         "domain_converted_from": "transportation",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1533,6 +1852,10 @@
       "metadata": {
         "domain_converted_from": "sports",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1557,6 +1880,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1580,6 +1907,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1604,6 +1935,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1627,6 +1962,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "science"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1652,6 +1991,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1673,7 +2016,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_200",
@@ -1694,7 +2041,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_201",
@@ -1715,7 +2066,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_202",
@@ -1736,7 +2091,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_203",
@@ -1757,7 +2116,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_204",
@@ -1778,7 +2141,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_205",
@@ -1798,7 +2165,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_206",
@@ -1818,7 +2189,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_207",
@@ -1838,7 +2213,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_208",
@@ -1858,7 +2237,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_209",
@@ -1878,7 +2261,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_210",
@@ -1898,7 +2285,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_211",
@@ -1918,7 +2309,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_212",
@@ -1938,7 +2333,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_213",
@@ -1958,7 +2357,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_214",
@@ -1978,7 +2381,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_001",
@@ -1998,7 +2405,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_002",
@@ -2023,6 +2435,11 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2043,7 +2460,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_004",
@@ -2068,6 +2490,11 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2088,7 +2515,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_006",
@@ -2108,7 +2540,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_007",
@@ -2128,7 +2565,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_008",
@@ -2148,7 +2590,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_009",
@@ -2173,6 +2620,11 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2193,7 +2645,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_750",
@@ -2212,7 +2669,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_751",
@@ -2231,7 +2692,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_752",
@@ -2251,7 +2716,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_753",
@@ -2271,7 +2740,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_754",
@@ -2291,7 +2764,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_755",
@@ -2311,7 +2788,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_800",
@@ -2331,7 +2812,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_801",
@@ -2351,7 +2836,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_802",
@@ -2371,7 +2860,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_803",
@@ -2395,6 +2888,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2419,6 +2916,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2439,7 +2940,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_815",
@@ -2462,6 +2967,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2485,6 +2994,10 @@
       "metadata": {
         "domain_converted_from": "history",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2506,7 +3019,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_818",
@@ -2529,6 +3046,10 @@
       "metadata": {
         "domain_converted_from": "psychology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2550,7 +3071,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_820",
@@ -2574,6 +3099,10 @@
       "metadata": {
         "domain_converted_from": "psychology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2596,6 +3125,10 @@
       "evidence_pattern": "direct",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2617,7 +3150,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_823",
@@ -2641,6 +3178,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2662,7 +3203,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_825",
@@ -2683,7 +3228,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_826",
@@ -2704,7 +3253,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_827",
@@ -2728,6 +3281,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2752,6 +3309,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2776,6 +3337,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2797,7 +3362,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_831",
@@ -2818,7 +3387,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_832",
@@ -2839,7 +3412,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_833",
@@ -2860,7 +3437,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_834",
@@ -2881,7 +3462,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_835",
@@ -2902,7 +3487,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_841",
@@ -2923,7 +3512,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_842",
@@ -2944,7 +3537,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_843",
@@ -2965,7 +3562,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_844",
@@ -2986,7 +3587,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_845",
@@ -3007,7 +3612,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_846",
@@ -3028,7 +3637,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_847",
@@ -3049,7 +3662,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_848",
@@ -3070,7 +3687,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_849",
@@ -3091,7 +3712,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_850",
@@ -3112,7 +3737,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_851",
@@ -3133,7 +3762,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_852",
@@ -3154,7 +3787,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_853",
@@ -3175,7 +3812,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_854",
@@ -3196,7 +3837,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_855",
@@ -3217,7 +3862,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_856",
@@ -3238,7 +3887,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_857",
@@ -3259,7 +3912,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_858",
@@ -3280,7 +3937,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_859",
@@ -3301,7 +3962,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_medium_860",
@@ -3322,7 +3987,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_861",
@@ -3343,7 +4012,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_862",
@@ -3364,7 +4037,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_863",
@@ -3385,7 +4062,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_864",
@@ -3406,7 +4087,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_865",
@@ -3427,7 +4112,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_866",
@@ -3448,7 +4137,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_867",
@@ -3469,7 +4162,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_868",
@@ -3490,7 +4187,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_869",
@@ -3511,7 +4212,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_870",
@@ -3532,7 +4237,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_871",
@@ -3553,7 +4262,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_872",
@@ -3574,7 +4287,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_873",
@@ -3595,7 +4312,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_874",
@@ -3616,7 +4337,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_875",
@@ -3637,7 +4362,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_876",
@@ -3658,7 +4387,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_877",
@@ -3679,7 +4412,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_878",
@@ -3700,7 +4437,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_879",
@@ -3721,7 +4462,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_880",
@@ -3742,7 +4487,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_881",
@@ -3763,7 +4512,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_882",
@@ -3784,7 +4537,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_883",
@@ -3805,7 +4562,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_884",
@@ -3826,7 +4587,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_885",
@@ -3850,6 +4615,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3871,7 +4640,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_887",
@@ -3895,6 +4668,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3916,7 +4693,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_889",
@@ -3940,6 +4721,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3961,7 +4746,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_891",
@@ -3982,7 +4771,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_892",
@@ -4006,6 +4799,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -4029,6 +4826,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -4050,7 +4851,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_895",
@@ -4074,6 +4879,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -4098,6 +4907,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -4122,6 +4935,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -4146,6 +4963,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -4167,7 +4988,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_900",
@@ -4191,6 +5016,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -4212,7 +5041,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_549",
@@ -4233,7 +5066,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_551",
@@ -4254,7 +5091,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_553",
@@ -4275,7 +5116,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_556",
@@ -4296,7 +5141,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_901",
@@ -4333,7 +5182,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_902",
@@ -4364,7 +5218,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_903",
@@ -4401,7 +5260,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_904",
@@ -4438,7 +5302,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_905",
@@ -4469,7 +5338,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_906",
@@ -4500,7 +5374,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_907",
@@ -4531,7 +5410,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_908",
@@ -4568,7 +5452,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_909",
@@ -4599,7 +5488,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_910",
@@ -4636,7 +5530,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_911",
@@ -4667,7 +5566,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_912",
@@ -4704,7 +5608,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_913",
@@ -4741,7 +5650,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_914",
@@ -4772,7 +5686,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_confident_hard_915",
@@ -4809,7 +5728,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }

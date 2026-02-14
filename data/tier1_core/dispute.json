@@ -26,7 +26,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_002",
@@ -48,7 +53,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_003",
@@ -71,7 +81,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_004",
@@ -93,7 +108,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_005",
@@ -115,7 +135,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_006",
@@ -138,7 +163,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_007",
@@ -160,7 +190,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_008",
@@ -182,7 +217,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_009",
@@ -205,7 +245,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_010",
@@ -227,7 +272,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_011",
@@ -249,7 +299,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_012",
@@ -275,6 +330,11 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -297,7 +357,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_014",
@@ -319,7 +384,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_015",
@@ -340,7 +410,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_016",
@@ -362,7 +437,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_017",
@@ -388,6 +468,11 @@
       "metadata": {
         "domain_converted_from": "transportation",
         "conversion_type": "domain_diversification"
+      },
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -412,6 +497,11 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -433,7 +523,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_020",
@@ -454,7 +549,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_021",
@@ -476,7 +576,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_022",
@@ -497,7 +602,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_023",
@@ -519,7 +629,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_024",
@@ -541,7 +656,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_025",
@@ -563,7 +683,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_026",
@@ -585,7 +710,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_027",
@@ -610,6 +740,11 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -632,7 +767,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_029",
@@ -654,7 +794,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_100",
@@ -680,6 +825,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -707,6 +856,10 @@
       "metadata": {
         "domain_converted_from": "social_media",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -728,7 +881,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_103",
@@ -754,6 +911,10 @@
       "metadata": {
         "domain_converted_from": "medicine",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -775,7 +936,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_105",
@@ -800,6 +965,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -826,6 +995,10 @@
       "metadata": {
         "domain_converted_from": "sports",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -846,7 +1019,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_108",
@@ -871,6 +1048,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -896,6 +1077,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -917,7 +1102,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_111",
@@ -938,7 +1127,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_112",
@@ -959,7 +1152,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_113",
@@ -980,7 +1177,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_114",
@@ -1001,7 +1202,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_115",
@@ -1021,7 +1226,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_116",
@@ -1041,7 +1250,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_117",
@@ -1061,7 +1274,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_118",
@@ -1081,7 +1298,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_119",
@@ -1101,7 +1322,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_121",
@@ -1122,7 +1347,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_122",
@@ -1143,7 +1372,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_123",
@@ -1164,7 +1397,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_124",
@@ -1185,7 +1422,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_125",
@@ -1212,6 +1453,10 @@
       "metadata": {
         "domain_converted_from": "food",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1238,6 +1483,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1259,7 +1508,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_128",
@@ -1280,7 +1533,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_129",
@@ -1301,7 +1558,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_130",
@@ -1321,7 +1582,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_131",
@@ -1341,7 +1606,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_132",
@@ -1361,7 +1630,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_133",
@@ -1381,7 +1654,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_134",
@@ -1401,7 +1678,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_135",
@@ -1422,7 +1703,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_136",
@@ -1448,6 +1733,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1474,6 +1763,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1500,6 +1793,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1521,7 +1818,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_201",
@@ -1542,7 +1843,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_202",
@@ -1563,7 +1868,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_203",
@@ -1584,7 +1893,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_204",
@@ -1605,7 +1918,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_207",
@@ -1626,7 +1943,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_208",
@@ -1647,7 +1968,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_209",
@@ -1668,7 +1993,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_210",
@@ -1689,7 +2018,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_211",
@@ -1710,7 +2043,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_212",
@@ -1731,7 +2068,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_213",
@@ -1752,7 +2093,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_214",
@@ -1773,7 +2118,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_215",
@@ -1794,7 +2143,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_216",
@@ -1815,7 +2168,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_217",
@@ -1836,7 +2193,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_218",
@@ -1857,7 +2218,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_219",
@@ -1878,7 +2243,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_300",
@@ -1903,6 +2272,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1928,6 +2301,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1953,6 +2330,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "medicine"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1973,7 +2354,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_304",
@@ -1998,6 +2383,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "medicine"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2018,7 +2407,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_306",
@@ -2038,7 +2431,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_307",
@@ -2058,7 +2455,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_308",
@@ -2078,7 +2479,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_309",
@@ -2098,7 +2503,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_001",
@@ -2120,7 +2529,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_002",
@@ -2141,7 +2555,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_003",
@@ -2162,7 +2581,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_004",
@@ -2184,7 +2608,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_005",
@@ -2206,7 +2635,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_006",
@@ -2226,7 +2660,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_007",
@@ -2247,7 +2686,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_008",
@@ -2268,7 +2712,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_009",
@@ -2290,7 +2739,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_010",
@@ -2311,7 +2765,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_011",
@@ -2332,7 +2791,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_012",
@@ -2354,7 +2818,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_013",
@@ -2375,7 +2844,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_014",
@@ -2396,7 +2870,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_400",
@@ -2416,7 +2895,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_401",
@@ -2436,7 +2919,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_402",
@@ -2461,6 +2948,10 @@
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2481,7 +2972,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_404",
@@ -2506,6 +3001,10 @@
       "metadata": {
         "domain_converted_from": "medicine",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2531,6 +3030,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2551,7 +3054,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_408",
@@ -2571,7 +3078,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_409",
@@ -2591,7 +3102,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_410",
@@ -2611,7 +3126,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_411",
@@ -2631,7 +3150,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_412",
@@ -2656,6 +3179,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2676,7 +3203,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_414",
@@ -2696,7 +3227,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_415",
@@ -2721,6 +3256,10 @@
       "metadata": {
         "domain_converted_from": "medicine",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2741,7 +3280,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_417",
@@ -2761,7 +3304,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_418",
@@ -2781,7 +3328,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_420",
@@ -2801,7 +3352,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_421",
@@ -2821,7 +3376,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_422",
@@ -2841,7 +3400,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_423",
@@ -2866,6 +3429,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2886,7 +3453,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_450",
@@ -2906,7 +3477,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_451",
@@ -2926,7 +3501,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_452",
@@ -2946,7 +3525,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_453",
@@ -2966,7 +3549,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_454",
@@ -2986,7 +3573,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_455",
@@ -3006,7 +3597,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_500",
@@ -3031,6 +3626,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3051,7 +3650,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_502",
@@ -3076,6 +3679,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3096,7 +3703,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_504",
@@ -3116,7 +3727,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_505",
@@ -3136,7 +3751,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_507",
@@ -3156,7 +3775,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_508",
@@ -3177,7 +3800,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_509",
@@ -3202,6 +3829,10 @@
       "metadata": {
         "domain_converted_from": "medicine",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3223,7 +3854,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_512",
@@ -3248,6 +3883,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3269,7 +3908,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_514",
@@ -3290,7 +3933,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_516",
@@ -3311,7 +3958,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_517",
@@ -3332,7 +3983,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_518",
@@ -3353,7 +4008,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_519",
@@ -3374,7 +4033,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_520",
@@ -3395,7 +4058,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_521",
@@ -3416,7 +4083,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_523",
@@ -3437,7 +4108,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_524",
@@ -3458,7 +4133,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_525",
@@ -3479,7 +4158,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_526",
@@ -3504,6 +4187,10 @@
       "metadata": {
         "domain_converted_from": "medicine",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3530,6 +4217,10 @@
       "metadata": {
         "domain_converted_from": "medicine",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3551,7 +4242,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_529",
@@ -3572,7 +4267,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_530",
@@ -3593,7 +4292,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_531",
@@ -3614,7 +4317,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_532",
@@ -3635,7 +4342,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_533",
@@ -3656,7 +4367,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_534",
@@ -3677,7 +4392,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_535",
@@ -3698,7 +4417,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_536",
@@ -3723,6 +4446,10 @@
       "metadata": {
         "domain_converted_from": "medicine",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3744,7 +4471,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_538",
@@ -3765,7 +4496,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_539",
@@ -3786,7 +4521,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_540",
@@ -3807,7 +4546,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_541",
@@ -3828,7 +4571,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_542",
@@ -3849,7 +4596,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_543",
@@ -3870,7 +4621,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_544",
@@ -3891,7 +4646,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_545",
@@ -3912,7 +4671,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_546",
@@ -3933,7 +4696,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_547",
@@ -3954,7 +4721,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_550",
@@ -3975,7 +4746,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_552",
@@ -3996,7 +4771,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_554",
@@ -4017,7 +4796,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_555",
@@ -4038,7 +4821,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_557",
@@ -4059,7 +4846,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_558",
@@ -4080,7 +4871,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_559",
@@ -4101,7 +4896,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_560",
@@ -4122,7 +4921,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_562",
@@ -4143,7 +4946,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_563",
@@ -4164,7 +4971,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_564",
@@ -4185,7 +4996,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_565",
@@ -4206,7 +5021,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_566",
@@ -4227,7 +5046,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_567",
@@ -4248,7 +5071,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_568",
@@ -4271,7 +5098,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_569",
@@ -4294,7 +5125,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_570",
@@ -4317,7 +5152,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_571",
@@ -4340,7 +5179,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_572",
@@ -4363,7 +5206,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_573",
@@ -4386,7 +5233,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_574",
@@ -4409,7 +5260,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_575",
@@ -4432,7 +5287,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_576",
@@ -4455,7 +5314,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_577",
@@ -4478,7 +5341,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_578",
@@ -4502,7 +5369,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_579",
@@ -4526,7 +5397,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_580",
@@ -4550,7 +5425,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_581",
@@ -4574,7 +5453,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_582",
@@ -4598,7 +5481,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_583",
@@ -4622,7 +5509,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_584",
@@ -4646,7 +5537,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_585",
@@ -4670,7 +5565,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_586",
@@ -4694,7 +5593,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_587",
@@ -4718,7 +5621,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_588",
@@ -4742,7 +5649,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_589",
@@ -4766,7 +5677,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_590",
@@ -4790,7 +5705,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_591",
@@ -4814,7 +5733,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_592",
@@ -4838,7 +5761,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_593",
@@ -4863,7 +5790,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_594",
@@ -4887,7 +5818,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_595",
@@ -4911,7 +5846,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_596",
@@ -4936,7 +5875,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_597",
@@ -4961,7 +5904,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_598",
@@ -4986,7 +5933,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_599",
@@ -5011,7 +5962,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_600",
@@ -5035,7 +5990,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_601",
@@ -5060,7 +6019,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_602",
@@ -5084,7 +6047,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_603",
@@ -5108,7 +6075,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_604",
@@ -5132,7 +6103,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_605",
@@ -5156,7 +6131,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_606",
@@ -5180,7 +6159,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_607",
@@ -5204,7 +6187,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_608",
@@ -5228,7 +6215,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_609",
@@ -5252,7 +6243,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_610",
@@ -5276,7 +6271,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_611",
@@ -5300,7 +6299,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_612",
@@ -5324,7 +6327,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_613",
@@ -5348,7 +6355,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_614",
@@ -5372,7 +6383,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_615",
@@ -5396,7 +6411,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_616",
@@ -5420,7 +6439,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_617",
@@ -5444,7 +6467,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_618",
@@ -5481,7 +6508,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_619",
@@ -5512,7 +6544,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_620",
@@ -5549,7 +6586,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_621",
@@ -5586,7 +6628,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_622",
@@ -5623,7 +6670,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_623",
@@ -5660,7 +6712,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_624",
@@ -5697,7 +6754,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_625",
@@ -5734,7 +6796,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_626",
@@ -5771,7 +6838,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_627",
@@ -5808,7 +6880,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_628",
@@ -5839,7 +6916,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_629",
@@ -5870,7 +6952,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_630",
@@ -5907,7 +6994,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_631",
@@ -5944,7 +7036,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_632",
@@ -5981,7 +7078,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_633",
@@ -6018,7 +7120,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_634",
@@ -6049,7 +7156,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_635",
@@ -6086,7 +7198,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_636",
@@ -6123,7 +7240,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_637",
@@ -6160,7 +7282,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_638",
@@ -6197,7 +7324,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_639",
@@ -6228,7 +7360,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_640",
@@ -6259,7 +7396,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_641",
@@ -6290,7 +7432,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_642",
@@ -6321,7 +7468,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_643",
@@ -6352,7 +7504,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_644",
@@ -6383,7 +7540,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_645",
@@ -6420,7 +7582,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_646",
@@ -6451,7 +7618,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_647",
@@ -6482,7 +7654,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_648",
@@ -6502,7 +7679,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_649",
@@ -6522,7 +7704,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_650",
@@ -6542,7 +7729,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_651",
@@ -6562,7 +7754,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_652",
@@ -6582,7 +7779,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_653",
@@ -6602,7 +7804,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_654",
@@ -6622,7 +7829,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_655",
@@ -6646,6 +7858,11 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -6666,7 +7883,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_657",
@@ -6686,7 +7908,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_658",
@@ -6706,7 +7933,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_659",
@@ -6727,7 +7959,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_660",
@@ -6748,7 +7985,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_661",
@@ -6769,7 +8011,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_662",
@@ -6790,7 +8037,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_663",
@@ -6811,7 +8063,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_664",
@@ -6832,7 +8089,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_665",
@@ -6853,7 +8115,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_666",
@@ -6874,7 +8141,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_667",
@@ -6895,7 +8167,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_668",
@@ -6926,7 +8203,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_669",
@@ -6957,7 +8239,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_670",
@@ -6994,7 +8281,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_671",
@@ -7025,7 +8317,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_672",
@@ -7056,7 +8353,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_673",
@@ -7087,7 +8389,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_674",
@@ -7118,7 +8425,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_675",
@@ -7149,7 +8461,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_676",
@@ -7180,7 +8497,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_677",
@@ -7211,7 +8533,12 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_678",
@@ -7232,7 +8559,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_679",
@@ -7253,7 +8585,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_680",
@@ -7274,7 +8611,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_681",
@@ -7298,6 +8640,11 @@
       "metadata": {
         "domain_converted_from": "medicine",
         "conversion_type": "domain_diversification"
+      },
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -7319,7 +8666,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_683",
@@ -7339,7 +8691,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_684",
@@ -7363,6 +8720,11 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -7382,7 +8744,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_686",
@@ -7401,7 +8768,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_687",
@@ -7420,7 +8792,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_688",
@@ -7439,7 +8816,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_689",
@@ -7458,7 +8840,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_690",
@@ -7477,7 +8864,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_691",
@@ -7496,7 +8888,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_692",
@@ -7515,7 +8912,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_693",
@@ -7534,7 +8936,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_694",
@@ -7553,7 +8960,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_695",
@@ -7572,7 +8984,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_696",
@@ -7591,7 +9008,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_697",
@@ -7610,7 +9032,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_698",
@@ -7629,7 +9056,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_699",
@@ -7648,7 +9080,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_700",
@@ -7667,7 +9104,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_701",
@@ -7686,7 +9128,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_702",
@@ -7705,7 +9152,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_703",
@@ -7724,7 +9176,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_704",
@@ -7743,7 +9200,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_705",
@@ -7762,7 +9224,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_706",
@@ -7781,7 +9248,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_707",
@@ -7800,7 +9272,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_708",
@@ -7819,7 +9296,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_709",
@@ -7838,7 +9320,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_710",
@@ -7857,7 +9344,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_711",
@@ -7876,7 +9368,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_712",
@@ -7895,7 +9392,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_713",
@@ -7914,7 +9416,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_714",
@@ -7933,7 +9440,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_715",
@@ -7952,7 +9464,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_716",
@@ -7971,7 +9488,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_717",
@@ -7990,7 +9512,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "conflicting"
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }

@@ -26,7 +26,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_002",
@@ -48,7 +53,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_003",
@@ -70,7 +80,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_004",
@@ -92,7 +107,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_005",
@@ -117,6 +137,11 @@
       "evidence_pattern": "partial",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -140,7 +165,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_007",
@@ -164,7 +194,12 @@
       "source_type": "single",
       "context_count": 5,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_008",
@@ -187,7 +222,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_009",
@@ -209,7 +249,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_010",
@@ -232,7 +277,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_011",
@@ -256,7 +306,12 @@
       "source_type": "single",
       "context_count": 5,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_012",
@@ -282,6 +337,11 @@
       "metadata": {
         "domain_converted_from": "social_media",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -304,7 +364,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_014",
@@ -327,7 +392,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_015",
@@ -350,7 +420,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_016",
@@ -371,7 +446,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_017",
@@ -392,7 +472,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_018",
@@ -413,7 +498,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_019",
@@ -437,6 +527,11 @@
       "evidence_pattern": "partial",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -458,7 +553,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_021",
@@ -482,6 +582,11 @@
       "evidence_pattern": "partial",
       "metadata": {
         "domain_converted_from": "medicine"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -506,6 +611,11 @@
       "evidence_pattern": "partial",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -531,6 +641,11 @@
       "metadata": {
         "domain_converted_from": "psychology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -555,6 +670,11 @@
       "evidence_pattern": "partial",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -579,6 +699,11 @@
       "evidence_pattern": "partial",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -604,6 +729,11 @@
       "metadata": {
         "domain_converted_from": "psychology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -626,7 +756,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_038",
@@ -649,7 +784,12 @@
       "source_type": "single",
       "context_count": 5,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_039",
@@ -672,7 +812,12 @@
       "source_type": "single",
       "context_count": 5,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_040",
@@ -694,7 +839,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_041",
@@ -716,7 +866,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_042",
@@ -741,6 +896,11 @@
       "metadata": {
         "domain_converted_from": "psychology",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -765,6 +925,11 @@
       "evidence_pattern": "partial",
       "metadata": {
         "domain_converted_from": "medicine"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -786,7 +951,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_106",
@@ -806,7 +975,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_107",
@@ -826,7 +999,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_108",
@@ -846,7 +1023,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_109",
@@ -866,7 +1047,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_115",
@@ -887,7 +1072,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_116",
@@ -908,7 +1097,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_117",
@@ -929,7 +1122,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_118",
@@ -950,7 +1147,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_119",
@@ -971,7 +1172,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_120",
@@ -997,6 +1202,10 @@
       "metadata": {
         "domain_converted_from": "history",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1018,7 +1227,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_122",
@@ -1044,6 +1257,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1065,7 +1282,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_124",
@@ -1086,7 +1307,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_127",
@@ -1110,6 +1335,10 @@
       "evidence_pattern": "mixed",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1135,6 +1364,10 @@
       "metadata": {
         "domain_converted_from": "psychology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1160,6 +1393,10 @@
       "metadata": {
         "domain_converted_from": "food",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1186,6 +1423,10 @@
       "metadata": {
         "domain_converted_from": "history",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1212,6 +1453,10 @@
       "metadata": {
         "domain_converted_from": "government",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1237,6 +1482,10 @@
       "evidence_pattern": "mixed",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1263,6 +1512,10 @@
       "metadata": {
         "domain_converted_from": "agriculture",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1288,6 +1541,10 @@
       "evidence_pattern": "mixed",
       "metadata": {
         "domain_converted_from": "education"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1309,7 +1566,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_139",
@@ -1330,7 +1591,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_140",
@@ -1351,7 +1616,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_141",
@@ -1372,7 +1641,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_142",
@@ -1393,7 +1666,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_143",
@@ -1414,7 +1691,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_144",
@@ -1435,7 +1716,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_145",
@@ -1456,7 +1741,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_146",
@@ -1477,7 +1766,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_147",
@@ -1498,7 +1791,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_148",
@@ -1524,6 +1821,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1545,7 +1846,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_150",
@@ -1566,7 +1871,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_151",
@@ -1587,7 +1896,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_152",
@@ -1608,7 +1921,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_153",
@@ -1634,6 +1951,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1655,7 +1976,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_155",
@@ -1681,6 +2006,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1707,6 +2036,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1733,6 +2066,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1755,7 +2092,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_159",
@@ -1781,6 +2122,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1807,6 +2152,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1833,6 +2182,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1854,7 +2207,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_213",
@@ -1875,7 +2232,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_214",
@@ -1901,6 +2262,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1922,7 +2287,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_216",
@@ -1948,6 +2317,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1974,6 +2347,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -1995,7 +2372,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_219",
@@ -2021,6 +2402,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2042,7 +2427,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_221",
@@ -2063,7 +2452,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_222",
@@ -2084,7 +2477,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_223",
@@ -2105,7 +2502,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_224",
@@ -2126,7 +2527,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_225",
@@ -2147,7 +2552,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_226",
@@ -2168,7 +2577,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_227",
@@ -2189,7 +2602,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_228",
@@ -2210,7 +2627,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_229",
@@ -2231,7 +2652,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_230",
@@ -2251,7 +2676,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_231",
@@ -2271,7 +2700,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_232",
@@ -2291,7 +2724,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_233",
@@ -2311,7 +2748,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_234",
@@ -2331,7 +2772,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_235",
@@ -2351,7 +2796,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_236",
@@ -2371,7 +2820,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_237",
@@ -2391,7 +2844,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_238",
@@ -2411,7 +2868,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_239",
@@ -2431,7 +2892,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_240",
@@ -2452,7 +2917,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_241",
@@ -2473,7 +2942,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_242",
@@ -2494,7 +2967,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_243",
@@ -2515,7 +2992,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_244",
@@ -2536,7 +3017,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_245",
@@ -2557,7 +3042,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_246",
@@ -2578,7 +3067,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_247",
@@ -2599,7 +3092,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_248",
@@ -2620,7 +3117,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_249",
@@ -2641,7 +3142,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_300",
@@ -2661,7 +3166,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_301",
@@ -2681,7 +3190,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_302",
@@ -2701,7 +3214,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_303",
@@ -2721,7 +3238,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_304",
@@ -2741,7 +3262,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_305",
@@ -2761,7 +3286,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_306",
@@ -2781,7 +3310,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_307",
@@ -2801,7 +3334,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_308",
@@ -2821,7 +3358,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_309",
@@ -2841,7 +3382,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_310",
@@ -2865,6 +3410,10 @@
       "evidence_pattern": "mixed",
       "metadata": {
         "domain_converted_from": "finance"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2886,7 +3435,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_312",
@@ -2911,6 +3464,10 @@
       "metadata": {
         "domain_converted_from": "transportation",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2936,6 +3493,10 @@
       "evidence_pattern": "mixed",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -2957,7 +3518,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_315",
@@ -2978,7 +3543,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_316",
@@ -3004,6 +3573,10 @@
       "metadata": {
         "domain_converted_from": "agriculture",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3029,6 +3602,10 @@
       "evidence_pattern": "mixed",
       "metadata": {
         "domain_converted_from": "medicine"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3054,6 +3631,10 @@
       "evidence_pattern": "mixed",
       "metadata": {
         "domain_converted_from": "technology"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3075,7 +3656,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_320",
@@ -3096,7 +3681,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_321",
@@ -3122,6 +3711,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3143,7 +3736,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_323",
@@ -3164,7 +3761,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_324",
@@ -3190,6 +3791,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3216,6 +3821,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3237,7 +3846,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_327",
@@ -3263,6 +3876,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3284,7 +3901,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_329",
@@ -3310,6 +3931,10 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3330,7 +3955,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_331",
@@ -3350,7 +3979,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_333",
@@ -3370,7 +4003,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_334",
@@ -3390,7 +4027,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_335",
@@ -3410,7 +4051,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_336",
@@ -3430,7 +4075,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_337",
@@ -3450,7 +4099,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_338",
@@ -3470,7 +4123,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_339",
@@ -3490,7 +4147,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_340",
@@ -3511,7 +4172,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_341",
@@ -3532,7 +4197,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_342",
@@ -3553,7 +4222,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_343",
@@ -3579,6 +4252,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3600,7 +4277,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_345",
@@ -3621,7 +4302,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_346",
@@ -3642,7 +4327,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_347",
@@ -3668,6 +4357,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -3689,7 +4382,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_349",
@@ -3710,7 +4407,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_410",
@@ -3731,7 +4432,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_411",
@@ -3752,7 +4457,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_412",
@@ -3773,7 +4482,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_413",
@@ -3794,7 +4507,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_414",
@@ -3815,7 +4532,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_415",
@@ -3836,7 +4557,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_416",
@@ -3857,7 +4582,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_417",
@@ -3878,7 +4607,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_418",
@@ -3899,7 +4632,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_419",
@@ -3920,7 +4657,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_420",
@@ -3941,7 +4682,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_421",
@@ -3962,7 +4707,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_422",
@@ -3983,7 +4732,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_423",
@@ -4004,7 +4757,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_424",
@@ -4025,7 +4782,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_450",
@@ -4046,7 +4807,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_451",
@@ -4067,7 +4832,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_452",
@@ -4088,7 +4857,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_453",
@@ -4109,7 +4882,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_454",
@@ -4130,7 +4907,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_455",
@@ -4150,7 +4931,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_456",
@@ -4170,7 +4955,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_457",
@@ -4190,7 +4979,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_458",
@@ -4210,7 +5003,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_459",
@@ -4230,7 +5027,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_600",
@@ -4252,7 +5053,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_601",
@@ -4274,7 +5079,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_602",
@@ -4296,7 +5105,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_603",
@@ -4318,7 +5131,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_604",
@@ -4340,7 +5157,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "comparative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_605",
@@ -4362,7 +5183,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_606",
@@ -4383,7 +5208,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_607",
@@ -4404,7 +5233,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_608",
@@ -4425,7 +5258,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_609",
@@ -4446,7 +5283,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_610",
@@ -4467,7 +5308,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_611",
@@ -4488,7 +5333,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_612",
@@ -4510,7 +5359,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_613",
@@ -4532,7 +5385,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_614",
@@ -4554,7 +5411,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_615",
@@ -4576,7 +5437,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_616",
@@ -4598,7 +5463,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_617",
@@ -4620,7 +5489,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_618",
@@ -4642,7 +5515,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_619",
@@ -4664,7 +5541,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_620",
@@ -4686,7 +5567,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_621",
@@ -4708,7 +5593,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_622",
@@ -4730,7 +5619,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_623",
@@ -4752,7 +5645,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_624",
@@ -4774,7 +5671,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_625",
@@ -4796,7 +5697,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_626",
@@ -4818,7 +5723,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_627",
@@ -4840,7 +5749,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_628",
@@ -4862,7 +5775,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_629",
@@ -4884,7 +5801,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_631",
@@ -4905,7 +5826,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_632",
@@ -4926,7 +5851,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_633",
@@ -4947,7 +5876,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_636",
@@ -4969,7 +5902,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_637",
@@ -4991,7 +5928,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_638",
@@ -5013,7 +5954,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_639",
@@ -5035,7 +5980,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_640",
@@ -5057,7 +6006,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_641",
@@ -5079,7 +6032,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_642",
@@ -5101,7 +6058,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_643",
@@ -5123,7 +6084,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_644",
@@ -5145,7 +6110,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_645",
@@ -5167,7 +6136,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_646",
@@ -5189,7 +6162,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_647",
@@ -5211,7 +6188,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_648",
@@ -5233,7 +6214,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_649",
@@ -5255,7 +6240,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_650",
@@ -5277,7 +6266,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_651",
@@ -5299,7 +6292,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_652",
@@ -5321,7 +6318,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_653",
@@ -5343,7 +6344,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_654",
@@ -5365,7 +6370,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_655",
@@ -5386,7 +6395,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_656",
@@ -5408,7 +6421,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_657",
@@ -5429,7 +6446,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_658",
@@ -5451,7 +6472,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_659",
@@ -5473,7 +6498,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_661",
@@ -5495,7 +6524,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_662",
@@ -5517,7 +6550,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_663",
@@ -5538,7 +6575,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_664",
@@ -5560,7 +6601,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_665",
@@ -5582,7 +6627,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_700",
@@ -5603,7 +6652,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_701",
@@ -5624,7 +6677,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_702",
@@ -5645,7 +6702,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_703",
@@ -5666,7 +6727,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_001",
@@ -5688,7 +6753,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_002",
@@ -5710,7 +6780,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_003",
@@ -5732,7 +6807,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_004",
@@ -5754,7 +6834,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_005",
@@ -5776,7 +6861,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_006",
@@ -5798,7 +6888,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_007",
@@ -5820,7 +6915,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_008",
@@ -5842,7 +6942,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_009",
@@ -5864,7 +6969,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_010",
@@ -5887,7 +6997,12 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_011",
@@ -5909,7 +7024,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_012",
@@ -5931,7 +7051,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_013",
@@ -5953,7 +7078,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_medium_014",
@@ -5979,6 +7109,11 @@
       "metadata": {
         "domain_converted_from": "finance",
         "conversion_type": "domain_diversification"
+      },
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -6001,7 +7136,12 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_407",
@@ -6024,7 +7164,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_800",
@@ -6044,7 +7188,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_801",
@@ -6064,7 +7212,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_802",
@@ -6084,7 +7236,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_803",
@@ -6104,7 +7260,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_804",
@@ -6129,6 +7289,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -6149,7 +7313,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_807",
@@ -6169,7 +7337,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_809",
@@ -6189,7 +7361,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_810",
@@ -6209,7 +7385,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_811",
@@ -6229,7 +7409,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_812",
@@ -6249,7 +7433,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_813",
@@ -6269,7 +7457,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_814",
@@ -6289,7 +7481,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_419",
@@ -6312,7 +7508,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_abstain_hard_867",
@@ -6334,7 +7534,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_850",
@@ -6353,7 +7557,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_851",
@@ -6372,7 +7580,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_852",
@@ -6391,7 +7603,11 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_853",
@@ -6411,7 +7627,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_854",
@@ -6431,7 +7651,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_855",
@@ -6451,7 +7675,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_856",
@@ -6471,7 +7699,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_900",
@@ -6491,7 +7723,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_901",
@@ -6511,7 +7747,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_902",
@@ -6531,7 +7771,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_903",
@@ -6551,7 +7795,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_904",
@@ -6571,7 +7819,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_905",
@@ -6591,7 +7843,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_906",
@@ -6616,6 +7872,10 @@
       "metadata": {
         "domain_converted_from": "technology",
         "conversion_type": "domain_diversification"
+      },
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
       }
     },
     {
@@ -6636,7 +7896,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_506",
@@ -6659,7 +7923,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_908",
@@ -6679,7 +7947,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_909",
@@ -6699,7 +7971,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_910",
@@ -6719,7 +7995,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_911",
@@ -6739,7 +8019,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_912",
@@ -6759,7 +8043,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_913",
@@ -6779,7 +8067,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_914",
@@ -6799,7 +8091,11 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "mixed"
+      "evidence_pattern": "mixed",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_510",
@@ -6820,7 +8116,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_medium_515",
@@ -6841,7 +8141,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_dispute_hard_522",
@@ -6862,7 +8166,11 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_915",
@@ -6899,7 +8207,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_916",
@@ -6936,7 +8249,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_917",
@@ -6973,7 +8291,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_918",
@@ -7010,7 +8333,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_919",
@@ -7047,7 +8375,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_920",
@@ -7084,7 +8417,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_921",
@@ -7121,7 +8459,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_922",
@@ -7158,7 +8501,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_923",
@@ -7195,7 +8543,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_924",
@@ -7232,7 +8585,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_925",
@@ -7269,7 +8627,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_926",
@@ -7306,7 +8669,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_927",
@@ -7343,7 +8711,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_928",
@@ -7380,7 +8753,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t1_qualify_hard_929",
@@ -7417,7 +8795,12 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }

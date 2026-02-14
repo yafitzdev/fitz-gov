@@ -32,7 +32,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t0_grounding_easy_002",
@@ -61,7 +68,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t0_grounding_easy_003",
@@ -89,7 +103,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t0_grounding_easy_004",
@@ -121,7 +142,17 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "SDKs for",
+          "supports"
+        ]
+      }
     },
     {
       "id": "t0_grounding_easy_005",
@@ -151,7 +182,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t0_grounding_easy_006",
@@ -178,7 +216,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t0_grounding_easy_007",
@@ -209,7 +254,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t0_grounding_easy_008",
@@ -240,7 +292,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     }
   ],
   "evaluation_config": {

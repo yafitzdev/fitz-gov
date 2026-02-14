@@ -31,7 +31,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_002",
@@ -60,7 +67,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_003",
@@ -87,7 +101,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_004",
@@ -117,7 +138,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_005",
@@ -144,7 +172,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_006",
@@ -171,7 +206,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_007",
@@ -199,7 +241,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_008",
@@ -230,7 +279,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_009",
@@ -258,7 +314,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_medium_010",
@@ -288,7 +351,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_001",
@@ -317,7 +387,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_002",
@@ -345,7 +422,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_003",
@@ -373,7 +457,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_004",
@@ -403,7 +494,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_005",
@@ -432,7 +530,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_006",
@@ -461,7 +566,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_007",
@@ -491,7 +603,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_008",
@@ -516,7 +635,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_009",
@@ -541,7 +667,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_010",
@@ -569,7 +702,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_011",
@@ -595,7 +735,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_012",
@@ -621,7 +768,18 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Connection",
+          "connection",
+          "pool"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_013",
@@ -646,7 +804,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_014",
@@ -671,7 +836,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_015",
@@ -697,7 +869,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_016",
@@ -721,7 +900,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_017",
@@ -746,7 +932,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_018",
@@ -771,7 +964,16 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "'This merger represents a new chapter for our company...'"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_019",
@@ -796,7 +998,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_020",
@@ -823,7 +1032,18 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "November",
+          "November 3",
+          "October 15"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_021",
@@ -850,7 +1070,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_022",
@@ -876,7 +1103,17 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "4.2",
+          "policy"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_023",
@@ -904,7 +1141,21 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Database",
+          "connection",
+          "database",
+          "pool",
+          "retry",
+          "timeout"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_024",
@@ -931,7 +1182,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_025",
@@ -956,7 +1214,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_026",
@@ -981,7 +1246,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_027",
@@ -1006,7 +1278,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_028",
@@ -1031,7 +1310,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_029",
@@ -1056,7 +1342,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_030",
@@ -1081,7 +1374,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_031",
@@ -1106,7 +1406,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_032",
@@ -1131,7 +1438,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_033",
@@ -1156,7 +1470,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_034",
@@ -1181,7 +1502,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_035",
@@ -1206,7 +1534,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_036",
@@ -1231,7 +1566,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_037",
@@ -1256,7 +1598,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_038",
@@ -1281,7 +1630,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_039",
@@ -1306,7 +1662,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_040",
@@ -1331,7 +1694,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_041",
@@ -1356,7 +1726,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_042",
@@ -1381,7 +1758,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_043",
@@ -1406,7 +1790,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_044",
@@ -1431,7 +1822,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_045",
@@ -1468,7 +1866,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_046",
@@ -1505,7 +1910,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_047",
@@ -1542,7 +1954,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_048",
@@ -1579,7 +1998,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_049",
@@ -1616,7 +2042,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_050",
@@ -1653,7 +2086,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_051",
@@ -1690,7 +2130,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_052",
@@ -1727,7 +2174,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_053",
@@ -1764,7 +2218,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_054",
@@ -1801,7 +2262,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_055",
@@ -1838,7 +2306,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_056",
@@ -1875,7 +2350,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_057",
@@ -1912,7 +2394,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_058",
@@ -1949,7 +2438,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_059",
@@ -1986,7 +2482,14 @@
           "source_type": "article",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_060",
@@ -2011,7 +2514,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_061",
@@ -2036,7 +2546,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_062",
@@ -2061,7 +2578,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_063",
@@ -2086,7 +2610,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_064",
@@ -2111,7 +2642,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_065",
@@ -2136,7 +2674,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_066",
@@ -2161,7 +2706,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_067",
@@ -2186,7 +2738,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_068",
@@ -2211,7 +2770,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_069",
@@ -2236,7 +2802,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_070",
@@ -2261,7 +2834,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_071",
@@ -2286,7 +2866,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_072",
@@ -2311,7 +2898,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_073",
@@ -2336,7 +2930,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_074",
@@ -2361,7 +2962,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_075",
@@ -2386,7 +2994,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_076",
@@ -2411,7 +3026,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_077",
@@ -2436,7 +3058,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_078",
@@ -2461,7 +3090,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_079",
@@ -2486,7 +3122,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_080",
@@ -2511,7 +3154,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_081",
@@ -2550,7 +3200,22 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Southeast Asia",
+          "Stanford University's Office of STEM Education released its 2019-2024 longitudinal report in June 2024, documenting a rise in STEM major graduation rates from 34% to 51% across engineering, computer science, and biological sciences. The initiative invested $18.7 million in tutoring centers, peer mentoring, and redesigned introductory courses. Retention between freshman and sophomore year for STEM-declared students improved from 71% to 84%, with the largest gains among first-generation college students. UNESCO's Global STEM Framework, published in its 2024 Education Monitoring Report, adopted a fundamentally different strategy for measuring STEM education success. Rather than tracking graduation rates, UNESCO developed a Sustainability Competency",
+          "Stanford University's Office of STEM Education released its 2019-2024 longitudinal report in June 2024, documenting a rise in STEM major graduation rates from 34% to 51% across engineering, computer science, and biological sciences. The initiative invested $18.7 million in tutoring centers, peer mentoring, and redesigned introductory courses. Retention between freshman and sophomore year for STEM-declared students improved from 71% to 84%, with the largest gains among first-generation college students. UNESCO's Global STEM Framework, published in its 2024 Education Monitoring Report, adopted a fundamentally different strategy for measuring STEM education success. Rather than tracking graduation rates, UNESCO developed a Sustainability Competency Index (SCI) that evaluates students' ability to apply scientific reasoning to climate adaptation",
+          "Stanford University's Office of STEM Education released its 2019-2024 longitudinal report in June 2024, documenting a rise in STEM major graduation rates from 34% to 51% across engineering, computer science, and biological sciences. The initiative invested $18.7 million in tutoring centers, peer mentoring, and redesigned introductory courses. Retention between freshman and sophomore year for STEM-declared students improved from 71% to 84%, with the largest gains among first-generation college students. UNESCO's Global STEM Framework, published in its 2024 Education Monitoring Report, adopted a fundamentally different strategy for measuring STEM education success. Rather than tracking graduation rates, UNESCO developed a Sustainability Competency Index (SCI) that evaluates students' ability to apply scientific reasoning to climate adaptation challenges. Pilot programs in 14 countries",
+          "Stanford University's Office of STEM Education released its 2019-2024 longitudinal report in June 2024, documenting a rise in STEM major graduation rates from 34% to 51% across engineering, computer science, and biological sciences. The initiative invested $18.7 million in tutoring centers, peer mentoring, and redesigned introductory courses. Retention between freshman and sophomore year for STEM-declared students improved from 71% to 84%, with the largest gains among first-generation college students. UNESCO's Global STEM Framework, published in its 2024 Education Monitoring Report, adopted a fundamentally different strategy for measuring STEM education success. Rather than tracking graduation rates, UNESCO developed a Sustainability Competency Index (SCI) that evaluates students' ability to apply scientific reasoning to climate adaptation challenges. Pilot programs in 14 countries across Sub-Saharan",
+          "Stanford University's Office of STEM Education released its 2019-2024 longitudinal report in June 2024, documenting a rise in STEM major graduation rates from 34% to 51% across engineering, computer science, and biological sciences. The initiative invested $18.7 million in tutoring centers, peer mentoring, and redesigned introductory courses. Retention between freshman and sophomore year for STEM-declared students improved from 71% to 84%, with the largest gains among first-generation college students. UNESCO's Global STEM Framework, published in its 2024 Education Monitoring Report, adopted a fundamentally different strategy for measuring STEM education success. Rather than tracking graduation rates, UNESCO developed a Sustainability Competency Index (SCI) that evaluates students' ability to apply scientific reasoning to climate adaptation challenges. Pilot programs in 14 countries across Sub-Saharan Africa and Southeast Asia used the SCI",
+          "Stanford University's Office of STEM Education released its 2019-2024 longitudinal report in June 2024, documenting a rise in STEM major graduation rates from 34% to 51% across engineering, computer science, and biological sciences. The initiative invested $18.7 million in tutoring centers, peer mentoring, and redesigned introductory courses. Retention between freshman and sophomore year for STEM-declared students improved from 71% to 84%, with the largest gains among first-generation college students. UNESCO's Global STEM Framework, published in its 2024 Education Monitoring Report, adopted a fundamentally different strategy for measuring STEM education success. Rather than tracking graduation rates, UNESCO developed a Sustainability Competency Index (SCI) that evaluates students' ability to apply scientific reasoning to climate adaptation challenges. Pilot programs in 14 countries across Sub-Saharan Africa and Southeast Asia used the SCI to assess 23,000"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_082",
@@ -2589,7 +3254,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "NOAA's Earth System Research Laboratories launched a pilot direct-air carbon capture facility in Boulder, Colorado in January 2023. Operating with a modular solid-sorbent system, the facility processes 500,000 metric tons of CO2 annually, storing the captured carbon in underground basalt formations at a depth of 800 meters. NOAA uses the facility primarily as a research testbed, instrumenting each module with atmospheric sensors to study capture efficiency under varying humidity and temperature conditions. Tesla Energy's Carbon Solutions division, announced at the company's March 2024 Investor Day, takes a distributed",
+          "NOAA's Earth System Research Laboratories launched a pilot direct-air carbon capture facility in Boulder, Colorado in January 2023. Operating with a modular solid-sorbent system, the facility processes 500,000 metric tons of CO2 annually, storing the captured carbon in underground basalt formations at a depth of 800 meters. NOAA uses the facility primarily as a research testbed, instrumenting each module with atmospheric sensors to study capture efficiency under varying humidity and temperature conditions. Tesla Energy's Carbon Solutions division, announced at the company's March 2024 Investor Day, takes a distributed approach to carbon removal. Rather than centralized capture plants, Tesla deploys roof-mounted",
+          "NOAA's Earth System Research Laboratories launched a pilot direct-air carbon capture facility in Boulder, Colorado in January 2023. Operating with a modular solid-sorbent system, the facility processes 500,000 metric tons of CO2 annually, storing the captured carbon in underground basalt formations at a depth of 800 meters. NOAA uses the facility primarily as a research testbed, instrumenting each module with atmospheric sensors to study capture efficiency under varying humidity and temperature conditions. Tesla Energy's Carbon Solutions division, announced at the company's March 2024 Investor Day, takes a distributed approach to carbon removal. Rather than centralized capture plants, Tesla deploys roof-mounted electrochemical",
+          "NOAA's Earth System Research Laboratories launched a pilot direct-air carbon capture facility in Boulder, Colorado in January 2023. Operating with a modular solid-sorbent system, the facility processes 500,000 metric tons of CO2 annually, storing the captured carbon in underground basalt formations at a depth of 800 meters. NOAA uses the facility primarily as a research testbed, instrumenting each module with atmospheric sensors to study capture efficiency under varying humidity and temperature conditions. Tesla Energy's Carbon Solutions division, announced at the company's March 2024 Investor Day, takes a distributed approach to carbon removal. Rather than centralized capture plants, Tesla deploys roof-mounted electrochemical CO2 scrubbers integrated with its Powerwall",
+          "NOAA's Earth System Research Laboratories launched a pilot direct-air carbon capture facility in Boulder, Colorado in January 2023. Operating with a modular solid-sorbent system, the facility processes 500,000 metric tons of CO2 annually, storing the captured carbon in underground basalt formations at a depth of 800 meters. NOAA uses the facility primarily as a research testbed, instrumenting each module with atmospheric sensors to study capture efficiency under varying humidity and temperature conditions. Tesla Energy's Carbon Solutions division, announced at the company's March 2024 Investor Day, takes a distributed approach to carbon removal. Rather than centralized capture plants, Tesla deploys roof-mounted electrochemical CO2 scrubbers integrated with its Powerwall battery systems. Tesla's strategy prioritizes pairing carbon capture with renewable energy storage, measuring success through lifecycle carbon-intensity reduction per household",
+          "NOAA's Earth System Research Laboratories launched a pilot direct-air carbon capture facility in Boulder, Colorado in January 2023. Operating with a modular solid-sorbent system, the facility processes 500,000 metric tons of CO2 annually, storing the captured carbon in underground basalt formations at a depth of 800 meters. NOAA uses the facility primarily as a research testbed, instrumenting each module with atmospheric sensors to study capture efficiency under varying humidity and temperature conditions. Tesla Energy's Carbon Solutions division, announced at the company's March 2024 Investor Day, takes a distributed approach to carbon removal. Rather than centralized capture plants, Tesla deploys roof-mounted electrochemical CO2 scrubbers integrated with its Powerwall battery systems. Tesla's strategy prioritizes pairing carbon capture with renewable energy storage, measuring success through lifecycle carbon-intensity reduction per household rather than aggregate tonnage. The company targets a 40% reduction"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_083",
@@ -2628,7 +3307,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Ethiopian",
+          "Team USA's performance at the 2024 Paris Olympics was documented in the USOPC's post-Games report released October 2024. The delegation won 14 gold, 21 silver, and 18 bronze medals across 28 sports, with swimming and track & field contributing 19 of the 14 gold medals. The average age of Team USA medalists was 26.3 years, and 58% of medal winners were competing in their first Olympic Games. Adidas released its 2024 Global Athletics Sponsorship Impact Report in November 2024, detailing the performance of its 312 sponsored athletes across 44 countries",
+          "Team USA's performance at the 2024 Paris Olympics was documented in the USOPC's post-Games report released October 2024. The delegation won 14 gold, 21 silver, and 18 bronze medals across 28 sports, with swimming and track & field contributing 19 of the 14 gold medals. The average age of Team USA medalists was 26.3 years, and 58% of medal winners were competing in their first Olympic Games. Adidas released its 2024 Global Athletics Sponsorship Impact Report in November 2024, detailing the performance of its 312 sponsored athletes across 44 countries. Adidas-sponsored athletes",
+          "Team USA's performance at the 2024 Paris Olympics was documented in the USOPC's post-Games report released October 2024. The delegation won 14 gold, 21 silver, and 18 bronze medals across 28 sports, with swimming and track & field contributing 19 of the 14 gold medals. The average age of Team USA medalists was 26.3 years, and 58% of medal winners were competing in their first Olympic Games. Adidas released its 2024 Global Athletics Sponsorship Impact Report in November 2024, detailing the performance of its 312 sponsored athletes across 44 countries. Adidas-sponsored athletes collectively won 87 medals",
+          "Team USA's performance at the 2024 Paris Olympics was documented in the USOPC's post-Games report released October 2024. The delegation won 14 gold, 21 silver, and 18 bronze medals across 28 sports, with swimming and track & field contributing 19 of the 14 gold medals. The average age of Team USA medalists was 26.3 years, and 58% of medal winners were competing in their first Olympic Games. Adidas released its 2024 Global Athletics Sponsorship Impact Report in November 2024, detailing the performance of its 312 sponsored athletes across 44 countries. Adidas-sponsored athletes collectively won 87 medals at the Paris Games, with Kenyan and Ethiopian distance runners accounting for 23 of those. Adidas measured sponsorship ROI through a proprietary Brand Visibility",
+          "Team USA's performance at the 2024 Paris Olympics was documented in the USOPC's post-Games report released October 2024. The delegation won 14 gold, 21 silver, and 18 bronze medals across 28 sports, with swimming and track & field contributing 19 of the 14 gold medals. The average age of Team USA medalists was 26.3 years, and 58% of medal winners were competing in their first Olympic Games. Adidas released its 2024 Global Athletics Sponsorship Impact Report in November 2024, detailing the performance of its 312 sponsored athletes across 44 countries. Adidas-sponsored athletes collectively won 87 medals at the Paris Games, with Kenyan and Ethiopian distance runners accounting for 23 of those. Adidas measured sponsorship ROI through a proprietary Brand Visibility Score (BVS) that combines podium appearances, broadcast screen time, and social media impressions, reporting a BVS"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_084",
@@ -2667,7 +3360,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Impossible Foods published results from a 16-week randomized controlled trial of Heme Plus, its soy-leghemoglobin-derived iron supplement, in the Journal of Nutritional Biochemistry in April 2024. The study enrolled 420 participants with mild iron deficiency anemia and found no statistically significant difference between the Heme Plus group and the placebo group in serum ferritin levels (p=0.23). Adverse events were mild and comparable across arms, with 8% of the supplement group reporting gastrointestinal discomfort. Kraft Heinz's Nutrient Science division conducted a separate 24-week bioavailability study on its MicroFortify",
+          "Impossible Foods published results from a 16-week randomized controlled trial of Heme Plus, its soy-leghemoglobin-derived iron supplement, in the Journal of Nutritional Biochemistry in April 2024. The study enrolled 420 participants with mild iron deficiency anemia and found no statistically significant difference between the Heme Plus group and the placebo group in serum ferritin levels (p=0.23). Adverse events were mild and comparable across arms, with 8% of the supplement group reporting gastrointestinal discomfort. Kraft Heinz's Nutrient Science division conducted a separate 24-week bioavailability study on its MicroFortify zinc-and-B12 fortification technology, published in Food Chemistry in June 2024. The 780",
+          "Impossible Foods published results from a 16-week randomized controlled trial of Heme Plus, its soy-leghemoglobin-derived iron supplement, in the Journal of Nutritional Biochemistry in April 2024. The study enrolled 420 participants with mild iron deficiency anemia and found no statistically significant difference between the Heme Plus group and the placebo group in serum ferritin levels (p=0.23). Adverse events were mild and comparable across arms, with 8% of the supplement group reporting gastrointestinal discomfort. Kraft Heinz's Nutrient Science division conducted a separate 24-week bioavailability study on its MicroFortify zinc-and-B12 fortification technology, published in Food Chemistry in June 2024. The 780-participant trial across six U.S. cities demonstrated a 31%",
+          "Impossible Foods published results from a 16-week randomized controlled trial of Heme Plus, its soy-leghemoglobin-derived iron supplement, in the Journal of Nutritional Biochemistry in April 2024. The study enrolled 420 participants with mild iron deficiency anemia and found no statistically significant difference between the Heme Plus group and the placebo group in serum ferritin levels (p=0.23). Adverse events were mild and comparable across arms, with 8% of the supplement group reporting gastrointestinal discomfort. Kraft Heinz's Nutrient Science division conducted a separate 24-week bioavailability study on its MicroFortify zinc-and-B12 fortification technology, published in Food Chemistry in June 2024. The 780-participant trial across six U.S. cities demonstrated a 31% improvement in serum B12",
+          "Impossible Foods published results from a 16-week randomized controlled trial of Heme Plus, its soy-leghemoglobin-derived iron supplement, in the Journal of Nutritional Biochemistry in April 2024. The study enrolled 420 participants with mild iron deficiency anemia and found no statistically significant difference between the Heme Plus group and the placebo group in serum ferritin levels (p=0.23). Adverse events were mild and comparable across arms, with 8% of the supplement group reporting gastrointestinal discomfort. Kraft Heinz's Nutrient Science division conducted a separate 24-week bioavailability study on its MicroFortify zinc-and-B12 fortification technology, published in Food Chemistry in June 2024. The 780-participant trial across six U.S. cities demonstrated a 31% improvement in serum B12 levels and a 22% increase in zinc",
+          "Impossible Foods published results from a 16-week randomized controlled trial of Heme Plus, its soy-leghemoglobin-derived iron supplement, in the Journal of Nutritional Biochemistry in April 2024. The study enrolled 420 participants with mild iron deficiency anemia and found no statistically significant difference between the Heme Plus group and the placebo group in serum ferritin levels (p=0.23). Adverse events were mild and comparable across arms, with 8% of the supplement group reporting gastrointestinal discomfort. Kraft Heinz's Nutrient Science division conducted a separate 24-week bioavailability study on its MicroFortify zinc-and-B12 fortification technology, published in Food Chemistry in June 2024. The 780-participant trial across six U.S. cities demonstrated a 31% improvement in serum B12 levels and a 22% increase in zinc absorption compared to conventional fortification. Kraft Heinz attributed the improved uptake to its proprietary microencapsulation"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_085",
@@ -2706,7 +3413,20 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Snapchat's Trust & Safety team released its Q3 2024 Transparency Report detailing the impact of its Spotlight recommendation algorithm. Watch time on Spotlight increased 35% quarter-over-quarter, but the report also noted that the algorithm amplified divisive political content by 2.8x compared to organic sharing rates. The report covered 247 million daily active users across North America and Europe, and Snapchat committed to deploying a content-diversity filter by Q1 2025. Meta's Widely Viewed Content Report for Q3 2024 focused on its Facebook Reels recommendation system. Meta reported that Reels engagement grew 52%",
+          "Snapchat's Trust & Safety team released its Q3 2024 Transparency Report detailing the impact of its Spotlight recommendation algorithm. Watch time on Spotlight increased 35% quarter-over-quarter, but the report also noted that the algorithm amplified divisive political content by 2.8x compared to organic sharing rates. The report covered 247 million daily active users across North America and Europe, and Snapchat committed to deploying a content-diversity filter by Q1 2025. Meta's Widely Viewed Content Report for Q3 2024 focused on its Facebook Reels recommendation system. Meta reported that Reels engagement grew 52% year-over-year, driven primarily by a new interest-graph",
+          "Snapchat's Trust & Safety team released its Q3 2024 Transparency Report detailing the impact of its Spotlight recommendation algorithm. Watch time on Spotlight increased 35% quarter-over-quarter, but the report also noted that the algorithm amplified divisive political content by 2.8x compared to organic sharing rates. The report covered 247 million daily active users across North America and Europe, and Snapchat committed to deploying a content-diversity filter by Q1 2025. Meta's Widely Viewed Content Report for Q3 2024 focused on its Facebook Reels recommendation system. Meta reported that Reels engagement grew 52% year-over-year, driven primarily by a new interest-graph model trained on 18 months of user interaction data. The report disclosed that 0.07%",
+          "Snapchat's Trust & Safety team released its Q3 2024 Transparency Report detailing the impact of its Spotlight recommendation algorithm. Watch time on Spotlight increased 35% quarter-over-quarter, but the report also noted that the algorithm amplified divisive political content by 2.8x compared to organic sharing rates. The report covered 247 million daily active users across North America and Europe, and Snapchat committed to deploying a content-diversity filter by Q1 2025. Meta's Widely Viewed Content Report for Q3 2024 focused on its Facebook Reels recommendation system. Meta reported that Reels engagement grew 52% year-over-year, driven primarily by a new interest-graph model trained on 18 months of user interaction data. The report disclosed that 0.07% of Reels",
+          "Snapchat's Trust & Safety team released its Q3 2024 Transparency Report detailing the impact of its Spotlight recommendation algorithm. Watch time on Spotlight increased 35% quarter-over-quarter, but the report also noted that the algorithm amplified divisive political content by 2.8x compared to organic sharing rates. The report covered 247 million daily active users across North America and Europe, and Snapchat committed to deploying a content-diversity filter by Q1 2025. Meta's Widely Viewed Content Report for Q3 2024 focused on its Facebook Reels recommendation system. Meta reported that Reels engagement grew 52% year-over-year, driven primarily by a new interest-graph model trained on 18 months of user interaction data. The report disclosed that 0.07% of Reels views went to content later rated as misinformation by third-party fact-checker"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_086",
@@ -2745,7 +3465,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Saqqara",
+          "Ur in southern Iraq uncovered a previously unknown administrative quarter dating to the Third Dynasty of Ur (circa 2112-2004 BCE). The team catalogued 1,340 cuneiform tablets recording grain distributions, labor assignments, and temple offerings. Radiocarbon dating of organic material from the site's deepest stratum confirmed continuous occupation from approximately 3800 BCE, pushing back the settlement's founding by two centuries. The Egyptian-German Archaeological Mission at Saqqara announced in September 2024 the discovery of 47 intact sarcophagi in a sealed burial shaft adjacent to the Step Pyramid complex. CT scanning of 12 sarcophag",
+          "Ur in southern Iraq uncovered a previously unknown administrative quarter dating to the Third Dynasty of Ur (circa 2112-2004 BCE). The team catalogued 1,340 cuneiform tablets recording grain distributions, labor assignments, and temple offerings. Radiocarbon dating of organic material from the site's deepest stratum confirmed continuous occupation from approximately 3800 BCE, pushing back the settlement's founding by two centuries. The Egyptian-German Archaeological Mission at Saqqara announced in September 2024 the discovery of 47 intact sarcophagi in a sealed burial shaft adjacent to the Step Pyramid complex. CT scanning of 12 sarcophagi revealed mummif",
+          "Ur in southern Iraq uncovered a previously unknown administrative quarter dating to the Third Dynasty of Ur (circa 2112-2004 BCE). The team catalogued 1,340 cuneiform tablets recording grain distributions, labor assignments, and temple offerings. Radiocarbon dating of organic material from the site's deepest stratum confirmed continuous occupation from approximately 3800 BCE, pushing back the settlement's founding by two centuries. The Egyptian-German Archaeological Mission at Saqqara announced in September 2024 the discovery of 47 intact sarcophagi in a sealed burial shaft adjacent to the Step Pyramid complex. CT scanning of 12 sarcophagi revealed mummification techniques consistent with 26th Dynasty",
+          "Ur in southern Iraq uncovered a previously unknown administrative quarter dating to the Third Dynasty of Ur (circa 2112-2004 BCE). The team catalogued 1,340 cuneiform tablets recording grain distributions, labor assignments, and temple offerings. Radiocarbon dating of organic material from the site's deepest stratum confirmed continuous occupation from approximately 3800 BCE, pushing back the settlement's founding by two centuries. The Egyptian-German Archaeological Mission at Saqqara announced in September 2024 the discovery of 47 intact sarcophagi in a sealed burial shaft adjacent to the Step Pyramid complex. CT scanning of 12 sarcophagi revealed mummification techniques consistent with 26th Dynasty practices (664-525 BCE). The mission also recovered 210 shabti",
+          "Ur in southern Iraq uncovered a previously unknown administrative quarter dating to the Third Dynasty of Ur (circa 2112-2004 BCE). The team catalogued 1,340 cuneiform tablets recording grain distributions, labor assignments, and temple offerings. Radiocarbon dating of organic material from the site's deepest stratum confirmed continuous occupation from approximately 3800 BCE, pushing back the settlement's founding by two centuries. The Egyptian-German Archaeological Mission at Saqqara announced in September 2024 the discovery of 47 intact sarcophagi in a sealed burial shaft adjacent to the Step Pyramid complex. CT scanning of 12 sarcophagi revealed mummification techniques consistent with 26th Dynasty practices (664-525 BCE). The mission also recovered 210 shabti figurines, a gilded cartonnage mask, and papyrus fragments containing excerpts from the Book of the Dead"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_087",
@@ -2784,7 +3518,22 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "HUD) published its 2024 Community Health Integration Report documenting outcomes from its Housing-Health Nexus initiative. The program deployed mobile vaccination units to 38 public housing developments across 12 cities, reaching 78% of eligible residents for flu and COVID-19 boosters. HUD spent $14.2 million on the initiative and reported a 23% reduction in emergency room visits among participating residents over the subsequent six months. The White House Office of Science and Technology Policy (OSTP) released the National Biodefense Preparedness Review in August 2024. The review assessed pandemic preparedness infrastructure, recommending a $3.1 billion",
+          "HUD) published its 2024 Community Health Integration Report documenting outcomes from its Housing-Health Nexus initiative. The program deployed mobile vaccination units to 38 public housing developments across 12 cities, reaching 78% of eligible residents for flu and COVID-19 boosters. HUD spent $14.2 million on the initiative and reported a 23% reduction in emergency room visits among participating residents over the subsequent six months. The White House Office of Science and Technology Policy (OSTP) released the National Biodefense Preparedness Review in August 2024. The review assessed pandemic preparedness infrastructure, recommending a $3.1 billion investment in domestic mRNA manufacturing",
+          "HUD) published its 2024 Community Health Integration Report documenting outcomes from its Housing-Health Nexus initiative. The program deployed mobile vaccination units to 38 public housing developments across 12 cities, reaching 78% of eligible residents for flu and COVID-19 boosters. HUD spent $14.2 million on the initiative and reported a 23% reduction in emergency room visits among participating residents over the subsequent six months. The White House Office of Science and Technology Policy (OSTP) released the National Biodefense Preparedness Review in August 2024. The review assessed pandemic preparedness infrastructure, recommending a $3.1 billion investment in domestic mRNA manufacturing capacity to produce 600 million",
+          "HUD) published its 2024 Community Health Integration Report documenting outcomes from its Housing-Health Nexus initiative. The program deployed mobile vaccination units to 38 public housing developments across 12 cities, reaching 78% of eligible residents for flu and COVID-19 boosters. HUD spent $14.2 million on the initiative and reported a 23% reduction in emergency room visits among participating residents over the subsequent six months. The White House Office of Science and Technology Policy (OSTP) released the National Biodefense Preparedness Review in August 2024. The review assessed pandemic preparedness infrastructure, recommending a $3.1 billion investment in domestic mRNA manufacturing capacity to produce 600 million vaccine doses within 130 days",
+          "HUD) published its 2024 Community Health Integration Report documenting outcomes from its Housing-Health Nexus initiative. The program deployed mobile vaccination units to 38 public housing developments across 12 cities, reaching 78% of eligible residents for flu and COVID-19 boosters. HUD spent $14.2 million on the initiative and reported a 23% reduction in emergency room visits among participating residents over the subsequent six months. The White House Office of Science and Technology Policy (OSTP) released the National Biodefense Preparedness Review in August 2024. The review assessed pandemic preparedness infrastructure, recommending a $3.1 billion investment in domestic mRNA manufacturing capacity to produce 600 million vaccine doses within 130 days of a declared emergency. OSTP's analysis modeled scenarios for H5N1",
+          "HUD) published its 2024 Community Health Integration Report documenting outcomes from its Housing-Health Nexus initiative. The program deployed mobile vaccination units to 38 public housing developments across 12 cities, reaching 78% of eligible residents for flu and COVID-19 boosters. HUD spent $14.2 million on the initiative and reported a 23% reduction in emergency room visits among participating residents over the subsequent six months. The White House Office of Science and Technology Policy (OSTP) released the National Biodefense Preparedness Review in August 2024. The review assessed pandemic preparedness infrastructure, recommending a $3.1 billion investment in domestic mRNA manufacturing capacity to produce 600 million vaccine doses within 130 days of a declared emergency. OSTP's analysis modeled scenarios for H5N1 avian influenza and novel coronavirus variants, projecting that pre-positioned antiviral stockpiles could reduce hospitalization peaks by 35-42%",
+          "avian influenza"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_088",
@@ -2823,7 +3572,22 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "DSM-5 diagnostic criteria for PTSD, published in JAMA Psychiatry in May 2024, evaluated an 8-week mindfulness-based stress reduction (MBSR) protocol. Among 340 veterans meeting DSM-5 PTSD criteria, the intervention reduced Clinician-Administered PTSD Scale (CAPS-5) scores by 34% at the 12-week endpoint. Dropout rates were 11%, and 28% of participants no longer met diagnostic threshold for PTSD at follow-up. Stanford University's Department of Psychiatry published a separate trial in The Lancet Psychiatry in July 2024 testing a novel transcranial",
+          "DSM-5 diagnostic criteria for PTSD, published in JAMA Psychiatry in May 2024, evaluated an 8-week mindfulness-based stress reduction (MBSR) protocol. Among 340 veterans meeting DSM-5 PTSD criteria, the intervention reduced Clinician-Administered PTSD Scale (CAPS-5) scores by 34% at the 12-week endpoint. Dropout rates were 11%, and 28% of participants no longer met diagnostic threshold for PTSD at follow-up. Stanford University's Department of Psychiatry published a separate trial in The Lancet Psychiatry in July 2024 testing a novel transcranial magnetic stimulation (TMS) protocol called Stanford Neuromodulation Therapy (SNT) for treatment-resistant depression. The open-label study treated 92 patients with accelerated bilateral TMS over 5 days, achieving a 79%",
+          "DSM-5 diagnostic criteria for PTSD, published in JAMA Psychiatry in May 2024, evaluated an 8-week mindfulness-based stress reduction (MBSR) protocol. Among 340 veterans meeting DSM-5 PTSD criteria, the intervention reduced Clinician-Administered PTSD Scale (CAPS-5) scores by 34% at the 12-week endpoint. Dropout rates were 11%, and 28% of participants no longer met diagnostic threshold for PTSD at follow-up. Stanford University's Department of Psychiatry published a separate trial in The Lancet Psychiatry in July 2024 testing a novel transcranial magnetic stimulation (TMS) protocol called Stanford Neuromodulation Therapy (SNT) for treatment-resistant depression. The open-label study treated 92 patients with accelerated bilateral TMS over 5 days, achieving a 79% response rate and 52% remission",
+          "DSM-5 diagnostic criteria for PTSD, published in JAMA Psychiatry in May 2024, evaluated an 8-week mindfulness-based stress reduction (MBSR) protocol. Among 340 veterans meeting DSM-5 PTSD criteria, the intervention reduced Clinician-Administered PTSD Scale (CAPS-5) scores by 34% at the 12-week endpoint. Dropout rates were 11%, and 28% of participants no longer met diagnostic threshold for PTSD at follow-up. Stanford University's Department of Psychiatry published a separate trial in The Lancet Psychiatry in July 2024 testing a novel transcranial magnetic stimulation (TMS) protocol called Stanford Neuromodulation Therapy (SNT) for treatment-resistant depression. The open-label study treated 92 patients with accelerated bilateral TMS over 5 days, achieving a 79% response rate and 52% remission rate as measured by the Montgomery-Asberg Depression Rating Scale (MADRS",
+          "PTSD, published in JAMA Psychiatry in May 2024, evaluated an 8-week mindfulness-based stress reduction (MBSR) protocol. Among 340 veterans meeting DSM-5 PTSD criteria, the intervention reduced Clinician-Administered PTSD Scale (CAPS-5) scores by 34% at the 12-week endpoint. Dropout rates were 11%, and 28% of participants no longer met diagnostic threshold for PTSD at follow-up. Stanford University's Department of Psychiatry published a separate trial in The Lancet Psychiatry in July 2024 testing a novel transcranial magnetic stimulation (TMS) protocol called Stanford Neuromodulation Therapy (SNT) for treatment-resistant depression",
+          "TMS",
+          "mindfulness-based stress reduction (MBSR) protocol. Among 340 veterans meeting DSM-5 PTSD criteria, the intervention reduced Clinician-Administered PTSD Scale (CAPS-5) scores by 34% at the 12-week endpoint. Dropout rates were 11%, and 28% of participants no longer met diagnostic threshold for PTSD at follow-up. Stanford University's Department of Psychiatry published a separate trial in The Lancet Psychiatry in July 2024 testing a novel transcranial magnetic stimulation (TMS) protocol called Stanford Neuromodulation"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_089",
@@ -2862,7 +3626,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "ADP Research Institute's 2024 Workforce Diversity Report tracked leadership demographics across its 920,000 client companies covering 40 million employees. Women in VP-and-above roles increased from 24% to 35% between 2021 and 2024, with the technology sector showing the steepest gains (19% to 31%). ADP attributed the acceleration to the proliferation of structured interview processes and pay-transparency legislation in 14 states. Gallup's 2024 State of the Global Workplace report surveyed 183,000",
+          "ADP Research Institute's 2024 Workforce Diversity Report tracked leadership demographics across its 920,000 client companies covering 40 million employees. Women in VP-and-above roles increased from 24% to 35% between 2021 and 2024, with the technology sector showing the steepest gains (19% to 31%). ADP attributed the acceleration to the proliferation of structured interview processes and pay-transparency legislation in 14 states. Gallup's 2024 State of the Global Workplace report surveyed 183,000 employees in 142 countries",
+          "ADP Research Institute's 2024 Workforce Diversity Report tracked leadership demographics across its 920,000 client companies covering 40 million employees. Women in VP-and-above roles increased from 24% to 35% between 2021 and 2024, with the technology sector showing the steepest gains (19% to 31%). ADP attributed the acceleration to the proliferation of structured interview processes and pay-transparency legislation in 14 states. Gallup's 2024 State of the Global Workplace report surveyed 183,000 employees in 142 countries to assess inclusion and belonging. Gallup's Q12",
+          "ADP Research Institute's 2024 Workforce Diversity Report tracked leadership demographics across its 920,000 client companies covering 40 million employees. Women in VP-and-above roles increased from 24% to 35% between 2021 and 2024, with the technology sector showing the steepest gains (19% to 31%). ADP attributed the acceleration to the proliferation of structured interview processes and pay-transparency legislation in 14 states. Gallup's 2024 State of the Global Workplace report surveyed 183,000 employees in 142 countries to assess inclusion and belonging. Gallup's Q12 engagement survey revealed that teams with gender-diverse leadership scored 21% higher on profitability",
+          "ADP Research Institute's 2024 Workforce Diversity Report tracked leadership demographics across its 920,000 client companies covering 40 million employees. Women in VP-and-above roles increased from 24% to 35% between 2021 and 2024, with the technology sector showing the steepest gains (19% to 31%). ADP attributed the acceleration to the proliferation of structured interview processes and pay-transparency legislation in 14 states. Gallup's 2024 State of the Global Workplace report surveyed 183,000 employees in 142 countries to assess inclusion and belonging. Gallup's Q12 engagement survey revealed that teams with gender-diverse leadership scored 21% higher on profitability and 17% higher on productivity",
+          "ADP Research Institute's 2024 Workforce Diversity Report tracked leadership demographics across its 920,000 client companies covering 40 million employees. Women in VP-and-above roles increased from 24% to 35% between 2021 and 2024, with the technology sector showing the steepest gains (19% to 31%). ADP attributed the acceleration to the proliferation of structured interview processes and pay-transparency legislation in 14 states. Gallup's 2024 State of the Global Workplace report surveyed 183,000 employees in 142 countries to assess inclusion and belonging. Gallup's Q12 engagement survey revealed that teams with gender-diverse leadership scored 21% higher on profitability and 17% higher on productivity. However, Gallup found that only 29% of global employees felt their organization genuinely valued diverse perspectives"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_090",
@@ -2901,7 +3679,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Indiana",
+          "USDA Natural Resources Conservation Service published a 2024 field study comparing irrigation methods across 180 farms in California's Central Valley. Drip irrigation systems reduced water usage by 40% compared to flood irrigation while maintaining almond and pistachio yields within 3% of historical averages. The study covered 47,000 acres and documented an average capital cost of $1,850 per acre for drip system installation, with a payback period of 3.2 years through water cost savings. Archer Daniels Midland (ADM) released its 2024 Sustainable Agriculture Report detailing outcomes from its precision agriculture partnership with 2,400 corn and soybean growers in the Midwest. ADM's program used satellite-guided variable-rate",
+          "USDA Natural Resources Conservation Service published a 2024 field study comparing irrigation methods across 180 farms in California's Central Valley. Drip irrigation systems reduced water usage by 40% compared to flood irrigation while maintaining almond and pistachio yields within 3% of historical averages. The study covered 47,000 acres and documented an average capital cost of $1,850 per acre for drip system installation, with a payback period of 3.2 years through water cost savings. Archer Daniels Midland (ADM) released its 2024 Sustainable Agriculture Report detailing outcomes from its precision agriculture partnership with 2,400 corn and soybean growers in the Midwest. ADM's program used satellite-guided variable-rate irrigation to reduce water application by 28%",
+          "USDA Natural Resources Conservation Service published a 2024 field study comparing irrigation methods across 180 farms in California's Central Valley. Drip irrigation systems reduced water usage by 40% compared to flood irrigation while maintaining almond and pistachio yields within 3% of historical averages. The study covered 47,000 acres and documented an average capital cost of $1,850 per acre for drip system installation, with a payback period of 3.2 years through water cost savings. Archer Daniels Midland (ADM) released its 2024 Sustainable Agriculture Report detailing outcomes from its precision agriculture partnership with 2,400 corn and soybean growers in the Midwest. ADM's program used satellite-guided variable-rate irrigation to reduce water application by 28% while increasing corn",
+          "USDA Natural Resources Conservation Service published a 2024 field study comparing irrigation methods across 180 farms in California's Central Valley. Drip irrigation systems reduced water usage by 40% compared to flood irrigation while maintaining almond and pistachio yields within 3% of historical averages. The study covered 47,000 acres and documented an average capital cost of $1,850 per acre for drip system installation, with a payback period of 3.2 years through water cost savings. Archer Daniels Midland (ADM) released its 2024 Sustainable Agriculture Report detailing outcomes from its precision agriculture partnership with 2,400 corn and soybean growers in the Midwest. ADM's program used satellite-guided variable-rate irrigation to reduce water application by 28% while increasing corn yields by 6 bushels per acre. The initiative covered 1.1 million acres",
+          "USDA Natural Resources Conservation Service published a 2024 field study comparing irrigation methods across 180 farms in California's Central Valley. Drip irrigation systems reduced water usage by 40% compared to flood irrigation while maintaining almond and pistachio yields within 3% of historical averages. The study covered 47,000 acres and documented an average capital cost of $1,850 per acre for drip system installation, with a payback period of 3.2 years through water cost savings. Archer Daniels Midland (ADM) released its 2024 Sustainable Agriculture Report detailing outcomes from its precision agriculture partnership with 2,400 corn and soybean growers in the Midwest. ADM's program used satellite-guided variable-rate irrigation to reduce water application by 28% while increasing corn yields by 6 bushels per acre. The initiative covered 1.1 million acres across Iowa, Illinois, and Indiana, and ADM invested $42 million"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_091",
@@ -2940,7 +3732,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Airbus UpNext, the company's innovation subsidiary, released data from its 2024 autonomous flight demonstration program in September 2024. The program's fleet of three modified A320neo aircraft completed 4,200 autonomous flight hours with zero safety incidents across 1,180 test flights between Toulouse and Hamburg. The system used Airbus's ATTOL (Autonomous Taxi, Take-Off, and Landing) technology combined with a new AI-based collision avoidance module certified under EASA's AI-specific airworthiness standards. The National Transportation Safety Board (NTSB) published its 2024 Annual Review of Autonomous Ground Vehicle Safety in October 2024, analyzing data from 47 companies",
+          "Airbus UpNext, the company's innovation subsidiary, released data from its 2024 autonomous flight demonstration program in September 2024. The program's fleet of three modified A320neo aircraft completed 4,200 autonomous flight hours with zero safety incidents across 1,180 test flights between Toulouse and Hamburg. The system used Airbus's ATTOL (Autonomous Taxi, Take-Off, and Landing) technology combined with a new AI-based collision avoidance module certified under EASA's AI-specific airworthiness standards. The National Transportation Safety Board (NTSB) published its 2024 Annual Review of Autonomous Ground Vehicle Safety in October 2024, analyzing data from 47 companies operating self-driving vehicles on U.S. roads. The report documented 0.3 incidents",
+          "Airbus UpNext, the company's innovation subsidiary, released data from its 2024 autonomous flight demonstration program in September 2024. The program's fleet of three modified A320neo aircraft completed 4,200 autonomous flight hours with zero safety incidents across 1,180 test flights between Toulouse and Hamburg. The system used Airbus's ATTOL (Autonomous Taxi, Take-Off, and Landing) technology combined with a new AI-based collision avoidance module certified under EASA's AI-specific airworthiness standards. The National Transportation Safety Board (NTSB) published its 2024 Annual Review of Autonomous Ground Vehicle Safety in October 2024, analyzing data from 47 companies operating self-driving vehicles on U.S. roads. The report documented 0.3 incidents per 100,000 miles",
+          "Airbus UpNext, the company's innovation subsidiary, released data from its 2024 autonomous flight demonstration program in September 2024. The program's fleet of three modified A320neo aircraft completed 4,200 autonomous flight hours with zero safety incidents across 1,180 test flights between Toulouse and Hamburg. The system used Airbus's ATTOL (Autonomous Taxi, Take-Off, and Landing) technology combined with a new AI-based collision avoidance module certified under EASA's AI-specific airworthiness standards. The National Transportation Safety Board (NTSB) published its 2024 Annual Review of Autonomous Ground Vehicle Safety in October 2024, analyzing data from 47 companies operating self-driving vehicles on U.S. roads. The report documented 0.3 incidents per 100,000 miles across the industry, with 84% of incidents involving perception failures",
+          "Airbus UpNext, the company's innovation subsidiary, released data from its 2024 autonomous flight demonstration program in September 2024. The program's fleet of three modified A320neo aircraft completed 4,200 autonomous flight hours with zero safety incidents across 1,180 test flights between Toulouse and Hamburg. The system used Airbus's ATTOL (Autonomous Taxi, Take-Off, and Landing) technology combined with a new AI-based collision avoidance module certified under EASA's AI-specific airworthiness standards. The National Transportation Safety Board (NTSB) published its 2024 Annual Review of Autonomous Ground Vehicle Safety in October 2024, analyzing data from 47 companies operating self-driving vehicles on U.S. roads. The report documented 0.3 incidents per 100,000 miles across the industry, with 84% of incidents involving perception failures in adverse weather. NTSB recommended mandatory V2X",
+          "Airbus UpNext, the company's innovation subsidiary, released data from its 2024 autonomous flight demonstration program in September 2024. The program's fleet of three modified A320neo aircraft completed 4,200 autonomous flight hours with zero safety incidents across 1,180 test flights between Toulouse and Hamburg. The system used Airbus's ATTOL (Autonomous Taxi, Take-Off, and Landing) technology combined with a new AI-based collision avoidance module certified under EASA's AI-specific airworthiness standards. The National Transportation Safety Board (NTSB) published its 2024 Annual Review of Autonomous Ground Vehicle Safety in October 2024, analyzing data from 47 companies operating self-driving vehicles on U.S. roads. The report documented 0.3 incidents per 100,000 miles across the industry, with 84% of incidents involving perception failures in adverse weather. NTSB recommended mandatory V2X (vehicle-to-everything) communication for all Level 4"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_092",
@@ -2979,7 +3785,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Redfin's Q3 2024 Rental Market Report analyzed listing data from 89 metropolitan areas, finding that the average asking rent for a two-bedroom apartment in urban cores reached $1,850 per month, a 4.2% year-over-year increase. Vacancy rates in Sun Belt cities averaged 7.1%, up from 5.3% in 2023, as new multifamily construction deliveries outpaced absorption. Redfin noted that Austin, Phoenix, and Jacksonville experienced the sharpest rent deceleration, with Austin two-bedrooms falling 8% year-over-year. Freddie Mac's Multifamily Outlook published in August 2024 used origination data from its $420 billion",
+          "Redfin's Q3 2024 Rental Market Report analyzed listing data from 89 metropolitan areas, finding that the average asking rent for a two-bedroom apartment in urban cores reached $1,850 per month, a 4.2% year-over-year increase. Vacancy rates in Sun Belt cities averaged 7.1%, up from 5.3% in 2023, as new multifamily construction deliveries outpaced absorption. Redfin noted that Austin, Phoenix, and Jacksonville experienced the sharpest rent deceleration, with Austin two-bedrooms falling 8% year-over-year. Freddie Mac's Multifamily Outlook published in August 2024 used origination data from its $420 billion apartment loan portfolio to assess market health. Freddie Mac found that debt-service",
+          "Redfin's Q3 2024 Rental Market Report analyzed listing data from 89 metropolitan areas, finding that the average asking rent for a two-bedroom apartment in urban cores reached $1,850 per month, a 4.2% year-over-year increase. Vacancy rates in Sun Belt cities averaged 7.1%, up from 5.3% in 2023, as new multifamily construction deliveries outpaced absorption. Redfin noted that Austin, Phoenix, and Jacksonville experienced the sharpest rent deceleration, with Austin two-bedrooms falling 8% year-over-year. Freddie Mac's Multifamily Outlook published in August 2024 used origination data from its $420 billion apartment loan portfolio to assess market health. Freddie Mac found that debt-service coverage ratios for stabilized properties averaged 1.38",
+          "Redfin's Q3 2024 Rental Market Report analyzed listing data from 89 metropolitan areas, finding that the average asking rent for a two-bedroom apartment in urban cores reached $1,850 per month, a 4.2% year-over-year increase. Vacancy rates in Sun Belt cities averaged 7.1%, up from 5.3% in 2023, as new multifamily construction deliveries outpaced absorption. Redfin noted that Austin, Phoenix, and Jacksonville experienced the sharpest rent deceleration, with Austin two-bedrooms falling 8% year-over-year. Freddie Mac's Multifamily Outlook published in August 2024 used origination data from its $420 billion apartment loan portfolio to assess market health. Freddie Mac found that debt-service coverage ratios for stabilized properties averaged 1.38x nationally, with workforce housing",
+          "Redfin's Q3 2024 Rental Market Report analyzed listing data from 89 metropolitan areas, finding that the average asking rent for a two-bedroom apartment in urban cores reached $1,850 per month, a 4.2% year-over-year increase. Vacancy rates in Sun Belt cities averaged 7.1%, up from 5.3% in 2023, as new multifamily construction deliveries outpaced absorption. Redfin noted that Austin, Phoenix, and Jacksonville experienced the sharpest rent deceleration, with Austin two-bedrooms falling 8% year-over-year. Freddie Mac's Multifamily Outlook published in August 2024 used origination data from its $420 billion apartment loan portfolio to assess market health. Freddie Mac found that debt-service coverage ratios for stabilized properties averaged 1.38x nationally, with workforce housing properties (those affordable to households earning 60-80% of area median income) showing the strongest rent growth at 5.9%",
+          "Redfin's Q3 2024 Rental Market Report analyzed listing data from 89 metropolitan areas, finding that the average asking rent for a two-bedroom apartment in urban cores reached $1,850 per month, a 4.2% year-over-year increase. Vacancy rates in Sun Belt cities averaged 7.1%, up from 5.3% in 2023, as new multifamily construction deliveries outpaced absorption. Redfin noted that Austin, Phoenix, and Jacksonville experienced the sharpest rent deceleration, with Austin two-bedrooms falling 8% year-over-year. Freddie Mac's Multifamily Outlook published in August 2024 used origination data from its $420 billion apartment loan portfolio to assess market health. Freddie Mac found that debt-service coverage ratios for stabilized properties averaged 1.38x nationally, with workforce housing properties (those affordable to households earning 60-80% of area median income) showing the strongest rent growth at 5.9%. Freddie Mac projected 440,000"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_093",
@@ -3018,7 +3838,16 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "DataVault"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_094",
@@ -3057,7 +3886,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Berkshire Hathaway's 2024 annual report disclosed that its General Re credit insurance portfolio's default rate decreased from 3.2% to 2.1% over the fiscal year, driven by tighter underwriting standards implemented in Q2 2023. The portfolio comprised $28.4 billion in insured corporate bonds across 1,200 issuers, with investment-grade credits representing 84% of exposure. Net premiums written for credit insurance totaled $1.9 billion, a 12% increase year-over-year. The New York Stock Exchange (NYSE) published its 2024 Market Quality Report analyzing trading conditions across its listed securities. The report found that average bid-ask",
+          "Berkshire Hathaway's 2024 annual report disclosed that its General Re credit insurance portfolio's default rate decreased from 3.2% to 2.1% over the fiscal year, driven by tighter underwriting standards implemented in Q2 2023. The portfolio comprised $28.4 billion in insured corporate bonds across 1,200 issuers, with investment-grade credits representing 84% of exposure. Net premiums written for credit insurance totaled $1.9 billion, a 12% increase year-over-year. The New York Stock Exchange (NYSE) published its 2024 Market Quality Report analyzing trading conditions across its listed securities. The report found that average bid-ask spreads for S&P 500 stocks narrowed to 0.8 basis",
+          "Berkshire Hathaway's 2024 annual report disclosed that its General Re credit insurance portfolio's default rate decreased from 3.2% to 2.1% over the fiscal year, driven by tighter underwriting standards implemented in Q2 2023. The portfolio comprised $28.4 billion in insured corporate bonds across 1,200 issuers, with investment-grade credits representing 84% of exposure. Net premiums written for credit insurance totaled $1.9 billion, a 12% increase year-over-year. The New York Stock Exchange (NYSE) published its 2024 Market Quality Report analyzing trading conditions across its listed securities. The report found that average bid-ask spreads for S&P 500 stocks narrowed to 0.8 basis points, while daily trading volume averaged 4.2 billion shares",
+          "Berkshire Hathaway's 2024 annual report disclosed that its General Re credit insurance portfolio's default rate decreased from 3.2% to 2.1% over the fiscal year, driven by tighter underwriting standards implemented in Q2 2023. The portfolio comprised $28.4 billion in insured corporate bonds across 1,200 issuers, with investment-grade credits representing 84% of exposure. Net premiums written for credit insurance totaled $1.9 billion, a 12% increase year-over-year. The New York Stock Exchange (NYSE) published its 2024 Market Quality Report analyzing trading conditions across its listed securities. The report found that average bid-ask spreads for S&P 500 stocks narrowed to 0.8 basis points, while daily trading volume averaged 4.2 billion shares. NYSE's analysis of market-maker participation showed that designated market maker",
+          "Berkshire Hathaway's 2024 annual report disclosed that its General Re credit insurance portfolio's default rate decreased from 3.2% to 2.1% over the fiscal year, driven by tighter underwriting standards implemented in Q2 2023. The portfolio comprised $28.4 billion in insured corporate bonds across 1,200 issuers, with investment-grade credits representing 84% of exposure. Net premiums written for credit insurance totaled $1.9 billion, a 12% increase year-over-year. The New York Stock Exchange (NYSE) published its 2024 Market Quality Report analyzing trading conditions across its listed securities. The report found that average bid-ask spreads for S&P 500 stocks narrowed to 0.8 basis points, while daily trading volume averaged 4.2 billion shares. NYSE's analysis of market-maker participation showed that designated market makers provided continuous quotes 99.7%",
+          "Berkshire Hathaway's 2024 annual report disclosed that its General Re credit insurance portfolio's default rate decreased from 3.2% to 2.1% over the fiscal year, driven by tighter underwriting standards implemented in Q2 2023. The portfolio comprised $28.4 billion in insured corporate bonds across 1,200 issuers, with investment-grade credits representing 84% of exposure. Net premiums written for credit insurance totaled $1.9 billion, a 12% increase year-over-year. The New York Stock Exchange (NYSE) published its 2024 Market Quality Report analyzing trading conditions across its listed securities. The report found that average bid-ask spreads for S&P 500 stocks narrowed to 0.8 basis points, while daily trading volume averaged 4.2 billion shares. NYSE's analysis of market-maker participation showed that designated market makers provided continuous quotes 99.7% of the time during regular trading hours, and circuit breaker"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_095",
@@ -3096,7 +3939,21 @@
           "source_type": "study",
           "authority": "high"
         }
-      ]
+      ],
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Pfizer's Digital Health division published results of its AI-assisted MRI analysis system, PfizerNeuroScan, in Radiology in June 2024. The multicenter validation study across 18 hospitals analyzed 12,400 brain MRI scans and detected glioblastoma tumors with 97.3% sensitivity and 94.1% specificity. The system processed each scan in an average of 4.2 seconds, compared to 22 minutes for manual radiologist review. Pfizer submitted the system for FDA 510(k) clearance in August 2024. The FDA's Center for Devices and Radiological Health (CDRH) published its 2024 Annual Report on AI/ML-Enabled Medical Devices, cataloguing 271 cleared AI devices across cardiology, radiology, and pathology. The report found that AI-assisted mammograph",
+          "Pfizer's Digital Health division published results of its AI-assisted MRI analysis system, PfizerNeuroScan, in Radiology in June 2024. The multicenter validation study across 18 hospitals analyzed 12,400 brain MRI scans and detected glioblastoma tumors with 97.3% sensitivity and 94.1% specificity. The system processed each scan in an average of 4.2 seconds, compared to 22 minutes for manual radiologist review. Pfizer submitted the system for FDA 510(k) clearance in August 2024. The FDA's Center for Devices and Radiological Health (CDRH) published its 2024 Annual Report on AI/ML-Enabled Medical Devices, cataloguing 271 cleared AI devices across cardiology, radiology, and pathology. The report found that AI-assisted mammography devices",
+          "Pfizer's Digital Health division published results of its AI-assisted MRI analysis system, PfizerNeuroScan, in Radiology in June 2024. The multicenter validation study across 18 hospitals analyzed 12,400 brain MRI scans and detected glioblastoma tumors with 97.3% sensitivity and 94.1% specificity. The system processed each scan in an average of 4.2 seconds, compared to 22 minutes for manual radiologist review. Pfizer submitted the system for FDA 510(k) clearance in August 2024. The FDA's Center for Devices and Radiological Health (CDRH) published its 2024 Annual Report on AI/ML-Enabled Medical Devices, cataloguing 271 cleared AI devices across cardiology, radiology, and pathology. The report found that AI-assisted mammography devices reduced false-positive recall rates by 29% in community screening",
+          "Pfizer's Digital Health division published results of its AI-assisted MRI analysis system, PfizerNeuroScan, in Radiology in June 2024. The multicenter validation study across 18 hospitals analyzed 12,400 brain MRI scans and detected glioblastoma tumors with 97.3% sensitivity and 94.1% specificity. The system processed each scan in an average of 4.2 seconds, compared to 22 minutes for manual radiologist review. Pfizer submitted the system for FDA 510(k) clearance in August 2024. The FDA's Center for Devices and Radiological Health (CDRH) published its 2024 Annual Report on AI/ML-Enabled Medical Devices, cataloguing 271 cleared AI devices across cardiology, radiology, and pathology. The report found that AI-assisted mammography devices reduced false-positive recall rates by 29% in community screening programs. The FDA also announced a new regulatory pathway, the Predetermined Change Control",
+          "PfizerNeuroScan, in Radiology in June 2024. The multicenter validation study across 18 hospitals analyzed 12,400 brain MRI scans and detected glioblastoma tumors with 97.3% sensitivity and 94.1% specificity. The system processed each scan in an average of 4.2 seconds, compared to 22 minutes for manual radiologist review. Pfizer submitted the system for FDA 510(k) clearance in August 2024. The FDA's Center for Devices and Radiological Health (CDRH) published its 2024 Annual Report on AI/ML-Enabled Medical Devices, cataloguing 271 cleared AI devices across cardiology",
+          "pathology"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_096",
@@ -3123,7 +3980,21 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "CRISPR-Cas9 to edit hematopoietic stem cells in microgravity, correcting a sickle-cell-causing HBB gene mutation in 78% of treated cells. The research aimed to determine whether microgravity improves CRISPR delivery efficiency, and the results showed 15% higher editing rates compared to ground-based controls. CERN's MEDICIS (Medical Isotopes Collected from ISOLDE) facility reported in its 2024 annual review on the production of terbium-149 and other exotic radioisotopes for targeted alpha therapy",
+          "ESA) and the European Molecular Biology Laboratory (EMBL) jointly published results from the CellGenesis experiment conducted aboard the International Space Station in 2024. The experiment used CRISPR-Cas9 to edit hematopoietic stem cells in microgravity, correcting a sickle-cell-causing HBB gene mutation in 78% of treated cells. The research aimed to determine whether microgravity improves CRISPR delivery efficiency, and the results showed 15% higher editing rates compared to ground-based controls. CERN's MEDICIS (Medical Isotopes Collected from ISOLDE) facility reported in its 2024 annual review on the production of terbium-149 and other exotic radioisotope",
+          "ESA) and the European Molecular Biology Laboratory (EMBL) jointly published results from the CellGenesis experiment conducted aboard the International Space Station in 2024. The experiment used CRISPR-Cas9 to edit hematopoietic stem cells in microgravity, correcting a sickle-cell-causing HBB gene mutation in 78% of treated cells. The research aimed to determine whether microgravity improves CRISPR delivery efficiency, and the results showed 15% higher editing rates compared to ground-based controls. CERN's MEDICIS (Medical Isotopes Collected from ISOLDE) facility reported in its 2024 annual review on the production of terbium-149 and other exotic radioisotopes for targeted alpha therapy in cancer treatment. CERN produced 340 patient-ready doses",
+          "ESA) and the European Molecular Biology Laboratory (EMBL) jointly published results from the CellGenesis experiment conducted aboard the International Space Station in 2024. The experiment used CRISPR-Cas9 to edit hematopoietic stem cells in microgravity, correcting a sickle-cell-causing HBB gene mutation in 78% of treated cells. The research aimed to determine whether microgravity improves CRISPR delivery efficiency, and the results showed 15% higher editing rates compared to ground-based controls. CERN's MEDICIS (Medical Isotopes Collected from ISOLDE) facility reported in its 2024 annual review on the production of terbium-149 and other exotic radioisotopes for targeted alpha therapy in cancer treatment. CERN produced 340 patient-ready doses in 2024, up from 210 in 2023, and shipped them to 8 partner hospitals across Europe. Phase I clinical trials using CERN-produced terbium",
+          "ESA) and the European Molecular Biology Laboratory (EMBL) jointly published results from the CellGenesis experiment conducted aboard the International Space Station in 2024. The experiment used CRISPR-Cas9 to edit hematopoietic stem cells in microgravity, correcting a sickle-cell-causing HBB gene mutation in 78% of treated cells. The research aimed to determine whether microgravity improves CRISPR delivery efficiency, and the results showed 15% higher editing rates compared to ground-based controls. CERN's MEDICIS (Medical Isotopes Collected from ISOLDE) facility reported in its 2024 annual review on the production of terbium-149 and other exotic radioisotopes for targeted alpha therapy in cancer treatment. CERN produced 340 patient-ready doses in 2024, up from 210 in 2023, and shipped them to 8 partner hospitals across Europe. Phase I clinical trials using CERN-produced terbium-161 for neuroendocrine",
+          "ESA) and the European Molecular Biology Laboratory (EMBL) jointly published results from the CellGenesis experiment conducted aboard the International Space Station in 2024. The experiment used CRISPR-Cas9 to edit hematopoietic stem cells in microgravity, correcting a sickle-cell-causing HBB gene mutation in 78% of treated cells. The research aimed to determine whether microgravity improves CRISPR delivery efficiency, and the results showed 15% higher editing rates compared to ground-based controls. CERN's MEDICIS (Medical Isotopes Collected from ISOLDE) facility reported in its 2024 annual review on the production of terbium-149 and other exotic radioisotopes for targeted alpha therapy in cancer treatment. CERN produced 340 patient-ready doses in 2024, up from 210 in 2023, and shipped them to 8 partner hospitals across Europe. Phase I clinical trials using CERN-produced terbium-161 for neuroendocrine tumor treatment showed a 63%"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_097",
@@ -3150,7 +4021,21 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "CCPA) data-handling requirements covering 45 distinct software modules and their associated API documentation. The registration was filed with the U.S. Copyright Office on February 14, 2024, case number TX-9-284-116. Nextera alleged that CloudBridge reverse-engineered its privacy-compliance middleware and replicated the data-mapping logic across 12 cloud service endpoints. The Federal Trade Commission (FTC) issued a consent decree in March 2024 against DataHarvest Corp. for deceptive practices in its ad-tech platform. The FTC order required DataHarvest to delete 2.7 billion",
+          "CCPA) data-handling requirements covering 45 distinct software modules and their associated API documentation. The registration was filed with the U.S. Copyright Office on February 14, 2024, case number TX-9-284-116. Nextera alleged that CloudBridge reverse-engineered its privacy-compliance middleware and replicated the data-mapping logic across 12 cloud service endpoints. The Federal Trade Commission (FTC) issued a consent decree in March 2024 against DataHarvest Corp. for deceptive practices in its ad-tech platform. The FTC order required DataHarvest to delete 2.7 billion user profiles collected without proper consent, pay a $14.8 million",
+          "CCPA) data-handling requirements covering 45 distinct software modules and their associated API documentation. The registration was filed with the U.S. Copyright Office on February 14, 2024, case number TX-9-284-116. Nextera alleged that CloudBridge reverse-engineered its privacy-compliance middleware and replicated the data-mapping logic across 12 cloud service endpoints. The Federal Trade Commission (FTC) issued a consent decree in March 2024 against DataHarvest Corp. for deceptive practices in its ad-tech platform. The FTC order required DataHarvest to delete 2.7 billion user profiles collected without proper consent, pay a $14.8 million civil penalty, and submit to biennial privacy audit",
+          "CCPA) data-handling requirements covering 45 distinct software modules and their associated API documentation. The registration was filed with the U.S. Copyright Office on February 14, 2024, case number TX-9-284-116. Nextera alleged that CloudBridge reverse-engineered its privacy-compliance middleware and replicated the data-mapping logic across 12 cloud service endpoints. The Federal Trade Commission (FTC) issued a consent decree in March 2024 against DataHarvest Corp. for deceptive practices in its ad-tech platform. The FTC order required DataHarvest to delete 2.7 billion user profiles collected without proper consent, pay a $14.8 million civil penalty, and submit to biennial privacy audits for 20 years. The FTC also mandated that DataHarvest",
+          "CCPA) data-handling requirements covering 45 distinct software modules and their associated API documentation. The registration was filed with the U.S. Copyright Office on February 14, 2024, case number TX-9-284-116. Nextera alleged that CloudBridge reverse-engineered its privacy-compliance middleware and replicated the data-mapping logic across 12 cloud service endpoints. The Federal Trade Commission (FTC) issued a consent decree in March 2024 against DataHarvest Corp. for deceptive practices in its ad-tech platform. The FTC order required DataHarvest to delete 2.7 billion user profiles collected without proper consent, pay a $14.8 million civil penalty, and submit to biennial privacy audits for 20 years. The FTC also mandated that DataHarvest implement differential privacy",
+          "CCPA) data-handling requirements covering 45 distinct software modules and their associated API documentation. The registration was filed with the U.S. Copyright Office on February 14, 2024, case number TX-9-284-116. Nextera alleged that CloudBridge reverse-engineered its privacy-compliance middleware and replicated the data-mapping logic across 12 cloud service endpoints. The Federal Trade Commission (FTC) issued a consent decree in March 2024 against DataHarvest Corp. for deceptive practices in its ad-tech platform. The FTC order required DataHarvest to delete 2.7 billion user profiles collected without proper consent, pay a $14.8 million civil penalty, and submit to biennial privacy audits for 20 years. The FTC also mandated that DataHarvest implement differential privacy with an epsilon"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_098",
@@ -3177,7 +4062,21 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "Common Core-aligned Pre-K programs across 14 school districts in New York and New Jersey. Children showed a 0.4 standard deviation improvement in literacy readiness as measured by the Peabody Picture Vocabulary Test (PPVT), with the largest gains among dual-language learners. The programs used a play-based curriculum integrating Common Core kindergarten-readiness standards, with a student-teacher ratio averaging 8:1. The College Board released its 2024 AP and Pre-AP Impact Report documenting that students who completed its Pre-AP coursework in grades 6-9 scored an average of 0.7 points",
+          "Common Core-aligned Pre-K programs across 14 school districts in New York and New Jersey. Children showed a 0.4 standard deviation improvement in literacy readiness as measured by the Peabody Picture Vocabulary Test (PPVT), with the largest gains among dual-language learners. The programs used a play-based curriculum integrating Common Core kindergarten-readiness standards, with a student-teacher ratio averaging 8:1. The College Board released its 2024 AP and Pre-AP Impact Report documenting that students who completed its Pre-AP coursework in grades 6-9 scored an average of 0.7 points higher on subsequent AP exam",
+          "Common Core-aligned Pre-K programs across 14 school districts in New York and New Jersey. Children showed a 0.4 standard deviation improvement in literacy readiness as measured by the Peabody Picture Vocabulary Test (PPVT), with the largest gains among dual-language learners. The programs used a play-based curriculum integrating Common Core kindergarten-readiness standards, with a student-teacher ratio averaging 8:1. The College Board released its 2024 AP and Pre-AP Impact Report documenting that students who completed its Pre-AP coursework in grades 6-9 scored an average of 0.7 points higher on subsequent AP exams. The report tracked 480,000",
+          "Common Core-aligned Pre-K programs across 14 school districts in New York and New Jersey. Children showed a 0.4 standard deviation improvement in literacy readiness as measured by the Peabody Picture Vocabulary Test (PPVT), with the largest gains among dual-language learners. The programs used a play-based curriculum integrating Common Core kindergarten-readiness standards, with a student-teacher ratio averaging 8:1. The College Board released its 2024 AP and Pre-AP Impact Report documenting that students who completed its Pre-AP coursework in grades 6-9 scored an average of 0.7 points higher on subsequent AP exams. The report tracked 480,000 students across 2,100 schools",
+          "Common Core-aligned Pre-K programs across 14 school districts in New York and New Jersey. Children showed a 0.4 standard deviation improvement in literacy readiness as measured by the Peabody Picture Vocabulary Test (PPVT), with the largest gains among dual-language learners. The programs used a play-based curriculum integrating Common Core kindergarten-readiness standards, with a student-teacher ratio averaging 8:1. The College Board released its 2024 AP and Pre-AP Impact Report documenting that students who completed its Pre-AP coursework in grades 6-9 scored an average of 0.7 points higher on subsequent AP exams. The report tracked 480,000 students across 2,100 schools nationwide and found that Pre-AP participation among Black and Latino students increased 38%",
+          "Pre-K programs across 14 school districts in New York and New Jersey. Children showed a 0.4 standard deviation improvement in literacy readiness as measured by the Peabody Picture Vocabulary Test (PPVT), with the largest gains among dual-language learners. The programs used a play-based curriculum integrating Common Core kindergarten-readiness standards, with a student-teacher ratio averaging 8:1. The College Board released its 2024 AP and Pre-AP Impact Report documenting that students who completed its Pre-AP coursework in grades 6-9 scored an average of 0.7 points higher on subsequent AP exams. The report tracked 480,000 students across 2,100 schools nationwide and found that Pre-AP participation among Black and Latino students increased 38% since 2020. College Board attributed the gains to its redesigned Pre-AP"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_099",
@@ -3204,7 +4103,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_100",
@@ -3231,7 +4137,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_101",
@@ -3258,7 +4171,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_102",
@@ -3285,7 +4205,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_103",
@@ -3312,7 +4239,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_104",
@@ -3339,7 +4273,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_105",
@@ -3366,7 +4307,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_106",
@@ -3393,7 +4341,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_107",
@@ -3420,7 +4375,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_108",
@@ -3447,7 +4409,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_109",
@@ -3474,7 +4443,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_110",
@@ -3501,7 +4477,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_111",
@@ -3528,7 +4511,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_112",
@@ -3555,7 +4545,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_113",
@@ -3581,7 +4578,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_114",
@@ -3607,7 +4611,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_115",
@@ -3633,7 +4644,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_116",
@@ -3659,7 +4677,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_117",
@@ -3685,7 +4710,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_118",
@@ -3711,7 +4743,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_119",
@@ -3737,7 +4776,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_120",
@@ -3763,7 +4809,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_121",
@@ -3789,7 +4842,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_122",
@@ -3815,7 +4875,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_123",
@@ -3841,7 +4908,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_124",
@@ -3867,7 +4941,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_125",
@@ -3893,7 +4974,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_126",
@@ -3919,7 +5007,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_127",
@@ -3944,7 +5039,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_128",
@@ -3969,7 +5071,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_129",
@@ -3994,7 +5103,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_130",
@@ -4019,7 +5135,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_131",
@@ -4044,7 +5167,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_132",
@@ -4069,7 +5199,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_133",
@@ -4094,7 +5231,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_134",
@@ -4119,7 +5263,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_135",
@@ -4144,7 +5295,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_136",
@@ -4169,7 +5327,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_137",
@@ -4194,7 +5359,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_138",
@@ -4219,7 +5391,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_139",
@@ -4244,7 +5423,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_140",
@@ -4269,7 +5455,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_141",
@@ -4294,7 +5487,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_142",
@@ -4319,7 +5519,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_143",
@@ -4344,7 +5551,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_144",
@@ -4369,7 +5583,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_145",
@@ -4394,7 +5615,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_146",
@@ -4419,7 +5647,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_147",
@@ -4444,7 +5679,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_148",
@@ -4469,7 +5711,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_149",
@@ -4494,7 +5743,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_150",
@@ -4519,7 +5775,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_151",
@@ -4544,7 +5807,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_152",
@@ -4569,7 +5839,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_153",
@@ -4594,7 +5871,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_154",
@@ -4619,7 +5903,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_155",
@@ -4644,7 +5935,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_156",
@@ -4669,7 +5967,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_157",
@@ -4694,7 +5999,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_158",
@@ -4719,7 +6031,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_159",
@@ -4744,7 +6063,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_160",
@@ -4769,7 +6095,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_161",
@@ -4794,7 +6127,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_162",
@@ -4819,7 +6159,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_163",
@@ -4844,7 +6191,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_164",
@@ -4869,7 +6223,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_165",
@@ -4894,7 +6255,16 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "conclud"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_166",
@@ -4919,7 +6289,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_167",
@@ -4944,7 +6321,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_168",
@@ -4969,7 +6353,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_169",
@@ -4994,7 +6385,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_170",
@@ -5019,7 +6417,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_171",
@@ -5044,7 +6449,16 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "conclud"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_172",
@@ -5069,7 +6483,14 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_173",
@@ -5095,7 +6516,16 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "abstinence"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_174",
@@ -5121,7 +6551,16 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "retention"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_175",
@@ -5147,7 +6586,16 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "ROI"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_176",
@@ -5173,7 +6621,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_177",
@@ -5199,7 +6654,16 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "rezoning impact"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_178",
@@ -5225,7 +6689,18 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "9 latency",
+          "benchmark",
+          "throughput"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_179",
@@ -5251,7 +6726,16 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "drawdown"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_180",
@@ -5277,7 +6761,16 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "readmission"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_181",
@@ -5303,7 +6796,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_182",
@@ -5329,7 +6829,16 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": [
+          "compliance monitor"
+        ]
+      }
     },
     {
       "id": "t1_grounding_hard_183",
@@ -5353,7 +6862,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_184",
@@ -5377,7 +6893,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_185",
@@ -5401,7 +6924,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_186",
@@ -5425,7 +6955,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_187",
@@ -5449,7 +6986,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_188",
@@ -5473,7 +7017,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_189",
@@ -5497,7 +7048,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     },
     {
       "id": "t1_grounding_hard_190",
@@ -5521,7 +7079,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     }
   ],
   "evaluation_config": {

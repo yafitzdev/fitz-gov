@@ -31,7 +31,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_medium_002",
@@ -58,7 +65,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "absent"
+      "evidence_pattern": "absent",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_medium_003",
@@ -85,7 +99,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "absent"
+      "evidence_pattern": "absent",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_medium_004",
@@ -112,7 +133,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_medium_005",
@@ -145,7 +173,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_medium_006",
@@ -172,7 +207,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_medium_007",
@@ -199,7 +241,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_medium_008",
@@ -226,7 +275,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_medium_009",
@@ -252,7 +308,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_001",
@@ -279,7 +342,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "absent"
+      "evidence_pattern": "absent",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_002",
@@ -306,7 +376,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "absent"
+      "evidence_pattern": "absent",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_003",
@@ -333,7 +410,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_004",
@@ -366,7 +450,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_005",
@@ -394,7 +485,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "causal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_006",
@@ -422,7 +520,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_007",
@@ -455,7 +560,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_008",
@@ -482,7 +594,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_009",
@@ -506,7 +625,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_010",
@@ -534,7 +660,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_011",
@@ -563,7 +696,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_012",
@@ -589,7 +729,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_013",
@@ -615,7 +762,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_014",
@@ -641,7 +795,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_015",
@@ -667,7 +828,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_016",
@@ -693,7 +861,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_017",
@@ -719,7 +894,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_018",
@@ -745,7 +927,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_019",
@@ -769,7 +958,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_020",
@@ -793,7 +989,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_021",
@@ -819,7 +1022,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_022",
@@ -845,7 +1055,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_023",
@@ -871,7 +1088,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_024",
@@ -908,7 +1132,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_025",
@@ -946,7 +1177,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_026",
@@ -984,7 +1222,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_027",
@@ -1021,7 +1266,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_028",
@@ -1058,7 +1310,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_029",
@@ -1096,7 +1355,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_030",
@@ -1133,7 +1399,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_031",
@@ -1171,7 +1444,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_032",
@@ -1208,7 +1488,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_033",
@@ -1246,7 +1533,14 @@
           "source_type": "study",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_034",
@@ -1271,7 +1565,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_035",
@@ -1296,7 +1597,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_036",
@@ -1321,7 +1629,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_037",
@@ -1346,7 +1661,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_038",
@@ -1371,7 +1693,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_039",
@@ -1396,7 +1725,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_040",
@@ -1421,7 +1757,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_041",
@@ -1446,7 +1789,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_042",
@@ -1471,7 +1821,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_043",
@@ -1496,7 +1853,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_044",
@@ -1521,7 +1885,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_045",
@@ -1546,7 +1917,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_046",
@@ -1571,7 +1949,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_047",
@@ -1596,7 +1981,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_048",
@@ -1621,7 +2013,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_049",
@@ -1646,7 +2045,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_050",
@@ -1671,7 +2077,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_051",
@@ -1696,7 +2109,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_052",
@@ -1721,7 +2141,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_053",
@@ -1746,7 +2173,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_054",
@@ -1771,7 +2205,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_055",
@@ -1796,7 +2237,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_056",
@@ -1821,7 +2269,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_057",
@@ -1846,7 +2301,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_058",
@@ -1871,7 +2333,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_059",
@@ -1896,7 +2365,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_060",
@@ -1921,7 +2397,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_061",
@@ -1946,7 +2429,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_062",
@@ -1971,7 +2461,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_063",
@@ -1996,7 +2493,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_064",
@@ -2021,7 +2525,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_065",
@@ -2046,7 +2557,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_066",
@@ -2071,7 +2589,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_067",
@@ -2096,7 +2621,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_068",
@@ -2122,7 +2654,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_069",
@@ -2147,7 +2686,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_070",
@@ -2172,7 +2718,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_071",
@@ -2197,7 +2750,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_072",
@@ -2222,7 +2782,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_073",
@@ -2247,7 +2814,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_074",
@@ -2272,7 +2846,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_075",
@@ -2297,7 +2878,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_076",
@@ -2322,7 +2910,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_077",
@@ -2347,7 +2942,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_078",
@@ -2372,7 +2974,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_079",
@@ -2397,7 +3006,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_080",
@@ -2422,7 +3038,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_081",
@@ -2447,7 +3070,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_082",
@@ -2470,7 +3100,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_083",
@@ -2493,7 +3130,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_084",
@@ -2516,7 +3160,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_085",
@@ -2539,7 +3190,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_086",
@@ -2562,7 +3220,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_087",
@@ -2585,7 +3250,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_088",
@@ -2608,7 +3280,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_089",
@@ -2631,7 +3310,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_090",
@@ -2654,7 +3340,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_091",
@@ -2677,7 +3370,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_092",
@@ -2700,7 +3400,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_093",
@@ -2723,7 +3430,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_094",
@@ -2750,7 +3464,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_095",
@@ -2777,7 +3498,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_096",
@@ -2804,7 +3532,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_097",
@@ -2831,7 +3566,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_098",
@@ -2858,7 +3600,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_099",
@@ -2885,7 +3634,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_100",
@@ -2912,7 +3668,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_101",
@@ -2939,7 +3702,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_102",
@@ -2966,7 +3736,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_103",
@@ -2993,7 +3770,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_104",
@@ -3020,7 +3804,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_105",
@@ -3047,7 +3838,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_106",
@@ -3073,7 +3871,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_107",
@@ -3099,7 +3904,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_108",
@@ -3125,7 +3937,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_109",
@@ -3151,7 +3970,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_110",
@@ -3177,7 +4003,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_111",
@@ -3203,7 +4036,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_112",
@@ -3229,7 +4069,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_113",
@@ -3255,7 +4102,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_114",
@@ -3281,7 +4135,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_115",
@@ -3307,7 +4168,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_116",
@@ -3333,7 +4201,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_117",
@@ -3359,7 +4234,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_118",
@@ -3386,7 +4268,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_119",
@@ -3413,7 +4302,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_120",
@@ -3440,7 +4336,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_121",
@@ -3467,7 +4370,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_122",
@@ -3494,7 +4404,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_123",
@@ -3521,7 +4438,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_124",
@@ -3548,7 +4472,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_125",
@@ -3575,7 +4506,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_126",
@@ -3602,7 +4540,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_127",
@@ -3629,7 +4574,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_128",
@@ -3656,7 +4608,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_129",
@@ -3683,7 +4642,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_130",
@@ -3709,7 +4675,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_131",
@@ -3735,7 +4708,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_132",
@@ -3761,7 +4741,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_133",
@@ -3787,7 +4774,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_134",
@@ -3813,7 +4807,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_135",
@@ -3839,7 +4840,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_136",
@@ -3865,7 +4873,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_137",
@@ -3891,7 +4906,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_138",
@@ -3917,7 +4939,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_139",
@@ -3943,7 +4972,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_140",
@@ -3969,7 +5005,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_141",
@@ -3995,7 +5038,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_142",
@@ -4021,7 +5071,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_143",
@@ -4047,7 +5104,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_144",
@@ -4073,7 +5137,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_145",
@@ -4099,7 +5170,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_146",
@@ -4125,7 +5203,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_147",
@@ -4151,7 +5236,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_148",
@@ -4177,7 +5269,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_149",
@@ -4203,7 +5302,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_150",
@@ -4229,7 +5335,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_151",
@@ -4255,7 +5368,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_152",
@@ -4281,7 +5401,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_153",
@@ -4307,7 +5434,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "indirect"
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_154",
@@ -4333,7 +5467,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_155",
@@ -4359,7 +5500,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_156",
@@ -4385,7 +5533,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_157",
@@ -4411,7 +5566,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_158",
@@ -4437,7 +5599,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_159",
@@ -4463,7 +5632,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_160",
@@ -4489,7 +5665,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_161",
@@ -4515,7 +5698,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_162",
@@ -4541,7 +5731,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_163",
@@ -4567,7 +5764,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "procedural",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_164",
@@ -4612,7 +5816,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_165",
@@ -4657,7 +5868,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_166",
@@ -4702,7 +5920,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_167",
@@ -4747,7 +5972,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_168",
@@ -4792,7 +6024,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_169",
@@ -4837,7 +6076,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_170",
@@ -4882,7 +6128,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_171",
@@ -4927,7 +6180,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_172",
@@ -4972,7 +6232,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_173",
@@ -5017,7 +6284,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_174",
@@ -5062,7 +6336,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_175",
@@ -5107,7 +6388,14 @@
           "source_type": "review",
           "authority": "medium"
         }
-      ]
+      ],
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_176",
@@ -5133,7 +6421,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_177",
@@ -5159,7 +6454,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_178",
@@ -5185,7 +6487,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_179",
@@ -5211,7 +6520,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_180",
@@ -5237,7 +6553,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_181",
@@ -5263,7 +6586,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_182",
@@ -5289,7 +6619,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_183",
@@ -5315,7 +6652,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_184",
@@ -5341,7 +6685,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_185",
@@ -5367,7 +6718,14 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_186",
@@ -5393,7 +6751,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_187",
@@ -5419,7 +6784,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_188",
@@ -5445,7 +6817,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_189",
@@ -5471,7 +6850,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_190",
@@ -5497,7 +6883,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_191",
@@ -5523,7 +6916,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_192",
@@ -5549,7 +6949,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     },
     {
       "id": "t1_relevance_hard_193",
@@ -5575,7 +6982,14 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
-      "evidence_pattern": "partial"
+      "evidence_pattern": "partial",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     }
   ],
   "evaluation_config": {

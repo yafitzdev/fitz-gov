@@ -24,7 +24,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_002",
@@ -43,7 +48,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_003",
@@ -62,7 +72,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_004",
@@ -81,7 +96,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_005",
@@ -100,7 +120,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_006",
@@ -119,7 +144,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_007",
@@ -138,7 +168,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_008",
@@ -157,7 +192,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_009",
@@ -176,7 +216,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_confident_easy_010",
@@ -195,7 +240,12 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }

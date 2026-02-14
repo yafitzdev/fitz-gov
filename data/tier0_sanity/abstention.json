@@ -25,7 +25,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_002",
@@ -45,7 +50,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_003",
@@ -65,7 +75,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_004",
@@ -85,7 +100,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_005",
@@ -105,7 +125,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_006",
@@ -125,7 +150,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_007",
@@ -145,7 +175,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_008",
@@ -165,7 +200,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_009",
@@ -185,7 +225,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_010",
@@ -205,7 +250,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_011",
@@ -225,7 +275,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     },
     {
       "id": "t0_abstain_easy_012",
@@ -245,7 +300,12 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
-      "evidence_pattern": "direct"
+      "evidence_pattern": "direct",
+      "category": "abstention",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }
