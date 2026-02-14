@@ -39,9 +39,9 @@ class TestLoadTier:
         assert len(cases) == 60
 
     def test_load_tier1(self, data_dir):
-        """load_tier(Tier.CORE) returns 2043 cases."""
+        """load_tier(Tier.CORE) returns 2083 cases."""
         cases = load_tier(Tier.CORE, data_dir=data_dir)
-        assert len(cases) == 2043
+        assert len(cases) == 2083
 
     def test_load_tier0_categories(self, data_dir):
         """All 6 categories present in tier0."""
@@ -75,7 +75,7 @@ class TestLoadCases:
     def test_load_cases_all(self, data_dir):
         """load_cases() returns tier0+tier1 combined."""
         cases = load_cases(data_dir=data_dir)
-        assert len(cases) == 60 + 2043
+        assert len(cases) == 60 + 2083
 
     def test_load_cases_tier_filter(self, data_dir):
         """load_cases(tiers=[Tier.SANITY]) only returns tier0."""
@@ -147,7 +147,7 @@ class TestInfoFunctions:
         assert Tier.SANITY.value in info
         assert Tier.CORE.value in info
         assert info[Tier.SANITY.value]["total_cases"] == 60
-        assert info[Tier.CORE.value]["total_cases"] == 2043
+        assert info[Tier.CORE.value]["total_cases"] == 2083
 
     def test_get_category_info(self, data_dir):
         """Returns info for all 6 categories."""

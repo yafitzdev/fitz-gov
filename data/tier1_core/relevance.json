@@ -8690,6 +8690,580 @@
         "case_insensitive": true,
         "min_required": 1
       }
+    },
+    {
+      "id": "t1_relevance_hard_194",
+      "difficulty": "hard",
+      "subcategory": "feature_dump",
+      "query": "Does this cloud storage platform support CLIENT-SIDE ENCRYPTION before upload?",
+      "contexts": [
+        "VaultDrive Cloud offers 2 TB of storage with automatic file versioning, seamless desktop sync across Windows, macOS, and Linux, selective folder synchronization, bandwidth throttling controls, LAN-based sync for local network transfers, file locking for collaborative editing, advanced sharing permissions with expiration dates, Dropbox and Google Drive migration tools, recycle bin with 90-day retention, two-factor authentication on login, real-time activity logs, and native integrations with Slack, Notion, and Asana. The platform supports files up to 50 GB each and provides a branded file-request portal for external contributors."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks specifically about client-side encryption but context lists many other features without mentioning encryption at rest or in transit details",
+      "rationale": "The context mentions 2FA for login but never addresses client-side encryption, encryption at rest, or any cryptographic handling of files before upload",
+      "required_elements": [
+        "client-side encryption",
+        "not mentioned",
+        "not listed",
+        "encrypt"
+      ],
+      "domain": "technology",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_195",
+      "difficulty": "hard",
+      "subcategory": "feature_dump",
+      "query": "Can this CRM track CUSTOMER LIFETIME VALUE automatically?",
+      "contexts": [
+        "SalesForge CRM includes pipeline management with customizable deal stages, drag-and-drop Kanban boards, automated lead scoring based on engagement signals, email sequence builders with A/B testing, built-in VoIP calling with call recording, calendar scheduling with round-robin assignment, territory mapping for field sales, quote generation with electronic signatures, multi-currency support covering 45 currencies, role-based access control, custom report builder with 30 pre-built templates, mobile app with offline mode, and webhook-based integrations with over 200 third-party tools. The platform handles up to 10 million contact records per account."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about customer lifetime value tracking but context enumerates dozens of other CRM features",
+      "rationale": "The context lists extensive CRM functionality including lead scoring and reporting but never mentions CLV calculation, revenue attribution per customer, or lifetime value analytics",
+      "required_elements": [
+        "lifetime value",
+        "CLV",
+        "not mentioned",
+        "not listed",
+        "not included"
+      ],
+      "domain": "finance",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_196",
+      "difficulty": "hard",
+      "subcategory": "feature_dump",
+      "query": "Does this hospital bed have a BUILT-IN PATIENT WEIGHT SCALE?",
+      "contexts": [
+        "The MediRest ProCare 7000 hospital bed features a fully electric hi-lo frame adjustable from 11 to 31 inches, four-section profiling with cardiac-chair positioning, integrated side-rail controls with nurse lockout, under-bed lighting activated by foot sensors, Trendelenburg and reverse Trendelenburg tilt up to 16 degrees, a mattress platform with 1,000-pound safe working load, USB charging ports on both side rails, central braking with fifth-wheel steer mode, compatibility with overhead lift systems, a removable headboard for CPR access, and an anti-entrapment zone design meeting IEC 60601-2-52 requirements. The bed frame is constructed from antimicrobial powder-coated steel for infection control."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about a built-in weight scale but context lists many other bed features without addressing weighing capability",
+      "rationale": "The context mentions a 1,000-pound safe working load capacity but that is a structural limit, not a weighing feature; no scale, weight measurement, or bariatric monitoring is mentioned",
+      "required_elements": [
+        "weight scale",
+        "not mentioned",
+        "not listed",
+        "weighing",
+        "built-in scale"
+      ],
+      "domain": "medicine",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_197",
+      "difficulty": "hard",
+      "subcategory": "feature_dump",
+      "query": "Does this drone support OBSTACLE AVOIDANCE in all directions?",
+      "contexts": [
+        "The SkyHawk Explorer X4 drone offers a 4K 60fps camera on a three-axis gimbal, 38-minute maximum flight time with intelligent battery management, 10-kilometer HD video transmission range, GPS and GLONASS dual-satellite positioning, return-to-home with precision landing using ground-facing cameras, programmable waypoint missions with altitude holds, hyperlapse and panoramic photo modes, sport mode reaching 72 km/h, foldable carbon-fiber arms with quick-release propellers, a remote controller with a 5.5-inch built-in display, ADS-B receiver for manned aircraft awareness, and geofencing with no-fly zone enforcement through automatic firmware updates."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about omnidirectional obstacle avoidance but context lists many drone features without specifying obstacle sensing or avoidance directions",
+      "rationale": "The context mentions safety-adjacent features like return-to-home and ADS-B but never addresses obstacle avoidance sensors, collision prevention, or sensing directions",
+      "required_elements": [
+        "obstacle avoidance",
+        "not mentioned",
+        "not listed",
+        "sensing",
+        "collision"
+      ],
+      "domain": "technology",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_198",
+      "difficulty": "hard",
+      "subcategory": "instruction_only",
+      "query": "WHY must the concrete cure for 28 days before applying a load?",
+      "contexts": [
+        "After pouring the foundation slab, smooth the surface with a bull float in long overlapping passes. Apply a liquid curing compound within 30 minutes of finishing or cover the slab with polyethylene sheeting held down at the edges. Keep the concrete moist for a minimum of seven days by misting twice daily if sheeting is not used. Do not remove formwork until day three for walls or day seven for beams. Avoid any vehicular traffic on the slab for 28 days. After the 28-day period, inspect for surface cracks wider than 1 mm and seal them with epoxy injection before proceeding with framing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks why concrete needs a 28-day cure but context only gives step-by-step curing instructions without explaining the chemistry or structural reason",
+      "rationale": "The context prescribes the 28-day wait and procedural steps but never explains that concrete reaches its design compressive strength through hydration, or why that duration matters structurally",
+      "required_elements": [
+        "why",
+        "reason",
+        "not explained",
+        "strength",
+        "hydration"
+      ],
+      "domain": "technology",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_199",
+      "difficulty": "hard",
+      "subcategory": "instruction_only",
+      "query": "WHY is the patient positioned in left lateral decubitus during a colonoscopy?",
+      "contexts": [
+        "Prepare the endoscopy suite by checking insufflation CO2 supply and confirming monitor connectivity. Verify patient identity and consent. Administer conscious sedation per anesthesiology protocol, typically propofol titrated to moderate sedation. Position the patient in left lateral decubitus with knees drawn toward the chest. Apply pulse oximetry and capnography monitoring. Lubricate the colonoscope tip and perform a digital rectal exam before insertion. Advance the scope under direct visualization, insufflating minimally. Navigate the sigmoid carefully using torque steering to reduce loop formation. Document cecal landmarks to confirm complete examination."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks the anatomical or physiological reason for the positioning but context only provides procedural instructions",
+      "rationale": "The context instructs clinicians to position the patient in left lateral decubitus but never explains the anatomical rationale involving sigmoid colon anatomy, gravity-assisted scope navigation, or patient comfort mechanics",
+      "required_elements": [
+        "why",
+        "reason",
+        "not explained",
+        "anatomical",
+        "explain"
+      ],
+      "domain": "medicine",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_200",
+      "difficulty": "hard",
+      "subcategory": "instruction_only",
+      "query": "WHY should you degas epoxy resin in a vacuum chamber before casting?",
+      "contexts": [
+        "Measure the two-part epoxy at the ratio specified on the label, typically 100:45 by weight for this formulation. Stir slowly with a flat mixing stick for three minutes, scraping the sides and bottom of the container. Transfer the mixture to a vacuum chamber and pull vacuum to 29 inches of mercury. Hold for four minutes or until the resin rises and collapses twice. Release vacuum slowly. Pour the resin into the mold in a thin stream from 12 inches above to break any remaining surface bubbles. Allow the casting to cure at room temperature for 24 hours, then post-cure in an oven at 60 degrees Celsius for two hours."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks the scientific reason for degassing but context only provides step-by-step vacuum procedure instructions",
+      "rationale": "The context prescribes pulling vacuum and waiting for the resin to rise and collapse but never explains that trapped air creates structural weak points, surface pitting, or optical defects in the cured casting",
+      "required_elements": [
+        "why",
+        "reason",
+        "not explained",
+        "bubbles",
+        "air"
+      ],
+      "domain": "science",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_201",
+      "difficulty": "hard",
+      "subcategory": "instruction_only",
+      "query": "WHY are witnesses required to be sequestered during a trial?",
+      "contexts": [
+        "Upon motioning for witness sequestration under Rule 615, the court shall order all non-party witnesses to remain outside the courtroom when not testifying. Instruct sequestered witnesses not to discuss their testimony with other witnesses. Designate a waiting area on a separate floor from the courtroom if possible. Provide court staff contact numbers so witnesses can be recalled promptly. Before each witness takes the stand, confirm with counsel that the witness has not communicated about testimony with other sequestered witnesses. Record any violations and raise them before the jury is seated."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks the legal rationale for sequestration but context only provides procedural steps for implementing it",
+      "rationale": "The context tells court staff how to sequester witnesses but never explains the purpose: preventing witnesses from tailoring testimony to match what others have said, preserving independent recollection, and protecting trial integrity",
+      "required_elements": [
+        "why",
+        "reason",
+        "not explained",
+        "purpose",
+        "rationale"
+      ],
+      "domain": "law",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_202",
+      "difficulty": "hard",
+      "subcategory": "metric_avoidance",
+      "query": "What is the EXACT five-year survival rate for Stage IIIB non-small-cell lung cancer?",
+      "contexts": [
+        "Stage IIIB non-small-cell lung cancer represents a locally advanced presentation where the tumor has spread to mediastinal lymph nodes on the opposite side of the chest or to supraclavicular nodes. Treatment typically involves concurrent chemoradiation, and immunotherapy has shown promising improvements in outcomes for patients with high PD-L1 expression. Advances in stereotactic body radiation and targeted therapies for EGFR and ALK mutations continue to reshape the treatment landscape. Prognosis varies considerably based on performance status, molecular markers, and response to initial therapy, making individualized assessment critical."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a specific survival rate percentage but context discusses the disease qualitatively without citing any numbers",
+      "rationale": "The context discusses staging, treatment approaches, and prognosis factors but avoids stating any numerical survival rate, percentage, or statistical outcome data",
+      "required_elements": [
+        "survival rate",
+        "not specified",
+        "no specific",
+        "percentage",
+        "not quantified"
+      ],
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_203",
+      "difficulty": "hard",
+      "subcategory": "metric_avoidance",
+      "query": "What is the MEASURED tensile strength in megapascals for this carbon fiber layup?",
+      "contexts": [
+        "The unidirectional carbon fiber prepreg used in the wing spar layup is renowned for its outstanding strength-to-weight ratio. The manufacturer describes it as exceeding the performance of comparable aerospace-grade materials in tensile loading along the fiber direction. Independent testing labs have confirmed that this formulation ranks among the top tier of commercially available prepregs. Its stiffness and fatigue resistance make it suitable for primary structural applications in both commercial and military aircraft. Quality control relies on statistical sampling of each production lot to ensure consistency across rolls."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a specific tensile strength number in MPa but context praises the material qualitatively without providing any measurements",
+      "rationale": "The context uses superlatives like outstanding and top tier but never states a tensile strength value, modulus, or any engineering unit",
+      "required_elements": [
+        "tensile strength",
+        "MPa",
+        "not specified",
+        "no specific",
+        "not quantified"
+      ],
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_204",
+      "difficulty": "hard",
+      "subcategory": "metric_avoidance",
+      "query": "What is the EXACT annual energy output in megawatt-hours for this offshore wind farm?",
+      "contexts": [
+        "The Northwind Offshore Wind Farm, located 22 kilometers off the coast of Norfolk, represents a significant addition to the region's renewable energy capacity. The project was praised by the energy secretary as a milestone for the country's clean energy transition. Its turbines are among the largest currently deployed, and the farm has been generating power reliably since commissioning. Local communities have reported positive economic effects from construction employment and ongoing maintenance operations. The operator describes production levels as consistently exceeding initial projections, contributing meaningfully to national grid supply during peak demand periods."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for a specific MWh figure but context discusses the wind farm in qualitative and promotional terms without any energy output numbers",
+      "rationale": "The context says production exceeds projections and contributes meaningfully but never states an annual MWh output, capacity factor, or any numerical energy generation figure",
+      "required_elements": [
+        "megawatt-hours",
+        "MWh",
+        "not specified",
+        "no specific",
+        "not quantified"
+      ],
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_205",
+      "difficulty": "hard",
+      "subcategory": "metric_avoidance",
+      "query": "What is the EXACT student-to-teacher ratio at this school?",
+      "contexts": [
+        "Greenfield Academy prides itself on small class sizes that foster meaningful teacher-student relationships. Parents frequently cite the individualized attention their children receive as the school's greatest strength. Faculty members are encouraged to learn each student's name within the first week and to hold monthly one-on-one conferences. The school's accreditation review highlighted the personalized learning environment as a distinguishing feature. Administration has committed to maintaining what they describe as an intimate classroom experience by capping enrollment growth and hiring additional instructional staff as needed each academic year."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for the specific student-to-teacher ratio number but context describes small classes in qualitative, promotional language without any ratio or number",
+      "rationale": "The context repeatedly emphasizes small and personalized but never provides a numerical ratio, class size number, or enrollment-to-staff figure",
+      "required_elements": [
+        "ratio",
+        "not specified",
+        "no specific",
+        "number",
+        "not quantified"
+      ],
+      "domain": "education",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_206",
+      "difficulty": "hard",
+      "subcategory": "status_dump",
+      "query": "What is the CURRENT error rate for the payment processing module specifically?",
+      "contexts": [
+        "Monthly platform health report for January 2025: API gateway uptime 99.97%, average response time 142 ms. User authentication service handled 3.2 million logins with two brief outages totaling 11 minutes. Search indexing rebuilt overnight with zero downtime. Email notification service delivered 890,000 messages with a 2.4% bounce rate. The data warehouse ETL pipeline completed all scheduled jobs within SLA. Mobile app crash rate decreased to 0.3% after the December hotfix. CDN cache hit ratio remained steady at 94.1%. Database read replicas showed no replication lag above 200 ms. Kubernetes cluster auto-scaled to 48 pods during peak traffic on January 14 without manual intervention."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks specifically about payment processing error rate but context dumps a full platform health report covering many other modules",
+      "rationale": "The status report covers API gateway, authentication, search, email, ETL, mobile, CDN, database, and Kubernetes but never mentions payment processing, transaction errors, or payment-related metrics",
+      "required_elements": [
+        "payment processing",
+        "not mentioned",
+        "not included",
+        "error rate"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_207",
+      "difficulty": "hard",
+      "subcategory": "status_dump",
+      "query": "How is the NURSING STAFF retention rate trending at this hospital?",
+      "contexts": [
+        "Mercy General Hospital quarterly operations summary, Q4 2024: Emergency department visits totaled 18,400, up 7% year-over-year. Average inpatient length of stay decreased to 4.1 days. Surgical volume across all specialties reached 3,200 procedures. The pharmacy filled 142,000 prescriptions with a 0.02% dispensing error rate. Radiology turnaround time for diagnostic imaging averaged 45 minutes. Patient satisfaction scores rose to the 78th percentile nationally. The hospital completed its Joint Commission re-accreditation survey with zero immediate threat findings. Construction on the new outpatient pavilion remained on schedule for a June 2025 opening. IT migrated the remaining 30% of clinical workstations to the new EHR platform."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about nursing staff retention but the context is a broad hospital operations summary that never addresses staffing metrics",
+      "rationale": "The quarterly summary covers ER visits, surgeries, pharmacy, radiology, patient satisfaction, accreditation, construction, and IT but contains no data on nursing retention, turnover, vacancy rates, or workforce trends",
+      "required_elements": [
+        "nursing",
+        "retention",
+        "not mentioned",
+        "not included",
+        "staffing"
+      ],
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_208",
+      "difficulty": "hard",
+      "subcategory": "status_dump",
+      "query": "What is the CURRENT inventory turnover rate for the electronics department?",
+      "contexts": [
+        "Retail chain annual performance review, FY 2024: Total revenue reached $4.8 billion across 312 locations. E-commerce sales grew 19% and now represent 28% of total revenue. The loyalty program enrolled 1.4 million new members, bringing total membership to 9.7 million. Same-store sales increased 3.2% year-over-year. Gross margin improved 80 basis points to 34.6% through supplier renegotiations. The company opened 14 new locations and closed 6 underperforming stores. Distribution center automation reduced fulfillment costs by 12%. Employee satisfaction survey scores improved from 72 to 78 out of 100. The sustainability program diverted 89% of warehouse waste from landfill."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks about electronics department inventory turnover but context provides a chain-wide annual review without department-level inventory data",
+      "rationale": "The performance review covers revenue, e-commerce, loyalty, margins, store count, distribution, employees, and sustainability but never breaks out inventory turnover by department or mentions electronics specifically",
+      "required_elements": [
+        "electronics",
+        "inventory turnover",
+        "not mentioned",
+        "not included",
+        "department"
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_209",
+      "difficulty": "hard",
+      "subcategory": "symptom_only",
+      "query": "What is the ROOT CAUSE of the recurring database connection pool exhaustion?",
+      "contexts": [
+        "Incident log for the past 30 days shows five separate connection pool exhaustion events on the primary PostgreSQL cluster. Each event lasted between 8 and 23 minutes and resulted in HTTP 503 errors for approximately 15% of users. CPU utilization on the database server spiked to 98% during each incident while memory remained under 60%. Active connection counts exceeded the configured maximum of 200 within seconds of each event's onset. Application logs show a cascade of timeout exceptions originating from the order-processing microservice. Recovery required manually restarting the connection pool. No configuration changes were deployed in the weeks preceding the incidents."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for the root cause but context only describes symptoms: the frequency, duration, metrics, and observable effects of the incidents",
+      "rationale": "The context documents what happened (pool exhaustion, CPU spikes, timeouts, 503 errors) but never identifies why: no mention of query analysis, connection leak investigation, or the underlying code or configuration defect causing the issue",
+      "required_elements": [
+        "root cause",
+        "not identified",
+        "not explained",
+        "symptoms",
+        "cause"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_210",
+      "difficulty": "hard",
+      "subcategory": "symptom_only",
+      "query": "WHY are the coral reefs in this marine reserve bleaching at accelerated rates?",
+      "contexts": [
+        "Marine biologists surveying the Karimata Reef Reserve documented extensive bleaching across 67% of hard coral cover during the March 2025 assessment, up from 31% in the September 2024 survey. Branching Acropora species showed the highest bleaching severity, with 84% of colonies exhibiting complete pigment loss. Massive Porites corals fared somewhat better at 42% bleaching. Fish species diversity declined 28% in bleached zones compared to healthy reference sites. Macroalgae cover increased threefold on bleached substrate. Juvenile coral recruitment dropped to near zero on recently bleached surfaces. The reserve's sea cucumber population also declined sharply, and crown-of-thorns starfish density doubled in affected areas."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks why the corals are bleaching but context only documents the symptoms and ecological effects without identifying the cause",
+      "rationale": "The context thoroughly describes what is happening (bleaching percentages, species impacts, fish decline, algae increase) but never explains the cause: no mention of sea surface temperature anomalies, El Nino, pollution, ocean acidification, or any driving factor",
+      "required_elements": [
+        "cause",
+        "why",
+        "not explained",
+        "not identified",
+        "symptoms only"
+      ],
+      "domain": "science",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
+    },
+    {
+      "id": "t1_relevance_hard_211",
+      "difficulty": "hard",
+      "subcategory": "symptom_only",
+      "query": "What is CAUSING the sudden spike in employee absenteeism at this facility?",
+      "contexts": [
+        "Human resources data for the Lakewood manufacturing facility shows unplanned absences rose 340% over the past six weeks compared to the same period last year. The assembly line has operated below 70% staffing on 18 of the last 30 workdays. Overtime costs increased $420,000 to cover shortfalls. Second-shift workers account for 62% of all unplanned absences. Three production deadlines were missed, resulting in contractual penalty fees of $185,000. Temporary staffing agency placements filled only 40% of the requested positions. Quality defect rates rose from 1.2% to 3.8% during understaffed shifts. Employee assistance program utilization increased 55% but the facility's on-site clinic reported no unusual illness clusters."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Asks for the cause of absenteeism but context only quantifies the symptoms: absence rates, overtime costs, missed deadlines, quality impacts",
+      "rationale": "The context thoroughly documents the effects and scale of absenteeism but provides no root cause analysis: no mention of morale surveys, exit interviews, workplace conditions, scheduling conflicts, or any identified driver of the trend",
+      "required_elements": [
+        "cause",
+        "not identified",
+        "not explained",
+        "symptoms",
+        "root cause"
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "indirect",
+      "category": "relevance",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": false,
+        "case_insensitive": true,
+        "min_required": 1
+      }
     }
   ],
   "evaluation_config": {

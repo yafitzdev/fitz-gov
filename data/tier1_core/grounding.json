@@ -8757,6 +8757,591 @@
         "case_insensitive": true,
         "allowed_phrases": []
       }
+    },
+    {
+      "id": "t1_grounding_hard_191",
+      "difficulty": "hard",
+      "subcategory": "location_hallucination",
+      "query": "Which city hosts the annual GreenTech Innovation Summit?",
+      "contexts": [
+        "The GreenTech Innovation Summit is one of the largest annual gatherings for sustainable technology professionals. The event brings together over three thousand attendees including engineers, investors, and policymakers from more than forty countries. Sessions cover renewable energy integration, carbon capture technologies, and circular economy frameworks. The summit features a dedicated startup pitch competition where early-stage companies compete for seed funding and mentorship opportunities. Keynote presentations are streamed to a global online audience, and proceedings are published in the GreenTech Review journal each year."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Conference location query when no venue or city is mentioned",
+      "rationale": "The context describes the summit in detail but never states where it takes place. The LLM must not invent a city or country.",
+      "forbidden_claims": [
+        "(held|hosted|takes place|located) (in|at) [A-Z][a-z]+",
+        "(Berlin|London|Dubai|Singapore|San Francisco|New York|Geneva|Tokyo|Paris|Amsterdam)",
+        "convention center",
+        "venue (is|was|will be)",
+        "(city|country|nation) (of|is|where)"
+      ],
+      "domain": "environment",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_192",
+      "difficulty": "hard",
+      "subcategory": "location_hallucination",
+      "query": "In which city is Meridian Aerospace headquartered?",
+      "contexts": [
+        "Meridian Aerospace is a privately held defense contractor specializing in advanced propulsion systems and satellite communication platforms. The company employs roughly twelve thousand engineers and technicians across multiple facilities. Meridian has secured contracts with several NATO member nations for next-generation radar arrays and electronic warfare systems. The firm recently opened a new research division focused on hypersonic vehicle prototyping and has partnered with two major universities for materials science research. Revenue for the last fiscal year exceeded four billion dollars according to industry estimates."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Headquarters location query for a defense contractor with no address mentioned",
+      "rationale": "The context describes the company but never mentions its headquarters city or country. The LLM must not fabricate a location.",
+      "forbidden_claims": [
+        "headquartered (in|at) [A-Z]",
+        "based (in|out of) [A-Z]",
+        "(Arlington|Houston|Huntsville|Los Angeles|Seattle|Denver|Dallas|Washington|Tucson)",
+        "offices? (in|at|near) [A-Z]",
+        "(state|city) of [A-Z]"
+      ],
+      "domain": "technology",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_193",
+      "difficulty": "hard",
+      "subcategory": "location_hallucination",
+      "query": "Which institutions hosted the NovaBridge clinical trial?",
+      "contexts": [
+        "The NovaBridge clinical trial evaluated a novel monoclonal antibody therapy for treatment-resistant rheumatoid arthritis. The Phase III trial enrolled nine hundred and twelve participants over a twenty-four-month period. Participants were randomized into three arms receiving different dosing schedules compared to standard-of-care methotrexate. Primary endpoints included ACR50 response rates and radiographic progression at twelve months. The trial was conducted across multiple sites and enrolled patients meeting the 2010 ACR/EULAR classification criteria. Results were presented at a major rheumatology conference and published in a peer-reviewed journal."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Clinical trial location query when only multi-site is mentioned without specifics",
+      "rationale": "The context says multiple sites but does not name any hospitals, cities, or countries. The LLM must not fabricate trial locations.",
+      "forbidden_claims": [
+        "conducted (in|at) [A-Z][a-z]+(,| and| or)",
+        "(hospital|clinic|center|university|institute) (in|of|at) [A-Z]",
+        "(Mayo Clinic|Johns Hopkins|Cleveland Clinic|Charit|Karolinska)",
+        "sites? (in|across|throughout) [A-Z]",
+        "(United States|Europe|Asia|Canada|UK|Japan|Australia|Germany|France)"
+      ],
+      "domain": "medicine",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_194",
+      "difficulty": "hard",
+      "subcategory": "location_hallucination",
+      "query": "Which region does the Silverline Express railway serve?",
+      "contexts": [
+        "The Silverline Express is a high-speed railway project that has been in development for several years. When completed, the service will offer travel speeds exceeding three hundred kilometers per hour using magnetic levitation technology. The project is funded through a public-private partnership involving national infrastructure bonds and institutional investors. Environmental impact assessments have been completed and construction contracts have been awarded to an international consortium of engineering firms. The railway is expected to reduce intercity travel times significantly and support economic development along its planned corridor."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Railway route query when no specific cities or regions are named",
+      "rationale": "The context discusses the railway project without naming any cities, regions, or countries it will serve. The LLM must not invent a route.",
+      "forbidden_claims": [
+        "(connects?|links?|serves?|runs? between) [A-Z][a-z]+",
+        "(route|corridor|line) (from|between|connecting) [A-Z]",
+        "(Tokyo|Shanghai|Mumbai|London|Paris|Berlin|Madrid|Rome|Cairo|Delhi)",
+        "(north|south|east|west)ern? (corridor|region|route)",
+        "from [A-Z][a-z]+ to [A-Z][a-z]+"
+      ],
+      "domain": "transportation",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_195",
+      "difficulty": "hard",
+      "subcategory": "code_grounding",
+      "query": "What environment variables does the StreamProcessor service require?",
+      "contexts": [
+        "The StreamProcessor service is a high-throughput event ingestion layer built on an asynchronous runtime. It consumes messages from a distributed queue, applies transformation rules defined in a YAML configuration file, and forwards processed events to downstream analytics pipelines. The service supports backpressure handling and automatic partitioning based on tenant identifiers. Deployment is managed through containerized orchestration with health check endpoints exposed for liveness and readiness probes. The service can be scaled horizontally by adding more replicas and uses a shared state store for deduplication across instances."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Environment variable query when none are specified in context",
+      "rationale": "The context describes the service architecture but never lists any environment variables. The LLM must not invent variable names.",
+      "forbidden_claims": [
+        "[A-Z_]{3,}=",
+        "(STREAM|KAFKA|REDIS|DATABASE|DB|API|AUTH|PORT|HOST|SECRET|TOKEN)_[A-Z_]+",
+        "set (the )?\\w+_(URL|KEY|HOST|PORT|SECRET)",
+        "export [A-Z_]+",
+        "environment variables? (include|are|is|such as|like)",
+        "requires? (the following|these) (env|environment)"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_196",
+      "difficulty": "hard",
+      "subcategory": "code_grounding",
+      "query": "How do you authenticate with the Vaultex SDK?",
+      "contexts": [
+        "The Vaultex SDK provides programmatic access to a secrets management platform used by enterprise development teams. It supports multiple programming languages and offers both synchronous and asynchronous client interfaces. The SDK handles automatic credential rotation and provides built-in retry logic for transient failures. Integration testing is simplified through a companion mock server that simulates vault operations without requiring a live backend. The SDK is distributed through standard package registries and follows semantic versioning for release management. Documentation covers common use cases and migration guides for teams transitioning from competing solutions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Authentication method query when SDK docs mention auth conceptually but give no specifics",
+      "rationale": "The context describes SDK features without specifying any authentication method, API key format, or initialization code. The LLM must not fabricate auth steps.",
+      "forbidden_claims": [
+        "VaultexClient\\(",
+        "(api_key|apiKey|token|secret|client_id|client_secret)",
+        "import (vaultex|Vaultex)",
+        "\\.(authenticate|login|init|connect)\\(",
+        "(Bearer|Basic|OAuth|JWT|HMAC)\\s",
+        "headers?\\[?['\"]Authorization"
+      ],
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_197",
+      "difficulty": "hard",
+      "subcategory": "code_grounding",
+      "query": "What are the default retry settings in the Glimmer message queue client?",
+      "contexts": [
+        "The Glimmer message queue client is a lightweight library for publishing and consuming messages across distributed microservices. It wraps low-level protocol details and provides a clean builder-pattern API for constructing producers and consumers. The client supports configurable retry behavior with exponential backoff and dead-letter routing for messages that exceed the retry limit. Connection pooling is handled internally to minimize resource overhead. The library includes structured logging integration and emits metrics compatible with popular observability platforms. Recent releases added support for message batching and priority queues."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Default config values query when only capabilities are described without specifics",
+      "rationale": "The context mentions configurable retry with backoff and dead-letter routing but never states default values. The LLM must not invent retry counts or timeout durations.",
+      "forbidden_claims": [
+        "default(s| value)? (is|are|of) \\d",
+        "retries? (is|are|=|:) \\d",
+        "\\d+ (retries|attempts|tries)",
+        "backoff (of|is|=|:) \\d",
+        "timeout (of|is|=|:) \\d",
+        "(max|maximum)_(retries|attempts|backoff) ?[=:] ?\\d"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_198",
+      "difficulty": "hard",
+      "subcategory": "date_hallucination",
+      "query": "When did the Aether Protocol vulnerability get disclosed?",
+      "contexts": [
+        "The Aether Protocol vulnerability is a critical flaw in a widely used network authentication stack that allows remote code execution under specific conditions. Security researchers discovered the issue during a routine audit and reported it through a coordinated disclosure process. The vulnerability affects all versions prior to the latest patched release. Vendors were given advance notice before public announcement, and a CVE identifier was assigned. Mitigation involves updating to the patched version or applying firewall rules to restrict access to the affected service port. Several organizations confirmed exploitation attempts in the wild shortly after the advisory was published."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Disclosure date query when only the process is described without dates",
+      "rationale": "The context describes the disclosure process but never provides a date or year. The LLM must not invent a disclosure timeline.",
+      "forbidden_claims": [
+        "(19|20)\\d{2}",
+        "(January|February|March|April|May|June|July|August|September|October|November|December) \\d",
+        "disclosed (on|in) \\w+ \\d",
+        "(last|this|early|late|mid) (year|month|quarter|spring|summer|fall|winter)",
+        "CVE-\\d{4}-\\d+"
+      ],
+      "domain": "technology",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_199",
+      "difficulty": "hard",
+      "subcategory": "date_hallucination",
+      "query": "When was the Helios deep-sea expedition launched?",
+      "contexts": [
+        "The Helios deep-sea expedition explored hydrothermal vent ecosystems along a mid-ocean ridge system. The research vessel carried a team of marine biologists, geochemists, and ocean engineers equipped with remotely operated vehicles capable of operating at depths exceeding four thousand meters. The expedition documented several previously unknown species of thermophilic organisms thriving near superheated water vents. Sediment and water samples were collected for laboratory analysis of mineral composition and microbial diversity. Preliminary findings suggest the vent fields studied are significantly younger than comparable sites, which could reshape models of seafloor geothermal activity."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Expedition launch date query when temporal context is entirely absent",
+      "rationale": "The context describes the expedition scope and findings without ever mentioning when it occurred. The LLM must not invent a launch date.",
+      "forbidden_claims": [
+        "(19|20)\\d{2}",
+        "(January|February|March|April|May|June|July|August|September|October|November|December)",
+        "launched (in|on|during) \\w+",
+        "(last|this|previous|recent) (year|decade|summer|spring)",
+        "set (sail|out|off) (in|on|during)"
+      ],
+      "domain": "science",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_200",
+      "difficulty": "hard",
+      "subcategory": "date_hallucination",
+      "query": "What year did the Ashworth merger receive regulatory approval?",
+      "contexts": [
+        "The Ashworth merger combined two of the largest agricultural commodities firms into a single entity controlling significant market share in grain and oilseed trading. Regulatory authorities in multiple jurisdictions reviewed the deal for antitrust concerns. The combined firm was required to divest certain storage and logistics assets as a condition of approval. Industry analysts noted the merger would reshape supply chain dynamics for several staple crops. Labor unions representing warehouse workers raised concerns about potential job losses during integration. The merged company announced plans to invest in digital supply chain tracking and precision agriculture platforms following the completion of the deal."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Regulatory approval year query when no dates are provided",
+      "rationale": "The context describes the merger process and conditions but never states a year or date of approval. The LLM must not invent one.",
+      "forbidden_claims": [
+        "(19|20)\\d{2}",
+        "approved (in|on|during) \\w+",
+        "(first|second|third|fourth) quarter",
+        "Q[1-4]",
+        "(early|mid|late) (year|decade)",
+        "received approval (in|on|during)"
+      ],
+      "domain": "agriculture",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_201",
+      "difficulty": "hard",
+      "subcategory": "medical_hallucination",
+      "query": "What is the recommended insulin regimen for the new formulation?",
+      "contexts": [
+        "A pharmaceutical company has developed a new long-acting insulin formulation designed for patients with type 2 diabetes who require basal insulin therapy. The formulation uses a proprietary carrier molecule that extends the duration of action compared to existing basal insulins. Clinical trials demonstrated non-inferiority in glycemic control as measured by HbA1c reduction. The formulation is administered via subcutaneous injection using a prefilled pen device. Patients in the trial reported fewer nocturnal hypoglycemic episodes compared to the comparator. The regulatory submission package includes data from multiple Phase III studies enrolling diverse patient populations across several geographic regions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Insulin dosing query when formulation is described without specific dosing",
+      "rationale": "The context describes the formulation and trial results but never specifies units, frequency, or titration schedules. The LLM must not fabricate dosing information.",
+      "forbidden_claims": [
+        "\\d+\\s*(units?|IU|U)",
+        "(once|twice) (daily|a day|per day|weekly|a week)",
+        "every \\d+\\s*(hours?|days?|weeks?)",
+        "inject \\d+",
+        "(starting|initial|maintenance) dose (of|is) \\d",
+        "titrate (by|to|up) \\d"
+      ],
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_202",
+      "difficulty": "hard",
+      "subcategory": "medical_hallucination",
+      "query": "How long should patients take the antibiotic course for bronchitis?",
+      "contexts": [
+        "A recent clinical guideline update reviewed the evidence for antibiotic therapy in acute bacterial bronchitis. The guideline committee noted that antibiotic therapy should be reserved for patients with confirmed bacterial etiology and those at risk for complications. Choice of antibiotic should account for local resistance patterns and patient allergy history. The committee emphasized that overuse of broad-spectrum agents contributes to antimicrobial resistance. Supportive care including hydration, rest, and symptomatic treatment with antipyretics remains the cornerstone of management for most patients presenting with acute bronchitis in outpatient settings."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Treatment duration query when guidelines discuss approach without specifying duration",
+      "rationale": "The context discusses antibiotic prescribing principles without ever stating a specific duration. The LLM must not invent a number of days.",
+      "forbidden_claims": [
+        "\\d+\\s*(days?|weeks?)",
+        "(take|prescribed|course) (for|of) \\d",
+        "(5|7|10|14)[-\\s]day",
+        "duration (of|is) \\d",
+        "(short|standard|typical|usual) course (of|is) \\d",
+        "for (at least|approximately|about|around) \\d"
+      ],
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_203",
+      "difficulty": "hard",
+      "subcategory": "medical_hallucination",
+      "query": "What blood pressure threshold triggers medication adjustment in this protocol?",
+      "contexts": [
+        "A hospital system implemented a hypertension management protocol for patients with chronic kidney disease comorbidity. The protocol integrates home blood pressure monitoring data with clinic readings to guide treatment decisions. Medication adjustments are based on sustained readings above a predefined threshold rather than isolated elevated measurements. The protocol uses a stepwise approach, starting with first-line agents and escalating to combination therapy if targets are not met. Renal function is monitored at regular intervals during titration. An interdisciplinary team of nephrologists, pharmacists, and primary care physicians collaborated on developing the protocol, incorporating evidence from recent randomized trials."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Specific BP threshold query when protocol mentions thresholds conceptually but not numerically",
+      "rationale": "The context describes the protocol framework without specifying any blood pressure numbers. The LLM must not invent mmHg values.",
+      "forbidden_claims": [
+        "\\d+/\\d+",
+        "\\d+\\s*mmHg",
+        "above \\d+",
+        "systolic (of|above|over|greater than|exceeding) \\d",
+        "diastolic (of|above|over|greater than|exceeding) \\d",
+        "threshold (is|of|at) \\d"
+      ],
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_204",
+      "difficulty": "hard",
+      "subcategory": "technical_hallucination",
+      "query": "What is the battery capacity and range of the Volta EV sedan?",
+      "contexts": [
+        "The Volta EV sedan is an upcoming all-electric vehicle from a new automotive manufacturer targeting the premium market segment. The vehicle features an advanced battery management system with liquid thermal regulation and supports ultra-fast charging through a proprietary connector. The sedan offers an adaptive air suspension system, a panoramic glass roof, and over-the-air software updates. An autonomous driving hardware suite is included as standard, with full self-driving capabilities planned for future software releases. The interior features sustainable materials and a driver-focused cockpit layout with a heads-up display and integrated voice assistant. Preorders have opened with deliveries expected to begin after regulatory certification is completed."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "EV battery specs query when only general features are described",
+      "rationale": "The context describes the car's features without mentioning kWh capacity, range in miles or km, or charging speeds. The LLM must not fabricate specifications.",
+      "forbidden_claims": [
+        "\\d+\\s*kWh",
+        "\\d+\\s*(miles?|km|kilometers?)",
+        "range (of|is|up to|exceeds?) \\d",
+        "battery (capacity|size|pack) (of|is) \\d",
+        "\\d+\\s*(kW|MW) (charg|fast)",
+        "(0 to |0-)(60|100) (mph|km/?h) in \\d"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_205",
+      "difficulty": "hard",
+      "subcategory": "technical_hallucination",
+      "query": "What throughput does the Nexus data pipeline achieve?",
+      "contexts": [
+        "The Nexus data pipeline is a real-time streaming architecture designed for large-scale event processing in financial services environments. The pipeline ingests market data feeds, applies enrichment rules, and distributes processed events to multiple downstream consumers including risk engines and compliance monitoring systems. It is built on a distributed commit log architecture with configurable partitioning and replication. The pipeline supports schema evolution through a central registry and includes built-in data quality checks that flag anomalies before downstream delivery. Operational dashboards provide visibility into lag, throughput, and error rates across all pipeline stages. The system was designed to handle peak trading volumes with minimal latency degradation."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Throughput performance query when architecture is described without benchmarks",
+      "rationale": "The context describes the pipeline architecture and monitoring but never states specific throughput numbers. The LLM must not invent performance figures.",
+      "forbidden_claims": [
+        "\\d+\\s*(events?|messages?|records?|transactions?) per (second|minute|hour)",
+        "\\d+\\s*(MB|GB|TB)/s",
+        "throughput (of|is|reaches|exceeds) \\d",
+        "processes? (up to |approximately )?\\d+(K|M|B|k|m)?",
+        "latency (of|is|under|below) \\d+\\s*(ms|milliseconds?|microseconds?)",
+        "handles? \\d+"
+      ],
+      "domain": "finance",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_206",
+      "difficulty": "hard",
+      "subcategory": "technical_hallucination",
+      "query": "What resolution and refresh rate does the ProVision XR headset support?",
+      "contexts": [
+        "The ProVision XR headset is a mixed reality device designed for enterprise training and remote collaboration applications. It features inside-out tracking with multiple onboard cameras and sensors that map the user's environment in real time. The headset supports hand and eye tracking for natural interaction without controllers. An integrated spatial audio system delivers directional sound cues that enhance immersion during simulated scenarios. The device is compatible with existing enterprise identity management systems for secure deployment across organizations. Field trials in manufacturing, healthcare, and military training environments demonstrated improved task completion times and knowledge retention compared to traditional training methods."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Display specifications query when only feature descriptions are given",
+      "rationale": "The context describes the headset's capabilities without mentioning resolution, refresh rate, or field of view numbers. The LLM must not fabricate display specs.",
+      "forbidden_claims": [
+        "\\d+\\s*x\\s*\\d+",
+        "\\d+(p|K)\\b",
+        "\\d+\\s*(Hz|degree)",
+        "(resolution|refresh rate|field of view) (of|is|at) \\d",
+        "(PPD|pixels per degree) (of|is|at) \\d"
+      ],
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_207",
+      "difficulty": "hard",
+      "subcategory": "quote_extension",
+      "query": "What exactly did the lead architect say about the bridge redesign?",
+      "contexts": [
+        "Following the independent structural review, the lead architect for the Greendale River Crossing project publicly acknowledged that design modifications were necessary. The architect's brief statement described the changes as essential for long-term safety but did not elaborate on specific engineering details or timelines. Local media reported that the redesign would affect the suspension cable anchoring system and the approach ramp geometry. Community members have expressed frustration about the additional delays. The project oversight board scheduled a public hearing to address concerns and provide updates on the revised construction schedule. No transcript of the architect's statement has been released to the public."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Full quote request when only a paraphrased summary exists",
+      "rationale": "The context paraphrases the architect's statement without quoting it directly. The LLM must not fabricate the exact words.",
+      "forbidden_claims": [
+        "architect (said|stated|declared|announced)[,:]? ['\"]\\w{5,}",
+        "['\"][A-Z][^'\"]{15,}['\"]",
+        "(he|she|they) (said|stated|declared|announced|added)[,:]? ['\"]",
+        "exact words were",
+        "quote[d]?[,:]? ['\"]"
+      ],
+      "domain": "general",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
+    },
+    {
+      "id": "t1_grounding_hard_208",
+      "difficulty": "hard",
+      "subcategory": "quote_extension",
+      "query": "What did the superintendent say in her statement about school safety?",
+      "contexts": [
+        "The school district superintendent issued a written statement addressing recent safety concerns raised by parents following an incident at one of the district's middle schools. According to media coverage, the superintendent emphasized the district's commitment to student wellbeing and referenced ongoing investments in security infrastructure. The statement was distributed to families through the district's communication platform but has not been reproduced in full by any news outlet. A district spokesperson confirmed that additional details would be shared at the upcoming school board meeting. Parent advocacy groups have requested that the full text of the statement be made publicly available on the district website."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Quote request for a statement that is paraphrased but not directly quoted",
+      "rationale": "The context summarizes the superintendent's statement themes without providing any direct quotes. The LLM must not fabricate quoted language.",
+      "forbidden_claims": [
+        "superintendent (said|stated|wrote|declared)[,:]? ['\"]\\w{5,}",
+        "['\"][A-Z][^'\"]{15,}['\"]",
+        "(she|her|they) (said|stated|wrote|added)[,:]? ['\"]",
+        "statement (reads|said|stated)[,:]? ['\"]",
+        "exact (words|text|language) (were|was|include)"
+      ],
+      "domain": "education",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "grounding",
+      "evaluation_config": {
+        "mode": "answer_quality",
+        "use_regex": true,
+        "case_insensitive": true,
+        "allowed_phrases": []
+      }
     }
   ],
   "evaluation_config": {
