@@ -256,10 +256,6 @@ class TestCategorySpecificFields:
 class TestContextConsistency:
     """Tests for context-related consistency."""
 
-    @pytest.mark.xfail(
-        reason="Known data issue: some tier1 cases have context_count != len(contexts)",
-        strict=False,
-    )
     def test_context_count_matches(self):
         """context_count matches len(contexts) where set and >0."""
         mismatches = []

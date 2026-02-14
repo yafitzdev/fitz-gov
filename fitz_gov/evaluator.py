@@ -13,7 +13,7 @@ import re
 import time
 from collections import defaultdict
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 from .llm_validator import OllamaValidator, ValidatorConfig
 from .loader import Tier, load_tier

@@ -265,7 +265,7 @@ def save_cases_and_queries(cases: list, output_dir: Path) -> None:
     """Save test cases (Mode A) and queries (Mode B)."""
     import json
 
-    from .schema import FitzGovCategory
+    from .models import FitzGovCategory
 
     # Save cases organized by category (Mode A)
     cases_dir = output_dir / "cases"

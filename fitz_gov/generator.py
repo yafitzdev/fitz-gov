@@ -19,7 +19,7 @@ import re
 from dataclasses import dataclass
 from typing import Any, Protocol
 
-from .schema import AnswerMode, FitzGovCase, FitzGovCategory
+from .models import AnswerMode, FitzGovCase, FitzGovCategory
 
 
 class LLMClient(Protocol):
@@ -285,7 +285,7 @@ Generate {num_cases} diverse conflict scenarios."""
         num_cases: int = 20,
     ) -> list[FitzGovCase]:
         """
-        Generate qualification test cases.
+        Generate trustworthy_hedged test cases.
 
         Creates questions where the answer requires hedging, such as:
         - Causal claims without evidence
@@ -353,7 +353,7 @@ Generate {num_cases} diverse qualification scenarios."""
         num_cases: int = 20,
     ) -> list[FitzGovCase]:
         """
-        Generate confidence test cases.
+        Generate trustworthy_direct test cases.
 
         Creates questions where context clearly supports a direct answer,
         testing that the system doesn't over-hedge.

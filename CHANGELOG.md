@@ -11,6 +11,67 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [4.0.0] - 2026-02-12
+
+### Highlights
+
+**Massive Benchmark Expansion** - From 1,173 to 2,114 test cases (60 tier0 + 2,054 tier1). Added 364 medium-difficulty cases (25% of tier1), expanded grounding from 34 to 271 cases and relevance from 32 to 275 cases with hand-written rich content, added 6 classification attributes to every case for results slicing.
+
+### Data Expansion
+
+- **2,054 tier1 cases** (up from 1,113):
+  - Abstention: 467 (+230), Dispute: 409 (+213)
+  - Trustworthy Hedged: 414 (+54), Trustworthy Direct: 218 (-36, net after conversions)
+  - Grounding: 271 (+237), Relevance: 275 (+243)
+- **364 medium-difficulty cases** across all 6 categories (25% of tier1)
+- **Rewritten grounding/relevance content** - all 336 cases replaced with hand-written rich content (80-150 word contexts, domain-specific detail)
+- **Domain rebalancing** - converted 106 cases from over-represented domains (tech/finance/medicine) to under-represented ones (social media, history, psychology, government, agriculture)
+- **30 multi-source trustworthy cases** with context_sources metadata
+- **100 new abstain cases** and **100 new dispute cases**
+- **Sparse subcategory expansion** - all subcategories now have >= 5 cases
+- **29 duplicate queries removed** via deduplication pass
+
+### New Features
+
+- **6 classification attributes** on every case for results slicing:
+  - `domain` (18 values), `query_type` (10 values), `source_type`, `context_count`, `reasoning_type` (6 values), `evidence_pattern` (6 values)
+- **Evaluator classification breakdowns** - `Tier1Result` includes `domain_breakdown`, `query_type_breakdown`, `source_type_breakdown`, `reasoning_type_breakdown`, `evidence_pattern_breakdown`
+- **CLI `--breakdown` flag** - `python -m fitz_gov.cli stats --data-dir data --breakdown` shows distribution by domain, query type, etc.
+- **Comprehensive test suite** - 103 tests covering models, loader, evaluator, data integrity, validation, CLI
+
+### Code Quality
+
+- Removed dead `schema.py` (duplicate of `models.py`)
+- Fixed `__init__.py` version (was stuck at 3.0.0)
+- Removed unused `Callable` import from evaluator
+- Fixed 107 `context_count` mismatches in grounding/relevance data
+- Fixed stale docstrings in generator.py referencing old category names
+
+### Distribution
+
+| Category | Cases | % |
+|----------|------:|--:|
+| Abstention | 467 | 22.7% |
+| Trustworthy Hedged | 414 | 20.2% |
+| Dispute | 409 | 19.9% |
+| Relevance | 275 | 13.4% |
+| Grounding | 271 | 13.2% |
+| Trustworthy Direct | 218 | 10.6% |
+
+| Difficulty | Cases | % |
+|-----------|------:|--:|
+| Hard | 1,551 | 75.5% |
+| Medium | 503 | 24.5% |
+
+### Migration Notes
+
+- All existing case IDs preserved
+- `context_sources` field added for multi-source cases (138 cases)
+- Classification attributes have defaults, so older JSON loads without breaking
+- Score comparisons between v3.0 and v4.0 are NOT directly comparable due to case count and difficulty changes
+
+---
+
 ## [3.0.1] - 2026-02-11
 
 ### Changed
@@ -352,7 +413,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.1...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...v4.0.0
 [3.0.1]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v1.1.0...v2.0.0
