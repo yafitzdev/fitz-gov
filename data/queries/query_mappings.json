@@ -1,6 +1,6 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "4.1.0",
+  "version": "4.0.0",
   "mappings": {
     "abstention": {
       "abstain_easy_001": {

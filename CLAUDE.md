@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 fitz-gov is a RAG governance benchmark for evaluating whether RAG systems know when to abstain, dispute, hedge, or confidently answer based on available evidence. It focuses on epistemic honesty rather than just retrieval quality or answer correctness.
 
-**Current version:** 5.0.0 with 2,114 test cases (60 tier0 + 2,054 tier1) across 6 categories
+**Current version:** 4.0.0 with 2,114 test cases (60 tier0 + 2,054 tier1) across 6 categories
 
 ## Commands
 
