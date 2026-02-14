@@ -450,9 +450,25 @@ class Tier1Result:
     num_cases: int
     """Total number of tier 1 cases."""
 
+    # Classification breakdowns (value -> accuracy)
+    domain_breakdown: dict[str, float] = field(default_factory=dict)
+    """Accuracy by domain."""
+
+    query_type_breakdown: dict[str, float] = field(default_factory=dict)
+    """Accuracy by query type."""
+
+    source_type_breakdown: dict[str, float] = field(default_factory=dict)
+    """Accuracy by source type."""
+
+    reasoning_type_breakdown: dict[str, float] = field(default_factory=dict)
+    """Accuracy by reasoning type."""
+
+    evidence_pattern_breakdown: dict[str, float] = field(default_factory=dict)
+    """Accuracy by evidence pattern."""
+
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
-        return {
+        result = {
             "accuracy": self.accuracy,
             "category_results": {
                 k.value: v.to_dict() for k, v in self.category_results.items()
@@ -461,6 +477,17 @@ class Tier1Result:
             "difficulty_breakdown": self.difficulty_breakdown,
             "num_cases": self.num_cases,
         }
+        if self.domain_breakdown:
+            result["domain_breakdown"] = self.domain_breakdown
+        if self.query_type_breakdown:
+            result["query_type_breakdown"] = self.query_type_breakdown
+        if self.source_type_breakdown:
+            result["source_type_breakdown"] = self.source_type_breakdown
+        if self.reasoning_type_breakdown:
+            result["reasoning_type_breakdown"] = self.reasoning_type_breakdown
+        if self.evidence_pattern_breakdown:
+            result["evidence_pattern_breakdown"] = self.evidence_pattern_breakdown
+        return result
 
     def __str__(self) -> str:
         """Pretty print tier 1 results."""
@@ -480,6 +507,20 @@ class Tier1Result:
             lines.append("  By Difficulty:")
             for diff, acc in sorted(self.difficulty_breakdown.items()):
                 lines.append(f"    {diff}: {acc:.1%}")
+
+        # Show classification breakdowns if populated
+        for label, breakdown in [
+            ("By Domain", self.domain_breakdown),
+            ("By Query Type", self.query_type_breakdown),
+            ("By Source Type", self.source_type_breakdown),
+            ("By Reasoning Type", self.reasoning_type_breakdown),
+            ("By Evidence Pattern", self.evidence_pattern_breakdown),
+        ]:
+            if breakdown:
+                lines.append("")
+                lines.append(f"  {label}:")
+                for key, acc in sorted(breakdown.items(), key=lambda x: -x[1]):
+                    lines.append(f"    {key}: {acc:.1%}")
 
         # Add confusion matrix
         lines.append("")

@@ -535,6 +535,74 @@ class TestTieredEvaluation:
         assert breakdown["easy"] == pytest.approx(1.0)
         assert breakdown["hard"] == pytest.approx(0.0)
 
+    def test_tiered_classification_breakdowns(self, evaluator):
+        """Tier1Result should have classification breakdowns."""
+        cases = self._make_tier_cases(2)
+        responses = ["x"] * 2
+        modes = [AnswerMode.ABSTAIN] * 2
+
+        tier1_cases = [
+            make_governance_case(
+                "dispute", "disputed", id="t1_a",
+                domain="technology", query_type="what",
+                reasoning_type="factual", evidence_pattern="conflicting",
+            ),
+            make_governance_case(
+                "dispute", "disputed", id="t1_b",
+                domain="medicine", query_type="how",
+                reasoning_type="causal", evidence_pattern="conflicting",
+            ),
+        ]
+        tier1_responses = ["x", "x"]
+        # First correct, second wrong
+        tier1_modes = [AnswerMode.DISPUTED, AnswerMode.TRUSTWORTHY]
+
+        result = evaluator.evaluate_tiered(
+            cases, responses, modes,
+            tier1_cases, tier1_responses, tier1_modes,
+            tier0_threshold=0.5,
+        )
+        assert result.tier1 is not None
+        t1 = result.tier1
+
+        # Domain breakdown: tech=1/1=100%, medicine=0/1=0%
+        assert t1.domain_breakdown["technology"] == pytest.approx(1.0)
+        assert t1.domain_breakdown["medicine"] == pytest.approx(0.0)
+
+        # Query type breakdown
+        assert t1.query_type_breakdown["what"] == pytest.approx(1.0)
+        assert t1.query_type_breakdown["how"] == pytest.approx(0.0)
+
+        # Evidence pattern: both conflicting, 1/2 correct
+        assert t1.evidence_pattern_breakdown["conflicting"] == pytest.approx(0.5)
+
+        # to_dict should include breakdowns
+        d = t1.to_dict()
+        assert "domain_breakdown" in d
+        assert "query_type_breakdown" in d
+
+    def test_classification_breakdowns_empty_fields(self, evaluator):
+        """Cases with empty classification fields should use 'unknown'."""
+        cases = self._make_tier_cases(2)
+        responses = ["x"] * 2
+        modes = [AnswerMode.ABSTAIN] * 2
+
+        # Case with no classification fields set
+        tier1_cases = [
+            make_governance_case("dispute", "disputed", id="t1_bare"),
+        ]
+        tier1_responses = ["x"]
+        tier1_modes = [AnswerMode.DISPUTED]
+
+        result = evaluator.evaluate_tiered(
+            cases, responses, modes,
+            tier1_cases, tier1_responses, tier1_modes,
+            tier0_threshold=0.5,
+        )
+        assert result.tier1 is not None
+        # Empty domain -> "unknown"
+        assert "unknown" in result.tier1.domain_breakdown
+
 
 # ===========================================================================
 # Edge case tests

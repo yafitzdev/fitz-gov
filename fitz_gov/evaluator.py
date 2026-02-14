@@ -301,16 +301,20 @@ class FitzGovEvaluator:
         # Use evaluate_all to get results
         result = self.evaluate_all(cases, responses, modes)
 
+        # Collect all case results into a flat list
+        all_case_results: list[FitzGovCaseResult] = []
+        for cat_result in result.category_results.values():
+            all_case_results.extend(cat_result.case_results)
+
         # Calculate difficulty breakdown
         difficulty_correct: dict[str, int] = defaultdict(int)
         difficulty_total: dict[str, int] = defaultdict(int)
 
-        for cat_result in result.category_results.values():
-            for case_result in cat_result.case_results:
-                diff = case_result.case.difficulty
-                difficulty_total[diff] += 1
-                if case_result.passed:
-                    difficulty_correct[diff] += 1
+        for case_result in all_case_results:
+            diff = case_result.case.difficulty
+            difficulty_total[diff] += 1
+            if case_result.passed:
+                difficulty_correct[diff] += 1
 
         difficulty_breakdown = {
             diff: difficulty_correct[diff] / total
@@ -318,13 +322,52 @@ class FitzGovEvaluator:
             if total > 0
         }
 
+        # Calculate classification breakdowns
+        classification_breakdowns = self._compute_classification_breakdowns(
+            all_case_results
+        )
+
         return Tier1Result(
             accuracy=result.overall_accuracy,
             category_results=result.category_results,
             confusion_matrix=result.confusion_matrix,
             difficulty_breakdown=difficulty_breakdown,
             num_cases=result.num_cases,
+            **classification_breakdowns,
         )
+
+    @staticmethod
+    def _compute_classification_breakdowns(
+        case_results: list[FitzGovCaseResult],
+    ) -> dict[str, dict[str, float]]:
+        """Compute accuracy breakdowns by classification dimensions."""
+        dimensions = [
+            "domain",
+            "query_type",
+            "source_type",
+            "reasoning_type",
+            "evidence_pattern",
+        ]
+        counts: dict[str, dict[str, dict[str, int]]] = {
+            dim: defaultdict(lambda: {"passed": 0, "total": 0})
+            for dim in dimensions
+        }
+
+        for cr in case_results:
+            for dim in dimensions:
+                key = getattr(cr.case, dim, "") or "unknown"
+                counts[dim][key]["total"] += 1
+                if cr.passed:
+                    counts[dim][key]["passed"] += 1
+
+        return {
+            f"{dim}_breakdown": {
+                k: v["passed"] / v["total"]
+                for k, v in counts[dim].items()
+                if v["total"] > 0
+            }
+            for dim in dimensions
+        }
 
     def _evaluate_governance(
         self,

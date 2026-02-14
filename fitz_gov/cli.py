@@ -95,6 +95,9 @@ def cmd_stats(args: argparse.Namespace) -> int:
                         if diff in by_difficulty:
                             print(f"    {diff}: {by_difficulty[diff]}")
 
+                if tier == Tier.CORE and args.breakdown:
+                    _print_classification_breakdown(tier_cases)
+
         print()
         print("-" * 40)
         print(f"Combined: {len(all_cases)} cases")
@@ -124,6 +127,28 @@ def cmd_stats(args: argparse.Namespace) -> int:
                     print(f"    - {subcat}: {subcount}")
 
     return 0
+
+
+def _print_classification_breakdown(cases: list) -> None:
+    """Print classification attribute distributions for a set of cases."""
+    dimensions = [
+        ("Domain", "domain"),
+        ("Query Type", "query_type"),
+        ("Source Type", "source_type"),
+        ("Reasoning Type", "reasoning_type"),
+        ("Evidence Pattern", "evidence_pattern"),
+    ]
+    for label, attr in dimensions:
+        counts: dict[str, int] = {}
+        for case in cases:
+            val = getattr(case, attr, "") or "unknown"
+            counts[val] = counts.get(val, 0) + 1
+        if counts:
+            print(f"\n  {label} Distribution:")
+            total = sum(counts.values())
+            for val, count in sorted(counts.items(), key=lambda x: -x[1]):
+                pct = count / total * 100
+                print(f"    {val:25s} {count:5d} ({pct:.1f}%)")
 
 
 def cmd_generate(args: argparse.Namespace) -> int:
@@ -451,6 +476,7 @@ def main() -> int:
     stats_parser = subparsers.add_parser("stats", help="Show benchmark statistics")
     stats_parser.add_argument("--data-dir", help="Data directory")
     stats_parser.add_argument("-v", "--verbose", action="store_true", help="Show subcategory breakdown")
+    stats_parser.add_argument("--breakdown", action="store_true", help="Show classification attribute distributions")
 
     # generate command
     gen_parser = subparsers.add_parser("generate", help="Generate test cases from corpus")
