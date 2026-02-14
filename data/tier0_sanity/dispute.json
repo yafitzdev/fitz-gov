@@ -30,7 +30,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "American Educational Research Journal (2023)",
+        "RAND Corporation Education Report (2023)"
+      ]
     },
     {
       "id": "t0_dispute_easy_002",
@@ -55,7 +59,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "Brookings Institution Economic Study (2024)",
+        "S&P Global Market Intelligence (2024)"
+      ]
     },
     {
       "id": "t0_dispute_easy_003",
@@ -80,7 +88,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "U.S. Food and Drug Administration Report (2024)",
+        "Nature Medicine Research Article (2024)"
+      ]
     },
     {
       "id": "t0_dispute_easy_004",
@@ -105,7 +117,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "JP Morgan Asset Management (2023)",
+        "Federal Reserve Economic Data (2023)"
+      ]
     },
     {
       "id": "t0_dispute_easy_005",
@@ -130,7 +146,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "OECD Economic Surveys (2024)",
+        "Morgan Stanley Investment Report (2024)"
+      ]
     },
     {
       "id": "t0_dispute_easy_006",
@@ -155,7 +175,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "Stanford Law Review (2022)",
+        "Law Commission Consultation Paper (2022)"
+      ]
     },
     {
       "id": "t0_dispute_easy_007",
@@ -180,7 +204,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "arXiv Preprint Repository (2023)",
+        "Annual Review of Science (2023)"
+      ]
     },
     {
       "id": "t0_dispute_easy_008",
@@ -205,7 +233,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "Council on Foreign Relations (2024)",
+        "Congressional Budget Office (2024)"
+      ]
     },
     {
       "id": "t0_dispute_easy_009",
@@ -230,7 +262,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "International Transport Forum (2022)",
+        "American Public Transportation Association (2022)"
+      ]
     },
     {
       "id": "t0_dispute_easy_010",
@@ -255,7 +291,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "NCAA Research Report (2022)",
+        "World Anti-Doping Agency Report (2022)"
+      ]
     },
     {
       "id": "t0_dispute_easy_011",
@@ -280,7 +320,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "AWS Architecture Blog (2023)",
+        "ACM Computing Surveys (2023)"
+      ]
     },
     {
       "id": "t0_dispute_easy_012",
@@ -305,7 +349,11 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
-      }
+      },
+      "context_sources": [
+        "IEEE Computer Society Report (2024)",
+        "Google Research Publication (2024)"
+      ]
     }
   ]
 }
