@@ -44,7 +44,7 @@
     {
       "id": "t0_grounding_easy_002",
       "difficulty": "easy",
-      "subcategory": "name_hallucination",
+      "subcategory": "numerical_hallucination",
       "query": "Who is the CEO of Acme Corp?",
       "contexts": [
         "Acme Corp announced major leadership changes in 2024. The company restructured its executive team to focus on AI initiatives. Several new vice presidents were appointed."
@@ -255,7 +255,7 @@
     {
       "id": "t0_grounding_easy_008",
       "difficulty": "easy",
-      "subcategory": "name_hallucination",
+      "subcategory": "numerical_hallucination",
       "query": "Who founded the company?",
       "contexts": [
         "StartupX was established in 2015 with a mission to revolutionize the logistics industry. The company has since raised multiple rounds of funding and expanded globally."

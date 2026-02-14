@@ -270,7 +270,7 @@
       "description": "Travel query with art history contexts",
       "rationale": "Completely different domains - art history cannot answer real-time flight availability",
       "original_id": "abstain_easy_011",
-      "domain": "general",
+      "domain": "transportation",
       "query_type": "what",
       "source_type": "single",
       "context_count": 2,

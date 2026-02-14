@@ -300,7 +300,7 @@
     {
       "id": "t0_dispute_easy_011",
       "difficulty": "easy",
-      "subcategory": "numerical_disagreement",
+      "subcategory": "numerical_conflict",
       "query": "How much did the stock price change today?",
       "contexts": [
         "The stock surged 12% today following better-than-expected earnings.",

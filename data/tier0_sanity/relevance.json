@@ -71,7 +71,7 @@
         "over \\d+ (million |thousand )?users"
       ],
       "original_id": "relevance_easy_002",
-      "domain": "general",
+      "domain": "technology",
       "query_type": "how",
       "source_type": "single",
       "context_count": 1,

@@ -1,6 +1,6 @@
 {
   "description": "Maps test queries to relevant corpus documents for Mode B (full pipeline) evaluation",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "mappings": {
     "abstention": {
       "abstain_medium_001": {
@@ -8540,6 +8540,609 @@
           "realestate_0017"
         ],
         "notes": "Context about Zillow's business and Zestimate inputs but not condo vs. single-family accuracy comparison"
+      },
+      "t0_abstain_easy_001": {
+        "query": "What was Apple's revenue in Q4 2024?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e001a",
+          "abstain_doc_e001b"
+        ],
+        "notes": "Business/finance query with biology contexts"
+      },
+      "t0_abstain_easy_002": {
+        "query": "Who won the 2024 Super Bowl?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e002a",
+          "abstain_doc_e002b"
+        ],
+        "notes": "Sports query with history contexts"
+      },
+      "t0_abstain_easy_003": {
+        "query": "How do I configure nginx reverse proxy?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e003a",
+          "abstain_doc_e003b"
+        ],
+        "notes": "Technical/software query with environmental contexts"
+      },
+      "t0_abstain_easy_004": {
+        "query": "What are the side effects of ibuprofen?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e004a",
+          "abstain_doc_e004b"
+        ],
+        "notes": "Medical query with programming contexts"
+      },
+      "t0_abstain_easy_005": {
+        "query": "What is the recipe for beef stroganoff?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e005a",
+          "abstain_doc_e005b"
+        ],
+        "notes": "Cooking query with physics contexts"
+      },
+      "t0_abstain_easy_006": {
+        "query": "How do I train a puppy not to bite?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e006a",
+          "abstain_doc_e006b"
+        ],
+        "notes": "Pet care query with 20th century history contexts"
+      },
+      "t0_abstain_easy_007": {
+        "query": "What are the lyrics to 'Bohemian Rhapsody'?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e007a",
+          "abstain_doc_e007b"
+        ],
+        "notes": "Music query with anatomy contexts"
+      },
+      "t0_abstain_easy_008": {
+        "query": "What is the current exchange rate for USD to EUR?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e008a",
+          "abstain_doc_e008b"
+        ],
+        "notes": "Finance query with geography contexts"
+      },
+      "t0_abstain_easy_009": {
+        "query": "How do I fix a leaky faucet?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e009a",
+          "abstain_doc_e009b"
+        ],
+        "notes": "Home repair query with literature contexts"
+      },
+      "t0_abstain_easy_010": {
+        "query": "What are the rules of chess?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e010a",
+          "abstain_doc_e010b"
+        ],
+        "notes": "Game rules query with biology contexts"
+      },
+      "t0_abstain_easy_011": {
+        "query": "What flights are available from NYC to LA tomorrow?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e011a",
+          "abstain_doc_e011b"
+        ],
+        "notes": "Travel query with art history contexts"
+      },
+      "t0_abstain_easy_012": {
+        "query": "How do I file my taxes?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_e012a",
+          "abstain_doc_e012b"
+        ],
+        "notes": "Tax/legal query with chemistry contexts"
+      },
+      "t1_abstain_medium_1111": {
+        "query": "How does Samsung's Galaxy S25 camera compare to previous models?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1111"
+        ],
+        "notes": "Query asks about Samsung Galaxy S25 but context covers Google Pixel 9"
+      },
+      "t1_abstain_medium_1112": {
+        "query": "What role did Genghis Khan play in the fall of the Song Dynasty?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1112a",
+          "abstain_doc_1112b"
+        ],
+        "notes": "Query asks about Genghis Khan and the Song Dynasty but contexts only cover his general campaigns and the fall of the Jin Dynasty (multi-source)"
+      },
+      "t1_abstain_medium_1113": {
+        "query": "Is the University of Tokyo ranked in the top 10 globally?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1113"
+        ],
+        "notes": "Query asks about University of Tokyo ranking but context covers Peking University"
+      },
+      "t1_abstain_medium_1114": {
+        "query": "How did Napoleon perform at the Battle of Austerlitz?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1114"
+        ],
+        "notes": "Query asks about Napoleon at Austerlitz but context covers Wellington at Waterloo"
+      },
+      "t1_abstain_medium_1115": {
+        "query": "Does Spotify offer lossless audio streaming?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1115"
+        ],
+        "notes": "Query asks about Spotify's lossless audio but context covers Apple Music's lossless feature"
+      },
+      "t1_abstain_medium_1116": {
+        "query": "Why did the Roman Republic transition to an Empire?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1116"
+        ],
+        "notes": "Query asks about Rome's political transition but context covers Athens's democratic reforms"
+      },
+      "t1_abstain_medium_1117": {
+        "query": "How does TikTok's algorithm determine content recommendations?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1117a",
+          "abstain_doc_1117b"
+        ],
+        "notes": "Query asks about TikTok's algorithm but contexts cover YouTube and Instagram algorithms (multi-source)"
+      },
+      "t1_abstain_medium_1118": {
+        "query": "What side effects does ibuprofen have on the stomach?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1118"
+        ],
+        "notes": "Query asks about ibuprofen's gastrointestinal effects but context covers acetaminophen's liver effects"
+      },
+      "t1_abstain_medium_1119": {
+        "query": "What is the yield strength of Grade 5 titanium alloy?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1119"
+        ],
+        "notes": "Query asks for specific yield strength of Grade 5 titanium but context gives only general titanium properties"
+      },
+      "t1_abstain_medium_1120": {
+        "query": "How many calories are in a Starbucks Grande Caramel Macchiato?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1120"
+        ],
+        "notes": "Query asks for specific calorie count but context only describes Starbucks product range"
+      },
+      "t1_abstain_medium_1121": {
+        "query": "When does the New York City subway stop running on weeknights?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1121"
+        ],
+        "notes": "Query asks for specific operating hours but context only covers general subway statistics"
+      },
+      "t1_abstain_medium_1122": {
+        "query": "What is the interest rate on a 30-year fixed mortgage from Wells Fargo?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1122a",
+          "abstain_doc_1122b"
+        ],
+        "notes": "Query asks for a specific mortgage rate but contexts describe company overview and market trends (multi-source)"
+      },
+      "t1_abstain_medium_1123": {
+        "query": "How much RAM does the MacBook Pro M4 Max configuration include?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1123"
+        ],
+        "notes": "Query asks for specific RAM configuration but context only covers chip announcements and marketing claims"
+      },
+      "t1_abstain_medium_1124": {
+        "query": "What is the germination time for Roma tomato seeds?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1124"
+        ],
+        "notes": "Query asks for specific germination time but context covers general Roma tomato characteristics"
+      },
+      "t1_abstain_medium_1125": {
+        "query": "Should patients with type 2 diabetes take metformin before or after meals?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1125"
+        ],
+        "notes": "Query asks about meal timing for metformin but context covers mechanism and drug class"
+      },
+      "t1_abstain_medium_1126": {
+        "query": "Who won the 2026 FIFA World Cup?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1126"
+        ],
+        "notes": "Query asks about 2026 World Cup but context covers the 2022 tournament"
+      },
+      "t1_abstain_medium_1127": {
+        "query": "Is the Ottoman Empire still a major political power in the Middle East?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1127a",
+          "abstain_doc_1127b"
+        ],
+        "notes": "Query asks about current political status but context only covers the Ottoman Empire at its 16th-century peak (multi-source)"
+      },
+      "t1_abstain_medium_1128": {
+        "query": "How did ancient Egyptian farming techniques work before the Nile dams?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1128"
+        ],
+        "notes": "Query asks about ancient pre-dam farming but context only covers modern post-dam agriculture"
+      },
+      "t1_abstain_medium_1129": {
+        "query": "When did the first social media platform launch?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1129a",
+          "abstain_doc_1129b"
+        ],
+        "notes": "Query asks about the first social media platform but contexts only cover Facebook (2004) and Twitter (2006) (multi-source)"
+      },
+      "t1_abstain_medium_1130": {
+        "query": "What psychological treatments were used for PTSD in the 1950s?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1130"
+        ],
+        "notes": "Query asks about 1950s PTSD treatment but context covers post-1980 era treatments"
+      },
+      "t1_abstain_medium_1131": {
+        "query": "Is the Space Shuttle program still active at NASA?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1131"
+        ],
+        "notes": "Query asks about current status but context only covers historical missions without mentioning retirement"
+      },
+      "t1_abstain_medium_1132": {
+        "query": "Which teams played in the 2030 Super Bowl?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1132"
+        ],
+        "notes": "Query asks about the 2030 Super Bowl but context only covers the 2024 game"
+      },
+      "t1_abstain_medium_1133": {
+        "query": "How much does a plumber charge per hour in Denver, Colorado?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1133"
+        ],
+        "notes": "Query asks for plumber hourly rates but context gives general Denver economic data"
+      },
+      "t1_abstain_medium_1134": {
+        "query": "What is the employee turnover rate at Amazon warehouses?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1134a",
+          "abstain_doc_1134b"
+        ],
+        "notes": "Query asks for warehouse turnover rates but contexts describe operations, workforce size, and compensation (multi-source)"
+      },
+      "t1_abstain_medium_1135": {
+        "query": "Does exposure to blue light from screens cause permanent eye damage?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1135"
+        ],
+        "notes": "Query asks about permanent eye damage but context only covers blue light physics and sources"
+      },
+      "t1_abstain_medium_1136": {
+        "query": "Why do some people develop seasonal affective disorder while others do not?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1136a",
+          "abstain_doc_1136b"
+        ],
+        "notes": "Query asks about individual susceptibility factors but contexts describe symptoms and treatment (multi-source)"
+      },
+      "t1_abstain_medium_1137": {
+        "query": "How many followers does the average Instagram influencer need to get brand deals?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1137"
+        ],
+        "notes": "Query asks for specific follower threshold for brand deals but context describes the industry in general"
+      },
+      "t1_abstain_medium_1138": {
+        "query": "Does the Silk Road archaeological evidence reveal what goods were traded most frequently?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1138a",
+          "abstain_doc_1138b"
+        ],
+        "notes": "Query asks about most frequently traded goods but archaeological evidence is limited by organic decay (multi-source)"
+      },
+      "t1_abstain_medium_1139": {
+        "query": "Is remote work more productive than in-office work?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1139"
+        ],
+        "notes": "Query asks about productivity comparison but context only covers adoption rates and policies"
+      },
+      "t1_abstain_medium_1140": {
+        "query": "How do you train a dog to stop barking at strangers?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1140"
+        ],
+        "notes": "Query asks about dog training but context is entirely about goldfish care"
+      },
+      "t1_abstain_medium_1141": {
+        "query": "What are the environmental impacts of lithium mining?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1141"
+        ],
+        "notes": "Query asks about lithium mining impacts but context covers Renaissance art techniques"
+      },
+      "t1_abstain_medium_1142": {
+        "query": "Should I invest in index funds or individual stocks?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1142a",
+          "abstain_doc_1142b"
+        ],
+        "notes": "Query asks about investment strategy but contexts cover diet and nutrition (multi-source)"
+      },
+      "t1_abstain_medium_1143": {
+        "query": "Why do tectonic plates move?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1143"
+        ],
+        "notes": "Query asks about geological plate tectonics but context covers basketball court dimensions"
+      },
+      "t1_abstain_medium_1144": {
+        "query": "How does dialectical behavior therapy help patients with borderline personality disorder?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1144"
+        ],
+        "notes": "Query asks about DBT for borderline personality disorder but context covers Panama Canal engineering"
+      },
+      "t1_abstain_medium_1145": {
+        "query": "What are the legal requirements for building a backyard fence in California?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1145"
+        ],
+        "notes": "Query asks about California fence building regulations but context covers California agriculture and food"
+      },
+      "t1_abstain_medium_1146": {
+        "query": "How does photosynthesis convert sunlight into chemical energy?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1146"
+        ],
+        "notes": "Query asks about biological photosynthesis but context covers commercial solar panel technology"
+      },
+      "t1_abstain_medium_1147": {
+        "query": "Why do some students perform better in morning classes than afternoon classes?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1147"
+        ],
+        "notes": "Query asks about student academic performance patterns but context covers corporate workplace habits"
+      },
+      "t1_abstain_medium_1148": {
+        "query": "Does intermittent fasting improve cognitive function?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1148a",
+          "abstain_doc_1148b"
+        ],
+        "notes": "Query asks about cognitive effects but contexts only cover metabolic and weight outcomes (multi-source)"
+      },
+      "t1_abstain_medium_1149": {
+        "query": "How do electric vehicle batteries impact soil contamination when improperly disposed?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1149"
+        ],
+        "notes": "Query asks about environmental contamination from battery disposal but context covers EV market and battery lifespan"
+      },
+      "t1_abstain_medium_1150": {
+        "query": "What is the minimum wage in Germany?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1150"
+        ],
+        "notes": "Query asks about Germany's minimum wage but context covers France's SMIC"
+      },
+      "t1_abstain_medium_1151": {
+        "query": "Is marijuana legal for recreational use in Texas?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1151"
+        ],
+        "notes": "Query asks about Texas marijuana laws but context covers Colorado's legalization"
+      },
+      "t1_abstain_medium_1152": {
+        "query": "How does the UK healthcare system handle prescription drug costs?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1152"
+        ],
+        "notes": "Query asks about UK prescription costs but context describes Canadian provincial drug coverage"
+      },
+      "t1_abstain_medium_1153": {
+        "query": "What are the speed limits on highways in Japan?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1153a",
+          "abstain_doc_1153b"
+        ],
+        "notes": "Query asks about Japanese highway speed limits but contexts cover Germany and South Korea (multi-source)"
+      },
+      "t1_abstain_medium_1154": {
+        "query": "What is Twitter's current monthly active user count?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1154"
+        ],
+        "notes": "Query asks for current user count but context has 2022 data before the platform was rebranded to X"
+      },
+      "t1_abstain_medium_1155": {
+        "query": "Does the UK still follow EU food safety regulations?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1155"
+        ],
+        "notes": "Query asks about current UK-EU regulatory alignment but context describes UK as an EU member state"
+      },
+      "t1_abstain_medium_1156": {
+        "query": "Which streaming service has the most subscribers right now?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1156"
+        ],
+        "notes": "Query asks for current subscriber leader but context is from late 2019"
+      },
+      "t1_abstain_medium_1157": {
+        "query": "How much does a gallon of gas cost in the United States today?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1157"
+        ],
+        "notes": "Query asks for today's gas prices but context provides April 2020 pandemic-era data"
+      },
+      "t1_abstain_medium_1158": {
+        "query": "What are the nutrition facts for Coca-Cola Zero Sugar?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1158"
+        ],
+        "notes": "Query asks about Coca-Cola Zero Sugar but context provides Pepsi Max nutritional information"
+      },
+      "t1_abstain_medium_1159": {
+        "query": "How long does the Toyota Camry hybrid battery warranty last?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1159"
+        ],
+        "notes": "Query asks about Toyota Camry battery warranty but context covers Honda Accord Hybrid"
+      },
+      "t1_abstain_medium_1160": {
+        "query": "Is the PlayStation 5 backward compatible with PS3 games?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1160"
+        ],
+        "notes": "Query asks about PlayStation 5 backward compatibility but context covers Xbox backward compatibility"
+      },
+      "t1_abstain_medium_1161": {
+        "query": "Should schools teach financial literacy as a required course?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1161a",
+          "abstain_doc_1161b"
+        ],
+        "notes": "Query asks about financial literacy in schools but contexts cover separate financial and educational data (multi-source)"
+      },
+      "t1_abstain_medium_1162": {
+        "query": "How does urban farming address food desert problems?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1162a",
+          "abstain_doc_1162b"
+        ],
+        "notes": "Query asks how urban farming solves food deserts but contexts describe each independently without linking them (multi-source)"
+      },
+      "t1_abstain_medium_1163": {
+        "query": "Does social media use by teenagers increase rates of clinical depression?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1163a",
+          "abstain_doc_1163b"
+        ],
+        "notes": "Query asks about causal link but contexts provide usage stats and depression rates independently (multi-source)"
+      },
+      "t1_abstain_medium_1164": {
+        "query": "What is the current interest rate on Apple's corporate bonds?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1164"
+        ],
+        "notes": "Context mentions Apple and financial figures but not corporate bond interest rates"
+      },
+      "t1_abstain_medium_1165": {
+        "query": "How effective is crop rotation for controlling corn rootworm?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1165"
+        ],
+        "notes": "Context discusses crop rotation generally but not its effectiveness against corn rootworm specifically"
+      },
+      "t1_abstain_medium_1166": {
+        "query": "Who founded the social media platform Mastodon?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1166"
+        ],
+        "notes": "Context discusses the prehistoric animal mastodon rather than the social media platform Mastodon"
+      },
+      "t1_abstain_medium_1167": {
+        "query": "What was the GDP growth rate of Vietnam in Q2 2024?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1167"
+        ],
+        "notes": "Query asks for Vietnam's Q2 2024 GDP growth but context gives regional annual aggregates"
+      },
+      "t1_abstain_medium_1168": {
+        "query": "How many murders occurred in Chicago in December 2024?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1168"
+        ],
+        "notes": "Query asks for Chicago-specific December 2024 murders but context provides national 2023 annual totals"
+      },
+      "t1_abstain_medium_1169": {
+        "query": "Is it safe to swim in the Ganges River?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1169"
+        ],
+        "notes": "Context implies pollution but never directly states whether swimming is safe or unsafe"
+      },
+      "t1_abstain_medium_1170": {
+        "query": "Should I buy a house in this current real estate market?",
+        "relevant_docs": [],
+        "decoy_docs": [
+          "abstain_doc_1170a",
+          "abstain_doc_1170b"
+        ],
+        "notes": "Context provides market data but never gives an explicit buy or wait recommendation (multi-source)"
       }
     },
     "dispute": {
@@ -16399,6 +17002,568 @@
         ],
         "decoy_docs": [],
         "notes": "Caloric surplus vs carbohydrate-insulin vs food environment"
+      },
+      "t0_dispute_easy_001": {
+        "query": "Did the project launch successfully?",
+        "relevant_docs": [
+          "dispute_doc_e001a",
+          "dispute_doc_e001b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: success vs failure (multi-source)"
+      },
+      "t0_dispute_easy_002": {
+        "query": "Is the company profitable?",
+        "relevant_docs": [
+          "dispute_doc_e002a",
+          "dispute_doc_e002b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: profitable vs loss-making (multi-source)"
+      },
+      "t0_dispute_easy_003": {
+        "query": "Was the medication approved by the FDA?",
+        "relevant_docs": [
+          "dispute_doc_e003a",
+          "dispute_doc_e003b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: approved vs rejected (multi-source)"
+      },
+      "t0_dispute_easy_004": {
+        "query": "Did sales increase this quarter?",
+        "relevant_docs": [
+          "dispute_doc_e004a",
+          "dispute_doc_e004b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: increase vs decrease (multi-source)"
+      },
+      "t0_dispute_easy_005": {
+        "query": "Is the CEO stepping down?",
+        "relevant_docs": [
+          "dispute_doc_e005a",
+          "dispute_doc_e005b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: leaving vs staying (multi-source)"
+      },
+      "t0_dispute_easy_006": {
+        "query": "Did the defendant plead guilty?",
+        "relevant_docs": [
+          "dispute_doc_e006a",
+          "dispute_doc_e006b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: guilty vs not guilty plea (multi-source)"
+      },
+      "t0_dispute_easy_007": {
+        "query": "Was the concert cancelled?",
+        "relevant_docs": [
+          "dispute_doc_e007a",
+          "dispute_doc_e007b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: cancelled vs proceeded (multi-source)"
+      },
+      "t0_dispute_easy_008": {
+        "query": "Did the bill pass in Congress?",
+        "relevant_docs": [
+          "dispute_doc_e008a",
+          "dispute_doc_e008b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: passed vs failed (multi-source)"
+      },
+      "t0_dispute_easy_009": {
+        "query": "Is the product available for pre-order?",
+        "relevant_docs": [
+          "dispute_doc_e009a",
+          "dispute_doc_e009b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: available vs delayed (multi-source)"
+      },
+      "t0_dispute_easy_010": {
+        "query": "Did the team win the championship?",
+        "relevant_docs": [
+          "dispute_doc_e010a",
+          "dispute_doc_e010b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: won vs lost (multi-source)"
+      },
+      "t0_dispute_easy_011": {
+        "query": "How much did the stock price change today?",
+        "relevant_docs": [
+          "dispute_doc_e011a",
+          "dispute_doc_e011b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct numerical contradiction: up vs down (multi-source)"
+      },
+      "t0_dispute_easy_012": {
+        "query": "Is the restaurant open on Sundays?",
+        "relevant_docs": [
+          "dispute_doc_e012a",
+          "dispute_doc_e012b"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct contradiction: open vs closed (multi-source)"
+      },
+      "t1_dispute_medium_746": {
+        "query": "How many people died during the Irish Potato Famine?",
+        "relevant_docs": [
+          "dispute_doc_746a",
+          "dispute_doc_746b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two credible sources disagree on Irish Famine death toll by 500,000 (multi-source)"
+      },
+      "t1_dispute_medium_747": {
+        "query": "What percentage of global freshwater is used for agriculture?",
+        "relevant_docs": [
+          "dispute_doc_747a",
+          "dispute_doc_747b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two organizations report very different figures for agricultural water use depending on methodology"
+      },
+      "t1_dispute_medium_748": {
+        "query": "Has the Dow Jones Industrial Average historically outperformed inflation over 30-year periods?",
+        "relevant_docs": [
+          "dispute_doc_748a",
+          "dispute_doc_748b",
+          "dispute_doc_748c"
+        ],
+        "decoy_docs": [],
+        "notes": "Conflicting analyses on whether Dow returns genuinely beat inflation over 30-year windows"
+      },
+      "t1_dispute_medium_749": {
+        "query": "How much does the US spend on foreign aid annually?",
+        "relevant_docs": [
+          "dispute_doc_749a",
+          "dispute_doc_749b"
+        ],
+        "decoy_docs": [],
+        "notes": "US government and international organization report different foreign aid totals (multi-source)"
+      },
+      "t1_dispute_medium_750": {
+        "query": "How much student loan debt does the average US graduate carry?",
+        "relevant_docs": [
+          "dispute_doc_750a",
+          "dispute_doc_750b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two data sources report different student debt figures due to mean vs median and population definitions"
+      },
+      "t1_dispute_medium_751": {
+        "query": "What is the concussion rate in professional football per season?",
+        "relevant_docs": [
+          "dispute_doc_751a",
+          "dispute_doc_751b"
+        ],
+        "decoy_docs": [],
+        "notes": "NFL official data and independent research disagree on concussion rates by over 50%"
+      },
+      "t1_dispute_medium_752": {
+        "query": "What percentage of internet traffic comes from bots?",
+        "relevant_docs": [
+          "dispute_doc_752a",
+          "dispute_doc_752b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two major cybersecurity firms report very different bot traffic percentages (multi-source)"
+      },
+      "t1_dispute_medium_753": {
+        "query": "Is social media effective for small business marketing?",
+        "relevant_docs": [
+          "dispute_doc_753a",
+          "dispute_doc_753b"
+        ],
+        "decoy_docs": [],
+        "notes": "Marketers report high effectiveness but engagement metrics tell a contradictory story"
+      },
+      "t1_dispute_medium_754": {
+        "query": "Does offering unlimited PTO increase employee time off?",
+        "relevant_docs": [
+          "dispute_doc_754a",
+          "dispute_doc_754b"
+        ],
+        "decoy_docs": [],
+        "notes": "Unlimited PTO reduces actual days taken while reportedly improving satisfaction (multi-source)"
+      },
+      "t1_dispute_medium_755": {
+        "query": "Is the US power grid reliable enough for increasing electricity demand?",
+        "relevant_docs": [
+          "dispute_doc_755a",
+          "dispute_doc_755b"
+        ],
+        "decoy_docs": [],
+        "notes": "DOE highlights high uptime while NERC warns of growing reliability risks (multi-source)"
+      },
+      "t1_dispute_medium_756": {
+        "query": "Does organic farming produce enough food to feed the world?",
+        "relevant_docs": [
+          "dispute_doc_756a",
+          "dispute_doc_756b"
+        ],
+        "decoy_docs": [],
+        "notes": "Large-scale meta-analysis shows organic yield gap while a long-term trial shows yield parity"
+      },
+      "t1_dispute_medium_757": {
+        "query": "Is positive reinforcement more effective than punishment for behavior change?",
+        "relevant_docs": [
+          "dispute_doc_757a",
+          "dispute_doc_757b"
+        ],
+        "decoy_docs": [],
+        "notes": "General research favors reinforcement but specific clinical contexts show punishment works faster (multi-source)"
+      },
+      "t1_dispute_medium_758": {
+        "query": "How effective are carbon offset programs at reducing emissions?",
+        "relevant_docs": [
+          "dispute_doc_758a",
+          "dispute_doc_758b"
+        ],
+        "decoy_docs": [],
+        "notes": "Offset certifier claims verified reductions while independent analysis finds most credits are phantom"
+      },
+      "t1_dispute_medium_759": {
+        "query": "Is it legal to record phone calls without the other party's consent in the US?",
+        "relevant_docs": [
+          "dispute_doc_759a",
+          "dispute_doc_759b"
+        ],
+        "decoy_docs": [],
+        "notes": "Federal law and state laws directly contradict on phone recording consent requirements"
+      },
+      "t1_dispute_medium_760": {
+        "query": "Should farmers use neonicotinoid pesticides on flowering crops?",
+        "relevant_docs": [
+          "dispute_doc_760a",
+          "dispute_doc_760b"
+        ],
+        "decoy_docs": [],
+        "notes": "USDA approves neonicotinoid use while EFSA banned them as unacceptable risk"
+      },
+      "t1_dispute_medium_761": {
+        "query": "Is routine PSA screening recommended for prostate cancer?",
+        "relevant_docs": [
+          "dispute_doc_761a",
+          "dispute_doc_761b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two major medical bodies give opposing screening recommendations for the same test (multi-source)"
+      },
+      "t1_dispute_medium_762": {
+        "query": "Should cities invest in expanding highway capacity to reduce traffic congestion?",
+        "relevant_docs": [
+          "dispute_doc_762a",
+          "dispute_doc_762b"
+        ],
+        "decoy_docs": [],
+        "notes": "Engineering body recommends highway expansion while transportation research shows it fails"
+      },
+      "t1_dispute_medium_763": {
+        "query": "Is rent control effective at keeping housing affordable?",
+        "relevant_docs": [
+          "dispute_doc_763a",
+          "dispute_doc_763b"
+        ],
+        "decoy_docs": [],
+        "notes": "One study shows rent control protects tenants while another shows it reduces housing supply"
+      },
+      "t1_dispute_medium_764": {
+        "query": "Does content moderation on social platforms reduce harmful speech?",
+        "relevant_docs": [
+          "dispute_doc_764a",
+          "dispute_doc_764b"
+        ],
+        "decoy_docs": [],
+        "notes": "Platform data shows moderation works while independent research shows it merely displaces speech"
+      },
+      "t1_dispute_medium_765": {
+        "query": "What role did economic inflation and currency debasement play in the decline of the Western Roman Empire?",
+        "relevant_docs": [
+          "dispute_doc_765a",
+          "dispute_doc_765b",
+          "dispute_doc_765c"
+        ],
+        "decoy_docs": [],
+        "notes": "Disputed role of economic factors: currency debasement thesis challenged by climate/disease and trade-network explanations"
+      },
+      "t1_dispute_medium_766": {
+        "query": "Why are insect populations declining globally?",
+        "relevant_docs": [
+          "dispute_doc_766a",
+          "dispute_doc_766b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two major reviews reach opposing conclusions on the primary driver of insect decline"
+      },
+      "t1_dispute_medium_767": {
+        "query": "How should companies structure return-to-office mandates?",
+        "relevant_docs": [
+          "dispute_doc_767a",
+          "dispute_doc_767b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two major consulting firms reach opposing conclusions on mandatory vs flexible office policies (multi-source)"
+      },
+      "t1_dispute_medium_768": {
+        "query": "Why has life expectancy in the US stalled compared to other developed nations?",
+        "relevant_docs": [
+          "dispute_doc_768a",
+          "dispute_doc_768b"
+        ],
+        "decoy_docs": [],
+        "notes": "Healthcare system analysis and social factors research reach opposing conclusions on the same trend"
+      },
+      "t1_dispute_medium_769": {
+        "query": "Should governments tax sugary beverages to reduce obesity?",
+        "relevant_docs": [
+          "dispute_doc_769a",
+          "dispute_doc_769b"
+        ],
+        "decoy_docs": [],
+        "notes": "Health organization review favors sugar taxes while economic analysis concludes they are ineffective and regressive"
+      },
+      "t1_dispute_medium_770": {
+        "query": "How will AI affect employment in the next decade?",
+        "relevant_docs": [
+          "dispute_doc_770a",
+          "dispute_doc_770b"
+        ],
+        "decoy_docs": [],
+        "notes": "Investment bank predicts massive job displacement while academic research predicts job augmentation"
+      },
+      "t1_dispute_medium_771": {
+        "query": "When will the US Social Security trust fund be depleted?",
+        "relevant_docs": [
+          "dispute_doc_771a",
+          "dispute_doc_771b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two government bodies project different potential depletion dates based on economic assumptions"
+      },
+      "t1_dispute_medium_772": {
+        "query": "When will the Arctic Ocean experience its first ice-free summer?",
+        "relevant_docs": [
+          "dispute_doc_772a",
+          "dispute_doc_772b"
+        ],
+        "decoy_docs": [],
+        "notes": "Recent modeling predicts ice-free Arctic a decade earlier than IPCC projections (multi-source)"
+      },
+      "t1_dispute_medium_773": {
+        "query": "When did the Clovis people first appear in North America based on radiocarbon dating evidence?",
+        "relevant_docs": [
+          "dispute_doc_773a",
+          "dispute_doc_773b",
+          "dispute_doc_773c"
+        ],
+        "decoy_docs": [],
+        "notes": "Clovis dated to 13,000 years ago but pre-Clovis discoveries dispute this as earliest arrival"
+      },
+      "t1_dispute_medium_774": {
+        "query": "When will solid-state batteries be commercially viable for electric vehicles?",
+        "relevant_docs": [
+          "dispute_doc_774a",
+          "dispute_doc_774b"
+        ],
+        "decoy_docs": [],
+        "notes": "Automaker promises commercial solid-state batteries by 2028 while researchers say 2035 at earliest"
+      },
+      "t1_dispute_medium_775": {
+        "query": "When will global CO2 emissions peak?",
+        "relevant_docs": [
+          "dispute_doc_775a",
+          "dispute_doc_775b"
+        ],
+        "decoy_docs": [],
+        "notes": "IEA predicts imminent emissions peak while Climate Analytics says it is years away"
+      },
+      "t1_dispute_medium_776": {
+        "query": "Does social media use increase political polarization?",
+        "relevant_docs": [
+          "dispute_doc_776a",
+          "dispute_doc_776b"
+        ],
+        "decoy_docs": [],
+        "notes": "Experimental evidence shows social media increases polarization while demographic data suggests it does not (multi-source)"
+      },
+      "t1_dispute_medium_777": {
+        "query": "Has global grain output increased sufficiently to match rising demand from population growth since 2010?",
+        "relevant_docs": [
+          "dispute_doc_777a",
+          "dispute_doc_777b",
+          "dispute_doc_777c"
+        ],
+        "decoy_docs": [],
+        "notes": "Dispute over whether aggregate grain production growth adequately addresses food demand"
+      },
+      "t1_dispute_medium_778": {
+        "query": "How has income inequality changed in the US over the past decade?",
+        "relevant_docs": [
+          "dispute_doc_778a",
+          "dispute_doc_778b"
+        ],
+        "decoy_docs": [],
+        "notes": "Income inequality measures show decline while wealth inequality measures show increase"
+      },
+      "t1_dispute_medium_779": {
+        "query": "Is the gender pay gap in the US narrowing?",
+        "relevant_docs": [
+          "dispute_doc_779a",
+          "dispute_doc_779b"
+        ],
+        "decoy_docs": [],
+        "notes": "Raw pay gap is narrowing while controlled pay gap is widening"
+      },
+      "t1_dispute_medium_780": {
+        "query": "Who was primarily responsible for breaking the Enigma code in World War II?",
+        "relevant_docs": [
+          "dispute_doc_780a",
+          "dispute_doc_780b"
+        ],
+        "decoy_docs": [],
+        "notes": "British and Polish authorities each claim primary credit for breaking Enigma (multi-source)"
+      },
+      "t1_dispute_medium_781": {
+        "query": "Which diet is most effective for long-term weight loss?",
+        "relevant_docs": [
+          "dispute_doc_781a",
+          "dispute_doc_781b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two authoritative medical bodies recommend different diets as most effective for weight loss"
+      },
+      "t1_dispute_medium_782": {
+        "query": "Who has the legal authority to regulate cryptocurrency in the United States?",
+        "relevant_docs": [
+          "dispute_doc_782a",
+          "dispute_doc_782b"
+        ],
+        "decoy_docs": [],
+        "notes": "SEC and CFTC both claim primary regulatory authority over cryptocurrency"
+      },
+      "t1_dispute_medium_783": {
+        "query": "Which farming method is more sustainable: regenerative agriculture or precision agriculture?",
+        "relevant_docs": [
+          "dispute_doc_783a",
+          "dispute_doc_783b"
+        ],
+        "decoy_docs": [],
+        "notes": "USDA favors regenerative agriculture while IFPRI favors precision agriculture for sustainability (multi-source)"
+      },
+      "t1_dispute_medium_784": {
+        "query": "How prevalent is clinical depression among US teenagers?",
+        "relevant_docs": [
+          "dispute_doc_784a",
+          "dispute_doc_784b"
+        ],
+        "decoy_docs": [],
+        "notes": "Self-report surveys show 42% depression symptoms while clinical interviews show 12.8% diagnosis rate"
+      },
+      "t1_dispute_medium_785": {
+        "query": "How much have US home prices increased in the past year?",
+        "relevant_docs": [
+          "dispute_doc_785a",
+          "dispute_doc_785b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two standard housing indices show different price appreciation due to methodological differences"
+      },
+      "t1_dispute_medium_786": {
+        "query": "How effective is high-intensity interval training compared to steady-state cardio?",
+        "relevant_docs": [
+          "dispute_doc_786a",
+          "dispute_doc_786b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two meta-analyses reach different conclusions based on study selection and follow-up duration (multi-source)"
+      },
+      "t1_dispute_medium_787": {
+        "query": "How effective are charter schools compared to traditional public schools?",
+        "relevant_docs": [
+          "dispute_doc_787a",
+          "dispute_doc_787b"
+        ],
+        "decoy_docs": [],
+        "notes": "Student-level matching shows charter school advantage while school-level analysis shows no difference"
+      },
+      "t1_dispute_medium_788": {
+        "query": "How should investors interpret an inverted yield curve?",
+        "relevant_docs": [
+          "dispute_doc_788a",
+          "dispute_doc_788b"
+        ],
+        "decoy_docs": [],
+        "notes": "Central bank research interprets inverted curve as recession signal while Wall Street interprets it as false alarm"
+      },
+      "t1_dispute_medium_789": {
+        "query": "How should the discovery of phosphine in Venus's atmosphere be interpreted?",
+        "relevant_docs": [
+          "dispute_doc_789a",
+          "dispute_doc_789b"
+        ],
+        "decoy_docs": [],
+        "notes": "Same spectral data interpreted as biosignature by one team and as instrument artifact by another"
+      },
+      "t1_dispute_medium_790": {
+        "query": "Is autonomous vehicle technology safer than human drivers?",
+        "relevant_docs": [
+          "dispute_doc_790a",
+          "dispute_doc_790b"
+        ],
+        "decoy_docs": [],
+        "notes": "Company interprets safety data as proving AV superiority while regulator questions the comparison methodology"
+      },
+      "t1_dispute_medium_791": {
+        "query": "Why do humans dream?",
+        "relevant_docs": [
+          "dispute_doc_791a",
+          "dispute_doc_791b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two competing neuroscience theories offer contradictory explanations for why humans dream"
+      },
+      "t1_dispute_medium_792": {
+        "query": "Why did megafauna like mammoths and giant sloths go extinct?",
+        "relevant_docs": [
+          "dispute_doc_792a",
+          "dispute_doc_792b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two competing theories attribute megafauna extinction to human hunting versus climate change"
+      },
+      "t1_dispute_medium_793": {
+        "query": "Why does general anesthesia cause loss of consciousness?",
+        "relevant_docs": [
+          "dispute_doc_793a",
+          "dispute_doc_793b"
+        ],
+        "decoy_docs": [],
+        "notes": "Two neuroscience theories explain anesthetic unconsciousness through different brain mechanisms"
+      },
+      "t1_dispute_medium_794": {
+        "query": "Is red meat consumption linked to increased cancer risk?",
+        "relevant_docs": [
+          "dispute_doc_794a",
+          "dispute_doc_794b"
+        ],
+        "decoy_docs": [],
+        "notes": "IARC classification confirmed by meta-analysis but challenged by stricter reanalysis showing weak effect (multi-source)"
+      },
+      "t1_dispute_medium_795": {
+        "query": "Does building more housing actually reduce rents in expensive cities?",
+        "relevant_docs": [
+          "dispute_doc_795a",
+          "dispute_doc_795b"
+        ],
+        "decoy_docs": [],
+        "notes": "Original study shows new housing reduces rents but replication in different city finds no effect"
       }
     },
     "trustworthy_hedged": {
@@ -19341,6 +20506,717 @@
           "edu_079"
         ],
         "notes": "Query frames math performance as a 'crisis' but district actually outperforms state and national averages, though equity gaps exist"
+      },
+      "t0_qualify_easy_001": {
+        "query": "Why do users prefer dark mode?",
+        "relevant_docs": [
+          "hedged_doc_e001a",
+          "hedged_doc_e001b"
+        ],
+        "decoy_docs": [],
+        "notes": "Causal 'why' question with only usage statistics"
+      },
+      "t0_qualify_easy_002": {
+        "query": "Why did the stock price drop yesterday?",
+        "relevant_docs": [
+          "hedged_doc_e002a",
+          "hedged_doc_e002b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for cause but context only provides price movement"
+      },
+      "t0_qualify_easy_003": {
+        "query": "What will the weather be like next week?",
+        "relevant_docs": [
+          "hedged_doc_e003a",
+          "hedged_doc_e003b"
+        ],
+        "decoy_docs": [],
+        "notes": "Prediction question with only historical data"
+      },
+      "t0_qualify_easy_004": {
+        "query": "Why is Python popular for data science?",
+        "relevant_docs": [
+          "hedged_doc_e004a",
+          "hedged_doc_e004b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks WHY popular but context only shows THAT it's popular"
+      },
+      "t0_qualify_easy_005": {
+        "query": "Why did sales increase this quarter?",
+        "relevant_docs": [
+          "hedged_doc_e005a",
+          "hedged_doc_e005b"
+        ],
+        "decoy_docs": [],
+        "notes": "Sales growth shown but no explanation of cause"
+      },
+      "t0_qualify_easy_006": {
+        "query": "Why do customers leave negative reviews?",
+        "relevant_docs": [
+          "hedged_doc_e006a",
+          "hedged_doc_e006b",
+          "hedged_doc_e006c"
+        ],
+        "decoy_docs": [],
+        "notes": "Review statistics without customer feedback content"
+      },
+      "t0_qualify_easy_007": {
+        "query": "Will the new feature be successful?",
+        "relevant_docs": [
+          "hedged_doc_e007a",
+          "hedged_doc_e007b",
+          "hedged_doc_e007c"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for prediction but no success indicators provided"
+      },
+      "t0_qualify_easy_008": {
+        "query": "Why did website traffic decrease?",
+        "relevant_docs": [
+          "hedged_doc_e008a",
+          "hedged_doc_e008b",
+          "hedged_doc_e008c"
+        ],
+        "decoy_docs": [],
+        "notes": "Traffic metrics shown but no cause identified"
+      },
+      "t0_qualify_easy_009": {
+        "query": "What will our market share be next year?",
+        "relevant_docs": [
+          "hedged_doc_e009a",
+          "hedged_doc_e009b",
+          "hedged_doc_e009c"
+        ],
+        "decoy_docs": [],
+        "notes": "Current market position without predictive data"
+      },
+      "t0_qualify_easy_010": {
+        "query": "Why did the app crash?",
+        "relevant_docs": [
+          "hedged_doc_e010a",
+          "hedged_doc_e010b",
+          "hedged_doc_e010c"
+        ],
+        "decoy_docs": [],
+        "notes": "Crash timeline without root cause"
+      },
+      "t1_qualify_medium_516": {
+        "query": "Does vitamin C prevent the common cold?",
+        "relevant_docs": [
+          "hedged_doc_516a",
+          "hedged_doc_516b"
+        ],
+        "decoy_docs": [],
+        "notes": "Evidence partially supports benefit but with significant caveats (multi-source)"
+      },
+      "t1_qualify_medium_517": {
+        "query": "Is meditation effective for treating anxiety disorders?",
+        "relevant_docs": [
+          "hedged_doc_517a",
+          "hedged_doc_517b"
+        ],
+        "decoy_docs": [],
+        "notes": "Meditation shows moderate evidence for anxiety but study quality varies (multi-source)"
+      },
+      "t1_qualify_medium_518": {
+        "query": "How effective are speed cameras at reducing traffic fatalities?",
+        "relevant_docs": [
+          "hedged_doc_518"
+        ],
+        "decoy_docs": [],
+        "notes": "Speed cameras show promise but evidence quality varies widely"
+      },
+      "t1_qualify_medium_519": {
+        "query": "Why do some agricultural studies show conflicting results on glyphosate safety?",
+        "relevant_docs": [
+          "hedged_doc_519a",
+          "hedged_doc_519b"
+        ],
+        "decoy_docs": [],
+        "notes": "Glyphosate safety assessments differ based on methodology and exposure assumptions (multi-source)"
+      },
+      "t1_qualify_medium_520": {
+        "query": "How reliable are polygraph tests for detecting deception?",
+        "relevant_docs": [
+          "hedged_doc_520a",
+          "hedged_doc_520b"
+        ],
+        "decoy_docs": [],
+        "notes": "Polygraph accuracy is disputed and context-dependent (multi-source)"
+      },
+      "t1_qualify_medium_521": {
+        "query": "When did ancient civilizations first develop writing systems?",
+        "relevant_docs": [
+          "hedged_doc_521a",
+          "hedged_doc_521b"
+        ],
+        "decoy_docs": [],
+        "notes": "Writing origins are debated depending on how 'writing' is defined"
+      },
+      "t1_qualify_medium_522": {
+        "query": "Is organic food more nutritious than conventionally grown food?",
+        "relevant_docs": [
+          "hedged_doc_522a",
+          "hedged_doc_522b"
+        ],
+        "decoy_docs": [],
+        "notes": "Organic nutrition benefits are debated with conflicting meta-analyses"
+      },
+      "t1_qualify_medium_523": {
+        "query": "How much does remote work affect employee productivity?",
+        "relevant_docs": [
+          "hedged_doc_523a"
+        ],
+        "decoy_docs": [],
+        "notes": "Remote work productivity depends heavily on task type (multi-source)"
+      },
+      "t1_qualify_medium_524": {
+        "query": "Is the five-second rule for dropped food scientifically valid?",
+        "relevant_docs": [
+          "hedged_doc_524a",
+          "hedged_doc_524b"
+        ],
+        "decoy_docs": [],
+        "notes": "The five-second rule is oversimplified but contact time does affect contamination levels"
+      },
+      "t1_qualify_medium_525": {
+        "query": "Why do some viral social media health trends persist despite being debunked?",
+        "relevant_docs": [
+          "hedged_doc_525a",
+          "hedged_doc_525b"
+        ],
+        "decoy_docs": [],
+        "notes": "Health misinformation persists due to emotional engagement and algorithmic amplification (multi-source)"
+      },
+      "t1_qualify_medium_526": {
+        "query": "How accurate are commercial DNA ancestry tests?",
+        "relevant_docs": [
+          "hedged_doc_526a",
+          "hedged_doc_526b"
+        ],
+        "decoy_docs": [],
+        "notes": "DNA ancestry tests are reliable for close relationships but imprecise for regional ethnicity estimates"
+      },
+      "t1_qualify_medium_527": {
+        "query": "Should homebuyers prefer fixed-rate or adjustable-rate mortgages in a rising rate environment?",
+        "relevant_docs": [
+          "hedged_doc_527"
+        ],
+        "decoy_docs": [],
+        "notes": "ARMs historically saved money initially but carry meaningful rate-reset risk"
+      },
+      "t1_qualify_medium_528": {
+        "query": "Is hydrogen fuel a viable alternative to battery electric vehicles?",
+        "relevant_docs": [
+          "hedged_doc_528a",
+          "hedged_doc_528b"
+        ],
+        "decoy_docs": [],
+        "notes": "Hydrogen has convenience advantages but major efficiency and production drawbacks (multi-source)"
+      },
+      "t1_qualify_medium_529": {
+        "query": "How does vertical farming compare to traditional agriculture?",
+        "relevant_docs": [
+          "hedged_doc_529a",
+          "hedged_doc_529b"
+        ],
+        "decoy_docs": [],
+        "notes": "Vertical farming excels in water and space efficiency but is limited by energy costs and crop range (multi-source)"
+      },
+      "t1_qualify_medium_530": {
+        "query": "Should parents choose homeschooling over public school education?",
+        "relevant_docs": [
+          "hedged_doc_530a",
+          "hedged_doc_530b"
+        ],
+        "decoy_docs": [],
+        "notes": "Homeschooling shows academic advantages but with demographic confounders and socialization trade-offs (multi-source)"
+      },
+      "t1_qualify_medium_531": {
+        "query": "How do plant-based meat alternatives compare to traditional meat on nutrition and sustainability?",
+        "relevant_docs": [
+          "hedged_doc_531a",
+          "hedged_doc_531b"
+        ],
+        "decoy_docs": [],
+        "notes": "Plant-based meats win on sustainability metrics but have nutritional trade-offs"
+      },
+      "t1_qualify_medium_532": {
+        "query": "How does nuclear energy compare to solar for decarbonizing the grid?",
+        "relevant_docs": [
+          "hedged_doc_532a",
+          "hedged_doc_532b"
+        ],
+        "decoy_docs": [],
+        "notes": "Nuclear offers reliability and density advantages while solar wins on cost and deployment speed"
+      },
+      "t1_qualify_medium_533": {
+        "query": "Why do countries with higher chocolate consumption win more Nobel Prizes?",
+        "relevant_docs": [
+          "hedged_doc_533a",
+          "hedged_doc_533b"
+        ],
+        "decoy_docs": [],
+        "notes": "Spurious correlation driven by underlying wealth and education confounders"
+      },
+      "t1_qualify_medium_534": {
+        "query": "Can regular strategic board game play enhance problem-solving skills in adults?",
+        "relevant_docs": [
+          "hedged_doc_534a",
+          "hedged_doc_534b",
+          "hedged_doc_534c"
+        ],
+        "decoy_docs": [],
+        "notes": "Partial evidence that strategic board games improve problem-solving, with methodological caveats"
+      },
+      "t1_qualify_medium_535": {
+        "query": "Why did the Roman Empire decline and eventually fall?",
+        "relevant_docs": [
+          "hedged_doc_535a",
+          "hedged_doc_535b"
+        ],
+        "decoy_docs": [],
+        "notes": "Multiple interacting causes contributed to Rome's fall with no single dominant factor"
+      },
+      "t1_qualify_medium_536": {
+        "query": "Does influencer marketing actually drive purchase decisions?",
+        "relevant_docs": [
+          "hedged_doc_536a",
+          "hedged_doc_536b"
+        ],
+        "decoy_docs": [],
+        "notes": "Influencer marketing correlates with sales but direct causal attribution is limited"
+      },
+      "t1_qualify_medium_537": {
+        "query": "Why have global insect populations declined over the past three decades?",
+        "relevant_docs": [
+          "hedged_doc_537a",
+          "hedged_doc_537b"
+        ],
+        "decoy_docs": [],
+        "notes": "Insect decline is well-documented but attributing specific causes is scientifically challenging (multi-source)"
+      },
+      "t1_qualify_medium_538": {
+        "query": "Does moderate alcohol consumption from any source reduce cardiovascular disease risk?",
+        "relevant_docs": [
+          "hedged_doc_538a",
+          "hedged_doc_538b",
+          "hedged_doc_538c"
+        ],
+        "decoy_docs": [],
+        "notes": "Conflicting and uncertain evidence on moderate alcohol and cardiovascular risk"
+      },
+      "t1_qualify_medium_539": {
+        "query": "Does raising the minimum wage reduce poverty?",
+        "relevant_docs": [
+          "hedged_doc_539a",
+          "hedged_doc_539b"
+        ],
+        "decoy_docs": [],
+        "notes": "Minimum wage increases have mixed effects on poverty depending on magnitude and local conditions"
+      },
+      "t1_qualify_medium_540": {
+        "query": "Should farmers adopt no-till agriculture practices?",
+        "relevant_docs": [
+          "hedged_doc_540a",
+          "hedged_doc_540b"
+        ],
+        "decoy_docs": [],
+        "notes": "No-till offers long-term soil and cost benefits but has significant short-term yield and weed challenges (multi-source)"
+      },
+      "t1_qualify_medium_541": {
+        "query": "Should college athletes be allowed to transfer freely without sitting out a season?",
+        "relevant_docs": [
+          "hedged_doc_541a",
+          "hedged_doc_541b"
+        ],
+        "decoy_docs": [],
+        "notes": "Free transfers enable competitive flexibility but may harm academic outcomes and team stability"
+      },
+      "t1_qualify_medium_542": {
+        "query": "Does a modified calendar school year help reduce summer learning loss in low-income students?",
+        "relevant_docs": [
+          "hedged_doc_542a",
+          "hedged_doc_542b",
+          "hedged_doc_542c"
+        ],
+        "decoy_docs": [],
+        "notes": "Mixed evidence on modified school calendars reducing summer learning loss in low-income populations"
+      },
+      "t1_qualify_medium_543": {
+        "query": "How many logical qubits would be needed to break RSA-2048 encryption using Shor's algorithm?",
+        "relevant_docs": [
+          "hedged_doc_543a",
+          "hedged_doc_543b",
+          "hedged_doc_543c"
+        ],
+        "decoy_docs": [],
+        "notes": "Estimates for logical qubits needed to break RSA-2048 vary from 2,000 to 4,099 depending on error correction advances"
+      },
+      "t1_qualify_medium_544": {
+        "query": "When will autonomous vehicles be widely available for personal use?",
+        "relevant_docs": [
+          "hedged_doc_544a",
+          "hedged_doc_544b"
+        ],
+        "decoy_docs": [],
+        "notes": "Limited autonomous services exist now but personal ownership at scale is likely 10-15+ years away"
+      },
+      "t1_qualify_medium_545": {
+        "query": "How long will lithium reserves last at current consumption rates?",
+        "relevant_docs": [
+          "hedged_doc_545a",
+          "hedged_doc_545b"
+        ],
+        "decoy_docs": [],
+        "notes": "Lithium supply is adequate now but future demand growth creates significant uncertainty"
+      },
+      "t1_qualify_medium_546": {
+        "query": "What is the projected year when Medicare's Hospital Insurance trust fund will be exhausted?",
+        "relevant_docs": [
+          "hedged_doc_546a",
+          "hedged_doc_546b",
+          "hedged_doc_546c"
+        ],
+        "decoy_docs": [],
+        "notes": "Medicare HI trust fund projected to be exhausted between 2031-2033, with significant uncertainty"
+      },
+      "t1_qualify_medium_547": {
+        "query": "When did the first humans arrive in the Americas?",
+        "relevant_docs": [
+          "hedged_doc_547a",
+          "hedged_doc_547b"
+        ],
+        "decoy_docs": [],
+        "notes": "Human arrival in the Americas is being pushed back but the earliest dates remain disputed"
+      },
+      "t1_qualify_medium_548": {
+        "query": "What is the recommended daily protein intake for adults?",
+        "relevant_docs": [
+          "hedged_doc_548a",
+          "hedged_doc_548b"
+        ],
+        "decoy_docs": [],
+        "notes": "Official RDA and current research recommendations diverge significantly"
+      },
+      "t1_qualify_medium_549": {
+        "query": "What is the safe daily screen time limit for children under five?",
+        "relevant_docs": [
+          "hedged_doc_549a",
+          "hedged_doc_549b"
+        ],
+        "decoy_docs": [],
+        "notes": "Guidelines set strict limits but newer research emphasizes content quality over duration"
+      },
+      "t1_qualify_medium_550": {
+        "query": "How much sodium per day is considered safe for adults?",
+        "relevant_docs": [
+          "hedged_doc_550a",
+          "hedged_doc_550b"
+        ],
+        "decoy_docs": [],
+        "notes": "Major health organizations set different sodium limits and new research questions the strictest targets"
+      },
+      "t1_qualify_medium_551": {
+        "query": "What blood pressure reading is considered hypertension?",
+        "relevant_docs": [
+          "hedged_doc_551a",
+          "hedged_doc_551b"
+        ],
+        "decoy_docs": [],
+        "notes": "US and European guidelines define hypertension at different thresholds (multi-source)"
+      },
+      "t1_qualify_medium_552": {
+        "query": "How many people are unemployed in the United States?",
+        "relevant_docs": [
+          "hedged_doc_552a",
+          "hedged_doc_552b"
+        ],
+        "decoy_docs": [],
+        "notes": "Unemployment figures vary dramatically depending on which measure is used"
+      },
+      "t1_qualify_medium_553": {
+        "query": "Why do different reports show different GDP growth figures for the same quarter?",
+        "relevant_docs": [
+          "hedged_doc_553a",
+          "hedged_doc_553b"
+        ],
+        "decoy_docs": [],
+        "notes": "GDP figures differ because of release timing and measurement methodology"
+      },
+      "t1_qualify_medium_554": {
+        "query": "How is recidivism measured and what are the actual rates?",
+        "relevant_docs": [
+          "hedged_doc_554a",
+          "hedged_doc_554b"
+        ],
+        "decoy_docs": [],
+        "notes": "Recidivism rates range from 45% to 83% depending on how recidivism is defined"
+      },
+      "t1_qualify_medium_555": {
+        "query": "What percentage of the Amazon rainforest has been deforested?",
+        "relevant_docs": [
+          "hedged_doc_555a",
+          "hedged_doc_555b"
+        ],
+        "decoy_docs": [],
+        "notes": "Amazon loss figures depend on whether degradation is counted alongside outright deforestation (multi-source)"
+      },
+      "t1_qualify_medium_556": {
+        "query": "What is the current market share of electric vehicles in the US?",
+        "relevant_docs": [
+          "hedged_doc_556"
+        ],
+        "decoy_docs": [],
+        "notes": "EV market share was growing but momentum showed signs of plateauing"
+      },
+      "t1_qualify_medium_557": {
+        "query": "How many active users does Twitter/X have?",
+        "relevant_docs": [
+          "hedged_doc_557"
+        ],
+        "decoy_docs": [],
+        "notes": "X's user numbers are self-reported without independent verification since going private"
+      },
+      "t1_qualify_medium_558": {
+        "query": "Who is the current heavyweight boxing champion of the world?",
+        "relevant_docs": [
+          "hedged_doc_558"
+        ],
+        "decoy_docs": [],
+        "notes": "Championship status is fragmented and changes frequently across boxing organizations"
+      },
+      "t1_qualify_medium_559": {
+        "query": "What interest rate does the Federal Reserve charge?",
+        "relevant_docs": [
+          "hedged_doc_559"
+        ],
+        "decoy_docs": [],
+        "notes": "Fed rate is stated but future direction is uncertain and projections diverge"
+      },
+      "t1_qualify_medium_560": {
+        "query": "How many countries have legalized same-sex marriage?",
+        "relevant_docs": [
+          "hedged_doc_560"
+        ],
+        "decoy_docs": [],
+        "notes": "Current count is 36 but the number is actively changing as new countries pass legislation"
+      },
+      "t1_qualify_medium_561": {
+        "query": "What is the tallest building in the world?",
+        "relevant_docs": [
+          "hedged_doc_561"
+        ],
+        "decoy_docs": [],
+        "notes": "Burj Khalifa holds the record but a taller building is under construction with an uncertain timeline"
+      },
+      "t1_qualify_medium_562": {
+        "query": "Which country produces the most renewable energy?",
+        "relevant_docs": [
+          "hedged_doc_562"
+        ],
+        "decoy_docs": [],
+        "notes": "China leads in absolute capacity while small nations lead in renewable share of generation"
+      },
+      "t1_qualify_medium_563": {
+        "query": "Who holds the world record for the most goals in international football?",
+        "relevant_docs": [
+          "hedged_doc_563"
+        ],
+        "decoy_docs": [],
+        "notes": "Ronaldo currently holds the record but is still actively adding to his total"
+      },
+      "t1_qualify_medium_564": {
+        "query": "How large is the Springfield school district?",
+        "relevant_docs": [
+          "hedged_doc_564"
+        ],
+        "decoy_docs": [],
+        "notes": "Multiple Springfield school districts exist across different states"
+      },
+      "t1_qualify_medium_565": {
+        "query": "What is the main crop grown in the Central Valley?",
+        "relevant_docs": [
+          "hedged_doc_565a",
+          "hedged_doc_565b"
+        ],
+        "decoy_docs": [],
+        "notes": "Multiple regions called Central Valley exist with different agricultural profiles"
+      },
+      "t1_qualify_medium_566": {
+        "query": "When was the First National Bank founded?",
+        "relevant_docs": [
+          "hedged_doc_566"
+        ],
+        "decoy_docs": [],
+        "notes": "Multiple banks share this name; the first federally chartered one was in 1863"
+      },
+      "t1_qualify_medium_567": {
+        "query": "What are the health effects of microplastics on humans?",
+        "relevant_docs": [
+          "hedged_doc_567"
+        ],
+        "decoy_docs": [],
+        "notes": "Microplastics are present in human tissues but health effects are not yet established"
+      },
+      "t1_qualify_medium_568": {
+        "query": "How did ancient Egyptians build the pyramids at Giza?",
+        "relevant_docs": [
+          "hedged_doc_568a",
+          "hedged_doc_568b"
+        ],
+        "decoy_docs": [],
+        "notes": "Transport and labor organization are well-understood but the upper-level construction method remains debated"
+      },
+      "t1_qualify_medium_569": {
+        "query": "What role does the buildup of amyloid plaques play in the progression of Alzheimer's disease?",
+        "relevant_docs": [
+          "hedged_doc_569a",
+          "hedged_doc_569b",
+          "hedged_doc_569c"
+        ],
+        "decoy_docs": [],
+        "notes": "Partial understanding of amyloid plaques' role: correlated with disease but insufficient alone"
+      },
+      "t1_qualify_medium_570": {
+        "query": "Is it legal to record a phone conversation in the United States?",
+        "relevant_docs": [
+          "hedged_doc_570"
+        ],
+        "decoy_docs": [],
+        "notes": "Legality depends entirely on which state's laws apply"
+      },
+      "t1_qualify_medium_571": {
+        "query": "How much do teachers earn in the United States?",
+        "relevant_docs": [
+          "hedged_doc_571"
+        ],
+        "decoy_docs": [],
+        "notes": "Teacher salary varies dramatically by state and must be adjusted for cost of living"
+      },
+      "t1_qualify_medium_572": {
+        "query": "Does a landlord have to return a security deposit within 30 days?",
+        "relevant_docs": [
+          "hedged_doc_572"
+        ],
+        "decoy_docs": [],
+        "notes": "Return timelines are state-specific with wide variation"
+      },
+      "t1_qualify_medium_573": {
+        "query": "Did the city meet its goal of reducing carbon emissions by 40% by 2024?",
+        "relevant_docs": [
+          "hedged_doc_573"
+        ],
+        "decoy_docs": [],
+        "notes": "Portland narrowly missed its overall target at 36.8% versus the 40% goal"
+      },
+      "t1_qualify_medium_574": {
+        "query": "Is the company profitable this quarter?",
+        "relevant_docs": [
+          "hedged_doc_574"
+        ],
+        "decoy_docs": [],
+        "notes": "Technically profitable but only due to a one-time gain; underlying operations lost money"
+      },
+      "t1_qualify_medium_575": {
+        "query": "Did the marathon runner qualify for the Olympic team?",
+        "relevant_docs": [
+          "hedged_doc_575"
+        ],
+        "decoy_docs": [],
+        "notes": "Missed the time standard by 12 seconds but ranking pathway remains a possibility"
+      },
+      "t1_qualify_medium_576": {
+        "query": "How effective are body-worn cameras at reducing police use of force?",
+        "relevant_docs": [
+          "hedged_doc_576a",
+          "hedged_doc_576b"
+        ],
+        "decoy_docs": [],
+        "notes": "Body camera effectiveness varies widely depending on department policy and context (multi-source)"
+      },
+      "t1_qualify_medium_577": {
+        "query": "How do different platforms measure social media engagement?",
+        "relevant_docs": [
+          "hedged_doc_577a",
+          "hedged_doc_577b"
+        ],
+        "decoy_docs": [],
+        "notes": "Each platform defines and measures engagement differently, making cross-platform comparisons misleading (multi-source)"
+      },
+      "t1_qualify_medium_578": {
+        "query": "How does student loan debt affect homeownership rates?",
+        "relevant_docs": [
+          "hedged_doc_578a",
+          "hedged_doc_578b"
+        ],
+        "decoy_docs": [],
+        "notes": "Student debt delays but does not permanently prevent homeownership for most borrowers (multi-source)"
+      },
+      "t1_qualify_medium_579": {
+        "query": "Should I buy a home or continue renting?",
+        "relevant_docs": [
+          "hedged_doc_579a",
+          "hedged_doc_579b"
+        ],
+        "decoy_docs": [],
+        "notes": "Buy vs. rent depends on location, time horizon, and individual financial circumstances"
+      },
+      "t1_qualify_medium_580": {
+        "query": "Should I invest in index funds or actively managed funds?",
+        "relevant_docs": [
+          "hedged_doc_580a",
+          "hedged_doc_580b"
+        ],
+        "decoy_docs": [],
+        "notes": "Index funds win for most mainstream categories but active management has niches"
+      },
+      "t1_qualify_medium_581": {
+        "query": "How long does it take to learn a programming language?",
+        "relevant_docs": [
+          "hedged_doc_581a",
+          "hedged_doc_581b"
+        ],
+        "decoy_docs": [],
+        "notes": "Learning time depends heavily on prior experience and definition of 'learned'"
+      },
+      "t1_qualify_medium_582": {
+        "query": "What is Georgia's agricultural output?",
+        "relevant_docs": [
+          "hedged_doc_582a",
+          "hedged_doc_582b"
+        ],
+        "decoy_docs": [],
+        "notes": "Georgia refers to both a US state and a country with very different agricultural profiles"
+      },
+      "t1_qualify_medium_583": {
+        "query": "How did the Battle of Saratoga change the course of the war?",
+        "relevant_docs": [
+          "hedged_doc_583a",
+          "hedged_doc_583b"
+        ],
+        "decoy_docs": [],
+        "notes": "Multiple battles occurred at Saratoga in different wars; the Revolutionary War battle is most significant"
+      },
+      "t1_qualify_medium_584": {
+        "query": "Should youth sports leagues adopt pitch-count limits like professional baseball?",
+        "relevant_docs": [
+          "hedged_doc_584a",
+          "hedged_doc_584b"
+        ],
+        "decoy_docs": [],
+        "notes": "Pitch counts help but are only one factor in preventing youth arm injuries (multi-source)"
+      },
+      "t1_qualify_medium_585": {
+        "query": "Is applying military leadership principles effective for corporate management?",
+        "relevant_docs": [
+          "hedged_doc_585a",
+          "hedged_doc_585b"
+        ],
+        "decoy_docs": [],
+        "notes": "Military leadership principles offer some benefits but must be adapted to corporate contexts (multi-source)"
       }
     },
     "trustworthy_direct": {
@@ -20893,6 +22769,1712 @@
           "trans_060"
         ],
         "notes": "Energy efficiency comparison question with clear consensus from IEA, EEA, and even the aviation lobby"
+      },
+      "t0_confident_easy_001": {
+        "query": "What is the capital of France?",
+        "relevant_docs": [
+          "direct_doc_e001"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct factual question with explicit answer in context"
+      },
+      "t0_confident_easy_002": {
+        "query": "When was the company founded?",
+        "relevant_docs": [
+          "direct_doc_e002"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct date question with explicit year in context"
+      },
+      "t0_confident_easy_003": {
+        "query": "What programming language is React written in?",
+        "relevant_docs": [
+          "direct_doc_e003"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct technical question with clear answer"
+      },
+      "t0_confident_easy_004": {
+        "query": "How many employees does the company have?",
+        "relevant_docs": [
+          "direct_doc_e004"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct count question with specific number provided"
+      },
+      "t0_confident_easy_005": {
+        "query": "What is machine learning?",
+        "relevant_docs": [
+          "direct_doc_e005"
+        ],
+        "decoy_docs": [],
+        "notes": "Definition question with clear definition provided"
+      },
+      "t0_confident_easy_006": {
+        "query": "Who invented the telephone?",
+        "relevant_docs": [
+          "direct_doc_e006"
+        ],
+        "decoy_docs": [],
+        "notes": "Attribution question with explicit inventor named"
+      },
+      "t0_confident_easy_007": {
+        "query": "What is the price of the premium subscription?",
+        "relevant_docs": [
+          "direct_doc_e007"
+        ],
+        "decoy_docs": [],
+        "notes": "Price question with exact figures provided"
+      },
+      "t0_confident_easy_008": {
+        "query": "What is the chemical formula for water?",
+        "relevant_docs": [
+          "direct_doc_e008"
+        ],
+        "decoy_docs": [],
+        "notes": "Direct chemistry question with explicit formula"
+      },
+      "t0_confident_easy_009": {
+        "query": "What is the deadline for the grant application?",
+        "relevant_docs": [
+          "direct_doc_e009"
+        ],
+        "decoy_docs": [],
+        "notes": "Deadline question with precise date and time"
+      },
+      "t0_confident_easy_010": {
+        "query": "What is an API?",
+        "relevant_docs": [
+          "direct_doc_e010"
+        ],
+        "decoy_docs": [],
+        "notes": "Technical definition question with clear explanation"
+      },
+      "t1_confident_hard_916": {
+        "query": "How does the Linux kernel's Completely Fair Scheduler allocate CPU time?",
+        "relevant_docs": [
+          "direct_doc_916a",
+          "direct_doc_916b"
+        ],
+        "decoy_docs": [],
+        "notes": "Technical OS scheduling question with complete algorithmic detail"
+      },
+      "t1_confident_hard_917": {
+        "query": "What are the ACID properties in database transaction management?",
+        "relevant_docs": [
+          "direct_doc_917a",
+          "direct_doc_917b"
+        ],
+        "decoy_docs": [],
+        "notes": "Database fundamentals with precise technical mechanisms for each ACID property"
+      },
+      "t1_confident_hard_918": {
+        "query": "Why does quantitative easing increase asset prices but not always consumer inflation?",
+        "relevant_docs": [
+          "direct_doc_918a",
+          "direct_doc_918b"
+        ],
+        "decoy_docs": [],
+        "notes": "Macroeconomic mechanism explaining the asymmetric effects of QE on assets versus consumer prices"
+      },
+      "t1_confident_hard_919": {
+        "query": "How does CRISPR-Cas9 achieve targeted gene editing in eukaryotic cells?",
+        "relevant_docs": [
+          "direct_doc_919a",
+          "direct_doc_919b"
+        ],
+        "decoy_docs": [],
+        "notes": "Molecular biology question with complete CRISPR mechanism from target recognition to DNA repair outcomes"
+      },
+      "t1_confident_hard_920": {
+        "query": "Is coffee consumption linked to increased or decreased cardiovascular risk?",
+        "relevant_docs": [
+          "direct_doc_920a",
+          "direct_doc_920b"
+        ],
+        "decoy_docs": [],
+        "notes": "Apparently contradictory findings about coffee and heart health resolved by methodological improvements"
+      },
+      "t1_confident_hard_921": {
+        "query": "Does stretching before exercise prevent injuries or not?",
+        "relevant_docs": [
+          "direct_doc_921a",
+          "direct_doc_921b"
+        ],
+        "decoy_docs": [],
+        "notes": "Contradictory stretching injury-prevention evidence resolved by distinguishing stretching types"
+      },
+      "t1_confident_hard_922": {
+        "query": "Should schools adopt later start times for adolescents?",
+        "relevant_docs": [
+          "direct_doc_922a",
+          "direct_doc_922b"
+        ],
+        "decoy_docs": [],
+        "notes": "Policy question where medical consensus clearly favors later starts despite logistical objections"
+      },
+      "t1_confident_hard_923": {
+        "query": "Is nuclear energy a viable component of climate change mitigation?",
+        "relevant_docs": [
+          "direct_doc_923a",
+          "direct_doc_923b"
+        ],
+        "decoy_docs": [],
+        "notes": "Climate policy question where IPCC scientific consensus includes nuclear despite advocacy group opposition"
+      },
+      "t1_confident_hard_924": {
+        "query": "Why does Type 2 diabetes develop at the molecular level?",
+        "relevant_docs": [
+          "direct_doc_924a",
+          "direct_doc_924b"
+        ],
+        "decoy_docs": [],
+        "notes": "Molecular diabetes pathology explained through complementary signaling and metabolic framings"
+      },
+      "t1_confident_hard_925": {
+        "query": "Why did the Ottoman Empire collapse after World War I?",
+        "relevant_docs": [
+          "direct_doc_925a",
+          "direct_doc_925b"
+        ],
+        "decoy_docs": [],
+        "notes": "Ottoman collapse explained through complementary military defeat and structural decay framings"
+      },
+      "t1_confident_hard_926": {
+        "query": "Is copper the most thermally conductive metal at room temperature?",
+        "relevant_docs": [
+          "direct_doc_926a",
+          "direct_doc_926b"
+        ],
+        "decoy_docs": [],
+        "notes": "Precise quantitative materials science answer with authoritative measurement data (multi-source)"
+      },
+      "t1_confident_hard_927": {
+        "query": "How much water does it take to produce one kilogram of beef?",
+        "relevant_docs": [
+          "direct_doc_927a",
+          "direct_doc_927b"
+        ],
+        "decoy_docs": [],
+        "notes": "Water footprint of beef with global average, breakdown by water type, and regional range"
+      },
+      "t1_confident_hard_928": {
+        "query": "What is the current federal minimum wage in the United States?",
+        "relevant_docs": [
+          "direct_doc_928a",
+          "direct_doc_928b"
+        ],
+        "decoy_docs": [],
+        "notes": "Federal minimum wage confirmed by statute text and DOL enforcement data (multi-source)"
+      },
+      "t1_confident_hard_929": {
+        "query": "Is 78 degrees Celsius the correct boiling point of ethanol at standard pressure?",
+        "relevant_docs": [
+          "direct_doc_929a",
+          "direct_doc_929b"
+        ],
+        "decoy_docs": [],
+        "notes": "Ethanol boiling point confirmed by two independent reference sources within 0.1 C agreement (multi-source)"
+      },
+      "t1_confident_hard_930": {
+        "query": "What share of global electricity generation came from wind and solar power in 2023 according to the IEA?",
+        "relevant_docs": [
+          "direct_doc_930a",
+          "direct_doc_930b"
+        ],
+        "decoy_docs": [],
+        "notes": "IEA data shows wind and solar at 13.4% of global electricity in 2023"
+      },
+      "t1_confident_hard_931": {
+        "query": "How effective are mRNA vaccines against severe COVID-19 outcomes?",
+        "relevant_docs": [
+          "direct_doc_931a",
+          "direct_doc_931b"
+        ],
+        "decoy_docs": [],
+        "notes": "mRNA vaccine effectiveness against severe COVID confirmed by three independent health authorities (multi-source)"
+      },
+      "t1_confident_hard_932": {
+        "query": "What are the Miranda rights that police must read during an arrest?",
+        "relevant_docs": [
+          "direct_doc_932a",
+          "direct_doc_932b"
+        ],
+        "decoy_docs": [],
+        "notes": "Miranda rights confirmed by Supreme Court decision and DOJ enforcement policy with scope clarifications (multi-source)"
+      },
+      "t1_confident_hard_933": {
+        "query": "What is the recommended daily sodium intake according to health authorities?",
+        "relevant_docs": [
+          "direct_doc_933a",
+          "direct_doc_933b"
+        ],
+        "decoy_docs": [],
+        "notes": "Sodium intake guidelines confirmed by WHO and AHA with consistent directional guidance (multi-source)"
+      },
+      "t1_confident_hard_934": {
+        "query": "What factors determine mortgage interest rates for individual borrowers?",
+        "relevant_docs": [
+          "direct_doc_934a",
+          "direct_doc_934b"
+        ],
+        "decoy_docs": [],
+        "notes": "Comprehensive mortgage rate determinants covering macro, borrower, and loan-level factors"
+      },
+      "t1_confident_hard_935": {
+        "query": "How does soil pH affect nutrient availability for crops?",
+        "relevant_docs": [
+          "direct_doc_935a",
+          "direct_doc_935b"
+        ],
+        "decoy_docs": [],
+        "notes": "Soil pH-nutrient relationship with specific thresholds, mechanisms, and amendment rates"
+      },
+      "t1_confident_hard_936": {
+        "query": "Is a ketogenic diet effective for managing Type 2 diabetes?",
+        "relevant_docs": [
+          "direct_doc_936a",
+          "direct_doc_936b"
+        ],
+        "decoy_docs": [],
+        "notes": "Ketogenic diet for T2D with clear glycemic benefits conditioned on kidney function, lipid monitoring, and adherence"
+      },
+      "t1_confident_hard_937": {
+        "query": "How do you file a provisional patent application with the USPTO?",
+        "relevant_docs": [
+          "direct_doc_937a",
+          "direct_doc_937b"
+        ],
+        "decoy_docs": [],
+        "notes": "Complete step-by-step USPTO provisional patent filing procedure with forms, fees, and deadlines"
+      },
+      "t1_confident_hard_938": {
+        "query": "How is a bill passed into law by the United States Congress?",
+        "relevant_docs": [
+          "direct_doc_938a",
+          "direct_doc_938b"
+        ],
+        "decoy_docs": [],
+        "notes": "Complete legislative process from bill introduction through presidential action"
+      },
+      "t1_confident_hard_939": {
+        "query": "Is force majeure a valid defense for non-performance in contract law?",
+        "relevant_docs": [
+          "direct_doc_939a",
+          "direct_doc_939b"
+        ],
+        "decoy_docs": [],
+        "notes": "Legal definition of force majeure with statutory basis, required elements, and judicial interpretation standards"
+      },
+      "t1_confident_hard_940": {
+        "query": "What is the difference between Type I and Type II statistical errors?",
+        "relevant_docs": [
+          "direct_doc_940a",
+          "direct_doc_940b"
+        ],
+        "decoy_docs": [],
+        "notes": "Statistical error types defined with probabilities, relationship, practical examples, and context-dependent tradeoffs"
+      },
+      "t1_confident_hard_941": {
+        "query": "How does TLS 1.3 perform a handshake compared to TLS 1.2?",
+        "relevant_docs": [
+          "direct_doc_941a",
+          "direct_doc_941b"
+        ],
+        "decoy_docs": [],
+        "notes": "TLS version comparison with precise protocol differences in handshake rounds, cipher suites, and latency"
+      },
+      "t1_confident_hard_942": {
+        "query": "What is the CAP theorem and how does it constrain distributed databases?",
+        "relevant_docs": [
+          "direct_doc_942a",
+          "direct_doc_942b"
+        ],
+        "decoy_docs": [],
+        "notes": "CAP theorem definition with formal provenance and practical database system classification"
+      },
+      "t1_confident_hard_943": {
+        "query": "What did Stanford's 2023 work-from-home research project find about remote worker productivity compared to in-office workers?",
+        "relevant_docs": [
+          "direct_doc_943a",
+          "direct_doc_943b",
+          "direct_doc_943c"
+        ],
+        "decoy_docs": [],
+        "notes": "Stanford's RCT at Trip.com found hybrid work equivalent to in-office productivity with lower attrition"
+      },
+      "t1_confident_hard_944": {
+        "query": "Should governments implement sugar taxes to reduce obesity?",
+        "relevant_docs": [
+          "direct_doc_944a",
+          "direct_doc_944b"
+        ],
+        "decoy_docs": [],
+        "notes": "Sugar tax policy question where public health evidence and WHO endorsement outweigh industry-funded counter-evidence"
+      },
+      "t1_confident_hard_945": {
+        "query": "When was the Treaty of Westphalia signed and what did it establish?",
+        "relevant_docs": [
+          "direct_doc_945"
+        ],
+        "decoy_docs": [],
+        "notes": "Precise historical date, component treaties, wars ended, and principles established by Westphalia"
+      },
+      "t1_confident_hard_946": {
+        "query": "Who developed the theory of general relativity and when was it published?",
+        "relevant_docs": [
+          "direct_doc_946a",
+          "direct_doc_946b"
+        ],
+        "decoy_docs": [],
+        "notes": "General relativity attribution confirmed by Annalen der Physik publication record and Nobel Foundation archives (multi-source)"
+      },
+      "t1_confident_hard_947": {
+        "query": "How do you perform CPR on an adult according to the American Heart Association guidelines?",
+        "relevant_docs": [
+          "direct_doc_947a",
+          "direct_doc_947b"
+        ],
+        "decoy_docs": [],
+        "notes": "AHA-compliant adult CPR procedure with six numbered steps including specific depth, rate, and ratio"
+      },
+      "t1_confident_hard_948": {
+        "query": "What is the average global temperature increase since pre-industrial times?",
+        "relevant_docs": [
+          "direct_doc_948a",
+          "direct_doc_948b"
+        ],
+        "decoy_docs": [],
+        "notes": "Global temperature rise confirmed by four independent datasets (NASA, IPCC, Met Office, NOAA) within tight agreement (multi-source)"
+      },
+      "t1_confident_hard_949": {
+        "query": "Does moderate alcohol consumption provide cardiovascular benefits?",
+        "relevant_docs": [
+          "direct_doc_949a",
+          "direct_doc_949b"
+        ],
+        "decoy_docs": [],
+        "notes": "Decades-old moderate-drinking benefit resolved as statistical artifact by corrected 2023 analysis"
+      },
+      "t1_confident_hard_950": {
+        "query": "Why do housing prices vary so dramatically between cities?",
+        "relevant_docs": [
+          "direct_doc_950a",
+          "direct_doc_950b"
+        ],
+        "decoy_docs": [],
+        "notes": "Housing price variation explained through supply and demand framings that converge on supply-demand interaction"
+      },
+      "t1_confident_hard_951": {
+        "query": "How does a lithium-ion battery charge and discharge at the chemical level?",
+        "relevant_docs": [
+          "direct_doc_951a",
+          "direct_doc_951b"
+        ],
+        "decoy_docs": [],
+        "notes": "Lithium-ion battery electrochemistry with charge/discharge reactions and SEI layer function"
+      },
+      "t1_confident_hard_952": {
+        "query": "What is the difference between OAuth 2.0 authorization code flow and implicit flow?",
+        "relevant_docs": [
+          "direct_doc_952a",
+          "direct_doc_952b"
+        ],
+        "decoy_docs": [],
+        "notes": "OAuth 2.0 flow comparison with security implications and current best practices"
+      },
+      "t1_confident_hard_953": {
+        "query": "How do you properly conduct a soil test for a farm field?",
+        "relevant_docs": [
+          "direct_doc_953a",
+          "direct_doc_953b"
+        ],
+        "decoy_docs": [],
+        "notes": "Complete six-step soil testing procedure from sampling design through amendment application"
+      },
+      "t1_confident_hard_954": {
+        "query": "What is cognitive dissonance in psychology?",
+        "relevant_docs": [
+          "direct_doc_954a",
+          "direct_doc_954b"
+        ],
+        "decoy_docs": [],
+        "notes": "Cognitive dissonance definition with original theorist, three reduction strategies, and paradigmatic experiment"
+      },
+      "t1_confident_hard_955": {
+        "query": "What is the gravitational constant G and how is it measured?",
+        "relevant_docs": [
+          "direct_doc_955a",
+          "direct_doc_955b"
+        ],
+        "decoy_docs": [],
+        "notes": "Gravitational constant value and measurement challenges confirmed by three metrology sources spanning 300 years of data (multi-source)"
+      },
+      "t1_confident_hard_956": {
+        "query": "Is breakfast the most important meal of the day for weight management?",
+        "relevant_docs": [
+          "direct_doc_956a",
+          "direct_doc_956b"
+        ],
+        "decoy_docs": [],
+        "notes": "Breakfast-weight myth resolved by distinguishing observational confounding from RCT evidence"
+      },
+      "t1_confident_hard_957": {
+        "query": "Who holds the world record for the men's 100-metre sprint?",
+        "relevant_docs": [
+          "direct_doc_957a",
+          "direct_doc_957b"
+        ],
+        "decoy_docs": [],
+        "notes": "100m world record confirmed by World Athletics and IOC with biomechanical measurement detail (multi-source)"
+      },
+      "t1_confident_hard_958": {
+        "query": "How does social media affect adolescent mental health?",
+        "relevant_docs": [
+          "direct_doc_958a",
+          "direct_doc_958b"
+        ],
+        "decoy_docs": [],
+        "notes": "Social media-teen mental health impacts framed through clinical epidemiology and developmental neuroscience lenses"
+      },
+      "t1_confident_hard_959": {
+        "query": "Is electric vehicle ownership cheaper than gasoline vehicles over a typical ownership period?",
+        "relevant_docs": [
+          "direct_doc_959a",
+          "direct_doc_959b"
+        ],
+        "decoy_docs": [],
+        "notes": "EV cost comparison with clear savings quantified alongside conditional factors that affect breakeven"
+      },
+      "t1_confident_hard_960": {
+        "query": "What is the average depth of the world's oceans?",
+        "relevant_docs": [
+          "direct_doc_960a",
+          "direct_doc_960b"
+        ],
+        "decoy_docs": [],
+        "notes": "Ocean depth statistics from NOAA with per-ocean averages, volume, coverage, and maximum depth"
+      },
+      "t1_confident_hard_961": {
+        "query": "How do you set up a drip irrigation system for a vegetable garden?",
+        "relevant_docs": [
+          "direct_doc_961a",
+          "direct_doc_961b"
+        ],
+        "decoy_docs": [],
+        "notes": "Complete drip irrigation setup with six steps covering hardware, assembly, emitter selection, and scheduling"
+      },
+      "t1_confident_medium_910": {
+        "query": "Does an HTTP 403 status code mean the server denied access?",
+        "relevant_docs": [
+          "direct_doc_910"
+        ],
+        "decoy_docs": [],
+        "notes": "HTTP 403 definition distinguishing it from 401 with common causes"
+      },
+      "t1_confident_medium_911": {
+        "query": "How does DNS resolution work when you type a URL in a browser?",
+        "relevant_docs": [
+          "direct_doc_911"
+        ],
+        "decoy_docs": [],
+        "notes": "DNS resolution chain from browser cache to authoritative server with caching behavior"
+      },
+      "t1_confident_medium_912": {
+        "query": "Why do leaves change color in autumn?",
+        "relevant_docs": [
+          "direct_doc_912"
+        ],
+        "decoy_docs": [],
+        "notes": "Leaf color change explained through pigment chemistry and photoperiod triggers"
+      },
+      "t1_confident_medium_913": {
+        "query": "How does compound interest differ from simple interest?",
+        "relevant_docs": [
+          "direct_doc_913"
+        ],
+        "decoy_docs": [],
+        "notes": "Simple vs compound interest with formulas and concrete dollar-amount example"
+      },
+      "t1_confident_medium_914": {
+        "query": "Are eggs healthy or unhealthy for heart health?",
+        "relevant_docs": [
+          "direct_doc_914a",
+          "direct_doc_914b"
+        ],
+        "decoy_docs": [],
+        "notes": "Egg-heart health contradiction resolved by updated dietary science overturning cholesterol fears"
+      },
+      "t1_confident_medium_915": {
+        "query": "Does cracking knuckle joints lead to osteoarthritis later in life?",
+        "relevant_docs": [
+          "direct_doc_915a",
+          "direct_doc_915b"
+        ],
+        "decoy_docs": [],
+        "notes": "Multiple longitudinal studies found no link between knuckle cracking and osteoarthritis"
+      },
+      "t1_confident_medium_916": {
+        "query": "Is organic food significantly more nutritious than conventional food?",
+        "relevant_docs": [
+          "direct_doc_916a",
+          "direct_doc_916b"
+        ],
+        "decoy_docs": [],
+        "notes": "Organic vs conventional nutrition where large meta-analyses find no meaningful difference despite industry claims"
+      },
+      "t1_confident_medium_917": {
+        "query": "What are the NEA's official guidelines on recommended homework duration for K-6 students?",
+        "relevant_docs": [
+          "direct_doc_917a",
+          "direct_doc_917b"
+        ],
+        "decoy_docs": [],
+        "notes": "NEA's 10-minute rule provides specific homework duration guidelines for K-6"
+      },
+      "t1_confident_medium_918": {
+        "query": "Why does inflation occur in an economy?",
+        "relevant_docs": [
+          "direct_doc_918a",
+          "direct_doc_918b"
+        ],
+        "decoy_docs": [],
+        "notes": "Inflation causes presented through monetarist and Keynesian frameworks that complement each other"
+      },
+      "t1_confident_medium_919": {
+        "query": "What is the distance from the Earth to the Moon?",
+        "relevant_docs": [
+          "direct_doc_919"
+        ],
+        "decoy_docs": [],
+        "notes": "Earth-Moon distance with average, range, measurement method, and recession rate"
+      },
+      "t1_confident_medium_920": {
+        "query": "How many bones are in the adult human body?",
+        "relevant_docs": [
+          "direct_doc_920"
+        ],
+        "decoy_docs": [],
+        "notes": "Bone count with developmental explanation, axial/appendicular breakdown, and size extremes"
+      },
+      "t1_confident_medium_921": {
+        "query": "What are the main greenhouse gases contributing to climate change?",
+        "relevant_docs": [
+          "direct_doc_921a",
+          "direct_doc_921b"
+        ],
+        "decoy_docs": [],
+        "notes": "Greenhouse gas identification confirmed by EPA emissions data and IPCC radiative forcing measurements (multi-source)"
+      },
+      "t1_confident_medium_922": {
+        "query": "Is the Great Wall of China visible from space with the naked eye?",
+        "relevant_docs": [
+          "direct_doc_922a",
+          "direct_doc_922b"
+        ],
+        "decoy_docs": [],
+        "notes": "Great Wall visibility myth debunked by astronauts from both NASA and CNSA with optical physics explanation (multi-source)"
+      },
+      "t1_confident_medium_923": {
+        "query": "How much sleep do adults need per night according to health guidelines?",
+        "relevant_docs": [
+          "direct_doc_923a",
+          "direct_doc_923b"
+        ],
+        "decoy_docs": [],
+        "notes": "Adult sleep recommendations converging across three independent health organizations at 7+ hours (multi-source)"
+      },
+      "t1_confident_medium_924": {
+        "query": "Is 21 the legal drinking age across all U.S. states?",
+        "relevant_docs": [
+          "direct_doc_924"
+        ],
+        "decoy_docs": [],
+        "notes": "U.S. legal drinking age from federal statute with enforcement mechanism and universal compliance"
+      },
+      "t1_confident_medium_925": {
+        "query": "What is the retirement age for Social Security in the United States?",
+        "relevant_docs": [
+          "direct_doc_925"
+        ],
+        "decoy_docs": [],
+        "notes": "Social Security retirement ages from SSA with birth-year schedule and early/delayed benefit calculations"
+      },
+      "t1_confident_medium_926": {
+        "query": "Why is the Amazon rainforest being deforested?",
+        "relevant_docs": [
+          "direct_doc_926a",
+          "direct_doc_926b"
+        ],
+        "decoy_docs": [],
+        "notes": "Amazon deforestation causes with proportional breakdown and economic correlation data"
+      },
+      "t1_confident_medium_927": {
+        "query": "How does a home appraisal work in the mortgage process?",
+        "relevant_docs": [
+          "direct_doc_927a",
+          "direct_doc_927b"
+        ],
+        "decoy_docs": [],
+        "notes": "Home appraisal process from inspection through valuation methodology and buyer options if low"
+      },
+      "t1_confident_medium_928": {
+        "query": "Is it safe to exercise during pregnancy?",
+        "relevant_docs": [
+          "direct_doc_928a",
+          "direct_doc_928b"
+        ],
+        "decoy_docs": [],
+        "notes": "Pregnancy exercise safety with ACOG recommendation, benefits, contraindications, and warning signs"
+      },
+      "t1_confident_medium_929": {
+        "query": "Which planet in our solar system has the most moons?",
+        "relevant_docs": [
+          "direct_doc_929"
+        ],
+        "decoy_docs": [],
+        "notes": "Moon count record holder with discovery method and current confirmed totals"
+      },
+      "t1_confident_medium_930": {
+        "query": "When did World War II officially end?",
+        "relevant_docs": [
+          "direct_doc_930a",
+          "direct_doc_930b"
+        ],
+        "decoy_docs": [],
+        "notes": "WWII end dates confirmed by U.S. National Archives documents and Imperial War Museum timeline (multi-source)"
+      },
+      "t1_confident_medium_931": {
+        "query": "How much fluid does the National Academy of Medicine recommend adults consume daily?",
+        "relevant_docs": [
+          "direct_doc_931a",
+          "direct_doc_931b"
+        ],
+        "decoy_docs": [],
+        "notes": "NAM recommends 3.7L/day for men and 2.7L/day for women as total water adequate intake"
+      },
+      "t1_confident_medium_932": {
+        "query": "How do you change a flat tire on a car?",
+        "relevant_docs": [
+          "direct_doc_932a",
+          "direct_doc_932b"
+        ],
+        "decoy_docs": [],
+        "notes": "Complete tire-changing procedure with six numbered steps including safety, torque specs, and spare tire limits"
+      },
+      "t1_confident_medium_933": {
+        "query": "How do you calculate your federal income tax owed in the United States?",
+        "relevant_docs": [
+          "direct_doc_933a",
+          "direct_doc_933b"
+        ],
+        "decoy_docs": [],
+        "notes": "Six-step federal income tax calculation from gross income through refund/owed determination with 2024 brackets"
+      },
+      "t1_confident_medium_934": {
+        "query": "What is a blockchain and how does it work?",
+        "relevant_docs": [
+          "direct_doc_934a",
+          "direct_doc_934b"
+        ],
+        "decoy_docs": [],
+        "notes": "Blockchain definition covering data structure, cryptographic linking, and consensus mechanisms"
+      },
+      "t1_confident_medium_935": {
+        "query": "What is the difference between a recession and a depression?",
+        "relevant_docs": [
+          "direct_doc_935a",
+          "direct_doc_935b"
+        ],
+        "decoy_docs": [],
+        "notes": "Recession vs depression defined with NBER criteria, quantitative thresholds, and historical examples"
+      },
+      "t1_confident_medium_936": {
+        "query": "How effective are seatbelts at preventing traffic fatalities?",
+        "relevant_docs": [
+          "direct_doc_936a",
+          "direct_doc_936b"
+        ],
+        "decoy_docs": [],
+        "notes": "Seatbelt fatality reduction confirmed at 40-50% by three independent global health and safety authorities (multi-source)"
+      },
+      "t1_confident_medium_937": {
+        "query": "Which building is the tallest in the world as of 2024?",
+        "relevant_docs": [
+          "direct_doc_937"
+        ],
+        "decoy_docs": [],
+        "notes": "World's tallest building with height, architect, structural design, and upcoming challenger status"
+      },
+      "t1_confident_medium_938": {
+        "query": "Who invented the World Wide Web?",
+        "relevant_docs": [
+          "direct_doc_938"
+        ],
+        "decoy_docs": [],
+        "notes": "WWW invention attributed to Tim Berners-Lee with timeline, location, and foundational technologies"
+      },
+      "t1_confident_medium_939": {
+        "query": "How do vaccines work to prevent disease?",
+        "relevant_docs": [
+          "direct_doc_939a",
+          "direct_doc_939b"
+        ],
+        "decoy_docs": [],
+        "notes": "Vaccine mechanisms explained through individual immunology and population-level public health framings"
+      },
+      "t1_confident_medium_940": {
+        "query": "Is the use of genetically modified organisms (GMOs) in food safe?",
+        "relevant_docs": [
+          "direct_doc_940a",
+          "direct_doc_940b"
+        ],
+        "decoy_docs": [],
+        "notes": "GMO food safety debate where overwhelming scientific consensus supports safety against advocacy opposition"
+      },
+      "t1_confident_medium_941": {
+        "query": "What is the speed limit on interstate highways in the United States?",
+        "relevant_docs": [
+          "direct_doc_941"
+        ],
+        "decoy_docs": [],
+        "notes": "Interstate speed limits from FHWA showing state variation, current ranges, and legislative history"
+      },
+      "t1_confident_medium_942": {
+        "query": "Is Pluto a planet or not?",
+        "relevant_docs": [
+          "direct_doc_942a",
+          "direct_doc_942b"
+        ],
+        "decoy_docs": [],
+        "notes": "Pluto's classification controversy resolved by IAU's formal 2006 definition as the authoritative standard"
+      },
+      "t1_confident_medium_943": {
+        "query": "Does drinking coffee before a workout improve performance?",
+        "relevant_docs": [
+          "direct_doc_943a",
+          "direct_doc_943b"
+        ],
+        "decoy_docs": [],
+        "notes": "Pre-workout caffeine effectiveness with clear conditions (dose, timing, tolerance, genetics) that modulate benefit"
+      },
+      "t1_confident_medium_944": {
+        "query": "How does the Electoral College work in U.S. presidential elections?",
+        "relevant_docs": [
+          "direct_doc_944a",
+          "direct_doc_944b"
+        ],
+        "decoy_docs": [],
+        "notes": "Electoral College mechanics covering allocation, threshold, contingency, and two methods of elector assignment"
+      },
+      "t1_confident_medium_945": {
+        "query": "Is oxygen the most abundant gas in Earth's atmosphere?",
+        "relevant_docs": [
+          "direct_doc_945a",
+          "direct_doc_945b"
+        ],
+        "decoy_docs": [],
+        "notes": "Atmospheric oxygen composition with precise percentages, historical origin, and altitude effects"
+      },
+      "t1_confident_medium_946": {
+        "query": "What is the literacy rate worldwide?",
+        "relevant_docs": [
+          "direct_doc_946a",
+          "direct_doc_946b"
+        ],
+        "decoy_docs": [],
+        "notes": "Global literacy rate confirmed at 87% by UNESCO and World Bank with regional and gender breakdowns (multi-source)"
+      },
+      "t1_confident_medium_947": {
+        "query": "Does photosynthesis convert light energy into chemical energy?",
+        "relevant_docs": [
+          "direct_doc_947"
+        ],
+        "decoy_docs": [],
+        "notes": "Photosynthesis definition with chemical equation, two-stage process, locations, and key enzyme"
+      },
+      "t1_confident_medium_948": {
+        "query": "At what concentration level is fluoride added to public water supplies according to US HHS recommendations?",
+        "relevant_docs": [
+          "direct_doc_948a",
+          "direct_doc_948b"
+        ],
+        "decoy_docs": [],
+        "notes": "HHS recommends 0.7 mg/L fluoride concentration in public water supplies"
+      },
+      "t1_confident_medium_949": {
+        "query": "How long does it take light from the Sun to reach Earth?",
+        "relevant_docs": [
+          "direct_doc_949a",
+          "direct_doc_949b"
+        ],
+        "decoy_docs": [],
+        "notes": "Sun-Earth light travel time confirmed by NASA and USNO with orbital variation noted (multi-source)"
+      },
+      "t1_confident_medium_950": {
+        "query": "Is saturated fat the main dietary cause of heart disease?",
+        "relevant_docs": [
+          "direct_doc_950a",
+          "direct_doc_950b"
+        ],
+        "decoy_docs": [],
+        "notes": "Saturated fat-heart disease link initially appears contradicted by meta-analyses but resolved by nuanced understanding"
+      },
+      "t1_confident_medium_951": {
+        "query": "Which film is the highest-grossing of all time?",
+        "relevant_docs": [
+          "direct_doc_951"
+        ],
+        "decoy_docs": [],
+        "notes": "Highest-grossing film from industry-standard Box Office Mojo with inflation-adjusted context"
+      },
+      "t1_confident_medium_952": {
+        "query": "What are the benefits of regular physical exercise for mental health?",
+        "relevant_docs": [
+          "direct_doc_952a",
+          "direct_doc_952b"
+        ],
+        "decoy_docs": [],
+        "notes": "Exercise-mental health benefits confirmed by BJSM meta-review, WHO guidelines, and APA clinical guidelines (multi-source)"
+      },
+      "t1_confident_medium_953": {
+        "query": "Is working from home more productive than commuting to an office?",
+        "relevant_docs": [
+          "direct_doc_953a",
+          "direct_doc_953b"
+        ],
+        "decoy_docs": [],
+        "notes": "Remote work productivity with task-dependent evidence and conditions that modulate outcomes"
+      },
+      "t1_confident_medium_954": {
+        "query": "What are the current interest rates set by the Federal Reserve?",
+        "relevant_docs": [
+          "direct_doc_954a",
+          "direct_doc_954b"
+        ],
+        "decoy_docs": [],
+        "notes": "Federal Reserve interest rates from FOMC with rate history, related rates, and forward guidance"
+      },
+      "t1_confident_hard_962": {
+        "query": "How does the Linux CFS scheduler allocate CPU time among processes?",
+        "relevant_docs": [
+          "direct_doc_962a",
+          "direct_doc_962b"
+        ],
+        "decoy_docs": [],
+        "notes": "CFS scheduling algorithm with data structure details"
+      },
+      "t1_confident_hard_963": {
+        "query": "How does galvanic corrosion occur between dissimilar metals in contact?",
+        "relevant_docs": [
+          "direct_doc_963a",
+          "direct_doc_963b"
+        ],
+        "decoy_docs": [],
+        "notes": "Galvanic corrosion electrochemistry with rate factors"
+      },
+      "t1_confident_hard_964": {
+        "query": "How does HTTPS certificate pinning protect mobile apps from man-in-the-middle attacks?",
+        "relevant_docs": [
+          "direct_doc_964a",
+          "direct_doc_964b"
+        ],
+        "decoy_docs": [],
+        "notes": "Certificate pinning mechanism in mobile apps"
+      },
+      "t1_confident_hard_965": {
+        "query": "Is single-mode fiber at 1310 nm capable of reaching 40 km without regeneration?",
+        "relevant_docs": [
+          "direct_doc_965a",
+          "direct_doc_965b"
+        ],
+        "decoy_docs": [],
+        "notes": "Fiber optic transmission specs at specific wavelengths"
+      },
+      "t1_confident_hard_966": {
+        "query": "Why do farmers rotate crops between legumes and cereals?",
+        "relevant_docs": [
+          "direct_doc_966a",
+          "direct_doc_966b"
+        ],
+        "decoy_docs": [],
+        "notes": "Nitrogen fixation explanation for legume-cereal rotation"
+      },
+      "t1_confident_hard_967": {
+        "query": "How does CBT-I treat insomnia compared to medication?",
+        "relevant_docs": [
+          "direct_doc_967a",
+          "direct_doc_967b"
+        ],
+        "decoy_docs": [],
+        "notes": "CBT-I mechanisms versus pharmacological approaches"
+      },
+      "t1_confident_hard_968": {
+        "query": "Why does the Electoral College sometimes produce a popular-vote loser as president?",
+        "relevant_docs": [
+          "direct_doc_968a",
+          "direct_doc_968b"
+        ],
+        "decoy_docs": [],
+        "notes": "Structural explanation of Electoral College popular-vote splits"
+      },
+      "t1_confident_hard_969": {
+        "query": "How does an appraisal contingency protect homebuyers?",
+        "relevant_docs": [
+          "direct_doc_969a",
+          "direct_doc_969b"
+        ],
+        "decoy_docs": [],
+        "notes": "Appraisal contingency mechanics in real estate"
+      },
+      "t1_confident_hard_970": {
+        "query": "Is saturated fat directly linked to heart disease despite recent contrary studies?",
+        "relevant_docs": [
+          "direct_doc_970a",
+          "direct_doc_970b"
+        ],
+        "decoy_docs": [],
+        "notes": "Saturated fat debate resolved via substitution analysis (multi-source)"
+      },
+      "t1_confident_hard_971": {
+        "query": "What does the American Psychological Association's 2023 advisory say about social media's impact on adolescent mental health?",
+        "relevant_docs": [
+          "direct_doc_971a",
+          "direct_doc_971b",
+          "direct_doc_971c"
+        ],
+        "decoy_docs": [],
+        "notes": "The APA's 2023 advisory provides a specific, well-documented position on social media and adolescent mental health"
+      },
+      "t1_confident_hard_972": {
+        "query": "Does raising the minimum wage cause job losses given some studies show employment gains?",
+        "relevant_docs": [
+          "direct_doc_972a",
+          "direct_doc_972b"
+        ],
+        "decoy_docs": [],
+        "notes": "Minimum wage debate resolved via monopsony theory"
+      },
+      "t1_confident_hard_973": {
+        "query": "Is organic food more nutritious than conventional despite conflicting studies?",
+        "relevant_docs": [
+          "direct_doc_973a",
+          "direct_doc_973b"
+        ],
+        "decoy_docs": [],
+        "notes": "Organic nutrition debate resolved via nutrient category distinction"
+      },
+      "t1_confident_hard_974": {
+        "query": "Is nuclear power safe despite high-profile accidents like Chernobyl and Fukushima?",
+        "relevant_docs": [
+          "direct_doc_974a",
+          "direct_doc_974b"
+        ],
+        "decoy_docs": [],
+        "notes": "Nuclear safety confirmed by mortality data and industry assessment (multi-source)"
+      },
+      "t1_confident_hard_975": {
+        "query": "Should employers use Myers-Briggs (MBTI) for hiring decisions?",
+        "relevant_docs": [
+          "direct_doc_975a",
+          "direct_doc_975b"
+        ],
+        "decoy_docs": [],
+        "notes": "Professional consensus against MBTI for hiring"
+      },
+      "t1_confident_hard_976": {
+        "query": "What did Cooper's meta-analysis find about the correlation between homework and academic achievement in primary school?",
+        "relevant_docs": [
+          "direct_doc_976a",
+          "direct_doc_976b",
+          "direct_doc_976c"
+        ],
+        "decoy_docs": [],
+        "notes": "Cooper's meta-analysis found near-zero correlation between homework and achievement in primary school"
+      },
+      "t1_confident_hard_977": {
+        "query": "Does fluoride in drinking water pose health risks despite dental benefits?",
+        "relevant_docs": [
+          "direct_doc_977a",
+          "direct_doc_977b"
+        ],
+        "decoy_docs": [],
+        "notes": "Fluoride safety consensus at recommended levels"
+      },
+      "t1_confident_hard_978": {
+        "query": "How does property tax assessment differ from a home's market value?",
+        "relevant_docs": [
+          "direct_doc_978a",
+          "direct_doc_978b"
+        ],
+        "decoy_docs": [],
+        "notes": "Property tax assessment vs market value distinction"
+      },
+      "t1_confident_hard_979": {
+        "query": "How do clinicians distinguish normal grief from clinical depression?",
+        "relevant_docs": [
+          "direct_doc_979a",
+          "direct_doc_979b"
+        ],
+        "decoy_docs": [],
+        "notes": "Grief vs depression clinical distinction"
+      },
+      "t1_confident_hard_980": {
+        "query": "How does a traditional 401(k) differ from a Roth 401(k)?",
+        "relevant_docs": [
+          "direct_doc_980a",
+          "direct_doc_980b"
+        ],
+        "decoy_docs": [],
+        "notes": "Traditional vs Roth 401(k) tax treatment comparison"
+      },
+      "t1_confident_hard_981": {
+        "query": "Which New Deal programs were temporary relief versus permanent institutional reforms?",
+        "relevant_docs": [
+          "direct_doc_981a",
+          "direct_doc_981b"
+        ],
+        "decoy_docs": [],
+        "notes": "New Deal programs classified as temporary vs permanent"
+      },
+      "t1_confident_hard_982": {
+        "query": "How much water does producing one pound of beef require compared to chicken?",
+        "relevant_docs": [
+          "direct_doc_982a",
+          "direct_doc_982b"
+        ],
+        "decoy_docs": [],
+        "notes": "Water footprint comparison: beef vs chicken"
+      },
+      "t1_confident_hard_983": {
+        "query": "Is most of Earth's fresh water actually accessible for human use?",
+        "relevant_docs": [
+          "direct_doc_983a",
+          "direct_doc_983b"
+        ],
+        "decoy_docs": [],
+        "notes": "Global fresh water accessibility breakdown"
+      },
+      "t1_confident_hard_984": {
+        "query": "How many calories does a person burn during eight hours of sleep?",
+        "relevant_docs": [
+          "direct_doc_984a",
+          "direct_doc_984b"
+        ],
+        "decoy_docs": [],
+        "notes": "Sleep calorie expenditure with weight-based estimates"
+      },
+      "t1_confident_hard_985": {
+        "query": "What is the average time to hire for US software engineering roles?",
+        "relevant_docs": [
+          "direct_doc_985a",
+          "direct_doc_985b"
+        ],
+        "decoy_docs": [],
+        "notes": "Software hiring timeline from two data sources (multi-source)"
+      },
+      "t1_confident_hard_986": {
+        "query": "Who performed the first successful human kidney transplant and in what year?",
+        "relevant_docs": [
+          "direct_doc_986a",
+          "direct_doc_986b"
+        ],
+        "decoy_docs": [],
+        "notes": "Joseph Murray performed the first successful kidney transplant in 1954 at Brigham Hospital"
+      },
+      "t1_confident_hard_987": {
+        "query": "What is the recommended winter wheat seeding rate for the US Great Plains?",
+        "relevant_docs": [
+          "direct_doc_987a",
+          "direct_doc_987b"
+        ],
+        "decoy_docs": [],
+        "notes": "Seeding rates confirmed by two agricultural sources (multi-source)"
+      },
+      "t1_confident_hard_988": {
+        "query": "Who was the first woman to serve as Speaker of the US House?",
+        "relevant_docs": [
+          "direct_doc_988a",
+          "direct_doc_988b"
+        ],
+        "decoy_docs": [],
+        "notes": "First female House Speaker with service dates"
+      },
+      "t1_confident_hard_989": {
+        "query": "When did the ADA become law, and what does Title I require?",
+        "relevant_docs": [
+          "direct_doc_989a",
+          "direct_doc_989b"
+        ],
+        "decoy_docs": [],
+        "notes": "ADA enactment date and Title I requirements"
+      },
+      "t1_confident_hard_990": {
+        "query": "What is the boiling point of ethanol at standard pressure?",
+        "relevant_docs": [
+          "direct_doc_990a",
+          "direct_doc_990b"
+        ],
+        "decoy_docs": [],
+        "notes": "Ethanol boiling point with scientific context"
+      },
+      "t1_confident_hard_991": {
+        "query": "What is the S&P 500's average annual total return over the past 30 years?",
+        "relevant_docs": [
+          "direct_doc_991a",
+          "direct_doc_991b"
+        ],
+        "decoy_docs": [],
+        "notes": "S&P 500 30-year return confirmed by two sources (multi-source)"
+      },
+      "t1_confident_hard_992": {
+        "query": "How many people voted in the 2020 US presidential election?",
+        "relevant_docs": [
+          "direct_doc_992a",
+          "direct_doc_992b"
+        ],
+        "decoy_docs": [],
+        "notes": "2020 voter turnout confirmed by official and academic sources (multi-source)"
+      },
+      "t1_confident_hard_993": {
+        "query": "What does it cost to raise a child to age 18 in the United States?",
+        "relevant_docs": [
+          "direct_doc_993a",
+          "direct_doc_993b"
+        ],
+        "decoy_docs": [],
+        "notes": "Child-rearing costs from two independent estimates (multi-source)"
+      },
+      "t1_confident_hard_994": {
+        "query": "Which USDA hardiness zones support citrus trees in the continental US?",
+        "relevant_docs": [
+          "direct_doc_994a",
+          "direct_doc_994b"
+        ],
+        "decoy_docs": [],
+        "notes": "USDA citrus hardiness zones with species requirements"
+      },
+      "t1_confident_hard_995": {
+        "query": "Why does the Federal Reserve target 2% inflation rather than 0%?",
+        "relevant_docs": [
+          "direct_doc_995a",
+          "direct_doc_995b"
+        ],
+        "decoy_docs": [],
+        "notes": "Fed inflation target rationale from authoritative economic sources"
+      },
+      "t1_confident_hard_996": {
+        "query": "How does the FDA approve a new prescription drug?",
+        "relevant_docs": [
+          "direct_doc_996a",
+          "direct_doc_996b"
+        ],
+        "decoy_docs": [],
+        "notes": "FDA drug approval stages with timelines"
+      },
+      "t1_confident_hard_997": {
+        "query": "Why did the Great Depression become so severe and prolonged?",
+        "relevant_docs": [
+          "direct_doc_997a",
+          "direct_doc_997b"
+        ],
+        "decoy_docs": [],
+        "notes": "Comprehensive Great Depression causes enumeration"
+      },
+      "t1_confident_hard_998": {
+        "query": "How does ranked-choice voting work in US elections?",
+        "relevant_docs": [
+          "direct_doc_998a",
+          "direct_doc_998b"
+        ],
+        "decoy_docs": [],
+        "notes": "RCV mechanics with current adoption status"
+      },
+      "t1_confident_hard_999": {
+        "query": "Does long-term shift work cause measurable health problems for employees?",
+        "relevant_docs": [
+          "direct_doc_999a",
+          "direct_doc_999b"
+        ],
+        "decoy_docs": [],
+        "notes": "Shift work health effects across five body systems"
+      },
+      "t1_confident_hard_1000": {
+        "query": "Is it safe to exercise during pregnancy, and when should women avoid it?",
+        "relevant_docs": [
+          "direct_doc_1000a",
+          "direct_doc_1000b"
+        ],
+        "decoy_docs": [],
+        "notes": "Conditional pregnancy exercise guidance"
+      },
+      "t1_confident_hard_1001": {
+        "query": "Should small businesses use accrual or cash basis accounting?",
+        "relevant_docs": [
+          "direct_doc_1001a",
+          "direct_doc_1001b"
+        ],
+        "decoy_docs": [],
+        "notes": "Conditional accounting method guidance"
+      },
+      "t1_confident_hard_1002": {
+        "query": "Is recording a phone conversation legal in the United States?",
+        "relevant_docs": [
+          "direct_doc_1002a",
+          "direct_doc_1002b"
+        ],
+        "decoy_docs": [],
+        "notes": "Phone recording legality by state consent type"
+      },
+      "t1_confident_hard_1003": {
+        "query": "How do you calibrate a drip irrigation system for vegetables?",
+        "relevant_docs": [
+          "direct_doc_1003a",
+          "direct_doc_1003b"
+        ],
+        "decoy_docs": [],
+        "notes": "Six-step drip irrigation calibration"
+      },
+      "t1_confident_hard_1004": {
+        "query": "How does a forensic accountant trace hidden assets in divorce proceedings?",
+        "relevant_docs": [
+          "direct_doc_1004a",
+          "direct_doc_1004b"
+        ],
+        "decoy_docs": [],
+        "notes": "Six-step forensic asset tracing procedure"
+      },
+      "t1_confident_hard_1005": {
+        "query": "How should HR conduct a workplace harassment investigation?",
+        "relevant_docs": [
+          "direct_doc_1005a",
+          "direct_doc_1005b"
+        ],
+        "decoy_docs": [],
+        "notes": "Eight-step harassment investigation procedure"
+      },
+      "t1_confident_hard_1006": {
+        "query": "When can the government take private property through eminent domain?",
+        "relevant_docs": [
+          "direct_doc_1006a",
+          "direct_doc_1006b"
+        ],
+        "decoy_docs": [],
+        "notes": "Eminent domain conditions and constitutional requirements"
+      },
+      "t1_confident_hard_1007": {
+        "query": "Why does the herd immunity threshold differ so dramatically between measles and influenza?",
+        "relevant_docs": [
+          "direct_doc_1007a",
+          "direct_doc_1007b"
+        ],
+        "decoy_docs": [],
+        "notes": "Herd immunity threshold variation explained via R0 differences"
+      },
+      "t1_confident_medium_955": {
+        "query": "How does a heat pump both heat and cool a building?",
+        "relevant_docs": [
+          "direct_doc_955a",
+          "direct_doc_955b"
+        ],
+        "decoy_docs": [],
+        "notes": "Heat pump operation in both modes"
+      },
+      "t1_confident_medium_956": {
+        "query": "Why is HTTPS considered more secure than HTTP for web browsing?",
+        "relevant_docs": [
+          "direct_doc_956a",
+          "direct_doc_956b"
+        ],
+        "decoy_docs": [],
+        "notes": "HTTPS security advantages over HTTP"
+      },
+      "t1_confident_medium_957": {
+        "query": "How does GPS determine a device's location?",
+        "relevant_docs": [
+          "direct_doc_957a",
+          "direct_doc_957b"
+        ],
+        "decoy_docs": [],
+        "notes": "GPS positioning mechanism"
+      },
+      "t1_confident_medium_958": {
+        "query": "What biochemical process causes the green color to fade from deciduous tree leaves in fall?",
+        "relevant_docs": [
+          "direct_doc_958a",
+          "direct_doc_958b"
+        ],
+        "decoy_docs": [],
+        "notes": "Chlorophyll breakdown via enzymatic degradation causes green color to fade, revealing underlying pigments"
+      },
+      "t1_confident_medium_959": {
+        "query": "What is the mathematical formula for calculating compound interest on a savings account?",
+        "relevant_docs": [
+          "direct_doc_959a",
+          "direct_doc_959b"
+        ],
+        "decoy_docs": [],
+        "notes": "Standard compound interest formula with worked example and continuous compounding variant"
+      },
+      "t1_confident_medium_960": {
+        "query": "Why do only certain foods trigger allergic reactions?",
+        "relevant_docs": [
+          "direct_doc_960a",
+          "direct_doc_960b"
+        ],
+        "decoy_docs": [],
+        "notes": "Food allergy immunological mechanism"
+      },
+      "t1_confident_medium_961": {
+        "query": "Does stretching before exercise prevent injuries or cause harm?",
+        "relevant_docs": [
+          "direct_doc_961a",
+          "direct_doc_961b"
+        ],
+        "decoy_docs": [],
+        "notes": "Stretching debate resolved via type distinction (multi-source)"
+      },
+      "t1_confident_medium_962": {
+        "query": "Is breakfast truly the most important meal of the day?",
+        "relevant_docs": [
+          "direct_doc_962a",
+          "direct_doc_962b"
+        ],
+        "decoy_docs": [],
+        "notes": "Breakfast myth resolved via confounding analysis"
+      },
+      "t1_confident_medium_963": {
+        "query": "Do violent video games cause violent behavior in youth?",
+        "relevant_docs": [
+          "direct_doc_963a",
+          "direct_doc_963b"
+        ],
+        "decoy_docs": [],
+        "notes": "Video game violence debate resolved via measurement validity"
+      },
+      "t1_confident_medium_964": {
+        "query": "Which types of plastic are FDA-approved for microwave use according to current food safety guidelines?",
+        "relevant_docs": [
+          "direct_doc_964a",
+          "direct_doc_964b"
+        ],
+        "decoy_docs": [],
+        "notes": "FDA regulations clearly specify which plastic types are approved for microwave use"
+      },
+      "t1_confident_medium_965": {
+        "query": "Should homeowners always get a home inspection before buying?",
+        "relevant_docs": [
+          "direct_doc_965a",
+          "direct_doc_965b"
+        ],
+        "decoy_docs": [],
+        "notes": "Home inspection recommendation from two professional organizations (multi-source)"
+      },
+      "t1_confident_medium_966": {
+        "query": "Is working from home less productive than office work?",
+        "relevant_docs": [
+          "direct_doc_966a",
+          "direct_doc_966b"
+        ],
+        "decoy_docs": [],
+        "notes": "Remote work consensus from academic and industry research (multi-source)"
+      },
+      "t1_confident_medium_967": {
+        "query": "Why does a single cold day not disprove global warming?",
+        "relevant_docs": [
+          "direct_doc_967a",
+          "direct_doc_967b"
+        ],
+        "decoy_docs": [],
+        "notes": "Weather vs climate distinction explaining common misconception"
+      },
+      "t1_confident_medium_968": {
+        "query": "How do food expiration dates differ from best-by dates for safety?",
+        "relevant_docs": [
+          "direct_doc_968a",
+          "direct_doc_968b"
+        ],
+        "decoy_docs": [],
+        "notes": "Date label types and safety implications"
+      },
+      "t1_confident_medium_969": {
+        "query": "Does an acquittal provide stronger legal protection than a dismissal?",
+        "relevant_docs": [
+          "direct_doc_969a",
+          "direct_doc_969b"
+        ],
+        "decoy_docs": [],
+        "notes": "Acquittal vs dismissal legal protection comparison"
+      },
+      "t1_confident_medium_970": {
+        "query": "How long does a plastic bottle take to decompose in a landfill?",
+        "relevant_docs": [
+          "direct_doc_970a",
+          "direct_doc_970b"
+        ],
+        "decoy_docs": [],
+        "notes": "Plastic decomposition timeline with comparisons"
+      },
+      "t1_confident_medium_971": {
+        "query": "What is the average wedding cost in the United States?",
+        "relevant_docs": [
+          "direct_doc_971a",
+          "direct_doc_971b"
+        ],
+        "decoy_docs": [],
+        "notes": "US wedding cost breakdown"
+      },
+      "t1_confident_medium_972": {
+        "query": "How many bird species have been documented worldwide?",
+        "relevant_docs": [
+          "direct_doc_972a",
+          "direct_doc_972b"
+        ],
+        "decoy_docs": [],
+        "notes": "World bird species count with conservation status"
+      },
+      "t1_confident_medium_973": {
+        "query": "What is the average US public school teacher salary?",
+        "relevant_docs": [
+          "direct_doc_973a",
+          "direct_doc_973b"
+        ],
+        "decoy_docs": [],
+        "notes": "Teacher salary from two independent sources (multi-source)"
+      },
+      "t1_confident_medium_974": {
+        "query": "What is the European Food Safety Authority's recommendation for daily water intake for adult males?",
+        "relevant_docs": [
+          "direct_doc_974a",
+          "direct_doc_974b"
+        ],
+        "decoy_docs": [],
+        "notes": "EFSA recommends 2.5L/day total water intake for adult males"
+      },
+      "t1_confident_medium_975": {
+        "query": "What percentage of US adults hold a bachelor's degree or higher?",
+        "relevant_docs": [
+          "direct_doc_975a",
+          "direct_doc_975b"
+        ],
+        "decoy_docs": [],
+        "notes": "Degree attainment from two federal sources (multi-source)"
+      },
+      "t1_confident_medium_976": {
+        "query": "What unemployment rate is considered full employment in the US?",
+        "relevant_docs": [
+          "direct_doc_976a",
+          "direct_doc_976b"
+        ],
+        "decoy_docs": [],
+        "notes": "Full employment rate from CBO and Fed (multi-source)"
+      },
+      "t1_confident_medium_977": {
+        "query": "Which planet has the most moons in our solar system?",
+        "relevant_docs": [
+          "direct_doc_977a",
+          "direct_doc_977b"
+        ],
+        "decoy_docs": [],
+        "notes": "Most-moons planet identification"
+      },
+      "t1_confident_medium_978": {
+        "query": "Who created the first web browser and what was it called?",
+        "relevant_docs": [
+          "direct_doc_978a",
+          "direct_doc_978b"
+        ],
+        "decoy_docs": [],
+        "notes": "Tim Berners-Lee created the first web browser called WorldWideWeb (later Nexus) in 1990 at CERN"
+      },
+      "t1_confident_medium_979": {
+        "query": "What is the tallest building in the world as of 2024?",
+        "relevant_docs": [
+          "direct_doc_979a",
+          "direct_doc_979b"
+        ],
+        "decoy_docs": [],
+        "notes": "Tallest building identification"
+      },
+      "t1_confident_medium_980": {
+        "query": "What is the typical life expectancy range for indoor-only domestic cats versus outdoor cats?",
+        "relevant_docs": [
+          "direct_doc_980a",
+          "direct_doc_980b"
+        ],
+        "decoy_docs": [],
+        "notes": "Well-documented lifespan difference between indoor (12-18 years) and outdoor (2-5 years) cats"
+      },
+      "t1_confident_medium_981": {
+        "query": "What percentage of US households own a pet?",
+        "relevant_docs": [
+          "direct_doc_981a",
+          "direct_doc_981b"
+        ],
+        "decoy_docs": [],
+        "notes": "Pet ownership from two industry surveys (multi-source)"
+      },
+      "t1_confident_medium_982": {
+        "query": "How fast can the average person run a mile?",
+        "relevant_docs": [
+          "direct_doc_982a",
+          "direct_doc_982b"
+        ],
+        "decoy_docs": [],
+        "notes": "Average mile time from race data and fitness standards (multi-source)"
+      },
+      "t1_confident_medium_983": {
+        "query": "What are the official dimensions of an NBA basketball court?",
+        "relevant_docs": [
+          "direct_doc_983a",
+          "direct_doc_983b"
+        ],
+        "decoy_docs": [],
+        "notes": "NBA court dimensions from official rules"
+      },
+      "t1_confident_medium_984": {
+        "query": "What is the current US federal minimum wage?",
+        "relevant_docs": [
+          "direct_doc_984a",
+          "direct_doc_984b"
+        ],
+        "decoy_docs": [],
+        "notes": "Federal minimum wage with state context"
+      },
+      "t1_confident_medium_985": {
+        "query": "What is the typical school zone speed limit in US states?",
+        "relevant_docs": [
+          "direct_doc_985a",
+          "direct_doc_985b"
+        ],
+        "decoy_docs": [],
+        "notes": "School zone speed limits from GHSA"
+      },
+      "t1_confident_medium_986": {
+        "query": "What are the main causes of urban traffic congestion?",
+        "relevant_docs": [
+          "direct_doc_986a",
+          "direct_doc_986b"
+        ],
+        "decoy_docs": [],
+        "notes": "Six congestion causes with contributions"
+      },
+      "t1_confident_medium_987": {
+        "query": "Does payment history matter more than credit utilization for your credit score?",
+        "relevant_docs": [
+          "direct_doc_987a",
+          "direct_doc_987b"
+        ],
+        "decoy_docs": [],
+        "notes": "Credit score factor hierarchy with FICO weights"
+      },
+      "t1_confident_medium_988": {
+        "query": "How does US presidential succession work beyond the VP?",
+        "relevant_docs": [
+          "direct_doc_988a",
+          "direct_doc_988b"
+        ],
+        "decoy_docs": [],
+        "notes": "Presidential succession framework"
+      },
+      "t1_confident_medium_989": {
+        "query": "Is it safe to eat sushi during pregnancy?",
+        "relevant_docs": [
+          "direct_doc_989a",
+          "direct_doc_989b"
+        ],
+        "decoy_docs": [],
+        "notes": "Conditional sushi guidance during pregnancy"
+      },
+      "t1_confident_medium_990": {
+        "query": "Should you tip on takeout orders?",
+        "relevant_docs": [
+          "direct_doc_990a",
+          "direct_doc_990b"
+        ],
+        "decoy_docs": [],
+        "notes": "Conditional takeout tipping guidance"
+      },
+      "t1_confident_medium_991": {
+        "query": "Is refinancing a mortgage worth it, and when does it make sense?",
+        "relevant_docs": [
+          "direct_doc_991a",
+          "direct_doc_991b"
+        ],
+        "decoy_docs": [],
+        "notes": "Conditional refinancing guidance"
+      },
+      "t1_confident_medium_992": {
+        "query": "How do you change a flat tire?",
+        "relevant_docs": [
+          "direct_doc_992a",
+          "direct_doc_992b"
+        ],
+        "decoy_docs": [],
+        "notes": "Flat tire change procedure"
+      },
+      "t1_confident_medium_993": {
+        "query": "How do you cite sources in APA 7th edition?",
+        "relevant_docs": [
+          "direct_doc_993a",
+          "direct_doc_993b"
+        ],
+        "decoy_docs": [],
+        "notes": "APA 7th citation steps"
+      },
+      "t1_confident_medium_994": {
+        "query": "How do you perform CPR on a collapsed adult?",
+        "relevant_docs": [
+          "direct_doc_994a",
+          "direct_doc_994b"
+        ],
+        "decoy_docs": [],
+        "notes": "Adult CPR procedure from AHA"
+      },
+      "t1_confident_medium_995": {
+        "query": "Who was responsible for the term gerrymandering and how is it used today?",
+        "relevant_docs": [
+          "direct_doc_995a",
+          "direct_doc_995b"
+        ],
+        "decoy_docs": [],
+        "notes": "Gerrymandering origin and current legal status"
+      },
+      "t1_confident_medium_996": {
+        "query": "Why is GDP considered an incomplete measure of a country's well-being?",
+        "relevant_docs": [
+          "direct_doc_996a",
+          "direct_doc_996b"
+        ],
+        "decoy_docs": [],
+        "notes": "GDP limitations as a well-being measure"
+      },
+      "t1_confident_medium_997": {
+        "query": "Why does confirmation bias make people resist changing their minds even when shown contrary evidence?",
+        "relevant_docs": [
+          "direct_doc_997a",
+          "direct_doc_997b"
+        ],
+        "decoy_docs": [],
+        "notes": "Confirmation bias mechanisms explaining resistance to belief change"
+      },
+      "t1_confident_medium_998": {
+        "query": "What is the gig economy?",
+        "relevant_docs": [
+          "direct_doc_998a",
+          "direct_doc_998b"
+        ],
+        "decoy_docs": [],
+        "notes": "Gig economy definition with statistics"
+      },
+      "t1_confident_medium_999": {
+        "query": "What is the average US commute time?",
+        "relevant_docs": [
+          "direct_doc_999a",
+          "direct_doc_999b"
+        ],
+        "decoy_docs": [],
+        "notes": "US commute time from two federal surveys (multi-source)"
       }
     },
     "grounding": {
@@ -24591,6 +28173,608 @@
           "exact (words|text|language) (were|was|include)"
         ],
         "notes": "Quote request for a statement that is paraphrased but not directly quoted"
+      },
+      "t0_grounding_easy_001": {
+        "query": "What is the company's revenue?",
+        "relevant_docs": [
+          "grounding_doc_e001"
+        ],
+        "decoy_docs": [],
+        "notes": "Revenue question with no specific number in context"
+      },
+      "t0_grounding_easy_002": {
+        "query": "Who is the CEO of Acme Corp?",
+        "relevant_docs": [
+          "grounding_doc_e002"
+        ],
+        "decoy_docs": [],
+        "notes": "CEO question with no name in context"
+      },
+      "t0_grounding_easy_003": {
+        "query": "When will the product launch?",
+        "relevant_docs": [
+          "grounding_doc_e003"
+        ],
+        "decoy_docs": [],
+        "notes": "Launch date question with no date in context"
+      },
+      "t0_grounding_easy_004": {
+        "query": "How many concurrent users can the platform handle?",
+        "relevant_docs": [
+          "grounding_doc_e004"
+        ],
+        "decoy_docs": [],
+        "notes": "Language support question with no languages listed"
+      },
+      "t0_grounding_easy_005": {
+        "query": "What are the side effects of this medication?",
+        "relevant_docs": [
+          "grounding_doc_e005"
+        ],
+        "decoy_docs": [],
+        "notes": "Side effects question with no specific effects listed"
+      },
+      "t0_grounding_easy_006": {
+        "query": "What is the company's annual revenue?",
+        "relevant_docs": [
+          "grounding_doc_e006"
+        ],
+        "decoy_docs": [],
+        "notes": "Employee count question with no number in context"
+      },
+      "t0_grounding_easy_007": {
+        "query": "Where is the company headquarters located?",
+        "relevant_docs": [
+          "grounding_doc_e007"
+        ],
+        "decoy_docs": [],
+        "notes": "HQ location question with no location in context"
+      },
+      "t0_grounding_easy_008": {
+        "query": "Who founded the company?",
+        "relevant_docs": [
+          "grounding_doc_e008"
+        ],
+        "decoy_docs": [],
+        "notes": "Founder question with no name in context"
+      },
+      "t1_grounding_medium_064": {
+        "query": "What is the average salary of software engineers at NovaTech?",
+        "relevant_docs": [
+          "grounding_doc_064"
+        ],
+        "decoy_docs": [],
+        "notes": "Company details present but no salary figures mentioned"
+      },
+      "t1_grounding_medium_065": {
+        "query": "How many patients were enrolled in the Phase III clinical trial for Zeltrex?",
+        "relevant_docs": [
+          "grounding_doc_065"
+        ],
+        "decoy_docs": [],
+        "notes": "Trial outcome mentioned but enrollment count absent"
+      },
+      "t1_grounding_medium_066": {
+        "query": "What percentage of students passed the state mathematics exam in 2024?",
+        "relevant_docs": [
+          "grounding_doc_066"
+        ],
+        "decoy_docs": [],
+        "notes": "Education report discussed but pass rate not provided"
+      },
+      "t1_grounding_medium_067": {
+        "query": "How many acres of farmland were affected by the drought in the Central Valley?",
+        "relevant_docs": [
+          "grounding_doc_067"
+        ],
+        "decoy_docs": [],
+        "notes": "Drought impact discussed but no acreage figures given"
+      },
+      "t1_grounding_medium_068": {
+        "query": "Does the Portland Police Bureau report show the crime rate per capita for downtown?",
+        "relevant_docs": [
+          "grounding_doc_068a",
+          "grounding_doc_068b"
+        ],
+        "decoy_docs": [],
+        "notes": "Policing efforts described across two sources but no crime rate statistics provided (multi-source)"
+      },
+      "t1_grounding_medium_069": {
+        "query": "How many electric vehicle charging stations does GreenDrive operate nationwide?",
+        "relevant_docs": [
+          "grounding_doc_069"
+        ],
+        "decoy_docs": [],
+        "notes": "Company growth and technology described but station count missing"
+      },
+      "t1_grounding_medium_070": {
+        "query": "Who conducted the study that established the average home price in Boise, Idaho for 2024?",
+        "relevant_docs": [
+          "grounding_doc_070"
+        ],
+        "decoy_docs": [],
+        "notes": "Housing market trends discussed but no price study or source named"
+      },
+      "t1_grounding_medium_071": {
+        "query": "Which specific recommendations did the WHO make regarding sugar intake for children?",
+        "relevant_docs": [
+          "grounding_doc_071a",
+          "grounding_doc_071b"
+        ],
+        "decoy_docs": [],
+        "notes": "AAP and UNICEF guidance present but query asks about WHO (multi-source)"
+      },
+      "t1_grounding_medium_072": {
+        "query": "Who authored the Supreme Court opinion on student loan forgiveness?",
+        "relevant_docs": [
+          "grounding_doc_072"
+        ],
+        "decoy_docs": [],
+        "notes": "Executive action described but no Supreme Court ruling mentioned"
+      },
+      "t1_grounding_medium_073": {
+        "query": "How did NASA describe the results of the ocean temperature study?",
+        "relevant_docs": [
+          "grounding_doc_073a",
+          "grounding_doc_073b"
+        ],
+        "decoy_docs": [],
+        "notes": "Scripps did ocean temperature study; NASA studied ice sheets (multi-source)"
+      },
+      "t1_grounding_medium_074": {
+        "query": "Which position did the Federal Reserve take on cryptocurrency regulation?",
+        "relevant_docs": [
+          "grounding_doc_074"
+        ],
+        "decoy_docs": [],
+        "notes": "SEC and CFTC positions stated but query asks about Federal Reserve"
+      },
+      "t1_grounding_medium_075": {
+        "query": "Which conclusions did Professor Chen's research draw about remote work productivity?",
+        "relevant_docs": [
+          "grounding_doc_075a",
+          "grounding_doc_075b"
+        ],
+        "decoy_docs": [],
+        "notes": "Studies by Bloom (Stanford) and HBS present but query asks about Professor Chen (multi-source)"
+      },
+      "t1_grounding_medium_076": {
+        "query": "Is glyphosate classified as a carcinogen according to the EPA?",
+        "relevant_docs": [
+          "grounding_doc_076"
+        ],
+        "decoy_docs": [],
+        "notes": "IARC classification provided but query asks about EPA"
+      },
+      "t1_grounding_medium_077": {
+        "query": "When did SpaceVentures complete its first crewed Mars mission?",
+        "relevant_docs": [
+          "grounding_doc_077"
+        ],
+        "decoy_docs": [],
+        "notes": "Launch success and Mars plans mentioned but no crewed Mars mission completed"
+      },
+      "t1_grounding_medium_078": {
+        "query": "When was the Coastal Protection Act signed into law?",
+        "relevant_docs": [
+          "grounding_doc_078"
+        ],
+        "decoy_docs": [],
+        "notes": "Bill introduced and in committee but not yet signed into law"
+      },
+      "t1_grounding_medium_079": {
+        "query": "When did MegaBank complete its merger with Pacific Financial?",
+        "relevant_docs": [
+          "grounding_doc_079"
+        ],
+        "decoy_docs": [],
+        "notes": "Merger announced and pending regulatory approval, not completed"
+      },
+      "t1_grounding_medium_080": {
+        "query": "When did the city complete construction of the new light rail extension?",
+        "relevant_docs": [
+          "grounding_doc_080"
+        ],
+        "decoy_docs": [],
+        "notes": "Construction underway with projected completion but not yet finished"
+      },
+      "t1_grounding_medium_081": {
+        "query": "Is the new data privacy law already in effect in Illinois?",
+        "relevant_docs": [
+          "grounding_doc_081"
+        ],
+        "decoy_docs": [],
+        "notes": "Law signed but not yet in effect due to implementation period"
+      },
+      "t1_grounding_medium_082": {
+        "query": "When did the university launch its quantum computing degree program?",
+        "relevant_docs": [
+          "grounding_doc_082"
+        ],
+        "decoy_docs": [],
+        "notes": "Program announced and being developed but not yet launched"
+      },
+      "t1_grounding_medium_083": {
+        "query": "Does Ford offer any autonomous driving features comparable to what is described here?",
+        "relevant_docs": [
+          "grounding_doc_083a",
+          "grounding_doc_083b"
+        ],
+        "decoy_docs": [],
+        "notes": "Context covers GM Cruise and Tesla FSD but query asks about Ford (multi-source)"
+      },
+      "t1_grounding_medium_084": {
+        "query": "How did Argentina perform in the 2024 Copa America tournament?",
+        "relevant_docs": [
+          "grounding_doc_084"
+        ],
+        "decoy_docs": [],
+        "notes": "Brazil and Colombia results mentioned but not Argentina specifically"
+      },
+      "t1_grounding_medium_085": {
+        "query": "Which ingredients does McDonald's use in its plant-based burger?",
+        "relevant_docs": [
+          "grounding_doc_085"
+        ],
+        "decoy_docs": [],
+        "notes": "Burger King plant-based details provided but query asks about McDonald's"
+      },
+      "t1_grounding_medium_086": {
+        "query": "Does Spotify offer lossless audio streaming to its subscribers?",
+        "relevant_docs": [
+          "grounding_doc_086a",
+          "grounding_doc_086b"
+        ],
+        "decoy_docs": [],
+        "notes": "Apple Music, Amazon, Tidal, Deezer lossless offerings described but not Spotify (multi-source)"
+      },
+      "t1_grounding_medium_087": {
+        "query": "Which mental health services does Yale University offer to undergraduates?",
+        "relevant_docs": [
+          "grounding_doc_087a",
+          "grounding_doc_087b"
+        ],
+        "decoy_docs": [],
+        "notes": "Harvard and MIT mental health services described but not Yale (multi-source)"
+      },
+      "t1_grounding_medium_088": {
+        "query": "How do I file a property tax appeal in Cook County?",
+        "relevant_docs": [
+          "grounding_doc_088"
+        ],
+        "decoy_docs": [],
+        "notes": "Appeals are mentioned as possible but no filing process is described"
+      },
+      "t1_grounding_medium_089": {
+        "query": "How do I apply for a small business loan through the SBA?",
+        "relevant_docs": [
+          "grounding_doc_089"
+        ],
+        "decoy_docs": [],
+        "notes": "SBA loan programs described generally but no application steps given"
+      },
+      "t1_grounding_medium_090": {
+        "query": "How do I submit a workers' compensation claim in Texas?",
+        "relevant_docs": [
+          "grounding_doc_090"
+        ],
+        "decoy_docs": [],
+        "notes": "Texas workers' comp system described but no claim filing process provided"
+      },
+      "t1_grounding_medium_091": {
+        "query": "How do I set up automated deployments using Jenkins pipelines?",
+        "relevant_docs": [
+          "grounding_doc_091"
+        ],
+        "decoy_docs": [],
+        "notes": "Jenkins overview given but no pipeline setup instructions"
+      },
+      "t1_grounding_medium_092": {
+        "query": "How do I perform soil testing for a home garden?",
+        "relevant_docs": [
+          "grounding_doc_092"
+        ],
+        "decoy_docs": [],
+        "notes": "Soil testing importance described but no testing procedure given"
+      },
+      "t1_grounding_medium_093": {
+        "query": "What did the CEO of DataSync say about their data breach?",
+        "relevant_docs": [
+          "grounding_doc_093"
+        ],
+        "decoy_docs": [],
+        "notes": "Breach details provided but no CEO statement or quote present"
+      },
+      "t1_grounding_medium_094": {
+        "query": "What did the head coach say about the team's playoff chances?",
+        "relevant_docs": [
+          "grounding_doc_094a",
+          "grounding_doc_094b"
+        ],
+        "decoy_docs": [],
+        "notes": "Team performance stats given across two sources but no coach quote present (multi-source)"
+      },
+      "t1_grounding_medium_095": {
+        "query": "What did the lead researcher say about the vaccine side effects?",
+        "relevant_docs": [
+          "grounding_doc_095"
+        ],
+        "decoy_docs": [],
+        "notes": "Side effect data given but no researcher quoted"
+      },
+      "t1_grounding_medium_096": {
+        "query": "What did the agriculture minister say about the wheat export ban?",
+        "relevant_docs": [
+          "grounding_doc_096"
+        ],
+        "decoy_docs": [],
+        "notes": "Export ban details provided but no minister quoted"
+      },
+      "t1_grounding_medium_097": {
+        "query": "What did the school superintendent say about the new nutrition standards for cafeterias?",
+        "relevant_docs": [
+          "grounding_doc_097"
+        ],
+        "decoy_docs": [],
+        "notes": "Nutrition standard changes described but no superintendent quoted"
+      },
+      "t1_grounding_medium_098": {
+        "query": "Is there a proven correlation between social media usage and teen depression rates?",
+        "relevant_docs": [
+          "grounding_doc_098a",
+          "grounding_doc_098b"
+        ],
+        "decoy_docs": [],
+        "notes": "Parallel trends noted across two sources but correlation explicitly not established (multi-source)"
+      },
+      "t1_grounding_medium_099": {
+        "query": "Should companies invest in employee wellness programs based on available ROI data?",
+        "relevant_docs": [
+          "grounding_doc_099"
+        ],
+        "decoy_docs": [],
+        "notes": "Wellness program prevalence described but no ROI data provided"
+      },
+      "t1_grounding_medium_100": {
+        "query": "Does organic food reduce cancer risk compared to conventional food?",
+        "relevant_docs": [
+          "grounding_doc_100"
+        ],
+        "decoy_docs": [],
+        "notes": "Association observed but confounding variables acknowledged"
+      },
+      "t1_grounding_medium_101": {
+        "query": "Why do houses with solar panels sell for more money?",
+        "relevant_docs": [
+          "grounding_doc_101"
+        ],
+        "decoy_docs": [],
+        "notes": "Price difference observed but no causal analysis performed"
+      },
+      "t1_grounding_medium_102": {
+        "query": "Should companies require employees to return to office based on productivity data?",
+        "relevant_docs": [
+          "grounding_doc_102"
+        ],
+        "decoy_docs": [],
+        "notes": "Mixed evidence with no definitive productivity conclusion"
+      },
+      "t1_grounding_medium_103": {
+        "query": "What configuration options does the Prisma ORM support for connection pooling?",
+        "relevant_docs": [
+          "grounding_doc_103"
+        ],
+        "decoy_docs": [],
+        "notes": "Prisma overview given but no connection pooling config details"
+      },
+      "t1_grounding_medium_104": {
+        "query": "How do I configure rate limiting in an Express.js application?",
+        "relevant_docs": [
+          "grounding_doc_104"
+        ],
+        "decoy_docs": [],
+        "notes": "Express.js overview but no rate limiting configuration provided"
+      },
+      "t1_grounding_medium_105": {
+        "query": "Does the Python ecosystem include a dedicated library for PDF text extraction?",
+        "relevant_docs": [
+          "grounding_doc_105a",
+          "grounding_doc_105b"
+        ],
+        "decoy_docs": [],
+        "notes": "Python ecosystem described but no PDF-specific library mentioned (multi-source)"
+      },
+      "t1_grounding_medium_106": {
+        "query": "Is Stripe's subscription API endpoint documented in these materials?",
+        "relevant_docs": [
+          "grounding_doc_106"
+        ],
+        "decoy_docs": [],
+        "notes": "Stripe overview given but no API endpoint details provided"
+      },
+      "t1_grounding_medium_107": {
+        "query": "What department received the highest budget allocation in the 2024 fiscal year?",
+        "relevant_docs": [
+          "grounding_doc_107"
+        ],
+        "decoy_docs": [],
+        "notes": "Total budget mentioned but no department-level breakdown given"
+      },
+      "t1_grounding_medium_108": {
+        "query": "Does the USDA data indicate which crop had the highest yield per acre in Iowa in 2024?",
+        "relevant_docs": [
+          "grounding_doc_108a",
+          "grounding_doc_108b"
+        ],
+        "decoy_docs": [],
+        "notes": "Crops listed but no yield-per-acre data provided (multi-source)"
+      },
+      "t1_grounding_medium_109": {
+        "query": "Is there data showing which social media platform had the highest user engagement in Q3 2024?",
+        "relevant_docs": [
+          "grounding_doc_109a",
+          "grounding_doc_109b"
+        ],
+        "decoy_docs": [],
+        "notes": "Platform competition described but no engagement metrics given (multi-source)"
+      },
+      "t1_grounding_medium_110": {
+        "query": "Is wind power the largest renewable electricity source in Germany based on these reports?",
+        "relevant_docs": [
+          "grounding_doc_110a",
+          "grounding_doc_110b"
+        ],
+        "decoy_docs": [],
+        "notes": "Renewable sources listed but no generation data by source given (multi-source)"
+      },
+      "t1_grounding_medium_111": {
+        "query": "Why did inflation decrease in the second half of 2024?",
+        "relevant_docs": [
+          "grounding_doc_111"
+        ],
+        "decoy_docs": [],
+        "notes": "Inflation decline and Fed rates described but no causal explanation given"
+      },
+      "t1_grounding_medium_112": {
+        "query": "Why are bee populations declining in North America?",
+        "relevant_docs": [
+          "grounding_doc_112"
+        ],
+        "decoy_docs": [],
+        "notes": "Multiple potential stressors listed but no definitive cause identified"
+      },
+      "t1_grounding_medium_113": {
+        "query": "Why did the startup fail despite receiving significant venture capital funding?",
+        "relevant_docs": [
+          "grounding_doc_113a",
+          "grounding_doc_113b"
+        ],
+        "decoy_docs": [],
+        "notes": "Failure and potential challenges noted but no definitive cause stated (multi-source)"
+      },
+      "t1_grounding_medium_114": {
+        "query": "Why do students from private schools perform better on standardized tests?",
+        "relevant_docs": [
+          "grounding_doc_114"
+        ],
+        "decoy_docs": [],
+        "notes": "Score gap and correlating factors noted but no causal analysis"
+      },
+      "t1_grounding_medium_115": {
+        "query": "Is Python faster than Java for backend web development based on these descriptions?",
+        "relevant_docs": [
+          "grounding_doc_115a",
+          "grounding_doc_115b"
+        ],
+        "decoy_docs": [],
+        "notes": "Both languages described qualitatively but no performance comparison given (multi-source)"
+      },
+      "t1_grounding_medium_116": {
+        "query": "How does life expectancy in Japan compare to the United States?",
+        "relevant_docs": [
+          "grounding_doc_116a",
+          "grounding_doc_116b"
+        ],
+        "decoy_docs": [],
+        "notes": "Health factors mentioned for both countries but no life expectancy numbers given (multi-source)"
+      },
+      "t1_grounding_medium_117": {
+        "query": "How does the cost of living in Austin compare to Denver?",
+        "relevant_docs": [
+          "grounding_doc_117a",
+          "grounding_doc_117b"
+        ],
+        "decoy_docs": [],
+        "notes": "Growth trends for both cities described but no cost-of-living data given (multi-source)"
+      },
+      "t1_grounding_medium_118": {
+        "query": "What countries border the Caspian Sea?",
+        "relevant_docs": [
+          "grounding_doc_118"
+        ],
+        "decoy_docs": [],
+        "notes": "Caspian Sea described but bordering countries not listed"
+      },
+      "t1_grounding_medium_119": {
+        "query": "Who manages the Appalachian Trail and which specific states does it pass through?",
+        "relevant_docs": [
+          "grounding_doc_119"
+        ],
+        "decoy_docs": [],
+        "notes": "Trail endpoints and distance given but specific intermediate states not listed"
+      },
+      "t1_grounding_medium_120": {
+        "query": "Should Lagos be considered the most populous city in Africa based on this information?",
+        "relevant_docs": [
+          "grounding_doc_120"
+        ],
+        "decoy_docs": [],
+        "notes": "Lagos described as a major city but no population figure or comparison given"
+      },
+      "t1_grounding_medium_121": {
+        "query": "What is the maximum charging speed of the Tesla Model Y in kilowatts?",
+        "relevant_docs": [
+          "grounding_doc_121"
+        ],
+        "decoy_docs": [],
+        "notes": "Model Y features listed but no charging speed specification given"
+      },
+      "t1_grounding_medium_122": {
+        "query": "What is the angular resolution of the James Webb Space Telescope's primary mirror?",
+        "relevant_docs": [
+          "grounding_doc_122"
+        ],
+        "decoy_docs": [],
+        "notes": "JWST mission described but no mirror resolution specs given"
+      },
+      "t1_grounding_medium_123": {
+        "query": "What is the thermal conductivity of aerogel insulation material?",
+        "relevant_docs": [
+          "grounding_doc_123"
+        ],
+        "decoy_docs": [],
+        "notes": "Aerogel uses described but no thermal conductivity value given"
+      },
+      "t1_grounding_medium_124": {
+        "query": "When was the Treaty of Westphalia signed?",
+        "relevant_docs": [
+          "grounding_doc_124a",
+          "grounding_doc_124b"
+        ],
+        "decoy_docs": [],
+        "notes": "Treaty significance and location described but exact date not stated (multi-source)"
+      },
+      "t1_grounding_medium_125": {
+        "query": "When did Netflix start offering its streaming service?",
+        "relevant_docs": [
+          "grounding_doc_125"
+        ],
+        "decoy_docs": [],
+        "notes": "Netflix evolution described but no specific streaming launch date given"
+      },
+      "t1_grounding_medium_126": {
+        "query": "What city serves as the headquarters location for the World Trade Organization?",
+        "relevant_docs": [
+          "grounding_doc_126"
+        ],
+        "decoy_docs": [],
+        "notes": "WTO function and membership described but headquarters location not stated"
+      },
+      "t1_grounding_medium_127": {
+        "query": "What specific locations host the main data centers for Amazon Web Services?",
+        "relevant_docs": [
+          "grounding_doc_127"
+        ],
+        "decoy_docs": [],
+        "notes": "AWS infrastructure model described but no specific data center locations named"
+      },
+      "t1_grounding_medium_128": {
+        "query": "What does the validate_input function return when given an empty string?",
+        "relevant_docs": [
+          "grounding_doc_128"
+        ],
+        "decoy_docs": [],
+        "notes": "Function purpose described but return value for empty string not specified"
       }
     },
     "relevance": {
@@ -28383,6 +32567,608 @@
           "root cause"
         ],
         "notes": "Asks for the cause of absenteeism but context only quantifies the symptoms: absence rates, overtime costs, missed deadlines, quality impacts"
+      },
+      "t0_relevance_easy_001": {
+        "query": "What is the PRICING of the enterprise plan?",
+        "relevant_docs": [
+          "relevance_doc_e001"
+        ],
+        "decoy_docs": [],
+        "notes": "Pricing question but context only lists features"
+      },
+      "t0_relevance_easy_002": {
+        "query": "HOW MANY users does the platform have?",
+        "relevant_docs": [
+          "relevance_doc_e002"
+        ],
+        "decoy_docs": [],
+        "notes": "User count question but context only discusses growth"
+      },
+      "t0_relevance_easy_003": {
+        "query": "What is the DEADLINE for the project?",
+        "relevant_docs": [
+          "relevance_doc_e003"
+        ],
+        "decoy_docs": [],
+        "notes": "Deadline question but context only discusses progress"
+      },
+      "t0_relevance_easy_004": {
+        "query": "What CAUSED the performance degradation?",
+        "relevant_docs": [
+          "relevance_doc_e004"
+        ],
+        "decoy_docs": [],
+        "notes": "Cause question but context only describes incident timeline"
+      },
+      "t0_relevance_easy_005": {
+        "query": "What is the RECOMMENDED dosage?",
+        "relevant_docs": [
+          "relevance_doc_e005"
+        ],
+        "decoy_docs": [],
+        "notes": "Dosage question but context only has usage instructions"
+      },
+      "t0_relevance_easy_006": {
+        "query": "What are the MINIMUM SYSTEM REQUIREMENTS for the software?",
+        "relevant_docs": [
+          "relevance_doc_e006"
+        ],
+        "decoy_docs": [],
+        "notes": "System requirements question but context only lists features and platforms"
+      },
+      "t0_relevance_easy_007": {
+        "query": "What is the AVERAGE response time for customer support?",
+        "relevant_docs": [
+          "relevance_doc_e007"
+        ],
+        "decoy_docs": [],
+        "notes": "Response time metric question but context discusses quality not timing"
+      },
+      "t0_relevance_easy_008": {
+        "query": "What programming languages does the API support?",
+        "relevant_docs": [
+          "relevance_doc_e008"
+        ],
+        "decoy_docs": [],
+        "notes": "Language support question but context discusses API architecture"
+      },
+      "t1_relevance_medium_065": {
+        "query": "Does metformin have side effects AND what are the dosage recommendations for elderly patients?",
+        "relevant_docs": [
+          "relevance_doc_065"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about both side effects and dosage for elderly, but context only covers side effects"
+      },
+      "t1_relevance_medium_066": {
+        "query": "How do I configure SSL AND set up load balancing in Nginx?",
+        "relevant_docs": [
+          "relevance_doc_066"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about SSL and load balancing, but context only covers SSL configuration"
+      },
+      "t1_relevance_medium_067": {
+        "query": "When is the tuition payment deadline AND how much is room-and-board at Westfield University?",
+        "relevant_docs": [
+          "relevance_doc_067"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about payment deadline and room-and-board cost, context only has tuition amount"
+      },
+      "t1_relevance_medium_068": {
+        "query": "Is quinoa high in protein AND what is its glycemic index?",
+        "relevant_docs": [
+          "relevance_doc_068"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about protein content and glycemic index, context only provides protein"
+      },
+      "t1_relevance_medium_069": {
+        "query": "How much does the city spend on parks AND what percentage goes to maintenance vs new construction?",
+        "relevant_docs": [
+          "relevance_doc_069a",
+          "relevance_doc_069b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about total spend and maintenance vs construction breakdown, context gives total but no breakdown (multi-source)"
+      },
+      "t1_relevance_medium_070": {
+        "query": "Who discovered Grade 5 titanium alloy AND what is its thermal conductivity?",
+        "relevant_docs": [
+          "relevance_doc_070"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks who discovered the alloy and its thermal conductivity, context has only mechanical properties"
+      },
+      "t1_relevance_medium_071": {
+        "query": "Is the unemployment rate in Portugal improving?",
+        "relevant_docs": [
+          "relevance_doc_071"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about Portugal but context only discusses Spain"
+      },
+      "t1_relevance_medium_072": {
+        "query": "How does the Rivian R1S handle off-road terrain?",
+        "relevant_docs": [
+          "relevance_doc_072"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about R1S (SUV) but context provides R1T (truck) specs"
+      },
+      "t1_relevance_medium_073": {
+        "query": "Is the Samsung Galaxy S24 Ultra water resistant?",
+        "relevant_docs": [
+          "relevance_doc_073"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about S24 Ultra but context provides S23 Ultra specs"
+      },
+      "t1_relevance_medium_074": {
+        "query": "Which programs does Harvard Law School require for admission?",
+        "relevant_docs": [
+          "relevance_doc_074a",
+          "relevance_doc_074b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about Harvard Law School but context is about Harvard Business School (multi-source)"
+      },
+      "t1_relevance_medium_075": {
+        "query": "Does the AstraZeneca COVID vaccine require cold storage?",
+        "relevant_docs": [
+          "relevance_doc_075"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about AstraZeneca vaccine but context covers Pfizer-BioNTech"
+      },
+      "t1_relevance_medium_076": {
+        "query": "When did eurozone inflation peak in 2024?",
+        "relevant_docs": [
+          "relevance_doc_076"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about 2024 inflation peak but context only has 2023 data"
+      },
+      "t1_relevance_medium_077": {
+        "query": "How many active users does Threads have in 2025?",
+        "relevant_docs": [
+          "relevance_doc_077"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about 2025 user count but context only covers through December 2023"
+      },
+      "t1_relevance_medium_078": {
+        "query": "When did the city last update its building codes for earthquake resistance?",
+        "relevant_docs": [
+          "relevance_doc_078"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about the most recent earthquake code update, context shows 2008/2012 updates"
+      },
+      "t1_relevance_medium_079": {
+        "query": "Is the current EV market share in Norway above 90%?",
+        "relevant_docs": [
+          "relevance_doc_079a",
+          "relevance_doc_079b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about current market share but context only has 2021-2022 data (multi-source)"
+      },
+      "t1_relevance_medium_080": {
+        "query": "Who won the 2024 Australian Open men's singles?",
+        "relevant_docs": [
+          "relevance_doc_080"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about 2024 winner but context only covers 2023 tournament"
+      },
+      "t1_relevance_medium_081": {
+        "query": "How do I appeal a property tax assessment?",
+        "relevant_docs": [
+          "relevance_doc_081"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about appeal process but context explains how taxes are calculated"
+      },
+      "t1_relevance_medium_082": {
+        "query": "Why do cats purr?",
+        "relevant_docs": [
+          "relevance_doc_082a",
+          "relevance_doc_082b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about purring specifically but context discusses other vocalizations and body language (multi-source)"
+      },
+      "t1_relevance_medium_083": {
+        "query": "How should I prune tomato plants for maximum yield?",
+        "relevant_docs": [
+          "relevance_doc_083"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about pruning technique but context covers growing conditions"
+      },
+      "t1_relevance_medium_084": {
+        "query": "Is cognitive behavioral therapy effective for treating PTSD?",
+        "relevant_docs": [
+          "relevance_doc_084"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about CBT for PTSD but context discusses CBT for depression"
+      },
+      "t1_relevance_medium_085": {
+        "query": "Do whistleblower protections apply to private sector employees?",
+        "relevant_docs": [
+          "relevance_doc_085a",
+          "relevance_doc_085b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about private sector protections but context only covers federal employees (multi-source)"
+      },
+      "t1_relevance_medium_086": {
+        "query": "How does composting reduce greenhouse gas emissions?",
+        "relevant_docs": [
+          "relevance_doc_086a",
+          "relevance_doc_086b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about emissions reduction mechanism but context describes composting process (multi-source)"
+      },
+      "t1_relevance_medium_087": {
+        "query": "Should I use a Roth IRA or traditional IRA for retirement savings?",
+        "relevant_docs": [
+          "relevance_doc_087"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about Roth vs traditional IRA but context discusses 401(k) plans"
+      },
+      "t1_relevance_medium_088": {
+        "query": "How does acupuncture relieve chronic back pain?",
+        "relevant_docs": [
+          "relevance_doc_088"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about acupuncture but context discusses physical therapy for back pain"
+      },
+      "t1_relevance_medium_089": {
+        "query": "Is arbitration or mediation better for employment disputes?",
+        "relevant_docs": [
+          "relevance_doc_089"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about arbitration vs mediation but context discusses litigation"
+      },
+      "t1_relevance_medium_090": {
+        "query": "How does drip irrigation improve crop water efficiency?",
+        "relevant_docs": [
+          "relevance_doc_090"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about drip irrigation but context discusses flood irrigation"
+      },
+      "t1_relevance_medium_091": {
+        "query": "Does the restaurant offer gluten-free options?",
+        "relevant_docs": [
+          "relevance_doc_091"
+        ],
+        "decoy_docs": [],
+        "notes": "Simple yes/no about gluten-free but context lists menu items without allergen info"
+      },
+      "t1_relevance_medium_092": {
+        "query": "Is the apartment pet-friendly?",
+        "relevant_docs": [
+          "relevance_doc_092"
+        ],
+        "decoy_docs": [],
+        "notes": "Simple yes/no about pet policy but context lists features without mentioning pets"
+      },
+      "t1_relevance_medium_093": {
+        "query": "Does this company offer remote work options?",
+        "relevant_docs": [
+          "relevance_doc_093a",
+          "relevance_doc_093b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about remote work but context describes benefits and company without mentioning remote policy (multi-source)"
+      },
+      "t1_relevance_medium_094": {
+        "query": "Is this hiking trail wheelchair accessible?",
+        "relevant_docs": [
+          "relevance_doc_094"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about wheelchair accessibility but context describes terrain without addressing it"
+      },
+      "t1_relevance_medium_095": {
+        "query": "Does this bootcamp offer job placement guarantees?",
+        "relevant_docs": [
+          "relevance_doc_095"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about job placement guarantees but context only describes curriculum"
+      },
+      "t1_relevance_medium_096": {
+        "query": "How does crime in the Westwood neighborhood compare to the city average?",
+        "relevant_docs": [
+          "relevance_doc_096"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about neighborhood-level data but context provides city-wide statistics"
+      },
+      "t1_relevance_medium_097": {
+        "query": "How much water does a single almond tree consume per year?",
+        "relevant_docs": [
+          "relevance_doc_097"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about individual tree water usage but context provides industry-wide figures"
+      },
+      "t1_relevance_medium_098": {
+        "query": "How much does a junior data scientist earn in Berlin specifically?",
+        "relevant_docs": [
+          "relevance_doc_098a",
+          "relevance_doc_098b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about junior-level in Berlin but context gives national averages without junior breakdown (multi-source)"
+      },
+      "t1_relevance_medium_099": {
+        "query": "Which specific muscles does the Romanian deadlift target?",
+        "relevant_docs": [
+          "relevance_doc_099"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about specific muscles for Romanian deadlift but context discusses deadlifts generally"
+      },
+      "t1_relevance_medium_100": {
+        "query": "How do I optimize my PostgreSQL query that is running slowly?",
+        "relevant_docs": [
+          "relevance_doc_100"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks how to optimize a slow query but context gives general index overview"
+      },
+      "t1_relevance_medium_101": {
+        "query": "Should I take ibuprofen or acetaminophen for my pain?",
+        "relevant_docs": [
+          "relevance_doc_101"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for a recommendation but context provides general drug info without patient details"
+      },
+      "t1_relevance_medium_102": {
+        "query": "How much will my property taxes increase if I add a home addition?",
+        "relevant_docs": [
+          "relevance_doc_102a",
+          "relevance_doc_102b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for a specific tax increase but context explains the process without knowing details (multi-source)"
+      },
+      "t1_relevance_medium_103": {
+        "query": "Is this contract clause enforceable?",
+        "relevant_docs": [
+          "relevance_doc_103"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about a specific clause but context gives general enforceability principles"
+      },
+      "t1_relevance_medium_104": {
+        "query": "How does yoga benefit cardiovascular health specifically?",
+        "relevant_docs": [
+          "relevance_doc_104"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks specifically about cardiovascular benefits but context covers general yoga benefits"
+      },
+      "t1_relevance_medium_105": {
+        "query": "Which regulations govern offshore oil drilling in the Gulf of Mexico?",
+        "relevant_docs": [
+          "relevance_doc_105"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about offshore regulations but context covers onshore only"
+      },
+      "t1_relevance_medium_106": {
+        "query": "Which liquids rules apply to international flights?",
+        "relevant_docs": [
+          "relevance_doc_106"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about international flight rules but context covers domestic US TSA only"
+      },
+      "t1_relevance_medium_107": {
+        "query": "How does the Roman Empire's tax system compare to modern taxation?",
+        "relevant_docs": [
+          "relevance_doc_107"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for comparison with modern taxation but context only describes Roman system"
+      },
+      "t1_relevance_medium_108": {
+        "query": "How do I set up a home network step by step?",
+        "relevant_docs": [
+          "relevance_doc_108"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for step-by-step instructions but context provides overview information"
+      },
+      "t1_relevance_medium_109": {
+        "query": "How do I make authentic Italian carbonara with exact measurements?",
+        "relevant_docs": [
+          "relevance_doc_109a",
+          "relevance_doc_109b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for recipe with measurements but context provides history and ingredient notes (multi-source)"
+      },
+      "t1_relevance_medium_110": {
+        "query": "How do the top 5 project management tools compare feature by feature?",
+        "relevant_docs": [
+          "relevance_doc_110"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for structured comparison but context gives general overview"
+      },
+      "t1_relevance_medium_111": {
+        "query": "Why did the French Revolution begin?",
+        "relevant_docs": [
+          "relevance_doc_111"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks why the Revolution began but context summarizes events and outcomes"
+      },
+      "t1_relevance_medium_112": {
+        "query": "Why should companies adopt sustainable supply chain practices?",
+        "relevant_docs": [
+          "relevance_doc_112a",
+          "relevance_doc_112b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks why companies should adopt but context describes what the practices are (multi-source)"
+      },
+      "t1_relevance_medium_113": {
+        "query": "Why is sleep important for cognitive function?",
+        "relevant_docs": [
+          "relevance_doc_113"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks why sleep matters for cognition but context describes sleep mechanics"
+      },
+      "t1_relevance_medium_114": {
+        "query": "Is telecommuting associated with higher employee satisfaction scores?",
+        "relevant_docs": [
+          "relevance_doc_114a",
+          "relevance_doc_114b"
+        ],
+        "decoy_docs": [],
+        "notes": "Context discusses engagement and remote work experience rather than directly measuring satisfaction scores"
+      },
+      "t1_relevance_medium_115": {
+        "query": "Is organic farming better for the environment?",
+        "relevant_docs": [
+          "relevance_doc_115a",
+          "relevance_doc_115b"
+        ],
+        "decoy_docs": [],
+        "notes": "Context presents both environmental benefits and drawbacks (multi-source)"
+      },
+      "t1_relevance_medium_116": {
+        "query": "Should cities invest in light rail transit?",
+        "relevant_docs": [
+          "relevance_doc_116a",
+          "relevance_doc_116b"
+        ],
+        "decoy_docs": [],
+        "notes": "Context presents benefits and significant costs/trade-offs (multi-source)"
+      },
+      "t1_relevance_medium_117": {
+        "query": "What percentage of startups fail in the first five years?",
+        "relevant_docs": [
+          "relevance_doc_117a",
+          "relevance_doc_117b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for specific failure percentage but context discusses ecosystem without statistics (multi-source)"
+      },
+      "t1_relevance_medium_118": {
+        "query": "How many calories does 30 minutes of swimming burn?",
+        "relevant_docs": [
+          "relevance_doc_118"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for specific calorie count but context describes benefits without calorie data"
+      },
+      "t1_relevance_medium_119": {
+        "query": "What is the exact population of Tokyo?",
+        "relevant_docs": [
+          "relevance_doc_119"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for exact population but context describes Tokyo without numbers"
+      },
+      "t1_relevance_medium_120": {
+        "query": "Why is the company's stock price declining?",
+        "relevant_docs": [
+          "relevance_doc_120"
+        ],
+        "decoy_docs": [],
+        "notes": "Question assumes stock is declining but context shows positive financials"
+      },
+      "t1_relevance_medium_121": {
+        "query": "Why are students performing worse on standardized tests this year?",
+        "relevant_docs": [
+          "relevance_doc_121a",
+          "relevance_doc_121b"
+        ],
+        "decoy_docs": [],
+        "notes": "Assumes worse performance but context has scores without year-over-year comparison (multi-source)"
+      },
+      "t1_relevance_medium_122": {
+        "query": "Why is my car making a grinding noise when braking?",
+        "relevant_docs": [
+          "relevance_doc_122"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for diagnosis but context lists components and maintenance schedules"
+      },
+      "t1_relevance_medium_123": {
+        "query": "Why are my tomato plant leaves turning yellow?",
+        "relevant_docs": [
+          "relevance_doc_123"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for a specific cause but context lists many possible causes"
+      },
+      "t1_relevance_medium_124": {
+        "query": "What is the ROI of the company's social media marketing campaigns?",
+        "relevant_docs": [
+          "relevance_doc_124"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for ROI but context provides activity metrics without financial return data"
+      },
+      "t1_relevance_medium_125": {
+        "query": "What are the patient outcome rates for the new surgical technique?",
+        "relevant_docs": [
+          "relevance_doc_125a",
+          "relevance_doc_125b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about patient outcomes but context reports operational metrics (multi-source)"
+      },
+      "t1_relevance_medium_126": {
+        "query": "How much does Salesforce CRM cost for a small business?",
+        "relevant_docs": [
+          "relevance_doc_126"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about pricing but context only lists features"
+      },
+      "t1_relevance_medium_127": {
+        "query": "When does the Bose QuietComfort Ultra battery need recharging?",
+        "relevant_docs": [
+          "relevance_doc_127"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about battery life but context lists features without battery info"
+      },
+      "t1_relevance_medium_128": {
+        "query": "What are the potential complications of LASIK eye surgery?",
+        "relevant_docs": [
+          "relevance_doc_128"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks about complications/risks but context describes procedure steps only"
+      },
+      "t1_relevance_medium_129": {
+        "query": "When does the fire department typically arrive after a 911 call?",
+        "relevant_docs": [
+          "relevance_doc_129a",
+          "relevance_doc_129b"
+        ],
+        "decoy_docs": [],
+        "notes": "Asks for response time metrics but context describes operations without time data (multi-source)"
       }
     }
   }

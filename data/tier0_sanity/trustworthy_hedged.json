@@ -20,7 +20,7 @@
       "description": "Causal 'why' question with only usage statistics",
       "rationale": "Context shows THAT users use dark mode, not WHY they prefer it",
       "original_id": "qualify_easy_001",
-      "domain": "general",
+      "domain": "technology",
       "query_type": "why",
       "source_type": "single",
       "context_count": 2,
@@ -60,7 +60,7 @@
     {
       "id": "t0_qualify_easy_003",
       "difficulty": "easy",
-      "subcategory": "prediction_insufficient_data",
+      "subcategory": "causal_uncertainty",
       "query": "What will the weather be like next week?",
       "contexts": [
         "Last week saw temperatures ranging from 65-78°F with partly cloudy skies.",
@@ -161,7 +161,7 @@
     {
       "id": "t0_qualify_easy_007",
       "difficulty": "easy",
-      "subcategory": "prediction_insufficient_data",
+      "subcategory": "causal_uncertainty",
       "query": "Will the new feature be successful?",
       "contexts": [
         "The feature is currently in beta with 500 test users.",
@@ -213,7 +213,7 @@
     {
       "id": "t0_qualify_easy_009",
       "difficulty": "easy",
-      "subcategory": "prediction_insufficient_data",
+      "subcategory": "causal_uncertainty",
       "query": "What will our market share be next year?",
       "contexts": [
         "Current market share is 12%, up from 9% two years ago.",
