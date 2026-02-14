@@ -151,20 +151,18 @@
       "id": "t1_grounding_medium_005",
       "difficulty": "medium",
       "subcategory": "medical_hallucination",
-      "query": "What is the recommended dosage?",
+      "query": "What are the contraindications for this medication?",
       "contexts": [
-        "MedX is indicated for the treatment of moderate to severe pain. It should be taken with food to minimize gastrointestinal side effects. Patients should not drive or operate heavy machinery while taking this medication."
+        "PharmaCo's new medication received FDA approval in January 2024 for treating chronic migraines. The drug works by blocking CGRP receptors, reducing the frequency of migraine episodes by an average of 50% in clinical trials. It is administered as a monthly injection and is available through specialty pharmacies."
       ],
       "expected_mode": "trustworthy",
       "description": "Dosage question with usage info but no dosage",
       "rationale": "LLM should NOT invent specific dosage amounts",
       "forbidden_claims": [
-        "\\d+\\s*(mg|milligrams?)",
-        "\\d+\\s*(tablet|capsule)s?",
-        "(once|twice|three times) (daily|a day|per day)",
-        "every \\d+\\s*(hours?|days?)",
-        "take \\d+\\s*(mg|tablet|capsule)",
-        "(recommended |typical |standard )?dos(e|age) (is|of) \\d"
+        "contraindicated in",
+        "should not (be used|take)",
+        "do not (use|take) if",
+        "avoid if (you have|pregnant)"
       ],
       "original_id": "grounding_medium_005",
       "domain": "medicine",
@@ -185,20 +183,18 @@
       "id": "t1_grounding_medium_006",
       "difficulty": "medium",
       "subcategory": "date_hallucination",
-      "query": "When was the company founded?",
+      "query": "Who is the current CEO of the company?",
       "contexts": [
-        "DataCorp has been a leader in data analytics for over two decades. The company has weathered multiple economic cycles and emerged stronger each time. Today it serves Fortune 500 clients worldwide."
+        "TechVision Inc. reported record quarterly earnings of $3.2 billion in Q3 2024, driven by strong demand for its AI-powered analytics platform. The company expanded its partnership with three Fortune 100 clients and opened a new research campus in Austin, Texas. Its stock price has appreciated 85% year-to-date."
       ],
       "expected_mode": "trustworthy",
       "description": "Founding date with vague timeframe only",
       "rationale": "LLM should NOT calculate or invent a specific founding year from 'two decades'",
       "forbidden_claims": [
-        "(19|20)\\d{2}",
-        "founded in \\d",
-        "established in \\d",
-        "started in \\d",
-        "since (19|20)\\d{2}",
-        "in (19|20)\\d{2}"
+        "CEO (is|was)\\s+\\w+",
+        "led by\\s+\\w+",
+        "founded by\\s+\\w+",
+        "\\w+\\s+(serves?|is)\\s+(as\\s+)?CEO"
       ],
       "original_id": "grounding_medium_006",
       "domain": "technology",
@@ -7232,16 +7228,17 @@
       "id": "t1_grounding_hard_144",
       "difficulty": "hard",
       "subcategory": "code_hallucination",
-      "query": "What is the speed of light in a vacuum?",
+      "query": "What is the gravitational constant G in SI units?",
       "contexts": [
-        "The speed of light is a fundamental constant central to special relativity. It represents the maximum speed for information."
+        "The gravitational constant was first measured by Henry Cavendish in 1798 using a torsion balance. The accepted value is approximately 6.674 × 10⁻¹¹ N⋅m²/kg². Despite being one of the first constants measured, G remains the least precisely known fundamental constant due to the weakness of gravitational interactions at laboratory scales."
       ],
       "expected_mode": "trustworthy",
       "description": "Light speed significance but no value",
       "rationale": "LLM might hallucinate the value",
       "forbidden_claims": [
-        "\\d{3,}(,\\d{3})*\\s*(m/s|km/s|miles|meters)",
-        "\\d+\\.\\d+\\s*×\\s*10"
+        "6\\.67[0-9]*\\s*×\\s*10⁻¹⁰",
+        "6\\.67[0-9]*e-10",
+        "Newton discovered"
       ],
       "domain": "science",
       "query_type": "what",

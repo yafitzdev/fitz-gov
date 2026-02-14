@@ -1435,11 +1435,9 @@
       "category": "abstention",
       "subcategory": "wrong_version",
       "difficulty": "hard",
-      "query": "How are the specific ingredients in the new household cleaning product?",
+      "query": "What specific compounds are used in the new industrial adhesive formulation?",
       "contexts": [
-        "The new cleaning product has been rated highly by consumer magazines for effectiveness.",
-        "It is available in three sizes and comes with a satisfaction guarantee.",
-        "The product is marketed as eco-friendly and has won industry awards."
+        "GripBond Industries announced a new industrial adhesive line in Q3 2024. The product targets automotive and aerospace applications requiring high-temperature resistance up to 400°F. Initial orders from three major manufacturers exceeded projections by 60%, with full production scaling expected in early 2025."
       ],
       "expected_mode": "abstain",
       "description": "Product info available but ingredient list missing",
@@ -1447,7 +1445,7 @@
       "domain": "general",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1463,11 +1461,9 @@
       "category": "abstention",
       "subcategory": "wrong_jurisdiction",
       "difficulty": "hard",
-      "query": "How are the specific ingredients in the new household cleaning product?",
+      "query": "What are the active ingredients in the new organic pest control spray?",
       "contexts": [
-        "The new cleaning product has been rated highly by consumer magazines for effectiveness.",
-        "It is available in three sizes and comes with a satisfaction guarantee.",
-        "The product is marketed as eco-friendly and has won industry awards."
+        "GreenShield Organics received EPA registration for their new pest control spray targeting home garden use. The product was developed over 18 months at their Portland research facility. Field trials across six climate zones showed 89% effectiveness against common aphids and whiteflies."
       ],
       "expected_mode": "abstain",
       "description": "Product info available but ingredient list missing",
@@ -1475,7 +1471,7 @@
       "domain": "general",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1491,11 +1487,9 @@
       "category": "abstention",
       "subcategory": "wrong_jurisdiction",
       "difficulty": "hard",
-      "query": "How are the specific ingredients in the new household cleaning product?",
+      "query": "What preservatives are used in the reformulated children's cough syrup?",
       "contexts": [
-        "The new cleaning product has been rated highly by consumer magazines for effectiveness.",
-        "It is available in three sizes and comes with a satisfaction guarantee.",
-        "The product is marketed as eco-friendly and has won industry awards."
+        "PediCare Pharmaceuticals reformulated their children's cough syrup in response to parent concerns about artificial additives. The new version launched in 2,400 pharmacies nationwide. Clinical trials with 350 pediatric patients showed comparable efficacy to the previous formulation with improved taste ratings."
       ],
       "expected_mode": "abstain",
       "description": "Product info available but ingredient list missing",
@@ -1503,7 +1497,7 @@
       "domain": "general",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1519,11 +1513,9 @@
       "category": "abstention",
       "subcategory": "wrong_jurisdiction",
       "difficulty": "hard",
-      "query": "How are the specific ingredients in the new household cleaning product?",
+      "query": "What materials compose the new biodegradable food packaging?",
       "contexts": [
-        "The new cleaning product has been rated highly by consumer magazines for effectiveness.",
-        "It is available in three sizes and comes with a satisfaction guarantee.",
-        "The product is marketed as eco-friendly and has won industry awards."
+        "EcoPack Solutions unveiled their biodegradable food packaging at the 2024 Sustainable Packaging Conference. The packaging decomposes within 90 days in commercial composting facilities. Three major restaurant chains have signed pilot agreements to test the product in their takeout operations."
       ],
       "expected_mode": "abstain",
       "description": "Product info available but ingredient list missing",
@@ -1531,7 +1523,7 @@
       "domain": "general",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1682,11 +1674,9 @@
       "category": "abstention",
       "subcategory": "temporal_mismatch",
       "difficulty": "hard",
-      "query": "How were the specific terms of the Treaty of Tordesillas in 1494?",
+      "query": "What were the specific articles of the Edict of Nantes in 1598?",
       "contexts": [
-        "The Treaty of Tordesillas was negotiated between Spain and Portugal with papal involvement.",
-        "The treaty significantly influenced the colonial history of South America.",
-        "Portugal gained control of what would become Brazil."
+        "The Edict of Nantes, issued by Henry IV of France, is widely regarded as a landmark in religious tolerance. It ended the French Wars of Religion, which had devastated the country for over three decades. Henry IV's conversion to Catholicism in 1593 was a prerequisite for his acceptance as king by the Catholic majority."
       ],
       "expected_mode": "abstain",
       "description": "Treaty impact discussed but specific terms not provided",
@@ -1695,7 +1685,7 @@
       "domain": "history",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "temporal",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1736,11 +1726,9 @@
       "category": "abstention",
       "subcategory": "wrong_specificity",
       "difficulty": "hard",
-      "query": "How were the specific terms of the Treaty of Tordesillas in 1494?",
+      "query": "What were the precise boundary provisions of the Treaty of Zaragoza in 1529?",
       "contexts": [
-        "The Treaty of Tordesillas was negotiated between Spain and Portugal with papal involvement.",
-        "The treaty significantly influenced the colonial history of South America.",
-        "Portugal gained control of what would become Brazil."
+        "The Treaty of Zaragoza was signed between Spain and Portugal as a companion agreement to earlier colonial treaties. It resolved competing claims in the Pacific region. Spain received a payment of 350,000 ducats as part of the arrangement, which was a substantial sum at the time."
       ],
       "expected_mode": "abstain",
       "description": "Treaty impact discussed but specific terms not provided",
@@ -1748,7 +1736,7 @@
       "domain": "history",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1764,11 +1752,9 @@
       "category": "abstention",
       "subcategory": "wrong_specificity",
       "difficulty": "hard",
-      "query": "How were the specific terms of the Treaty of Tordesillas in 1494?",
+      "query": "What were the detailed surrender conditions in the Treaty of Ghent in 1814?",
       "contexts": [
-        "The Treaty of Tordesillas was negotiated between Spain and Portugal with papal involvement.",
-        "The treaty significantly influenced the colonial history of South America.",
-        "Portugal gained control of what would become Brazil."
+        "The Treaty of Ghent ended the War of 1812 between the United States and Great Britain. Negotiations took place in the city of Ghent in modern-day Belgium. Both American and British delegations included prominent political figures of the era."
       ],
       "expected_mode": "abstain",
       "description": "Treaty impact discussed but specific terms not provided",
@@ -1776,7 +1762,7 @@
       "domain": "history",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1792,11 +1778,9 @@
       "category": "abstention",
       "subcategory": "wrong_specificity",
       "difficulty": "hard",
-      "query": "How were the specific terms of the Treaty of Tordesillas in 1494?",
+      "query": "What were the specific reparation amounts stipulated in the Treaty of Frankfurt in 1871?",
       "contexts": [
-        "The Treaty of Tordesillas was negotiated between Spain and Portugal with papal involvement.",
-        "The treaty significantly influenced the colonial history of South America.",
-        "Portugal gained control of what would become Brazil."
+        "The Treaty of Frankfurt ended the Franco-Prussian War and led to the creation of the German Empire. The treaty was negotiated primarily by Otto von Bismarck. France lost the provinces of Alsace and most of Lorraine, a loss that would fuel resentment for decades."
       ],
       "expected_mode": "abstain",
       "description": "Treaty impact discussed but specific terms not provided",
@@ -1804,7 +1788,7 @@
       "domain": "history",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1872,11 +1856,9 @@
       "category": "abstention",
       "subcategory": "wrong_product",
       "difficulty": "hard",
-      "query": "How is the average closing cost percentage for US homebuyers?",
+      "query": "What is the average mortgage origination fee for commercial real estate loans?",
       "contexts": [
-        "Closing costs are a standard part of any real estate transaction.",
-        "Buyers should budget for inspection, appraisal, and title insurance.",
-        "Some lenders offer programs to reduce upfront costs for first-time buyers."
+        "Commercial real estate lending saw record volumes in 2024, driven by strong demand for industrial and logistics properties. Major banks expanded their commercial lending divisions, hiring over 2,000 loan officers nationally. The sector benefited from declining vacancy rates in prime industrial corridors."
       ],
       "expected_mode": "abstain",
       "description": "Closing cost components but no percentage figures",
@@ -1884,7 +1866,7 @@
       "domain": "real_estate",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1900,11 +1882,9 @@
       "category": "abstention",
       "subcategory": "wrong_product",
       "difficulty": "hard",
-      "query": "How is the average closing cost percentage for US homebuyers?",
+      "query": "What is the typical escrow deposit percentage for luxury home purchases?",
       "contexts": [
-        "Closing costs are a standard part of any real estate transaction.",
-        "Buyers should budget for inspection, appraisal, and title insurance.",
-        "Some lenders offer programs to reduce upfront costs for first-time buyers."
+        "The luxury home market above $5 million saw a 12% increase in transactions in 2024. International buyers accounted for 23% of luxury purchases in major metros. Miami, Los Angeles, and New York remained the top three markets by transaction volume."
       ],
       "expected_mode": "abstain",
       "description": "Closing cost components but no percentage figures",
@@ -1912,7 +1892,7 @@
       "domain": "real_estate",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1928,11 +1908,9 @@
       "category": "abstention",
       "subcategory": "wrong_product",
       "difficulty": "hard",
-      "query": "How is the average closing cost percentage for US homebuyers?",
+      "query": "What is the average title insurance premium for a $500,000 home purchase?",
       "contexts": [
-        "Closing costs are a standard part of any real estate transaction.",
-        "Buyers should budget for inspection, appraisal, and title insurance.",
-        "Some lenders offer programs to reduce upfront costs for first-time buyers."
+        "Title insurance protects buyers and lenders against potential ownership disputes. The industry processes over 1.5 million policies annually in the United States. Digital transformation has reduced the average closing timeline from 45 to 32 days for residential transactions."
       ],
       "expected_mode": "abstain",
       "description": "Closing cost components but no percentage figures",
@@ -1940,7 +1918,7 @@
       "domain": "real_estate",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1956,11 +1934,9 @@
       "category": "abstention",
       "subcategory": "wrong_product",
       "difficulty": "hard",
-      "query": "How is the average closing cost percentage for US homebuyers?",
+      "query": "What is the standard inspection contingency period for residential sales in Texas?",
       "contexts": [
-        "Closing costs are a standard part of any real estate transaction.",
-        "Buyers should budget for inspection, appraisal, and title insurance.",
-        "Some lenders offer programs to reduce upfront costs for first-time buyers."
+        "Texas residential real estate transactions are governed by the Texas Real Estate Commission (TREC). Standard forms are updated annually to reflect legislative changes. Licensed inspectors must complete 194 hours of qualifying education and pass the state examination."
       ],
       "expected_mode": "abstain",
       "description": "Closing cost components but no percentage figures",
@@ -1968,7 +1944,7 @@
       "domain": "real_estate",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -1984,11 +1960,9 @@
       "category": "abstention",
       "subcategory": "wrong_product",
       "difficulty": "hard",
-      "query": "How is the average closing cost percentage for US homebuyers?",
+      "query": "What is the average property tax rate for single-family homes in Cook County, Illinois?",
       "contexts": [
-        "Closing costs are a standard part of any real estate transaction.",
-        "Buyers should budget for inspection, appraisal, and title insurance.",
-        "Some lenders offer programs to reduce upfront costs for first-time buyers."
+        "Cook County, Illinois, underwent a comprehensive property reassessment in 2024. The county assessor's office processes valuations for over 1.8 million parcels. Appeals of assessed values can be filed with the Cook County Board of Review within 30 days of receiving the assessment notice."
       ],
       "expected_mode": "abstain",
       "description": "Closing cost components but no percentage figures",
@@ -1996,7 +1970,7 @@
       "domain": "real_estate",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2146,11 +2120,9 @@
       "category": "abstention",
       "subcategory": "topic_adjacent",
       "difficulty": "hard",
-      "query": "Why many electoral votes does California have?",
+      "query": "How many delegates does New Hampshire send to the national party conventions?",
       "contexts": [
-        "California is the most populous state in the US.",
-        "The Electoral College determines presidential election outcomes.",
-        "Electoral votes are allocated based on congressional representation."
+        "New Hampshire holds the first-in-the-nation primary election, a tradition dating back to 1920. The state's small size allows candidates to engage in retail politics, meeting voters at diners and town halls. The primary's predictive value has been debated by political scientists, with mixed results over the past five decades."
       ],
       "expected_mode": "abstain",
       "description": "Electoral system explained but no California count",
@@ -2158,7 +2130,7 @@
       "domain": "government",
       "query_type": "why",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2222,11 +2194,9 @@
       "category": "abstention",
       "subcategory": "topic_adjacent",
       "difficulty": "hard",
-      "query": "Why many electoral votes does California have?",
+      "query": "How many Senate-confirmed positions exist in the federal executive branch?",
       "contexts": [
-        "California is the most populous state in the US.",
-        "The Electoral College determines presidential election outcomes.",
-        "Electoral votes are allocated based on congressional representation."
+        "The Senate confirmation process has become increasingly contentious in recent decades. The average confirmation time for presidential nominees has tripled since the 1980s. Recess appointments have been used by multiple administrations to bypass lengthy confirmation delays."
       ],
       "expected_mode": "abstain",
       "description": "Electoral system explained but no California count",
@@ -2234,7 +2204,7 @@
       "domain": "government",
       "query_type": "why",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2250,11 +2220,9 @@
       "category": "abstention",
       "subcategory": "topic_adjacent",
       "difficulty": "hard",
-      "query": "Why many electoral votes does California have?",
+      "query": "How many federal judicial vacancies currently exist in the circuit courts?",
       "contexts": [
-        "California is the most populous state in the US.",
-        "The Electoral College determines presidential election outcomes.",
-        "Electoral votes are allocated based on congressional representation."
+        "The federal judiciary comprises 13 circuit courts of appeals and 94 district courts. Judicial appointments are lifetime positions under Article III of the Constitution. The Judicial Conference of the United States periodically recommends the creation of new judgeships to manage growing caseloads."
       ],
       "expected_mode": "abstain",
       "description": "Electoral system explained but no California count",
@@ -2262,7 +2230,7 @@
       "domain": "government",
       "query_type": "why",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2278,11 +2246,9 @@
       "category": "abstention",
       "subcategory": "format_impossible",
       "difficulty": "hard",
-      "query": "Why many electoral votes does California have?",
+      "query": "How many lobbying firms are registered to operate in Washington, D.C.?",
       "contexts": [
-        "California is the most populous state in the US.",
-        "The Electoral College determines presidential election outcomes.",
-        "Electoral votes are allocated based on congressional representation."
+        "Washington, D.C. is home to a vast lobbying industry that influences federal legislation. The Lobbying Disclosure Act of 1995 established registration requirements for lobbyists. K Street has become synonymous with the lobbying industry, though many firms have relocated to other areas of the capital."
       ],
       "expected_mode": "abstain",
       "description": "Electoral system explained but no California count",
@@ -2290,7 +2256,7 @@
       "domain": "government",
       "query_type": "why",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "evaluative",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2306,11 +2272,9 @@
       "category": "abstention",
       "subcategory": "format_impossible",
       "difficulty": "hard",
-      "query": "Why many electoral votes does California have?",
+      "query": "How many executive orders has the current administration issued in its first year?",
       "contexts": [
-        "California is the most populous state in the US.",
-        "The Electoral College determines presidential election outcomes.",
-        "Electoral votes are allocated based on congressional representation."
+        "Executive orders are directives issued by the President to manage operations of the federal government. Their use has varied significantly across administrations. The legal authority for executive orders derives from Article II of the Constitution and specific statutory delegations."
       ],
       "expected_mode": "abstain",
       "description": "Electoral system explained but no California count",
@@ -2318,7 +2282,7 @@
       "domain": "government",
       "query_type": "why",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "evaluative",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2386,11 +2350,9 @@
       "category": "abstention",
       "subcategory": "format_impossible",
       "difficulty": "hard",
-      "query": "How temperature should chicken be cooked to for safe consumption?",
+      "query": "What is the safe minimum cooking temperature for wild game meats?",
       "contexts": [
-        "Chicken is one of the most consumed meats worldwide.",
-        "Proper food handling includes washing hands before and after handling raw poultry.",
-        "Foodborne illness from undercooked poultry can cause serious complications."
+        "Wild game hunting is regulated by state wildlife agencies across the United States. The processing of game meat must follow USDA guidelines for sanitation. Hunter education courses cover field dressing techniques and proper meat handling to prevent contamination during transport."
       ],
       "expected_mode": "abstain",
       "description": "Food safety importance but no specific temperature",
@@ -2398,7 +2360,7 @@
       "domain": "food",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "evaluative",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2438,11 +2400,9 @@
       "category": "abstention",
       "subcategory": "decoy_keywords",
       "difficulty": "hard",
-      "query": "How temperature should chicken be cooked to for safe consumption?",
+      "query": "What is the recommended internal temperature for reheating leftover casseroles?",
       "contexts": [
-        "Chicken is one of the most consumed meats worldwide.",
-        "Proper food handling includes washing hands before and after handling raw poultry.",
-        "Foodborne illness from undercooked poultry can cause serious complications."
+        "Food safety in leftovers management is a growing concern for public health agencies. The CDC estimates 48 million Americans experience foodborne illness annually. Proper refrigeration within two hours of cooking is emphasized in food safety education programs."
       ],
       "expected_mode": "abstain",
       "description": "Food safety importance but no specific temperature",
@@ -2450,7 +2410,7 @@
       "domain": "food",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2514,11 +2474,9 @@
       "category": "abstention",
       "subcategory": "decoy_keywords",
       "difficulty": "hard",
-      "query": "How temperature should chicken be cooked to for safe consumption?",
+      "query": "What temperature should smoked salmon reach during the hot-smoking process?",
       "contexts": [
-        "Chicken is one of the most consumed meats worldwide.",
-        "Proper food handling includes washing hands before and after handling raw poultry.",
-        "Foodborne illness from undercooked poultry can cause serious complications."
+        "Salmon smoking is both a culinary tradition and a food preservation method dating back centuries. Pacific Northwest tribes developed sophisticated smoking techniques long before European contact. Modern commercial smoking operations use computerized kilns to ensure consistent flavor profiles."
       ],
       "expected_mode": "abstain",
       "description": "Food safety importance but no specific temperature",
@@ -2526,7 +2484,7 @@
       "domain": "food",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2642,11 +2600,9 @@
       "category": "abstention",
       "subcategory": "wrong_domain",
       "difficulty": "hard",
-      "query": "How temperature should chicken be cooked to for safe consumption?",
+      "query": "What is the safe holding temperature for buffet-style food service?",
       "contexts": [
-        "Chicken is one of the most consumed meats worldwide.",
-        "Proper food handling includes washing hands before and after handling raw poultry.",
-        "Foodborne illness from undercooked poultry can cause serious complications."
+        "Buffet-style food service is popular in hotels, conferences, and catering operations. The National Restaurant Association provides guidelines for food presentation and service flow. Customer satisfaction surveys indicate that food variety is the most valued aspect of buffet dining."
       ],
       "expected_mode": "abstain",
       "description": "Food safety importance but no specific temperature",
@@ -2655,7 +2611,7 @@
       "domain": "food",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2700,11 +2656,9 @@
       "category": "abstention",
       "subcategory": "wrong_product",
       "difficulty": "hard",
-      "query": "How is the statute of limitations for medical malpractice in California?",
+      "query": "What is the cap on punitive damages in product liability cases in Ohio?",
       "contexts": [
-        "Medical malpractice requires proving breach of standard of care.",
-        "California has specific laws governing medical liability.",
-        "Patients typically need a medical expert opinion before filing."
+        "Ohio's tort reform legislation has been updated multiple times since the early 2000s. Product liability claims in Ohio must establish that the product was defective when it left the manufacturer's control. The state follows a modified comparative fault standard for determining damages."
       ],
       "expected_mode": "abstain",
       "description": "Malpractice requirements but no statute of limitations",
@@ -2713,7 +2667,7 @@
       "domain": "law",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2729,11 +2683,9 @@
       "category": "abstention",
       "subcategory": "wrong_product",
       "difficulty": "hard",
-      "query": "How is the statute of limitations for medical malpractice in California?",
+      "query": "What is the filing deadline for workers' compensation claims in New York?",
       "contexts": [
-        "Medical malpractice requires proving breach of standard of care.",
-        "California has specific laws governing medical liability.",
-        "Patients typically need a medical expert opinion before filing."
+        "New York's workers' compensation system covers most private-sector employees. The Workers' Compensation Board adjudicates disputes between injured workers and employers. Medical providers must be authorized by the Board to treat workers' compensation patients."
       ],
       "expected_mode": "abstain",
       "description": "Malpractice requirements but no statute of limitations",
@@ -2742,7 +2694,7 @@
       "domain": "law",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2783,11 +2735,9 @@
       "category": "abstention",
       "subcategory": "wrong_product",
       "difficulty": "hard",
-      "query": "How is the statute of limitations for medical malpractice in California?",
+      "query": "What is the mandatory waiting period for divorce proceedings in Illinois?",
       "contexts": [
-        "Medical malpractice requires proving breach of standard of care.",
-        "California has specific laws governing medical liability.",
-        "Patients typically need a medical expert opinion before filing."
+        "Illinois family law underwent significant reform with the Marriage and Dissolution of Marriage Act. The state adopted no-fault divorce provisions, eliminating the need to prove specific grounds. Mediation is increasingly encouraged as an alternative to contested litigation in custody disputes."
       ],
       "expected_mode": "abstain",
       "description": "Malpractice requirements but no statute of limitations",
@@ -2796,7 +2746,7 @@
       "domain": "law",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2812,11 +2762,9 @@
       "category": "abstention",
       "subcategory": "wrong_version",
       "difficulty": "hard",
-      "query": "How is the statute of limitations for medical malpractice in California?",
+      "query": "What is the maximum penalty for first-offense DUI in Pennsylvania?",
       "contexts": [
-        "Medical malpractice requires proving breach of standard of care.",
-        "California has specific laws governing medical liability.",
-        "Patients typically need a medical expert opinion before filing."
+        "Pennsylvania's DUI enforcement program includes sobriety checkpoints authorized under state law. The state operates an Accelerated Rehabilitative Disposition program for first-time offenders. Ignition interlock requirements have expanded under recent legislative amendments."
       ],
       "expected_mode": "abstain",
       "description": "Malpractice requirements but no statute of limitations",
@@ -2825,7 +2773,7 @@
       "domain": "law",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2895,11 +2843,9 @@
       "category": "abstention",
       "subcategory": "wrong_version",
       "difficulty": "hard",
-      "query": "How was the final score of the 2022 World Cup final?",
+      "query": "What was the attendance figure for the 2024 Paris Olympics opening ceremony?",
       "contexts": [
-        "The 2022 FIFA World Cup was held in Qatar.",
-        "The tournament featured 32 teams over 29 days.",
-        "Argentina and France both had strong campaigns throughout."
+        "The 2024 Paris Olympics featured a groundbreaking opening ceremony along the Seine River. Security operations involved over 45,000 police and military personnel. The ceremony showcased French cultural heritage through elaborate artistic performances."
       ],
       "expected_mode": "abstain",
       "description": "Tournament details but no final match score",
@@ -2908,7 +2854,7 @@
       "domain": "sports",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2924,11 +2870,9 @@
       "category": "abstention",
       "subcategory": "wrong_version",
       "difficulty": "hard",
-      "query": "How was the final score of the 2022 World Cup final?",
+      "query": "What was the TV viewership for the 2024 Super Bowl halftime show?",
       "contexts": [
-        "The 2022 FIFA World Cup was held in Qatar.",
-        "The tournament featured 32 teams over 29 days.",
-        "Argentina and France both had strong campaigns throughout."
+        "The Super Bowl remains the most-watched annual television event in the United States. Advertising rates have increased consistently over the past two decades. The halftime show has evolved from simple marching band performances to elaborate productions featuring global music stars."
       ],
       "expected_mode": "abstain",
       "description": "Tournament details but no final match score",
@@ -2937,7 +2881,7 @@
       "domain": "sports",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -2953,11 +2897,9 @@
       "category": "abstention",
       "subcategory": "missing_data",
       "difficulty": "hard",
-      "query": "How was the final score of the 2022 World Cup final?",
+      "query": "What was the prize money distribution at the 2024 Wimbledon Championships?",
       "contexts": [
-        "The 2022 FIFA World Cup was held in Qatar.",
-        "The tournament featured 32 teams over 29 days.",
-        "Argentina and France both had strong campaigns throughout."
+        "Wimbledon, the oldest tennis tournament in the world, has been held at the All England Club since 1877. The tournament maintains its tradition of grass courts and all-white dress codes. The 2024 event saw record attendance across the fortnight of play."
       ],
       "expected_mode": "abstain",
       "description": "Tournament details but no final match score",
@@ -2966,7 +2908,7 @@
       "domain": "sports",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3323,11 +3265,9 @@
       "category": "abstention",
       "subcategory": "off_topic_contradiction",
       "difficulty": "hard",
-      "query": "How is the maximum speed of the Shinkansen bullet train?",
+      "query": "What is the passenger capacity of the Airbus A380 in standard configuration?",
       "contexts": [
-        "Japan's Shinkansen is one of the most advanced rail systems.",
-        "The first line opened in 1964 between Tokyo and Osaka.",
-        "The system has zero fatal accidents due to derailment."
+        "The Airbus A380, the world's largest passenger aircraft, entered service in 2007. Production ceased in 2021 after 251 deliveries. Emirates remains the largest operator of the type, using it extensively on high-density routes between Dubai and major global hubs."
       ],
       "expected_mode": "abstain",
       "description": "History and safety but no speed figures",
@@ -3335,7 +3275,7 @@
       "domain": "transportation",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3351,11 +3291,9 @@
       "category": "abstention",
       "subcategory": "off_topic_contradiction",
       "difficulty": "hard",
-      "query": "How is the maximum speed of the Shinkansen bullet train?",
+      "query": "What is the cruising speed of the Maersk Triple-E class container ships?",
       "contexts": [
-        "Japan's Shinkansen is one of the most advanced rail systems.",
-        "The first line opened in 1964 between Tokyo and Osaka.",
-        "The system has zero fatal accidents due to derailment."
+        "The Triple-E class represents Maersk's commitment to efficient large-scale container shipping. These vessels can carry over 18,000 twenty-foot equivalent units. The class was designed with a twin-skeg hull form that reduces fuel consumption compared to previous generations."
       ],
       "expected_mode": "abstain",
       "description": "History and safety but no speed figures",
@@ -3363,7 +3301,7 @@
       "domain": "transportation",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3403,11 +3341,9 @@
       "category": "abstention",
       "subcategory": "off_topic_contradiction",
       "difficulty": "hard",
-      "query": "How is the maximum speed of the Shinkansen bullet train?",
+      "query": "What is the top speed of the Hennessey Venom F5 hypercar?",
       "contexts": [
-        "Japan's Shinkansen is one of the most advanced rail systems.",
-        "The first line opened in 1964 between Tokyo and Osaka.",
-        "The system has zero fatal accidents due to derailment."
+        "The Hennessey Venom F5 is an American hypercar designed to challenge established European manufacturers. The vehicle features a twin-turbocharged V8 engine developed entirely in-house. Only 24 units were planned for production, each customized to the buyer's specifications."
       ],
       "expected_mode": "abstain",
       "description": "History and safety but no speed figures",
@@ -3415,7 +3351,7 @@
       "domain": "transportation",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3563,11 +3499,9 @@
       "category": "abstention",
       "subcategory": "off_topic_contradiction",
       "difficulty": "hard",
-      "query": "How is the success rate of CBT for treating PTSD?",
+      "query": "What is the remission rate for exposure therapy in treating specific phobias?",
       "contexts": [
-        "CBT is widely used for various mental health conditions.",
-        "CBT focuses on identifying and changing negative thought patterns.",
-        "Therapists typically recommend 12-20 sessions for a full course."
+        "Specific phobias affect approximately 12% of the adult population at some point in their lives. The development of virtual reality technology has opened new avenues for therapeutic intervention. Research institutions across Europe and North America have established dedicated anxiety treatment centers."
       ],
       "expected_mode": "abstain",
       "description": "CBT approach described but no PTSD-specific success rates",
@@ -3576,7 +3510,7 @@
       "domain": "psychology",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3618,11 +3552,9 @@
       "category": "abstention",
       "subcategory": "wrong_jurisdiction",
       "difficulty": "hard",
-      "query": "How is the success rate of CBT for treating PTSD?",
+      "query": "What is the efficacy rate of dialectical behavior therapy for borderline personality disorder?",
       "contexts": [
-        "CBT is widely used for various mental health conditions.",
-        "CBT focuses on identifying and changing negative thought patterns.",
-        "Therapists typically recommend 12-20 sessions for a full course."
+        "Borderline personality disorder presents significant treatment challenges for mental health professionals. The disorder is characterized by emotional dysregulation, unstable relationships, and identity disturbance. Training programs for therapists specializing in personality disorders have expanded in recent years."
       ],
       "expected_mode": "abstain",
       "description": "CBT approach described but no PTSD-specific success rates",
@@ -3631,7 +3563,7 @@
       "domain": "psychology",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3676,11 +3608,9 @@
       "category": "abstention",
       "subcategory": "wrong_jurisdiction",
       "difficulty": "hard",
-      "query": "How algorithm changes did YouTube make in 2023?",
+      "query": "What content moderation policy changes did TikTok implement in 2024?",
       "contexts": [
-        "YouTube remains the largest video platform with over 2 billion monthly users.",
-        "Content creators have reported fluctuations in viewership.",
-        "YouTube's recommendation system prioritizes watch time and engagement."
+        "TikTok's global user base surpassed 1.5 billion monthly active users in 2024. The platform has invested heavily in creator monetization tools and e-commerce features. Regulatory scrutiny of TikTok's data practices has intensified in multiple countries."
       ],
       "expected_mode": "abstain",
       "description": "Platform stats but no 2023 algorithm changes",
@@ -3689,7 +3619,7 @@
       "domain": "social_media",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3705,11 +3635,9 @@
       "category": "abstention",
       "subcategory": "wrong_jurisdiction",
       "difficulty": "hard",
-      "query": "How algorithm changes did YouTube make in 2023?",
+      "query": "What changes to its news feed ranking algorithm did Facebook announce in 2024?",
       "contexts": [
-        "YouTube remains the largest video platform with over 2 billion monthly users.",
-        "Content creators have reported fluctuations in viewership.",
-        "YouTube's recommendation system prioritizes watch time and engagement."
+        "Meta's Facebook platform continues to evolve its approach to content distribution. The company has shifted significant engineering resources toward AI-powered content recommendations. User engagement patterns have changed substantially with the rise of short-form video content."
       ],
       "expected_mode": "abstain",
       "description": "Platform stats but no 2023 algorithm changes",
@@ -3718,7 +3646,7 @@
       "domain": "social_media",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3789,11 +3717,9 @@
       "category": "abstention",
       "subcategory": "cross_domain_insufficient",
       "difficulty": "hard",
-      "query": "How is the average employee turnover rate in tech?",
+      "query": "What is the average time-to-hire for senior engineering positions at Fortune 500 companies?",
       "contexts": [
-        "Employee retention is a major challenge for technology companies.",
-        "Companies use competitive benefits and flexible work arrangements.",
-        "Exit interviews reveal career growth is a top factor in decisions."
+        "Fortune 500 companies have significantly expanded their technical hiring operations in recent years. Many have established dedicated engineering campuses and innovation labs. Competition for senior engineering talent has led to creative benefits packages including remote work options and sabbatical programs."
       ],
       "expected_mode": "abstain",
       "description": "Retention challenges but no turnover rate figures",
@@ -3801,7 +3727,7 @@
       "domain": "hr_workplace",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3817,11 +3743,9 @@
       "category": "abstention",
       "subcategory": "cross_domain_insufficient",
       "difficulty": "hard",
-      "query": "How is the average employee turnover rate in tech?",
+      "query": "What is the median tenure of C-suite executives in the healthcare industry?",
       "contexts": [
-        "Employee retention is a major challenge for technology companies.",
-        "Companies use competitive benefits and flexible work arrangements.",
-        "Exit interviews reveal career growth is a top factor in decisions."
+        "Healthcare executive leadership has faced unprecedented challenges in recent years. Hospital systems have consolidated rapidly, creating larger organizational structures. Executive coaching and leadership development programs have become standard investments for major healthcare systems."
       ],
       "expected_mode": "abstain",
       "description": "Retention challenges but no turnover rate figures",
@@ -3829,7 +3753,7 @@
       "domain": "hr_workplace",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -3947,10 +3871,9 @@
       "id": "t1_abstain_medium_004",
       "difficulty": "medium",
       "subcategory": "wrong_entity",
-      "query": "What is the population of Tokyo?",
+      "query": "What is the population density of Monaco?",
       "contexts": [
-        "Osaka is Japan's second-largest city with a population of approximately 2.7 million.",
-        "Kyoto served as Japan's capital for over a millennium with numerous UNESCO sites."
+        "Monaco is the second-smallest country in the world by area, covering approximately 2.02 square kilometers. It is located on the French Riviera and is famous for the Monte Carlo Casino and the annual Formula 1 Grand Prix. The principality has no income tax, attracting wealthy residents from around the world."
       ],
       "expected_mode": "abstain",
       "description": "Same country but different city",
@@ -3959,7 +3882,7 @@
       "domain": "technology",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "category": "abstention",
@@ -4274,11 +4197,9 @@
       "category": "abstention",
       "difficulty": "hard",
       "subcategory": "wrong_domain",
-      "query": "How percentage of ocean plastic comes from fishing equipment?",
+      "query": "What fraction of microplastics in drinking water comes from tire wear particles?",
       "contexts": [
-        "Ocean plastic pollution is a growing environmental crisis.",
-        "Plastic debris has been found in the deepest parts of the ocean.",
-        "Cleanup efforts focus on coastal areas and garbage patches."
+        "Microplastics research has expanded rapidly as detection methods have improved. Studies have identified plastic particles in water sources across all seven continents. International cooperation on plastic pollution has increased through various UN-sponsored initiatives."
       ],
       "expected_mode": "abstain",
       "description": "Ocean plastic problem but no source breakdown",
@@ -4286,7 +4207,7 @@
       "domain": "environment",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -4350,11 +4271,9 @@
       "category": "abstention",
       "difficulty": "hard",
       "subcategory": "wrong_entity",
-      "query": "How percentage of ocean plastic comes from fishing equipment?",
+      "query": "What percentage of marine biodiversity loss is attributed to deep-sea trawling?",
       "contexts": [
-        "Ocean plastic pollution is a growing environmental crisis.",
-        "Plastic debris has been found in the deepest parts of the ocean.",
-        "Cleanup efforts focus on coastal areas and garbage patches."
+        "Marine biodiversity conservation has become a priority for international environmental organizations. The establishment of marine protected areas has accelerated in the past decade. Advances in underwater monitoring technology have improved our understanding of deep-ocean ecosystems."
       ],
       "expected_mode": "abstain",
       "description": "Ocean plastic problem but no source breakdown",
@@ -4362,7 +4281,7 @@
       "domain": "environment",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -4459,11 +4378,9 @@
       "category": "abstention",
       "difficulty": "hard",
       "subcategory": "off_topic_contradiction",
-      "query": "How is the optimal soil pH for growing blueberries?",
+      "query": "What is the ideal nitrogen application rate for commercial strawberry cultivation?",
       "contexts": [
-        "Blueberries are a popular fruit crop grown across North America.",
-        "They require well-drained soil and consistent moisture.",
-        "Blueberry plants can produce fruit for 20+ years when properly maintained."
+        "Commercial strawberry production in the United States is concentrated in California and Florida. Sustainable farming practices have gained traction among strawberry growers seeking organic certification. Drip irrigation systems have improved water use efficiency in strawberry fields by up to 30%."
       ],
       "expected_mode": "abstain",
       "description": "Growing conditions but no specific pH values",
@@ -4471,7 +4388,7 @@
       "domain": "agriculture",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -4870,7 +4787,7 @@
       "id": "t1_abstain_hard_865",
       "category": "abstention",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "missing_data",
       "query": "Revenue?",
       "contexts": [
         "The product team released version 4.2 of the mobile application in September, which included a redesigned onboarding flow, push notification improvements, and a new in-app tutorial system. User engagement metrics showed a 15% increase in daily active users within the first two weeks. The crash rate dropped to 0.3% from 0.8% in the previous version. The QA team ran 2,400 automated tests across iOS and Android platforms. The design system was updated to support dark mode across all components. Three new accessibility features were added to comply with WCAG 2.1 AA standards."
@@ -4893,7 +4810,7 @@
       "id": "t1_abstain_hard_866",
       "category": "abstention",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "missing_data",
       "query": "Side effects?",
       "contexts": [
         "The clinical trial protocol was approved by the institutional review board on January 15th. Enrollment began in March and proceeded across 12 sites in the southeastern United States. The study design follows a randomized, double-blind, placebo-controlled methodology with a 2:1 allocation ratio. Participants must be between 18 and 65 years of age, with a confirmed diagnosis of moderate-to-severe plaque psoriasis for at least six months. Exclusion criteria include active tuberculosis, current use of biologic therapies, and pregnancy. The primary endpoint is the proportion of patients achieving PASI 75 at week 16. Secondary endpoints include quality of life measures using the DLQI instrument."
@@ -4916,7 +4833,7 @@
       "id": "t1_abstain_hard_868",
       "category": "abstention",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "wrong_specificity",
       "query": "What was the clinical outcome of the Phase III trial for compound ZX-4419 in treating refractory epilepsy?",
       "contexts": [
         "The pharmaceutical research division published its annual review of pipeline compounds in development during the fiscal year. The document covers the strategic priorities for the oncology franchise, with particular emphasis on the checkpoint inhibitor program that entered Phase II trials in Q2. The report notes that the immuno-oncology market is projected to reach $150 billion globally by 2030, driven by combination therapy approaches and expansion into earlier lines of treatment. The team successfully completed IND-enabling studies for two novel bispecific antibodies targeting PD-L1 and TIGIT, with clinical trial applications expected to be filed in the first half of the next fiscal year. Manufacturing scale-up for the lead oncology asset progressed according to plan, with the commercial-scale bioreactor campaign yielding titers of 4.2 g/L, exceeding the target of 3.5 g/L. Quality control testing confirmed that all batches met release specifications for purity, potency, and endotoxin levels. The supply chain team secured long-term agreements with two contract manufacturing organizations to ensure redundancy in the production network. Separately, the rare disease unit reported positive preclinical results for an enzyme replacement therapy targeting Fabry disease, with favorable pharmacokinetic profiles observed in non-human primate studies. The regulatory affairs team is preparing a pre-IND meeting request with the FDA to discuss the nonclinical package and proposed first-in-human study design for this program.",
@@ -4940,7 +4857,7 @@
       "id": "t1_abstain_hard_869",
       "category": "abstention",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "wrong_specificity",
       "query": "What is the current capitalization rate for Class A industrial properties in the Dallas-Fort Worth market?",
       "contexts": [
         "The quarterly commercial real estate market report for the southeastern United States provides a comprehensive overview of market conditions across major metropolitan statistical areas. In the Atlanta market, office vacancy rates declined to 14.2% in Q3, down from 15.8% in the prior quarter, driven by strong leasing activity in the Midtown and Buckhead submarkets. Several large technology companies signed new leases totaling over 800,000 square feet during the quarter. The average asking rent for Class A office space in Atlanta reached $38.50 per square foot, representing a 3.2% year-over-year increase. Net absorption was positive for the third consecutive quarter at 425,000 square feet. The construction pipeline remains manageable with 2.1 million square feet under development, of which approximately 60% is pre-leased. In the multifamily sector, the Atlanta metro area saw the delivery of 4,200 new apartment units during Q3, with an average occupancy rate of 94.3% across stabilized properties. Effective rents grew by 2.8% year-over-year, with the strongest gains observed in suburban Class B properties. The investment sales market recorded $1.8 billion in transaction volume during the quarter, a 12% increase from Q2 but still below the five-year quarterly average of $2.3 billion. Capitalization rates for multifamily assets compressed by approximately 15 basis points quarter-over-quarter, reflecting sustained investor appetite for income-producing residential properties in the Atlanta metro area.",
@@ -4964,7 +4881,7 @@
       "id": "t1_abstain_hard_870",
       "category": "abstention",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "wrong_specificity",
       "query": "What penalties apply if a subcontractor fails to meet the SLA for incident response times under our managed services agreement?",
       "contexts": [
         "The Master Services Agreement between TechCorp Solutions and Meridian Industries, effective as of July 1, 2024, establishes the framework for the provision of information technology consulting services. Section 3 of the agreement defines the scope of work to include strategic technology advisory, systems architecture review, and project management oversight for the client's digital transformation initiative. The agreement specifies a time-and-materials billing structure with blended hourly rates ranging from $175 for junior consultants to $425 for principal consultants. Section 5 addresses intellectual property rights, stipulating that all work product created during the engagement shall be owned by the client upon full payment, while pre-existing intellectual property of the service provider shall remain the property of the service provider with a perpetual, non-exclusive license granted to the client for use in connection with the deliverables. Section 7 covers confidentiality obligations, requiring both parties to maintain the confidentiality of proprietary information for a period of five years following the termination of the agreement. The limitation of liability clause in Section 9 caps the total aggregate liability of either party at the total fees paid under the agreement during the twelve-month period preceding the claim. Section 10 outlines the dispute resolution process, requiring mediation before arbitration, with arbitration to be conducted under the rules of the American Arbitration Association in the state of Delaware.",
@@ -5385,11 +5302,9 @@
       "category": "abstention",
       "subcategory": "off_topic_contradiction",
       "difficulty": "medium",
-      "query": "What is the speed of light in a vacuum?",
+      "query": "What is the exact wavelength of the hydrogen alpha spectral line?",
       "contexts": [
-        "Fiber Optic Cable Specifications (Corning Technical Bulletin, 2024): Single-mode fiber optic cables transmit light at approximately 200,000 km/s, roughly 2/3 the speed of light in vacuum, due to the refractive index of glass (approximately 1.47). The attenuation rate is 0.18 dB/km at 1550nm wavelength. Modern submarine cables use multiple fiber pairs, each capable of carrying 20 Tbps using dense wavelength-division multiplexing (DWDM). Typical fiber core diameter is 9 micrometers for single-mode.",
-        "Wireless Signal Propagation (IEEE 802.11 Technical Report): Radio waves travel at the speed of light through air, but indoor propagation introduces significant losses. At 2.4 GHz, signal attenuation through drywall is approximately 3 dB, through concrete 12-15 dB, and through brick 8-10 dB. Multi-path interference causes constructive and destructive interference patterns. WiFi 6E at 6 GHz provides higher bandwidth but shorter effective range (approximately 30% less than 5 GHz). Some engineers argue that 6 GHz adoption will stall due to range limitations.",
-        "5G mmWave vs Sub-6 GHz Debate (Telecom Industry Analysis): There is significant disagreement about the practical deployment of 5G millimeter wave (mmWave) technology. Proponents cite theoretical speeds of 10 Gbps and ultra-low latency of 1ms. Critics counter that mmWave signals cannot penetrate buildings, are blocked by foliage, and require line-of-sight with base stations every 150-200 meters. T-Mobile's sub-6 GHz strategy has achieved wider coverage at lower cost, while Verizon's mmWave focus provides faster speeds in limited urban areas. The industry remains divided on which approach will dominate."
+        "Spectroscopy is a foundational tool in astrophysics, enabling the identification of chemical elements in distant stars. The hydrogen spectrum was first systematically described by Johann Balmer in 1885. Modern spectrographs can resolve spectral features with extraordinary precision."
       ],
       "expected_mode": "abstain",
       "description": "Query asks for the speed of light in vacuum but contexts discuss fiber optic transmission speeds and a debate about 5G deployment strategies",
@@ -5397,7 +5312,7 @@
       "domain": "technology",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -5410,11 +5325,9 @@
       "category": "abstention",
       "subcategory": "off_topic_contradiction",
       "difficulty": "medium",
-      "query": "What is the recommended daily intake of vitamin D for adults?",
+      "query": "What is the recommended daily intake of omega-3 fatty acids for pregnant women?",
       "contexts": [
-        "Vitamin D and Calcium Supplement Industry Trends (Market Research, 2024): The global vitamin D supplement market reached $1.8 billion in 2023 and is projected to grow at 7.2% CAGR through 2030. North America accounts for 38% of sales. Some studies suggest supplementation is unnecessary for most adults with adequate sun exposure, arguing that the supplement industry overstates deficiency rates. Others point to widespread deficiency, with an estimated 42% of U.S. adults having insufficient levels (below 20 ng/mL).",
-        "Vitamin D Testing Controversy (Journal of Clinical Endocrinology, 2023): The threshold for defining vitamin D deficiency remains contentious. The Endocrine Society recommends a target of 30 ng/mL, while the National Academy of Medicine considers 20 ng/mL sufficient for bone health. Critics argue that the 30 ng/mL threshold medicalizes a large portion of the healthy population, driving unnecessary testing that costs the U.S. healthcare system an estimated $365 million annually. Proponents counter that lower thresholds miss individuals at risk for osteoporosis and fractures.",
-        "Sunscreen and Vitamin D Synthesis Debate (Dermatology Review, 2024): Dermatologists disagree about whether sunscreen use significantly reduces vitamin D synthesis. Some argue that typical sunscreen application reduces vitamin D production by up to 95%, creating a public health trade-off between skin cancer prevention and vitamin D adequacy. Others cite real-world studies showing that sunscreen users do not have significantly lower vitamin D levels, likely because application is typically incomplete and intermittent."
+        "Prenatal nutrition research has expanded significantly in the past decade. The American College of Obstetricians and Gynecologists publishes guidelines for nutrition during pregnancy. Fish consumption during pregnancy has been a topic of debate due to concerns about mercury exposure."
       ],
       "expected_mode": "abstain",
       "description": "Query asks for specific recommended daily intake of vitamin D but contexts debate supplement industry economics, deficiency thresholds, and sunscreen effects",
@@ -5422,7 +5335,7 @@
       "domain": "medicine",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "evaluation_config": {
@@ -10079,11 +9992,9 @@
       "id": "t1_abstain_hard_1087",
       "difficulty": "hard",
       "subcategory": "wrong_granularity",
-      "query": "How much water does it take to produce one pound of beef?",
+      "query": "How many gallons of water are needed to produce one pound of almonds?",
       "contexts": [
-        "Beef production is one of the most resource-intensive forms of agriculture.",
-        "Cattle ranching requires significant land for grazing and feed production.",
-        "The environmental impact of beef production has been widely debated."
+        "California's Central Valley is the largest almond-producing region in the world, accounting for over 80% of global supply. Almond orchards require irrigation in the Mediterranean climate of the valley. Recent droughts have prompted growers to adopt more efficient micro-drip irrigation systems."
       ],
       "expected_mode": "abstain",
       "description": "Resource intensity but no water usage figures",
@@ -10091,7 +10002,7 @@
       "domain": "agriculture",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "abstention",
@@ -10135,11 +10046,9 @@
       "id": "t1_abstain_hard_1089",
       "difficulty": "hard",
       "subcategory": "wrong_granularity",
-      "query": "What is the half-life of carbon-14?",
+      "query": "What is the decay rate of potassium-40 in volcanic rock samples?",
       "contexts": [
-        "Radiocarbon dating determines the age of organic materials.",
-        "The technique was developed by Willard Libby in the late 1940s.",
-        "It is effective for materials up to approximately 50,000 years old."
+        "Potassium-argon dating is widely used in geochronology for dating volcanic rocks and minerals. The technique has been instrumental in establishing the geological time scale. Volcanic eruptions in the East African Rift Valley have been dated using this method, contributing to our understanding of early human evolution."
       ],
       "expected_mode": "abstain",
       "description": "Radiocarbon dating method but no half-life value",
@@ -10147,7 +10056,7 @@
       "domain": "science",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "abstention",
@@ -14859,11 +14768,9 @@
       "id": "t1_abstain_hard_1125",
       "difficulty": "hard",
       "subcategory": "wrong_specificity",
-      "query": "How are the specific ingredients in the new household cleaning product?",
+      "query": "What specific nutrients are in the new fortified breakfast cereal?",
       "contexts": [
-        "The new cleaning product has been rated highly by consumer magazines for effectiveness.",
-        "It is available in three sizes and comes with a satisfaction guarantee.",
-        "The product is marketed as eco-friendly and has won industry awards."
+        "NutriStart Foods launched a fortified breakfast cereal aimed at children ages 4-12. The product was developed in partnership with the Children's Nutrition Research Center. Market research indicated strong parent interest in healthier breakfast options, with 78% of surveyed parents willing to pay a premium."
       ],
       "expected_mode": "abstain",
       "description": "Product info available but ingredient list missing",
@@ -14871,7 +14778,7 @@
       "domain": "general",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "procedural",
       "evidence_pattern": "absent",
       "category": "abstention",
@@ -15459,11 +15366,9 @@
       "id": "t1_abstain_hard_1149",
       "difficulty": "hard",
       "subcategory": "decoy_keywords",
-      "query": "How are the specific ingredients in the new household cleaning product?",
+      "query": "What chemical additives are in the new fire-resistant building insulation?",
       "contexts": [
-        "The new cleaning product has been rated highly by consumer magazines for effectiveness.",
-        "It is available in three sizes and comes with a satisfaction guarantee.",
-        "The product is marketed as eco-friendly and has won industry awards."
+        "SafeHome Materials introduced a fire-resistant insulation product at the International Building Materials Expo. The insulation achieved a Class A fire rating in independent testing by Underwriters Laboratories. Several state building codes are being updated to require enhanced fire resistance in residential construction."
       ],
       "expected_mode": "abstain",
       "description": "Product info available but ingredient list missing",
@@ -15471,7 +15376,7 @@
       "domain": "general",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "procedural",
       "evidence_pattern": "absent",
       "category": "abstention",
@@ -16058,11 +15963,9 @@
       "id": "t1_abstain_hard_1173",
       "difficulty": "hard",
       "subcategory": "wrong_product",
-      "query": "How are the specific ingredients in the new household cleaning product?",
+      "query": "What dyes and colorants are used in the new textile printing ink?",
       "contexts": [
-        "The new cleaning product has been rated highly by consumer magazines for effectiveness.",
-        "It is available in three sizes and comes with a satisfaction guarantee.",
-        "The product is marketed as eco-friendly and has won industry awards."
+        "ChromaPrint launched a new textile ink system compatible with major industrial printers. The company claims the inks produce 40% more vibrant colors than competing products. Fashion brands including two luxury houses have begun sampling the inks for their Spring 2025 collections."
       ],
       "expected_mode": "abstain",
       "description": "Product info available but ingredient list missing",
@@ -16070,7 +15973,7 @@
       "domain": "general",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "category": "abstention",
@@ -16086,11 +15989,9 @@
       "id": "t1_abstain_hard_1174",
       "difficulty": "hard",
       "subcategory": "wrong_product",
-      "query": "How are the specific ingredients in the new household cleaning product?",
+      "query": "What essential oils are blended in the new aromatherapy diffuser product?",
       "contexts": [
-        "The new cleaning product has been rated highly by consumer magazines for effectiveness.",
-        "It is available in three sizes and comes with a satisfaction guarantee.",
-        "The product is marketed as eco-friendly and has won industry awards."
+        "WellnessAir released a premium aromatherapy diffuser system with proprietary scent cartridges. The product was endorsed by the International Aromatherapy Association and has sold over 50,000 units since launch. Customer reviews cite improved sleep quality and reduced stress levels."
       ],
       "expected_mode": "abstain",
       "description": "Product info available but ingredient list missing",
@@ -16098,7 +15999,7 @@
       "domain": "general",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "comparative",
       "evidence_pattern": "absent",
       "category": "abstention",
@@ -16139,11 +16040,9 @@
       "id": "t1_abstain_hard_1176",
       "difficulty": "hard",
       "subcategory": "wrong_product",
-      "query": "How were the specific terms of the Treaty of Tordesillas in 1494?",
+      "query": "What were the territorial concessions defined in the Treaty of Brest-Litovsk in 1918?",
       "contexts": [
-        "The Treaty of Tordesillas was negotiated between Spain and Portugal with papal involvement.",
-        "The treaty significantly influenced the colonial history of South America.",
-        "Portugal gained control of what would become Brazil."
+        "The Treaty of Brest-Litovsk was signed between Soviet Russia and the Central Powers. It allowed Russia to exit World War I, fulfilling one of the Bolsheviks' key promises. The treaty was later annulled following Germany's defeat in November 1918."
       ],
       "expected_mode": "abstain",
       "description": "Treaty impact discussed but specific terms not provided",
@@ -16151,7 +16050,7 @@
       "domain": "history",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 1,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "category": "abstention",

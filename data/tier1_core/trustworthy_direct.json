@@ -2678,7 +2678,7 @@
       "id": "t1_confident_hard_750",
       "category": "trustworthy_direct",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "clear_explanation",
       "query": "What is crop rotation and why is it important?",
       "contexts": [
         "Crop rotation is growing different crops in sequential seasons on the same plot. A typical rotation: corn, then soybeans, then wheat, then cover crop. Benefits include: breaking pest cycles (25-50% less pesticide), improving soil structure, managing fertility naturally (legumes fix 40-200 lbs nitrogen per acre), and reducing erosion.",
@@ -2705,7 +2705,7 @@
       "id": "t1_confident_hard_751",
       "category": "trustworthy_direct",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "clear_explanation",
       "query": "How does drip irrigation work and what are its advantages?",
       "contexts": [
         "Drip irrigation delivers water directly to plant root zones through a network of pipes, tubing, and emitters spaced along crop rows. Water is released slowly at 2-4 liters per hour per emitter, maintaining consistent soil moisture. This reduces water usage by 30-50% compared to flood irrigation and eliminates water contact with leaves, reducing fungal disease by up to 80%. The system can also deliver dissolved fertilizer (fertigation) directly to roots.",
@@ -2732,7 +2732,7 @@
       "id": "t1_confident_hard_752",
       "category": "trustworthy_direct",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "technical_documented",
       "query": "What is the maximum allowable debt-to-equity ratio under the credit facility's financial covenants?",
       "contexts": [
         "The Credit Agreement dated as of October 15, 2024, by and among Apex Manufacturing Corporation, as Borrower, the Lenders party hereto, and National Commerce Bank, as Administrative Agent, provides for a $500 million senior secured revolving credit facility with a five-year maturity. Article VI of the Credit Agreement sets forth the affirmative and negative covenants applicable to the Borrower and its Restricted Subsidiaries. Section 6.12 addresses the financial covenants that must be maintained at all times during the term of the facility, tested on the last day of each fiscal quarter. Section 6.12(a) requires the Borrower to maintain a Maximum Total Leverage Ratio, defined as the ratio of Consolidated Total Debt to Consolidated EBITDA, not exceeding 4.50 to 1.00 as of the last day of any fiscal quarter, with a step-down to 4.00 to 1.00 beginning with the fiscal quarter ending September 30, 2026. Section 6.12(b) requires the Borrower to maintain a Minimum Interest Coverage Ratio, defined as the ratio of Consolidated EBITDA to Consolidated Interest Expense, of not less than 2.50 to 1.00. Section 6.12(c) requires the Borrower to maintain a Maximum Debt-to-Equity Ratio, defined as the ratio of Consolidated Total Debt to Consolidated Net Worth, not exceeding 1.75 to 1.00 at all times during the term of the facility. For purposes of this covenant, Consolidated Net Worth is defined in Section 1.01 as the total stockholders' equity of the Borrower and its Restricted Subsidiaries on a consolidated basis, excluding accumulated other comprehensive income or loss, as determined in accordance with GAAP. The cure period for financial covenant breaches is set forth in Section 7.01(d), which provides that no Event of Default shall be deemed to have occurred solely by reason of a failure to comply with the financial covenants if the Borrower delivers an equity cure contribution within fifteen Business Days after the date on which the applicable compliance certificate was due.",
@@ -2756,7 +2756,7 @@
       "id": "t1_confident_hard_753",
       "category": "trustworthy_direct",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "technical_documented",
       "query": "How does CRISPR-Cas9 gene editing work?",
       "contexts": [
         "CRISPR-Cas9 works in three steps: (1) guide RNA designed to match target DNA, (2) gRNA directs Cas9 to cut both DNA strands at the exact location, (3) cell repair joins cut ends (disabling gene) or inserts a template (correcting/adding genes). Adapted from bacterial defense against viruses.",
@@ -2783,7 +2783,7 @@
       "id": "t1_confident_hard_754",
       "category": "trustworthy_direct",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "technical_documented",
       "query": "How does radiocarbon dating determine the age of artifacts?",
       "contexts": [
         "Radiocarbon dating measures the ratio of carbon-14 to carbon-12 in organic materials. Living organisms maintain a constant C-14/C-12 ratio through respiration and photosynthesis. After death, C-14 decays at a known rate (half-life of 5,730 years) while C-12 remains stable. By measuring the remaining C-14, scientists calculate time since death. Accelerator mass spectrometry (AMS) can date samples as small as a grain of rice with precision of +/- 40 years.",
@@ -2810,7 +2810,7 @@
       "id": "t1_confident_hard_755",
       "category": "trustworthy_direct",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "clear_explanation",
       "query": "What is the Montessori method?",
       "contexts": [
         "Developed by Maria Montessori in 1907, it uses self-directed learning in prepared environments. Key principles: mixed-age classrooms (3-year spans), 2-3 hour uninterrupted work periods, child-chosen activities, self-correcting materials, teachers as guides. Emphasis on hands-on learning and intrinsic motivation.",
@@ -4162,11 +4162,10 @@
       "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "hard",
-      "query": "How does CRISPR-Cas9 gene editing work?",
+      "query": "How does mRNA vaccine technology produce an immune response?",
       "contexts": [
-        "CRISPR-Cas9 gene editing utilizes a ribonucleoprotein complex consisting of the Cas9 endonuclease and a synthetic single-guide RNA (sgRNA). The sgRNA contains a 20-nucleotide spacer sequence complementary to the target genomic locus, flanked by a protospacer adjacent motif (PAM) recognition site (5'-NGG-3' for SpCas9). Upon target recognition and R-loop formation, Cas9 undergoes a conformational change that activates its RuvC and HNH nuclease domains, generating a double-strand break (DSB) 3 base pairs upstream of the PAM. The DSB is repaired by endogenous pathways: error-prone non-homologous end joining (NHEJ) introduces insertions or deletions (indels) that disrupt gene function, while homology-directed repair (HDR) with a donor template enables precise sequence modification.",
-        "CRISPR-Cas9 lets scientists edit DNA by using a molecular GPS and a pair of scissors. Researchers design a short RNA guide that matches the exact spot in the genome they want to change. This guide leads the Cas9 protein, which acts as the scissors, to the right location on the DNA. When it arrives, Cas9 cuts both strands of the DNA at that precise point. The cell then tries to repair the break. If left alone, the repair is often imperfect, effectively disabling the gene. If scientists provide a template of what the repaired DNA should look like, the cell can use that template to make a precise correction or insertion.",
-        "Imagine your DNA is a massive encyclopedia with billions of letters. CRISPR is like hiring a highly trained editor. You give the editor a bookmark (the guide RNA) with a short passage written on it. The editor scans through every volume until finding the page where that exact passage appears. Then the editor takes a pair of scissors (Cas9 protein) and snips the sentence at that exact location. When the book's repair team comes to fix the cut pages, they sometimes accidentally scramble the sentence, effectively crossing it out. But if you hand them a corrected sentence to paste in, they can replace the original text with your revision."
+        "mRNA vaccines work by delivering synthetic messenger RNA into cells, which instructs cellular ribosomes to produce a specific protein antigen—in the case of COVID-19 vaccines, the spike protein of SARS-CoV-2. The immune system recognizes this protein as foreign and mounts both an antibody response and a T-cell response. The mRNA does not enter the cell nucleus or interact with DNA, and is degraded by normal cellular processes within 48-72 hours. Lipid nanoparticles serve as the delivery mechanism, protecting the fragile mRNA molecule during injection and facilitating cellular uptake.",
+        "According to the National Institute of Allergy and Infectious Diseases, the mRNA platform enables rapid vaccine development because only the genetic sequence of the target antigen is needed, not the actual pathogen. Clinical trials by Pfizer-BioNTech and Moderna demonstrated 94-95% efficacy in preventing symptomatic COVID-19 infection. The technology has been in development since the 1990s, with foundational work by Katalin Karikó and Drew Weissman on modified nucleosides proving critical to overcoming early inflammatory responses."
       ],
       "expected_mode": "trustworthy",
       "description": "CRISPR mechanism explained through molecular biology, simplified science, and encyclopedia analogy",
@@ -4174,7 +4173,7 @@
       "domain": "science",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "evaluation_config": {

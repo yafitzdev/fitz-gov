@@ -116,25 +116,17 @@
       "id": "t0_grounding_easy_004",
       "difficulty": "easy",
       "subcategory": "technical_hallucination",
-      "query": "What programming languages does the API support?",
+      "query": "How many concurrent users can the platform handle?",
       "contexts": [
-        "Our API provides comprehensive documentation and SDKs for developers. Integration typically takes less than an hour. The API supports REST and GraphQL endpoints."
+        "Our platform uses a microservices architecture deployed on AWS with auto-scaling enabled. Load balancing distributes traffic across multiple availability zones. The system has a 99.95% uptime SLA and supports both REST and GraphQL endpoints."
       ],
       "expected_mode": "trustworthy",
       "description": "Language support question with no languages listed",
       "rationale": "LLM should NOT list specific programming languages",
       "forbidden_claims": [
-        "Python",
-        "JavaScript",
-        "Java",
-        "Ruby",
-        "Go",
-        "C#",
-        "PHP",
-        "TypeScript",
-        "supports",
-        "available in",
-        "SDKs for"
+        "\\d{3,}\\s*(concurrent|simultaneous)",
+        "handles?\\s+\\d+\\s*(million|thousand|K)\\s*(users|connections)",
+        "up to \\d+"
       ],
       "original_id": "grounding_easy_004",
       "domain": "technology",
@@ -195,20 +187,17 @@
       "id": "t0_grounding_easy_006",
       "difficulty": "easy",
       "subcategory": "numerical_hallucination",
-      "query": "How many employees does the company have?",
+      "query": "What is the company's annual revenue?",
       "contexts": [
-        "GlobalTech has grown substantially over the past decade. The company has offices in multiple countries and continues to expand its workforce. Employee satisfaction scores remain high."
+        "The company was founded in 2015 and has grown to operate in 12 countries. It serves over 500 enterprise clients across the healthcare and financial services sectors. The company completed a Series D funding round of $150 million in 2023."
       ],
       "expected_mode": "trustworthy",
       "description": "Employee count question with no number in context",
       "rationale": "LLM should NOT invent an employee count",
       "forbidden_claims": [
-        "\\d+[,\\d]*\\s*(employees|workers|staff|people)",
-        "staff of \\d",
-        "team of \\d",
-        "workforce of \\d",
-        "has (about |approximately |around )?\\d",
-        "employs (about |approximately |around )?\\d"
+        "\\$\\d+\\s*(million|billion)\\s*(in\\s+)?revenue",
+        "revenue (of|is|was) \\$",
+        "annual revenue"
       ],
       "original_id": "grounding_easy_006",
       "domain": "sports",

@@ -242,7 +242,7 @@
     {
       "id": "t1_dispute_hard_008",
       "difficulty": "hard",
-      "subcategory": "source_conflict",
+      "subcategory": "source_authority_conflict",
       "query": "Is it better to rent or buy a home?",
       "contexts": [
         "Homeownership builds equity and provides tax benefits, making it a superior strategy.",
@@ -959,12 +959,12 @@
       "id": "t1_dispute_hard_029",
       "difficulty": "hard",
       "subcategory": "implicit_contradiction",
-      "query": "Is the company profitable?",
+      "query": "Is the company solvent and able to meet its debt obligations?",
       "contexts": [
-        "The company reported positive EBITDA of $50 million for fiscal year 2024.",
-        "Net income was negative $30 million after accounting for depreciation and interest expenses.",
-        "Operating cash flow was positive at $25 million, indicating healthy business operations.",
-        "The company has not achieved GAAP profitability since its founding in 2019."
+        "The company maintains a current ratio of 2.3 and has 00 million in liquid assets, exceeding its short-term liabilities by a comfortable margin. Credit rating agencies reaffirmed its investment-grade rating in Q3 2024.",
+        "The company's debt-to-equity ratio has climbed to 4.1, well above the industry average of 1.8. Total long-term debt reached 2 billion, with .2 billion in maturities due within the next 18 months.",
+        "Free cash flow generation has been consistently positive at approximately 00 million annually, providing adequate coverage for interest payments and scheduled debt repayments.",
+        "However, the company's bond yields have spiked to 8.7%, suggesting the market prices in significant credit risk. Two major institutional investors have reduced their holdings by 40% in the past quarter."
       ],
       "expected_mode": "disputed",
       "description": "Different definitions of 'profitable' give different answers",
@@ -3286,7 +3286,7 @@
     {
       "id": "t1_dispute_medium_007",
       "difficulty": "medium",
-      "subcategory": "source_conflict",
+      "subcategory": "source_authority_conflict",
       "query": "What is the population of the city?",
       "contexts": [
         "The 2023 census recorded the city population at 2.4 million residents.",
@@ -3380,7 +3380,7 @@
     {
       "id": "t1_dispute_medium_010",
       "difficulty": "medium",
-      "subcategory": "source_conflict",
+      "subcategory": "source_authority_conflict",
       "query": "What is the average house price in the area?",
       "contexts": [
         "Zillow reports the median home price in the area is $485,000.",
@@ -3474,7 +3474,7 @@
     {
       "id": "t1_dispute_medium_013",
       "difficulty": "medium",
-      "subcategory": "source_conflict",
+      "subcategory": "source_authority_conflict",
       "query": "What is the unemployment rate?",
       "contexts": [
         "The Bureau of Labor Statistics reports unemployment at 3.7%.",
@@ -4224,7 +4224,7 @@
       "id": "t1_dispute_hard_450",
       "category": "dispute",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "binary_conflict",
       "query": "Is active fund management worth higher fees?",
       "contexts": [
         "Over 90% of active funds underperform their benchmark over 15 years.",
@@ -4257,7 +4257,7 @@
       "id": "t1_dispute_hard_451",
       "category": "dispute",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "opposing_conclusions",
       "query": "Cause?",
       "contexts": [
         "The post-incident review conducted by the SRE team concluded that the 47-minute outage on January 18th was caused by a memory leak in the connection pooling library (version 3.2.1) that was deployed as part of the v2.8 release the previous day. The leak caused the application servers to exhaust available memory under sustained load.",
@@ -4285,7 +4285,7 @@
       "id": "t1_dispute_hard_452",
       "category": "dispute",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "implicit_contradiction",
       "query": "What is the expected revenue impact of expanding into the Southeast Asian market?",
       "contexts": [
         "The strategic planning team's market entry analysis for Southeast Asia, presented to the board of directors in October 2024, provides a detailed assessment of the revenue opportunity. The analysis projects that entering the five target markets (Indonesia, Thailand, Vietnam, Philippines, and Malaysia) would generate incremental revenue of $45 million to $55 million within the first 24 months of operations, ramping to $120 million to $150 million annually by Year 5. The revenue projections are based on a bottom-up model that considers addressable market size in each country, expected market share capture rates derived from the company's historical performance in analogous emerging markets, average revenue per user benchmarked against regional competitors, and customer acquisition cost assumptions validated by digital marketing agencies with local expertise. The model assumes a phased entry strategy beginning with Indonesia and Thailand in Q2 2025, followed by Vietnam and the Philippines in Q4 2025, and Malaysia in Q2 2026. The base case assumes local currency pricing at approximately 60% of the developed market price point, with premium tiers available for enterprise customers. The payback period for the initial market entry investment of $35 million is estimated at 30 to 36 months. The analysis identifies key risks including regulatory uncertainty in Indonesia's data localization requirements, competitive pressure from established local players in Thailand, and currency volatility across the region. Sensitivity analysis shows that a 20% reduction in market share assumptions would extend the payback period to approximately 48 months but would not change the positive NPV conclusion.",
@@ -4313,7 +4313,7 @@
       "id": "t1_dispute_hard_453",
       "category": "dispute",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "implicit_contradiction",
       "query": "Does the longitudinal study support a causal link between social media usage and adolescent depression?",
       "contexts": [
         "A longitudinal cohort study published in the Journal of Adolescent Health followed 3,247 participants aged 13 to 18 over a four-year period from 2019 to 2023, collecting data on social media usage patterns, mental health outcomes, and a comprehensive set of covariates including family structure, socioeconomic status, academic performance, physical activity levels, sleep quality, and pre-existing mental health conditions. The study employed ecological momentary assessment (EMA) methods, prompting participants to report their social media usage and mood states six times daily via a smartphone application, resulting in over 2.8 million individual data points. The primary analysis used multilevel structural equation modeling to assess the temporal relationship between social media usage and depressive symptom trajectories as measured by the Patient Health Questionnaire for Adolescents (PHQ-A). After adjusting for all measured confounders, the study found that increases in daily social media usage predicted subsequent increases in depressive symptoms at the next measurement occasion (standardized path coefficient = 0.14, 95% CI: 0.09-0.19, p < 0.001). The effect was moderated by gender, with stronger associations observed in female participants (coefficient = 0.21) compared to male participants (coefficient = 0.08). Sensitivity analyses using instrumental variable approaches to address potential unmeasured confounding produced consistent results. The study also found evidence of a dose-response relationship, with participants reporting more than 3 hours of daily usage showing a 2.3-fold increase in the probability of developing moderate-to-severe depressive symptoms compared to those reporting less than 1 hour. The authors conclude that the longitudinal design, temporal ordering of variables, dose-response relationship, and robustness to sensitivity analyses collectively provide strong evidence for a causal effect.",
@@ -4341,7 +4341,7 @@
       "id": "t1_dispute_hard_454",
       "category": "dispute",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "implicit_contradiction",
       "query": "Is the proposed microservices migration expected to reduce or increase total infrastructure costs?",
       "contexts": [
         "The cloud architecture team's technical proposal for migrating the monolithic order management system to a microservices architecture includes a detailed total cost of ownership analysis covering a five-year horizon. The current monolithic application runs on a cluster of eight bare-metal servers with a fully loaded annual cost of $480,000 including hardware depreciation, colocation fees, network bandwidth, and operations staff allocation. The proposed microservices architecture would be deployed on Kubernetes running on a major cloud provider, with estimated annual infrastructure costs of $320,000 in Year 1, declining to $280,000 by Year 3 through reserved instance pricing and auto-scaling optimizations. The analysis projects annual infrastructure savings of $160,000 to $200,000 once the migration is complete and the legacy hardware is decommissioned. The architecture team argues that microservices enable granular auto-scaling that eliminates the over-provisioning inherent in the monolithic deployment, where the entire application must be scaled even when only one component experiences increased load. The proposal includes benchmarks showing that during Black Friday peak traffic, the monolithic system required all eight servers running at 85% CPU utilization, while a simulated microservices deployment would require the equivalent of only 5.2 servers worth of compute by scaling only the order processing and inventory check services. The team also projects reduced developer productivity costs through faster deployment cycles (from 2-week release trains to multiple daily deployments) and improved fault isolation that reduces the blast radius of failures.",
@@ -4369,7 +4369,7 @@
       "id": "t1_dispute_hard_455",
       "category": "dispute",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "implicit_contradiction",
       "query": "Is the building structurally safe for continued occupancy following the seismic event?",
       "contexts": [
         "The post-earthquake structural assessment report prepared by Thornton Engineering Associates, a licensed structural engineering firm, evaluated the commercial office building at 450 Pacific Boulevard following the magnitude 5.2 seismic event on December 3, 2024. The assessment included visual inspection of all structural elements across 12 floors, review of the original structural drawings and as-built documentation, and non-destructive testing of concrete core samples and reinforcement bar placement using ground-penetrating radar. The inspection identified hairline cracking in the concrete shear walls on floors 3 through 5, with maximum crack widths of 0.2 mm, which falls within acceptable limits per ACI 318 for seismic force-resisting elements. The steel moment frame connections on floors 8 through 12 showed no evidence of damage, weld fracture, or bolt loosening. Foundation settlement measurements using precision leveling indicated a maximum differential settlement of 4 mm, well within the tolerance specified in the original geotechnical report. The building's seismic instrumentation recorded peak floor accelerations consistent with the design-level earthquake for the structure's seismic design category. The report concludes that the building sustained only minor cosmetic damage that does not affect its structural integrity and recommends continued occupancy without restriction. The report recommends repairing the shear wall cracks using epoxy injection to restore water tightness and scheduling a follow-up inspection in six months as a precautionary measure.",
@@ -11969,10 +11969,10 @@
       "id": "t1_dispute_medium_608",
       "difficulty": "medium",
       "subcategory": "opposing_conclusions",
-      "query": "Does social media use cause depression in teenagers?",
+      "query": "Does screen time before bed impair sleep quality in school-age children?",
       "contexts": [
-        "A longitudinal study by NYU researchers published in JAMA Pediatrics in 2024 tracked 3,400 adolescents aged 12 to 17 over four years and found a strong causal link between social media use exceeding three hours daily and the onset of depressive symptoms. The study controlled for prior mental health diagnoses, socioeconomic status, family structure, and academic performance, and found that heavy social media users were 2.7 times more likely to develop clinical depression as measured by the PHQ-9 screening tool. The effect was strongest among girls aged 13 to 15 and persisted after accounting for pre-existing anxiety disorders.",
-        "Oxford University's 2024 large-scale analysis of 12,000 UK teenagers aged 13 to 18, published in Nature Human Behaviour, found no meaningful causal relationship between social media use and depression after controlling for sleep quality, physical activity levels, and pre-existing loneliness. Professor Andrew Przybylski stated that screen time itself is not the driver of teen mental health decline and that prior studies conflated correlation with causation by failing to adequately control for lifestyle factors. The Oxford team used experience sampling methods rather than retrospective self-reports and argued this produced more accurate usage data."
+        "A controlled study at the University of Colorado involving 234 children ages 8-12 found that one hour of tablet use before bedtime reduced total sleep duration by 28 minutes and delayed sleep onset by 37 minutes compared to book reading, with measurable decreases in REM sleep duration.",
+        "A 2024 systematic review in the Journal of Sleep Research, analyzing 18 randomized controlled trials, found no consistent evidence that moderate screen use (under 90 minutes) before bed affects objective sleep measures in children, suggesting that content type and arousal level matter more than screen exposure itself."
       ],
       "expected_mode": "disputed",
       "description": "NYU study finds strong causal link between social media and teen depression; Oxford study finds no meaningful causal relationship",
@@ -12669,10 +12669,10 @@
       "id": "t1_dispute_medium_633",
       "difficulty": "medium",
       "subcategory": "source_authority_conflict",
-      "query": "Who invented the telephone?",
+      "query": "Who first discovered the New World — the Vikings or Columbus?",
       "contexts": [
-        "The United States Patent and Trademark Office issued patent number 174,465 to Alexander Graham Bell on March 7, 1876, for 'the method of, and apparatus for, transmitting vocal or other sounds telegraphically by causing electrical undulations.' Bell is credited in standard U.S. history textbooks and encyclopedias as the inventor of the telephone, and the Smithsonian Institution's National Museum of American History houses his original prototype and laboratory notebooks. The patent has been upheld through multiple legal challenges and Bell's priority has been affirmed by the U.S. Supreme Court in the landmark 1888 case The Telephone Cases.",
-        "The United States House of Representatives passed House Resolution 269 on June 11, 2002, by unanimous consent, officially recognizing Antonio Meucci as the true inventor of the telephone. The resolution states that Meucci, an Italian immigrant living in Staten Island, New York, filed a patent caveat for a 'Sound Telegraph' with the U.S. Patent Office in 1871, fully five years before Bell's patent application, but was unable to afford the $10 annual renewal fee in 1874 due to poverty. Italian and Canadian historical societies have extensively documented Meucci's working electromagnetic voice communication prototypes dating to 1860, predating Bell's work by over 15 years."
+        "Archaeological evidence at L'Anse aux Meadows in Newfoundland conclusively demonstrates Norse presence in North America around 1000 CE, approximately 500 years before Columbus's 1492 voyage. The site, excavated by Helge and Anne Stine Ingstad in the 1960s, contained Norse artifacts including a bronze ring-headed pin.",
+        "While the Vikings may have briefly visited North America, Columbus's 1492 voyage established the first permanent and sustained contact between Europe and the Americas. His expeditions led to the Columbian Exchange and fundamentally transformed both hemispheres, making his the truly significant discovery."
       ],
       "expected_mode": "disputed",
       "description": "U.S. Patent Office credits Bell (1876); U.S. House resolution recognizes Meucci (1871)",
@@ -16487,10 +16487,10 @@
       "id": "t1_dispute_hard_734",
       "difficulty": "hard",
       "subcategory": "binary_conflict",
-      "query": "Is breakfast the most important meal of the day?",
+      "query": "Does eating organic food significantly reduce cancer risk?",
       "contexts": [
-        "Research from Harvard T.H. Chan School of Public Health found that men who skipped breakfast had a 27% higher risk of coronary heart disease, and that breakfast eaters had better metabolic markers throughout the day.",
-        "A rigorous randomized controlled trial published in the BMJ found no significant difference in weight loss, metabolic rate, or cardiovascular markers between breakfast eaters and breakfast skippers over 16 weeks."
+        "A 2023 longitudinal study published in the British Journal of Nutrition tracked 68,946 participants over 7 years and found that frequent organic food consumers had a 25% lower overall cancer risk, with particularly strong reductions in non-Hodgkin lymphoma and postmenopausal breast cancer.",
+        "A comprehensive 2024 meta-analysis in the Annals of Internal Medicine reviewing 240 studies concluded that organic foods show no clinically meaningful difference in health outcomes compared to conventional foods, noting that the cancer risk reduction in observational studies disappears when controlling for lifestyle factors."
       ],
       "expected_mode": "disputed",
       "description": "Epidemiological data says yes, RCT says no",

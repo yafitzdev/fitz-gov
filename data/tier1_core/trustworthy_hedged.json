@@ -437,11 +437,10 @@
       "id": "t1_qualify_hard_016",
       "difficulty": "hard",
       "subcategory": "hedged_evidence",
-      "query": "Does intermittent fasting improve cognitive function?",
+      "query": "Does regular meditation practice improve working memory capacity?",
       "contexts": [
-        "A 2023 review in Nutritional Neuroscience states: 'Results suggest intermittent fasting may improve certain cognitive markers.'",
-        "The review analyzed 12 studies with sample sizes ranging from 20 to 150 participants.",
-        "Authors note: 'More rigorous, long-term trials are needed to confirm these preliminary observations.'"
+        "A randomized controlled trial published in Psychological Science found that an 8-week mindfulness meditation program improved working memory capacity by an average of 16% on the operation span task, compared to a waitlist control group. Neuroimaging showed increased activation in the dorsolateral prefrontal cortex.",
+        "A 2024 meta-analysis in Neuroscience & Biobehavioral Reviews, analyzing 45 RCTs, found that meditation effects on working memory are small (Hedges' g = 0.22) and often disappear at follow-up. The analysis noted significant publication bias and heterogeneity across study designs."
       ],
       "expected_mode": "trustworthy",
       "description": "Source uses hedging language ('may', 'suggest', 'preliminary')",
@@ -450,7 +449,7 @@
       "domain": "medicine",
       "query_type": "does",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 2,
       "reasoning_type": "evaluative",
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
@@ -1054,10 +1053,10 @@
       "category": "trustworthy_hedged",
       "subcategory": "mixed_evidence",
       "difficulty": "hard",
-      "query": "Do charter schools outperform traditional public schools?",
+      "query": "Do year-round schooling calendars improve student academic outcomes?",
       "contexts": [
-        "Stanford University's Center for Research on Education Outcomes (CREDO) published its most comprehensive analysis in 2023, covering 2.7 million charter school students across 29 states. The study found that charter school students gained an additional 16 days of learning in reading and 6 days in math per year compared to matched traditional public school peers. Urban charter schools showed even larger effects: 40 additional days in reading and 28 in math. High-performing charter management organizations including KIPP, Success Academy, and Achievement First consistently produced effect sizes of 0.15-0.30 SD above matched comparisons. The study used virtual twin matching methodology, pairing each charter student with a statistically similar traditional public school student based on demographics, prior achievement, and neighborhood characteristics.",
-        "A 2024 reanalysis by the National Education Policy Center (NEPC) at the University of Colorado challenged CREDO's methodology and conclusions. The NEPC researchers demonstrated that CREDO's virtual twin matching failed to account for differential attrition — charter schools lost 22% of students between grades 6 and 12, compared to 8% in traditional public schools, and departing students had significantly lower test scores. When attrition was modeled using Lee bounds analysis, the reading advantage fell to 3-7 days (not statistically significant) and the math effect reversed to -2 days. Additionally, the researchers found that 37% of charter schools in the CREDO sample performed significantly worse than their traditional counterparts, a finding not emphasized in the CREDO report. A separate analysis by Mathematica Policy Research of lottery-based charter school admissions — considered the gold standard methodology — found no significant effects in 26 of 36 charter schools studied, with effects concentrated almost entirely in urban 'no excuses' models serving predominantly low-income Black and Hispanic students."
+        "A 2023 study by the National Education Policy Center analyzed 15 school districts that adopted year-round calendars and found modest improvements in math scores (0.08 standard deviations) and reading scores (0.05 standard deviations), with larger gains for students from low-income backgrounds.",
+        "Critics note that the academic gains are small and inconsistent across studies. A meta-analysis in the Review of Educational Research found that the benefits of year-round schooling are often indistinguishable from zero when controlling for school-level factors like teacher quality and funding levels."
       ],
       "expected_mode": "trustworthy",
       "description": "Large observational study shows positive effects but reanalysis and lottery studies challenge the findings",
@@ -2725,10 +2724,10 @@
       "category": "trustworthy_hedged",
       "subcategory": "methodology_difference",
       "difficulty": "hard",
-      "query": "What is the poverty rate in the United States?",
+      "query": "What is the child poverty rate in the United Kingdom?",
       "contexts": [
-        "U.S. Census Bureau - Official Poverty Measure (September 2024): The U.S. Census Bureau reports an official poverty rate of 11.1% for 2023, representing 36.8 million people living below the federal poverty line. The official poverty measure (OPM) uses pre-tax cash income thresholds established in 1963 by Mollie Orshansky, adjusted annually for inflation using the Consumer Price Index. For a family of four in 2023, the poverty threshold was $31,163. The measure counts only cash income including wages, Social Security, cash welfare payments, and unemployment insurance. It does not account for in-kind benefits (SNAP, Medicaid, housing assistance), tax credits (EITC, Child Tax Credit), or geographic cost-of-living differences. The official poverty rate declined from 12.4% in 2022, primarily due to wage growth among low-income workers. Census Bureau Director Robert Santos noted that the official measure remains the legally mandated standard for program eligibility determination and federal resource allocation.",
-        "U.S. Census Bureau - Supplemental Poverty Measure (September 2024): The Census Bureau's Supplemental Poverty Measure (SPM) calculated a poverty rate of 12.9% for 2023, representing 42.7 million people. The SPM uses a more comprehensive framework that counts all government benefits (SNAP, housing subsidies, EITC, school lunch) as income, subtracts necessary expenses (taxes, medical out-of-pocket costs, work-related expenses including childcare), and adjusts thresholds for geographic cost-of-living differences. Under the SPM, a family of four in San Francisco faces a poverty threshold of $47,200 compared to $25,600 in rural Mississippi. The SPM found that government programs lifted 37 million people out of poverty in 2023, with Social Security alone preventing poverty for 26.8 million. However, medical expenses pushed 4.6 million people into poverty, and the high cost of housing in metropolitan areas increased poverty rates in California by 5.2 percentage points compared to the official measure. The SPM was developed by an interagency technical working group as a research measure to complement the official statistic."
+        "The Department for Work and Pensions reported that 29% of children in the UK were living in relative poverty (below 60% of median income) in 2023/24, equating to approximately 4.3 million children. The rate has remained stubbornly high despite various policy interventions over the past decade.",
+        "However, the Institute for Fiscal Studies noted that different poverty measures yield different pictures. Using an anchored poverty threshold, child poverty fell from 27% to 24% between 2010 and 2024 due to real income growth. Material deprivation indicators also showed improvement, with fewer families reporting inability to afford basic necessities."
       ],
       "expected_mode": "trustworthy",
       "description": "Census Bureau reports 11.1% poverty (official measure) and 12.9% (supplemental measure) - same agency, different measurement frameworks capturing different aspects of poverty",
@@ -3081,10 +3080,10 @@
       "category": "trustworthy_hedged",
       "subcategory": "hedged_evidence",
       "difficulty": "hard",
-      "query": "Is intermittent fasting effective for long-term weight management?",
+      "query": "Is a plant-based diet effective for long-term cardiovascular risk reduction?",
       "contexts": [
-        "Obesity Reviews - Meta-Analysis of Intermittent Fasting Interventions (2024): A meta-analysis of 42 randomized controlled trials enrolling 4,800 participants concludes that intermittent fasting (IF) is an effective strategy for long-term weight management. Across studies with minimum 12-month follow-up, IF protocols (including 16:8 time-restricted eating, 5:2 modified fasting, and alternate-day fasting) produced average weight loss of 7.4 kg at 12 months, with 68% of participants maintaining at least 5% weight loss at 24-month follow-up. IF was statistically equivalent to continuous caloric restriction for total weight loss (mean difference -0.3 kg, p=0.71) but showed superior adherence rates (74% vs 58% at 12 months, p=0.003). Secondary outcomes included significant reductions in fasting insulin (-22%), triglycerides (-18%), and waist circumference (-5.2 cm). Lead author Dr. Krista Varady of the University of Illinois stated that the evidence conclusively demonstrates intermittent fasting as a viable and sustainable approach to weight management with metabolic benefits beyond caloric restriction alone.",
-        "New England Journal of Medicine - Clinical Review of Time-Restricted Eating (2024): A clinical review by researchers at Harvard Medical School and Johns Hopkins notes that while intermittent fasting shows promise, the long-term evidence remains preliminary and may not generalize to diverse populations. The review highlights that most IF trials have been conducted in motivated volunteers recruited specifically for weight management studies, with dropout rates of 25-35% potentially biasing results toward adherent participants. The authors note that a recent large pragmatic trial (TREAT, n=547) of 16:8 time-restricted eating found no significant weight loss advantage over standard dietary advice at 12 months in a real-world clinical setting. Potential concerns include emerging evidence of modest lean mass loss with IF compared to continuous restriction, uncertain effects on bone density with long-term use, and possible exacerbation of disordered eating patterns in susceptible individuals. The review suggests that intermittent fasting appears to be a reasonable dietary pattern for some individuals but cautions against recommending it as a universally effective weight management strategy, noting that individual responses vary considerably and that more pragmatic trials in diverse populations are needed before definitive clinical guidance can be issued."
+        "A 2024 prospective cohort study in JAMA Internal Medicine following 210,000 participants over 30 years found that adherence to a plant-based diet was associated with a 16% lower risk of cardiovascular disease. The strongest associations were observed for diets emphasizing whole grains, legumes, and nuts.",
+        "However, not all plant-based diets are equal. The same study found that 'unhealthy' plant-based diets heavy in refined grains, sugary beverages, and processed foods were associated with a 32% higher cardiovascular risk. Additionally, some cardiologists caution that B12 deficiency and inadequate omega-3 intake in strict vegan diets may counteract cardiovascular benefits."
       ],
       "expected_mode": "trustworthy",
       "description": "Meta-analysis 'conclusively demonstrates' IF effectiveness; NEJM review says evidence is 'preliminary,' may not generalize, and calls for more research",
@@ -3557,11 +3556,10 @@
       "category": "trustworthy_hedged",
       "subcategory": "different_aspects",
       "difficulty": "hard",
-      "query": "Who built the Great Zimbabwe ruins?",
+      "query": "Who constructed the Nazca Lines in Peru and for what purpose?",
       "contexts": [
-        "Archaeological consensus attributes Great Zimbabwe to the Shona-speaking peoples, roughly 1100-1450 CE.",
-        "The exact political entity is debated: Kingdom of Zimbabwe, Karanga state, or multi-ethnic trading center.",
-        "Colonial-era non-African attribution has been thoroughly debunked by stratigraphy and pottery analysis."
+        "Archaeological consensus attributes the Nazca Lines to the Nazca culture, which flourished from approximately 200 BCE to 600 CE. Radiocarbon dating of wooden stakes at line endpoints supports this timeframe. The most widely accepted theory is that the lines served a ritualistic purpose related to water and fertility.",
+        "However, competing theories persist. Some researchers propose the lines served as astronomical calendars, while others suggest they marked underground water sources. A 2023 study using AI-assisted analysis identified previously unknown smaller geoglyphs, complicating earlier interpretations focused solely on the larger figures."
       ],
       "expected_mode": "trustworthy",
       "description": "General attribution clear but specific political identity debated",
@@ -3570,7 +3568,7 @@
       "domain": "history",
       "query_type": "who",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 2,
       "reasoning_type": "evaluative",
       "evidence_pattern": "mixed",
       "metadata": {
@@ -3964,10 +3962,10 @@
       "category": "trustworthy_hedged",
       "subcategory": "evolving_facts",
       "difficulty": "hard",
-      "query": "What is the recommended daily sodium intake?",
+      "query": "What is the recommended daily potassium intake for adults?",
       "contexts": [
-        "The American Heart Association's 2019 dietary guidelines, which remained the official AHA position through early 2024, recommended that adults consume no more than 2,300 milligrams of sodium per day, with an ideal limit of 1,500 mg per day for most adults, particularly those with hypertension or at risk for cardiovascular disease. This recommendation was based on a substantial body of evidence from clinical trials and epidemiological studies showing a dose-response relationship between sodium intake and blood pressure elevation. The AHA cited the landmark DASH-Sodium trial, which demonstrated significant blood pressure reductions at the 1,500 mg/day level across all demographic groups tested. The 2019 guidelines stated that 'reducing sodium intake is one of the most impactful dietary changes Americans can make for cardiovascular health' and estimated that achieving population-wide compliance with the 1,500 mg target could prevent up to 120,000 cardiovascular events annually. These guidelines informed FDA food labeling requirements and school lunch program standards nationwide.",
-        "The AHA's updated Dietary Sodium and Cardiovascular Health Advisory published in Circulation (Vol. 149, May 2024) revised the sodium recommendations based on new evidence from large-scale international studies. The updated advisory maintained the 2,300 mg/day upper limit but retracted the universal 1,500 mg/day ideal target, replacing it with a personalized approach. The revision was driven primarily by the PURE study's expanded 12-year follow-up data covering 180,000 individuals across 21 countries, which found a J-shaped curve: cardiovascular risk increased at both very high (above 5,000 mg/day) and very low (below 3,000 mg/day) sodium intakes, with the lowest risk observed between 3,000-4,000 mg/day for the general population. The advisory also cited new evidence that aggressive sodium restriction in elderly patients (over 75) was associated with increased fall risk from orthostatic hypotension and reduced nutritional intake. The 2024 advisory states that 'the optimal sodium intake varies by individual characteristics including age, blood pressure status, kidney function, and medication use' and recommends that the 1,500 mg target be reserved for patients with confirmed salt-sensitive hypertension rather than applied universally."
+        "The National Academies of Sciences set the adequate intake for potassium at 2,600 mg/day for women and 3,400 mg/day for men. Potassium-rich diets have been associated with lower blood pressure and reduced stroke risk in multiple observational studies.",
+        "However, the WHO uses a different recommendation of at least 3,510 mg/day for all adults, and some researchers argue that the optimal intake may be higher. A 2023 Cochrane review found that while increased potassium intake lowers blood pressure, the evidence for effects on cardiovascular mortality is less consistent, particularly for people with impaired kidney function."
       ],
       "expected_mode": "trustworthy",
       "description": "Universal 1,500mg/day ideal (2019 guidelines) vs personalized approach with 3,000-4,000mg/day optimal range for general population (2024 update) — superseded recommendation, not contradicted",
@@ -4036,10 +4034,10 @@
       "category": "trustworthy_hedged",
       "subcategory": "evolving_facts",
       "difficulty": "hard",
-      "query": "What is the deforestation rate in the Brazilian Amazon?",
+      "query": "What is the rate of coral reef degradation in the Great Barrier Reef?",
       "contexts": [
-        "Brazil's National Institute for Space Research (INPE) reported through its PRODES satellite monitoring system that deforestation in the Brazilian Legal Amazon reached 11,568 square kilometers in the August 2021 to July 2022 monitoring period, the highest level in 15 years. The PRODES system uses Landsat satellite imagery at 30-meter resolution to detect clear-cut deforestation of primary forest exceeding 6.25 hectares. INPE's analysis attributed the increase to expanded cattle ranching in the states of Para and Mato Grosso (accounting for 62% of total deforestation), illegal mining operations in indigenous territories, and reduced enforcement operations during the period. Environmental Minister Joaquim Leite acknowledged that 'Brazil faces significant challenges in forest protection' but noted that the government was investing in enhanced satellite monitoring capabilities. The 2021-2022 figure represented a 22% increase over the previous year (9,497 sq km in 2020-2021) and was 73% higher than the recent low of 6,688 sq km recorded in the 2017-2018 period.",
-        "INPE's PRODES data for the August 2023 to July 2024 monitoring period, released in November 2024, documented a dramatic decline in Amazon deforestation to 4,316 square kilometers — the lowest level recorded since systematic satellite monitoring began in 1988, and a 62.7% reduction from the 2021-2022 peak. The decline was attributed to a comprehensive law enforcement strategy implemented by the Lula administration beginning in January 2023, including the deployment of 3,200 additional environmental enforcement agents, real-time deforestation alerts triggering immediate police response, embargoes on agricultural products from illegally deforested areas, and financial sanctions on municipalities exceeding deforestation thresholds. The Amazon Fund was reactivated with $3.4 billion in pledges from Norway, Germany, and other donors. INPE Director Claudio Almeida stated that 'the 2023-2024 results demonstrate that deforestation is a policy choice, not an inevitability' and noted that the reduction exceeded the government's target of 48% reduction by 2024. Indigenous territory protections were strengthened, with deforestation in demarcated indigenous lands declining by 74%."
+        "The Australian Institute of Marine Science reported that coral cover on surveyed reefs reached a 36-year high in 2022, with recovery driven by fast-growing Acropora corals. However, the institute cautioned that Acropora corals are highly susceptible to bleaching, cyclones, and crown-of-thorns starfish outbreaks.",
+        "A 2024 study in Nature Climate Change found that marine heatwaves have caused five mass bleaching events on the Great Barrier Reef since 2016, with the 2024 event being the most geographically widespread. Approximately 73% of surveyed reefs showed some level of bleaching."
       ],
       "expected_mode": "trustworthy",
       "description": "11,568 sq km (2021-2022, peak) vs 4,316 sq km (2023-2024, record low) — deforestation rate changed dramatically due to policy shift, both figures are accurate for their periods",
@@ -5138,11 +5136,10 @@
       "category": "trustworthy_hedged",
       "subcategory": "evolving_facts",
       "difficulty": "hard",
-      "query": "Is intermittent fasting effective for weight loss?",
+      "query": "Is the Mediterranean diet effective for reducing type 2 diabetes risk?",
       "contexts": [
-        "New England Journal of Medicine Review (2019, peer-reviewed): A comprehensive review of intermittent fasting (IF) concluded that IF produces weight loss of 3-8% of body weight over 3-24 weeks, comparable to continuous calorie restriction. The review analyzed 27 clinical trials and found consistent benefits across time-restricted eating, alternate-day fasting, and 5:2 protocols. The authors noted additional metabolic benefits including improved insulin sensitivity and reduced inflammatory markers independent of weight loss.",
-        "DrFastingGuru Substack (2024): Intermittent fasting is a miracle cure that Big Food doesn't want you to know about. I've personally helped 5,000 clients lose an average of 30 pounds each through my proprietary 20:4 fasting protocol. The mainstream medical establishment is slowly catching up to what ancient cultures knew all along. My premium course ($199) teaches you the secrets that clinical trials miss because they only study boring 16:8 protocols.",
-        "JAMA Internal Medicine Randomized Trial (2023, peer-reviewed): A 12-month randomized controlled trial (n=547) comparing time-restricted eating (16:8) to standard caloric restriction found no statistically significant difference in weight loss between groups at 12 months (mean difference: 0.4 kg, 95% CI: -1.3 to 2.1, p=0.63). Adherence was similar between groups. The authors concluded that IF's benefits for weight loss appear to derive primarily from caloric restriction rather than from the timing of food intake per se, and that IF may offer no inherent metabolic advantage over conventional dieting approaches."
+        "The landmark PREDIMED trial, involving 7,447 participants at high cardiovascular risk, found that a Mediterranean diet supplemented with extra-virgin olive oil or nuts reduced type 2 diabetes incidence by 52% compared to a low-fat control diet over a median follow-up of 4.1 years.",
+        "A 2024 reanalysis published in the BMJ raised concerns about randomization irregularities at several PREDIMED trial sites, leading to a retraction and republication of the original results. The updated analysis still showed a risk reduction, but the effect size was smaller (30%) and the confidence intervals wider, leaving some uncertainty about the true magnitude of benefit."
       ],
       "expected_mode": "trustworthy",
       "description": "Three-way: earlier positive review, exaggerated blog claims, and newer RCT questioning unique benefits",
@@ -5151,7 +5148,7 @@
       "domain": "medicine",
       "query_type": "is",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 2,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
@@ -5241,11 +5238,10 @@
       "category": "trustworthy_hedged",
       "subcategory": "hedged_contradiction_corroborated",
       "difficulty": "hard",
-      "query": "Does moderate alcohol consumption have health benefits?",
+      "query": "Does moderate coffee consumption provide cardiovascular health benefits?",
       "contexts": [
-        "British Medical Journal Cohort Analysis (2018, peer-reviewed): Analysis of 599,912 current drinkers across 83 prospective studies found that moderate alcohol consumption was not associated with lower all-cause mortality after adjustment for abstainer bias. The widely cited J-shaped curve (where moderate drinkers appear healthier than non-drinkers) may be an artifact of including former drinkers and sick quitters in the reference group. The study found that the threshold for lowest risk of all-cause mortality was approximately zero consumption.",
-        "Journal of the American College of Cardiology Review (2017, peer-reviewed): Moderate alcohol consumption (1-2 drinks/day) may be associated with reduced risk of coronary heart disease (CHD) specifically. Proposed mechanisms include increased HDL cholesterol, improved fibrinolysis, and reduced platelet aggregation. However, the authors explicitly noted that 'these cardioprotective effects may be offset by increased risks of cancer, liver disease, and injury at the same consumption levels.' The net health effect depends on individual risk profiles and the specific outcomes considered.",
-        "World Health Organization Global Alcohol Action Plan (2024): The WHO states that no level of alcohol consumption is safe for health. Previous claims of cardiovascular benefits from moderate drinking have been substantially weakened by methodological corrections in recent large-scale studies. The WHO emphasizes that alcohol is causally linked to over 200 disease and injury conditions, including 7 types of cancer, and that any potential cardiovascular benefit does not outweigh the established cancer risk, even at low consumption levels."
+        "A large-scale prospective study published in the European Heart Journal, following 468,629 participants over 12.5 years, found that consuming 2-3 cups of coffee daily was associated with a 10-15% lower risk of cardiovascular disease mortality and a lower incidence of arrhythmias compared to non-drinkers.",
+        "However, the study authors cautioned that residual confounding may explain part of the association, as coffee drinkers in the cohort also tended to have higher physical activity levels and lower smoking rates. Additionally, individuals with certain genetic variants in CYP1A2 metabolize caffeine slowly and may experience elevated blood pressure from the same intake levels."
       ],
       "expected_mode": "trustworthy",
       "description": "Three-way: large cohort finding no benefit after bias correction, cardiology review acknowledging possible CHD benefit with caveats, and WHO declaring no safe level",
@@ -5253,7 +5249,7 @@
       "domain": "medicine",
       "query_type": "does",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 2,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
@@ -7266,10 +7262,10 @@
       "category": "trustworthy_hedged",
       "difficulty": "hard",
       "subcategory": "methodology_difference",
-      "query": "How many people are affected by food insecurity in the United States?",
+      "query": "How many Americans experience chronic homelessness?",
       "contexts": [
-        "USDA Economic Research Service — Household Food Security in the United States, 2023: The USDA reports that 47.4 million people lived in food-insecure households in 2023, representing 14.4% of the U.S. population. Food insecurity is measured via the 18-item Core Food Security Module administered as part of the December Current Population Survey supplement. A household is classified as food-insecure if it affirms three or more conditions indicating difficulty meeting food needs due to insufficient resources. The USDA notes that food insecurity is an economic and social condition, not a measure of dietary quality or nutritional status. Very low food security (previously called food insecurity with hunger) affected 18.3 million people in 6.2% of households.",
-        "Feeding America Map the Meal Gap Study (2024): Feeding America estimates that 54.2 million people in the United States experienced food insecurity in 2023, including 16.2 million children. The Map the Meal Gap methodology combines USDA CPS data with county-level estimates derived from American Community Survey indicators including poverty rates, unemployment, median income, homeownership, and disability rates. The higher figure reflects the model's inclusion of food-insecure individuals living in otherwise food-secure households (intra-household food insecurity) and its use of local cost-of-meals adjustments that capture regional variation in food costs. Feeding America notes its methodology captures populations that may be missed by the household-level CPS survey."
+        "HUD's 2024 Annual Homeless Assessment Report estimated 653,100 people experiencing homelessness on a single night in January 2024, a 12% increase from the previous year. Approximately 35% were classified as chronically homeless, meaning they had experienced homelessness for at least a year.",
+        "However, advocates argue that point-in-time counts significantly underestimate the true scope. The National Alliance to End Homelessness noted that counts miss people in unstable housing situations, doubled-up households, and those who avoid shelters and encampments. Some estimates suggest the annual number of people experiencing any form of homelessness exceeds 1.5 million."
       ],
       "expected_mode": "trustworthy",
       "description": "USDA reports 47.4 million food-insecure; Feeding America estimates 54.2 million using a model that captures intra-household insecurity and regional cost adjustments.",
@@ -7434,10 +7430,10 @@
       "category": "trustworthy_hedged",
       "difficulty": "hard",
       "subcategory": "temporal_uncertainty",
-      "query": "What is the average home price in Austin, Texas?",
+      "query": "What is the average rent for a one-bedroom apartment in Denver, Colorado?",
       "contexts": [
-        "Austin Board of Realtors Monthly Market Report (June 2024): The median home price in the Austin-Round Rock-Georgetown MSA was $564,000 in June 2024, a 2.3% increase from June 2023. The average sale price was $612,400. Active listings rose to 8,200, representing 4.1 months of inventory — the highest level since 2019. Days on market averaged 52, up from 38 in June 2023. The data covers all residential property types (single-family, condo, townhome) recorded through Austin MLS. The market showed signs of normalization after the 2021-2022 price surge, with sellers accepting an average of 96.2% of asking price.",
-        "Zillow Home Value Index — Austin, TX (December 2024): Zillow's Home Value Index for the Austin metro area was $487,300 as of December 2024, reflecting a 5.8% decline from the June 2024 peak. The ZHVI measures the typical home value using Zillow's proprietary automated valuation model (AVM), which estimates the value of all homes including those not currently for sale. The ZHVI methodology weights toward the 35th-65th percentile to represent a typical home, excluding luxury and entry-level segments that skew average-based metrics. Zillow's forecast model projected a further 2.1% decline over the following 12 months based on rising inventory, mortgage rates above 7%, and continued inbound migration slowdown."
+        "Zillow's 2024 rental market report indicated that the median rent for a one-bedroom apartment in Denver was $1,580 per month as of September 2024, representing a 3.2% year-over-year decrease. New apartment construction has increased supply, moderating rent growth.",
+        "Apartments.com data for the same period showed median one-bedroom rents of $1,425, a larger decline of 7.1%. The discrepancy may reflect differences in data collection methodology — Zillow tracks listing prices while Apartments.com reports signed lease amounts, which are often negotiated below asking price in a softening market."
       ],
       "expected_mode": "trustworthy",
       "description": "ABR reports median sale price of $564K in June 2024; Zillow shows typical home value of $487K in December 2024 — different time points and measurement approaches.",
@@ -7519,7 +7515,7 @@
       "id": "t1_qualify_hard_850",
       "category": "trustworthy_hedged",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "evidence_quality",
       "query": "Status?",
       "contexts": [
         "Project Aurora is currently in the integration testing phase. The backend services passed all unit tests as of last Friday, but the frontend team reported three blocking issues related to the new authentication flow. The deployment to the staging environment has been postponed until these issues are resolved. No updated ETA has been communicated by the frontend lead."
@@ -7542,7 +7538,7 @@
       "id": "t1_qualify_hard_851",
       "category": "trustworthy_hedged",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "evidence_quality",
       "query": "Dosage?",
       "contexts": [
         "For adult patients with moderate hypertension, lisinopril is typically initiated at 10 mg once daily. The dose may be titrated upward based on blood pressure response. However, patients with renal impairment may require dose adjustments. The prescribing information notes that elderly patients and those taking concurrent diuretics may be more sensitive to the hypotensive effects. The maximum recommended dose varies by indication and patient population. Consult the full prescribing information for complete dosing guidelines."
@@ -7565,7 +7561,7 @@
       "id": "t1_qualify_hard_852",
       "category": "trustworthy_hedged",
       "difficulty": "hard",
-      "subcategory": "short_query",
+      "subcategory": "evidence_quality",
       "query": "How eTA?",
       "contexts": [
         "The shipment was dispatched from the warehouse in Memphis, TN on February 3rd via standard ground shipping. The carrier tracking shows the package arrived at the regional distribution center in Atlanta, GA on February 4th at 11:42 PM. No further tracking updates have been recorded. The standard delivery window for ground shipping from Memphis to the Miami metropolitan area is 4-7 business days, though delays have been reported across the southeastern corridor due to weather conditions this week."
@@ -7588,7 +7584,7 @@
       "id": "t1_qualify_hard_853",
       "category": "trustworthy_hedged",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "mixed_evidence",
       "query": "What was the total return on our fixed income portfolio for the fiscal year?",
       "contexts": [
         "The annual investment performance report for the pension fund covers the fiscal year ending September 30, 2024. The total fund returned 8.7% net of fees, outperforming the policy benchmark by 42 basis points. The equity allocation, comprising 55% of total assets, returned 12.3% gross and 11.9% net of fees. Within equities, the domestic large-cap allocation returned 14.1%, driven by strong performance in the technology and healthcare sectors. The international developed markets allocation returned 9.2%, while emerging markets returned 7.8%, slightly underperforming the MSCI Emerging Markets Index due to underweight positions in Chinese technology names that rallied sharply in Q4. The real assets allocation, representing 12% of total assets, generated a total return of 5.4%. Real estate investment trusts recovered from the prior year's losses, returning 8.1%, while infrastructure assets returned 6.3%. The commodities allocation detracted from performance with a return of negative 1.2%, primarily due to weakness in energy prices during the first half of the fiscal year. The alternatives allocation, comprising 8% of total assets, returned 9.8% net of fees, led by the private equity portfolio which reported a 13.2% return based on the most recent quarterly valuations. Hedge fund allocations returned 6.5%, with event-driven strategies outperforming relative value and macro strategies. The cash and short-term holdings allocation returned 5.1%, benefiting from the elevated interest rate environment.",
@@ -7612,7 +7608,7 @@
       "id": "t1_qualify_hard_854",
       "category": "trustworthy_hedged",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "mixed_evidence",
       "query": "Is the new drug candidate safe for use in patients with hepatic impairment?",
       "contexts": [
         "The pharmacokinetic characterization of compound RVT-3081 was conducted as part of the Phase I clinical development program. The single ascending dose study enrolled 48 healthy male volunteers aged 18-45 across six dose cohorts (10 mg, 25 mg, 50 mg, 100 mg, 200 mg, and 400 mg), with six subjects receiving active drug and two receiving placebo in each cohort. The compound demonstrated dose-proportional pharmacokinetics across the tested range, with a mean terminal half-life of approximately 14 hours, supporting once-daily dosing. Peak plasma concentrations were achieved at a median Tmax of 2.5 hours, and the compound exhibited moderate plasma protein binding of 78%. The multiple ascending dose study in healthy volunteers confirmed the absence of significant accumulation with repeated dosing over 14 days. Steady state was achieved by Day 4 in all dose groups. The food effect study showed that co-administration with a high-fat meal increased AUC by approximately 22% and delayed Tmax by 1 hour, which was not considered clinically significant. In vitro studies indicated that RVT-3081 is primarily metabolized by CYP3A4 with minor contributions from CYP2D6. The compound is a weak inhibitor of CYP2C9 but showed no significant inhibition of other major CYP enzymes at clinically relevant concentrations. Renal excretion accounts for approximately 15% of total clearance based on mass balance studies conducted in a separate cohort of eight subjects. The remaining clearance is attributed to hepatic metabolism and biliary excretion.",
@@ -7636,7 +7632,7 @@
       "id": "t1_qualify_hard_855",
       "category": "trustworthy_hedged",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "mixed_evidence",
       "query": "Does our current cybersecurity posture meet the requirements for FedRAMP Moderate authorization?",
       "contexts": [
         "The annual cybersecurity assessment report, prepared by the internal security team in collaboration with external auditors, provides a comprehensive evaluation of the organization's security controls as mapped to the NIST 800-53 framework. The assessment covered all production systems, including the cloud infrastructure hosted on AWS and the on-premises data center in Ashburn, Virginia. The identity and access management controls were found to be largely effective, with multi-factor authentication enforced for all administrative access and 97% of general user accounts. Role-based access control is implemented across all major applications, though the assessment noted that 23 service accounts had excessive privileges that should be remediated. The encryption posture is strong: all data at rest is encrypted using AES-256, and all data in transit uses TLS 1.2 or higher. Certificate management follows automated renewal processes with no expired certificates found during the assessment. The vulnerability management program conducts weekly scans of all internet-facing assets and monthly scans of internal systems. The mean time to remediate critical vulnerabilities improved from 18 days to 11 days year-over-year. However, the assessment identified 14 high-severity findings in the application security domain, including three instances of insufficient input validation in customer-facing APIs. The incident response plan was tested through two tabletop exercises during the year, with response times meeting the documented SLAs. The security operations center provides 24/7 monitoring using a SIEM platform that ingests logs from all critical systems.",
@@ -7660,7 +7656,7 @@
       "id": "t1_qualify_hard_856",
       "category": "trustworthy_hedged",
       "difficulty": "hard",
-      "subcategory": "long_context",
+      "subcategory": "mixed_evidence",
       "query": "Can we use the open-source LLM model weights commercially without any licensing restrictions?",
       "contexts": [
         "The technical evaluation report for the open-source large language model codenamed Falcon-180B provides a detailed assessment of model capabilities, infrastructure requirements, and deployment considerations. The model demonstrates strong performance on standard NLP benchmarks, achieving scores competitive with proprietary models on tasks including text generation, summarization, question answering, and code generation. The model was trained on the RefinedWeb dataset comprising approximately 3.5 trillion tokens sourced from publicly available web data with extensive deduplication and quality filtering. Fine-tuning experiments conducted by the evaluation team showed that the model adapts well to domain-specific tasks with relatively modest amounts of supervised training data. The infrastructure requirements for serving the full 180B parameter model include a minimum of eight A100 80GB GPUs for inference, with quantized variants available that reduce the hardware requirement to four A100 GPUs with acceptable degradation in output quality. The evaluation team also tested a distilled 40B parameter variant that can run on two A100 GPUs while retaining approximately 85% of the full model's performance on the benchmark suite. Latency measurements indicate that the full model generates tokens at approximately 15 tokens per second on the eight-GPU configuration, which meets the target throughput for the anticipated workload. The model supports context windows of up to 2048 tokens in its base configuration, with community-developed extensions enabling context lengths up to 8192 tokens through positional interpolation techniques.",
@@ -9173,9 +9169,10 @@
       "id": "t1_qualify_medium_162",
       "difficulty": "medium",
       "subcategory": "stale_source",
-      "query": "What is the average salary for a data scientist in the United States?",
+      "query": "What is the average starting salary for cybersecurity analysts in the United States?",
       "contexts": [
-        "The Bureau of Labor Statistics Occupational Employment and Wage Statistics report from May 2021 listed the median annual wage for data scientists at $100,910. The 10th percentile earned approximately $59,430 and the 90th percentile earned approximately $167,040. These figures were based on employer surveys conducted across all 50 states and included both private and public sector positions. The BLS noted that demand for data science roles had been growing at approximately 22% annually, which the agency classified as 'much faster than average' compared to all occupations."
+        "The Bureau of Labor Statistics reported a median annual wage of $112,000 for information security analysts in 2024, with entry-level positions starting around $70,000-$85,000 depending on location and certification status. The field is projected to grow 32% from 2022 to 2032.",
+        "However, salary surveys from different sources show significant variation. CompTIA's workforce report estimated entry-level cybersecurity salaries at $55,000-$75,000, while CyberSeek data suggested higher ranges in metropolitan areas. Geographic cost-of-living differences and varying definitions of 'entry-level' contribute to the discrepancy."
       ],
       "expected_mode": "trustworthy",
       "description": "Salary data from 2021 in a rapidly evolving field",
@@ -9183,7 +9180,7 @@
       "domain": "technology",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
@@ -10438,9 +10435,10 @@
       "id": "t1_qualify_medium_131",
       "difficulty": "medium",
       "subcategory": "scope_condition",
-      "query": "Does creatine supplementation improve athletic performance?",
+      "query": "Does beta-alanine supplementation enhance endurance exercise capacity?",
       "contexts": [
-        "A 2024 position stand by the International Society of Sports Nutrition reviewed over 500 studies and confirmed that creatine monohydrate supplementation (3-5g daily) consistently improves performance in short-duration, high-intensity activities such as sprinting, weightlifting, and interval training, with an average performance gain of 5-15%. However, the evidence for endurance activities lasting over 30 minutes is weak and inconsistent, with most studies showing no significant benefit. The ISSN also noted that approximately 20-30% of individuals are 'non-responders' to creatine supplementation, possibly due to already-high baseline muscle creatine levels from diet."
+        "A meta-analysis of 40 studies in the Journal of the International Society of Sports Nutrition found that beta-alanine supplementation improved exercise capacity in activities lasting 1-4 minutes, with a median effect size of 2.85%. The effect was most pronounced in high-intensity cycling and running tests.",
+        "However, for exercises lasting longer than 4 minutes, the evidence is less clear. A 2024 systematic review noted that individual responses vary considerably, and the benefits may be limited to specific exercise modalities. The characteristic paresthesia (tingling) side effect also limits tolerability for some athletes."
       ],
       "expected_mode": "trustworthy",
       "description": "Creatine helps for short-burst activities but not endurance, and a significant minority do not respond",
@@ -10448,7 +10446,7 @@
       "domain": "sports",
       "query_type": "does",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
@@ -10576,9 +10574,10 @@
       "id": "t1_qualify_medium_137",
       "difficulty": "medium",
       "subcategory": "evolving_facts",
-      "query": "What percentage of global electricity comes from renewable sources?",
+      "query": "What share of new vehicle sales are electric vehicles globally?",
       "contexts": [
-        "The International Energy Agency's 2024 World Energy Outlook reported that renewable energy sources accounted for approximately 30% of global electricity generation in 2023, up from 28% in 2022 and 22% in 2019. Solar capacity additions alone reached a record 420 GW in 2023. The IEA projected that renewables would reach 35% by 2025 and could hit 40% by 2027 under current policy trajectories, but cautioned that these projections depend on grid infrastructure investments, battery storage deployment, and policy continuity. The agency noted that the pace of renewable adoption is accelerating faster than previous forecasts anticipated."
+        "The International Energy Agency reported that electric vehicle sales reached 14 million units in 2023, representing approximately 18% of all new car sales globally. China accounted for 60% of global EV sales, followed by Europe at 25%.",
+        "However, EV adoption rates vary dramatically by region. While Norway exceeded 80% EV share of new sales, markets like India, Southeast Asia, and Africa remained below 2%. The IEA noted that without further policy support, global EV market share could plateau at around 25% by 2030."
       ],
       "expected_mode": "trustworthy",
       "description": "Renewable electricity share is growing rapidly with projections outpacing forecasts",
@@ -10586,7 +10585,7 @@
       "domain": "environment",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
