@@ -2773,36 +2773,6 @@
       }
     },
     {
-      "id": "t1_abstain_hard_221",
-      "category": "abstention",
-      "subcategory": "missing_data",
-      "difficulty": "hard",
-      "query": "What specific allergens are present in the menu items at Olive Garden's 2025 seasonal menu?",
-      "contexts": [
-        "Olive Garden is an American casual dining restaurant chain specializing in Italian-American cuisine.",
-        "The chain operates over 900 locations across the United States and Canada.",
-        "Olive Garden is known for its unlimited breadsticks and salad promotion included with entrees."
-      ],
-      "expected_mode": "abstain",
-      "description": "Restaurant chain info but no specific menu allergen data",
-      "rationale": "Chain description and general promotions cannot provide specific allergen information for specific menu items",
-      "original_subcategory": "partial_schema_match",
-      "domain": "food",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "absent",
-      "metadata": {
-        "domain_converted_from": "finance",
-        "conversion_type": "domain_diversification"
-      },
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_abstain_hard_222",
       "category": "abstention",
       "subcategory": "missing_data",
@@ -5359,35 +5329,6 @@
       }
     },
     {
-      "id": "t1_abstain_medium_927",
-      "category": "abstention",
-      "subcategory": "temporal_mismatch",
-      "difficulty": "medium",
-      "query": "What is the average salary for a Senior Product Manager at Stripe in 2024?",
-      "contexts": [
-        "Stripe is a financial technology company founded in 2010 that processes online payments for businesses.",
-        "The company was valued at $65 billion in its 2023 funding round and employs approximately 8,000 people.",
-        "Stripe offers competitive benefits including healthcare, parental leave, and equity compensation."
-      ],
-      "expected_mode": "abstain",
-      "description": "Company information but no salary data",
-      "rationale": "Company valuation and benefits list cannot answer a specific salary question",
-      "domain": "hr_workplace",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "absent",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_abstain_medium_928",
       "category": "abstention",
       "subcategory": "temporal_mismatch",
@@ -5613,35 +5554,6 @@
       }
     },
     {
-      "id": "t1_abstain_hard_937",
-      "category": "abstention",
-      "subcategory": "wrong_specificity",
-      "difficulty": "hard",
-      "query": "What specific battle tactics did Hannibal use at the Battle of Zama in 202 BCE?",
-      "contexts": [
-        "Hannibal Barca is considered one of history's greatest military commanders, known for crossing the Alps with war elephants in 218 BCE.",
-        "The Battle of Cannae in 216 BCE demonstrated Hannibal's famous double-envelopment tactic, killing an estimated 50,000 Roman soldiers.",
-        "Hannibal's campaigns in Italy lasted 15 years before he was recalled to defend Carthage."
-      ],
-      "expected_mode": "abstain",
-      "description": "Information about Hannibal but wrong battles - nothing about Zama",
-      "rationale": "Cannae tactics and Alps crossing cannot answer what happened at Zama",
-      "domain": "history",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "absent",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_abstain_medium_938",
       "category": "abstention",
       "subcategory": "wrong_specificity",
@@ -5661,35 +5573,6 @@
       "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_abstain_hard_939",
-      "category": "abstention",
-      "subcategory": "wrong_specificity",
-      "difficulty": "hard",
-      "query": "What specific allergens are present in the menu items at Olive Garden's 2025 seasonal menu?",
-      "contexts": [
-        "Olive Garden is an American casual dining restaurant chain specializing in Italian-American cuisine.",
-        "The chain operates over 900 locations across the United States and Canada.",
-        "Olive Garden is known for its unlimited breadsticks and salad promotion included with entrees."
-      ],
-      "expected_mode": "abstain",
-      "description": "Restaurant chain info but no specific menu allergen data",
-      "rationale": "Chain description and general promotions cannot provide specific allergen information for specific menu items",
-      "domain": "food",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "absent",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
@@ -7544,42 +7427,6 @@
       }
     },
     {
-      "id": "t1_abstain_hard_1005",
-      "difficulty": "hard",
-      "subcategory": "cross_source_irrelevant",
-      "query": "What are the current interest rates for 30-year fixed mortgages?",
-      "contexts": [
-        "Commercial lending rates for business loans averaged 7.2% in Q3 2024, with SBA 7(a) loans ranging from 6.5% to 9.0% depending on loan amount and term.",
-        "Housing starts increased 12% year-over-year in September 2024, with new construction concentrated in the Sun Belt states. Single-family permits rose to an annualized rate of 970,000 units."
-      ],
-      "context_sources": [
-        {
-          "source_id": "bank_report_q3_2024",
-          "source_type": "industry_report",
-          "authority": "secondary"
-        },
-        {
-          "source_id": "realestate_quarterly_q3",
-          "source_type": "market_report",
-          "authority": "secondary"
-        }
-      ],
-      "expected_mode": "abstain",
-      "description": "Query about residential mortgage rates but sources cover commercial lending rates and housing construction",
-      "rationale": "Commercial loan rates differ from residential mortgage rates, and housing start data provides no interest rate information",
-      "domain": "finance",
-      "query_type": "what",
-      "source_type": "multi_source",
-      "context_count": 2,
-      "reasoning_type": "factual",
-      "evidence_pattern": "direct",
-      "category": "abstention",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_abstain_hard_1006",
       "difficulty": "hard",
       "subcategory": "cross_source_irrelevant",
@@ -8682,35 +8529,6 @@
       "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
-      "category": "abstention",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_abstain_hard_1041",
-      "difficulty": "hard",
-      "subcategory": "missing_data",
-      "query": "What is the fuel efficiency rating of the 2025 Toyota Camry hybrid in city driving?",
-      "contexts": [
-        "The Toyota Camry has been one of the best-selling sedans in the United States for over 20 years.",
-        "Toyota pioneered hybrid technology with the Prius, first introduced in Japan in 1997.",
-        "The Camry is manufactured at Toyota's Georgetown, Kentucky plant, which produces over 500,000 vehicles annually."
-      ],
-      "expected_mode": "abstain",
-      "description": "Camry and Toyota info but no fuel efficiency data",
-      "rationale": "Sales history, hybrid technology origin, and manufacturing location cannot provide specific MPG ratings",
-      "domain": "transportation",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "absent",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
       "category": "abstention",
       "evaluation_config": {
         "mode": "governance",

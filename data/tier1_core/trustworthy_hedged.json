@@ -2239,36 +2239,6 @@
       }
     },
     {
-      "id": "t1_qualify_hard_214",
-      "category": "trustworthy_hedged",
-      "subcategory": "temporal_uncertainty",
-      "difficulty": "hard",
-      "query": "Why did civilizations that built large irrigation systems tend to develop centralized authoritarian governments?",
-      "contexts": [
-        "Karl Wittfogel's hydraulic hypothesis argues that managing large-scale irrigation required centralized bureaucratic control, leading to what he termed 'Oriental despotism.' Archaeological evidence from Mesopotamia, Egypt, and China shows correlation between irrigation scale and political centralization.",
-        "However, recent scholarship on pre-Columbian irrigation in the American Southwest shows complex canal systems managed by decentralized Hohokam communities without strong central authority.",
-        "The correlation between irrigation and authoritarianism may reflect a third factor: population density in river valleys naturally favored both irrigation and political complexity."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Classic hypothesis with supporting evidence but significant counterexamples",
-      "rationale": "Correlation exists but counterexamples and confounding factors undermine causal claims",
-      "original_subcategory": "same_claim_different_timeperiods",
-      "domain": "history",
-      "query_type": "why",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "causal",
-      "evidence_pattern": "direct",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_qualify_hard_215",
       "category": "trustworthy_hedged",
       "subcategory": "temporal_uncertainty",
@@ -3688,36 +3658,6 @@
       }
     },
     {
-      "id": "t1_qualify_hard_321",
-      "category": "trustworthy_hedged",
-      "subcategory": "different_aspects",
-      "difficulty": "hard",
-      "query": "Does increasing police funding reduce violent crime rates in major US cities?",
-      "contexts": [
-        "A 2021 study in the Review of Economics and Statistics found that each additional $1 spent on policing reduced the social cost of crime by $1.63 in cities with populations over 500,000.",
-        "However, a competing analysis published in the Journal of Urban Economics found no significant relationship between police funding increases and violent crime reduction after controlling for demographic shifts and economic conditions.",
-        "Both studies agree that how funds are allocated (community policing vs equipment purchases vs overtime) matters more than total spending, but neither controlled for this variable."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Conflicting econometric studies with acknowledged methodological gaps",
-      "rationale": "Positive ROI finding contradicted by null result, with both lacking allocation controls",
-      "original_subcategory": "risk_vs_benefit",
-      "domain": "government",
-      "query_type": "does",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "causal",
-      "evidence_pattern": "direct",
-      "metadata": {
-        "domain_converted_from": "finance",
-        "conversion_type": "domain_diversification"
-      },
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_qualify_hard_322",
       "category": "trustworthy_hedged",
       "subcategory": "different_aspects",
@@ -3847,36 +3787,6 @@
       "context_count": 2,
       "reasoning_type": "evaluative",
       "evidence_pattern": "mixed",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_qualify_hard_327",
-      "category": "trustworthy_hedged",
-      "subcategory": "different_aspects",
-      "difficulty": "hard",
-      "query": "How effective are government-funded universal pre-K programs at improving long-term educational outcomes?",
-      "contexts": [
-        "The landmark Perry Preschool study showed participants earned 40% more income and were 46% less likely to be incarcerated by age 40, with a $7-$12 return per dollar invested.",
-        "However, the Tennessee Pre-K study (2022 follow-up) found that initial academic gains from universal pre-K had faded by third grade, and participants actually showed slightly worse academic and behavioral outcomes by sixth grade.",
-        "Researchers note the Perry Preschool program was small, intensive, and targeted disadvantaged children specifically, while universal pre-K programs serve all income levels with varying quality."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Landmark positive results contradicted by larger universal implementation",
-      "rationale": "Strong evidence from targeted programs but universal implementation shows fade-out effects",
-      "original_subcategory": "risk_vs_benefit",
-      "domain": "government",
-      "query_type": "how",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "evaluative",
-      "evidence_pattern": "direct",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
@@ -7086,37 +6996,6 @@
       }
     },
     {
-      "id": "t1_qualify_medium_014",
-      "difficulty": "medium",
-      "subcategory": "evidence_quality",
-      "query": "How effective are government-funded universal pre-K programs at improving long-term educational outcomes?",
-      "contexts": [
-        "The landmark Perry Preschool study showed participants earned 40% more income and were 46% less likely to be incarcerated by age 40, with a $7-$12 return per dollar invested.",
-        "However, the Tennessee Pre-K study (2022 follow-up) found that initial academic gains from universal pre-K had faded by third grade, and participants actually showed slightly worse academic and behavioral outcomes by sixth grade.",
-        "Researchers note the Perry Preschool program was small, intensive, and targeted disadvantaged children specifically, while universal pre-K programs serve all income levels with varying quality."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Landmark positive results contradicted by larger universal implementation",
-      "rationale": "Strong evidence from targeted programs but universal implementation shows fade-out effects",
-      "original_id": "qualify_medium_014",
-      "original_subcategory": "small_sample",
-      "domain": "government",
-      "query_type": "how",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "evaluative",
-      "evidence_pattern": "direct",
-      "metadata": {
-        "domain_converted_from": "finance",
-        "conversion_type": "domain_diversification"
-      },
-      "category": "trustworthy_hedged",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_qualify_medium_015",
       "difficulty": "medium",
       "subcategory": "causal_uncertainty",
@@ -7261,35 +7140,6 @@
       "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_qualify_hard_804",
-      "category": "trustworthy_hedged",
-      "difficulty": "hard",
-      "subcategory": "temporal_uncertainty",
-      "query": "Does higher posting frequency on LinkedIn lead to more professional opportunities?",
-      "contexts": [
-        "A LinkedIn internal study of 180,000 active users found those posting 3-5 times per week received 2.4x more recruiter messages than those posting once weekly.",
-        "The study acknowledged that frequent posters tend to hold more senior positions and have larger networks, which independently attract recruiter attention.",
-        "A separate HBR analysis found no statistically significant difference in job offer rates between daily posters and weekly posters when controlling for industry and seniority."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Correlation between posting and opportunities but confounders present",
-      "rationale": "Correlation exists but seniority and network size are confounding variables",
-      "domain": "social_media",
-      "query_type": "does",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "causal",
-      "evidence_pattern": "direct",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
@@ -8092,31 +7942,6 @@
       "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "mixed",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_dispute_medium_510",
-      "category": "trustworthy_hedged",
-      "subcategory": "mixed_evidence",
-      "difficulty": "medium",
-      "query": "What is the unemployment rate in the manufacturing sector?",
-      "contexts": [
-        "The Bureau of Labor Statistics reported manufacturing unemployment at 3.1% for Q3 2024, reflecting continued strength in the sector.",
-        "A survey conducted by the National Association of Manufacturers found that 8.4% of manufacturing workers were actively seeking new employment during the same quarter.",
-        "Manufacturing output increased by 2.3% year over year according to Federal Reserve industrial production data."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Government statistics and industry survey report vastly different unemployment figures for the same period",
-      "rationale": "BLS reports 3.1% and NAM reports 8.4% for the same quarter. The methodological difference (official stats vs. industry survey) may cause the classifier to treat these as non-competing, but they directly contradict each other on the same metric for the same time period. [RELABELED from disputed: sources measure different metrics, not a genuine factual dispute. Requires qualification about what metric is being measured.]",
-      "domain": "technology",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
@@ -10195,29 +10020,6 @@
       "rationale": "Evidence is genuinely split -- the UK trial was positive but a substantial proportion of US firms found it unsustainable, requiring a hedged answer",
       "domain": "hr_workplace",
       "query_type": "should",
-      "source_type": "single",
-      "context_count": 1,
-      "reasoning_type": "evaluative",
-      "evidence_pattern": "partial",
-      "category": "trustworthy_hedged",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_qualify_medium_118",
-      "difficulty": "medium",
-      "subcategory": "mixed_evidence",
-      "query": "Is intermittent fasting effective for long-term weight management?",
-      "contexts": [
-        "A 2024 systematic review in the New England Journal of Medicine analyzed 39 randomized controlled trials and found that intermittent fasting produced an average weight loss of 4.6 kg over 12 months, comparable to traditional caloric restriction. However, adherence rates dropped significantly after 6 months, with only 48% of participants maintaining the fasting schedule at one year. A separate 2025 study in The BMJ followed 1,200 participants for three years and found that 67% of those who lost weight through intermittent fasting regained at least half of it by year three."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Short-term efficacy demonstrated but long-term adherence and weight regain are problematic",
-      "rationale": "Evidence shows IF works for weight loss short-term but mixed adherence data and high regain rates mean long-term effectiveness is uncertain",
-      "domain": "medicine",
-      "query_type": "is",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",

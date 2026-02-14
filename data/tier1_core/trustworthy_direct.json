@@ -1969,35 +1969,6 @@
       }
     },
     {
-      "id": "t1_confident_hard_133",
-      "category": "trustworthy_direct",
-      "subcategory": "quantitative_answer",
-      "difficulty": "hard",
-      "query": "How is the NFL draft order determined for teams that did not make the playoffs?",
-      "contexts": [
-        "NFL draft order for non-playoff teams is determined by inverse order of regular-season record: the team with the worst record picks first. Tiebreakers follow this sequence: 1) Strength of schedule (SOS) - the team that played a weaker schedule picks first, calculated as the combined winning percentage of all 17 opponents. 2) If SOS is identical, divisional/conference records are compared. 3) If still tied, a coin flip determines order. For teams eliminated in the same playoff round, the team with the worse regular-season record picks first. Compensatory picks (rounds 3-7) are awarded based on a proprietary formula comparing the quality and quantity of free agents lost versus gained, with picks announced by the NFL's Management Council in March.",
-        "The 2024 draft saw the Chicago Bears hold the #1 pick with a 7-10 record, the weakest among non-playoff teams, and they selected quarterback Caleb Williams."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Complete draft order determination process with tiebreaker hierarchy",
-      "rationale": "Full sequence of tiebreakers explained with compensatory pick mechanism and real example",
-      "original_subcategory": "quantitative_available",
-      "domain": "sports",
-      "query_type": "how",
-      "source_type": "single",
-      "context_count": 2,
-      "reasoning_type": "factual",
-      "evidence_pattern": "direct",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_confident_hard_134",
       "category": "trustworthy_direct",
       "subcategory": "quantitative_answer",
@@ -2598,36 +2569,6 @@
       }
     },
     {
-      "id": "t1_confident_medium_009",
-      "difficulty": "medium",
-      "subcategory": "clear_explanation",
-      "query": "What is the optimal soil pH range for growing blueberries?",
-      "contexts": [
-        "Blueberries require strongly acidic soil with a pH between 4.5 and 5.5 for optimal growth. At pH levels above 5.5, iron chlorosis develops because iron becomes chemically unavailable despite being present in the soil. Below pH 4.0, aluminum toxicity can damage root systems. The University of Georgia Extension recommends acidifying soil with elemental sulfur at a rate of 1.2 pounds per 100 square feet to lower pH by one unit in sandy soils, or 3.5 pounds per 100 square feet for clay soils. Soil pH should be tested and adjusted 6-12 months before planting.",
-        "USDA research confirms that highbush varieties (V. corymbosum) tolerate slightly higher pH (up to 5.8) than rabbiteye varieties (V. virgatum), which perform best at pH 4.5-5.2."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Precise pH range with adjustment methods and varietal differences",
-      "rationale": "Specific pH numbers, amendment rates, and variety-specific guidance from authoritative sources",
-      "original_id": "confident_medium_009",
-      "original_subcategory": "complete_explanation",
-      "domain": "agriculture",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 2,
-      "reasoning_type": "factual",
-      "evidence_pattern": "direct",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
-      "category": "trustworthy_direct",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_confident_medium_010",
       "difficulty": "medium",
       "subcategory": "direct_factual",
@@ -2868,34 +2809,6 @@
     },
     {
       "id": "t1_confident_hard_803",
-      "category": "trustworthy_direct",
-      "difficulty": "hard",
-      "subcategory": "technical_documented",
-      "query": "Why did Leicester City's 2015-16 Premier League title challenge succeed?",
-      "contexts": [
-        "Leicester City's 5000-1 championship victory was built on three tactical pillars documented by coaching analysts: First, a compact 4-4-2 formation with the lowest average possession (43.6%) of any champion, enabling devastating counterattacks averaging 3.2 seconds from defensive third to shot on goal. Second, Jamie Vardy's 24 goals exploited the offside trap - he made 152 runs in behind defenses, 62% more than any other striker in the league. Third, N'Golo Kante's defensive coverage was statistically unprecedented: he made more tackles (175) and interceptions (157) than any other player, effectively performing the defensive work of two midfielders.",
-        "Opta data confirmed Leicester had the fewest injuries of any Premier League club that season (2,714 training days lost vs league average of 4,200), attributed to manager Claudio Ranieri's policy of giving players the day off after midweek matches."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Data-backed tactical and personnel analysis of historic achievement",
-      "rationale": "Three specific tactical elements quantified with statistics explaining an improbable outcome",
-      "domain": "sports",
-      "query_type": "why",
-      "source_type": "single",
-      "context_count": 2,
-      "reasoning_type": "causal",
-      "evidence_pattern": "direct",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_confident_hard_804",
       "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "technical_documented",
@@ -5148,48 +5061,6 @@
       }
     },
     {
-      "id": "t1_confident_hard_901",
-      "difficulty": "hard",
-      "subcategory": "cross_source_agreement",
-      "query": "What is the speed of light in a vacuum?",
-      "contexts": [
-        "The speed of light in a vacuum is exactly 299,792,458 meters per second. This value was fixed by the 17th General Conference on Weights and Measures in 1983 as part of the redefinition of the metre.",
-        "NIST defines the speed of light c as 299,792,458 m/s exactly, a fundamental physical constant used in the International System of Units to define the metre.",
-        "According to the CRC Handbook of Chemistry and Physics (104th edition), the speed of electromagnetic radiation in vacuum is 299,792,458 m/s, consistent with the SI definition."
-      ],
-      "context_sources": [
-        {
-          "source_id": "physics_textbook_2024",
-          "source_type": "academic",
-          "authority": "primary"
-        },
-        {
-          "source_id": "nist_constants_db",
-          "source_type": "government",
-          "authority": "official"
-        },
-        {
-          "source_id": "crc_handbook_104",
-          "source_type": "reference",
-          "authority": "primary"
-        }
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Fundamental physical constant confirmed by three independent authoritative sources.",
-      "rationale": "All three sources -- academic textbook, government standards body, and reference handbook -- independently confirm the exact same value, providing high confidence.",
-      "domain": "science",
-      "query_type": "what",
-      "source_type": "multi_source",
-      "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "direct",
-      "category": "trustworthy_direct",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_confident_hard_902",
       "difficulty": "hard",
       "subcategory": "cross_source_agreement",
@@ -5217,48 +5088,6 @@
       "query_type": "what",
       "source_type": "multi_source",
       "context_count": 2,
-      "reasoning_type": "factual",
-      "evidence_pattern": "direct",
-      "category": "trustworthy_direct",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_confident_hard_903",
-      "difficulty": "hard",
-      "subcategory": "cross_source_agreement",
-      "query": "What is the half-life of carbon-14?",
-      "contexts": [
-        "The half-life of carbon-14 is 5,730 plus or minus 40 years, as determined by Godwin (1962). This value, sometimes called the Cambridge half-life, is the internationally accepted standard used in radiocarbon dating calibration.",
-        "The International Atomic Energy Agency lists the half-life of C-14 as 5,730 years. This isotope decays via beta emission to nitrogen-14 and is the basis for radiocarbon dating of organic materials up to approximately 50,000 years old.",
-        "The NUBASE2020 evaluated nuclear data tables report the carbon-14 half-life as 5,700 plus or minus 30 years, consistent within measurement uncertainty with the Godwin value of 5,730 years used in practice."
-      ],
-      "context_sources": [
-        {
-          "source_id": "radiochemistry_text_2022",
-          "source_type": "academic",
-          "authority": "primary"
-        },
-        {
-          "source_id": "iaea_nuclear_data",
-          "source_type": "government",
-          "authority": "official"
-        },
-        {
-          "source_id": "nubase2020_tables",
-          "source_type": "reference",
-          "authority": "primary"
-        }
-      ],
-      "expected_mode": "trustworthy",
-      "description": "Carbon-14 half-life confirmed by three independent nuclear science sources.",
-      "rationale": "Academic, governmental, and reference sources all agree on the C-14 half-life value within measurement uncertainty, providing strong cross-source confirmation.",
-      "domain": "science",
-      "query_type": "what",
-      "source_type": "multi_source",
-      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
@@ -5451,42 +5280,6 @@
       "query_type": "what",
       "source_type": "multi_source",
       "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "direct",
-      "category": "trustworthy_direct",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_confident_hard_909",
-      "difficulty": "hard",
-      "subcategory": "cross_source_agreement",
-      "query": "What is the default isolation level in PostgreSQL?",
-      "contexts": [
-        "PostgreSQL uses Read Committed as its default transaction isolation level. In this mode, each statement within a transaction sees a snapshot of the database as of the start of that statement, meaning concurrent committed changes become visible between statements.",
-        "The PostgreSQL 16 release notes and documentation confirm Read Committed as the default isolation level. This can be changed per-transaction with SET TRANSACTION ISOLATION LEVEL or globally via the default_transaction_isolation configuration parameter."
-      ],
-      "context_sources": [
-        {
-          "source_id": "pg_docs_isolation_levels",
-          "source_type": "reference",
-          "authority": "official"
-        },
-        {
-          "source_id": "pg16_release_docs",
-          "source_type": "reference",
-          "authority": "official"
-        }
-      ],
-      "expected_mode": "trustworthy",
-      "description": "PostgreSQL default isolation level confirmed by core documentation and release notes.",
-      "rationale": "Two sections of PostgreSQL's own official documentation independently state Read Committed as the default, with consistent behavioral descriptions.",
-      "domain": "technology",
-      "query_type": "what",
-      "source_type": "multi_source",
-      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",

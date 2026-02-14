@@ -3407,35 +3407,6 @@
       }
     },
     {
-      "id": "t1_dispute_hard_423",
-      "category": "dispute",
-      "difficulty": "hard",
-      "subcategory": "opposing_conclusions",
-      "query": "Did the Library of Alexandria's destruction set back human knowledge by centuries?",
-      "contexts": [
-        "Classical historians argue the Library's destruction was catastrophic: it held an estimated 400,000-700,000 scrolls representing the accumulated knowledge of the ancient world, and its loss forced centuries of rediscovery.",
-        "Revisionist historians counter that the Library had been declining for centuries before its final destruction, that most important works existed in multiple copies across the Mediterranean, and that the 'dark age' narrative is a modern exaggeration.",
-        "Archaeological evidence is inconclusive: no physical remains of the Library have been definitively identified, making assessments of its actual holdings speculative."
-      ],
-      "expected_mode": "disputed",
-      "description": "Opposing historical interpretations of the Library's significance",
-      "rationale": "Traditional view of catastrophic loss contradicted by evidence of gradual decline and text redundancy",
-      "domain": "history",
-      "query_type": "does",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_dispute_hard_424",
       "category": "dispute",
       "difficulty": "hard",
@@ -4159,35 +4130,6 @@
       "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_dispute_medium_526",
-      "category": "dispute",
-      "subcategory": "implicit_contradiction",
-      "difficulty": "medium",
-      "query": "Is Twitter/X's paid verification system more effective at reducing bot activity than the previous legacy verification?",
-      "contexts": [
-        "X's transparency report claims paid verification reduced bot-driven engagement by 40% in the first six months, as bots are unlikely to pay the $8 monthly fee.",
-        "Independent researchers at Stanford and UC Berkeley found that bot activity actually increased by 25% after the paid verification rollout, as sophisticated bot operators purchased verification to gain credibility.",
-        "A separate analysis by Bot Sentinel found that verified accounts spreading misinformation increased 300% post-transition, though overall bot volume remained roughly stable."
-      ],
-      "expected_mode": "disputed",
-      "description": "Platform claims conflict with independent research on bot reduction",
-      "rationale": "X says 40% reduction while independent researchers show increases in bot activity and verified misinformation",
-      "domain": "social_media",
-      "query_type": "is",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting",
-      "metadata": {
-        "domain_converted_from": "medicine",
-        "conversion_type": "domain_diversification"
-      },
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
@@ -5477,34 +5419,6 @@
         "conversion_method": "remove_resolution_context"
       },
       "domain": "government",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 2,
-      "reasoning_type": "factual",
-      "evidence_pattern": "conflicting",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_dispute_hard_583",
-      "category": "dispute",
-      "subcategory": "converted_contradiction",
-      "difficulty": "hard",
-      "query": "What is the failure rate of dental implants after 10 years?",
-      "contexts": [
-        "European Journal of Oral Implantology, Retrospective Study (2015): A retrospective analysis of 1,238 dental implants placed at a single university clinic between 2001 and 2010 reported a 10-year cumulative failure rate of 8.3%. The study found that smoking (HR 2.4), diabetes (HR 1.8), and maxillary posterior placement (HR 1.6) were significant risk factors. Implant failure was defined as implant removal due to mobility, infection, or progressive bone loss exceeding 50% of implant length. The study noted limitations including single-center design and loss to follow-up of 22% of patients.",
-        "International Team for Implantology Consensus Report (2024): The ITI, the largest academic organization in implant dentistry, reports that current-generation titanium dental implants demonstrate 10-year survival rates exceeding 97% in non-smoking patients without uncontrolled systemic disease. The ITI notes that early studies reported higher failure rates due to the use of first-generation implant surfaces and less refined surgical protocols. The consensus statement emphasizes that survival rates have improved substantially over the past two decades due to advances in implant surface technology, guided surgery, and patient selection protocols."
-      ],
-      "expected_mode": "disputed",
-      "description": "Converted dispute: Older single-center study reports 8.3% failure vs. newer meta-analysis showing 3.6% failure, resolved by temporal and methodological superiority of the meta-analysis",
-      "rationale": "With the resolving/authoritative context removed, the remaining sources present conflicting information without resolution. Original resolution: Contradiction signal: 8.3% vs 3.6% failure rate is a genuine numerical discrepancy that could trigger dispute detection. Qualify signal: the older study is from a university clinic and could represent a specific patient population. Resolution: the 2023 meta-analysis (67 studies, 23,238 implants) supersedes the 2015 single-center study (1,238 implants) by temporal recency, sample size, and methodology. The ITI consensus explains the discrepancy as older implant technology. Correct mode is CONFIDENT because the contradiction is resolved by the newer, larger, methodologically superior study.",
-      "metadata": {
-        "converted_from": "t1_confident_hard_836",
-        "conversion_method": "remove_resolution_context"
-      },
-      "domain": "medicine",
       "query_type": "what",
       "source_type": "single",
       "context_count": 2,
@@ -7837,35 +7751,6 @@
       }
     },
     {
-      "id": "t1_dispute_hard_655",
-      "difficulty": "hard",
-      "subcategory": "numerical_conflict",
-      "query": "Is ride-sharing (Uber/Lyft) reducing or increasing urban traffic congestion?",
-      "contexts": [
-        "A study published in Science Advances found ride-hailing added 5.7 billion vehicle miles to nine major US metro areas annually, increasing congestion by 2-3% as deadheading (driving empty between fares) accounts for 40% of ride-hail vehicle miles.",
-        "Uber's internal research countered that pooled rides (UberPool/Lyft Shared) reduce per-passenger vehicle miles by 55% and that ride-hailing reduces drunk driving incidents by 6%, producing net social benefits.",
-        "A Schaller Consulting analysis found that for every car trip ride-hailing removes from the road, it generates 2.6 new vehicle trips, with 60% of ride-hail users in Manhattan stating they would have taken transit, walked, or biked without the service."
-      ],
-      "expected_mode": "disputed",
-      "description": "Independent research shows congestion increase while industry research claims benefits",
-      "rationale": "Academic studies show net congestion increase from deadheading and mode substitution, contradicting industry claims of efficiency",
-      "domain": "transportation",
-      "query_type": "is",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "causal",
-      "evidence_pattern": "conflicting",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
-      "category": "dispute",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_dispute_hard_656",
       "difficulty": "hard",
       "subcategory": "numerical_conflict",
@@ -8619,35 +8504,6 @@
       }
     },
     {
-      "id": "t1_dispute_hard_681",
-      "difficulty": "hard",
-      "subcategory": "implicit_contradiction",
-      "query": "Does requiring employees to return to the office improve collaboration and innovation?",
-      "contexts": [
-        "Microsoft's Work Trend Index study of 60,000 employees found that remote work reduced cross-group collaboration by 25% and made communication networks more siloed and static.",
-        "A Stanford study of 1,612 employees at a Chinese tech firm found that hybrid workers (3 days office, 2 days remote) showed no difference in innovation output, code quality, or performance reviews compared to full-time office workers, while resignation rates dropped 33%.",
-        "Apple and Google executives have publicly stated that in-person serendipitous interactions drive innovation, but neither company has published data supporting this claim."
-      ],
-      "expected_mode": "disputed",
-      "description": "Research shows mixed results on collaboration with unsubstantiated corporate claims",
-      "rationale": "Microsoft data shows collaboration decline remotely, Stanford shows no innovation difference in hybrid, and corporate claims lack evidence",
-      "domain": "hr_workplace",
-      "query_type": "does",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "causal",
-      "evidence_pattern": "conflicting",
-      "metadata": {
-        "domain_converted_from": "medicine",
-        "conversion_type": "domain_diversification"
-      },
-      "category": "dispute",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_dispute_hard_682",
       "difficulty": "hard",
       "subcategory": "implicit_contradiction",
@@ -8692,35 +8548,6 @@
       "context_count": 3,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
-      "category": "dispute",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_dispute_hard_684",
-      "difficulty": "hard",
-      "subcategory": "binary_conflict",
-      "query": "Does social media usage increase or decrease feelings of loneliness among young adults?",
-      "contexts": [
-        "A University of Pennsylvania study found that limiting social media to 30 minutes daily led to significant reductions in loneliness and depression over three weeks among 143 undergraduates.",
-        "A contrasting Oxford Internet Institute study of 12,000 adolescents found no meaningful association between social media use and well-being, calling prior findings statistically fragile.",
-        "Meta's internal research, leaked in 2021, acknowledged that Instagram makes body image issues worse for one in three teenage girls, contributing to social comparison and isolation."
-      ],
-      "expected_mode": "disputed",
-      "description": "Studies directly contradict each other on the loneliness-social media link",
-      "rationale": "One study shows harm reduced by limiting use, another finds no association, and internal research shows specific harms",
-      "domain": "social_media",
-      "query_type": "does",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting",
-      "metadata": {
-        "domain_converted_from": "technology",
-        "conversion_type": "domain_diversification"
-      },
       "category": "dispute",
       "evaluation_config": {
         "mode": "governance",
@@ -9424,30 +9251,6 @@
       }
     },
     {
-      "id": "t1_dispute_hard_714",
-      "difficulty": "hard",
-      "subcategory": "numerical_conflict",
-      "query": "What is the average annual return of the S&P 500?",
-      "contexts": [
-        "Vanguard's 2024 investor education materials state that the S&P 500 has delivered an average annual return of 10.3% since its inception in 1957, using arithmetic mean total returns including dividends.",
-        "Professor Robert Shiller's dataset at Yale, widely used in academic research, reports the S&P 500's compound annual growth rate (CAGR) as 7.0% in real terms (inflation-adjusted) since 1957, or approximately 10.1% nominal, but notes that the geometric mean (actual investor experience) is 9.4% nominal due to the difference between arithmetic and geometric averaging."
-      ],
-      "expected_mode": "disputed",
-      "description": "Reported S&P 500 average returns range from 7.0% to 10.3% depending on methodology and inflation adjustment.",
-      "rationale": "Vanguard reports 10.3% using arithmetic mean nominal returns, Shiller reports 7.0% real or 9.4% geometric nominal -- the 'average return' differs by up to 47% depending on whether you use arithmetic vs. geometric mean and nominal vs. real values.",
-      "domain": "technology",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 2,
-      "reasoning_type": "factual",
-      "evidence_pattern": "conflicting",
-      "category": "dispute",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
       "id": "t1_dispute_hard_715",
       "difficulty": "hard",
       "subcategory": "numerical_conflict",
@@ -9460,54 +9263,6 @@
       "description": "The NFL reports 174 concussions while an independent analysis estimates 450-600 for the same season.",
       "rationale": "The NFL's official count of 174 concussions is 2.5-3.5x lower than Boston University's estimate of 450-600, representing a fundamental disagreement about the true injury rate with significant player safety implications.",
       "domain": "sports",
-      "query_type": "how",
-      "source_type": "single",
-      "context_count": 2,
-      "reasoning_type": "factual",
-      "evidence_pattern": "conflicting",
-      "category": "dispute",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_dispute_hard_716",
-      "difficulty": "hard",
-      "subcategory": "numerical_conflict",
-      "query": "How much energy does Bitcoin mining consume annually?",
-      "contexts": [
-        "The Cambridge Centre for Alternative Finance's Bitcoin Electricity Consumption Index estimated Bitcoin's annual energy consumption at 95.5 terawatt-hours (TWh) as of December 2023, roughly equivalent to the energy consumption of the Philippines.",
-        "The Bitcoin Mining Council's Q4 2023 survey of its members, who represent 48% of the global Bitcoin mining network, extrapolated total network consumption at 63.5 TWh annually, noting that 58.9% of mining energy comes from sustainable sources and that the Cambridge model overestimates consumption by using outdated hardware efficiency assumptions."
-      ],
-      "expected_mode": "disputed",
-      "description": "Two tracking organizations report Bitcoin energy consumption figures differing by 50%.",
-      "rationale": "Cambridge estimates Bitcoin uses 95.5 TWh annually while the Bitcoin Mining Council estimates 63.5 TWh -- a 50% disagreement on the same metric, driven by different hardware efficiency assumptions and methodological approaches.",
-      "domain": "finance",
-      "query_type": "how",
-      "source_type": "single",
-      "context_count": 2,
-      "reasoning_type": "factual",
-      "evidence_pattern": "conflicting",
-      "category": "dispute",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_dispute_hard_717",
-      "difficulty": "hard",
-      "subcategory": "numerical_conflict",
-      "query": "How many people died in the Bengal famine of 1943?",
-      "contexts": [
-        "The official Famine Inquiry Commission report published in 1945 by the British colonial government estimated that 1.5 million people died in the Bengal famine of 1943, attributing the cause primarily to natural crop failure from a cyclone and flooding, with wartime disruptions as a secondary factor.",
-        "Nobel laureate economist Amartya Sen's research, published in his 1981 book 'Poverty and Famines,' estimated the death toll at approximately 3 million people, based on demographic analysis of excess mortality data, and attributed the famine primarily to wartime policy failures including rice exports, military requisitioning, and denial of food imports by the British War Cabinet."
-      ],
-      "expected_mode": "disputed",
-      "description": "The official colonial report and Nobel laureate research disagree on the Bengal famine death toll by a factor of two.",
-      "rationale": "The British commission reported 1.5 million deaths blaming natural causes, while Sen estimated 3 million using demographic data and blamed colonial policy -- a 2x discrepancy in death toll with fundamentally different causal attributions.",
-      "domain": "government",
       "query_type": "how",
       "source_type": "single",
       "context_count": 2,
@@ -9749,30 +9504,6 @@
       "rationale": "A five-fold difference in claimed ROI (10-15% vs 2-4%) represents a direct contradiction in financial conclusions about the same investment.",
       "domain": "real_estate",
       "query_type": "should",
-      "source_type": "single",
-      "context_count": 2,
-      "reasoning_type": "evaluative",
-      "evidence_pattern": "conflicting",
-      "category": "dispute",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_dispute_medium_575",
-      "difficulty": "medium",
-      "subcategory": "opposing_conclusions",
-      "query": "Does social media use cause depression in teenagers?",
-      "contexts": [
-        "A landmark study by Dr. Jean Twenge published in the Journal of Abnormal Psychology, analyzing survey data from 500,000 adolescents between 2010 and 2024, found a strong causal link between social media use and teen depression. The research showed that teens who spend more than three hours daily on social media are 35% more likely to report depressive symptoms. The study controlled for income, family structure, and pre-existing mental health conditions.",
-        "A comprehensive review by Oxford University's Internet Institute, published in Nature Human Behaviour, concluded that social media has a trivial effect on adolescent well-being. Analyzing 72 datasets involving over 2 million participants, the researchers found that social media use accounts for less than 0.4% of the variation in teen depression scores. Lead researcher Professor Andrew Przybylski stated the effect is smaller than that of regularly wearing glasses or eating potatoes."
-      ],
-      "expected_mode": "disputed",
-      "description": "One major study claims a strong causal link between social media and teen depression while another finds the effect is trivially small",
-      "rationale": "These sources reach diametrically opposed conclusions: one finds social media a significant cause of depression, the other finds the effect negligible.",
-      "domain": "psychology",
-      "query_type": "does",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
