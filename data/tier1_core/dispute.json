@@ -9518,6 +9518,1758 @@
         "mode": "governance",
         "check_mode_match": true
       }
+    },
+    {
+      "id": "t1_dispute_medium_565",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "How much does the average wedding cost in the United States?",
+      "contexts": [
+        "The Knot's 2024 Real Weddings Study surveyed 12,000 couples across all 50 states and found that the average cost of a wedding in the United States was $35,000. This figure includes the ceremony venue, reception, catering, photography, flowers, entertainment, and wedding planner fees. The report notes that costs have risen approximately 8% from the previous year, driven primarily by increased catering and venue pricing in major metropolitan areas like New York, Los Angeles, and Chicago.",
+        "WeddingWire's 2024 Annual Survey, based on self-reported data from 9,500 couples nationwide, reports the national average wedding cost at $27,400. The survey methodology excludes honeymoon expenses and engagement ring purchases but includes all ceremony and reception costs. Regional variation is significant, with couples in the Northeast spending an average of $38,000 while those in the South average $22,000 according to the same dataset. The median cost was lower at $22,500, reflecting the influence of high-cost outliers."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two major wedding industry surveys report substantially different average costs ($35,000 vs $27,400)",
+      "rationale": "A $7,600 gap between two large surveys of the same year represents a meaningful disagreement about average wedding costs that cannot be reconciled without understanding methodological differences.",
+      "domain": "finance",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_566",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "How many species of birds are there worldwide?",
+      "contexts": [
+        "According to BirdLife International's 2024 State of the World's Birds report, there are approximately 11,188 recognized bird species globally. This count follows the Biological Species Concept, which classifies species based on reproductive isolation. The organization has maintained this taxonomy since 1990 and it is used by the International Union for Conservation of Nature for conservation assessments and Red List classifications.",
+        "A comprehensive genomic analysis published in the Proceedings of the Royal Society in 2024 identifies approximately 18,400 bird species worldwide. The researchers applied the phylogenetic species concept, which distinguishes species based on diagnosable genetic and morphological differences. Lead author Dr. Robert Nakamura noted that many populations currently classified as subspecies show sufficient genetic divergence to warrant full species status under this framework."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two authoritative sources give vastly different bird species counts (11,188 vs 18,400) based on different taxonomic concepts",
+      "rationale": "The 7,200-species gap reflects a fundamental disagreement in classification methodology that should be flagged rather than presenting either number as definitive.",
+      "domain": "science",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_567",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "What percentage of employees would quit rather than return to the office full-time?",
+      "contexts": [
+        "A Gallup workplace survey conducted in Q1 2025 with 15,000 respondents found that 29% of remote-capable workers would actively seek a new job if their employer eliminated remote work options entirely. The survey also found that 54% of these workers preferred a hybrid arrangement of two to three days in the office per week, suggesting that moderate schedule flexibility satisfies the majority of employees without requiring full remote work.",
+        "FlexJobs' 2025 Work Flexibility Report, surveying 8,200 professionals across 14 industries, found that 57% of respondents said they would absolutely look for a new job if forced to return to in-person work full-time. Additionally, 17% said they would quit immediately without having another job lined up. The report emphasized that remote work has become a non-negotiable benefit for the majority of knowledge workers, with the strongest preferences observed among workers aged 35 to 50."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two workplace surveys report very different percentages of employees who would quit over return-to-office mandates (29% vs 57%)",
+      "rationale": "A near-doubling in the reported percentage (29% vs 57%) represents a significant factual disagreement between two credible surveys that should be flagged.",
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_568",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "How much water does it take to produce one pound of beef?",
+      "contexts": [
+        "The Water Footprint Network's global assessment calculates that producing one pound of beef requires approximately 1,800 gallons of water when accounting for drinking water, feed crop irrigation, and processing facilities. This figure represents a weighted global average across different farming systems including intensive feedlot operations and extensive grazing systems in various climate zones. The organization describes beef as having the largest water footprint of any common protein source by a significant margin.",
+        "Research from the University of California, Davis published in the Journal of Animal Science found that beef production in the western United States requires approximately 410 gallons of water per pound. The study accounted for actual irrigation water consumed, rainfall captured by pastures, and processing water, arguing that previous estimates dramatically overcount by including non-consumptive rainfall that falls on grasslands regardless of whether cattle are present on the land."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two sources give dramatically different water footprints for beef production (1,800 vs 410 gallons per pound)",
+      "rationale": "A four-fold difference in water usage figures represents a major disagreement that should be flagged, even though methodological differences partially explain the gap.",
+      "domain": "agriculture",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_569",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "What is the failure rate for restaurant businesses in the first year?",
+      "contexts": [
+        "A comprehensive study by Ohio State University analyzing 350,000 restaurant openings from the Bureau of Labor Statistics data found that approximately 60% of restaurants close within the first year of operation. The study attributed high failure rates to undercapitalization, poor location selection, and inadequate market research. Restaurants in urban areas showed slightly higher failure rates at 64% compared to 55% in suburban locations.",
+        "The National Restaurant Association's 2024 Industry Factbook reports that approximately 17% of restaurants close within their first year, based on IRS tax filing cessation data. The NRA notes that the restaurant industry's first-year closure rate is comparable to other small business sectors. The association emphasizes that popular claims of 60-90% failure rates conflate temporary closures, ownership transfers, and rebranding with actual business failures."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two sources report vastly different restaurant first-year failure rates (60% vs 17%)",
+      "rationale": "The enormous gap between 60% and 17% represents a direct factual disagreement that should be clearly flagged rather than presenting either figure as authoritative.",
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_570",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "How many people in the US are affected by food insecurity?",
+      "contexts": [
+        "The USDA's annual Household Food Security report for 2024 found that 33.1 million Americans lived in food-insecure households, representing approximately 10.2% of the total U.S. population. This figure uses the USDA's standardized 18-item survey instrument measuring food access and availability over the previous 12 months. The rate decreased slightly from 10.5% the prior year, continuing a downward trend attributed to expanded federal nutrition assistance programs.",
+        "Feeding America's Map the Meal Gap 2024 study estimates that 47 million people in the United States experience food insecurity, including 14 million children under the age of 18. The nonprofit's methodology incorporates USDA data alongside local unemployment rates, poverty indicators, housing cost burdens, and food price indexes at the county level to model food insecurity more comprehensively than the narrower federal household survey captures."
+      ],
+      "expected_mode": "disputed",
+      "description": "Federal data and nonprofit analysis give substantially different food insecurity figures (33.1 million vs 47 million)",
+      "rationale": "A 14-million-person gap between two authoritative sources on the same social issue represents a significant disagreement that should be flagged.",
+      "domain": "government",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_571",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "What is the average salary for a data scientist in the United States?",
+      "contexts": [
+        "Glassdoor's 2025 salary data, based on 48,000 self-reported compensation entries from verified employees, shows the average data scientist salary in the United States is $128,500 per year. The median base salary is $121,000 with an additional $15,000 in annual bonuses and stock compensation. Senior data scientists average $162,000 in total compensation, and entry-level data scientists earn approximately $95,000 according to the platform's employer-reported figures.",
+        "The Bureau of Labor Statistics Occupational Employment and Wage Statistics program for May 2024 reports the mean annual wage for data scientists at $108,020. The median annual wage is $103,500, with the lowest 10% of earners receiving below $61,400 and the highest 10% earning above $174,500. BLS data is derived from employer payroll records submitted through mandatory surveys covering approximately 1.1 million business establishments nationwide, providing what the agency considers the most representative compensation data available."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two salary data sources report different average data scientist salaries ($128,500 vs $108,020)",
+      "rationale": "A $20,000 gap between two widely-cited salary databases represents a meaningful disagreement that should be flagged when answering salary questions.",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_572",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Does intermittent fasting help with weight loss?",
+      "contexts": [
+        "A 12-month randomized controlled trial published in the New England Journal of Medicine in 2024, involving 550 participants, found that intermittent fasting produced significantly greater weight loss than traditional calorie restriction. Participants following a 16:8 fasting protocol lost an average of 14.2 pounds compared to 8.1 pounds in the calorie-restriction group. The fasting group also showed improved insulin sensitivity and reduced inflammatory markers.",
+        "A meta-analysis of 27 clinical trials published in the Journal of the American Medical Association in 2025 concluded that intermittent fasting offers no meaningful weight loss advantage over standard calorie reduction. Lead author Dr. Patricia Holden stated that when total caloric intake is matched, fasting protocols produce nearly identical outcomes. The analysis found an average difference of only 0.7 pounds between fasting and non-fasting groups over 12 months."
+      ],
+      "expected_mode": "disputed",
+      "description": "One study finds intermittent fasting significantly better for weight loss, while a meta-analysis finds no meaningful advantage",
+      "rationale": "A single large RCT claims significant benefit while a meta-analysis of 27 trials finds effectively no difference, representing a direct contradiction in conclusions.",
+      "domain": "medicine",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_573",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Is year-round schooling better for student achievement?",
+      "contexts": [
+        "A longitudinal study by the National Education Policy Center tracking 42,000 students across 180 schools found that year-round schooling significantly improves academic outcomes. Students in year-round programs scored 11 percentile points higher on standardized math tests and 8 points higher in reading compared to peers on traditional calendars. The benefits were most pronounced for low-income students who experienced less summer learning loss.",
+        "Research published in the Review of Educational Research by Dr. Harris Cooper and colleagues analyzed 39 studies of year-round schooling and concluded that it has no significant effect on student achievement. The meta-analysis found that initial gains attributed to year-round calendars disappear when controlling for selection bias and socioeconomic factors. Schools that adopted year-round schedules tended to receive additional funding and resources that confounded the results."
+      ],
+      "expected_mode": "disputed",
+      "description": "One study finds year-round schooling significantly improves achievement while another finds no significant effect",
+      "rationale": "Direct opposition between a positive finding (11 percentile point improvement) and a meta-analysis finding no effect when controlling for confounds.",
+      "domain": "education",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_574",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Should homeowners invest in solar panels based on financial return?",
+      "contexts": [
+        "An analysis by EnergySage based on 2024 installation data from 35,000 homeowners found that residential solar panels provide an average return on investment of 10-15% annually, with most systems paying for themselves within 6-8 years. After the payback period, homeowners save an average of $1,500 per year on electricity bills. Federal tax credits covering 30% of installation costs significantly improve the financial case.",
+        "A study by Lawrence Berkeley National Laboratory published in Nature Energy found that the financial returns of residential solar are frequently overstated. After accounting for actual degradation rates, maintenance costs, insurance increases, and the opportunity cost of capital, the effective ROI drops to 2-4% annually for most homeowners. The study also found that 23% of systems failed to pay for themselves within their 25-year warranty period due to unexpectedly low energy production."
+      ],
+      "expected_mode": "disputed",
+      "description": "One source claims solar panels provide 10-15% annual ROI while another finds only 2-4% after full cost accounting",
+      "rationale": "A five-fold difference in claimed ROI (10-15% vs 2-4%) represents a direct contradiction in financial conclusions about the same investment.",
+      "domain": "real_estate",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_575",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Does social media use cause depression in teenagers?",
+      "contexts": [
+        "A landmark study by Dr. Jean Twenge published in the Journal of Abnormal Psychology, analyzing survey data from 500,000 adolescents between 2010 and 2024, found a strong causal link between social media use and teen depression. The research showed that teens who spend more than three hours daily on social media are 35% more likely to report depressive symptoms. The study controlled for income, family structure, and pre-existing mental health conditions.",
+        "A comprehensive review by Oxford University's Internet Institute, published in Nature Human Behaviour, concluded that social media has a trivial effect on adolescent well-being. Analyzing 72 datasets involving over 2 million participants, the researchers found that social media use accounts for less than 0.4% of the variation in teen depression scores. Lead researcher Professor Andrew Przybylski stated the effect is smaller than that of regularly wearing glasses or eating potatoes."
+      ],
+      "expected_mode": "disputed",
+      "description": "One major study claims a strong causal link between social media and teen depression while another finds the effect is trivially small",
+      "rationale": "These sources reach diametrically opposed conclusions: one finds social media a significant cause of depression, the other finds the effect negligible.",
+      "domain": "psychology",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_576",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Is organic produce healthier than conventionally grown produce?",
+      "contexts": [
+        "A systematic review published in the British Journal of Nutrition analyzed 343 peer-reviewed studies and concluded that organic crops have significantly higher concentrations of antioxidants, with 18-69% more polyphenols compared to conventional crops. The review also found that organic produce contains 48% lower cadmium concentrations and significantly fewer pesticide residues. The authors concluded these differences are nutritionally meaningful and relevant to human health.",
+        "Stanford University's Annals of Internal Medicine review of 237 studies found no strong evidence that organic foods are significantly more nutritious than conventional alternatives. While organic produce had 30% lower pesticide residues, the levels in conventional produce were almost always within safety limits. The researchers found no clinically meaningful differences in vitamin or mineral content and concluded that consuming organic food does not produce measurable health benefits."
+      ],
+      "expected_mode": "disputed",
+      "description": "One systematic review finds organic produce significantly healthier while another finds no meaningful health benefit",
+      "rationale": "Two large systematic reviews reach opposite conclusions about whether organic food's nutritional differences translate to actual health benefits.",
+      "domain": "food",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_577",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Does increasing the minimum wage reduce employment?",
+      "contexts": [
+        "A widely cited study by economists at the University of Washington analyzing Seattle's minimum wage increase to $15 per hour found that the policy reduced total hours worked in low-wage jobs by 9.4%, resulting in a net income loss of $125 per month for affected workers. The study used administrative payroll data covering 90% of Washington state workers and found that employers cut hours significantly in response to the wage increase.",
+        "Research by economists at the University of California, Berkeley, studying the same Seattle minimum wage increase, found no significant reduction in employment or hours worked in the restaurant sector. Using a border discontinuity design comparing Seattle restaurants to those in neighboring suburbs, the study found that wages rose 7% with no measurable job losses. The researchers attributed the difference to their methodology better controlling for economic trends."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two studies of the same minimum wage increase reach opposite conclusions about its employment effects",
+      "rationale": "Using the same policy event, one study finds significant job losses while the other finds none, representing a direct empirical contradiction.",
+      "domain": "law",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_578",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Is it legal to record a phone call without the other party's consent in California?",
+      "contexts": [
+        "California Penal Code Section 632 requires all-party consent for recording confidential phone conversations. A 2024 ruling by the California Court of Appeal in Martinez v. TeleCorp reaffirmed that recording a phone call without the consent of all parties is a criminal offense punishable by a fine of up to $2,500 per violation or imprisonment for up to one year. The court emphasized that this applies to both personal and business calls.",
+        "The National Conference of State Legislatures' 2024 guide on recording laws states that California is a one-party consent state for phone recordings, meaning only one participant needs to consent to the recording. The guide notes that California follows the federal Wiretap Act standard, which permits recording as long as at least one party to the conversation has given consent. The NCSL classifies 38 states as one-party consent jurisdictions."
+      ],
+      "expected_mode": "disputed",
+      "description": "One source says California requires all-party consent for recording while another classifies it as one-party consent",
+      "rationale": "These sources directly contradict each other on a binary legal question: California is either all-party or one-party consent. Both cannot be correct.",
+      "domain": "law",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_579",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Does cracking your knuckles cause arthritis?",
+      "contexts": [
+        "A study published in the Journal of the American Board of Family Medicine in 2024 followed 215 habitual knuckle crackers and 210 non-crackers over a 15-year period. The research found that habitual knuckle cracking was associated with a statistically significant increase in hand osteoarthritis, with crackers showing 2.3 times higher rates of joint cartilage deterioration on MRI imaging. The study's lead author recommended patients avoid the habit.",
+        "The Arthritis Foundation states definitively that cracking your knuckles does not cause arthritis. This position is supported by a comprehensive meta-analysis in Arthritis & Rheumatology reviewing 11 studies with over 4,000 participants that found no association between habitual knuckle cracking and joint inflammation or arthritis development. Dr. Donald Unger's famous self-experiment, cracking only his left hand for 60 years, showed no difference in arthritis between hands."
+      ],
+      "expected_mode": "disputed",
+      "description": "One study links knuckle cracking to arthritis while the Arthritis Foundation and a meta-analysis say it does not cause arthritis",
+      "rationale": "A direct yes-or-no contradiction: one source finds a significant association while another authoritatively denies any connection.",
+      "domain": "medicine",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_580",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Is homework beneficial for elementary school students?",
+      "contexts": [
+        "A 2024 study by Duke University psychologist Dr. Harris Cooper, analyzing 60 research studies on homework effectiveness, found that homework has no measurable academic benefit for students in elementary school (grades K-5). The research showed zero correlation between time spent on homework and standardized test scores or grades for this age group. Cooper recommended that elementary schools eliminate or drastically reduce homework assignments.",
+        "The National PTA and National Education Association jointly published a research brief in 2024 supporting homework for all grade levels. Their analysis of longitudinal data from 12,000 elementary students showed that students completing 20-30 minutes of nightly homework scored 7 percentile points higher on end-of-year assessments. The organizations maintained that age-appropriate homework builds study habits, reinforces classroom learning, and develops student responsibility."
+      ],
+      "expected_mode": "disputed",
+      "description": "One study finds homework has no academic benefit for elementary students while education organizations find measurable gains",
+      "rationale": "Direct binary contradiction: one source finds zero benefit while another finds a 7-percentile-point improvement from elementary homework.",
+      "domain": "education",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_581",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Does vitamin D supplementation prevent cancer?",
+      "contexts": [
+        "The VITAL randomized clinical trial, published in the New England Journal of Medicine, followed 25,871 participants for an average of 5.3 years and found that vitamin D supplementation at 2,000 IU daily did not significantly reduce the incidence of invasive cancer compared to placebo. The hazard ratio was 0.96 with a 95% confidence interval spanning 0.88 to 1.06, indicating no statistically significant protective effect.",
+        "A pooled analysis of participant-level data from 12 randomized trials published in the Annals of Oncology found that vitamin D supplementation reduced cancer mortality by 13% overall and reduced incidence of metastatic or fatal cancer by 17%. Researchers from Harvard and the German Cancer Research Center reported that the protective effect was most pronounced in participants who maintained serum 25-hydroxyvitamin D levels above 40 ng/mL throughout the study period."
+      ],
+      "expected_mode": "disputed",
+      "description": "A major RCT finds no cancer prevention benefit from vitamin D while a pooled analysis finds significant mortality reduction",
+      "rationale": "One large trial finds no benefit while a pooled analysis of multiple trials finds a meaningful 13-17% reduction, directly contradicting each other.",
+      "domain": "medicine",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_582",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Is remote patient monitoring effective at reducing hospital readmissions?",
+      "contexts": [
+        "A randomized controlled trial conducted by the Veterans Health Administration involving 3,200 heart failure patients found that remote patient monitoring using connected devices reduced 30-day hospital readmission rates by 38% compared to standard care. The monitoring program, which tracked weight, blood pressure, and symptoms daily via connected devices, allowed nurses to intervene before conditions deteriorated. The VA expanded the program to 22 additional facilities based on these results.",
+        "A 2024 systematic review published in JAMA Internal Medicine analyzed 29 randomized trials of remote patient monitoring programs and concluded they do not significantly reduce hospital readmissions. The review found a pooled relative risk of 0.94 with a confidence interval crossing 1.0, indicating no statistically significant benefit. The authors noted that positive results from individual trials often failed to replicate at scale and were subject to publication bias."
+      ],
+      "expected_mode": "disputed",
+      "description": "A VA trial shows 38% reduction in readmissions from remote monitoring while a systematic review finds no significant benefit",
+      "rationale": "One trial claims a dramatic 38% reduction while a broader review of 29 trials finds the effect statistically insignificant, a clear contradiction.",
+      "domain": "technology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_583",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Should athletes stretch before exercise to prevent injuries?",
+      "contexts": [
+        "The American College of Sports Medicine's 2024 position statement recommends static stretching before exercise as an essential component of injury prevention. Their review of 18 studies found that pre-exercise stretching reduces the risk of muscle strains by 28% and overall musculoskeletal injuries by 15%. The ACSM guidelines specify 15-30 seconds of static stretching for each major muscle group as optimal preparation for physical activity.",
+        "A Cochrane systematic review updated in 2024, analyzing 12 high-quality randomized controlled trials with 8,806 participants, concluded that stretching before exercise does not significantly reduce the risk of sports injuries. The review found no clinically meaningful difference in injury rates between stretching and non-stretching groups for any type of injury. The authors stated there is moderate-quality evidence that pre-exercise stretching is ineffective for injury prevention."
+      ],
+      "expected_mode": "disputed",
+      "description": "ACSM recommends pre-exercise stretching as protective while a Cochrane review finds it ineffective for injury prevention",
+      "rationale": "An authoritative sports medicine body recommends stretching based on evidence of benefit while a systematic review finds no injury prevention effect.",
+      "domain": "sports",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_584",
+      "difficulty": "medium",
+      "subcategory": "implicit_contradiction",
+      "query": "How is the housing market performing in Denver?",
+      "contexts": [
+        "The Denver Metro Association of Realtors' March 2025 market report shows continued strong demand with homes selling at 103% of list price on average. The median time on market dropped to 8 days, down from 14 days a year earlier. Active inventory fell 22% year-over-year, creating competitive bidding situations in most neighborhoods. Agent Lisa Tran called it one of the tightest seller's markets in a decade.",
+        "A Redfin market analysis for the Denver metropolitan area in March 2025 found that 34% of listings had at least one price reduction, up from 19% in the same period last year. The report noted that homes are sitting on the market an average of 41 days before receiving an offer, with sellers increasingly offering buyer concessions including closing cost assistance and rate buydowns to attract interest."
+      ],
+      "expected_mode": "disputed",
+      "description": "One source describes a hot seller's market in Denver while another describes slowing conditions with price cuts and longer listing times",
+      "rationale": "The sources paint incompatible pictures: 8-day median sales vs 41-day average, 103% of list price vs widespread price reductions. Neither directly disputes the other but they cannot both be accurate for the same market at the same time.",
+      "domain": "real_estate",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_585",
+      "difficulty": "medium",
+      "subcategory": "implicit_contradiction",
+      "query": "How prepared are companies for AI adoption?",
+      "contexts": [
+        "McKinsey's 2025 Global AI Survey found that 72% of companies have adopted AI in at least one business function, with 35% using generative AI across multiple departments. The consulting firm reported that AI adoption has more than doubled since 2023, with organizations reporting an average 15% cost reduction and 20% revenue increase in functions where AI was deployed. CIOs expressed high confidence in scaling AI further.",
+        "Gartner's 2025 IT Executive Survey found that 54% of AI projects never make it past the pilot stage. The research firm reported that only 11% of organizations have achieved measurable business value from their AI investments, with 63% of IT leaders citing data quality issues, talent shortages, and integration challenges as persistent barriers. The average enterprise AI project takes 17 months from concept to production deployment."
+      ],
+      "expected_mode": "disputed",
+      "description": "One survey paints AI adoption as widespread and successful while another shows most projects fail to deliver value",
+      "rationale": "McKinsey's picture of broad adoption with strong returns contradicts Gartner's finding that 54% of AI projects stall at pilot and only 11% deliver measurable value. The implicit disagreement about whether AI adoption is succeeding is stark.",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_586",
+      "difficulty": "medium",
+      "subcategory": "implicit_contradiction",
+      "query": "How safe is the city of Memphis for tourists?",
+      "contexts": [
+        "The Memphis Convention & Visitors Bureau highlights that the city's Beale Street entertainment district and surrounding downtown area benefit from a dedicated 80-officer tourism police unit established in 2023. Crime in the core tourist district dropped 42% following the deployment. The bureau notes that Memphis welcomed 12.4 million visitors in 2024, a record high, with visitor satisfaction scores averaging 4.2 out of 5 on post-trip surveys.",
+        "FBI Uniform Crime Report data for 2024 ranks Memphis as having the third-highest violent crime rate among major U.S. cities, with 1,847 violent crimes per 100,000 residents. The Memphis Police Department reported 8,420 aggravated assaults and 304 homicides during the year. The city's overall crime rate remains 185% above the national average despite a 6% decline from the previous year."
+      ],
+      "expected_mode": "disputed",
+      "description": "Tourism bureau emphasizes safety improvements and record visitors while FBI data shows one of the highest crime rates nationally",
+      "rationale": "The sources implicitly contradict each other: one presents Memphis as a safe, thriving tourist destination while the other reveals it has the third-highest violent crime rate in the country. Neither acknowledges the other perspective.",
+      "domain": "government",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_587",
+      "difficulty": "medium",
+      "subcategory": "implicit_contradiction",
+      "query": "How effective is the Pomodoro Technique for productivity?",
+      "contexts": [
+        "A workplace productivity study by Draugiem Group, tracking 5.5 million daily tasks using DeskTime software, found that the most productive employees work in focused bursts of 52 minutes followed by 17-minute breaks. The research showed that rigidly short intervals like 25 minutes interrupted deep work and reduced output on complex tasks by 23%. Knowledge workers in particular performed worse when forced to stop at fixed intervals regardless of task state.",
+        "Research published in the Journal of Applied Psychology found that fixed short work intervals of 25 minutes with 5-minute breaks, the Pomodoro format, increased task completion rates by 34% compared to unstructured work. The study of 480 participants across four organizations found that the technique reduced procrastination, improved time awareness, and helped workers maintain consistent energy levels. Participants reported 28% lower stress and 41% fewer instances of task switching."
+      ],
+      "expected_mode": "disputed",
+      "description": "One study finds rigid 25-minute intervals reduce productivity on complex tasks while another finds the same format increases completion rates by 34%",
+      "rationale": "The sources reach opposite conclusions: one says the Pomodoro Technique's 25-minute intervals hurt complex work by 23%, while the other says the same format improves task completion by 34%. Neither references the other.",
+      "domain": "psychology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_588",
+      "difficulty": "medium",
+      "subcategory": "implicit_contradiction",
+      "query": "How are electric vehicle sales trending globally?",
+      "contexts": [
+        "The International Energy Agency's Global EV Outlook 2025 reports that electric vehicle sales reached 18.3 million units in 2024, representing 22% of all new car sales globally. China led with 10.4 million units, followed by Europe at 3.6 million. The IEA projects that EVs will account for over 30% of new car sales by 2026 and describes the transition to electric mobility as accelerating beyond earlier forecasts.",
+        "Bloomberg New Energy Finance's Electric Vehicle Market Monitor for Q4 2024 found that EV sales growth decelerated sharply, dropping from 31% year-over-year growth in 2023 to just 14% in 2024. Dealer inventories of unsold EVs rose to a 92-day supply compared to 54 days for conventional vehicles. BNEF analyst Colleen McAdams noted that price-sensitive buyers are increasingly choosing hybrids, and several automakers have scaled back or delayed their EV production targets."
+      ],
+      "expected_mode": "disputed",
+      "description": "IEA presents EV sales as accelerating beyond forecasts while Bloomberg NEF shows growth decelerating sharply with rising inventory",
+      "rationale": "One source describes an accelerating EV transition exceeding expectations while the other documents slowing growth and inventory buildup, painting contradictory pictures of market health.",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_589",
+      "difficulty": "medium",
+      "subcategory": "implicit_contradiction",
+      "query": "How healthy is the gig economy for workers?",
+      "contexts": [
+        "A Bureau of Labor Statistics supplemental survey for 2024 found that 68% of gig workers reported choosing independent work voluntarily and 74% expressed satisfaction with their work arrangements. The median hourly earnings for gig workers was $28.50, exceeding the national median of $23.11 for comparable non-gig roles. Workers cited schedule flexibility and autonomy as the primary reasons for preferring gig work over traditional employment.",
+        "A National Employment Law Project report based on tax filings and worker interviews found that gig workers earn a median effective wage of $12.30 per hour after accounting for vehicle expenses, self-employment taxes, insurance costs, and unpaid waiting time. The report documented that 41% of gig workers rely on public assistance programs including Medicaid and food stamps, and 79% lack employer-provided health insurance, retirement benefits, or paid sick leave."
+      ],
+      "expected_mode": "disputed",
+      "description": "One survey shows well-compensated satisfied gig workers while another reveals low effective wages and reliance on public assistance",
+      "rationale": "The sources present irreconcilable views: $28.50/hour median earnings vs $12.30/hour effective wage, 74% satisfaction vs 41% relying on public assistance. They describe the same workforce in fundamentally different terms.",
+      "domain": "hr_workplace",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_590",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When was the first successful organ transplant performed?",
+      "contexts": [
+        "The National Kidney Foundation's historical timeline states that the first successful organ transplant was performed on December 23, 1954, when Dr. Joseph Murray transplanted a kidney between identical twins Ronald and Richard Herrick at Peter Bent Brigham Hospital in Boston. The kidney functioned immediately and Richard Herrick lived for eight more years. Dr. Murray received the Nobel Prize in Physiology or Medicine in 1990 for this achievement.",
+        "Medical historian Dr. Thomas Starzl's comprehensive account in The Lancet identifies the first successful organ transplant as the corneal transplant performed by Dr. Eduard Zirm on December 7, 1905, in Olomouc, Moravia. The corneal graft restored functional vision in a patient blinded by lime burns. Starzl argues that the transplant community's focus on kidney transplantation has obscured this earlier milestone in transplant medicine."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two authoritative sources date the first successful organ transplant 49 years apart (1905 vs 1954)",
+      "rationale": "Whether the first transplant was 1905 (cornea) or 1954 (kidney) depends on the definition of organ, creating a genuine temporal dispute that cannot be resolved without qualification.",
+      "domain": "history",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_591",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When did the commercial internet become available to the public?",
+      "contexts": [
+        "The Internet Society's official history documents that the commercial internet became publicly available on April 30, 1995, when the National Science Foundation lifted the ban on commercial traffic on the internet backbone. Before this date, the internet was restricted to academic, government, and research use. The removal of the Acceptable Use Policy is widely cited as the moment the internet became a commercial platform.",
+        "The Computer History Museum's timeline records that commercial internet service became available to the public in 1989, when The World, an ISP based in Brookline, Massachusetts, began offering dial-up internet access to consumers in November of that year. By 1992, Delphi, CompuServe, and AOL were all offering commercial internet access to millions of subscribers, well before the NSF backbone restrictions were lifted."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two sources give different dates for when the commercial internet became publicly available (1989 vs 1995)",
+      "rationale": "A six-year discrepancy in dating the public internet's launch represents a factual disagreement tied to different definitions of commercial availability.",
+      "domain": "technology",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_592",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When did the California drought officially begin?",
+      "contexts": [
+        "The California Department of Water Resources' official drought history records that the most recent drought began in 2020, when Governor Newsom declared a drought emergency in April 2021 covering 41 of California's 58 counties. The declaration was based on precipitation data showing the 2020-2021 water year was the driest on record since 1924, with most reservoirs at less than 50% capacity by summer 2021.",
+        "The U.S. Drought Monitor, operated by the National Drought Mitigation Center, shows that drought conditions in California first appeared in early 2012 and persisted continuously through 2024 with varying intensity. Climatologist Dr. Daniel Swain noted that while surface conditions temporarily improved in 2017 and 2019 due to atmospheric rivers, groundwater deficits accumulated since 2012 never fully recovered, making the drought a continuous 12-year event."
+      ],
+      "expected_mode": "disputed",
+      "description": "State records date the drought to 2020 while federal monitoring shows continuous drought conditions since 2012",
+      "rationale": "An eight-year discrepancy in the drought's start date (2012 vs 2020) represents a significant temporal disagreement tied to different measurement criteria.",
+      "domain": "environment",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_593",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When was chess invented?",
+      "contexts": [
+        "The Oxford Companion to Chess states that chess originated in northern India during the Gupta Empire around 280-550 CE, evolving from a game called chaturanga. Archaeological evidence, including game pieces discovered at Nalanda and references in Sanskrit literature from the 6th century, supports India as the birthplace of chess. The game spread westward through Persia after the Muslim conquest in the 7th century.",
+        "Research published in the Journal of Asian Studies by Dr. Li Wei presents evidence that chess originated in China around 200 BCE as a game called xiangqi. Dr. Li cites references in Chinese texts predating the earliest Indian mentions by several centuries, including a passage in the Chu Ci anthology from the 3rd century BCE that describes a strategic board game with remarkably similar rules. The Chinese origin theory has gained significant support among East Asian historians."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two historical accounts place the invention of chess in different countries and centuries (India 280-550 CE vs China 200 BCE)",
+      "rationale": "A 500-700 year difference in origin dates and two different countries of origin represents a fundamental temporal and geographic dispute about chess history.",
+      "domain": "history",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_594",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When will autonomous vehicles become widely available for consumers?",
+      "contexts": [
+        "Waymo's 2025 investor presentation projects that fully autonomous ride-hailing services will be available in 25 major U.S. cities by 2027, with personally owned Level 4 autonomous vehicles available for consumer purchase by 2029. The company cites its 20 million driverless miles completed without a fatal accident and expanding partnerships with automakers as evidence that the technology is ready for broad deployment.",
+        "A 2025 report by the RAND Corporation concludes that fully autonomous vehicles will not be widely available to consumers until at least 2040, and possibly later. The report identifies unresolved challenges including adverse weather performance, complex urban navigation, liability frameworks, and the need for 100 billion miles of real-world testing data to demonstrate safety equivalent to human drivers. RAND notes that current autonomous systems fail in 3-5% of edge-case scenarios."
+      ],
+      "expected_mode": "disputed",
+      "description": "An industry leader projects consumer autonomous vehicles by 2029 while a research organization says not until 2040 at earliest",
+      "rationale": "An 11-year gap in projected timelines (2029 vs 2040) for the same technology milestone represents a significant temporal disagreement.",
+      "domain": "transportation",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_595",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When was the first social media platform created?",
+      "contexts": [
+        "The Smithsonian Institution's digital history exhibit identifies SixDegrees.com, launched in May 1997, as the first recognizable social media platform. SixDegrees allowed users to create personal profiles, list their friends, and browse other users' friend lists, establishing the core template for all modern social networking services. The site attracted 3.5 million registered users before closing in 2001 due to the dot-com bust and difficulties monetizing its user base.",
+        "Digital media scholar Dr. Nicole Ellison argues in her widely cited paper in the Journal of Computer-Mediated Communication that the first social media platform was Bulletin Board Systems (BBS), with the first public BBS created by Ward Christensen and Randy Suess in Chicago in February 1978. These systems allowed users to post messages, share files, and form online communities, meeting all functional criteria of social media decades before the term was coined."
+      ],
+      "expected_mode": "disputed",
+      "description": "Two sources identify different platforms as the first social media, dated 19 years apart (1978 vs 1997)",
+      "rationale": "Whether social media began in 1978 (BBS) or 1997 (SixDegrees) depends on definitional criteria, creating a genuine temporal dispute about the origin of social media.",
+      "domain": "social_media",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "temporal",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_596",
+      "difficulty": "medium",
+      "subcategory": "statistical_direction_conflict",
+      "query": "Is global deforestation increasing or decreasing?",
+      "contexts": [
+        "The UN Food and Agriculture Organization's 2024 Global Forest Resources Assessment reports that net deforestation has decreased by 29% over the past decade, from 7.8 million hectares per year in 2010-2015 to 5.6 million hectares per year in 2020-2024. The report credits expanded reforestation programs in China and India, along with reduced clearing in Indonesia, for driving the improvement in global forest coverage trends.",
+        "Global Forest Watch satellite analysis for 2024, operated by the World Resources Institute, found that primary forest loss increased 12% compared to the previous year, reaching 4.1 million hectares. Tropical deforestation in Brazil, the Democratic Republic of Congo, and Bolivia drove the increase. Researcher Mikaela Weisse noted that 2024 was the third consecutive year of accelerating primary forest loss, erasing gains made in the early 2020s."
+      ],
+      "expected_mode": "disputed",
+      "description": "FAO reports deforestation is decreasing by 29% while WRI satellite data shows primary forest loss increasing by 12%",
+      "rationale": "The sources point in opposite statistical directions: one says deforestation is declining significantly while the other says primary forest loss is accelerating. This directional conflict should be flagged.",
+      "domain": "environment",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_597",
+      "difficulty": "medium",
+      "subcategory": "statistical_direction_conflict",
+      "query": "Is youth participation in organized sports increasing or declining?",
+      "contexts": [
+        "The Aspen Institute's State of Play 2025 report found that youth sports participation has declined steadily over the past decade, with the percentage of children ages 6-12 playing organized sports dropping from 45% in 2014 to 33% in 2024. The report identified rising costs, overspecialization pressure, and screen time competition as primary drivers. Low-income families saw the sharpest decline at 18 percentage points over the period.",
+        "The National Federation of State High School Associations' 2024-2025 participation survey reports record high school sports participation of 8.12 million students, surpassing the previous record set in 2018-2019. Girls' participation reached an all-time high of 3.68 million, driven by growth in flag football, wrestling, and volleyball. The NFHS noted that participation has increased in 38 states over the past three years."
+      ],
+      "expected_mode": "disputed",
+      "description": "One report shows youth sports participation declining sharply (45% to 33%) while another shows record-high high school participation at 8.12 million",
+      "rationale": "The directional conflict is clear: one source documents declining youth participation while the other reports record highs, creating an unresolved contradiction about the state of youth sports.",
+      "domain": "sports",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_598",
+      "difficulty": "medium",
+      "subcategory": "statistical_direction_conflict",
+      "query": "Is the gender pay gap narrowing or widening in the United States?",
+      "contexts": [
+        "The Institute for Women's Policy Research analysis of Census Bureau data for 2024 found that the gender pay gap has narrowed to 83 cents on the dollar, up from 77 cents in 2014. The improvement accelerated during 2022-2024 as women entered higher-paying fields in technology and finance at increased rates. At the current pace of change, the IWPR projects full pay parity will be reached by 2049, decades sooner than their 2014 projection of 2058.",
+        "The Economic Policy Institute's 2024 State of Working America report found that the gender pay gap has widened when adjusting for hours worked and occupational mix. Women working full-time earned 78 cents for every dollar earned by men in equivalent roles in 2024, down from 81 cents in 2019. The EPI attributes the reversal to pandemic-era workforce exits disproportionately affecting women's career trajectories and the concentration of new female employment in lower-paying service sectors."
+      ],
+      "expected_mode": "disputed",
+      "description": "One analysis shows the gender pay gap narrowing (to 83 cents) while another shows it widening (to 78 cents) over the same period",
+      "rationale": "The sources move in opposite statistical directions on a key economic indicator: one shows progress toward parity, the other shows regression. Both use credible data but reach contradictory conclusions.",
+      "domain": "hr_workplace",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_599",
+      "difficulty": "medium",
+      "subcategory": "statistical_direction_conflict",
+      "query": "Is the rate of antibiotic-resistant infections rising or falling?",
+      "contexts": [
+        "The CDC's 2024 Antibiotic Resistance Threats Report found that deaths from antibiotic-resistant infections in the United States decreased 18% between 2019 and 2024, dropping from an estimated 35,000 to 28,700 annual deaths. The agency attributed the improvement to hospital stewardship programs, improved diagnostics enabling targeted treatment, and the introduction of three new antibiotic classes. The CDC characterized this as evidence that resistance is a manageable threat when properly addressed.",
+        "The World Health Organization's 2024 Global Antimicrobial Resistance Surveillance System report documented a 22% increase in antibiotic-resistant infections worldwide between 2020 and 2024. Resistant strains of E. coli, Klebsiella pneumoniae, and Staphylococcus aureus showed accelerating spread, particularly in South Asia and sub-Saharan Africa. WHO Director-General Dr. Tedros Adhanom Ghebreyesus described antimicrobial resistance as one of the top ten global public health threats."
+      ],
+      "expected_mode": "disputed",
+      "description": "CDC reports antibiotic-resistant deaths declining 18% while WHO documents resistant infections increasing 22%",
+      "rationale": "The sources point in directly opposite directions: one shows improvement (18% decline) while the other shows worsening (22% increase) on antibiotic resistance trends.",
+      "domain": "science",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_600",
+      "difficulty": "medium",
+      "subcategory": "statistical_direction_conflict",
+      "query": "Is consumer trust in online reviews increasing or decreasing?",
+      "contexts": [
+        "BrightLocal's 2025 Local Consumer Review Survey found that consumer trust in online reviews has increased, with 87% of consumers saying they trust online reviews as much as personal recommendations, up from 79% in 2020. The survey of 3,100 consumers found that 94% read online reviews before making a purchase decision and that star ratings are the primary factor in choosing a local business over competitors.",
+        "A 2025 study by Northwestern University's Spiegel Research Center found that consumer trust in online reviews has declined significantly, with only 42% of respondents expressing confidence that reviews they read are authentic, down from 63% in 2020. The researchers found that awareness of fake reviews, review manipulation by businesses, and AI-generated review content has eroded trust. Consumers increasingly report cross-referencing multiple platforms and discounting extreme ratings."
+      ],
+      "expected_mode": "disputed",
+      "description": "One survey shows trust in online reviews increasing (79% to 87%) while research finds trust declining (63% to 42%)",
+      "rationale": "Directly contradictory statistical trends: one source shows growing trust, the other shows declining trust in the same phenomenon over the same time period.",
+      "domain": "social_media",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_601",
+      "difficulty": "medium",
+      "subcategory": "statistical_direction_conflict",
+      "query": "Is crop yield per acre improving or declining in the Midwest?",
+      "contexts": [
+        "The USDA National Agricultural Statistics Service reported that average corn yields in the Midwest reached a record 184.3 bushels per acre in 2024, up from 177.0 bushels per acre in 2023. The increase was attributed to improved seed genetics, precision agriculture technology adoption, and favorable growing conditions. The USDA projects that yield improvements will continue at approximately 1.5-2.0 bushels per acre annually through 2030.",
+        "A University of Minnesota study published in Nature Food analyzed long-term yield data and found that the rate of corn yield improvement in the Midwest has declined by 42% since 2000, with yields in 28% of counties actually stagnating or declining when adjusted for favorable weather years. The researchers found that soil degradation, reduced organic matter, and climate variability are eroding yield potential despite advances in seed technology. They warned that without major soil restoration investments, absolute yield declines could begin within a decade."
+      ],
+      "expected_mode": "disputed",
+      "description": "USDA reports record crop yields and continued improvement while research finds yield growth rates declining and stagnation in many counties",
+      "rationale": "The sources point in opposite directions: one highlights record yields and projected gains while the other documents declining improvement rates and warns of coming absolute declines.",
+      "domain": "agriculture",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_602",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "How much has average home insurance risen in Florida since 2022?",
+      "contexts": [
+        "According to the Florida Office of Insurance Regulation's 2025 annual report, the average homeowner's insurance premium in Florida increased by 42% between January 2022 and December 2024, reaching $4,231 per year. The report attributes this surge to increased hurricane frequency and severity, rising reinsurance costs on the global market, and the withdrawal of six major insurers from the Florida market during that period. The OIR noted that Citizens Property Insurance, the state-backed insurer of last resort, saw its policy count rise to 1.4 million.",
+        "A February 2025 analysis by the Insurance Information Institute found that Florida home insurance premiums rose by only 27% over the same 2022-2024 period, with the average policy now costing $3,680 annually. The III's methodology excludes surplus lines policies and counts only admitted carriers reporting to the National Association of Insurance Commissioners. The institute noted that state-level figures often appear inflated because they include non-standard high-risk policies that skew the average upward."
+      ],
+      "expected_mode": "disputed",
+      "description": "State regulator reports 42% increase vs industry group reports 27% increase in Florida home insurance premiums",
+      "rationale": "Both sources cover the same time period but report significantly different premium increases (42% vs 27%) and average costs ($4,231 vs $3,680)",
+      "domain": "finance",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_603",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "How many electric vehicle charging stations are currently operational in Germany?",
+      "contexts": [
+        "The German Federal Network Agency's January 2025 registry lists 118,400 publicly accessible EV charging points across Germany, including 24,700 DC fast chargers capable of delivering 150 kW or more. The agency notes a 31% increase over the previous year, driven largely by federal subsidies under the Deutschlandnetz program. The Bundesnetzagentur projects reaching 150,000 publicly accessible charging points by mid-2026, which it considers sufficient to support the 2.1 million battery electric vehicles currently registered in Germany.",
+        "ChargeMap Europe's Q1 2025 database, which aggregates real-time availability data from all major charging networks including Ionity, EnBW, and Allego, records only 87,200 operational public charging points in Germany. ChargeMap excludes stations that have been offline for more than 14 consecutive days and those restricted to specific fleet operators or hotel guests. The platform's CEO noted that the gap between government registry numbers and actually usable chargers is a persistent problem across European markets."
+      ],
+      "expected_mode": "disputed",
+      "description": "German government counts 118,400 charging points while aggregator database counts only 87,200",
+      "rationale": "A difference of over 31,000 charging points between official registry and operational database represents a significant factual conflict about EV infrastructure",
+      "domain": "transportation",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_604",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "Does intermittent fasting reduce body fat percentage more than standard caloric restriction?",
+      "contexts": [
+        "A 2024 randomized controlled trial published in the American Journal of Clinical Nutrition followed 320 adults aged 25-55 for 12 months and found that intermittent fasting using the 16:8 protocol led to an average body fat reduction of 6.8%, compared to only 3.1% for a matched caloric restriction group consuming the same total daily calories. The fasting group also showed greater preservation of lean muscle mass, with DEXA scans confirming 2.1 kg less lean tissue loss. The researchers attributed the difference to improved insulin sensitivity and enhanced fat oxidation during the fasting window.",
+        "The DIRECT-Plus trial extension, published in The Lancet in late 2024, tracked 278 participants over 18 months using metabolic ward measurements and reported that standard caloric restriction produced a 5.9% body fat reduction versus only 4.2% for intermittent fasting when total caloric intake was carefully matched using doubly labeled water methodology. Researchers concluded that prior studies showing fasting superiority were confounded by uncontrolled calorie deficits, and that when energy intake is truly equivalent, continuous restriction outperforms time-restricted eating."
+      ],
+      "expected_mode": "disputed",
+      "description": "One trial shows fasting reduces more body fat (6.8% vs 3.1%) while another shows standard restriction is better (5.9% vs 4.2%)",
+      "rationale": "Two large clinical trials reach opposite conclusions about which dietary approach reduces more body fat",
+      "domain": "medicine",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_605",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "How many species are estimated to go extinct each year due to deforestation?",
+      "contexts": [
+        "A 2024 study in Nature Ecology and Evolution used updated species-area relationship models combined with high-resolution satellite deforestation data from Global Forest Watch to estimate that approximately 8,700 species go extinct annually due to tropical forest loss alone. Lead author Dr. Elena Vargas of the University of Sao Paulo called the figure conservative because it excludes species not yet cataloged by science, which could represent up to 80% of tropical arthropod diversity. The model incorporated habitat fragmentation effects and edge-area degradation in addition to outright clearing.",
+        "The IUCN Red List assessment team, in their 2024 global biodiversity report, estimates that deforestation contributes to the extinction of roughly 1,200 to 2,400 species per year worldwide. The IUCN methodology counts only species with documented population declines directly attributable to habitat loss from deforestation, requiring field surveys or genetic evidence of population collapse. The assessment team acknowledged that their approach likely undercounts cryptic extinctions but argued that model-based extrapolations from species-area curves produce unreliable estimates."
+      ],
+      "expected_mode": "disputed",
+      "description": "Nature study estimates 8,700 annual extinctions from deforestation vs IUCN estimates 1,200-2,400",
+      "rationale": "The estimates differ by a factor of 4-7x, representing a major numerical disagreement about deforestation's impact on biodiversity",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_606",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "What percentage of Gen Z workers prefer fully remote positions?",
+      "contexts": [
+        "Deloitte's 2025 Global Gen Z and Millennial Survey, which polled 14,800 Gen Z workers across 44 countries between September and November 2024, found that 62% prefer fully remote work arrangements over any other model. The report noted that this preference was strongest among tech and creative industry workers at 78%, and weakest in healthcare and manufacturing sectors at 41%. Deloitte's methodology weighted responses to reflect global workforce composition and included both full-time and contract workers in the Gen Z age bracket of 18 to 27.",
+        "Gallup's January 2025 State of the Workforce report surveyed 23,000 U.S. workers aged 18 to 27 using probability-based sampling and found that only 34% of Gen Z employees prefer fully remote positions. The majority at 48% preferred a hybrid arrangement with two to three office days per week, while 18% preferred full-time in-office work. Gallup's chief workplace scientist noted that the survey focused exclusively on full-time employees in the United States, which may account for differences with global surveys that include gig workers and freelancers."
+      ],
+      "expected_mode": "disputed",
+      "description": "Deloitte reports 62% of Gen Z prefer fully remote vs Gallup reports only 34%",
+      "rationale": "Two major survey firms report dramatically different percentages (62% vs 34%) for the same preference metric among the same generation",
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_607",
+      "difficulty": "medium",
+      "subcategory": "numerical_conflict",
+      "query": "How much water does almond farming consume per pound of almonds produced?",
+      "contexts": [
+        "The Almond Board of California's 2024 sustainability report states that modern California almond orchards use approximately 1,400 gallons of water per pound of almonds produced, representing a 33% improvement from 2,100 gallons per pound measured in 2000. The report credits the adoption of micro-drip irrigation systems, regulated deficit irrigation techniques, and improved rootstock varieties for the reduction. The Board surveyed 2,800 growers across the Central Valley and noted that the most efficient operations now achieve as low as 1,100 gallons per pound using sensor-guided irrigation scheduling.",
+        "A UC Davis study published in Agricultural Water Management in 2024 calculated that the total water footprint for California almonds is approximately 2,600 gallons per pound when accounting for groundwater depletion, embedded water in fertilizer and pesticide production, processing facility water use, and transportation-related water consumption. Lead researcher Dr. Josue Medellin-Azuara noted that industry sustainability figures typically report only direct on-farm applied water and systematically omit these indirect costs, which can represent 40 to 45 percent of the total lifecycle water footprint."
+      ],
+      "expected_mode": "disputed",
+      "description": "Almond industry reports 1,400 gallons per pound while UC Davis study calculates 2,600 gallons per pound",
+      "rationale": "The figures differ by nearly a factor of two, presenting conflicting answers about almond farming water consumption",
+      "domain": "agriculture",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_608",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Does social media use cause depression in teenagers?",
+      "contexts": [
+        "A longitudinal study by NYU researchers published in JAMA Pediatrics in 2024 tracked 3,400 adolescents aged 12 to 17 over four years and found a strong causal link between social media use exceeding three hours daily and the onset of depressive symptoms. The study controlled for prior mental health diagnoses, socioeconomic status, family structure, and academic performance, and found that heavy social media users were 2.7 times more likely to develop clinical depression as measured by the PHQ-9 screening tool. The effect was strongest among girls aged 13 to 15 and persisted after accounting for pre-existing anxiety disorders.",
+        "Oxford University's 2024 large-scale analysis of 12,000 UK teenagers aged 13 to 18, published in Nature Human Behaviour, found no meaningful causal relationship between social media use and depression after controlling for sleep quality, physical activity levels, and pre-existing loneliness. Professor Andrew Przybylski stated that screen time itself is not the driver of teen mental health decline and that prior studies conflated correlation with causation by failing to adequately control for lifestyle factors. The Oxford team used experience sampling methods rather than retrospective self-reports and argued this produced more accurate usage data."
+      ],
+      "expected_mode": "disputed",
+      "description": "NYU study finds strong causal link between social media and teen depression; Oxford study finds no meaningful causal relationship",
+      "rationale": "Two large studies reach directly opposite conclusions about whether social media causes depression in adolescents",
+      "domain": "psychology",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_609",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Should schools ban smartphones during class time?",
+      "contexts": [
+        "A 2024 report from UNESCO, drawing on educational data from 200 countries and territories, concluded that banning smartphones in schools significantly improves student attention spans and academic outcomes across all age groups. Countries that implemented nationwide phone bans, including France, Italy, and the Netherlands, saw a 6 to 14 percent improvement in standardized test scores within two years of implementation. UNESCO's Director of Education stated that the evidence overwhelmingly supports classroom phone bans and recommended that all member states adopt such policies by 2026.",
+        "Research published in Computers and Education by the University of Helsinki in 2025 tracked 5,600 students across 48 Finnish schools over three academic years and found that schools banning phones showed no statistically significant improvement in test scores or student engagement compared to schools that integrated phones as structured learning tools. The researchers measured outcomes using both national standardized assessments and classroom-level observational data. They argued that digital literacy programs and guided phone integration consistently outperformed prohibition-based approaches in fostering critical thinking and information evaluation skills."
+      ],
+      "expected_mode": "disputed",
+      "description": "UNESCO recommends phone bans citing 6-14% test score improvements; Helsinki study finds no significant improvement from bans",
+      "rationale": "One source concludes bans clearly help while the other finds bans produce no measurable benefit, reaching opposite policy recommendations",
+      "domain": "education",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_610",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Is organic farming better for the environment than conventional agriculture?",
+      "contexts": [
+        "A meta-analysis published in Nature Sustainability in 2024, covering 168 peer-reviewed studies from 38 countries across six continents, concluded that organic farming produces 20% lower greenhouse gas emissions per hectare of cropland, supports 30% higher biodiversity as measured by pollinator abundance and soil microorganism diversity, and reduces nitrogen and phosphorus water pollution by 60% compared to conventional farming. The authors stated that organic methods are clearly superior for environmental outcomes and recommended policy incentives to accelerate organic transition in the European Union and North America.",
+        "A 2025 analysis from the Breakthrough Institute examined the same question using per-unit-of-food metrics rather than per-hectare measurements and found that organic farming requires 25 to 50 percent more land to produce equivalent crop yields depending on the commodity. When total land use requirements are factored into the carbon accounting, organic agriculture generates 15% more total greenhouse gas emissions globally and would require converting approximately 6.2 million additional hectares of wildland and forest to farmland to maintain current global food production levels. The institute concluded that organic expansion would accelerate deforestation."
+      ],
+      "expected_mode": "disputed",
+      "description": "Nature study concludes organic is better (lower emissions per hectare) while Breakthrough Institute concludes it is worse (more total emissions due to lower yields)",
+      "rationale": "Both present credible environmental analyses but reach opposite conclusions because they use different metrics (per-hectare vs per-unit-of-food)",
+      "domain": "environment",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_611",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Does raising the minimum wage reduce employment?",
+      "contexts": [
+        "A 2024 paper by economists at the University of Washington analyzed Seattle's phased minimum wage increases from $11 to $16.39 per hour between 2015 and 2020 using administrative payroll data from Washington State. The researchers found that hours worked by low-wage employees fell by 9% and overall low-wage employment dropped by 6%, as businesses reduced staffing and shifted to automation. Total monthly earnings for low-wage workers actually decreased by $125 per month on average despite the higher hourly rate, because the reduction in hours more than offset the wage increase.",
+        "A 2025 study by UC Berkeley economists examining minimum wage increases in 47 U.S. cities between 2012 and 2023 found no statistically significant reduction in employment at any wage threshold studied. Their analysis of restaurant and retail payroll data from the Quarterly Census of Employment and Wages showed that businesses absorbed higher labor costs through modest menu and retail price increases averaging 1.4% and through reduced employee turnover savings. Low-wage workers in cities that raised their minimum wage saw a net 8% income gain with no measurable job losses."
+      ],
+      "expected_mode": "disputed",
+      "description": "Washington study finds minimum wage reduces employment and earnings; Berkeley study finds no employment effect and net income gains",
+      "rationale": "Two studies of U.S. minimum wage increases reach directly opposite conclusions about employment effects",
+      "domain": "finance",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_612",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Is AI-generated code as reliable as human-written code for production systems?",
+      "contexts": [
+        "A 2025 study by Microsoft Research analyzed 14,000 pull requests across 340 Azure DevOps repositories spanning enterprise applications, cloud services, and developer tools. The study found that AI-generated code produced by GitHub Copilot had 41% fewer bugs per thousand lines and passed code review on the first attempt 73% of the time, compared to 58% for human-written code in the same repositories. The researchers also found that AI-assisted developers shipped features 26% faster. They concluded that AI coding tools produce more reliable production code when given clear specifications and well-defined interfaces.",
+        "A Stanford Computer Science department study published in IEEE Software in 2025 evaluated code generated by four leading AI coding tools across 1,200 real-world production tasks sampled from open-source projects with active security audit programs. The researchers found that AI-generated code contained 23% more security vulnerabilities as classified by the OWASP Top 10, was 35% more likely to fail edge-case testing suites, and introduced subtle logic errors that evaded standard unit test coverage. The team concluded that AI-generated code requires significantly more thorough security review and integration testing before production deployment."
+      ],
+      "expected_mode": "disputed",
+      "description": "Microsoft finds AI code has 41% fewer bugs; Stanford finds AI code has 23% more security vulnerabilities and 35% more edge-case failures",
+      "rationale": "Two major research institutions reach opposite conclusions about the reliability of AI-generated code in production",
+      "domain": "technology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_613",
+      "difficulty": "medium",
+      "subcategory": "opposing_conclusions",
+      "query": "Should athletes use cold water immersion for recovery after intense training?",
+      "contexts": [
+        "A 2024 systematic review in the British Journal of Sports Medicine, synthesizing evidence from 52 randomized controlled trials involving 1,800 competitive athletes across 14 sports, concluded that cold water immersion at 10 to 15 degrees Celsius for 10 to 15 minutes significantly reduces delayed-onset muscle soreness by 40% at 24 hours post-exercise. The review also found that cold immersion lowers circulating inflammatory markers including C-reactive protein by 25% and accelerates return to peak performance output by approximately 1.5 days compared to passive recovery protocols.",
+        "A 2025 study published in the Journal of Physiology monitored 240 elite athletes from professional rugby, cycling, and swimming programs over a full 10-month competitive season and found that regular cold water immersion after training sessions blunted long-term physiological adaptations. Athletes who used cold immersion three or more times per week gained 12% less muscle strength on isokinetic dynamometry testing and showed 17% lower mitochondrial density on muscle biopsy compared to those using active recovery. The researchers concluded that cold immersion suppresses the inflammatory signaling cascade needed for training adaptation."
+      ],
+      "expected_mode": "disputed",
+      "description": "BJSM review finds cold immersion aids recovery; Journal of Physiology study finds it impairs long-term training adaptations",
+      "rationale": "One source supports cold immersion for short-term recovery while the other opposes it due to long-term adaptation costs, yielding contradictory recommendations",
+      "domain": "sports",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_614",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Is the Keystone Mountain ski resort expanding its terrain for the 2025-2026 season?",
+      "contexts": [
+        "Keystone Mountain Resort announced in a September 2024 press release that it will open 180 acres of new expert terrain on the North Peak for the 2025-2026 ski season. The $34 million expansion includes installation of a new high-speed six-person detachable chairlift manufactured by Doppelmayr, three new black diamond runs with vertical drops exceeding 1,200 feet, and a mid-mountain warming hut. Resort president Sarah Chen confirmed that site preparation began in June 2025 and that construction remains on schedule for a December opening.",
+        "The U.S. Forest Service denied Keystone Mountain Resort's Special Use Permit amendment for the proposed North Peak expansion on August 12, 2025, citing unresolved concerns about critical habitat for the endangered Canada lynx under the Endangered Species Act. The decision letter from White River National Forest Supervisor James Tolbert stated that the project cannot proceed until a supplemental biological assessment is completed and approved. The ruling effectively blocks any new terrain development for at least the 2025-2026 ski season, and an administrative appeal could take 12 to 18 months to resolve."
+      ],
+      "expected_mode": "disputed",
+      "description": "Resort announced the expansion is proceeding; Forest Service denied the required permit",
+      "rationale": "One source says the expansion is happening while the other says the necessary permit was denied, creating a direct yes/no conflict",
+      "domain": "sports",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_615",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Has the FDA approved the use of CBD in food products?",
+      "contexts": [
+        "The FDA issued a final rule on January 15, 2025, published in the Federal Register at 90 FR 4821, establishing a regulatory pathway for cannabidiol as a lawful food ingredient under the Federal Food, Drug, and Cosmetic Act. Products must contain no more than 50 milligrams of CBD per serving and carry standardized labeling with third-party certificate of analysis. Commissioner Dr. Robert Califf stated in the accompanying press release that the rule brings much-needed regulatory clarity to a $5.3 billion market that has operated in a legal gray area since the passage of the 2018 Farm Bill.",
+        "As of March 2025, the FDA maintains on its official consumer information website that CBD has not been approved as a food additive or dietary supplement ingredient. The agency's frequently asked questions page, last updated February 28, 2025, states explicitly that it remains illegal to introduce food containing added CBD or THC into interstate commerce under current federal law. The FAQ further clarifies that the 2018 Farm Bill did not change the FDA's authority over food additives and that no final rulemaking authorizing CBD in food has been completed through the standard notice-and-comment process."
+      ],
+      "expected_mode": "disputed",
+      "description": "One source says FDA issued a final rule approving CBD in food; the other says FDA still prohibits CBD in food products",
+      "rationale": "Sources directly contradict each other on whether FDA has approved CBD as a food ingredient -- a clear yes/no factual conflict",
+      "domain": "food",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_616",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Did the California legislature pass the AI transparency bill SB-1047?",
+      "contexts": [
+        "The California State Senate passed SB-1047, the Safe and Secure Innovation for Frontier Artificial Intelligence Models Act authored by Senator Scott Wiener, by a bipartisan 32-1 vote on August 28, 2024. The Assembly subsequently approved the bill 62-13 on September 4, 2024, sending it to the Governor's desk with strong support from AI safety researchers and consumer advocacy organizations. Supporters including Geoffrey Hinton and Yoshua Bengio hailed it as landmark AI safety legislation that would establish the first state-level framework for frontier model accountability.",
+        "Governor Gavin Newsom vetoed SB-1047 on September 29, 2024, in a signing message that acknowledged the bill was well-intentioned but argued it could drive AI companies out of California and would apply overly broad restrictions based solely on model compute thresholds rather than actual demonstrated risk of harm. Newsom stated that the bill's compliance requirements would disadvantage California-based startups relative to competitors in other states and countries. The veto meant SB-1047 did not become law despite passing both legislative chambers with large majorities, and no override vote was attempted."
+      ],
+      "expected_mode": "disputed",
+      "description": "Legislature passed SB-1047 but the Governor vetoed it, creating conflicting answers about whether it 'passed'",
+      "rationale": "One source confirms legislative passage while the other reports a gubernatorial veto -- whether the bill 'passed' depends on interpretation, creating a factual conflict",
+      "domain": "government",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_617",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Is TikTok banned in the United States?",
+      "contexts": [
+        "President Biden signed the Protecting Americans from Foreign Adversary Controlled Applications Act into law on April 24, 2024, as part of a broader foreign aid package. The law required ByteDance to fully divest its ownership of TikTok within 270 days or face a nationwide ban on the platform's distribution and hosting in the United States. The January 19, 2025 deadline passed without any divestiture or qualifying sale agreement, and the Department of Justice confirmed in a public statement that TikTok is now legally prohibited from operating in the United States under federal law.",
+        "Despite the statutory ban on TikTok taking legal effect on January 19, 2025, the platform remains fully accessible and operational for U.S. users as of February 2025. Apple and Google have not removed the TikTok app from their respective app stores following an executive order issued by President Trump on January 20, 2025, directing the Department of Justice to suspend enforcement of the ban for 75 days to allow time for a negotiated sale. TikTok continues to serve over 170 million active monthly users in the United States with no disruption to its advertising or content services."
+      ],
+      "expected_mode": "disputed",
+      "description": "One source says TikTok is legally banned; the other says it remains fully operational and accessible in the U.S.",
+      "rationale": "Whether TikTok is 'banned' is disputed because the law says yes but enforcement says no -- creating a genuine binary conflict",
+      "domain": "social_media",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_618",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Was the proposed merger between Kroger and Albertsons approved by regulators?",
+      "contexts": [
+        "The Federal Trade Commission filed a preliminary injunction on February 26, 2024, in the U.S. District Court for the District of Oregon to block the proposed $24.6 billion Kroger-Albertsons merger, arguing it would eliminate meaningful head-to-head competition in hundreds of local grocery markets and lead to higher food prices for millions of American consumers. Federal Judge Adrienne Nelson granted the preliminary injunction in December 2024 after a three-week trial, finding that the proposed divestitures were insufficient to preserve competition. Both companies subsequently announced they were terminating the merger agreement.",
+        "Kroger's Q4 2024 investor relations page, published on February 3, 2025, states that the company successfully completed a modified merger with Albertsons Companies on January 31, 2025, after agreeing to divest 579 stores and eight distribution centers to C&S Wholesale Grocers LLC to address antitrust concerns raised by federal and state regulators. The press release indicates that the combined entity now operates over 4,900 retail grocery stores across 48 states under banners including Kroger, Safeway, Albertsons, Vons, and Harris Teeter, making it the largest grocery chain in the United States by store count."
+      ],
+      "expected_mode": "disputed",
+      "description": "FTC blocked the merger and companies abandoned it vs Kroger claims a modified merger was completed",
+      "rationale": "One source says the merger was blocked and abandoned while another says it was completed in modified form -- directly contradictory outcomes",
+      "domain": "finance",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_619",
+      "difficulty": "medium",
+      "subcategory": "binary_conflict",
+      "query": "Is glyphosate classified as a carcinogen?",
+      "contexts": [
+        "The International Agency for Research on Cancer, which is the specialized cancer research agency of the World Health Organization, classified glyphosate as 'probably carcinogenic to humans' under Group 2A in its March 2015 monograph evaluation. The classification was based on what the working group deemed sufficient evidence of carcinogenicity in experimental animals, including increased tumor incidence in mice and rats, and limited but suggestive evidence in humans linking occupational exposure to elevated risk of non-Hodgkin lymphoma. The IARC evaluation has been cited in numerous lawsuits and regulatory proceedings worldwide.",
+        "The European Food Safety Authority concluded in its July 2023 peer review that glyphosate does not meet the scientific criteria established under the EU Classification, Labelling and Packaging regulation for classification as a carcinogen, mutagen, or reproductive toxicant. EFSA's assessment panel reviewed over 2,400 individual studies submitted by the applicant and published in the peer-reviewed literature and found no critical areas of concern regarding human carcinogenicity. Based on this assessment, the European Commission renewed glyphosate's market approval for use across all EU member states through December 15, 2033."
+      ],
+      "expected_mode": "disputed",
+      "description": "WHO/IARC classifies glyphosate as probably carcinogenic; EFSA concludes it does not meet carcinogen criteria",
+      "rationale": "Two major international health authorities reach opposite conclusions on glyphosate's carcinogenicity -- a direct binary conflict",
+      "domain": "science",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_620",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When did construction begin on the Neom Line City project in Saudi Arabia?",
+      "contexts": [
+        "Saudi Arabia's NEOM company reported in its 2024 annual progress update, published on the project's official website, that initial earthwork and foundation construction for The Line began in October 2023. The report includes timestamped satellite imagery purporting to show active excavation along a 2.4-kilometer stretch of the planned 170-kilometer linear city route in the Tabuk Province. NEOM stated that approximately 3,200 construction workers were on site by December 2023, operating heavy earthmoving equipment to prepare the foundation trench for the project's mirror-clad exterior wall structure.",
+        "An investigation by the Wall Street Journal published in January 2025, using independently acquired commercial satellite imagery from Planet Labs and Maxar Technologies, found that significant construction activity at The Line site did not begin until April 2024 at the earliest. Monthly imagery analysis showed only access road construction, temporary worker camp installation, and site fencing through late 2023, with no visible structural foundation work or large-scale earthmoving. The WSJ reporters noted that NEOM's claimed October 2023 construction start does not match the observable physical evidence from independent satellite monitoring."
+      ],
+      "expected_mode": "disputed",
+      "description": "NEOM says construction began October 2023; WSJ investigation places start at April 2024",
+      "rationale": "The official project timeline and independent investigation disagree on when construction actually began by approximately six months",
+      "domain": "real_estate",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_621",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When will quantum computers be able to break current encryption standards?",
+      "contexts": [
+        "IBM's 2025 Quantum Computing Development Roadmap, presented at the company's annual Think developer conference in May 2025, projects that a cryptographically relevant quantum computer capable of running Shor's algorithm to break RSA-2048 encryption will be available by 2029. IBM bases this projection on their planned 100,000-qubit Starling processor architecture, ongoing error correction improvements using surface codes that have already achieved 99.9% gate fidelity in laboratory demonstrations, and their modular quantum interconnect technology enabling multi-chip scaling beyond single-processor limits.",
+        "A December 2024 report from the National Academy of Sciences, Engineering, and Medicine, authored by a panel of 15 leading quantum computing researchers from academia and government laboratories, concluded that quantum computers capable of breaking RSA-2048 encryption are unlikely to exist before 2040 at the earliest. The expert panel found that current physical qubit error rates would need to improve by approximately two orders of magnitude beyond demonstrated capabilities and that no clear engineering pathway exists to achieve the millions of error-corrected logical qubits required within the next decade. The report recommended continued investment in post-quantum cryptography migration."
+      ],
+      "expected_mode": "disputed",
+      "description": "IBM projects encryption-breaking quantum computers by 2029; National Academy says not before 2040",
+      "rationale": "A major quantum computing company and a national scientific body disagree by over a decade on the timeline for cryptographically relevant quantum computing",
+      "domain": "technology",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_622",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When was the Dead Sea Scrolls' Great Isaiah Scroll originally written?",
+      "contexts": [
+        "Radiocarbon dating performed by the University of Arizona Accelerator Mass Spectrometry Laboratory in 2023, using the updated IntCal20 calibration curve and Bayesian statistical modeling, dated the parchment of the Great Isaiah Scroll (designated 1QIsa-a) to between 335 and 275 BCE with 95% confidence. This places the physical creation of the writing material firmly in the early Hellenistic period, making it considerably older than the late Hasmonean period date previously estimated by most scholars. The Arizona team noted that their results were consistent across four independent parchment samples taken from different sections of the scroll.",
+        "Paleographic analysis published in the Journal of Biblical Literature in 2024 by Dr. Hannah Yardeni and Professor Emanuel Tov dated the scribal handwriting of the Great Isaiah Scroll to approximately 125 to 100 BCE, based on detailed comparison with securely dated documents from the Judean Desert including the Wadi Daliyeh papyri and Masada scrolls. Yardeni argued that paleographic dating of the actual handwriting style provides a more reliable estimate of when the text was inscribed than radiocarbon dating of the animal skin substrate, since prepared parchment sheets could have been manufactured and stored for decades or even generations before a scribe used them."
+      ],
+      "expected_mode": "disputed",
+      "description": "Radiocarbon dating places the scroll at 335-275 BCE while paleographic analysis dates it to 125-100 BCE",
+      "rationale": "Two legitimate dating methods disagree by approximately 150-200 years on when the scroll was created",
+      "domain": "history",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_623",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When did the Amazon River change its flow direction from westward to eastward?",
+      "contexts": [
+        "A 2024 study in Earth and Planetary Science Letters by researchers at the University of Brasilia used detrital zircon uranium-lead dating of sediment layers extracted from eight drill cores across the central Amazon basin to conclude that the river reversed its flow direction from westward to eastward approximately 10.5 million years ago. This timing coincides with the rapid uplift of the Eastern Cordillera of the Colombian and Ecuadorian Andes as determined by apatite fission-track thermochronology. The team identified a clear sedimentary provenance boundary in the stratigraphic record marking the transition from western to eastern sediment sources.",
+        "Research published in Geology in 2025 by a joint Brazilian-German team from the University of Sao Paulo and the University of Potsdam analyzed fossilized pollen assemblages, clay mineral compositions, and neodymium isotopic signatures from deep ocean drilling cores recovered from the Amazon submarine fan off the Brazilian coast. Their analysis concluded the continental-scale reversal of the Amazon River occurred much more recently, roughly 4.5 million years ago during the late Miocene to early Pliocene transition. They argued that zircon-based dates from inland basin cores reflect only localized drainage reorganization rather than the full transcontinental flow reversal."
+      ],
+      "expected_mode": "disputed",
+      "description": "One study dates the Amazon reversal to 10.5 million years ago; another dates it to 4.5 million years ago",
+      "rationale": "Two geological studies disagree by 6 million years on when a major continental-scale hydrological event occurred",
+      "domain": "science",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_624",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When will India's population begin to decline?",
+      "contexts": [
+        "The United Nations World Population Prospects 2024 revision, released by the UN Department of Economic and Social Affairs Population Division, projects that India's population will peak at approximately 1.69 billion people in 2062 and begin a gradual decline thereafter. The medium-variant projection assumes that India's total fertility rate, currently at 2.0 children per woman, will stabilize at 1.7 children per woman by 2050 before declining further to 1.6 by 2070. The UN model incorporates state-level demographic data from the 2021 Indian census and uses standard cohort-component methodology applied consistently across all 237 countries in its database.",
+        "The International Institute for Applied Systems Analysis in Laxenburg, Austria, published an updated demographic model in the journal Population and Development Review in 2025 projecting that India's population will peak at 1.61 billion as early as 2048, roughly 14 years sooner than the United Nations estimate. The IIASA model explicitly accounts for the accelerating effects of rapid urbanization on fertility, measurable gains in female secondary and tertiary education enrollment across Indian states, and the demonstrated impact of smartphone-based family planning information access in rural areas. IIASA projects India's fertility will drop below 1.5 children per woman by 2045."
+      ],
+      "expected_mode": "disputed",
+      "description": "UN projects India's population peaks in 2062; IIASA projects it peaks in 2048",
+      "rationale": "Two major demographic institutions disagree by 14 years on when India's population will begin declining",
+      "domain": "government",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_625",
+      "difficulty": "medium",
+      "subcategory": "temporal_conflict",
+      "query": "When was the first successful human-to-human blood transfusion performed?",
+      "contexts": [
+        "The British medical history archives at the Royal College of Physicians record that Dr. James Blundell, an obstetrician at Guy's Hospital in London, performed the first documented successful human-to-human blood transfusion on September 26, 1818. Blundell transfused approximately 14 ounces of blood collected from several volunteer donors into a patient suffering from severe postpartum hemorrhage using a syringe-and-funnel apparatus of his own design. The patient survived and recovered fully. Blundell's achievement is recognized by the British Medical Journal and most standard medical history textbooks as the founding event of modern transfusion medicine.",
+        "A 2024 article in the Journal of the History of Medicine and Allied Sciences by Professor Giancarlo Rastelli of the University of Pavia presents newly discovered archival evidence that Dr. Jean-Baptiste Denys, physician to King Louis XIV, performed a successful human-to-human blood transfusion on June 15, 1667, in Paris, over 150 years before Blundell. While Denys's more widely documented transfusions in 1667 used lamb's blood, Rastelli argues that the June 15 procedure used human donor blood based on previously unknown correspondence between Denys and Henry Oldenburg, secretary of the Royal Society of London, discovered in the Bibliotheque nationale de France."
+      ],
+      "expected_mode": "disputed",
+      "description": "Traditional history credits Blundell in 1818; new research argues Denys performed one in 1667",
+      "rationale": "Sources disagree by over 150 years on the date of the first successful human blood transfusion based on different historical evidence",
+      "domain": "medicine",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_626",
+      "difficulty": "medium",
+      "subcategory": "methodology_conflict",
+      "query": "Which teaching method is more effective for mathematics: direct instruction or inquiry-based learning?",
+      "contexts": [
+        "A 2024 randomized controlled trial across 120 U.S. middle schools by the American Institutes for Research compared direct instruction and inquiry-based mathematics teaching over two academic years. Students in direct instruction classrooms scored 0.34 standard deviations higher on standardized math tests, equivalent to roughly four months of additional learning. The study concluded that explicit, teacher-led instruction produces superior measurable outcomes in math.",
+        "A Finnish longitudinal study published in Learning and Instruction in 2025 tracked 8,200 students from grades 4 through 9 and found that inquiry-based math instruction led to 22% higher scores on complex problem-solving assessments and significantly greater retention of concepts at 12-month follow-up. The researchers noted that standardized test comparisons favor rote methods, while real-world math application favors inquiry approaches."
+      ],
+      "expected_mode": "disputed",
+      "description": "U.S. study finds direct instruction better using standardized tests; Finnish study finds inquiry-based better using problem-solving assessments",
+      "rationale": "Different assessment methodologies yield opposite conclusions about which teaching approach is more effective",
+      "domain": "education",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_627",
+      "difficulty": "medium",
+      "subcategory": "methodology_conflict",
+      "query": "How effective is acupuncture for treating chronic lower back pain?",
+      "contexts": [
+        "A 2024 Cochrane systematic review of 29 randomized controlled trials with 4,800 participants found that acupuncture provided statistically significant pain reduction for chronic lower back pain compared to no treatment, with a mean difference of 2.1 points on a 10-point visual analog scale at 12 weeks. The review rated the evidence quality as moderate and recommended acupuncture as a viable complementary treatment.",
+        "A 2025 double-blind trial published in JAMA Internal Medicine, considered the most rigorous test to date, randomized 560 patients into real acupuncture, sham acupuncture (needles placed at non-acupoints), and no-treatment groups. Both real and sham acupuncture produced identical pain reductions of 1.9 points, both significantly better than no treatment. The researchers concluded that acupuncture's benefits are entirely attributable to placebo effects rather than needle placement."
+      ],
+      "expected_mode": "disputed",
+      "description": "Cochrane review finds acupuncture effective for back pain; JAMA trial finds benefits are entirely placebo-driven",
+      "rationale": "One methodology (vs no treatment) shows acupuncture works while another (vs sham acupuncture) shows it is indistinguishable from placebo",
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_628",
+      "difficulty": "medium",
+      "subcategory": "methodology_conflict",
+      "query": "How much does video game playing improve reaction time?",
+      "contexts": [
+        "A 2024 cognitive neuroscience study at the University of Rochester's Center for Visual Science tested 200 regular action video game players who reported 10 or more hours of weekly gameplay for at least two years against 200 age-matched and education-matched non-gamers. Under controlled laboratory conditions using both a visual Eriksen flanker task and an auditory go/no-go paradigm, the researchers found that gamers had mean reaction times averaging 147 milliseconds compared to 203 milliseconds for non-gamers, representing a 28% performance advantage. The study was published in Psychological Science and received widespread media coverage.",
+        "A 2025 pre-registered longitudinal training study at the University of Geneva, published in the Proceedings of the National Academy of Sciences, recruited 180 verified non-gamers and randomly assigned them to 50 hours of action video game training spread over 10 weeks or an active control condition involving strategy games. Reaction times were measured before and after training using the identical Eriksen flanker task employed by the Rochester group. The training produced only a 6% improvement in reaction time, from 198 milliseconds to 186 milliseconds. The researchers concluded that cross-sectional studies vastly overestimate gaming's causal effect on cognition because individuals with naturally fast reactions and high attentional capacity are significantly more likely to self-select into regular gaming."
+      ],
+      "expected_mode": "disputed",
+      "description": "Cross-sectional study shows 28% reaction time improvement; training study shows only 6% improvement",
+      "rationale": "Different research methodologies (observational vs experimental) produce dramatically different estimates of gaming's effect on reaction time",
+      "domain": "psychology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_629",
+      "difficulty": "medium",
+      "subcategory": "methodology_conflict",
+      "query": "How many people worldwide have long COVID?",
+      "contexts": [
+        "The WHO's Global Burden of Disease collaborative study, published in The Lancet in 2024, estimated that approximately 65 million people worldwide suffer from long COVID symptoms persisting more than 12 weeks as of mid-2024. This estimate was derived from population-based seroprevalence surveys combined with self-reported symptom persistence questionnaires showing rates of 10 to 15 percent among all documented COVID-19 infections across 45 countries and six WHO regions. The methodology used standardized online and telephone survey instruments translated into 28 languages and weighted responses to account for age and sex distribution in each country.",
+        "A multi-country clinical study published in Nature Medicine in 2025, led by researchers at University College London and the Charite hospital in Berlin, estimated that only 18 to 22 million people globally meet objective clinical criteria for long COVID. This study used laboratory biomarker testing including elevated interleukin-6 and C-reactive protein levels, standardized cardiopulmonary exercise testing, and structural neuroimaging rather than self-reported symptom questionnaires. The researchers noted that survey-based self-report methodologies dramatically overcount long COVID cases because they capture pre-existing fatigue, pain, and cognitive symptoms that patients misattribute to their prior COVID-19 infection."
+      ],
+      "expected_mode": "disputed",
+      "description": "WHO estimates 65 million long COVID cases using self-report data; clinical biomarker study estimates 18-22 million",
+      "rationale": "Different measurement methodologies (self-report vs clinical biomarkers) produce estimates differing by a factor of three",
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_630",
+      "difficulty": "medium",
+      "subcategory": "methodology_conflict",
+      "query": "Which country has the highest social media addiction rate?",
+      "contexts": [
+        "The Global Digital Health Observatory's 2024 report, using the Bergen Social Media Addiction Scale administered to 120,000 respondents across 50 countries, ranked the Philippines first with a 38% social media addiction rate, followed by Brazil at 31% and India at 29%. The survey defined addiction as scoring 4 or above on at least four of six criteria measuring compulsive use patterns.",
+        "A 2025 study in Cyberpsychology, Behavior, and Social Networking used smartphone screen-time data from 85,000 volunteered Android devices across 40 countries and ranked Nigeria first with an average of 4.7 hours per day on social media apps, followed by South Africa at 4.3 hours and Egypt at 4.1 hours. The Philippines ranked eighth at 3.4 hours. The study argued that objective usage data is more reliable than self-report addiction scales."
+      ],
+      "expected_mode": "disputed",
+      "description": "Self-report survey ranks Philippines first in social media addiction; screen-time data ranks Nigeria first",
+      "rationale": "Different measurement methodologies (psychological scale vs device usage data) produce entirely different country rankings for social media addiction",
+      "domain": "social_media",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_631",
+      "difficulty": "medium",
+      "subcategory": "methodology_conflict",
+      "query": "How much carbon does a typical mature oak tree absorb per year?",
+      "contexts": [
+        "A 2024 forestry study published in Global Change Biology used eddy covariance flux towers installed in six oak-dominated forests across the eastern United States from Virginia to Maine to directly measure carbon dioxide exchange between the forest canopy and the atmosphere over three complete annual cycles. The researchers calculated that a mature northern red oak tree absorbs approximately 21 kilograms of CO2 per year on a net basis. The tower-based measurements captured the complete annual carbon budget including significant winter respiration losses, drought-related stomatal closure during summer heat waves, and decomposition of dropped leaves and branches.",
+        "The Arbor Day Foundation, in partnership with the USDA Forest Service's iTree ecological analysis tools program, estimates that a mature oak tree sequesters approximately 48 kilograms of CO2 annually. The iTree model calculates carbon uptake based on annual trunk diameter at breast height growth measurements taken from permanent forest inventory plots combined with species-specific allometric equations that convert measured wood volume increases to estimated carbon mass accumulation. This widely cited figure is used extensively in urban forestry benefit calculations, municipal tree planting programs, and corporate carbon offset verification standards across North America."
+      ],
+      "expected_mode": "disputed",
+      "description": "Direct measurement study finds 21 kg CO2/year; widely-used forestry model estimates 48 kg CO2/year",
+      "rationale": "Two legitimate scientific methodologies (direct measurement vs growth-based modeling) produce estimates differing by more than a factor of two",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_632",
+      "difficulty": "medium",
+      "subcategory": "source_authority_conflict",
+      "query": "Is fluoride in drinking water safe at current recommended levels?",
+      "contexts": [
+        "The U.S. Department of Health and Human Services recommends a fluoride concentration of 0.7 mg/L in public water systems, a level it reaffirmed in its 2024 review as safe and effective for preventing tooth decay. The HHS stated that decades of evidence confirm no adverse health effects at this concentration and that community water fluoridation prevents approximately 25% of cavities in children and adults.",
+        "A National Toxicology Program systematic review published in August 2024 concluded that fluoride exposure at levels common in optimally fluoridated water (0.7 mg/L) is associated with lower IQ scores in children, based on a meta-analysis of 72 studies. The NTP rated the evidence as moderate and recommended that the recommended fluoride level be reviewed. A federal judge subsequently ordered the EPA to take regulatory action based on these findings."
+      ],
+      "expected_mode": "disputed",
+      "description": "HHS affirms current fluoride levels are safe; NTP review links the same levels to lower IQ in children",
+      "rationale": "Two U.S. government bodies reach opposite conclusions about the safety of the same fluoride concentration, with one affirming safety and another documenting harm",
+      "domain": "science",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_633",
+      "difficulty": "medium",
+      "subcategory": "source_authority_conflict",
+      "query": "Who invented the telephone?",
+      "contexts": [
+        "The United States Patent and Trademark Office issued patent number 174,465 to Alexander Graham Bell on March 7, 1876, for 'the method of, and apparatus for, transmitting vocal or other sounds telegraphically by causing electrical undulations.' Bell is credited in standard U.S. history textbooks and encyclopedias as the inventor of the telephone, and the Smithsonian Institution's National Museum of American History houses his original prototype and laboratory notebooks. The patent has been upheld through multiple legal challenges and Bell's priority has been affirmed by the U.S. Supreme Court in the landmark 1888 case The Telephone Cases.",
+        "The United States House of Representatives passed House Resolution 269 on June 11, 2002, by unanimous consent, officially recognizing Antonio Meucci as the true inventor of the telephone. The resolution states that Meucci, an Italian immigrant living in Staten Island, New York, filed a patent caveat for a 'Sound Telegraph' with the U.S. Patent Office in 1871, fully five years before Bell's patent application, but was unable to afford the $10 annual renewal fee in 1874 due to poverty. Italian and Canadian historical societies have extensively documented Meucci's working electromagnetic voice communication prototypes dating to 1860, predating Bell's work by over 15 years."
+      ],
+      "expected_mode": "disputed",
+      "description": "U.S. Patent Office credits Bell (1876); U.S. House resolution recognizes Meucci (1871)",
+      "rationale": "Two official U.S. government sources -- the patent office and Congress -- attribute the invention to different people",
+      "domain": "history",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_634",
+      "difficulty": "medium",
+      "subcategory": "source_authority_conflict",
+      "query": "How much protein should adults consume daily?",
+      "contexts": [
+        "The U.S. Recommended Dietary Allowance (RDA), set by the National Academies of Sciences, Engineering, and Medicine and last updated in 2005, recommends 0.8 grams of protein per kilogram of body weight per day for all adults. This amounts to approximately 56 grams for an average adult male and 46 grams for an average adult female. The RDA has been the official dietary guideline for protein intake for nearly two decades.",
+        "A 2024 position paper by the American Society for Nutrition, endorsed by 42 leading protein researchers, argues that the current RDA is inadequate and recommends 1.2 to 1.6 grams per kilogram per day for healthy adults. The paper cites 15 years of metabolic research showing that the 0.8g/kg recommendation leads to accelerated muscle loss after age 40 and is based on outdated nitrogen balance methodology that systematically underestimates protein needs."
+      ],
+      "expected_mode": "disputed",
+      "description": "Official RDA recommends 0.8g/kg protein daily; major nutrition society recommends 1.2-1.6g/kg, calling the RDA inadequate",
+      "rationale": "The official government dietary guideline and a leading scientific society give significantly different protein recommendations, with the latter arguing the former is based on flawed methodology",
+      "domain": "food",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_635",
+      "difficulty": "medium",
+      "subcategory": "source_authority_conflict",
+      "query": "Should employees be classified as independent contractors if they set their own hours?",
+      "contexts": [
+        "The U.S. Department of Labor's 2024 final rule on worker classification uses a six-factor 'economic reality' test and states that the ability to set one's own schedule is only one factor and is not determinative. Under the rule, workers who are economically dependent on a single company are employees regardless of schedule flexibility. The DOL has used this standard to reclassify rideshare drivers and delivery workers as employees.",
+        "The IRS Publication 15-A (2025 edition) states that schedule flexibility is a key indicator of independent contractor status. Under the IRS's common-law test, if the company does not control when or how the work is performed, the worker is generally an independent contractor. The IRS specifically notes that workers who set their own hours, choose their own methods, and can work for multiple clients typically qualify as contractors."
+      ],
+      "expected_mode": "disputed",
+      "description": "DOL says schedule flexibility does not determine contractor status; IRS says it is a key indicator of contractor status",
+      "rationale": "Two federal agencies responsible for worker classification use different legal tests and reach opposite conclusions about the significance of schedule flexibility",
+      "domain": "law",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_636",
+      "difficulty": "medium",
+      "subcategory": "source_authority_conflict",
+      "query": "Are neonicotinoid pesticides responsible for honeybee colony collapse?",
+      "contexts": [
+        "The European Food Safety Authority's 2024 comprehensive risk assessment concluded that three neonicotinoid pesticides -- imidacloprid, clothianidin, and thiamethoxam -- pose an unacceptable risk to honeybees at field-realistic exposure levels. The assessment found that neonicotinoids impair bee navigation, foraging efficiency, and queen reproduction at concentrations commonly found in treated crop pollen. The EU maintains its 2018 outdoor ban on all three substances.",
+        "The U.S. Environmental Protection Agency's 2024 biological evaluation of imidacloprid, the most widely used neonicotinoid in North American agriculture, concluded that the pesticide does not pose colony-level risks to managed honeybee populations when used according to approved label directions and application rate limits. The EPA's field-level studies conducted across 12 states found that while individual bee exposure to imidacloprid residues in pollen and nectar may cause measurable sublethal neurological effects, honeybee colonies compensate through normal queen-directed worker replacement cycles and maintain healthy population levels. The EPA approved continued registration of imidacloprid for agricultural row crop and orchard use through 2030."
+      ],
+      "expected_mode": "disputed",
+      "description": "EFSA finds neonicotinoids pose unacceptable risk to bees and bans them; EPA finds no colony-level risk and approves continued use",
+      "rationale": "The EU and U.S. regulatory authorities reviewed similar evidence on the same chemicals and reached opposite conclusions about bee safety",
+      "domain": "agriculture",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_dispute_medium_637",
+      "difficulty": "medium",
+      "subcategory": "source_authority_conflict",
+      "query": "Compare the economic impact of hosting the Olympics based on official vs independent analyses.",
+      "contexts": [
+        "The International Olympic Committee's 2024 Economic Legacy Report for the Tokyo 2020 Games calculated a net positive economic impact of $28.4 billion for Japan, including $13.6 billion in direct spending, $8.2 billion in infrastructure improvements with lasting value, and $6.6 billion in tourism and branding benefits projected through 2030. The IOC concluded that Olympic hosting generates significant long-term economic returns for host nations.",
+        "An independent economic analysis by Oxford University's Said Business School, published in the Journal of Urban Economics in 2025, examined 50 years of Olympic hosting data and calculated that the Tokyo Games produced a net economic loss of $4.7 billion for Japan when accounting for opportunity costs, debt servicing, underutilized venues, and the displacement of regular tourism during the games period. The study found that every Olympics since 1976 has produced a net loss under this methodology."
+      ],
+      "expected_mode": "disputed",
+      "description": "IOC reports $28.4 billion positive impact for Tokyo Olympics; Oxford study calculates $4.7 billion net loss",
+      "rationale": "The official Olympic body and an independent academic analysis reach starkly opposite conclusions about whether hosting the Olympics is economically beneficial",
+      "domain": "finance",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "conflicting",
+      "category": "dispute",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }

@@ -5734,6 +5734,238 @@
         "mode": "governance",
         "check_mode_match": true
       }
+    },
+    {
+      "id": "t1_confident_medium_900",
+      "difficulty": "medium",
+      "subcategory": "technical_documented",
+      "query": "How does Kubernetes perform a rolling update on a Deployment?",
+      "contexts": [
+        "When a Deployment's pod template is modified, Kubernetes initiates a rolling update by creating a new ReplicaSet and incrementally scaling it up while scaling down the old ReplicaSet. By default, it ensures at least 75% of desired pods remain available (maxUnavailable: 25%) and creates no more than 125% of desired pods (maxSurge: 25%). The rollout can be paused, resumed, or rolled back using kubectl rollout commands. Each revision is tracked, allowing rollback to any previous ReplicaSet configuration."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Technical question about Kubernetes rolling updates with clear documentation-style answer",
+      "rationale": "The context explains the exact rolling update mechanism with specific default parameters (75%, 25%, 125%) and available commands -- a confident answer is fully supported",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_901",
+      "difficulty": "medium",
+      "subcategory": "technical_documented",
+      "query": "Does SWIFT support same-day international wire transfers?",
+      "contexts": [
+        "SWIFT gpi (Global Payments Innovation), launched in 2017, enables same-day international wire transfers for participating banks. As of March 2024, 96% of SWIFT gpi payments are credited to beneficiary accounts within 24 hours, and 50% are credited within 30 minutes. Over 4,200 financial institutions across 200 countries have adopted SWIFT gpi. The service assigns a unique end-to-end transaction reference (UETR) that allows real-time tracking of payment status through the correspondent banking chain."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Yes/no question about SWIFT capabilities with clear affirmative documentation",
+      "rationale": "The context directly confirms same-day capability with SWIFT gpi, supported by specific statistics (96% within 24h, 50% within 30min) and adoption figures",
+      "domain": "finance",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_902",
+      "difficulty": "medium",
+      "subcategory": "clear_explanation",
+      "query": "Why is the Mediterranean diet associated with lower cardiovascular risk?",
+      "contexts": [
+        "The Mediterranean diet reduces cardiovascular risk through multiple biochemical pathways. Olive oil's oleic acid and polyphenols lower LDL oxidation and reduce arterial inflammation. The PREDIMED trial (2013, n=7,447) demonstrated a 30% reduction in major cardiovascular events among participants assigned the Mediterranean diet supplemented with extra-virgin olive oil compared to a low-fat control diet. High intake of omega-3 fatty acids from fish decreases triglycerides and platelet aggregation, while dietary fiber from whole grains and legumes improves endothelial function and insulin sensitivity."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Causal question about the Mediterranean diet and cardiovascular health with clear mechanistic explanation",
+      "rationale": "The context provides specific biochemical mechanisms, cites a landmark trial with sample size and outcome (30% reduction), and names multiple protective pathways -- no ambiguity",
+      "domain": "medicine",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_903",
+      "difficulty": "medium",
+      "subcategory": "quantitative_answer",
+      "query": "What is the average depth of the Mariana Trench?",
+      "contexts": [
+        "The Mariana Trench, located in the western Pacific Ocean east of the Mariana Islands, has an average depth of approximately 8,200 meters (26,900 feet). Its deepest point, known as the Challenger Deep, reaches 10,935 meters (35,876 feet) below sea level, as measured by the Schmidt Ocean Institute's sonar survey in 2021. The trench stretches 2,550 kilometers in length and 69 kilometers at its widest point. Water pressure at the bottom of the Challenger Deep exceeds 1,086 bars, roughly 1,071 times standard atmospheric pressure."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Quantitative question about Mariana Trench depth with exact figures provided",
+      "rationale": "The context gives the exact average depth (8,200m), deepest point (10,935m), and additional precise measurements -- the numerical answer is unambiguous",
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_904",
+      "difficulty": "medium",
+      "subcategory": "quantitative_answer",
+      "query": "When was the doctrine of stare decisis first applied by the U.S. Supreme Court?",
+      "contexts": [
+        "The U.S. Supreme Court first explicitly invoked the doctrine of stare decisis in the 1796 case Hylton v. United States (3 U.S. 171), where the Court referenced its obligation to follow established precedent when interpreting the Constitution's tax provisions. However, scholars generally credit the 1803 landmark case Marbury v. Madison (5 U.S. 137) with solidifying stare decisis as an operational principle by establishing judicial review itself. Chief Justice John Marshall's opinion in Marbury cemented the Court's authority to bind future courts to constitutional interpretation, making precedent functionally enforceable."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Historical date question about stare decisis origin with specific case citations",
+      "rationale": "The context names both the first explicit invocation (1796, Hylton v. United States) and the landmark solidification (1803, Marbury v. Madison) with full case citations -- the answer is clearly documented",
+      "domain": "law",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_905",
+      "difficulty": "medium",
+      "subcategory": "direct_factual",
+      "query": "Who developed the Montessori method of education?",
+      "contexts": [
+        "The Montessori method was developed by Dr. Maria Montessori (1870-1952), an Italian physician and educator who opened her first Casa dei Bambini (Children's House) in Rome on January 6, 1907. Montessori designed the method based on her observations of children's natural learning behaviors while working with intellectually disabled children at the Orthophrenic School in Rome from 1899 to 1901. Her approach emphasizes self-directed activity, hands-on learning, and collaborative play in multi-age classrooms with specially designed materials."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Direct factual question about the creator of the Montessori method",
+      "rationale": "The context immediately identifies Maria Montessori by name with her life dates, the founding date of her first school, and the method's origin story -- a simple factual lookup",
+      "domain": "education",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_906",
+      "difficulty": "medium",
+      "subcategory": "direct_factual",
+      "query": "Which greenhouse gas has the highest global warming potential per molecule?",
+      "contexts": [
+        "Sulfur hexafluoride (SF6) has the highest global warming potential (GWP) of any gas assessed by the IPCC, with a 100-year GWP of 23,500 relative to CO2. This means one kilogram of SF6 traps as much heat as 23,500 kilograms of carbon dioxide over a century. SF6 is used primarily as an electrical insulator in high-voltage switchgear and circuit breakers. Its atmospheric lifetime is approximately 3,200 years. By comparison, methane has a 100-year GWP of 28 and nitrous oxide has a 100-year GWP of 265."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Factual question about greenhouse gas warming potential with a clear superlative answer",
+      "rationale": "The context directly names SF6 as the highest GWP gas (23,500), provides the IPCC reference framework, and includes comparisons to methane and nitrous oxide for context -- unambiguous",
+      "domain": "environment",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_907",
+      "difficulty": "medium",
+      "subcategory": "clear_explanation",
+      "query": "How is the Duckworth-Lewis-Stern method used in rain-affected cricket matches?",
+      "contexts": [
+        "The Duckworth-Lewis-Stern (DLS) method recalculates target scores in rain-interrupted limited-overs cricket matches by modeling each team's remaining resources as a function of overs left and wickets in hand. When play is interrupted, the DLS system consults a resource percentage table to compute a revised target that reflects the batting team's proportionally reduced opportunity. For example, if the chasing team loses 10 overs to rain with 8 wickets in hand, DLS calculates they have lost roughly 30% of their remaining resources and adjusts the target downward accordingly. The method was adopted by the ICC as the official rain rule in 1999 and updated by Professor Steven Stern in 2014."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Explanation question about cricket's DLS method with clear procedural description",
+      "rationale": "The context explains the method's mechanics (resource percentage table, overs/wickets function), gives a concrete example, and states its official adoption -- the explanation is direct and complete",
+      "domain": "sports",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "procedural",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_908",
+      "difficulty": "medium",
+      "subcategory": "opposing_with_consensus",
+      "query": "Is pasteurization necessary for commercially sold milk?",
+      "contexts": [
+        "The FDA requires all milk sold across U.S. state lines to be pasteurized under the Pasteurized Milk Ordinance (PMO), which has been in effect since 1924. Pasteurization heats milk to 72 degrees Celsius for 15 seconds (HTST method) or 138 degrees Celsius for 2 seconds (UHT method), eliminating pathogens including Salmonella, E. coli O157:H7, and Listeria monocytogenes. The CDC reports that unpasteurized milk is 150 times more likely to cause foodborne illness outbreaks than pasteurized milk.",
+        "The Raw Milk Institute (RAWMI) argues that pasteurization destroys beneficial enzymes and probiotics naturally present in milk. RAWMI advocates contend that raw milk from grass-fed cows tested under their Risk Analysis and Management Plan (RAMP) is safe for consumption. However, even RAWMI acknowledges that their recommended testing protocols do not guarantee pathogen elimination and that vulnerable populations including children, elderly, and immunocompromised individuals should avoid raw milk."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Question about pasteurization necessity with regulatory consensus despite raw milk advocacy opposition",
+      "rationale": "The FDA mandate and CDC epidemiological data establish clear consensus on pasteurization's necessity. Even the opposing source (RAWMI) concedes that raw milk carries unresolvable risk for vulnerable populations -- the answer is confidently 'yes' for commercial sale",
+      "domain": "food",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_confident_medium_909",
+      "difficulty": "medium",
+      "subcategory": "opposing_with_consensus",
+      "query": "Is high-speed rail more energy-efficient than short-haul aviation?",
+      "contexts": [
+        "The International Energy Agency's Transport Outlook (2023) reports that high-speed rail consumes 0.3-0.5 megajoules per passenger-kilometer on routes under 800 km, compared to 1.5-2.4 MJ/pkm for short-haul aviation on equivalent routes. This makes rail 3-8 times more energy-efficient per passenger-kilometer. The European Environment Agency's 2022 emissions comparison found that high-speed trains produce 14 grams of CO2 per passenger-kilometer versus 285 grams for intra-European flights, a factor of 20 difference in carbon intensity.",
+        "Airlines for Europe (A4E), the aviation industry lobby, argues that modern narrow-body aircraft such as the Airbus A321neo have achieved a 20% fuel efficiency improvement over prior generations, narrowing the gap with rail. A4E also notes that aviation serves routes where rail infrastructure does not exist. However, A4E's own sustainability report concedes that rail remains the most energy-efficient powered land transport mode and that modal shift to rail on short routes is desirable where infrastructure permits."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Energy efficiency comparison question with clear consensus from IEA, EEA, and even the aviation lobby",
+      "rationale": "The IEA and EEA provide quantified evidence (3-8x more efficient, 20x less CO2), and even the opposing aviation lobby concedes rail's superior efficiency -- consensus is unambiguous",
+      "domain": "transportation",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "direct",
+      "category": "trustworthy_direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }

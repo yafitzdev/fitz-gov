@@ -1,6 +1,6 @@
 {
-  "version": "4.1.0",
-  "description": "fitz-gov curated test corpus - 378 documents designed to test governance behaviors",
+  "version": "4.2.0",
+  "description": "fitz-gov curated test corpus - documents designed to test governance behaviors",
   "document_count": 1420,
   "domains": {
     "agriculture": 34,
@@ -62,6 +62,6 @@
     "relevance": "Documents with tangential information (off-topic traps)"
   },
   "created_at": "2026-02-02",
-  "updated_at": "2026-02-12",
-  "notes": "v4.1.0: Domain rebalancing (106 conversions), grounding expansion (34→200), relevance expansion (32→200), classification attributes on all cases, query type diversification."
+  "updated_at": "2026-02-14",
+  "notes": "v4.2.0: Added 364 medium-difficulty cases across all 6 categories (25% medium target). Domain rebalancing, grounding/relevance expansion, classification attributes."
 }

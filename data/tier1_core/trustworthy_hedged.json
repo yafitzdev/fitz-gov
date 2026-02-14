@@ -8801,6 +8801,2007 @@
         "mode": "governance",
         "check_mode_match": true
       }
+    },
+    {
+      "id": "t1_qualify_medium_144",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Does intermittent fasting reduce the risk of type 2 diabetes?",
+      "contexts": [
+        "A pilot study conducted at a university clinic with 34 prediabetic participants found that an 8-week 16:8 intermittent fasting regimen was associated with a 12% improvement in fasting insulin sensitivity. The authors noted the small sample size and lack of a control group as significant limitations, and stated that larger randomized trials are needed before clinical recommendations can be made. Participants self-reported their eating windows, which introduces potential compliance bias."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Pilot study with small sample, no control group, and self-reported data",
+      "rationale": "The evidence is preliminary with explicit limitations — a hedged answer should note the study's small scale and uncontrolled design",
+      "domain": "medicine",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_145",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "How effective is cognitive behavioral therapy for treating insomnia in older adults?",
+      "contexts": [
+        "A meta-analysis of seven studies with a combined 412 participants over age 60 concluded that cognitive behavioral therapy for insomnia (CBT-I) reduced sleep onset latency by approximately 20 minutes on average. However, the included studies varied considerably in methodology, session duration ranged from 4 to 8 weeks, and outcomes were primarily measured through patient sleep diaries rather than objective polysomnography. The authors rated the overall quality of evidence as moderate due to high heterogeneity across trials."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Meta-analysis with moderate evidence quality rating and high heterogeneity",
+      "rationale": "The meta-analysis explicitly flags moderate evidence quality and methodological variation — hedging is clearly warranted",
+      "domain": "psychology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_146",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Is vertical farming more water-efficient than traditional agriculture?",
+      "contexts": [
+        "According to an industry white paper published by a vertical farming trade association, hydroponic vertical farms use an estimated 70-95% less water than conventional field agriculture for leafy greens. These figures are based on data from six commercial facilities in the Netherlands and Singapore. Independent researchers have noted that industry-sourced figures may not account for water used in cooling systems, nutrient solution preparation, and facility maintenance. Peer-reviewed comparisons remain limited."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Industry-sourced data with potential bias and limited peer review",
+      "rationale": "The water efficiency claim comes from an industry trade group and independent researchers flag possible omissions — hedging about the source is appropriate",
+      "domain": "agriculture",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_147",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Does playing background music improve productivity in open-plan offices?",
+      "contexts": [
+        "A workplace survey conducted by a facilities management company across 14 offices found that 62% of employees reported feeling more productive when ambient background music was played. The survey had a 38% response rate. A separate observational study at a single tech company measured a 7% increase in task completion rates during music-on periods, though the researchers acknowledged they could not control for seasonal workload variations or novelty effects. No blinded experimental studies on this topic were identified."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Self-reported survey with low response rate and uncontrolled observational study",
+      "rationale": "Evidence is based on subjective reports and an uncontrolled observation — hedging about methodology limitations is needed",
+      "domain": "hr_workplace",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_148",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "How much does solar panel efficiency degrade over time?",
+      "contexts": [
+        "A longitudinal study tracking 54 residential solar installations in Arizona over a 10-year period found an average annual degradation rate of 0.7%, which is within the manufacturer-guaranteed range. However, the study only covered monocrystalline panels from two manufacturers, and the hot desert climate may not be representative of degradation rates in humid, cloudy, or cold environments. The researchers noted that newer panel technologies such as heterojunction cells were not included and may have different degradation profiles."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Narrow study covering only one climate zone and two manufacturers",
+      "rationale": "The degradation data exists but is limited in scope — hedging about generalizability across climates and panel types is appropriate",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_149",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Does offering free shipping increase e-commerce conversion rates?",
+      "contexts": [
+        "An A/B test run by a mid-size online clothing retailer over a 3-week period in November showed that adding a free shipping threshold of $50 increased conversion rates by 18% compared to the control group. The test was conducted during the pre-holiday shopping season, which the company acknowledged may have inflated the effect. The sample included approximately 12,000 unique visitors. No data from other product categories or seasons was available for comparison."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Single retailer A/B test during seasonal peak, limited generalizability",
+      "rationale": "The conversion increase is real but from a single retailer during holiday season — hedging about seasonal and category specificity is warranted",
+      "domain": "finance",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_150",
+      "difficulty": "medium",
+      "subcategory": "different_aspects",
+      "query": "Should I invest in index funds or actively managed funds for retirement?",
+      "contexts": [
+        "A 2023 Morningstar report analyzed 15-year performance data and found that only 12% of actively managed large-cap equity funds outperformed the S&P 500 index after fees. The report focused exclusively on U.S. large-cap equities and did not address other asset classes such as bonds, international equities, or small-cap funds where active management may have different success rates. Tax efficiency comparisons between the two approaches were also not included in the analysis."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context covers large-cap equity performance but question is about retirement investing broadly",
+      "rationale": "The data only addresses one asset class — retirement investing involves multiple asset types, and the answer should note this limited scope",
+      "domain": "finance",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_151",
+      "difficulty": "medium",
+      "subcategory": "different_aspects",
+      "query": "How does remote work affect team collaboration?",
+      "contexts": [
+        "Microsoft's 2022 Work Trend Index, based on analysis of anonymized usage data from Teams and Outlook across 122 organizations, found that remote workers send 42% more instant messages and schedule 25% more meetings than their in-office counterparts. The report measured communication frequency and tool usage patterns but did not assess the quality of collaboration, creative output, or whether the increased communication volume translated into better project outcomes. Employee satisfaction with collaboration tools was surveyed separately and not linked to collaboration quality metrics."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context covers communication quantity but question asks about collaboration quality",
+      "rationale": "More messages and meetings do not necessarily mean better or worse collaboration — the data measures a different aspect than what is asked",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_152",
+      "difficulty": "medium",
+      "subcategory": "different_aspects",
+      "query": "Is organic food safer to eat than conventional food?",
+      "contexts": [
+        "A Stanford University systematic review of 237 studies found that organic produce had 30% lower detectable pesticide residues compared to conventional produce. The review examined pesticide residue levels and antibiotic-resistant bacteria prevalence but did not evaluate whether the lower residue levels translated into measurable health outcomes for consumers. Both organic and conventional produce samples tested were within regulatory safety limits established by the EPA. Nutritional content differences between organic and conventional were addressed in a separate publication."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context addresses pesticide residues but not the broader safety question about health outcomes",
+      "rationale": "Lower residue levels do not automatically mean safer — the context explicitly notes it did not evaluate health outcomes",
+      "domain": "food",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_153",
+      "difficulty": "medium",
+      "subcategory": "different_aspects",
+      "query": "How does social media usage influence political polarization?",
+      "contexts": [
+        "A 2023 study published in Nature tracked 23,000 Facebook and Instagram users over six months and found that reducing exposure to reshared political content did not significantly change users' political attitudes or affective polarization scores. The experiment focused specifically on content resharing algorithms and did not examine the effects of original political posts, comment sections, private groups, or cross-platform exposure on platforms like Twitter/X, YouTube, or TikTok. The authors noted that the study could not capture long-term effects beyond the six-month window."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Study covers one specific mechanism (resharing) on one platform, not social media broadly",
+      "rationale": "The study only tested reshared content on Meta platforms — the broader question about social media and polarization involves many more mechanisms",
+      "domain": "social_media",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_154",
+      "difficulty": "medium",
+      "subcategory": "different_aspects",
+      "query": "Is it better to rent or buy a home in a major city?",
+      "contexts": [
+        "A Zillow Research analysis of 50 U.S. metropolitan areas calculated that the average break-even horizon for buying versus renting was 4.2 years as of Q3 2023, meaning homeowners who stayed at least 4.2 years typically spent less than equivalent renters. The analysis used median home prices, average mortgage rates, property taxes, and median rents, but did not factor in opportunity cost of the down payment if invested in equities, maintenance and repair costs, homeowner association fees, or lifestyle flexibility considerations such as job mobility."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Financial comparison only, missing opportunity cost and lifestyle factors",
+      "rationale": "The break-even analysis covers direct costs but omits several important financial and lifestyle factors mentioned in the context itself",
+      "domain": "real_estate",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_155",
+      "difficulty": "medium",
+      "subcategory": "different_aspects",
+      "query": "Which programming language should a beginner learn first?",
+      "contexts": [
+        "Stack Overflow's 2023 Developer Survey found that Python was the most commonly used programming language among developers who started coding within the past two years, cited by 58% of respondents. JavaScript followed at 47% and Java at 22%. The survey captured language popularity among beginners who chose to respond but did not measure learning outcomes, job placement rates, salary progression, or pedagogical effectiveness. Respondents were self-selected from Stack Overflow's user base, which may skew toward web-development-oriented programmers."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Context covers beginner popularity but not learning effectiveness or career outcomes",
+      "rationale": "Popularity among beginners is not the same as being the best first language — the context acknowledges it does not address outcomes",
+      "domain": "education",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_156",
+      "difficulty": "medium",
+      "subcategory": "hedged_evidence",
+      "query": "Does green tea consumption lower cholesterol levels?",
+      "contexts": [
+        "A systematic review in the Journal of Nutrition examined 14 randomized controlled trials and reported that green tea catechins appear to modestly reduce total cholesterol by an estimated 5-7 mg/dL. The authors cautioned that results were inconsistent across trials, with some showing no significant effect. They suggested that differences in tea preparation, catechin concentration, and participant demographics likely contributed to the variability. The review concluded that green tea may offer a small cholesterol-lowering benefit but emphasized that the evidence is not yet definitive."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Review with hedged language: 'appear to,' 'may offer,' 'not yet definitive'",
+      "rationale": "The source itself uses cautious hedging language throughout — the answer should preserve this uncertainty",
+      "domain": "medicine",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_157",
+      "difficulty": "medium",
+      "subcategory": "hedged_evidence",
+      "query": "How likely is it that quantum computing will break current encryption standards?",
+      "contexts": [
+        "According to a 2024 report from the National Institute of Standards and Technology, current quantum computers are far from being able to break RSA-2048 encryption, which would likely require a machine with several thousand stable logical qubits. Experts estimate this capability could potentially emerge within 10 to 30 years, though timelines remain highly speculative. NIST has cautioned that organizations should begin transitioning to post-quantum cryptographic standards as a precaution, noting that the exact timeline is uncertain and could be accelerated by unexpected breakthroughs in error correction."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Expert report with explicitly speculative timelines and uncertain language",
+      "rationale": "The context uses 'potentially,' 'highly speculative,' and 'uncertain' — hedging is built into the source material",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_158",
+      "difficulty": "medium",
+      "subcategory": "hedged_evidence",
+      "query": "Does mindfulness meditation reduce workplace burnout?",
+      "contexts": [
+        "A review of 11 workplace mindfulness programs published in the Journal of Occupational Health Psychology found that participants reported lower emotional exhaustion scores after 8-week mindfulness interventions. The effect sizes ranged from small to moderate across studies. The reviewers noted that most programs relied on self-reported burnout measures, attrition rates were often above 30%, and it remains unclear whether improvements persist beyond the intervention period. They concluded that mindfulness shows promise for burnout reduction but that the evidence base is still developing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Review explicitly hedges with 'shows promise' and 'still developing'",
+      "rationale": "The evidence is positive but tentative with clear hedging in the source — answer should reflect this uncertainty",
+      "domain": "hr_workplace",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_159",
+      "difficulty": "medium",
+      "subcategory": "hedged_evidence",
+      "query": "Is desalination a viable solution for water scarcity in arid regions?",
+      "contexts": [
+        "The World Bank's 2023 water security report describes desalination as a potentially important component of water supply portfolios for arid coastal regions. The report notes that energy costs account for approximately 40-50% of desalination operating expenses, and that the environmental impact of brine discharge is still being studied. While costs have declined roughly 50% over the past two decades, the report cautions that desalination may not be economically feasible for all communities, particularly those far from coastlines or with limited energy infrastructure. The viability appears to be highly context-dependent."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Source explicitly qualifies viability with 'potentially,' 'may not,' and 'context-dependent'",
+      "rationale": "The World Bank report itself hedges heavily on viability — the answer should preserve these qualifications",
+      "domain": "environment",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_160",
+      "difficulty": "medium",
+      "subcategory": "hedged_evidence",
+      "query": "Does early childhood bilingual education improve cognitive development?",
+      "contexts": [
+        "A longitudinal study following 820 children in Canadian immersion programs from kindergarten through grade 3 found that bilingual students scored marginally higher on tasks measuring executive function and cognitive flexibility. The researchers emphasized that the advantages were modest and not observed consistently across all cognitive domains tested. They suggested that factors such as socioeconomic background, parental education level, and quality of instruction may play a larger role than bilingualism itself. The study concluded that early bilingual education may contribute to certain cognitive benefits but that the relationship is likely more nuanced than popularly believed."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Study concludes with 'may contribute' and 'more nuanced than believed'",
+      "rationale": "The researchers explicitly hedge their conclusions and flag confounding variables — hedging is clearly appropriate",
+      "domain": "education",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_161",
+      "difficulty": "medium",
+      "subcategory": "stale_source",
+      "query": "How many people use TikTok monthly worldwide?",
+      "contexts": [
+        "According to ByteDance's investor presentation from Q2 2022, TikTok had approximately 1.2 billion monthly active users globally. The platform was experiencing rapid growth, adding an estimated 100 million new users in the first half of 2022 alone. The presentation projected that user counts would continue to grow, driven by expansion in Southeast Asia and Latin America. At the time, TikTok was the most downloaded app globally for the third consecutive quarter."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Query asks current users but data is from mid-2022",
+      "rationale": "The 2022 figure is significantly outdated for a rapidly growing platform — the answer should note the data age",
+      "domain": "social_media",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_162",
+      "difficulty": "medium",
+      "subcategory": "stale_source",
+      "query": "What is the average salary for a data scientist in the United States?",
+      "contexts": [
+        "The Bureau of Labor Statistics Occupational Employment and Wage Statistics report from May 2021 listed the median annual wage for data scientists at $100,910. The 10th percentile earned approximately $59,430 and the 90th percentile earned approximately $167,040. These figures were based on employer surveys conducted across all 50 states and included both private and public sector positions. The BLS noted that demand for data science roles had been growing at approximately 22% annually, which the agency classified as 'much faster than average' compared to all occupations."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Salary data from 2021 in a rapidly evolving field",
+      "rationale": "Data science salaries have changed significantly since 2021 — the answer should note these figures may be outdated",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_163",
+      "difficulty": "medium",
+      "subcategory": "stale_source",
+      "query": "Which country leads global electric vehicle battery production?",
+      "contexts": [
+        "According to the International Energy Agency's Global EV Outlook 2021, China dominated global lithium-ion battery manufacturing with approximately 76% of the world's cell production capacity. South Korea held roughly 11%, Japan 7%, and the United States less than 3%. The report noted that several countries had announced plans to increase domestic battery production, including significant investments in Europe and North America through gigafactory construction projects expected to come online between 2023 and 2026."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Battery production data from 2021 with major capacity changes underway",
+      "rationale": "The 2021 market share data predates the gigafactory expansions mentioned in the source — current shares may differ substantially",
+      "domain": "transportation",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_164",
+      "difficulty": "medium",
+      "subcategory": "stale_source",
+      "query": "How prevalent is ransomware targeting hospitals?",
+      "contexts": [
+        "The U.S. Department of Health and Human Services Cybersecurity Program reported that in 2020, at least 560 healthcare facilities were affected by ransomware attacks, a 55% increase from the previous year. The average ransom demand rose to $169,000, and the average downtime per incident was 15.6 days. The report attributed the spike partly to the COVID-19 pandemic, which stretched IT resources thin and made hospitals more vulnerable. It warned that the healthcare sector would likely continue to be a high-value target for ransomware operators."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Ransomware statistics from 2020 in a fast-changing threat landscape",
+      "rationale": "Cybersecurity threat data from 2020 is substantially outdated — attack patterns, volumes, and ransom amounts have changed dramatically",
+      "domain": "medicine",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_165",
+      "difficulty": "medium",
+      "subcategory": "stale_source",
+      "query": "What percentage of U.S. workers are employed in the gig economy?",
+      "contexts": [
+        "A survey conducted by the Freelancers Union and Upwork in 2019 estimated that approximately 35% of the U.S. workforce participated in some form of freelance or gig work, encompassing roughly 57 million workers. This figure included full-time freelancers, moonlighters, and occasional gig workers. The survey was based on self-identification and may include workers who performed only small amounts of gig work alongside traditional employment. The COVID-19 pandemic, which began shortly after, significantly disrupted labor markets."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Pre-pandemic gig economy data from 2019",
+      "rationale": "The 2019 data predates the pandemic which fundamentally reshaped gig work — current percentages are likely different",
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_166",
+      "difficulty": "medium",
+      "subcategory": "stale_source",
+      "query": "When does the statute of limitations expire for filing a federal tax fraud claim?",
+      "contexts": [
+        "According to the IRS Publication 556, updated through December 2020, the general statute of limitations for tax fraud assessments is six years from the date the return was filed. For cases involving substantial omission of income exceeding 25% of gross income, the IRS has six years rather than the standard three. If no return was filed or a fraudulent return was filed, there is no statute of limitations. The publication noted that legislative proposals in Congress could potentially modify these timelines, and that taxpayers should consult current IRS guidance for the most up-to-date information."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Tax guidance from 2020 that may have been superseded by legislative changes",
+      "rationale": "Tax law timelines from 2020 may have been amended — the source itself warns about potential legislative changes",
+      "domain": "law",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_167",
+      "difficulty": "medium",
+      "subcategory": "entity_ambiguity",
+      "query": "Who is the CEO of Mercury?",
+      "contexts": [
+        "Mercury Financial is a financial technology company focused on providing credit card products to consumers with limited credit history. The company was founded in 2014 and is headquartered in Dallas, Texas, with Lara Lemon serving as CEO. Separately, Mercury, the banking platform for startups and e-commerce businesses, was founded by Immad Akhund in 2017 in San Francisco. Akhund has served as CEO since the company's inception. Both companies operate in financial services but serve very different customer segments."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Two different companies named Mercury with different CEOs",
+      "rationale": "The query does not specify which Mercury — the answer should acknowledge the ambiguity and present both possibilities",
+      "domain": "finance",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_168",
+      "difficulty": "medium",
+      "subcategory": "entity_ambiguity",
+      "query": "How did Springfield handle its budget deficit?",
+      "contexts": [
+        "Springfield, Illinois, faced a $12.4 million budget deficit in fiscal year 2023. The city council approved a combination of spending cuts to non-essential services and a 1.5% property tax increase to close the gap. Meanwhile, Springfield, Missouri, addressed its $8.7 million deficit primarily through deferred capital projects and drawing from its rainy-day fund, avoiding any tax increases. Both cities are among the largest in their respective states and face similar challenges related to declining state revenue sharing."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Multiple cities named Springfield with different budget approaches",
+      "rationale": "The query does not specify which Springfield — two different cities took different approaches",
+      "domain": "government",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_169",
+      "difficulty": "medium",
+      "subcategory": "entity_ambiguity",
+      "query": "When was the Apollo program launched?",
+      "contexts": [
+        "NASA's Apollo program, aimed at landing humans on the Moon, was officially launched in 1961 following President Kennedy's address to Congress. The first crewed Apollo mission (Apollo 7) launched in October 1968. Separately, the Apollo Education Group, a for-profit education company that operated the University of Phoenix, was founded in 1973 by John Sperling. The Apollo spacecraft program conducted its final mission, the Apollo-Soyuz Test Project, in July 1975. The word 'Apollo' is also used for various software platforms and technology projects."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Multiple entities named Apollo — NASA program, education group, and others",
+      "rationale": "While NASA's Apollo is most likely intended, the context presents multiple Apollo entities — the answer should clarify which is meant",
+      "domain": "history",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_170",
+      "difficulty": "medium",
+      "subcategory": "entity_ambiguity",
+      "query": "What is the success rate for the Jordan treatment protocol?",
+      "contexts": [
+        "The Jordan treatment protocol, developed by Dr. Patricia Jordan at Johns Hopkins in 2018, reports a 73% remission rate for chronic migraine patients over a 12-month period based on a cohort of 240 patients. A separate Jordan Protocol, named after the Jordan River region where it was first implemented, is used in agricultural water treatment and achieves an approximately 89% pathogen reduction rate for irrigation water. Both protocols have been cited in their respective fields, though the medical protocol has more extensive peer-reviewed documentation."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Two different protocols share the name Jordan — medical vs agricultural",
+      "rationale": "Without clarification, both protocols could be intended — the answer should note the ambiguity",
+      "domain": "science",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_171",
+      "difficulty": "medium",
+      "subcategory": "entity_ambiguity",
+      "query": "Compare the Rangers' defensive statistics this season.",
+      "contexts": [
+        "The Texas Rangers baseball team allowed an average of 4.1 runs per game during the 2023 regular season, ranking 15th in Major League Baseball in pitching ERA at 4.12. The Glasgow Rangers football club conceded 28 goals in 38 Scottish Premiership matches during their 2023 campaign, averaging 0.74 goals conceded per match. The New York Rangers ice hockey team had the fifth-best goals-against record in the NHL during the 2023-24 season at 2.68 goals against per game. All three teams were competitive in their respective leagues' defensive rankings."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Three different sports teams called Rangers with different defensive metrics",
+      "rationale": "The query does not specify which Rangers team or sport — all three are valid interpretations with very different statistics",
+      "domain": "sports",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_172",
+      "difficulty": "medium",
+      "subcategory": "numerical_near_miss",
+      "query": "Does the company qualify for the small business tax deduction with $4.8 million in revenue?",
+      "contexts": [
+        "Under Section 199A of the Internal Revenue Code, the qualified business income deduction begins to phase out for service businesses when taxable income exceeds $182,100 for single filers or $364,200 for joint filers (2023 thresholds). For non-service businesses, a separate gross receipts test applies: the business must have average annual gross receipts of $5 million or less over the prior three tax years to qualify for certain simplified accounting methods and deductions. The threshold is indexed for inflation and is subject to change in subsequent tax years."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Revenue of $4.8M is close to the $5M threshold, and thresholds may have changed",
+      "rationale": "The $4.8M figure is near the $5M limit, and the threshold may have been adjusted for inflation — hedging about the proximity and potential changes is appropriate",
+      "domain": "law",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_173",
+      "difficulty": "medium",
+      "subcategory": "numerical_near_miss",
+      "query": "Is our warehouse temperature compliant with food storage regulations?",
+      "contexts": [
+        "FDA regulations under 21 CFR Part 117 require that cold storage facilities maintaining perishable foods keep ambient temperatures at or below 40 degrees Fahrenheit (4.4 degrees Celsius). A recent inspection report for Warehouse B noted average temperatures of 39.2 degrees Fahrenheit during daytime operations, with brief excursions to 41.5 degrees Fahrenheit recorded during loading dock door openings lasting 15-20 minutes approximately six times per day. The inspector noted these excursions as a concern but did not issue a formal violation, pending review of the facility's temperature recovery documentation."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Temperature mostly compliant but with brief excursions above the limit",
+      "rationale": "The average is below the threshold but there are excursions above it — the compliance status is genuinely ambiguous",
+      "domain": "food",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_174",
+      "difficulty": "medium",
+      "subcategory": "numerical_near_miss",
+      "query": "Did the marathon runner meet the Olympic qualifying standard?",
+      "contexts": [
+        "The World Athletics qualifying standard for the 2024 Paris Olympics men's marathon was set at 2 hours, 8 minutes, and 10 seconds (2:08:10). The runner's certified result at the Rotterdam Marathon was 2:08:23, which is 13 seconds outside the direct qualifying time. However, World Athletics also offers qualification through the World Athletics Rankings system, where accumulated points from multiple races can provide an alternative pathway. The rankings-based qualification window remained open until June 2024."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Time misses direct standard by 13 seconds but alternative qualification exists",
+      "rationale": "The runner narrowly missed the direct standard but could still qualify through rankings — the answer should acknowledge both pathways",
+      "domain": "sports",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_175",
+      "difficulty": "medium",
+      "subcategory": "numerical_near_miss",
+      "query": "Is the building's air quality within safe limits for occupancy?",
+      "contexts": [
+        "The EPA's National Ambient Air Quality Standard for PM2.5 (fine particulate matter) is 12 micrograms per cubic meter for the annual average and 35 micrograms per cubic meter for the 24-hour standard. Air quality monitoring in the office building showed an annual average PM2.5 level of 11.6 micrograms per cubic meter, but three separate 24-hour readings during winter months measured 33.8, 34.1, and 36.2 micrograms per cubic meter. The facility manager noted that the elevated winter readings coincided with periods when the HVAC filtration system was undergoing maintenance."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Annual average is within limits but individual 24-hour readings are at or just above the threshold",
+      "rationale": "One reading exceeded the 24-hour standard and others were near the threshold — compliance is borderline and hedging is appropriate",
+      "domain": "environment",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_176",
+      "difficulty": "medium",
+      "subcategory": "numerical_near_miss",
+      "query": "Does this student's GPA meet the graduate school admission requirement?",
+      "contexts": [
+        "The graduate admissions handbook for the University of Michigan's School of Engineering states that applicants should have a minimum cumulative GPA of 3.5 on a 4.0 scale. The student's official transcript shows a cumulative GPA of 3.47 after seven semesters, with an upward trend in the final two years (3.65 GPA in junior and senior coursework). The handbook notes that GPA is one of several factors considered and that applicants below the stated minimum may be admitted if they demonstrate exceptional research experience, strong recommendation letters, or other compelling qualifications."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "GPA of 3.47 is just below the 3.5 minimum but with upward trend and holistic review",
+      "rationale": "The GPA is narrowly below the threshold but the program considers other factors — a definitive yes or no answer would be misleading",
+      "domain": "education",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_177",
+      "difficulty": "medium",
+      "subcategory": "implicit_assumptions",
+      "query": "How long does it take to drive from New York to Boston?",
+      "contexts": [
+        "According to Google Maps route data, the distance from Manhattan, New York to downtown Boston via I-95 is approximately 215 miles. Under normal traffic conditions, the estimated driving time is 3 hours and 45 minutes. However, travel times vary significantly based on time of day and day of week. Friday afternoon departures between 3-7 PM can take 5 to 6 hours due to congestion on I-95 through Connecticut. Construction projects on the I-95 corridor through Bridgeport and New Haven were ongoing as of late 2023. Winter weather conditions can add substantial time."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Drive time assumes normal conditions but varies enormously by time, traffic, weather",
+      "rationale": "The baseline 3:45 requires assumptions about traffic, weather, and route — the answer should note the wide variability",
+      "domain": "transportation",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_178",
+      "difficulty": "medium",
+      "subcategory": "implicit_assumptions",
+      "query": "How much can I save by switching to LED lighting in my home?",
+      "contexts": [
+        "The U.S. Department of Energy estimates that replacing incandescent bulbs with LED equivalents can reduce lighting energy consumption by approximately 75%. For a typical household using 30 light bulbs at an average of 3 hours per day, this translates to estimated annual savings of $150-$225 at the national average electricity rate of $0.16 per kWh. These estimates assume all existing bulbs are 60-watt incandescent; homes that have already partially converted to CFL bulbs would see smaller savings. Actual savings depend on local electricity rates, which range from $0.10 per kWh in some states to over $0.30 in Hawaii and parts of New England."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Savings estimate assumes incandescent baseline, average rates, and typical usage",
+      "rationale": "The estimate requires multiple assumptions about current bulbs, rates, and usage — individual results could differ significantly",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_179",
+      "difficulty": "medium",
+      "subcategory": "implicit_assumptions",
+      "query": "Should farmers in the Midwest plant soybeans or corn this season for maximum profit?",
+      "contexts": [
+        "USDA projections from January 2024 estimate corn prices at $4.80 per bushel and soybean prices at $12.50 per bushel for the upcoming growing season. At these prices, and assuming average yields of 177 bushels per acre for corn and 50 bushels per acre for soybeans, the gross revenue per acre would be approximately $850 for corn and $625 for soybeans. However, input costs for corn (seed, fertilizer, pesticides) typically run $150-200 per acre higher than soybeans. These calculations assume average weather conditions and do not account for crop insurance provisions, rotation benefits, soil conditions, or individual farm equipment capabilities."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Profit comparison requires assumptions about yields, weather, input costs, and individual farm factors",
+      "rationale": "The comparison hinges on many assumed variables — the context itself lists factors not accounted for",
+      "domain": "agriculture",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_180",
+      "difficulty": "medium",
+      "subcategory": "implicit_assumptions",
+      "query": "Is it cheaper to build a new home or renovate an existing one?",
+      "contexts": [
+        "The National Association of Home Builders reported that the average cost of building a new single-family home in the United States was approximately $392,000 in 2023, excluding land. A HomeAdvisor survey estimated that a comprehensive whole-home renovation averages $150,000-$250,000 depending on scope. These figures assume a home of approximately 2,200 square feet and vary significantly by region: building costs in the Northeast and West Coast can be 30-50% higher than the national average. The comparison also depends on the condition of the existing structure, local permitting requirements, and whether the renovation involves any structural modifications."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Cost comparison depends on region, home size, condition, and scope — many implicit assumptions",
+      "rationale": "The question requires assumptions about location, size, and renovation scope that dramatically affect the answer",
+      "domain": "real_estate",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_181",
+      "difficulty": "medium",
+      "subcategory": "implicit_assumptions",
+      "query": "How many servers do I need to handle 10,000 concurrent users?",
+      "contexts": [
+        "A load testing benchmark published by a cloud infrastructure provider found that a single 8-core, 32GB RAM virtual machine running a Node.js application behind an Nginx reverse proxy could handle approximately 2,500 concurrent WebSocket connections with sub-100ms response times. This benchmark assumed a simple chat application with average message sizes of 256 bytes and a message rate of one per user per 10 seconds. CPU-intensive workloads, database-heavy applications, or real-time media streaming would require substantially different server configurations. Memory-optimized instances may handle more connections but with different cost trade-offs."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Server capacity depends heavily on application type, which is not specified",
+      "rationale": "The benchmark is for a specific simple workload — the user's actual application could require vastly different resources",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_182",
+      "difficulty": "medium",
+      "subcategory": "version_overlap",
+      "query": "What is the maximum file upload size in the API?",
+      "contexts": [
+        "The platform API documentation has undergone several revisions regarding file upload limits. Version 2.1 of the API, released in March 2023, set the maximum file upload size at 25 MB for free-tier users and 100 MB for paid-tier users. Version 2.3, released in August 2023, increased the paid-tier limit to 250 MB but kept the free-tier limit unchanged. The documentation for version 3.0 beta, currently in preview, mentions a planned increase to 500 MB for enterprise accounts. It is unclear from the documentation which version is currently the default for new API integrations."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Multiple API versions with different upload limits, unclear which is current default",
+      "rationale": "Three versions with different limits are mentioned — without knowing which version the user is on, a definitive answer is impossible",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_183",
+      "difficulty": "medium",
+      "subcategory": "version_overlap",
+      "query": "How should depreciation be calculated for commercial real estate under GAAP?",
+      "contexts": [
+        "Under ASC 360 (formerly SFAS 144), commercial real estate is typically depreciated using the straight-line method over its estimated useful life. Prior to the 2023 FASB update, the standard useful life for commercial buildings was commonly set at 39 years for tax purposes and 30-40 years for GAAP reporting. The 2023 update introduced optional component depreciation, allowing entities to depreciate building systems (HVAC, electrical, plumbing) separately over shorter useful lives of 15-20 years. Companies may still use the single-asset approach if they disclose their methodology. Transition guidance allows either prospective or modified retrospective adoption."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Old and new GAAP standards coexist with optional adoption of component depreciation",
+      "rationale": "Two valid approaches exist after the 2023 update — the answer depends on which method the company has chosen to adopt",
+      "domain": "finance",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_184",
+      "difficulty": "medium",
+      "subcategory": "version_overlap",
+      "query": "What are the accessibility requirements for government websites?",
+      "contexts": [
+        "The U.S. government requires federal agency websites to comply with Section 508 of the Rehabilitation Act, which was updated in 2018 to align with WCAG 2.0 Level AA standards. However, the W3C released WCAG 2.1 in 2018 and WCAG 2.2 in October 2023, each adding new success criteria beyond what Section 508 currently mandates. Several state governments have begun adopting WCAG 2.1 or 2.2 as their standard independently of the federal requirement. The Department of Justice has issued guidance suggesting federal agencies should consider moving toward WCAG 2.1 compliance, though this has not yet been formalized in an updated Section 508 rule."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Multiple WCAG versions in play with federal and state requirements diverging",
+      "rationale": "The applicable standard depends on federal vs. state jurisdiction and whether informal DOJ guidance is followed — the answer needs to acknowledge version complexity",
+      "domain": "government",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_185",
+      "difficulty": "medium",
+      "subcategory": "version_overlap",
+      "query": "Which edition of the International Building Code applies to new construction in California?",
+      "contexts": [
+        "The International Code Council publishes updated editions of the International Building Code (IBC) on a three-year cycle. The 2021 IBC was the most recent edition as of early 2024, with the 2024 IBC expected to be published later that year. California adopts the IBC through the California Building Standards Code (Title 24), but typically operates on a delayed cycle. As of January 2024, Title 24 incorporated the 2021 IBC with California-specific amendments. Some local jurisdictions within California have adopted additional amendments or expedited adoption of newer IBC provisions. The effective date for new Title 24 updates was January 1, 2023, with the next update cycle expected in 2026."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Multiple IBC editions, state amendments, local variations, and delayed adoption cycles",
+      "rationale": "The applicable code depends on timing, location within California, and local amendments — a single definitive answer oversimplifies",
+      "domain": "law",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_186",
+      "difficulty": "medium",
+      "subcategory": "version_overlap",
+      "query": "How should I configure TLS encryption for my web server?",
+      "contexts": [
+        "The Mozilla Server Side TLS guidelines recommend different TLS configurations depending on the compatibility requirements of the deployment. The 'Modern' configuration supports only TLS 1.3 and provides the strongest security but excludes clients running older browsers or operating systems. The 'Intermediate' configuration supports TLS 1.2 and 1.3 with a curated cipher suite and is recommended for most general-purpose web servers. The 'Old' configuration adds TLS 1.0 and 1.1 support for legacy environments but is considered insecure for new deployments. As of 2024, major browsers have dropped TLS 1.0 and 1.1 support entirely. The choice between configurations depends on the expected client base and regulatory requirements such as PCI DSS, which mandates TLS 1.2 or higher."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Three valid TLS configuration profiles with different trade-offs, unclear which applies",
+      "rationale": "The correct configuration depends on the user's client base and regulatory environment — hedging about the need to choose based on requirements is necessary",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_100",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Does the new reading intervention program improve test scores?",
+      "contexts": [
+        "A pilot study of the ReadRight intervention program conducted at three elementary schools in Denver found that participating students showed a 12-point improvement on standardized reading assessments after one semester. However, the study included only 47 students, lacked a control group, and the schools self-selected into the program. The researchers noted these limitations and recommended a larger randomized controlled trial before drawing definitive conclusions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Pilot study shows positive results but with significant methodological limitations",
+      "rationale": "The 12-point improvement is real data but the small sample, no control group, and self-selection mean the answer requires heavy qualification",
+      "domain": "education",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_101",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Is the Terravax vaccine effective against the H7N2 avian flu variant?",
+      "contexts": [
+        "Preliminary results from a Phase II clinical trial of Terravax conducted by NovaStar Biologics showed a 74% antibody response rate among 210 participants after two doses. The trial was conducted in a single site in South Korea and used surrogate endpoints rather than actual infection rates. The company noted these are early findings and a larger Phase III trial across multiple countries is planned for Q3 2026."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Phase II trial with surrogate endpoints and single-site limitation",
+      "rationale": "Early-phase trial with limited geographic scope and surrogate markers rather than real-world efficacy data requires significant hedging",
+      "domain": "medicine",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_102",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "How effective is the GreenSoil amendment at increasing wheat yields?",
+      "contexts": [
+        "Field trials of the GreenSoil proprietary soil amendment on three farms in western Kansas during the 2025 growing season showed an estimated 18% increase in winter wheat yield per acre compared to unamended control plots. Researchers cautioned that results were based on a single growing season with above-average rainfall, and the sample included only loamy soil types. They recommended at least three more seasons of data before making yield claims."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Single-season field trial with favorable weather and limited soil types",
+      "rationale": "One season of data under favorable conditions with limited soil diversity means the 18% yield increase is preliminary and heavily context-dependent",
+      "domain": "agriculture",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_103",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Does the ClearView dashcam reduce insurance fraud claims?",
+      "contexts": [
+        "An internal analysis by MidState Auto Insurance reviewed 1,200 claims filed by policyholders who had ClearView dashcams installed versus a matched sample without dashcams over an 18-month period. Preliminary findings suggest a 22% reduction in disputed liability claims among dashcam users. The analysis has not been peer-reviewed, and the company acknowledged possible selection bias since policyholders who voluntarily install dashcams may already be lower-risk drivers."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Internal company analysis showing fraud reduction but with selection bias concerns",
+      "rationale": "Non-peer-reviewed internal analysis with acknowledged selection bias means the 22% reduction is suggestive but not conclusive",
+      "domain": "finance",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_104",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Is silent reading more effective than oral reading for comprehension in middle schoolers?",
+      "contexts": [
+        "A study published by the Riverside County School District compared silent reading and oral reading outcomes among 83 seventh-graders over one academic quarter. Students in the silent reading group scored an average of 6 points higher on reading comprehension tests. However, the study was conducted at a single school, assignments were not randomized, and the researchers noted that the silent reading group had slightly higher baseline reading levels. They described the findings as suggestive rather than definitive."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Small district-level study with non-randomized groups and baseline differences",
+      "rationale": "Non-randomized single-school study with acknowledged baseline differences and researchers themselves calling results suggestive warrants hedging",
+      "domain": "education",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_105",
+      "difficulty": "medium",
+      "subcategory": "evidence_quality",
+      "query": "Does the OptiRoute algorithm reduce delivery times for last-mile logistics?",
+      "contexts": [
+        "A beta deployment of the OptiRoute routing algorithm across 14 delivery vans operated by QuickShip Logistics in Portland, Oregon, showed an estimated 11-minute average reduction in per-route completion time over a 6-week trial period. The vendor-sponsored evaluation noted that results were based on limited data during summer months when traffic patterns differ from the rest of the year, and did not account for driver familiarity effects as drivers became more experienced with routes over time."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Vendor-sponsored beta trial with seasonal and learning-curve confounds",
+      "rationale": "Short vendor-funded trial during a single season with uncontrolled driver learning effects makes the 11-minute improvement preliminary",
+      "domain": "transportation",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_106",
+      "difficulty": "medium",
+      "subcategory": "temporal_uncertainty",
+      "query": "How many electric vehicle charging stations are available in Texas?",
+      "contexts": [
+        "According to the Texas Department of Transportation's infrastructure report published in March 2024, there were approximately 4,800 public EV charging stations across the state. The report noted that this number was growing rapidly, with an estimated 120 new stations being added per month through federal and state incentive programs. The data was collected through January 2024 and may not reflect stations added or decommissioned since then."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "EV charging station count from a report that acknowledges rapid change",
+      "rationale": "The count is from a specific date and the report itself notes rapid growth, meaning the current number is likely different and requires temporal hedging",
+      "domain": "transportation",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_107",
+      "difficulty": "medium",
+      "subcategory": "temporal_uncertainty",
+      "query": "What is the current market share of TikTok among US social media platforms?",
+      "contexts": [
+        "A Pew Research Center survey conducted in September 2024 found that TikTok was used by approximately 33% of US adults, up from 21% in 2021. However, the report noted that social media usage patterns are subject to rapid shifts, particularly given ongoing regulatory discussions about a potential TikTok ban in the United States. The survey's margin of error was plus or minus 2.1 percentage points, and usage may have changed significantly since data collection."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Social media market share data in a rapidly changing regulatory environment",
+      "rationale": "Survey data from a specific point in time for a platform facing potential regulatory action means current figures could differ substantially",
+      "domain": "social_media",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_108",
+      "difficulty": "medium",
+      "subcategory": "temporal_uncertainty",
+      "query": "When should homeowners in Phoenix expect their property taxes to increase?",
+      "contexts": [
+        "The Maricopa County Assessor's Office estimated in its 2024 annual report that residential property values in the Phoenix metropolitan area rose an average of 8.3% year-over-year. The assessor noted that tax rate adjustments are subject to change based on county budget decisions expected in late 2025, and that recent legislative proposals in the Arizona state legislature could cap annual assessment increases at 5%. These factors make future property tax projections uncertain."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Property tax projection dependent on pending legislative and budgetary decisions",
+      "rationale": "The assessment increase is documented but actual tax impact depends on future county budget and possible legislative caps, requiring temporal qualification",
+      "domain": "real_estate",
+      "query_type": "when",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_109",
+      "difficulty": "medium",
+      "subcategory": "temporal_uncertainty",
+      "query": "How many fintech startups are operating in the UK?",
+      "contexts": [
+        "The UK Financial Conduct Authority's 2024 fintech census, based on data collected through Q2 2024, identified approximately 2,500 active fintech firms in the United Kingdom. The census acknowledged that the sector experiences high turnover, with an estimated 15-20% of firms either launching or ceasing operations annually. Additionally, post-Brexit regulatory changes continue to affect which firms maintain UK registration versus relocating to EU jurisdictions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Fintech count from census that acknowledges high sector turnover",
+      "rationale": "The count comes from a specific point in time in a sector with 15-20% annual turnover, and ongoing regulatory changes affect the count",
+      "domain": "finance",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_110",
+      "difficulty": "medium",
+      "subcategory": "temporal_uncertainty",
+      "query": "Is the Mediterranean diet still recommended for cardiovascular health?",
+      "contexts": [
+        "A 2023 review article in the European Heart Journal summarized two decades of research supporting the Mediterranean diet's cardiovascular benefits, citing the landmark PREDIMED trial and subsequent confirmatory studies. However, the authors noted that emerging research on personalized nutrition based on gut microbiome profiles, published in early 2025, suggests that dietary recommendations may need to be individualized rather than population-wide. The review concluded that the Mediterranean diet remains broadly recommended but that this guidance is subject to revision as nutrigenomics research matures."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Established dietary recommendation potentially being revised by emerging personalized nutrition research",
+      "rationale": "Strong existing evidence supports the recommendation but the field is actively evolving with personalized nutrition research, requiring temporal hedging",
+      "domain": "medicine",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_111",
+      "difficulty": "medium",
+      "subcategory": "temporal_uncertainty",
+      "query": "What programming languages are most in demand for backend development jobs?",
+      "contexts": [
+        "The 2024 Stack Overflow Developer Survey, based on responses from approximately 65,000 developers worldwide collected in May 2024, ranked Python, JavaScript, and TypeScript as the most commonly used backend languages, with Go and Rust showing the fastest year-over-year growth. The survey authors cautioned that language popularity shifts rapidly in the technology sector, and that the rise of AI-assisted coding tools may significantly alter language preferences within 12-18 months."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Developer survey data with explicit warning about rapid language preference shifts",
+      "rationale": "Survey data from a specific time point with explicit caveat about AI-driven shifts in language demand requires temporal hedging",
+      "domain": "technology",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_112",
+      "difficulty": "medium",
+      "subcategory": "causal_uncertainty",
+      "query": "Does remote work improve employee productivity?",
+      "contexts": [
+        "A 2024 survey by Gallup of 8,400 US knowledge workers found that employees who worked remotely at least three days per week reported 14% higher self-assessed productivity compared to fully in-office peers. However, the researchers noted that self-reported productivity measures may be biased, and that remote workers in the sample tended to be in more senior roles with greater autonomy. The study could not determine whether remote work itself caused the productivity difference or whether higher-performing employees were simply more likely to negotiate remote arrangements."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Survey correlation between remote work and productivity with acknowledged confounders",
+      "rationale": "Self-reported data with seniority confound and explicit acknowledgment that causation is unclear requires hedging about the causal claim",
+      "domain": "hr_workplace",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_113",
+      "difficulty": "medium",
+      "subcategory": "causal_uncertainty",
+      "query": "Why do schools with longer recess periods have fewer disciplinary incidents?",
+      "contexts": [
+        "An analysis by the Texas Education Agency of 340 elementary schools found that schools offering 30 or more minutes of daily recess had 23% fewer disciplinary referrals than schools with 15 minutes or less. The report acknowledged that schools with longer recess periods also tended to have smaller class sizes, more experienced teachers, and higher per-pupil funding. The researchers stated that the data suggests an association but cannot establish that recess length directly causes the reduction in disciplinary incidents."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Observational association between recess length and discipline with multiple confounders",
+      "rationale": "The correlation is documented but confounded by class size, teacher experience, and funding, and the researchers explicitly note causation is not established",
+      "domain": "education",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_114",
+      "difficulty": "medium",
+      "subcategory": "causal_uncertainty",
+      "query": "Does organic farming reduce antibiotic-resistant bacteria in soil?",
+      "contexts": [
+        "A study published in Environmental Science & Technology in 2024 analyzed soil samples from 52 organic and 48 conventional farms across the Midwest United States. Organic farm soils contained 35% fewer antibiotic resistance genes on average. However, the study noted that organic farms also tended to be smaller, use different irrigation methods, and be located in areas with lower livestock density. The authors concluded that organic practices are associated with reduced resistance genes but that the specific mechanism -- whether it is absence of antibiotics, different manure management, or geographic factors -- remains unclear."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Observational study showing association between organic farming and lower resistance genes with confounding factors",
+      "rationale": "The 35% reduction is a real finding but confounded by farm size, irrigation, and livestock density, with researchers explicitly unable to identify the causal mechanism",
+      "domain": "agriculture",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_115",
+      "difficulty": "medium",
+      "subcategory": "causal_uncertainty",
+      "query": "Why do neighborhoods with more green space have lower rates of depression?",
+      "contexts": [
+        "A meta-analysis published in The Lancet Planetary Health in 2024 reviewed 28 studies covering over 940,000 participants and found that residents living within 300 meters of green spaces had a 17% lower prevalence of clinical depression. The authors noted that the association remained significant after controlling for income and education, but cautioned that people with better mental health may actively seek neighborhoods with parks, and that green spaces often correlate with lower pollution, less noise, and greater walkability -- any of which could contribute to the observed mental health benefits."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Meta-analysis finding correlation between green space and depression with self-selection and co-occurring factors",
+      "rationale": "Large meta-analysis shows association but self-selection bias and multiple confounders (pollution, noise, walkability) prevent causal attribution",
+      "domain": "psychology",
+      "query_type": "why",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_116",
+      "difficulty": "medium",
+      "subcategory": "causal_uncertainty",
+      "query": "Does playing chess improve children's math performance?",
+      "contexts": [
+        "A longitudinal study by the University of Turin tracked 1,100 Italian primary school students over two years and found that students enrolled in weekly chess instruction scored 8% higher on standardized math tests compared to students in a general enrichment program. The researchers acknowledged that the chess group may have attracted students already interested in logical thinking, and that the chess instructors were more experienced teachers on average. They described the results as promising but noted that a definitive causal link between chess and math ability has not been established."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Longitudinal study with selection bias and instructor quality confounds",
+      "rationale": "Real performance difference observed but self-selection into chess and instructor quality differences prevent claiming chess caused the improvement",
+      "domain": "education",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_117",
+      "difficulty": "medium",
+      "subcategory": "mixed_evidence",
+      "query": "Should companies adopt four-day work weeks?",
+      "contexts": [
+        "A 2024 pilot program in the UK involving 61 companies found that 92% chose to continue the four-day work week after the trial, citing maintained or improved revenue and a 65% reduction in sick days. Employee well-being scores increased by 39%. However, a separate study by the Society for Human Resource Management surveyed 500 US firms that tried four-day weeks and found that 31% reverted within a year, citing customer service gaps, scheduling challenges, and difficulty coordinating with five-day partners and vendors."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "UK pilot shows strong positive results while US survey reveals significant reversion rates",
+      "rationale": "Evidence is genuinely split -- the UK trial was positive but a substantial proportion of US firms found it unsustainable, requiring a hedged answer",
+      "domain": "hr_workplace",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_118",
+      "difficulty": "medium",
+      "subcategory": "mixed_evidence",
+      "query": "Is intermittent fasting effective for long-term weight management?",
+      "contexts": [
+        "A 2024 systematic review in the New England Journal of Medicine analyzed 39 randomized controlled trials and found that intermittent fasting produced an average weight loss of 4.6 kg over 12 months, comparable to traditional caloric restriction. However, adherence rates dropped significantly after 6 months, with only 48% of participants maintaining the fasting schedule at one year. A separate 2025 study in The BMJ followed 1,200 participants for three years and found that 67% of those who lost weight through intermittent fasting regained at least half of it by year three."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Short-term efficacy demonstrated but long-term adherence and weight regain are problematic",
+      "rationale": "Evidence shows IF works for weight loss short-term but mixed adherence data and high regain rates mean long-term effectiveness is uncertain",
+      "domain": "medicine",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_119",
+      "difficulty": "medium",
+      "subcategory": "mixed_evidence",
+      "query": "Compare the effectiveness of solar panels versus wind turbines for residential energy generation.",
+      "contexts": [
+        "An analysis by the National Renewable Energy Laboratory published in 2024 found that residential solar panels in the southern United States produced an average of 1,400 kWh per installed kW annually, with a payback period of 6-8 years. Small residential wind turbines in the Great Plains averaged 1,100 kWh per installed kW but had higher maintenance costs and a payback period of 10-15 years. However, the NREL noted that wind turbines performed significantly better in areas with sustained winds above 12 mph, and that in northern states with lower solar irradiance, the gap narrowed considerably."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Solar generally outperforms wind residentially but results are highly location-dependent",
+      "rationale": "Data shows solar ahead on average but wind is competitive in high-wind areas and northern states, meaning the comparison requires geographic qualification",
+      "domain": "environment",
+      "query_type": "compare",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_120",
+      "difficulty": "medium",
+      "subcategory": "mixed_evidence",
+      "query": "Is cloud gaming a viable alternative to traditional console gaming?",
+      "contexts": [
+        "A Digital Foundry benchmarking report from January 2025 tested five major cloud gaming services across 20 game titles and found that input latency averaged 45ms on fiber connections, close to the 30ms typical of local console play. Image quality was rated acceptable by 78% of testers. However, on broadband connections below 50 Mbps, latency rose to 120ms and visual artifacts became frequent. A parallel consumer survey by J.D. Power found that 41% of cloud gaming subscribers canceled within six months, citing inconsistent performance and data cap concerns."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Cloud gaming works well on fast connections but has high churn and inconsistent performance on average broadband",
+      "rationale": "Technical benchmarks are positive under ideal conditions but real-world consumer satisfaction is mixed, requiring qualification about connection requirements",
+      "domain": "technology",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_121",
+      "difficulty": "medium",
+      "subcategory": "mixed_evidence",
+      "query": "Should municipalities invest in red-light cameras to reduce traffic accidents?",
+      "contexts": [
+        "A 2024 analysis by the Insurance Institute for Highway Safety of 79 US cities with red-light camera programs found a 21% reduction in fatal red-light-running crashes at monitored intersections. However, the same study observed a 15% increase in rear-end collisions at those intersections, as drivers braked abruptly to avoid citations. A separate audit by the Texas Department of Transportation found that 12 of 30 cities with camera programs reported no statistically significant change in overall intersection accident rates after adjusting for rear-end increases."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Red-light cameras reduce specific crash types but increase others, with ambiguous net safety impact",
+      "rationale": "Evidence shows reduction in red-light running fatalities but increase in rear-end collisions and no clear net safety improvement in many cities",
+      "domain": "government",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_122",
+      "difficulty": "medium",
+      "subcategory": "mixed_evidence",
+      "query": "Does offering free school meals improve academic outcomes?",
+      "contexts": [
+        "A 2024 study by the USDA Economic Research Service examined 1,400 Title I schools that implemented universal free meals programs and found a statistically significant 3.2-percentile-point improvement in math scores and a 2.8-point improvement in reading scores over two years. Attendance increased by 1.4 percentage points. However, a separate analysis by the Brookings Institution noted that schools adopting universal meals also tended to receive additional federal funding for counselors and tutoring, making it difficult to isolate the effect of meals alone. The Brookings researchers estimated that meals accounted for no more than 40-60% of the observed academic improvement."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Free meals associated with academic gains but co-occurring interventions make isolation difficult",
+      "rationale": "Real improvement observed but co-occurring funding for counselors and tutoring means free meals alone may account for only part of the gain",
+      "domain": "education",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "causal",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_123",
+      "difficulty": "medium",
+      "subcategory": "methodology_difference",
+      "query": "How much microplastic do humans ingest weekly?",
+      "contexts": [
+        "A widely cited 2019 study commissioned by the World Wildlife Fund estimated that humans ingest approximately 5 grams of microplastic per week, roughly the weight of a credit card. This estimate was based on a review of 52 studies analyzing microplastic concentrations in water, food, and air. However, a 2024 reassessment published in Environmental Health Perspectives used more sensitive detection methods and stricter contamination controls, and arrived at an estimate of 0.5 to 1.2 grams per week. The discrepancy stems primarily from differences in particle size thresholds, sampling methodologies, and assumptions about daily water and food consumption."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Two estimates of microplastic ingestion differ by 4-10x due to different measurement methods",
+      "rationale": "Widely cited estimate and newer reassessment disagree substantially due to methodological differences, requiring hedging about which number to cite",
+      "domain": "science",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_124",
+      "difficulty": "medium",
+      "subcategory": "methodology_difference",
+      "query": "What is the return on investment for corporate diversity training programs?",
+      "contexts": [
+        "A 2023 meta-analysis by Harvard Business Review of 40 studies on corporate diversity training found that programs using interactive workshops with follow-up mentoring showed measurable improvements in promotion rates for underrepresented groups (12-18% increase). In contrast, a 2024 study by the Wharton School that used randomized controlled trials found that mandatory one-time diversity training had no statistically significant effect on hiring or promotion decisions six months later. The methodological difference is significant: the positive studies mostly used pre-post comparisons at companies that voluntarily adopted training, while the RCT measured causal impact of mandated sessions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Different study designs yield contradictory conclusions about diversity training effectiveness",
+      "rationale": "Observational studies show benefits while randomized trials show none, and the methodological differences explain the discrepancy, requiring careful hedging",
+      "domain": "hr_workplace",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_125",
+      "difficulty": "medium",
+      "subcategory": "methodology_difference",
+      "query": "How accurate are polygraph tests at detecting deception?",
+      "contexts": [
+        "The American Polygraph Association cites studies showing polygraph accuracy rates of 85-95% when conducted by trained examiners using the Comparison Question Test (CQT) methodology. However, a 2003 National Academy of Sciences review -- still considered the most comprehensive assessment -- found accuracy rates closer to 65-70% and noted significant variation depending on the testing context. Laboratory studies using mock crimes tend to show higher accuracy than field studies of actual criminal suspects. The NAS concluded that polygraph results are 'well above chance, though well below perfection' and cautioned against relying on them as a primary evidence source."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Polygraph accuracy estimates vary widely depending on methodology and testing context",
+      "rationale": "Industry-affiliated studies and independent reviews produce very different accuracy estimates, and lab vs field conditions further complicate the picture",
+      "domain": "law",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_126",
+      "difficulty": "medium",
+      "subcategory": "methodology_difference",
+      "query": "How much does food waste contribute to global greenhouse gas emissions?",
+      "contexts": [
+        "The UN Food and Agriculture Organization's 2023 Food Waste Index estimated that food waste accounts for 8-10% of global greenhouse gas emissions when including production, transportation, and landfill methane. However, a 2024 study in Nature Food used lifecycle analysis that excluded emissions from food that would have decomposed naturally and arrived at an estimate of 5-6%. The difference hinges on whether researchers count the full supply chain emissions of wasted food or only the incremental emissions attributable to waste versus natural decomposition. Both approaches have methodological merit, and the research community has not reached consensus on the appropriate boundary."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Two credible estimates of food waste emissions differ based on system boundary definitions",
+      "rationale": "Both the FAO and Nature Food estimates are methodologically sound but use different system boundaries, making the true figure uncertain",
+      "domain": "environment",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_127",
+      "difficulty": "medium",
+      "subcategory": "methodology_difference",
+      "query": "Which type of exercise is most effective for reducing anxiety symptoms?",
+      "contexts": [
+        "A 2024 meta-analysis in the British Journal of Sports Medicine pooling 97 randomized controlled trials found that resistance training produced the largest effect size for anxiety reduction (Hedges' g = 0.59), followed by yoga (0.52) and aerobic exercise (0.47). However, a separate Cochrane systematic review from the same year, using stricter inclusion criteria that excluded studies with high risk of bias, found aerobic exercise to be most effective (0.41) with insufficient high-quality evidence to rank resistance training. The difference in conclusions stems from the Cochrane review excluding 34 studies that the BJSM analysis included."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Two concurrent meta-analyses rank exercise types differently based on study inclusion criteria",
+      "rationale": "Different inclusion criteria lead to different rankings, and neither approach is clearly wrong -- the answer depends on how strict the evidence quality threshold is",
+      "domain": "psychology",
+      "query_type": "which",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_128",
+      "difficulty": "medium",
+      "subcategory": "scope_condition",
+      "query": "Is it legal to record phone calls without the other party's consent?",
+      "contexts": [
+        "US wiretapping laws vary significantly by state. Under federal law (18 U.S.C. 2511), only one party to a conversation needs to consent to recording, making it legal for a participant to record their own calls. However, 11 states including California, Florida, and Illinois require all-party consent, meaning recording without everyone's permission is a criminal offense. In two-party consent states, violations can result in felony charges and civil liability. The situation is further complicated when calls cross state lines, as courts have generally applied the stricter state's law."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Call recording legality depends entirely on jurisdiction with criminal consequences for getting it wrong",
+      "rationale": "The answer is definitively yes in some states and definitively no in others, requiring scope qualification about which jurisdiction applies",
+      "domain": "law",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_129",
+      "difficulty": "medium",
+      "subcategory": "scope_condition",
+      "query": "Should diabetic patients take metformin with or without food?",
+      "contexts": [
+        "Standard immediate-release metformin is recommended to be taken with meals to reduce gastrointestinal side effects such as nausea, diarrhea, and abdominal cramping, according to the American Diabetes Association's 2025 Standards of Care. However, extended-release formulations like Glucophage XR are typically taken once daily with the evening meal, and some gastroenterologists suggest these can be taken without food if the patient tolerates it well. The recommendation also depends on the specific dosage -- patients on lower doses (500mg) may experience fewer GI issues without food than those on higher doses (1000mg+)."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Metformin food timing depends on formulation type and dosage",
+      "rationale": "The answer differs for immediate-release vs extended-release and by dosage level, requiring qualification about which formulation the patient takes",
+      "domain": "medicine",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_130",
+      "difficulty": "medium",
+      "subcategory": "scope_condition",
+      "query": "Is bamboo flooring more durable than traditional hardwood?",
+      "contexts": [
+        "Strand-woven bamboo flooring, which compresses bamboo fibers under high pressure, achieves a Janka hardness rating of 3,000-5,000 lbf, making it significantly harder than most hardwoods including oak (1,290 lbf) and maple (1,450 lbf). However, standard horizontal or vertical bamboo flooring rates only 1,000-1,400 lbf, making it softer than oak. Additionally, bamboo is more susceptible to moisture damage and can warp in humidity above 60%, limiting its suitability for kitchens, bathrooms, and climates with high ambient humidity. The durability comparison therefore depends heavily on which type of bamboo flooring is being considered and the installation environment."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Bamboo durability varies dramatically by construction type and is limited by moisture sensitivity",
+      "rationale": "Strand-woven bamboo is harder than hardwood but standard bamboo is softer, and moisture sensitivity adds another condition, requiring scope qualification",
+      "domain": "real_estate",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_131",
+      "difficulty": "medium",
+      "subcategory": "scope_condition",
+      "query": "Does creatine supplementation improve athletic performance?",
+      "contexts": [
+        "A 2024 position stand by the International Society of Sports Nutrition reviewed over 500 studies and confirmed that creatine monohydrate supplementation (3-5g daily) consistently improves performance in short-duration, high-intensity activities such as sprinting, weightlifting, and interval training, with an average performance gain of 5-15%. However, the evidence for endurance activities lasting over 30 minutes is weak and inconsistent, with most studies showing no significant benefit. The ISSN also noted that approximately 20-30% of individuals are 'non-responders' to creatine supplementation, possibly due to already-high baseline muscle creatine levels from diet."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Creatine helps for short-burst activities but not endurance, and a significant minority do not respond",
+      "rationale": "Strong evidence for high-intensity short-duration use but not endurance, plus 20-30% non-responder rate, means the answer is conditional on activity type and individual",
+      "domain": "sports",
+      "query_type": "does",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_132",
+      "difficulty": "medium",
+      "subcategory": "scope_condition",
+      "query": "Is sourdough bread healthier than regular white bread?",
+      "contexts": [
+        "Research published in Cell Metabolism in 2023 found that sourdough bread produced a lower glycemic response than commercial white bread in approximately 60% of study participants. However, in the remaining 40%, the glycemic response was similar or even higher with sourdough. The difference was attributed to individual gut microbiome composition. Nutritionally, sourdough fermentation increases bioavailability of minerals like iron and zinc by 20-30% through phytic acid reduction. However, if the sourdough is made with refined white flour, its fiber content and overall nutritional profile remain similar to regular white bread."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Sourdough has some advantages but benefits depend on individual microbiome and flour type",
+      "rationale": "Benefits are real but conditional on individual gut microbiome response and whether whole grain or refined flour is used, requiring scope hedging",
+      "domain": "food",
+      "query_type": "is",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_133",
+      "difficulty": "medium",
+      "subcategory": "scope_condition",
+      "query": "Should small businesses use cloud computing instead of on-premises servers?",
+      "contexts": [
+        "A 2024 Gartner analysis estimated that small businesses with fewer than 50 employees save an average of 30-40% on IT infrastructure costs by migrating to cloud services like AWS or Azure compared to maintaining on-premises servers. However, the analysis noted that businesses in industries with strict data residency requirements (healthcare under HIPAA, financial services under SOC 2, government contractors under FedRAMP) may face compliance challenges that increase cloud costs by 25-50% or require hybrid architectures. Additionally, businesses with high-bandwidth internal workloads, such as video production or large-scale data processing, often find on-premises solutions more cost-effective due to data transfer fees."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Cloud generally cheaper for small businesses but compliance and bandwidth needs can reverse the calculus",
+      "rationale": "Cloud savings are real for typical small businesses but regulated industries and bandwidth-heavy workloads face different economics, requiring scope qualification",
+      "domain": "technology",
+      "query_type": "should",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "evaluative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_134",
+      "difficulty": "medium",
+      "subcategory": "evolving_facts",
+      "query": "What are the long-term side effects of GLP-1 receptor agonist medications like semaglutide?",
+      "contexts": [
+        "As of early 2025, GLP-1 receptor agonists such as semaglutide (Ozempic/Wegovy) have been widely prescribed for approximately 5 years. Known side effects include gastrointestinal symptoms (nausea, vomiting) in 40-50% of users and a small increased risk of pancreatitis. A 2024 study in JAMA Internal Medicine raised concerns about potential thyroid C-cell tumors, based on rodent studies, though human data remains insufficient to confirm this risk. The FDA has required ongoing post-marketing surveillance studies, with results expected in 2027-2028. Researchers at the Mayo Clinic noted that the full long-term safety profile cannot be established for drugs this new and emphasized that data beyond 5-7 years simply does not yet exist."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "GLP-1 safety data is still accumulating with major surveillance results pending",
+      "rationale": "Known short-term side effects are documented but long-term data literally does not exist yet, with key studies still in progress",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_135",
+      "difficulty": "medium",
+      "subcategory": "evolving_facts",
+      "query": "How many countries have implemented comprehensive AI regulation?",
+      "contexts": [
+        "As of January 2025, the EU AI Act is the most comprehensive AI regulatory framework globally, with phased implementation beginning August 2024. China has enacted multiple AI-specific regulations including rules on generative AI (effective August 2023) and algorithmic recommendations. Brazil's AI bill was approved by the Senate in December 2024 and awaits presidential signature. At least 15 other countries, including Canada, India, and South Korea, have AI governance bills in various stages of legislative review. The OECD AI Policy Observatory tracks that the regulatory landscape is changing on a near-monthly basis, with new proposals and amendments being introduced regularly across jurisdictions."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "AI regulation count is actively changing with bills at various legislative stages globally",
+      "rationale": "The number is changing month to month with multiple countries at different legislative stages, making any specific count immediately subject to change",
+      "domain": "government",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_136",
+      "difficulty": "medium",
+      "subcategory": "evolving_facts",
+      "query": "Who is leading the development of quantum computing for commercial applications?",
+      "contexts": [
+        "As of late 2024, IBM, Google, and several startups including IonQ and Rigetti are competing to achieve practical quantum advantage for commercial use cases. IBM's 1,121-qubit Condor processor was demonstrated in December 2023, while Google claimed a breakthrough in quantum error correction in February 2025 using their Willow chip. However, the competitive landscape shifts rapidly -- Microsoft's topological qubit approach, initially behind competitors, showed unexpected progress in 2025 Q1 benchmarks. Industry analysts at Gartner noted that leadership positions in quantum computing change frequently as different hardware approaches leapfrog each other, and that the current leader may not be the eventual winner."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Quantum computing leadership is actively shifting among multiple competitors with different approaches",
+      "rationale": "The competitive landscape is explicitly noted as rapidly changing, with leadership positions shifting as different technological approaches advance unpredictably",
+      "domain": "technology",
+      "query_type": "who",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_137",
+      "difficulty": "medium",
+      "subcategory": "evolving_facts",
+      "query": "What percentage of global electricity comes from renewable sources?",
+      "contexts": [
+        "The International Energy Agency's 2024 World Energy Outlook reported that renewable energy sources accounted for approximately 30% of global electricity generation in 2023, up from 28% in 2022 and 22% in 2019. Solar capacity additions alone reached a record 420 GW in 2023. The IEA projected that renewables would reach 35% by 2025 and could hit 40% by 2027 under current policy trajectories, but cautioned that these projections depend on grid infrastructure investments, battery storage deployment, and policy continuity. The agency noted that the pace of renewable adoption is accelerating faster than previous forecasts anticipated."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Renewable electricity share is growing rapidly with projections outpacing forecasts",
+      "rationale": "The 2023 figure is documented but the current and future percentages are changing so fast that even recent data may be outdated, and projections depend on multiple policy variables",
+      "domain": "environment",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_138",
+      "difficulty": "medium",
+      "subcategory": "evolving_facts",
+      "query": "How are NCAA name, image, and likeness (NIL) rules affecting college sports recruitment?",
+      "contexts": [
+        "Since the NCAA adopted interim NIL policies in July 2021, the landscape has been in continuous flux. A 2024 report by Opendorse estimated that college athletes earned over $1.17 billion in NIL deals during the 2023-24 academic year, with football and basketball accounting for 78% of the total. The transfer portal saw a record 2,200 Division I football transfers in 2024, with NIL cited as a factor in many moves. However, the NCAA proposed significant rule changes in late 2024, including revenue-sharing models and roster limits, which are still being finalized and could fundamentally restructure how NIL operates. Legal challenges, including the House v. NCAA settlement, continue to reshape the framework."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "NIL rules are actively being restructured through regulation and litigation",
+      "rationale": "Current NIL data exists but pending rule changes, revenue-sharing proposals, and active litigation mean the framework could change fundamentally in the near term",
+      "domain": "sports",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_139",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "What are the health benefits and risks of daily cold plunging?",
+      "contexts": [
+        "A 2024 review in the Journal of Applied Physiology summarized that regular cold water immersion (10-15 degrees Celsius for 2-5 minutes) activates the sympathetic nervous system, increases circulating norepinephrine by 200-300%, and reduces inflammatory markers like IL-6 in short-term measurements. Small studies suggest improved mood and alertness in habitual cold plungers. However, the review noted that evidence for claimed benefits like fat loss, immune enhancement, and improved sleep quality is limited or absent. The cardiovascular risks, including arrhythmia and cold shock response, have been documented primarily through case reports rather than systematic study, leaving the risk profile incompletely characterized."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Some cold plunge benefits are documented but several popular claims lack evidence and risks are poorly characterized",
+      "rationale": "Neurochemical and anti-inflammatory effects are documented but popular claims about fat loss and immunity lack evidence, and risks are known only from case reports",
+      "domain": "medicine",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_140",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "How does the EU Carbon Border Adjustment Mechanism affect US steel exporters?",
+      "contexts": [
+        "The EU's Carbon Border Adjustment Mechanism (CBAM), which entered its transitional phase in October 2023 with full implementation planned for 2026, requires importers to purchase carbon certificates matching the embedded emissions of covered products including steel, cement, and aluminum. For US steel exporters, the CBAM means their products will face a carbon-related surcharge when entering the EU market, based on the difference between US and EU carbon pricing. However, the specific financial impact depends on emission factors that the European Commission is still finalizing, and the US does not have a federal carbon price, complicating the calculation. The mechanism for crediting any state-level carbon costs (such as California's cap-and-trade program) remains unresolved."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "CBAM framework is described but specific cost impacts and credit mechanisms are still being finalized",
+      "rationale": "The general framework and timeline are known but critical implementation details (emission factors, state credit mechanisms) remain unresolved",
+      "domain": "government",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_141",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "What happened during the 1921 Tulsa Race Massacre?",
+      "contexts": [
+        "On May 31-June 1, 1921, a white mob attacked the Greenwood District of Tulsa, Oklahoma, a prosperous Black neighborhood known as 'Black Wall Street.' Armed white residents, some deputized by local authorities, burned over 1,200 homes and destroyed approximately 35 blocks. The Oklahoma Commission on the Tulsa Race Riot (2001 report) confirmed at least 39 deaths based on official records, but estimated the actual death toll was between 100 and 300. The exact number remains unknown because many victims were buried in unmarked graves, and records were deliberately destroyed. As of 2024, forensic searches of suspected mass grave sites have identified possible burial locations but full excavation and identification have not been completed."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Key facts about the massacre are documented but the death toll and full scope remain partially unknown",
+      "rationale": "Historical facts about the destruction are well-documented but the exact death toll is genuinely unknown due to destroyed records and incomplete forensic work",
+      "domain": "history",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_142",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "How does the Veritas AI content moderation system handle multilingual posts?",
+      "contexts": [
+        "Veritas AI's content moderation platform, as described in its 2024 technical documentation, supports automated moderation in 14 languages including English, Spanish, Mandarin, Arabic, and Hindi. The system uses language-specific classifiers trained on labeled datasets of at least 100,000 examples per language. For English-language content, the false positive rate is documented at 2.3% and the false negative rate at 4.1%. The documentation does not provide accuracy metrics for non-English languages, noting only that 'performance may vary for languages with smaller training datasets.' The platform's handling of code-switching (mixing languages within a single post) and transliterated text is described as 'under development.'"
+      ],
+      "expected_mode": "trustworthy",
+      "description": "System supports 14 languages but accuracy data is available only for English, with key features still in development",
+      "rationale": "English performance is documented but non-English accuracy is unspecified, and code-switching handling is incomplete, leaving major gaps in the answer",
+      "domain": "technology",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "factual",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
+    },
+    {
+      "id": "t1_qualify_medium_143",
+      "difficulty": "medium",
+      "subcategory": "partial_answer",
+      "query": "What nutritional differences exist between lab-grown and conventional beef?",
+      "contexts": [
+        "A 2024 comparative analysis published in Food Chemistry examined nutritional profiles of lab-grown beef from three producers (Upside Foods, Aleph Farms, and Mosa Meat) against USDA-grade conventional ground beef. Protein content was comparable at 19-22g per 100g serving across both types. Lab-grown beef contained 30-45% less saturated fat and no detectable antibiotic residues. However, the analysis could not assess long-term bioavailability of nutrients, vitamin B12 content varied significantly between producers (some supplemented, others did not), and micronutrient profiles including iron, zinc, and selenium were only partially characterized. The researchers noted that production methods differ among cultivated meat companies, making broad generalizations premature."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Some nutritional comparisons are available but key micronutrients and bioavailability are uncharacterized",
+      "rationale": "Protein and fat data exist but micronutrient profiles are incomplete, bioavailability is unknown, and variation between producers limits generalization",
+      "domain": "food",
+      "query_type": "what",
+      "source_type": "single",
+      "context_count": 1,
+      "reasoning_type": "comparative",
+      "evidence_pattern": "partial",
+      "category": "trustworthy_hedged",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      }
     }
   ]
 }
