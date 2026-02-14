@@ -39,12 +39,12 @@ GOVERNANCE_MODE_CATEGORIES = {
     FitzGovCategory.DISPUTE,
     FitzGovCategory.TRUSTWORTHY_HEDGED,
     FitzGovCategory.TRUSTWORTHY_DIRECT,
-    FitzGovCategory.RELEVANCE,
 }
 
-# Categories that test answer quality
+# Categories that test answer quality (required_elements / forbidden_claims checks)
 ANSWER_QUALITY_CATEGORIES = {
     FitzGovCategory.GROUNDING,
+    FitzGovCategory.RELEVANCE,
 }
 
 

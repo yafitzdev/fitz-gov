@@ -79,12 +79,7 @@ def make_grounding_case(**kwargs):
 
 
 def make_relevance_case(**kwargs):
-    """Create a relevance test case with sensible defaults.
-
-    NOTE: Because RELEVANCE is in GOVERNANCE_MODE_CATEGORIES, evaluate_case
-    routes these to _evaluate_governance (not _evaluate_relevance).  Tests
-    that exercise the content-check logic call _evaluate_relevance directly.
-    """
+    """Create a relevance test case with sensible defaults."""
     defaults = {
         "id": "test_rel_001",
         "category": FitzGovCategory.RELEVANCE,
@@ -261,18 +256,12 @@ class TestGroundingEvaluation:
 
 
 class TestRelevanceEvaluation:
-    """Tests for _evaluate_relevance content checks.
-
-    Because RELEVANCE is in GOVERNANCE_MODE_CATEGORIES, evaluate_case routes
-    relevance cases to _evaluate_governance (mode matching), NOT to
-    _evaluate_relevance.  These tests therefore call _evaluate_relevance
-    directly to exercise the content-check logic.
-    """
+    """Tests for relevance evaluation via evaluate_case (content quality checks)."""
 
     def test_relevance_required_present(self, evaluator):
         """Response that contains a required element should pass."""
         case = make_relevance_case()
-        result = evaluator._evaluate_relevance(
+        result = evaluator.evaluate_case(
             case, "The timeline was not mentioned in the source."
         )
         assert result.passed is True
@@ -280,7 +269,7 @@ class TestRelevanceEvaluation:
     def test_relevance_required_missing(self, evaluator):
         """Response missing all required elements should fail."""
         case = make_relevance_case()
-        result = evaluator._evaluate_relevance(case, "The success rate was 85%.")
+        result = evaluator.evaluate_case(case, "The success rate was 85%.")
         assert result.passed is False
         assert "Missing required elements" in result.failure_reason
 
@@ -296,7 +285,7 @@ class TestRelevanceEvaluation:
             },
         )
         # Only "beta" present
-        result = evaluator._evaluate_relevance(case, "We found beta results.")
+        result = evaluator.evaluate_case(case, "We found beta results.")
         assert result.passed is True
 
     def test_relevance_min_required_2(self, evaluator):
@@ -311,11 +300,11 @@ class TestRelevanceEvaluation:
             },
         )
         # Only 1 of 3 present -> fail
-        result_one = evaluator._evaluate_relevance(case, "Found alpha here.")
+        result_one = evaluator.evaluate_case(case, "Found alpha here.")
         assert result_one.passed is False
 
         # 2 of 3 present -> pass
-        result_two = evaluator._evaluate_relevance(
+        result_two = evaluator.evaluate_case(
             case, "Found alpha and beta here."
         )
         assert result_two.passed is True
@@ -332,7 +321,7 @@ class TestRelevanceEvaluation:
                 "min_required": 1,
             },
         )
-        result = evaluator._evaluate_relevance(
+        result = evaluator.evaluate_case(
             case, "The success is guaranteed by design."
         )
         assert result.passed is False
@@ -349,7 +338,7 @@ class TestRelevanceEvaluation:
                 "min_required": 1,
             },
         )
-        result = evaluator._evaluate_relevance(case, "The TIMELINE was not given.")
+        result = evaluator.evaluate_case(case, "The TIMELINE was not given.")
         assert result.passed is True
 
 
