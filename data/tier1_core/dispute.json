@@ -243,19 +243,19 @@
       "id": "t1_dispute_hard_008",
       "difficulty": "hard",
       "subcategory": "source_conflict",
-      "query": "How many species are there on Earth?",
+      "query": "Is it better to rent or buy a home?",
       "contexts": [
-        "Current scientific estimates suggest approximately 8.7 million species exist on Earth.",
-        "A 2023 study using AI analysis estimates up to 100 million species may exist.",
-        "Traditional taxonomy-based counts put the number at around 2 million described species.",
-        "Deep sea and microbial diversity suggests true numbers could be orders of magnitude higher."
+        "Homeownership builds equity and provides tax benefits, making it a superior strategy.",
+        "Renting offers flexibility and studies show renters who invest the difference come out ahead.",
+        "Real estate markets are highly local, meaning buying is advantageous in some areas but not others.",
+        "Rising interest rates have made buying significantly more expensive relative to renting."
       ],
       "expected_mode": "disputed",
-      "description": "Estimates vary by orders of magnitude",
-      "rationale": "Estimates range from 2M described to 100M possible - huge uncertainty",
+      "description": "Rent vs buy debate with conflicting analyses",
+      "rationale": "Sources disagree depending on assumptions and market conditions",
       "original_id": "dispute_hard_008",
-      "domain": "technology",
-      "query_type": "how",
+      "domain": "general",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
@@ -270,7 +270,10 @@
         "Microsoft Research Technical Report (2023)",
         "ACM Computing Surveys (2024)",
         "AWS Architecture Blog (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_009",
@@ -343,19 +346,19 @@
       "id": "t1_dispute_hard_011",
       "difficulty": "hard",
       "subcategory": "conditional_conflict",
-      "query": "Is nuclear power safe?",
+      "query": "Does multitasking reduce overall productivity?",
       "contexts": [
-        "Per unit of energy, nuclear has the lowest death rate of any power source including renewables.",
-        "Accidents like Chernobyl and Fukushima demonstrate catastrophic failure potential.",
-        "Modern reactor designs are passively safe and cannot melt down like older designs.",
-        "Long-term nuclear waste storage remains an unsolved problem spanning thousands of years."
+        "Neuroscience shows the brain cannot truly multitask, only rapidly switch tasks.",
+        "A workplace study found employees handling multiple projects completed 23% more work.",
+        "Task-switching costs depend heavily on task complexity and familiarity.",
+        "Some creative professionals report project rotation prevents burnout."
       ],
       "expected_mode": "disputed",
-      "description": "Safe by statistics but with catastrophic tail risks",
-      "rationale": "Lowest death rate but catastrophic accidents possible, waste unsolved",
+      "description": "Conflicting views on multitasking effectiveness",
+      "rationale": "Brain science says no, workplace data says maybe",
       "original_id": "dispute_hard_011",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "general",
+      "query_type": "does",
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
@@ -370,7 +373,10 @@
         "McKinsey Digital Insights (2023)",
         "MIT Technology Review Analysis (2023)",
         "IDC Market Analysis (2023)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_012",
@@ -581,7 +587,7 @@
       "id": "t1_dispute_hard_018",
       "difficulty": "hard",
       "subcategory": "numerical_conflict",
-      "query": "What is the actual click-through rate impact of influencer marketing versus traditional digital ads?",
+      "query": "How does the actual click-through rate impact of influencer marketing versus traditional digital ads?",
       "contexts": [
         "Nielsen 2024: influencer marketing achieves 5.2% engagement vs 0.9% for display ads, 3.5x higher CTR.",
         "Journal of Marketing (2024) analyzing 50,000 campaigns found no significant purchase conversion difference when controlling for targeting quality.",
@@ -592,7 +598,7 @@
       "rationale": "Industry data shows superiority; academic study shows no difference; FTC questions reliability",
       "original_subcategory": "confidence_interval_overlap",
       "domain": "social_media",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -615,20 +621,21 @@
       "id": "t1_dispute_hard_019",
       "difficulty": "hard",
       "subcategory": "methodology_conflict",
-      "query": "Can employees work remotely?",
+      "query": "Is it safe to microwave food in plastic containers?",
       "contexts": [
-        "Company policy states: 'All employees are expected to work from the office at least 3 days per week.'",
-        "The Engineering department memo clarifies: 'Engineering team members may work fully remote with manager approval.'",
-        "HR guidelines note: 'Remote work exceptions require VP-level approval for non-engineering roles.'"
+        "The FDA has approved certain plastics as microwave-safe after extensive testing.",
+        "Research detected chemical leaching including BPA and phthalates when heated.",
+        "Microwave-safe labeling standards vary between countries.",
+        "Some studies found no health effects at normal temperatures."
       ],
       "expected_mode": "disputed",
-      "description": "General policy conflicts with department-specific exceptions",
-      "rationale": "General policy says 3 days in office, but Engineering has full remote option - answer depends on department and role",
+      "description": "Conflicting evidence on microwave plastic safety",
+      "rationale": "FDA approval vs chemical leaching research",
       "original_subcategory": "scope_conflict",
-      "domain": "technology",
-      "query_type": "should",
+      "domain": "general",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 4,
       "reasoning_type": "evaluative",
       "evidence_pattern": "direct",
       "category": "dispute",
@@ -640,26 +647,30 @@
         "ThoughtWorks Technology Radar (2022)",
         "Stanford HAI Research (2022)",
         "NIST Special Publication (2022)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_020",
       "difficulty": "hard",
       "subcategory": "methodology_conflict",
-      "query": "What is the return policy?",
+      "query": "Should you stretch before or after exercise?",
       "contexts": [
-        "Standard return policy: 'Items may be returned within 30 days for a full refund.'",
-        "Electronics policy: 'Electronics must be returned within 15 days and may be subject to a 15% restocking fee.'",
-        "Holiday policy: 'Items purchased between Nov 1 and Dec 31 may be returned until January 31.'"
+        "Sports medicine research shows static stretching before exercise reduces muscle power by 5-10%.",
+        "Physical therapists argue pre-exercise stretching prevents injuries, citing 30% lower injury rates.",
+        "A meta-analysis found no significant difference in injury rates between stretchers and non-stretchers.",
+        "Dynamic stretching before and static stretching after is the current consensus, but evidence is mixed."
       ],
       "expected_mode": "disputed",
-      "description": "Multiple overlapping policies with different terms",
-      "rationale": "30-day general, 15-day electronics with fee, extended holiday - which applies depends on product and purchase date",
+      "description": "Conflicting exercise science on stretching timing",
+      "rationale": "Power reduction vs injury prevention vs no difference",
       "original_subcategory": "scope_conflict",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "general",
+      "query_type": "should",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "dispute",
@@ -671,7 +682,10 @@
         "NIST Special Publication (2022)",
         "Forrester Wave Report (2022)",
         "O'Reilly Industry Report (2022)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_021",
@@ -807,18 +821,18 @@
       "id": "t1_dispute_hard_025",
       "difficulty": "hard",
       "subcategory": "temporal_conflict",
-      "query": "Is TLS 1.2 secure for production use?",
+      "query": "Is breakfast the most important meal of the day?",
       "contexts": [
-        "TLS 1.2 was considered the gold standard for secure communications when released in 2008.",
-        "Security researchers discovered several vulnerabilities in TLS 1.2 implementations over the years.",
-        "TLS 1.3 was finalized in 2018 and addresses many weaknesses present in earlier versions.",
-        "PCI DSS compliance previously mandated TLS 1.2 as the minimum acceptable version."
+        "A large study found breakfast eaters had 20% lower rates of heart disease.",
+        "Intermittent fasting research shows skipping breakfast can improve metabolic markers.",
+        "The original breakfast importance claims came from cereal industry-funded research in the 1940s.",
+        "Nutritionists agree that meal timing matters less than total daily nutritional quality."
       ],
       "expected_mode": "disputed",
-      "description": "Security recommendation changed over time without clear current guidance",
-      "rationale": "TLS 1.2 was secure, then vulnerabilities found, then TLS 1.3 released - answer depends on current security landscape not fully specified",
+      "description": "Conflicting nutritional science on breakfast importance",
+      "rationale": "Heart health data vs fasting benefits vs industry bias",
       "original_subcategory": "time_dependent_contradiction",
-      "domain": "technology",
+      "domain": "general",
       "query_type": "is",
       "source_type": "single",
       "context_count": 4,
@@ -834,7 +848,10 @@
         "Gartner Research Note (2024)",
         "AWS Architecture Blog (2018)",
         "ACM Computing Surveys (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_026",
@@ -1049,19 +1066,21 @@
       "category": "dispute",
       "subcategory": "numerical_conflict",
       "difficulty": "hard",
-      "query": "What is the carbon footprint of producing one kilogram of beef?",
+      "query": "Did the bombing of Hiroshima end World War II?",
       "contexts": [
-        "Environmental Impact of Livestock Production — Nature Food, Vol. 5, 2024. A comprehensive lifecycle assessment (LCA) across 38,700 farms in 119 countries found that producing 1 kg of beef generates an average of 99.5 kg CO2-equivalent greenhouse gas emissions, including enteric fermentation (39.1%), feed production and processing (24.7%), land use change (15.8%), manure management (10.2%), and on-farm energy use (10.2%). The wide variability is notable: the lowest-impact 10% of producers generate approximately 36 kg CO2e/kg, while the highest-impact 10% generate over 316 kg CO2e/kg. South American grass-fed systems averaged 142 kg CO2e/kg (largely due to deforestation-linked land use change), while European intensive feedlot systems averaged 47 kg CO2e/kg. The study used the IPCC AR6 100-year global warming potential factors (CH4 = 27.9, N2O = 273).",
-        "USDA Economic Research Service — Greenhouse Gas Emissions from U.S. Beef Production, 2024 Assessment. Using the USDA's COMET-Farm model and data from 12,400 U.S. cattle operations, the average carbon footprint of U.S. beef production is estimated at 21.3 kg CO2-equivalent per kilogram of boneless, retail-weight beef. This figure includes cow-calf operations (8.7 kg CO2e), backgrounding/stocker phase (3.1 kg CO2e), feedlot finishing (5.8 kg CO2e), and processing and transport (3.7 kg CO2e). The USDA estimate is substantially lower than many international assessments because it uses economic allocation methods (attributing emissions to co-products like leather, tallow, and offal), excludes indirect land use change (arguing U.S. cattle production does not drive deforestation), and measures output in boneless retail weight rather than carcass weight. The U.S. beef industry produces approximately 12.3 million metric tons of boneless beef annually from a herd of 87.2 million head."
+        "Traditional accounts credit atomic bombs with forcing Japan's surrender.",
+        "Revisionist historians argue the Soviet declaration of war was decisive.",
+        "Japanese cabinet records show division among leaders.",
+        "Military historians note Japan's naval blockade made continued war impossible."
       ],
       "expected_mode": "disputed",
-      "description": "Two credible sources give dramatically different carbon footprints for beef production: 99.5 kg CO2e/kg (Nature Food) vs 21.3 kg CO2e/kg (USDA)",
-      "rationale": "The global academic study and the U.S. government assessment disagree by nearly 5x on the same metric. While methodological differences are acknowledged, the factual answer to 'what is the carbon footprint' is fundamentally disputed between these authoritative sources.",
+      "description": "Conflicting interpretations of what ended WWII",
+      "rationale": "Multiple competing explanations for Japan's surrender",
       "original_subcategory": "same_metric_different_values",
-      "domain": "technology",
+      "domain": "history",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1071,7 +1090,10 @@
       "context_sources": [
         "Intergovernmental Panel on Climate Change Research Study (2024)",
         "U.S. Department of Agriculture Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_103",
@@ -1113,19 +1135,21 @@
       "category": "dispute",
       "subcategory": "numerical_conflict",
       "difficulty": "hard",
-      "query": "What is the average time to hire for software engineering positions in the tech industry?",
+      "query": "Was Rome's fall caused primarily by internal or external factors?",
       "contexts": [
-        "SHRM Talent Acquisition Benchmarking Report — 2024. The Society for Human Resource Management's annual survey of 4,200 organizations found the average time-to-hire for software engineering roles is 49 calendar days from job posting to offer acceptance. This represents an increase from 42 days in 2023 and 36 days in 2022, driven by increased technical assessment rigor and multi-round interview processes. The breakdown by company size shows: enterprises (10,000+ employees) average 62 days, mid-market (1,000-10,000) average 47 days, and small companies (<1,000) average 38 days. The longest phase is candidate sourcing and screening (average 18 days), followed by interview scheduling and completion (average 16 days), and offer negotiation (average 8 days). Background checks add an additional 7 days on average. Companies using structured hiring pipelines with automated scheduling reported 30% faster time-to-hire than those using ad-hoc processes.",
-        "Greenhouse Software 2024 Hiring Trends Report — Analysis of 18 Million Applications. Based on data from Greenhouse's applicant tracking system across 7,500 companies, the median time-to-hire for software engineering roles is 31 days. The 25th percentile is 21 days and the 75th percentile is 44 days. Time-to-hire has decreased by 12% year-over-year as companies streamlined interview processes in response to competitive talent markets. Companies using take-home technical assessments added an average of 6.3 days compared to those using live coding interviews only. Remote positions averaged 27 days (faster due to eliminated scheduling constraints), while hybrid and in-office roles averaged 34 and 38 days respectively. The fastest-hiring sector within tech was fintech (median 26 days), while enterprise SaaS was the slowest (median 39 days). Companies offering exploding offers (48-72 hour deadlines) had 23% faster close rates but 15% higher offer decline rates."
+        "Edward Gibbon argued internal moral decline weakened Rome.",
+        "Archaeological evidence shows external barbarian pressure was overwhelming.",
+        "Economic analysis reveals severe inflation preceded the collapse.",
+        "Climate data suggests a cooling period disrupted agriculture."
       ],
       "expected_mode": "disputed",
-      "description": "Two HR industry sources report different average time-to-hire: SHRM says 49 days vs Greenhouse says 31 days for the same role type",
-      "rationale": "Both sources measure the same metric (time-to-hire for software engineering) in the same time period (2024) but arrive at substantially different figures (49 vs 31 days). The 58% difference represents a genuine factual contradiction about industry norms.",
+      "description": "Multiple competing theories for Rome's fall",
+      "rationale": "Internal decay, external invasion, economic collapse all have evidence",
       "original_subcategory": "same_metric_different_values",
-      "domain": "technology",
+      "domain": "history",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1135,7 +1159,10 @@
       "context_sources": [
         "Society for Human Resource Management Research Study (2024)",
         "McKinsey Digital Insights (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_105",
@@ -1340,19 +1367,21 @@
       "category": "dispute",
       "subcategory": "temporal_conflict",
       "difficulty": "hard",
-      "query": "When did Amazon launch its Prime membership program?",
+      "query": "Did Columbus know he had reached a new continent?",
       "contexts": [
-        "Amazon Prime: A Business History — Harvard Business School Case Study, 2024. Amazon launched its Prime membership program on February 2, 2005, offering unlimited two-day shipping for an annual fee of $79. The program was conceived by Amazon VP Greg Greeley and engineer Charlie Ward, who built the business case showing that heavy shoppers (those placing 20+ orders per year) would dramatically increase purchase frequency with guaranteed fast shipping. At launch, Prime was available only to U.S. customers and covered approximately 1 million eligible items. Internal projections estimated 1 million subscribers within the first year; Amazon exceeded this target, reaching 1.3 million by December 2005. Prime Video was not added until February 2011, and Prime Music not until June 2014. The membership fee remained $79 until 2014 (increased to $99), then $119 in 2018, and $139 in 2022.",
-        "The Everything Store: Jeff Bezos and the Age of Amazon — Bloomberg Businessweek, Adapted from Brad Stone, Updated 2024 Edition. Amazon's Prime membership service officially launched in late January 2005, following a limited beta test with select customers in November 2004. The $79 annual membership initially guaranteed two-day delivery on eligible items. Jeff Bezos personally championed the program despite internal financial projections showing it would lose money for at least three years — the average Prime member's shipping costs exceeded the $79 fee by approximately $60 in the first year. Bezos argued that the loyalty lock-in and increased order frequency would justify the short-term losses. The beta period in November-December 2004 involved approximately 5,000 invited customers who provided feedback that led to the refinement of the eligible product catalog before the broader January 2005 public launch."
+        "Columbus's own journals indicate he believed he had reached Asia until his death.",
+        "Some historians argue his later voyages show he recognized the landmass was unknown to Europeans.",
+        "Amerigo Vespucci's writings suggest he was the first to realize it was a 'New World.'",
+        "Maps from the period show confusion about whether the lands were Asian islands or a new continent."
       ],
       "expected_mode": "disputed",
-      "description": "One source says Prime launched February 2, 2005, the other says late January 2005 — contradictory launch dates",
-      "rationale": "The HBS case study gives a specific date of February 2, 2005, while the Bloomberg/Brad Stone account states late January 2005. For the same event (Prime's public launch), these are incompatible dates.",
+      "description": "Conflicting evidence on Columbus's geographical understanding",
+      "rationale": "Journals vs later behavior vs contemporaries suggest different conclusions",
       "original_subcategory": "contradictory_dates",
-      "domain": "technology",
-      "query_type": "when",
+      "domain": "history",
+      "query_type": "what",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "temporal",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1362,26 +1391,31 @@
       "context_sources": [
         "Gartner Research Note (2024)",
         "Microsoft Research Technical Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_112",
       "category": "dispute",
       "subcategory": "temporal_conflict",
       "difficulty": "hard",
-      "query": "When was the Hubble Space Telescope launched?",
+      "query": "Is investment property better than stocks?",
       "contexts": [
-        "Hubble Space Telescope: Engineering Legacy — NASA Technical Memorandum TM-2024-XXXXX. The Hubble Space Telescope was launched aboard Space Shuttle Discovery (STS-31) on April 24, 1990, from Kennedy Space Center Launch Complex 39B. The deployment occurred on April 25, 1990, at 19:38 UTC, when the shuttle's robotic arm released the 11,110 kg telescope into a 569 km circular orbit inclined at 28.5 degrees to the equator. The launch had been delayed from its original October 1986 date due to the Space Shuttle Challenger disaster (January 28, 1986), which grounded the shuttle fleet for 32 months. The total development cost, including all five servicing missions through 2009, reached approximately $16 billion (2024 dollars). Hubble's 2.4-meter primary mirror was manufactured by Perkin-Elmer (now L3Harris Technologies) using ultra-low expansion glass.",
-        "Thirty Years of Hubble: A Retrospective — European Space Agency (ESA) Science Division, 2024. ESA, which contributed the Faint Object Camera and the solar arrays in exchange for guaranteed observing time (15% of total), marks April 25, 1990, as the Hubble Space Telescope's operational start date — the day it was deployed from the Space Shuttle Discovery's cargo bay into low Earth orbit. The telescope was launched on STS-31 on April 24, 1990, from Kennedy Space Center. ESA's contribution to Hubble represented the agency's first major partnership with NASA on a space science flagship mission. The initial solar arrays, built by British Aerospace (now BAE Systems), experienced thermal flutter during orbital day-night transitions, causing jitter that affected pointing stability. These arrays were replaced during Servicing Mission 1 (SM1) in December 1993, alongside the installation of COSTAR corrective optics to compensate for the primary mirror's spherical aberration (2.2 micrometer error in the mirror's shape)."
+        "Historical data shows real estate averaged 10-12% returns including rental income.",
+        "The S&P 500 returned 10.5% annually with lower management overhead.",
+        "Real estate offers leverage through mortgages that amplifies gains and losses.",
+        "Stocks are more liquid and diversified but subject to volatility."
       ],
       "expected_mode": "disputed",
-      "description": "One source says Hubble was launched April 24, 1990, while ESA marks April 25, 1990 as the operational start date — the confusion between launch date and deployment date creates contradiction",
-      "rationale": "NASA cites April 24, 1990 as the launch date, while ESA references April 25, 1990 as the key date. While the shuttle launched on the 24th and deployment occurred on the 25th, both sources present their respective date as 'when Hubble was launched/started,' creating a genuine factual ambiguity for users.",
+      "description": "Real estate vs stock market debate",
+      "rationale": "Similar returns but different risk profiles and liquidity",
       "original_subcategory": "contradictory_dates",
-      "domain": "technology",
-      "query_type": "when",
+      "domain": "real_estate",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "temporal",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1391,7 +1425,10 @@
       "context_sources": [
         "Kennedy Space Center Report (2024)",
         "MIT Technology Review Analysis (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_113",
@@ -1456,18 +1493,20 @@
       "category": "dispute",
       "subcategory": "contradictory_attribution",
       "difficulty": "hard",
-      "query": "Who invented the first practical telephone?",
+      "query": "Does renovating a kitchen increase home value more than the cost?",
       "contexts": [
-        "Alexander Graham Bell and the Invention of the Telephone — Smithsonian Institution Archives, 2024 Digital Exhibition. Alexander Graham Bell invented the first practical telephone, receiving U.S. Patent 174,465 on March 7, 1876, titled 'Improvement in Telegraphy.' Bell's breakthrough was the variable-resistance transmitter, which converted sound vibrations into proportional electrical current variations that could be reconverted to sound at the receiving end. The first successful transmission of intelligible speech occurred on March 10, 1876, when Bell's assistant Thomas Watson heard Bell say 'Mr. Watson, come here. I want to see you' through the device. Bell demonstrated the telephone at the 1876 Centennial Exhibition in Philadelphia, where it was evaluated by prominent scientists including Sir William Thomson (Lord Kelvin), who called it 'the greatest marvel hitherto achieved by the electric telegraph.' The Bell Telephone Company, founded in 1877, grew into AT&T, which dominated U.S. telecommunications for over a century.",
-        "Antonio Meucci: The True Inventor of the Telephone — Italian Historical Society of America / U.S. Congressional Resolution 269, 2002. The U.S. House of Representatives recognized on June 11, 2002, that Italian immigrant Antonio Meucci should be credited as the inventor of the telephone. Meucci developed his 'telettrofono' as early as 1849 in Havana, Cuba, and filed a patent caveat (a preliminary patent claim) with the U.S. Patent Office in 1871 — five years before Bell's patent. Meucci's device used electromagnetic induction to transmit voice over copper wire, and he demonstrated it to multiple witnesses between 1860 and 1870. Financial hardship prevented Meucci from paying the $10 annual caveat renewal fee after 1874, allowing his caveat to lapse. Historical evidence, including Meucci's 1871 patent caveat description, laboratory notebooks, and sworn affidavits from witnesses, supports the claim that he achieved voice transmission over wire years before Bell. The Italian government and Italian-American organizations maintain that Bell's work was derivative of materials Meucci submitted to the same patent office."
+        "Remodeling Magazine data shows kitchen renovations recover 54-80% of costs at resale.",
+        "Real estate agents claim updated kitchens are the number one factor in faster home sales.",
+        "A Harvard study found over-improvement relative to neighborhood values reduces ROI.",
+        "Minor kitchen updates (paint, hardware) return more per dollar than full renovations."
       ],
       "expected_mode": "disputed",
-      "description": "The Smithsonian credits Alexander Graham Bell (1876), while Congressional Resolution 269 credits Antonio Meucci (1849-1871) as the telephone's inventor",
-      "rationale": "Two authoritative sources make mutually exclusive attribution claims about the same invention. The Smithsonian names Bell, while the U.S. Congress formally recognized Meucci. Both provide evidence for their respective claims.",
-      "domain": "technology",
-      "query_type": "who",
+      "description": "Conflicting data on kitchen renovation ROI",
+      "rationale": "Partial cost recovery vs faster sales vs diminishing returns",
+      "domain": "real_estate",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1477,25 +1516,30 @@
       "context_sources": [
         "Google Research Publication (2024)",
         "IEEE Computer Society Report (2023)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_116",
       "category": "dispute",
       "subcategory": "contradictory_attribution",
       "difficulty": "hard",
-      "query": "Who first proposed the theory of continental drift?",
+      "query": "Does foreign aid effectively reduce poverty?",
       "contexts": [
-        "Alfred Wegener and Continental Drift — Annual Review of Earth and Planetary Sciences, 2024. Alfred Wegener, a German meteorologist and geophysicist, is credited with proposing the theory of continental drift in his 1912 paper 'Die Entstehung der Kontinente' (The Origin of Continents) and his 1915 book 'Die Entstehung der Kontinente und Ozeane.' Wegener hypothesized that all continents were once joined in a supercontinent he called Pangaea (from Greek, 'all lands'), which began to break apart approximately 200 million years ago. His evidence included: the jigsaw-like fit of South American and African coastlines, matching geological formations across separated continents (Appalachian Mountains aligning with Scottish Highlands), identical fossil distributions of Mesosaurus and Glossopteris across southern continents, and paleoclimatic evidence (glacial tillites in now-tropical regions). Despite compelling evidence, Wegener's theory was rejected by most geophysicists during his lifetime because he could not propose a viable mechanism for continental movement.",
-        "Antonio Snider-Pellegrini: The Forgotten Pioneer of Continental Drift — History of Geo- and Space Sciences, 2024. Italian-born geographer Antonio Snider-Pellegrini proposed continental displacement in 1858 — over half a century before Alfred Wegener's more famous formulation. In his book 'La Création et ses mystères dévoilés' (Creation and its Mysteries Unveiled), Snider-Pellegrini presented the first published maps showing the Americas fitted against Europe and Africa, based on the geographic congruence of opposing Atlantic coastlines and matching coal deposits on both continents. He attributed the separation to the biblical Great Flood, which limited scientific acceptance. Earlier still, Abraham Ortelius noted the apparent fit of Atlantic coastlines in his 1596 Thesaurus Geographicus. Francis Bacon made similar observations in 1620. However, Snider-Pellegrini was the first to produce detailed matching maps and propose a systematic mechanism (however flawed) for the separation. The attribution of continental drift to Wegener alone represents a common case of Stigler's law of eponymy."
+        "World Bank shows countries receiving aid had higher GDP growth.",
+        "Economist Dambisa Moyo argues aid creates dependency.",
+        "Targeted aid programs show significant poverty reduction in RCTs.",
+        "Some of the largest aid recipients remain among the poorest nations."
       ],
       "expected_mode": "disputed",
-      "description": "One source credits Alfred Wegener (1912) while the other credits Antonio Snider-Pellegrini (1858), with mentions of even earlier observations by Ortelius (1596) and Bacon (1620)",
-      "rationale": "The attribution of 'first proposed continental drift' is genuinely disputed. Snider-Pellegrini published detailed continental displacement maps 54 years before Wegener, but Wegener's formulation included more scientific evidence. The question of who 'first proposed' the theory has multiple defensible answers.",
-      "domain": "technology",
-      "query_type": "who",
+      "description": "Conflicting evidence on aid effectiveness",
+      "rationale": "Macro data mixed, targeted programs work, but dependency concerns",
+      "domain": "government",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1505,25 +1549,30 @@
       "context_sources": [
         "O'Reilly Industry Report (2024)",
         "McKinsey Digital Insights (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_117",
       "category": "dispute",
       "subcategory": "contradictory_attribution",
       "difficulty": "hard",
-      "query": "Who invented the World Wide Web?",
+      "query": "Does ranked-choice voting improve democratic outcomes?",
       "contexts": [
-        "Tim Berners-Lee and the Invention of the World Wide Web — CERN Digital Library, 2024. Sir Tim Berners-Lee, a British computer scientist working at CERN in Geneva, Switzerland, invented the World Wide Web in 1989. His proposal, 'Information Management: A Proposal' (March 12, 1989), outlined a distributed hypertext system for sharing information among researchers. By December 1990, Berners-Lee had built all the components of the first web system: the first web browser (WorldWideWeb, later renamed Nexus), the first web server (httpd), the first web pages (describing the project itself), the URL addressing scheme, the HTTP protocol, and the HTML markup language. The first website, info.cern.ch, went live on December 20, 1990. Berners-Lee's deliberate decision not to patent the technology enabled its free adoption worldwide. He was knighted in 2004 and received the Turing Award in 2016 for 'inventing the World Wide Web.'",
-        "Robert Cailliau: Co-Inventor of the World Wide Web — Belgian Royal Academy of Sciences Publication, 2024. Belgian informatics engineer Robert Cailliau, working alongside Tim Berners-Lee at CERN, co-developed the World Wide Web and should be recognized as its co-inventor. Cailliau independently proposed a hypertext system for CERN in 1987, two years before Berners-Lee's more famous 1989 proposal. In November 1990, Cailliau co-authored a revised and expanded proposal with Berners-Lee that successfully secured CERN management approval and funding for the project. Cailliau developed the first web browser for Macintosh (which had far greater market share than Berners-Lee's NeXT-only browser), organized the First International World Wide Web Conference in May 1994, and led CERN's web communications group until 2000. Cailliau has consistently maintained that the web was a collaborative invention, stating: 'Tim wrote the first line of code; I made sure the project survived organizationally.' The singular attribution to Berners-Lee reflects, in Cailliau's view, the Anglo-American media's preference for single-inventor narratives."
+        "Cities using RCV report higher voter satisfaction and more civil campaigns.",
+        "Implementation in some areas led to voter confusion, with 10-15% of ballots incorrectly filled out.",
+        "RCV tends to elect candidates with broader appeal, reducing extreme partisanship.",
+        "Critics argue RCV advantages well-funded candidates who can run longer campaigns."
       ],
       "expected_mode": "disputed",
-      "description": "CERN credits Tim Berners-Lee as sole inventor, while the Belgian Royal Academy credits Robert Cailliau as co-inventor of the World Wide Web",
-      "rationale": "The sources disagree on whether the Web had one inventor (Berners-Lee) or two co-inventors (Berners-Lee and Cailliau). Cailliau's earlier 1987 hypertext proposal and his co-authorship of the 1990 project proposal support co-inventor status, while official CERN narratives emphasize Berners-Lee alone.",
-      "domain": "technology",
-      "query_type": "who",
+      "description": "Conflicting evidence on ranked-choice voting",
+      "rationale": "Higher satisfaction vs voter confusion vs broader appeal vs funding advantage",
+      "domain": "government",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1533,25 +1582,30 @@
       "context_sources": [
         "Stanford HAI Research (2024)",
         "ThoughtWorks Technology Radar (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_118",
       "category": "dispute",
       "subcategory": "contradictory_attribution",
       "difficulty": "hard",
-      "query": "Which country was the first to land a rover on Mars?",
+      "query": "Is a gluten-free diet healthier for people without celiac disease?",
       "contexts": [
-        "Mars Exploration: A Complete History — The Planetary Society, 2024. The United States achieved the first successful Mars rover landing on July 4, 1997, when NASA's Mars Pathfinder mission deployed the Sojourner rover onto the surface of Ares Vallis. Sojourner, weighing 11.5 kg, operated for 83 sols (Martian days) — far exceeding its 7-sol design life — traversing approximately 100 meters and analyzing rocks with its Alpha Proton X-ray Spectrometer (APXS). The rover confirmed that Mars experienced catastrophic flooding in its past based on rock conglomerate analysis. Sojourner was the first wheeled vehicle to operate on another planet, pioneering autonomous navigation techniques that influenced subsequent Mars rovers Spirit, Opportunity, and Curiosity. Communication was maintained through the Pathfinder lander, with a data rate of 2.4 kbps.",
-        "Soviet Mars Program: Achievements and Legacy — Roscosmos Historical Archive, Updated 2024. The Soviet Union achieved the first Mars surface operations with its Mars 3 mission, which successfully soft-landed on December 2, 1971, in the Ptolemaeus crater region. While the Mars 3 lander transmitted for only 20 seconds before contact was lost (likely due to a severe dust storm), it successfully deployed the PROP-M rover — a small 4.5 kg tethered walking robot designed to measure soil properties. The PROP-M featured two ski-like appendages for locomotion and was connected to the lander by a 15-meter cable. Whether the rover successfully deployed and operated on the surface before the lander's signal was lost remains debated. Soviet mission documentation indicates the deployment sequence was initiated, but no data was received from the rover. Roscosmos classifies Mars 3 as a partial success and the PROP-M as the first rover to reach the Martian surface."
+        "Some nutritionists report patients experience reduced inflammation.",
+        "A large study found no health benefits from gluten avoidance in non-celiac individuals.",
+        "Gluten-free products often contain more sugar and fat.",
+        "Non-celiac gluten sensitivity is recognized but diagnostic criteria remain controversial."
       ],
       "expected_mode": "disputed",
-      "description": "The Planetary Society credits the U.S. (Sojourner, 1997) while Roscosmos credits the Soviet Union (PROP-M on Mars 3, 1971) as landing the first rover on Mars",
-      "rationale": "The U.S. claims the first successful Mars rover (Sojourner, 1997) while Russia claims Mars 3's PROP-M (1971) reached the surface first. Whether the PROP-M actually operated is unknown, making the attribution genuinely contested.",
-      "domain": "technology",
-      "query_type": "which",
+      "description": "Conflicting evidence on gluten-free diets",
+      "rationale": "Some patients improve, large study shows no benefit",
+      "domain": "food",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1561,7 +1615,10 @@
       "context_sources": [
         "Planetary Society Report (2024)",
         "Gartner Research Note (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_119",
@@ -1625,19 +1682,21 @@
       "category": "dispute",
       "subcategory": "binary_conflict",
       "difficulty": "hard",
-      "query": "Has nuclear fusion achieved net energy gain?",
+      "query": "Is organic produce significantly more nutritious than conventional?",
       "contexts": [
-        "National Ignition Facility Achieves Fusion Ignition — U.S. Department of Energy, December 2022 (Updated 2024). On December 5, 2022, the National Ignition Facility (NIF) at Lawrence Livermore National Laboratory achieved fusion ignition for the first time — producing more energy from a fusion reaction than the laser energy delivered to the target. The experiment delivered 2.05 megajoules (MJ) of ultraviolet laser energy to a hohlraum capsule containing deuterium-tritium fuel, which produced 3.15 MJ of fusion energy — a gain factor (Q) of approximately 1.54. This was subsequently exceeded on July 30, 2023, when a shot produced 3.88 MJ from 2.05 MJ input (Q ≈ 1.89). The DOE characterizes this as the first time in history that a controlled fusion reaction achieved net energy gain, representing a landmark scientific achievement and a critical milestone on the path to fusion energy.",
-        "Fusion's Net Energy Claims are Misleading — Bulletin of the Atomic Scientists, 2024. The widely reported 'net energy gain' from NIF is scientifically misleading when considering the total energy budget. While the fusion yield (3.15 MJ) exceeded the laser energy on target (2.05 MJ), the NIF laser system consumed approximately 300 MJ of electrical energy to produce that 2.05 MJ of laser light — an overall wall-plug efficiency of less than 0.7%. The true energy gain ratio (fusion output / total electrical input) is approximately 0.01, meaning the system consumed roughly 100 times more energy than it produced. A commercially viable fusion power plant would need a total system Q of at least 10-20. Furthermore, NIF was designed for nuclear weapons research (stockpile stewardship), not energy production, and its single-shot architecture (one shot per several hours) is fundamentally incompatible with continuous power generation. Claims of 'net energy gain' conflate target gain with system gain, creating a misleading impression of proximity to commercial fusion energy."
+        "A Stanford meta-analysis found no significant nutritional differences between organic and conventional produce.",
+        "A British Journal of Nutrition review found organic crops had 18-69% more antioxidants.",
+        "Organic produce has lower pesticide residues, but conventional levels are within safety limits.",
+        "The nutritional content of any produce depends more on soil quality and freshness than farming method."
       ],
       "expected_mode": "disputed",
-      "description": "DOE claims net energy gain was achieved (fusion output > laser input, Q=1.54), while the Bulletin of the Atomic Scientists says the claim is misleading because total system energy consumed was 100x the output",
-      "rationale": "The DOE reports net energy gain (target-level Q > 1), while the Bulletin argues the true system-level energy balance shows a massive net loss (Q ≈ 0.01). Whether fusion has 'achieved net energy gain' depends on which definition of 'net' is used, and the sources disagree on which definition is appropriate.",
+      "description": "Conflicting evidence on organic produce nutrition",
+      "rationale": "Stanford says no difference, BJN says more antioxidants, freshness matters most",
       "original_subcategory": "contradictory_status",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "food",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1647,7 +1706,10 @@
       "context_sources": [
         "Department of Energy Research Study (2022)",
         "Stanford HAI Research (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_123",
@@ -1814,19 +1876,21 @@
       "category": "dispute",
       "subcategory": "opposing_conclusions",
       "difficulty": "hard",
-      "query": "Should children under 2 years old have any screen time?",
+      "query": "Does the death penalty deter violent crime?",
       "contexts": [
-        "Screen Time Guidelines for Infants and Toddlers — American Academy of Pediatrics (AAP) Policy Statement, 2024. The AAP recommends that children younger than 18-24 months should avoid screen media other than video chatting with family members. For children aged 18-24 months, parents who want to introduce digital media should choose high-quality programming (such as Sesame Street or Daniel Tiger's Neighborhood) and watch it together with the child to help them understand what they are seeing. The recommendation is based on developmental research showing that children under 2 learn significantly less from screens than from face-to-face interaction — the 'transfer deficit.' A meta-analysis of 24 studies found that screen time before age 2 was associated with language delays (OR 1.37, 95% CI 1.16-1.62), reduced attention span, and lower executive function scores at age 4-6. Screen time displaces critical developmental activities including caregiver interaction, physical exploration, and unstructured play.",
-        "Reassessing Screen Time for Very Young Children: Nuanced Evidence — Royal College of Paediatrics and Child Health (RCPCH), United Kingdom, 2024. The RCPCH explicitly declines to set specific screen time limits for any age group, including children under 2, stating that the evidence does not support the blanket prohibition recommended by the AAP. The RCPCH systematic review found that: (1) the studies underpinning the 'no screens before 2' recommendation are predominantly cross-sectional and observational, with significant confounding by socioeconomic status, parenting style, and pre-existing developmental concerns; (2) high-quality interactive content (educational apps with contingent feedback) can support word learning in children as young as 12 months when used in small amounts; (3) the 'transfer deficit' is substantially reduced when parents co-view and narrate; (4) rigid screen time rules cause parental guilt without evidence of better outcomes. The RCPCH recommends a family-based approach where parents ensure screens do not interfere with sleep, physical activity, or face-to-face interaction, rather than adhering to arbitrary age-based cutoffs."
+        "A study found murder rates 2-4% lower in death penalty states.",
+        "The National Academy of Sciences concluded studies are flawed and inconclusive.",
+        "States abolishing the death penalty saw no increase in murder rates.",
+        "88% of criminologists say no deterrence, but economic models suggest otherwise."
       ],
       "expected_mode": "disputed",
-      "description": "The AAP recommends no screens for children under 18-24 months, while the RCPCH refuses to set limits and says blanket prohibition is not evidence-based",
-      "rationale": "Two leading pediatric authorities issue contradictory guidance. The AAP recommends prohibition of screen media for children under 2, while the RCPCH explicitly rejects age-based screen time limits as unsupported by evidence. Parents receive opposite advice depending on which authority they consult.",
+      "description": "Conflicting research on death penalty deterrence",
+      "rationale": "State data mixed, academic review inconclusive, experts disagree",
       "original_subcategory": "opposing_recommendations",
-      "domain": "technology",
-      "query_type": "should",
+      "domain": "law",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1836,26 +1900,31 @@
       "context_sources": [
         "O'Reilly Industry Report (2024)",
         "McKinsey Digital Insights (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_129",
       "category": "dispute",
       "subcategory": "opposing_conclusions",
       "difficulty": "hard",
-      "query": "Should homeowners invest in a whole-house water filtration system?",
+      "query": "Should non-compete agreements be enforceable?",
       "contexts": [
-        "Whole-House Water Filtration: Essential Home Investment — Water Quality Association (WQA) Consumer Guide, 2024. The WQA strongly recommends whole-house water filtration systems for all homeowners, regardless of water source. Municipal water treatment, while meeting EPA minimum standards, leaves measurable levels of contaminants in tap water: a WQA-commissioned study of 2,400 homes found that 73% had detectable levels of PFAS ('forever chemicals') averaging 18 ppt, 42% had lead above the EPA action level of 15 ppb in first-draw samples, and 89% had chlorine disinfection byproducts (trihalomethanes, haloacetic acids) at levels associated with increased cancer risk in epidemiological studies. A whole-house system ($1,800-$4,500 installed, $200-600/year maintenance) removes 95-99% of these contaminants. The investment also extends appliance lifespan by 25-30% by reducing scale and sediment, provides softer skin and hair, and eliminates chlorine taste. Cost-benefit analysis shows a net positive return within 3-5 years when accounting for reduced bottled water purchases, extended appliance life, and reduced plumbing maintenance.",
-        "Skip the Whole-House System: A Realistic Assessment — Consumer Reports, 2024. Consumer Reports does not recommend whole-house water filtration systems for most homeowners, characterizing them as an expensive solution to a problem that is better addressed with targeted, point-of-use filters. Key findings from CR's testing of 47 whole-house systems: (1) whole-house systems are 3-8x more expensive than equivalent point-of-use filtration per contaminant removed; (2) a $35 NSF 53-certified pitcher filter removes lead as effectively as a $3,000 whole-house system for drinking water; (3) whole-house systems reduce water pressure by 5-15 psi, which can cause inadequate flow to upper floors; (4) carbon-based whole-house filters become breeding grounds for bacteria if not maintained on strict schedules (every 3-6 months); (5) for the 87% of Americans served by EPA-regulated public water systems, tap water already meets safety standards for 90+ regulated contaminants. CR recommends: test your water first ($30-150 at a certified lab), then install point-of-use filters only for specific identified contaminants."
+        "Companies argue non-competes protect trade secrets and investments in employee training.",
+        "Economic research shows states banning non-competes see 11% higher rates of startup formation.",
+        "California's ban on non-competes is credited as a factor in Silicon Valley's success.",
+        "Workers with non-competes earn 4-8% less than comparable workers without them."
       ],
       "expected_mode": "disputed",
-      "description": "The Water Quality Association recommends whole-house filtration for all homeowners, while Consumer Reports says it is unnecessary for most and a $35 pitcher filter works as well",
-      "rationale": "The WQA (which represents the water treatment industry) strongly recommends whole-house systems, while Consumer Reports (independent testing) recommends against them for most people. The recommendations are directly opposed, with conflicting cost-benefit analyses.",
+      "description": "Conflicting arguments on non-compete enforceability",
+      "rationale": "Trade secret protection vs economic dynamism vs worker wages",
       "original_subcategory": "opposing_recommendations",
-      "domain": "technology",
+      "domain": "law",
       "query_type": "should",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1865,25 +1934,30 @@
       "context_sources": [
         "Environmental Protection Agency Research Study (2024)",
         "National Science Foundation Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_130",
       "category": "dispute",
       "subcategory": "statistical_direction_conflict",
       "difficulty": "hard",
-      "query": "Is the global deforestation rate increasing or decreasing?",
+      "query": "Should youth athletes specialize in one sport early?",
       "contexts": [
-        "Global Forest Resources Assessment 2024 — Food and Agriculture Organization of the United Nations (FAO). The FAO reports that the global deforestation rate has decreased significantly over the past three decades. Net forest loss declined from 7.8 million hectares per year in the 1990s to 4.7 million hectares per year in the 2010-2020 period — a 40% reduction. Preliminary data for 2020-2024 suggests a further decline to approximately 3.8 million hectares per year. The improvement is driven by large-scale afforestation and reforestation programs: China added 72 million hectares of forest since 2000, India added 38 million hectares, and Vietnam added 18 million hectares. Forest area in Europe has increased by 14 million hectares since 1990, and North American forest area has been stable. The proportion of forest under legally established protected areas has increased from 10% to 18%. The FAO concludes that 'the world is moving in the right direction on deforestation, though the rate of tropical forest loss remains a critical concern.'",
-        "Global Forest Watch Annual Report 2024 — World Resources Institute (WRI). Analysis of satellite imagery by the University of Maryland's GLAD lab, published through Global Forest Watch, shows that tropical primary forest loss increased by 3.2% in 2024 compared to 2023, reaching 4.1 million hectares — equivalent to losing 11 football fields of irreplaceable old-growth forest per minute. The Amazon rainforest lost 1.48 million hectares (up from 1.31 million in 2023), the Congo Basin lost 0.71 million hectares (a record), and Indonesia lost 0.42 million hectares. Total tree cover loss globally reached 22.8 million hectares in 2024, the third-highest year on record. The discrepancy with FAO figures arises because FAO counts planted tree monocultures (eucalyptus, palm, rubber plantations) as 'forest,' effectively masking the loss of biodiverse natural forests with industrial plantations. The WRI concludes that 'the destruction of the world's remaining primary forests is accelerating, not decelerating.'"
+        "Tiger Woods and Serena Williams are cited as early specialization successes.",
+        "Research shows early specialization increases injury risk by 70%.",
+        "Multi-sport athletes develop broader motor skills that transfer well.",
+        "European talent programs emphasize early specialization for competitiveness."
       ],
       "expected_mode": "disputed",
-      "description": "FAO says global deforestation decreased 40% over three decades, while WRI says tropical primary forest loss increased 3.2% in 2024 — opposite directional trends",
-      "rationale": "The FAO reports deforestation is declining (3.8M ha/year, improving trend) while WRI reports primary forest loss is increasing (4.1M ha, worsening trend). The opposite directions stem from definitional disagreement about what counts as 'forest,' but both claim to measure global deforestation.",
-      "domain": "technology",
-      "query_type": "is",
+      "description": "Conflicting evidence on youth sport specialization",
+      "rationale": "Success stories vs injury research vs motor development",
+      "domain": "sports",
+      "query_type": "should",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "evaluative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1893,25 +1967,30 @@
       "context_sources": [
         "Food and Agriculture Organization Report (2024)",
         "NIST Special Publication (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_131",
       "category": "dispute",
       "subcategory": "statistical_direction_conflict",
       "difficulty": "hard",
-      "query": "Is the gender pay gap in the United States widening or narrowing?",
+      "query": "Does altitude training improve athletic performance at sea level?",
       "contexts": [
-        "Annual Earnings by Sex — U.S. Census Bureau Current Population Survey, 2024 Release. The gender pay gap for full-time, year-round workers narrowed to 83.7 cents on the dollar in 2024, up from 82.3 cents in 2023 and 77.0 cents in 2010. The gap has closed by approximately 0.5 percentage points per year over the past decade. Women's real median earnings increased 3.1% year-over-year (to $56,420), outpacing men's 1.8% increase (to $67,380). Among workers aged 25-34, the gap has narrowed further to 92 cents on the dollar, reflecting younger women's higher educational attainment (38% hold bachelor's degrees vs 31% of men in this cohort). The gap is narrowest in government sector employment (94 cents) and widest in financial services (71 cents). Controlling for occupation, industry, hours worked, and education, the 'adjusted' gap stands at approximately 95 cents — the smallest measured.",
-        "State of the Gender Pay Gap 2024 — National Women's Law Center (NWLC) Analysis. The gender pay gap has stagnated and, for several demographic groups, widened in 2024. When analyzing all women workers (not just full-time, year-round), women earned only 74 cents for every dollar earned by men, effectively unchanged from 73 cents in 2015. The full-time restriction used by the Census Bureau excludes the 26% of employed women who work part-time — often due to caregiving responsibilities created by systemic lack of childcare infrastructure. For women of color, the gap has widened: Black women earned 63 cents (down from 64 cents in 2023), Latina women earned 52 cents (down from 54 cents in 2023), and Native American women earned 51 cents (unchanged). At the current rate of change, the overall pay gap will not close until 2088, and for Latina women not until 2206. The NWLC argues that the Census Bureau's methodology obscures the reality of gender-based economic inequality by excluding the most disadvantaged workers."
+        "Kenyan and Ethiopian runners who train at altitude dominate international distance running.",
+        "Controlled studies show altitude training increases red blood cell count by only 1-3%, a marginal benefit.",
+        "The 'live high, train low' method shows the most consistent performance gains in research.",
+        "Some sports scientists argue the benefits disappear within 2 weeks of returning to sea level."
       ],
       "expected_mode": "disputed",
-      "description": "Census Bureau data shows the gender pay gap is narrowing (from 77 to 83.7 cents over 14 years), while NWLC data shows stagnation/widening (74 cents unchanged, worsening for women of color)",
-      "rationale": "The two sources report opposite directional trends for the gender pay gap. Census Bureau data shows steady improvement, while the NWLC shows stagnation and widening for specific groups. The contradiction stems from different measurement methodologies (full-time only vs all workers) but the directional conclusions are incompatible.",
-      "domain": "technology",
-      "query_type": "is",
+      "description": "Conflicting evidence on altitude training effectiveness",
+      "rationale": "Elite success stories vs marginal lab gains vs rapid benefit loss",
+      "domain": "sports",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "evaluative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1921,7 +2000,10 @@
       "context_sources": [
         "AWS Architecture Blog (2024)",
         "NWLC argues that the Census Bureau Analysis (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_132",
@@ -1956,18 +2038,20 @@
       "category": "dispute",
       "subcategory": "statistical_direction_conflict",
       "difficulty": "hard",
-      "query": "Is the crime rate in the United States going up or down?",
+      "query": "Are self-driving cars safer than human drivers?",
       "contexts": [
-        "FBI Uniform Crime Reporting (UCR) / National Incident-Based Reporting System (NIBRS) — 2024 Annual Release. FBI crime statistics show significant decreases across major crime categories in 2024. Violent crime fell 5.7% nationally compared to 2023, with murder declining 11.6%, aggravated assault dropping 4.2%, robbery down 8.3%, and rape decreasing 6.1%. Property crime declined 4.8%, with motor vehicle theft (previously surging) falling 12.3%. The 2024 data extends a multi-year downward trend following the pandemic-era spike: the murder rate is now 16% below its 2020 peak and within 8% of the historic low set in 2014. The data covers approximately 16,000 law enforcement agencies representing 94% of the U.S. population. FBI Director's statement: 'The data clearly shows that Americans are significantly safer today than they were four years ago, with meaningful decreases across virtually every crime category.'",
-        "National Crime Victimization Survey (NCVS) 2024 — Bureau of Justice Statistics. The NCVS, which surveys 240,000 individuals annually about crime experiences regardless of whether incidents were reported to police, shows violent victimization increased 14.2% from 2023 to 2024, reaching 24.5 per 1,000 persons age 12 or older — the highest rate since 2012. Serious violent crime (rape/sexual assault, robbery, aggravated assault) increased 8.7%. Property victimization rose 6.3%. The NCVS captures crimes not reported to police, which represents approximately 57% of violent crimes and 67% of property crimes. The divergence from FBI statistics reflects declining crime reporting rates: the percentage of violent crimes reported to police fell from 46% in 2020 to 38% in 2024, meaning police-reported statistics increasingly undercount actual crime. BJS analysts note that 'declining reporting rates create a misleading picture of improving public safety when measured solely through police statistics.'"
+        "Waymo reports 85% fewer injury-causing crashes than human drivers.",
+        "NHTSA data shows autonomous vehicles involved in hundreds of accidents.",
+        "Safety comparisons are complicated by ideal operating conditions.",
+        "Insurance analysis suggests some accident types decrease but others increase."
       ],
       "expected_mode": "disputed",
-      "description": "FBI data shows crime declining 5.7% in 2024, while the NCVS victimization survey shows violent crime increasing 14.2% — opposite directions from equally official government sources",
-      "rationale": "Two official U.S. government data sources measuring crime produce opposite directional results. FBI police-reported crime shows decreases while the BJS victimization survey shows increases. Both are published by the Department of Justice with rigorous methodologies, but they measure different things (reported crime vs experienced crime).",
-      "domain": "technology",
-      "query_type": "is",
+      "description": "Conflicting safety data for autonomous vehicles",
+      "rationale": "Company data vs government data, operating conditions differ",
+      "domain": "transportation",
+      "query_type": "what",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "evaluative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -1977,7 +2061,10 @@
       "context_sources": [
         "McKinsey Digital Insights (2024)",
         "O'Reilly Industry Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_134",
@@ -2236,19 +2323,21 @@
       "category": "dispute",
       "subcategory": "numerical_conflict",
       "difficulty": "hard",
-      "query": "What is the deforestation rate in the Amazon rainforest?",
+      "query": "Is high-speed rail more cost-effective than expanding highways?",
       "contexts": [
-        "Brazilian National Institute for Space Research (INPE) Annual Report 2024: INPE's PRODES satellite monitoring system detected 4,320 square kilometers of deforestation in the Brazilian Amazon during the August 2023 to July 2024 monitoring period, a 28% decrease from the prior period. PRODES uses Landsat satellite imagery at 30-meter resolution to detect clear-cut deforestation of primary forest in areas greater than 6.25 hectares. The system has operated continuously since 1988 and is considered the official deforestation metric for Brazil's climate commitments. Environment Minister Carlos Braga cited the figure as evidence of the government's successful enforcement strategy, noting that IBAMA conducted 12,400 enforcement operations during the period. The data covers the Legal Amazon region comprising nine Brazilian states totaling 5.2 million square kilometers.",
-        "Global Forest Watch Annual Assessment 2024: According to the University of Maryland's Global Forest Watch platform, the Brazilian Amazon lost approximately 9,800 square kilometers of tree cover during the same August 2023 to July 2024 period. The platform uses higher-resolution Sentinel-2 imagery (10-meter resolution) combined with machine learning algorithms to detect all forms of forest loss including selective logging, degradation, fire damage, and natural disturbance in addition to clear-cutting. Lead researcher Dr. Matthew Hansen noted that restricting analysis to clear-cut deforestation alone â€” comparable to PRODES methodology â€” still yielded approximately 6,100 square kilometers, significantly higher than INPE's figure. The platform monitors forests globally and applies consistent methodology across all tropical regions."
+        "Studies in Japan and France show high-speed rail generates $3-4 in economic benefit per $1 invested.",
+        "California's high-speed rail project has seen costs balloon from $33 billion to over $100 billion.",
+        "Highway expansion provides immediate congestion relief but induces demand within 5-10 years.",
+        "High-speed rail ridership projections have historically been overestimated by 50-100%."
       ],
       "expected_mode": "disputed",
-      "description": "INPE reports 4,320 km2 of Amazon deforestation; Global Forest Watch reports 9,800 km2 (or 6,100 km2 even with comparable methodology) for the same period",
-      "rationale": "Both measure deforestation in the Brazilian Amazon for the same time period. Even when accounting for methodological differences (the GFW figure restricted to clear-cut only is 6,100 km2 vs INPE's 4,320 km2), there is a 41% gap. These are directly conflicting factual claims about the same metric in the same geography and timeframe. The sources cannot both be correct â€” this is a genuine dispute about the rate of Amazon deforestation.",
+      "description": "Conflicting cost-effectiveness data for rail vs highways",
+      "rationale": "International success vs US cost overruns vs induced demand",
       "original_subcategory": "same_claim_different_values",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "transportation",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -2258,7 +2347,10 @@
       "context_sources": [
         "ThoughtWorks Technology Radar (2024)",
         "Dr. Matthew Hansen Analysis (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_204",
@@ -2323,19 +2415,21 @@
       "category": "dispute",
       "subcategory": "numerical_conflict",
       "difficulty": "hard",
-      "query": "What is the energy return on investment for solar photovoltaic panels?",
+      "query": "Does social media use cause depression in teenagers?",
       "contexts": [
-        "Nature Energy Review Article (2024): A comprehensive lifecycle assessment of crystalline silicon photovoltaic systems installed in temperate climates finds an energy return on energy invested (EROI) of 25:1 to 30:1 based on current manufacturing processes and panel efficiencies averaging 22%. The analysis accounts for energy inputs across the full supply chain: polysilicon refining, wafer production, cell manufacturing, module assembly, balance-of-system components, installation, and end-of-life recycling. The system boundary includes all upstream energy for materials extraction and transport. Lead author Dr. Marco Raugei of Oxford Brookes University notes that EROI has improved dramatically from approximately 8:1 in 2010 due to manufacturing scale economies and efficiency gains. The analysis assumes a 30-year operational lifetime and uses primary energy equivalents for all calculations. The review synthesizes data from 18 recent lifecycle assessment studies.",
-        "Proceedings of the National Academy of Sciences â€” Net Energy Analysis (2024): A PNAS study examining the net energy contribution of the global solar PV fleet calculates an effective EROI of 6:1 to 8:1 for grid-connected crystalline silicon systems in real-world deployment. The authors argue that standard lifecycle assessments undercount energy inputs by excluding grid integration costs (storage, curtailment, transmission upgrades), the energy cost of manufacturing overcapacity to compensate for intermittency, and the embodied energy of accelerated grid infrastructure replacement. Lead author Dr. Charles Hall of SUNY-ESF contends that comparing intermittent sources using the same EROI framework as dispatchable generation requires accounting for the energy penalty of converting variable output to firm power. The study also adjusts for the lower quality of electrical energy versus thermal energy using exergy-based accounting rather than primary energy equivalents."
+        "A longitudinal study found heavy users had 70% higher depression rates.",
+        "A meta-analysis of 40 studies concluded the correlation is negligible (r=0.05).",
+        "Qualitative research suggests impact depends on how it is used, not how much.",
+        "Critics note depressed teens may use more social media, reversing causation."
       ],
       "expected_mode": "disputed",
-      "description": "Nature Energy reports solar PV EROI of 25-30:1; PNAS study reports 6-8:1 â€” fundamentally different assessments of solar energy's net energy contribution",
-      "rationale": "Both sources answer the same question about solar PV's energy return on investment but differ by a factor of 3-5x (25-30:1 vs 6-8:1). While system boundaries differ, each source presents its EROI as the authoritative figure. The claims are directly contradictory â€” solar PV's EROI cannot simultaneously be 25:1 and 6:1. This disagreement has major policy implications and represents a genuine dispute about the same fundamental metric.",
+      "description": "Conflicting research on social media and teen depression",
+      "rationale": "Large study says yes, meta-analysis says no, causation unclear",
       "original_subcategory": "same_claim_different_values",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "psychology",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -2345,7 +2439,10 @@
       "context_sources": [
         "Dr. Marco Raugei Report (2024)",
         "Dr. Charles Hall Research Study (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_209",
@@ -2468,19 +2565,21 @@
       "category": "dispute",
       "subcategory": "opposing_conclusions",
       "difficulty": "hard",
-      "query": "Is nuclear power necessary for achieving net-zero emissions by 2050?",
+      "query": "Is emotional intelligence more important than IQ for career success?",
       "contexts": [
-        "International Energy Agency - Net Zero by 2050 Roadmap (Updated 2024): The IEA's updated Net Zero Emissions scenario concludes that nuclear power is an essential component of the global energy transition, requiring nuclear capacity to double from 413 GW in 2023 to approximately 820 GW by 2050. The roadmap identifies nuclear as the only proven low-carbon dispatchable technology capable of providing reliable baseload power at scale. In the IEA's modeling, scenarios without nuclear expansion require 35% more renewable capacity, 60% more grid-scale battery storage, and 40% more transmission infrastructure, increasing total system costs by $2.4 trillion through 2050. New advanced nuclear technologies including small modular reactors (SMRs) and high-temperature gas reactors are projected to reach commercial deployment by 2030-2035, providing industrial process heat that cannot be electrified. IEA Executive Director Fatih Birol stated that excluding nuclear from the energy mix would make achieving net zero significantly more difficult, more expensive, and less certain.",
-        "Stanford University / Mark Z. Jacobson - 100% Renewable Energy Roadmap (2024): Professor Mark Jacobson's updated 100% Wind-Water-Solar (WWS) roadmap for 145 countries demonstrates that net-zero emissions can be achieved by 2050 without any nuclear power, using only wind, water, and solar energy combined with storage and demand response. The peer-reviewed study, published in Energy and Environmental Science, uses hourly load-matching across 24 world regions with detailed grid simulation showing that a combination of onshore wind (45%), offshore wind (16%), utility solar (21%), rooftop solar (8%), concentrated solar (4%), hydroelectric (4%), and geothermal (2%) can meet 100% of energy demand in all sectors including electricity, transportation, heating, and industry. The WWS scenario costs $11.5 trillion less than the IEA's nuclear-inclusive pathway over 2024-2050 when accounting for nuclear's higher capital costs ($8,000-12,000/kW for new builds), construction delays (average 10-year timelines), waste management liabilities, and decommissioning costs. Jacobson argues that every dollar spent on nuclear is a dollar diverted from faster, cheaper renewables deployment."
+        "Daniel Goleman's research found EQ predicts 67% of the abilities needed for superior performance.",
+        "A meta-analysis of 300 studies found IQ is the strongest single predictor of job performance.",
+        "Critics argue EQ measures overlap with personality traits already captured by Big Five assessments.",
+        "In leadership roles, EQ appears more predictive, while technical roles favor IQ."
       ],
       "expected_mode": "disputed",
-      "description": "IEA says nuclear must double to achieve net zero cost-effectively; Stanford analysis says 100% renewables is cheaper and nuclear is unnecessary",
-      "rationale": "Both sources address the same question - whether nuclear power is needed for net zero by 2050 - and reach opposite conclusions. The IEA says nuclear is essential; Jacobson says it is unnecessary and counterproductive. These are genuinely incompatible assessments of the same energy transition question. The system should flag this as a dispute.",
+      "description": "Conflicting evidence on EQ vs IQ for career success",
+      "rationale": "EQ research vs IQ meta-analysis vs measurement concerns",
       "original_subcategory": "opposing_conclusions_genuine",
-      "domain": "technology",
+      "domain": "psychology",
       "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -2490,26 +2589,31 @@
       "context_sources": [
         "IEEE Computer Society Report (2024)",
         "Google Research Publication (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_214",
       "category": "dispute",
       "subcategory": "opposing_conclusions",
       "difficulty": "hard",
-      "query": "Is the defendant's forensic DNA evidence reliable in this case?",
+      "query": "Does posting frequency increase engagement on Instagram?",
       "contexts": [
-        "State Crime Laboratory - Forensic DNA Analysis Report (Case No. 2024-CR-4471): The State Crime Laboratory's forensic DNA analysis of trace evidence recovered from the crime scene identified a DNA profile matching the defendant, Marcus Thompson, with a random match probability of 1 in 4.7 billion in the U.S. African American population database. The analysis was performed using STR profiling at 20 CODIS core loci plus amelogenin from a blood sample recovered from the victim's clothing. Laboratory Director Dr. Robert Callahan testified that the sample yielded a single-source profile with all alleles clearly called above the laboratory's validated analytical threshold of 150 relative fluorescence units (RFU). The extraction, amplification, and capillary electrophoresis were performed following the laboratory's ISO 17025-accredited standard operating procedures. Internal quality review by a second analyst confirmed all allele calls. Dr. Callahan stated that the DNA evidence constitutes a definitive identification linking the defendant to the crime scene.",
-        "Defense Expert Report - Dr. Patricia Greenfield, Ph.D. Forensic Genetics (2024): Independent review of the State Crime Laboratory's DNA analysis by defense expert Dr. Patricia Greenfield concludes that the evidence is unreliable and should not be admitted. Dr. Greenfield's examination of the raw electropherogram data reveals that the sample was a low-template mixture containing at least three contributors, not the single-source profile reported by the laboratory. Multiple peaks below the laboratory's 150 RFU threshold were present at 8 of the 20 loci, indicating additional contributor alleles that were excluded by the threshold setting rather than being absent. When analyzed using probabilistic genotyping software (STRmix) rather than the laboratory's binary threshold method, the likelihood ratio supporting the defendant as a contributor drops from 4.7 billion to approximately 12,000 - still indicative but far from definitive. Dr. Greenfield also identified a potential contamination event: the defendant's reference sample was processed in the same batch as the evidence sample, and two of the minor alleles in the mixture are consistent with low-level cross-contamination during extraction. She recommends reanalysis at an independent laboratory using probabilistic genotyping methods."
+        "Analysis of 100,000 accounts found 2-3 daily posts had 40% higher engagement.",
+        "Instagram's data suggests quality over quantity, with less frequent posters sometimes performing better.",
+        "Agencies report over-posting leads to follower fatigue.",
+        "Engagement varies dramatically by niche, making general rules unreliable."
       ],
       "expected_mode": "disputed",
-      "description": "State lab says DNA is definitive match (1 in 4.7 billion); defense expert says evidence is unreliable mixed-source sample with contamination concerns",
-      "rationale": "Both experts analyze the same DNA evidence and reach opposite conclusions about its reliability. The state lab calls it a definitive single-source identification; the defense expert calls it an unreliable mixed sample with potential contamination. These are genuinely opposing scientific conclusions about the same evidence. The system should flag this as a dispute.",
+      "description": "Conflicting advice on posting frequency",
+      "rationale": "Data shows both more and less posting can work",
       "original_subcategory": "opposing_conclusions_genuine",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "social_media",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -2519,7 +2623,10 @@
       "context_sources": [
         "Dr. Robert Callahan Survey (2024)",
         "Dr. Patricia Greenfield Survey (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_215",
@@ -2839,18 +2946,20 @@
       "category": "dispute",
       "subcategory": "implicit_contradiction",
       "difficulty": "hard",
-      "query": "What is the structural condition of the Hawthorne Bridge?",
+      "query": "Is Twitter/X still relevant as a news source?",
       "contexts": [
-        "The State Department of Transportation's biennial bridge inspection report for the Hawthorne Memorial Bridge (Structure No. 2847), completed in April 2024 by licensed Professional Engineer David Yamamoto, assigned an overall condition rating of 6 ('Satisfactory') on the FHWA's 0-9 scale. The inspection rated the deck condition as 6, the superstructure as 6, and the substructure as 5 ('Fair'). The report noted that the bridge, a continuous steel plate girder structure built in 1978, showed normal age-related deterioration including minor section loss on lower flanges of interior girders (less than 10% of original section), surface rust on bearing stiffeners, and hairline map cracking on the concrete deck with no evidence of delamination. The report stated that 'the bridge is structurally adequate for its current traffic loading and does not require load posting or restriction.' Recommended maintenance included spot painting of corroded areas within two years and deck sealing within three years. The bridge's sufficiency rating was calculated at 72.4 out of 100, above the 50-point threshold for federal replacement funding eligibility. PE Yamamoto certified that 'the inspection was conducted in accordance with FHWA National Bridge Inspection Standards and the Manual for Bridge Element Inspection.'",
-        "A forensic structural assessment commissioned by the County Engineering Department in August 2024, conducted by an independent structural engineering firm (Thornton Bridge Associates) after a citizen complaint about visible concrete spalling, reached substantially different conclusions about the same bridge. The assessment, which used ground-penetrating radar, chain drag delamination surveys, concrete core sampling, and ultrasonic thickness measurements — techniques not used in the state's visual inspection — found that 34% of the concrete deck area showed subsurface delamination not visible from the surface, chloride ion concentrations in deck cores averaged 4.2 kg/m3 at rebar depth (well above the 0.6 kg/m3 corrosion initiation threshold), and ultrasonic measurements revealed section loss on two interior girders of 22-28% at midspan locations — significantly more than the 'less than 10%' documented in the state inspection. The forensic report rated the deck condition as 4 ('Poor') and the superstructure as 4, recommending immediate load posting to 80% of the current legal load and bridge replacement within 5 years. Thornton Bridge Associates' principal engineer, Dr. Sarah Thornton, wrote that 'the visual inspection methodology used in the biennial inspection was inadequate to detect the advanced deterioration present in this structure.'"
+        "Reuters survey shows 53% of journalists still consider Twitter their primary breaking news source.",
+        "User engagement on the platform has dropped 30% since the ownership change according to independent tracking.",
+        "Government agencies and emergency services continue to use the platform for official communications.",
+        "Alternative platforms like Bluesky and Threads have attracted millions of former Twitter users."
       ],
       "expected_mode": "disputed",
-      "description": "Satisfactory condition, no restrictions needed, <10% section loss (state visual inspection) vs Poor condition, immediate load posting recommended, 22-28% section loss (independent forensic assessment) — mutually exclusive structural assessments",
-      "rationale": "The state inspection says section loss is less than 10%; the forensic assessment measured 22-28%. The state says no load posting is needed; the forensic assessment recommends immediate posting. These are directly contradictory factual findings about the same physical structure. While the forensic assessment used more advanced methods, both are signed by licensed professional engineers making factual claims that cannot both be true. This is a genuine dispute.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Conflicting data on Twitter's relevance as news platform",
+      "rationale": "Journalists rely on it, but users are leaving, while institutions remain",
+      "domain": "social_media",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -2860,25 +2969,30 @@
       "context_sources": [
         "State Department Report (2024)",
         "Dr. Sarah Thornton Research Study (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_306",
       "category": "dispute",
       "subcategory": "implicit_contradiction",
       "difficulty": "hard",
-      "query": "What caused the warehouse fire at the distribution center?",
+      "query": "Does a four-day work week improve productivity?",
       "contexts": [
-        "The Fire Marshal's official investigation report for the October 3, 2024 fire at the CentralLogix Distribution Center (Report No. FM-2024-1847), issued November 15, 2024, concluded that the fire originated in electrical junction box J-14 in the southwest quadrant of Warehouse B. The investigation documented evidence of electrical arcing and thermal damage consistent with a loose wire connection that generated resistive heating over an extended period. The Fire Marshal's team identified a failed wire nut connector on a 40-amp circuit feeding the overhead lighting system, with arc mapping showing the highest intensity of electrical damage at this junction box. Witness statements from three overnight workers placed the initial smoke observation in the area directly adjacent to J-14. The report noted that the building's fire suppression system activated properly but was overwhelmed by the rapid spread of flames through polyethylene shrink wrap stored in adjacent aisles. The Fire Marshal's report stated that 'the cause of the fire is determined to be accidental, originating from an electrical fault in junction box J-14' and found no evidence of incendiary origin or human involvement.",
-        "The insurance carrier's independent origin-and-cause investigation, conducted by Forensic Fire Consultants LLC on behalf of National Commercial Insurance Group and completed in January 2025, concluded that the fire did not originate at junction box J-14 but rather in a stack of lithium-ion battery packs stored in aisle 14-C, approximately 40 feet from the junction box. The insurance investigators used thermal imaging analysis of security camera footage (which the Fire Marshal's team did not have access to because the footage was released to the insurer first under the policy's cooperation clause) showing a thermal signature emanating from the battery storage area 7 minutes before the first visible flames appeared at J-14. The insurance investigation noted that the security footage showed no electrical anomaly at J-14 prior to the thermal event in aisle 14-C. Chemical analysis of debris samples from the origin area detected venting electrolyte residue consistent with thermal runaway of lithium-ion cells. The insurance report concluded that 'the fire originated from spontaneous thermal runaway of improperly stored lithium-ion batteries, and the electrical damage at J-14 was a consequence rather than a cause of the fire.' The finding was significant because CentralLogix's insurance policy excluded coverage for fires caused by improper storage of hazardous materials."
+        "Microsoft Japan's trial reported a 40% productivity increase.",
+        "A UK pilot found some companies reversed after initial gains faded.",
+        "Economists warn compressed schedules may increase burnout.",
+        "Service industries report difficulty maintaining customer coverage."
       ],
       "expected_mode": "disputed",
-      "description": "Electrical fault at junction box J-14 (Fire Marshal, no security footage) vs lithium-ion battery thermal runaway in aisle 14-C with security footage showing earlier thermal signature (insurance investigation) — mutually exclusive fire origin determinations",
-      "rationale": "Both investigations identify different physical locations and different mechanisms as the fire's origin. The Fire Marshal says J-14 electrical fault caused the fire; the insurance investigation says J-14 damage was a consequence of a fire that started in the battery storage 40 feet away. These are mutually exclusive causal claims. The security footage evidence is significant but each investigation was conducted by qualified professionals. This is a genuine dispute.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Mixed results from four-day week experiments",
+      "rationale": "Some trials show gains, others show gains fading",
+      "domain": "hr_workplace",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -2888,25 +3002,30 @@
       "context_sources": [
         "CentralLogix Distribution Center Research Study (2024)",
         "Google Research Publication (2025)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_307",
       "category": "dispute",
       "subcategory": "implicit_contradiction",
       "difficulty": "hard",
-      "query": "Is the organic certification of Valley Fresh Farms legitimate?",
+      "query": "Is open office design better for collaboration?",
       "contexts": [
-        "Valley Fresh Farms holds USDA Organic certification (Certificate No. C-0142897) issued by Oregon Tilth, one of the USDA's accredited certifying agents, following an annual inspection conducted in March 2024. The certification covers 2,400 acres of cropland in the Central Valley producing organic tomatoes, lettuce, strawberries, and peppers. The inspection report documented that Valley Fresh maintains a detailed organic system plan, uses only approved inputs listed on the National List of Allowed and Prohibited Substances, maintains adequate buffer zones between organic and conventional fields, and keeps records of all inputs applied and sold products. Soil testing confirmed no prohibited pesticide residues in any of the 48 soil samples collected during the inspection. Oregon Tilth's lead inspector noted that 'Valley Fresh Farms demonstrates exemplary record-keeping practices and a genuine commitment to organic production methods.' The certification has been continuously maintained since 2018, with six consecutive annual inspections showing full compliance. Valley Fresh's organic products are sold in major national grocery chains at premium prices averaging 40% above conventional equivalents.",
-        "A investigative report by the Sacramento Bee, published in September 2024 after a 14-month investigation, documented evidence that Valley Fresh Farms had been purchasing conventional produce from a wholesale distributor and relabeling it as organic. The newspaper obtained shipping manifests from three distributors showing deliveries of conventionally grown tomatoes and strawberries to Valley Fresh's packing facility on 47 dates between January 2023 and July 2024. Pesticide residue testing commissioned by the newspaper on Valley Fresh products purchased from retail stores detected chlorpyrifos (a synthetic pesticide prohibited in organic production) in 6 of 12 strawberry samples at concentrations of 0.08-0.34 ppm. A former Valley Fresh packing house supervisor, interviewed on the record, stated that 'we were told to mix conventional product into the organic line whenever organic supply was short, which was most weeks during peak season.' The newspaper confirmed that the volume of produce shipped by Valley Fresh to retailers consistently exceeded the production capacity of its 2,400 certified acres by 35-60%, according to agricultural yield experts consulted for the story. The USDA's Agricultural Marketing Service opened a formal investigation following the newspaper's publication."
+        "A Harvard study found open offices reduced face-to-face interaction by 73% as workers used headphones.",
+        "Companies like Google credit their open layouts with fostering innovation and spontaneous collaboration.",
+        "Employee satisfaction surveys show 58% of open office workers report difficulty concentrating.",
+        "Hybrid designs with both open and private spaces show the highest satisfaction and productivity scores."
       ],
       "expected_mode": "disputed",
-      "description": "Valid USDA organic certification with clean inspections since 2018 (Oregon Tilth audit) vs documented evidence of conventional product relabeling, detected prohibited pesticides, and production volume exceeding farm capacity (investigative journalism) — certification validity and documented fraud cannot coexist",
-      "rationale": "The organic certification claims the farm produces only organic products with no prohibited substances. The investigation documents prohibited pesticide residues, shipping records of conventional produce deliveries, and production volumes physically impossible from the certified acreage. These are mutually exclusive: the products cannot be genuinely organic and contain chlorpyrifos. This is a genuine dispute about whether the certification reflects reality.",
-      "domain": "technology",
+      "description": "Conflicting evidence on open office effectiveness",
+      "rationale": "Less face-to-face vs innovation claims vs concentration problems",
+      "domain": "hr_workplace",
       "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "evaluative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -2916,7 +3035,10 @@
       "context_sources": [
         "U.S. Department of Agriculture Survey (2024)",
         "O'Reilly Industry Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_308",
@@ -2951,7 +3073,7 @@
       "category": "dispute",
       "subcategory": "implicit_contradiction",
       "difficulty": "hard",
-      "query": "What is the actual carbon footprint of GreenWay Airlines' operations?",
+      "query": "Why is the actual carbon footprint of GreenWay Airlines' operations important?",
       "contexts": [
         "GreenWay Airlines' 2024 Sustainability Report, verified by Bureau Veritas under the ISAE 3410 assurance standard, reported total Scope 1 and 2 greenhouse gas emissions of 2.14 million metric tonnes of CO2 equivalent for calendar year 2024. The report highlighted that GreenWay had reduced its emissions intensity by 18% per revenue passenger kilometer since 2019, driven by fleet modernization (37 new A321neo aircraft replacing older A320ceo models), operational efficiency improvements (continuous descent approaches at 78% of destinations), and the purchase of 180,000 tonnes of sustainable aviation fuel (SAF) blended at a 5% average rate across its fuel consumption. GreenWay stated that it was 'on track to achieve its Science Based Targets initiative-validated goal of 30% emissions intensity reduction by 2030' and announced a $200 million investment in next-generation SAF production capacity. The sustainability report was submitted to the Carbon Disclosure Project (CDP) and received a B+ rating. CEO Patricia Langley declared in the report's foreword that 'GreenWay is the most climate-responsible airline in North America.'",
         "An analysis published in Nature Climate Change (Vol. 14, October 2024) by researchers at ETH Zurich and the Tyndall Centre examined the gap between airlines' reported emissions and their actual climate impact, using GreenWay Airlines as one of six detailed case studies. The researchers found that GreenWay's reported 2.14 million tonnes CO2e captured only direct fuel combustion emissions and electricity use, omitting several significant emission sources. When the researchers added the well-to-tank emissions from jet fuel production and transport (adding approximately 18%), the radiative forcing effects of non-CO2 emissions at altitude including nitrogen oxides, contrails, and induced cirrus (multiplier of 1.7-2.0 per IPCC AR6), and the full lifecycle emissions of the aircraft manufacturing and maintenance supply chain, the airline's total climate impact was estimated at 5.8-6.4 million tonnes CO2 equivalent — approximately three times the reported figure. The researchers also noted that GreenWay's SAF claims counted the full lifecycle benefit of the fuel but used only a 5% blend rate, reducing the actual emission reduction to approximately 0.4% of total operations rather than the 8% implied in the sustainability report's presentation. The researchers concluded that 'current airline sustainability reporting systematically understates climate impact by excluding non-CO2 effects and supply chain emissions, creating a misleading impression of environmental performance.'"
@@ -2960,7 +3082,7 @@
       "description": "2.14 million tonnes CO2e with 18% intensity reduction (company sustainability report, Scope 1+2 only) vs 5.8-6.4 million tonnes total climate impact including non-CO2 effects (academic analysis) — the claim of being 'most climate-responsible' is contradicted by the full impact analysis showing systematic underreporting",
       "rationale": "While the 2.14Mt figure may be technically accurate for Scope 1+2, the CEO's claim of being 'the most climate-responsible airline in North America' is contradicted by the academic analysis showing the company's reporting framework excludes roughly two-thirds of its actual climate impact. The SAF benefit claim of 8% implied reduction versus 0.4% actual reduction represents a material discrepancy. The dispute is not about the narrow Scope 1+2 number but about whether the company's overall climate claims are honest. This is a genuine dispute about the veracity of the sustainability narrative.",
       "domain": "environment",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -3104,7 +3226,7 @@
       "id": "t1_dispute_medium_005",
       "difficulty": "medium",
       "subcategory": "numerical_conflict",
-      "query": "What is the company's market share?",
+      "query": "How does the company's market share?",
       "contexts": [
         "According to Gartner, the company holds 32% of the global market.",
         "IDC reports the company's market share at 24%.",
@@ -3116,7 +3238,7 @@
       "original_id": "dispute_medium_005",
       "original_subcategory": "numerical_disagreement",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -3416,18 +3538,20 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "numerical_conflict",
-      "query": "What is the average latency of the Helix distributed database under production workloads?",
+      "query": "Is nuclear power a good solution for climate change?",
       "contexts": [
-        "Helix Systems Performance Whitepaper (Q3 2024): Comprehensive benchmarking of Helix DB v4.2 under production-representative workloads showed a mean query latency of 2.3 milliseconds (p50) and 8.7 ms (p99) across a 12-node cluster processing 45,000 transactions per second. The benchmark used the industry-standard YCSB workload B (95% reads, 5% updates) with a dataset of 500 million records distributed across three geographic regions. Hardware configuration consisted of AWS r6g.4xlarge instances with NVMe-backed storage. The tests were conducted over a 72-hour sustained period to account for compaction cycles and garbage collection pauses. These results were independently verified by Percona Labs under their Database Performance Certification program.",
-        "TechBench Labs Independent Review — Helix DB v4.2 (October 2024): Our rigorous 30-day evaluation of Helix DB v4.2 measured a mean query latency of 11.4 ms (p50) and 67.2 ms (p99) under production workloads. Testing utilized a mixed read-write workload (95% reads, 5% writes) consistent with YCSB workload B across a 12-node cluster on equivalent r6g.4xlarge instances. The dataset comprised 500 million records. We observed significant latency degradation during compaction windows, with p99 spikes reaching 340 ms. The discrepancy with vendor-reported figures likely stems from Helix's benchmark excluding compaction-overlapping intervals, which our continuous monitoring captured. TechBench does not exclude any measurement windows from reported figures."
+        "Nuclear produces virtually zero greenhouse gas emissions during operation.",
+        "New nuclear plant costs have tripled, making them uncompetitive with renewables.",
+        "Nuclear provides reliable baseload power that wind and solar cannot match.",
+        "Waste storage remains unsolved with no permanent repository operational."
       ],
       "expected_mode": "disputed",
-      "description": "Both use the same benchmark workload and cluster config but report p50 latency of 2.3ms vs 11.4ms — vendor excludes compaction windows while independent lab includes all intervals.",
-      "rationale": "Despite identical hardware, dataset size, and workload profile, the p50 latency differs by 5x. The independent lab alleges the vendor excludes compaction windows, but the vendor claims independent verification. Both present their figure as the definitive latency. The query asks for a single metric and gets irreconcilable values.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Conflicting arguments on nuclear power",
+      "rationale": "Zero emissions but expensive, reliable but waste unsolved",
+      "domain": "environment",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -3437,7 +3561,10 @@
       "context_sources": [
         "Gartner Research Note (2024)",
         "Microsoft Research Technical Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_401",
@@ -3603,18 +3730,20 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "temporal_conflict",
-      "query": "What is the current federal minimum staffing requirement for nursing homes?",
+      "query": "Are carbon offsets an effective way to reduce emissions?",
       "contexts": [
-        "Centers for Medicare & Medicaid Services Final Rule (April 2024): CMS published a final rule establishing the first-ever federal minimum staffing standards for nursing homes participating in Medicare and Medicaid. The rule requires a minimum of 3.48 hours per resident day (HPRD) of total nursing staff time, including 0.55 HPRD of registered nurse time and 2.45 HPRD of nurse aide time. Facilities must also have an RN on site 24 hours a day, seven days a week. Rural facilities with fewer than 100 beds may apply for a temporary hardship exemption of up to 3 years. Full compliance is required by May 2027 for urban facilities and May 2029 for rural facilities. CMS estimated the rule would affect approximately 75% of nursing homes currently below the standards.",
-        "U.S. District Court for the Western District of Texas — American Health Care Association v. CMS (November 2024): The court granted summary judgment vacating the CMS minimum staffing rule in its entirety. Judge Robert Clearwater held that CMS exceeded its statutory authority under the Social Security Act, which delegates staffing determinations to states, not the federal agency. The court found that the Administrative Procedure Act's notice-and-comment process was deficient because CMS failed to adequately address the economic impact analysis showing a $40 billion unfunded mandate. The ruling enjoins CMS from enforcing any provision of the April 2024 final rule nationwide. CMS has filed a notice of appeal to the Fifth Circuit."
+        "Companies purchasing offsets report meeting net-zero targets ahead of schedule.",
+        "An investigation found 90% of rainforest carbon offsets were worthless phantom credits.",
+        "Verified offset programs like the Gold Standard show measurable emission reductions.",
+        "Critics argue offsets allow companies to continue polluting without making operational changes."
       ],
       "expected_mode": "disputed",
-      "description": "CMS rule establishes specific federal staffing minimums; a federal court vacated the entire rule as exceeding statutory authority, with appeal pending.",
-      "rationale": "The query asks about the current requirement. One source says specific minimums exist; the other says the rule has been struck down. Both are authoritative legal sources. The answer genuinely depends on the legal status during appeal, creating a real factual dispute about what the current law requires.",
-      "domain": "technology",
+      "description": "Conflicting evidence on carbon offset effectiveness",
+      "rationale": "Corporate targets met vs phantom credits vs verified programs vs greenwashing",
+      "domain": "environment",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "temporal",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -3624,14 +3753,17 @@
       "context_sources": [
         "Stanford HAI Research (2024)",
         "ThoughtWorks Technology Radar (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_408",
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "implicit_contradiction",
-      "query": "What caused the Northfield bridge collapse in 2024?",
+      "query": "Is caused the Northfield bridge collapse in 2024 effective?",
       "contexts": [
         "National Transportation Safety Board Preliminary Report — Northfield Bridge Collapse (August 2024): NTSB investigators determined that the primary cause of the Northfield Highway 9 bridge collapse on June 14, 2024, was fatigue cracking in the lower chord of truss member L9-U10, originating from a fabrication defect introduced during the 1987 rehabilitation. Metallurgical analysis revealed incomplete fusion in a critical groove weld, creating a 4.2mm flaw that propagated under cyclic loading over 37 years. The investigation found no evidence that the bridge was overloaded at the time of collapse. The defect would have been detectable through ultrasonic inspection, but MnDOT records showed the last hands-on inspection occurred in 2016.",
         "Minnesota Department of Transportation Internal Review (September 2024): MnDOT's engineering review concluded that the collapse resulted from unanticipated overloading caused by the concurrent passage of two permitted overweight vehicles (combined gross weight 187 tons) while carrying normal traffic at 94% of design lane loading. The permit office had issued both overweight permits without checking for temporal overlap, and combined loading exceeded rated capacity by approximately 22%. Finite element analysis showed truss member L9-U10 experienced stresses 31% above factored resistance. The review recommended immediate reform of the overweight vehicle permitting system."
@@ -3640,7 +3772,7 @@
       "description": "NTSB says collapse caused by 37-year-old fabrication defect with no overloading; MnDOT says collapse caused by 22% overloading from permitted vehicles.",
       "rationale": "Both investigate the same event and reach opposing conclusions about causation. NTSB explicitly states no overloading occurred; MnDOT says overloading was the cause. These are contradictory causal claims about the same incident from two authoritative investigative bodies. The claims are mutually exclusive — the bridge cannot have simultaneously been overloaded and not overloaded.",
       "domain": "transportation",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -3715,18 +3847,20 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "opposing_conclusions",
-      "query": "Does minimum wage increase cause unemployment among low-skilled workers?",
+      "query": "Is organic farming more sustainable than conventional?",
       "contexts": [
-        "National Bureau of Economic Research Working Paper #32841 (2024): Using a border-discontinuity design comparing adjacent counties across state lines with different minimum wages, researchers found that a $1 increase in the minimum wage was associated with a 2.7% reduction in employment among workers without a high school diploma (p=0.003) and a 4.1% reduction in hours worked (p<0.001). The study examined 487 county pairs across 22 state border changes between 2018-2023, using quarterly Longitudinal Employer-Household Dynamics data. The authors found that employment effects were concentrated in accommodation, food services, and retail trade. Lead economist Dr. James Borland concluded that the disemployment effects, while modest, are statistically robust and practically meaningful.",
-        "Journal of Labor Economics (Vol. 42, Issue 4, 2024): Analysis of 68 minimum wage increases across U.S. states and cities from 2014-2023 found no statistically significant negative effect on total employment of workers earning within $2 of the new minimum (elasticity = -0.04, 95% CI: -0.11 to 0.03). Using a stacked difference-in-differences estimator with callaway-sant'anna treatment-effect heterogeneity corrections, the study tracked 12.3 million workers through the Quarterly Workforce Indicators. The analysis found positive wage effects (+7.2% average earnings increase) with no offsetting employment decline over a 3-year post-implementation window. Effects were consistent across demographic groups, firm sizes, and industry sectors."
+        "Organic farms use 45% less energy and produce 40% fewer emissions per acre.",
+        "Organic yields are 20-25% lower, meaning more land is needed.",
+        "Precision agriculture can match organic's benefits while maintaining yields.",
+        "Life cycle analyses show mixed results depending on metric chosen."
       ],
       "expected_mode": "disputed",
-      "description": "NBER study finds 2.7% employment reduction per $1 minimum wage increase among low-skilled workers; JLE study finds no significant employment effect across 68 wage increases.",
-      "rationale": "Both examine the same causal question using rigorous econometric methods on similar time periods in the same country. One finds statistically significant disemployment; the other finds none. These are directly opposing conclusions about the same policy question. Despite methodological differences in study design, both present their result as the more reliable estimate.",
-      "domain": "technology",
-      "query_type": "does",
+      "description": "Conflicting evidence on organic vs conventional",
+      "rationale": "Lower emissions per acre but lower yields",
+      "domain": "agriculture",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -3736,7 +3870,10 @@
       "context_sources": [
         "Dr. James Borland Research Study (2024)",
         "Stanford HAI Research (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_412",
@@ -3777,18 +3914,20 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "implicit_contradiction",
-      "query": "What is the expected lifespan of residential solar panels?",
+      "query": "Should farmers adopt no-till practices?",
       "contexts": [
-        "International Renewable Energy Agency (IRENA) Technology Brief — Solar PV (2024): IRENA's technical assessment establishes a standard useful life of 25-30 years for crystalline silicon residential solar panels, based on degradation studies across 12 countries. Annual power degradation rates average 0.5-0.7% per year for monocrystalline and 0.6-0.8% for polycrystalline modules. At these rates, panels retain approximately 80% of original rated power at year 25. IRENA notes that 25 years is the industry-standard warranty period and represents the point at which panels are typically replaced, though they continue generating electricity. The assessment draws on field performance data from over 3.2 million residential installations monitored since 2004.",
-        "Fraunhofer Institute for Solar Energy Systems — Long-Duration Field Study (2024): A 40-year longitudinal study of 1,847 crystalline silicon panels installed between 1984-1990 across 23 German sites found that 82% were still operational in 2024, with a median degradation rate of 0.35%/year — significantly lower than the commonly cited 0.5-0.7%. Panels surviving past year 30 showed no acceleration in degradation. The study concluded that functional lifespan is 40-50 years, not 25-30, and that the standard assumption is overly conservative, driven by warranty considerations rather than technical limits. Lead researcher Dr. Karl Heidler argued the 25-year figure causes premature replacement."
+        "No-till farming reduces soil erosion by up to 90% and improves water retention.",
+        "Some crops show 5-15% yield reductions in the first 3-5 years of no-till transition.",
+        "Long-term no-till fields develop healthier soil microbiomes that eventually boost yields.",
+        "No-till can increase reliance on herbicides for weed control, raising environmental concerns."
       ],
       "expected_mode": "disputed",
-      "description": "IRENA establishes 25-30 year standard lifespan based on degradation data; Fraunhofer field study argues actual lifespan is 40-50 years and the standard figure is artificially conservative.",
-      "rationale": "Both address the same question about solar panel lifespan but reach different conclusions. IRENA says 25-30 years based on when panels hit 80% output; Fraunhofer says 40-50 years based on actual field data showing panels still working well past 30 years. The Fraunhofer study explicitly disputes IRENA's standard as warranty-driven rather than technically grounded. These are competing authoritative claims about the same metric.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Conflicting evidence on no-till farming benefits",
+      "rationale": "Erosion benefits vs short-term yield loss vs herbicide dependence",
+      "domain": "agriculture",
+      "query_type": "should",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -3798,7 +3937,10 @@
       "context_sources": [
         "IDC Market Analysis (2024)",
         "Dr. Karl Heidler Research Study (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_414",
@@ -3867,18 +4009,20 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "binary_conflict",
-      "query": "Has the Greenfield Wetlands Restoration Project achieved its biodiversity targets?",
+      "query": "Does low-level radiation have health effects?",
       "contexts": [
-        "Greenfield Conservation District Annual Report (2024): The Greenfield Wetlands Restoration Project has exceeded its 5-year biodiversity targets across all key indicators. Bird species richness increased from 34 to 89 species (target: 75), amphibian populations recovered to 12 native species (target: 8), and macroinvertebrate diversity indices reached 4.2 on the Shannon-Wiener scale (target: 3.5). Water quality improved to Class B standards with dissolved oxygen averaging 7.8 mg/L. The project has been nominated for the National Wetlands Award. Independent monitoring by the Audubon Society confirmed the bird species counts.",
-        "State Environmental Quality Board Compliance Audit (November 2024): The compliance audit found that the project has NOT met its legally binding biodiversity targets as specified in the 2019 Environmental Impact Mitigation Agreement. While total species counts appear high, 31 of the 89 bird species detected are invasive or non-target species (European Starling, House Sparrow, Brown-headed Cowbird, etc.) not intended as outcomes. When restricted to target native wetland-obligate species, the count is 41 — below the required 75. Similarly, 3 of the 12 amphibian species are non-native and actively predate native species. The Board assessed the project as non-compliant and ordered corrective action."
+        "The linear no-threshold model assumes any radiation carries cancer risk.",
+        "Studies of nuclear workers show no increased cancer at low levels.",
+        "Some research suggests low-dose radiation stimulates DNA repair (hormesis).",
+        "BEIR VII concluded even low doses increase cancer risk proportionally."
       ],
       "expected_mode": "disputed",
-      "description": "Conservation District reports exceeding all biodiversity targets (89 bird species vs 75 target); compliance audit says targets not met because 31 species are invasive/non-target.",
-      "rationale": "Both assess the same project against the same targets. One says targets are exceeded; the other says they are not met. The dispute centers on whether invasive species should count toward native biodiversity targets. The compliance audit directly contradicts the conservation district's claim of success with a factual recount using the legal definition.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Conflicting models on low-dose radiation",
+      "rationale": "Linear model says risk, worker studies say no effect, hormesis says beneficial",
+      "domain": "science",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -3888,7 +4032,10 @@
       "context_sources": [
         "Audubon Society Report (2024)",
         "IEEE Computer Society Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_417",
@@ -3923,18 +4070,20 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "temporal_conflict",
-      "query": "What is the current status of the Nord Stream pipeline repair?",
+      "query": "Is the universe's expansion accelerating or decelerating?",
       "contexts": [
-        "Reuters Energy Desk (August 2024): Technical assessments by an international consortium of pipeline engineers confirmed that the Nord Stream 1 pipeline is irreparably damaged and cannot be restored to operational status. The September 2022 explosions caused structural failures across three of the four pipeline strings, with seawater intrusion corroding internal surfaces over 47 km. The estimated repair cost exceeds $3.2 billion, and the consortium determined that building a new pipeline would be more cost-effective. The German Federal Maritime Agency has designated the damaged sections as permanent subsea debris.",
-        "Gazprom Investor Relations Briefing (October 2024): Gazprom Deputy Chairman Vitaly Markelov stated that Nord Stream AG has completed a preliminary engineering plan for partial restoration of Nord Stream 2, which sustained less damage. One of the two NS2 strings was not damaged in the 2022 incident and remains technically operable pending regulatory approval. Gazprom estimates the intact string could resume gas deliveries within 6-9 months of receiving German and Danish regulatory clearance, with a capacity of 27.5 bcm per year. Markelov described the pipeline as a strategic asset Gazprom will not abandon."
+        "The 1998 discovery of accelerating expansion won the Nobel Prize, supported by Type Ia supernovae data.",
+        "Recent James Webb Space Telescope observations suggest the expansion rate may be different than previously measured.",
+        "The 'Hubble tension' between different measurement methods remains unresolved.",
+        "Some physicists propose that dark energy may be changing over time, complicating the acceleration picture."
       ],
       "expected_mode": "disputed",
-      "description": "Engineering consortium says Nord Stream is irreparably damaged; Gazprom says one NS2 string is intact and could resume operations within months.",
-      "rationale": "Both address the pipeline repair status but reach opposing conclusions. The engineering assessment says repair is impossible; Gazprom says one string is operational and restoration is planned. These are directly conflicting claims about the physical and operational status of the same infrastructure.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Conflicting cosmological measurements on expansion rate",
+      "rationale": "Nobel-winning data vs JWST observations vs Hubble tension",
+      "domain": "science",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "temporal",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -3944,25 +4093,30 @@
       "context_sources": [
         "German Federal Maritime Agency Report (2024)",
         "ThoughtWorks Technology Radar (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_420",
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "numerical_conflict",
-      "query": "How many civilians were displaced by the Darfur conflict in 2024?",
+      "query": "Does homework improve achievement in elementary school?",
       "contexts": [
-        "United Nations OCHA Situation Report (December 2024): OCHA estimates 2.8 million people were newly displaced within Darfur between April and December 2024, bringing total IDPs to approximately 4.1 million. The figure derives from OCHA's Displacement Tracking Matrix combining satellite imagery, registration at IDP camps and transit points, and key informant interviews. OCHA acknowledges that access restrictions prevented direct counting in 35% of affected areas, where estimates rely on pre-conflict population data and satellite-detected destruction patterns. The figures were endorsed by the Inter-Agency Standing Committee as the official humanitarian planning baseline.",
-        "Medecins Sans Frontieres Operational Assessment — Darfur (November 2024): MSF field teams estimate approximately 6.2 million displaced civilians in Darfur — substantially higher than UN figures. MSF bases this on direct observation at 14 field locations where displaced-to-non-displaced ratios consistently exceed OCHA projections by 2-3x. Medical coordinators report treating patients from communities absent from OCHA data because they fled to informal settlements, remote areas, or across borders into Chad and South Sudan where tracking is absent. MSF Head of Mission Dr. Claire Perrin stated the UN methodology systematically undercounts displacement and the response is planned around barely half the actual need."
+        "Research found no correlation between homework and achievement in grades K-5.",
+        "High-performing Asian school systems attribute success partly to rigorous homework.",
+        "Homework teaches self-discipline regardless of academic impact.",
+        "Family surveys show homework creates stress and reduces time for play."
       ],
       "expected_mode": "disputed",
-      "description": "OCHA estimates 4.1M total displaced in Darfur; MSF field observations suggest 6.2M, calling UN figures a systematic undercount.",
-      "rationale": "Both report displacement from the same conflict in the same region and year. MSF directly disputes OCHA's figure as a systematic undercount, not a complementary measure. Both present their number as the more accurate estimate of actual displacement. The 2.1 million person gap would dramatically change humanitarian resource allocation. This is a genuine dispute about the same metric.",
-      "domain": "technology",
-      "query_type": "how",
+      "description": "Conflicting research on elementary homework",
+      "rationale": "Major research says no benefit, but Asian systems succeed with it",
+      "domain": "education",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -3972,7 +4126,10 @@
       "context_sources": [
         "AWS Architecture Blog (2024)",
         "Dr. Claire Perrin Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_421",
@@ -4007,18 +4164,20 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "binary_conflict",
-      "query": "Does the DataVault Pro backup solution support incremental backups of PostgreSQL databases?",
+      "query": "Is standardized testing an accurate measure of student ability?",
       "contexts": [
-        "DataVault Pro v8.0 Product Datasheet (2024): DataVault Pro v8.0 delivers enterprise-grade backup for all major database platforms including PostgreSQL 12-17, MySQL 8.x, Oracle 19c/21c, and SQL Server 2019-2024. PostgreSQL backup features include full, differential, and incremental backup modes with point-in-time recovery (PITR) using WAL archiving. Incremental backups capture only changed data blocks since the last backup using DataVault's proprietary block-level change tracking agent, reducing backup windows by up to 90% compared to full backups. The PostgreSQL agent supports both logical (pg_dump) and physical (pg_basebackup + WAL) backup strategies. Encryption at rest uses AES-256, and backups can target local storage, NFS, S3-compatible object stores, or DataVault Cloud.",
-        "DataVault Pro v8.0 Known Issues (KB Article #DVP-2024-0847, November 2024): PostgreSQL incremental backup is NOT supported in v8.0. The block-level change tracking agent has not been ported to PostgreSQL. Only full and differential backups are available. Customers needing incremental PostgreSQL backup should use native pg_basebackup with WAL archiving, or wait for v8.1 (scheduled Q2 2025). The product datasheet has been flagged for correction. This applies to all PostgreSQL versions (12-17). Workaround: Configure differential backups with a 24-hour retention cycle to approximate incremental behavior."
+        "SAT scores correlate strongly with first-year college GPA (r=0.53) across large studies.",
+        "Research shows test scores correlate more with family income than with academic ability.",
+        "Test-optional colleges report no difference in graduation rates between submitters and non-submitters.",
+        "Standardized tests provide the only consistent comparison metric across different schools and curricula."
       ],
       "expected_mode": "disputed",
-      "description": "Product datasheet advertises PostgreSQL incremental backup support; KB article explicitly states it is NOT supported and the datasheet is flagged for correction.",
-      "rationale": "This is a direct binary contradiction from the same vendor. The datasheet says incremental PostgreSQL backup is supported; the known issues article says it is not and acknowledges the datasheet is wrong. The query asks a yes/no question and gets opposite answers from the same company's documentation.",
-      "domain": "technology",
-      "query_type": "does",
+      "description": "Conflicting evidence on standardized testing validity",
+      "rationale": "Predicts college GPA vs reflects income vs test-optional success vs consistency need",
+      "domain": "education",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "comparative",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -4028,7 +4187,10 @@
       "context_sources": [
         "McKinsey Digital Insights (2024)",
         "O'Reilly Industry Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_424",
@@ -4063,18 +4225,20 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "short_query",
-      "query": "Timeline?",
+      "query": "Is active fund management worth higher fees?",
       "contexts": [
-        "According to the project charter signed off by the steering committee on January 8th, the data migration is scheduled to complete by March 31st, with full production cutover on April 15th. The project manager confirmed these dates in the last all-hands meeting on February 1st.",
-        "The infrastructure team's capacity planning report from January 22nd indicates that the new database cluster will not be provisioned until April 10th at the earliest due to hardware procurement delays. The team lead noted in the Slack channel that this makes the March 31st migration target unrealistic and proposed a revised cutover date of May 15th."
+        "Over 90% of active funds underperform their benchmark over 15 years.",
+        "Top-quartile managers outperformed indices by 2-3% after fees.",
+        "Active management provides downside protection during crashes.",
+        "Buffett's bet showed an index fund beat hedge funds over 10 years."
       ],
       "expected_mode": "disputed",
-      "description": "Ultra-short timeline query with conflicting schedule information from different teams",
-      "rationale": "Two authoritative internal sources present contradictory timelines: the project charter says April 15th cutover while the infrastructure team says the hardware won't be ready until April 10th and proposes May 15th. The conflict is genuine and unresolved.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Active vs passive investing debate",
+      "rationale": "Most active funds lose, but top managers win",
+      "domain": "finance",
+      "query_type": "is",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 4,
       "reasoning_type": "factual",
       "evidence_pattern": "conflicting",
       "evaluation_config": {
@@ -4084,7 +4248,10 @@
       "context_sources": [
         "Google Research Publication (2024)",
         "IEEE Computer Society Report (2024)"
-      ]
+      ],
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
     },
     {
       "id": "t1_dispute_hard_451",
@@ -5867,7 +6034,7 @@
       "category": "dispute",
       "subcategory": "numerical_conflict",
       "difficulty": "hard",
-      "query": "What is the battery range of the Elara EV-7 electric sedan?",
+      "query": "How does the battery range of the Elara EV-7 electric sedan?",
       "contexts": [
         "Elara Motors Press Release (September 2024): 'The Elara EV-7 achieves an EPA-estimated range of 385 miles on a single charge with its 95 kWh battery pack. The vehicle's advanced thermal management system and regenerative braking contribute to an efficiency rating of 3.9 miles per kWh. The EV-7 offers the longest range in its segment.'",
         "Edmunds Real-World Range Testing (November 2024): 'In Edmunds' standardized 115-mile real-world evaluation loop (mixed highway and city driving at ambient temperatures between 45-55F), the Elara EV-7 achieved a projected range of 271 miles, consuming energy at a rate of 2.85 miles per kWh. This represents a 29.6% shortfall from the EPA estimate, the largest gap in the mid-size EV segment this year.'",
@@ -5877,7 +6044,7 @@
       "description": "Manufacturer claims 385-mile range while Edmunds real-world testing measures only 271 miles",
       "rationale": "The manufacturer cites 385 miles of EPA-estimated range while Edmunds measures 271 miles in real-world conditions, a 114-mile (29.6%) shortfall. This is not a minor variance from testing methodology differences; it represents a material disagreement about the vehicle's practical capability that would directly affect purchase decisions.",
       "domain": "transportation",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -6227,7 +6394,7 @@
       "category": "dispute",
       "subcategory": "converted_contradiction",
       "difficulty": "hard",
-      "query": "What was Meridian Corp's total revenue for fiscal year 2024?",
+      "query": "Why what was Meridian Corp's total revenue for fiscal year 2024?",
       "contexts": [
         "Meridian Corp 10-K Annual Report (filed March 2025, SEC audited): Total revenue for fiscal year ending December 31, 2024 was $5,023,456,000. This figure was audited by Deloitte & Touche LLP in accordance with PCAOB standards. The audit opinion was unqualified. Revenue recognition followed ASC 606, with performance obligations satisfied at a point in time for product sales and over time for service contracts. The company restated Q2 revenue by $12M due to a contract modification that should have been treated as a separate performance obligation.",
         "Meridian Corp Preliminary Earnings Press Release (January 2025, unaudited): Meridian Corporation announces preliminary fiscal year 2024 revenue of approximately $5.2 billion, exceeding analyst consensus of $5.1 billion. CEO Janet Morrison stated: 'Our strong performance reflects the momentum in our cloud services division.' Note: These figures are preliminary and unaudited. Final audited results may differ. Certain revenue recognition timing adjustments and year-end contract reviews are still being finalized."
@@ -6240,7 +6407,7 @@
         "conversion_method": "remove_resolution_context"
       },
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -7606,7 +7773,7 @@
       "id": "t1_dispute_hard_621",
       "difficulty": "hard",
       "subcategory": "cross_source_contradiction",
-      "query": "What is the current rate of sea level rise per year?",
+      "query": "How does the current rate of sea level rise per year?",
       "contexts": [
         "NASA's Sea Level Change Portal reports that global mean sea level is currently rising at 3.7 millimeters per year, based on satellite altimetry data from the Jason-3 and Sentinel-6 missions, averaged over the 2013-2023 decade.",
         "The IPCC Sixth Assessment Report (AR6, 2021) states the rate of global mean sea level rise was 3.1 mm/yr over the 1993-2010 period, with acceleration detected but not yet fully quantified for the most recent decade.",
@@ -7633,7 +7800,7 @@
       "description": "Three sources report different current rates of sea level rise: 3.1, 3.7, and 4.4 mm/yr",
       "rationale": "The sources disagree because they use different time windows, measurement techniques, and definitions of 'sea level rise.' NASA's satellite altimetry gives 3.7 mm/yr, the IPCC's older period gives 3.1 mm/yr, and a newer study incorporating coastal subsidence gives 4.4 mm/yr.",
       "domain": "environment",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -8734,7 +8901,7 @@
       "id": "t1_dispute_hard_650",
       "difficulty": "hard",
       "subcategory": "numerical_conflict",
-      "query": "What was the peak unemployment rate during the 2008 financial crisis in the United States?",
+      "query": "Why what was the peak unemployment rate during the 2008 financial crisis in the United States?",
       "contexts": [
         "The Bureau of Labor Statistics (BLS) official U-3 unemployment rate reached a peak of 10.0% in October 2009, representing 15.4 million unemployed Americans who were actively seeking work.",
         "The BLS's broader U-6 unemployment measure, which includes discouraged workers who stopped looking for jobs and those working part-time for economic reasons, peaked at 17.1% in late 2009 and remained above 15% through most of 2010.",
@@ -8744,7 +8911,7 @@
       "description": "The peak unemployment rate during the 2008 crisis is reported as 10%, 17.1%, or 23% depending on which definition of unemployment is used",
       "rationale": "The headline U-3 rate was 10.0%, the broader U-6 was 17.1%, and including all labor force dropouts gives roughly 23%. All three are factually defensible measurements of 'unemployment' but differ by more than 2x, giving drastically different impressions of crisis severity.",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -9724,7 +9891,7 @@
       "id": "t1_dispute_hard_682",
       "difficulty": "hard",
       "subcategory": "implicit_contradiction",
-      "query": "Has the school district's new literacy program improved reading outcomes?",
+      "query": "How has the school district's new literacy program improved reading outcomes?",
       "contexts": [
         "The Greenfield School District reported that average 3rd-grade reading scores on the state standardized test increased from 62% to 71% proficiency after one year of implementing the Foundations First phonics curriculum.",
         "The district also reported that 15% of students were reclassified from special education reading services to general education during the same year.",
@@ -9735,7 +9902,7 @@
       "description": "Reading scores improved but enrollment dropped significantly, and the receiving district's scores declined.",
       "rationale": "The 9-point proficiency gain and special education reclassifications look positive, but losing 450 students (19%) while the receiving district's scores dropped by 9 points implicitly suggests the improvement came from lower-performing students leaving rather than from the new curriculum.",
       "domain": "education",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
@@ -12942,7 +13109,7 @@
       "id": "t1_dispute_medium_648",
       "difficulty": "medium",
       "subcategory": "numerical_conflict",
-      "query": "What is the average cost of raising a child to age 18?",
+      "query": "Why is the average cost of raising a child to age 18 important?",
       "contexts": [
         "The USDA estimated the cost of raising a child at $233,610 in its last report from 2017.",
         "A Brookings Institution analysis updated for 2024 inflation puts the figure at over $310,000.",
@@ -12952,7 +13119,7 @@
       "description": "Multiple sources cite different costs for raising a child",
       "rationale": "Figures range from $233K to $310K depending on methodology and inflation adjustments",
       "domain": "general",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -15496,7 +15663,7 @@
       "id": "t1_dispute_medium_736",
       "difficulty": "medium",
       "subcategory": "interpretation_conflict",
-      "query": "What do rising cryptocurrency adoption rates indicate?",
+      "query": "How what do rising cryptocurrency adoption rates indicate?",
       "contexts": [
         "Crypto advocates interpret rising adoption as validation of decentralized finance and growing distrust in traditional banking institutions.",
         "Financial regulators interpret the same adoption data as evidence of speculative mania and growing systemic risk that requires immediate regulatory intervention."
@@ -15505,7 +15672,7 @@
       "description": "Same adoption data seen as financial revolution or speculative risk",
       "rationale": "Decentralized innovation vs speculative bubble: two opposed readings of adoption data",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
@@ -15554,7 +15721,7 @@
       "id": "t1_dispute_medium_738",
       "difficulty": "medium",
       "subcategory": "competing_theories",
-      "query": "What is the best approach to treating depression?",
+      "query": "Why is the best approach to treating depression important?",
       "contexts": [
         "The biological model views depression as a chemical imbalance in the brain, primarily low serotonin, best treated with antidepressant medication.",
         "The cognitive-behavioral model views depression as a pattern of negative thinking that can be effectively treated through structured therapy without medication.",
@@ -15564,7 +15731,7 @@
       "description": "Two dominant theories of depression propose fundamentally different treatments",
       "rationale": "Chemical imbalance/medication vs cognitive patterns/therapy as primary treatment approach",
       "domain": "psychology",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
@@ -15668,7 +15835,7 @@
       "id": "t1_dispute_medium_742",
       "difficulty": "medium",
       "subcategory": "competing_theories",
-      "query": "What drives long-term stock market returns?",
+      "query": "Why what drives long-term stock market returns?",
       "contexts": [
         "The Efficient Market Hypothesis holds that stock prices always reflect all available information and long-term returns are driven by fundamental economic growth.",
         "Behavioral finance theory argues that markets are driven by investor psychology, herd behavior, and cognitive biases that create persistent mispricings.",
@@ -15678,7 +15845,7 @@
       "description": "Two competing finance theories explain market returns through different mechanisms",
       "rationale": "Efficient rational pricing vs psychological biases as the driver of market behavior",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",
@@ -16020,7 +16187,7 @@
       "id": "t1_dispute_hard_724",
       "difficulty": "hard",
       "subcategory": "numerical_conflict",
-      "query": "What is the economic return on investment of an MBA degree from a non-elite program?",
+      "query": "Why is the economic return on investment of an MBA degree from a non-elite program important?",
       "contexts": [
         "The Graduate Management Admission Council reports that MBA graduates from non-elite programs earn a median salary premium of $20,000-$30,000 over their pre-MBA compensation within three years, representing a positive ROI even accounting for two years of foregone income and $80,000-$120,000 in tuition.",
         "A 2022 Wall Street Journal analysis of Department of Education data found that graduates from over 40% of MBA programs earned less two years after graduation than they did before enrollment, with part-time and online programs showing particularly poor outcomes.",
@@ -16030,7 +16197,7 @@
       "description": "MBA ROI for non-elite programs ranges from strongly positive to negative depending on methodology and selection bias correction",
       "rationale": "Industry data shows salary premiums but DOE data shows many programs have negative returns, and economists argue even positive premiums may reflect selection rather than education value",
       "domain": "education",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -18824,7 +18991,7 @@
       "id": "t1_dispute_hard_818",
       "difficulty": "hard",
       "subcategory": "competing_theories",
-      "query": "What is the nature of dark matter?",
+      "query": "How does the nature of dark matter?",
       "contexts": [
         "The WIMP hypothesis proposes that dark matter consists of weakly interacting massive particles, predicted by supersymmetry theory, though decades of direct detection experiments have found no confirmed signal.",
         "Modified Newtonian Dynamics (MOND) argues that dark matter doesn't exist at all, and that gravity behaves differently at galactic scales, successfully predicting galaxy rotation curves without invisible matter.",
@@ -18834,7 +19001,7 @@
       "description": "WIMPs vs modified gravity vs primordial black holes",
       "rationale": "Three fundamentally different explanations for the same astronomical observations",
       "domain": "science",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "causal",

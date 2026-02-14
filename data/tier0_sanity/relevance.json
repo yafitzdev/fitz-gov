@@ -44,7 +44,7 @@
         "mode": "answer_quality",
         "use_regex": false,
         "case_insensitive": true,
-        "min_required": 1
+        "min_required": 5
       }
     },
     {
@@ -82,7 +82,7 @@
         "mode": "answer_quality",
         "use_regex": false,
         "case_insensitive": true,
-        "min_required": 1
+        "min_required": 5
       }
     },
     {
@@ -121,7 +121,7 @@
         "mode": "answer_quality",
         "use_regex": false,
         "case_insensitive": true,
-        "min_required": 1
+        "min_required": 5
       }
     },
     {
@@ -155,7 +155,7 @@
         "mode": "answer_quality",
         "use_regex": false,
         "case_insensitive": true,
-        "min_required": 1
+        "min_required": 6
       }
     },
     {
@@ -195,7 +195,7 @@
         "mode": "answer_quality",
         "use_regex": false,
         "case_insensitive": true,
-        "min_required": 1
+        "min_required": 6
       }
     },
     {
@@ -235,7 +235,7 @@
         "mode": "answer_quality",
         "use_regex": false,
         "case_insensitive": true,
-        "min_required": 1
+        "min_required": 4
       }
     },
     {
@@ -273,7 +273,7 @@
         "mode": "answer_quality",
         "use_regex": false,
         "case_insensitive": true,
-        "min_required": 1
+        "min_required": 3
       }
     },
     {
@@ -311,7 +311,7 @@
         "mode": "answer_quality",
         "use_regex": false,
         "case_insensitive": true,
-        "min_required": 1
+        "min_required": 4
       }
     }
   ],

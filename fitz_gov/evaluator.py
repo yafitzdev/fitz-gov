@@ -430,10 +430,15 @@ class FitzGovEvaluator:
 
                 for match in matches:
                     matched_text = match.group() if hasattr(match, "group") else pattern
+                    match_span = (
+                        (match.start(), match.end())
+                        if hasattr(match, "start")
+                        else None
+                    )
 
-                    # Check if match is within an allowed phrase
+                    # Check if forbidden match overlaps with an allowed phrase
                     is_allowed = self._check_allowed_phrases(
-                        response, allowed_phrases, regex_flags
+                        response, allowed_phrases, regex_flags, match_span
                     )
 
                     if not is_allowed:
@@ -620,13 +625,32 @@ class FitzGovEvaluator:
         response: str,
         allowed_phrases: list[str],
         regex_flags: int,
+        forbidden_span: tuple[int, int] | None = None,
     ) -> bool:
-        """Check if response matches any allowed phrase pattern."""
+        """Check if a forbidden match overlaps with an allowed phrase.
+
+        Args:
+            response: The full response text.
+            allowed_phrases: Regex patterns for allowed phrases.
+            regex_flags: Regex flags to use.
+            forbidden_span: (start, end) of the forbidden match. If provided,
+                only returns True when the forbidden match is *within* an
+                allowed phrase match, preventing the escape-hatch where an
+                allowed phrase elsewhere in the response clears an unrelated
+                forbidden match.
+        """
         for allowed in allowed_phrases:
             try:
-                if re.search(allowed, response, regex_flags):
-                    return True
+                for allowed_match in re.finditer(allowed, response, regex_flags):
+                    if forbidden_span is None:
+                        return True
+                    # Check overlap: forbidden match must be within allowed span
+                    a_start, a_end = allowed_match.start(), allowed_match.end()
+                    f_start, f_end = forbidden_span
+                    if a_start <= f_start and f_end <= a_end:
+                        return True
             except re.error:
                 if allowed.lower() in response.lower():
-                    return True
+                    if forbidden_span is None:
+                        return True
         return False

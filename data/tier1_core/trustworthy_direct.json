@@ -94,25 +94,29 @@
       "id": "t1_confident_hard_004",
       "difficulty": "hard",
       "subcategory": "conditional_confidence",
-      "query": "Should we use Kubernetes or Docker Swarm for our deployment?",
+      "query": "How do you remove red wine stains from cotton?",
       "contexts": [
-        "For your requirements (500+ microservices, multi-cloud deployment, auto-scaling needs), Kubernetes is the better choice. Our analysis shows: Kubernetes supports all major cloud providers natively while Swarm has limited multi-cloud support. Kubernetes handles 10,000+ pods per cluster vs Swarm's practical limit of 1,000 containers. Kubernetes has 4x more third-party integrations. The learning curve is steeper (estimated 3 months vs 2 weeks), but long-term operational benefits outweigh initial investment."
+        "To remove red wine stains from cotton, blot immediately without rubbing. Apply table salt to absorb, let sit 5 minutes, rinse with cold water. Follow with one part dish soap to two parts hydrogen peroxide, apply directly to stain, wash in cold water. For set-in stains, soak in enzyme-based remover for 30 minutes.",
+        "White cotton is easiest to treat because it withstands hydrogen peroxide."
       ],
       "expected_mode": "trustworthy",
-      "description": "Technical decision question with clear recommendation and data",
-      "rationale": "Clear recommendation for Kubernetes with specific comparative data",
+      "description": "Step-by-step stain removal with clear instructions",
+      "rationale": "Complete process with specific ratios and timing",
       "original_id": "confident_hard_004",
       "original_subcategory": "comparison_explicit",
-      "domain": "technology",
-      "query_type": "should",
+      "domain": "general",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "evaluative",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -259,77 +263,84 @@
       "id": "t1_confident_hard_010",
       "difficulty": "hard",
       "subcategory": "direct_factual",
-      "query": "What are the SLA guarantees for the enterprise tier?",
+      "query": "What is the difference between baking soda and baking powder?",
       "contexts": [
-        "Enterprise Tier SLA Guarantees: Uptime: 99.99% availability (maximum 52.6 minutes downtime per year). Response time: API responses under 100ms for 99th percentile. Support: 15-minute response time for critical issues, 4-hour resolution target. Data durability: 99.999999999% (11 nines) with cross-region replication. Backup: Daily automated backups retained for 30 days, point-in-time recovery. Credits: 10% credit for each 0.1% below SLA, up to 100% monthly fee."
+        "Baking soda (sodium bicarbonate) requires an acid to activate. Baking powder contains baking soda plus cream of tartar and cornstarch. Double-acting baking powder reacts twice: when wet and when heated. Use baking soda when recipe has acidic ingredients; baking powder when it does not.",
+        "Substitution: 1 tsp baking powder = 1/4 tsp baking soda + 1/2 tsp cream of tartar."
       ],
       "expected_mode": "trustworthy",
-      "description": "SLA question with all guarantees precisely specified",
-      "rationale": "All SLA metrics stated with exact numerical guarantees",
+      "description": "Clear comparison with chemistry and usage rules",
+      "rationale": "Exact compositions and substitution ratios provided",
       "original_id": "confident_hard_010",
-      "domain": "technology",
+      "domain": "general",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
       "id": "t1_confident_hard_011",
       "difficulty": "hard",
       "subcategory": "multi_source_convergence",
-      "query": "What is the market size for the AI chip industry?",
+      "query": "How does a dishwasher clean dishes?",
       "contexts": [
-        "According to Gartner's 2024 report, the global AI chip market is valued at $42.8 billion.",
-        "IDC's market analysis estimates the AI semiconductor market at $43.1 billion for 2024.",
-        "McKinsey's technology sector review places the AI processor market at $42.5 billion, with projected growth to $120 billion by 2028."
+        "A dishwasher works in four phases: pre-rinse (cold water loosens debris), main wash (hot water 120-150°F mixed with detergent is sprayed through rotating arms at high pressure), rinse (clean hot water removes detergent and remaining food), and drying (heated air or condensation drying). The spray arms create 20-60 PSI water jets that reach all surfaces. Detergent contains enzymes that break down proteins and starches, and surfactants that dissolve grease.",
+        "Modern dishwashers use 3-5 gallons per cycle, compared to 27 gallons for hand washing the same load."
       ],
       "expected_mode": "trustworthy",
-      "description": "Market size question with three independent sources agreeing",
-      "rationale": "Three authoritative sources (Gartner, IDC, McKinsey) converge on ~$42-43 billion",
+      "description": "Complete four-phase dishwasher cleaning process with specifics",
+      "rationale": "Four phases, temperature, pressure, chemistry, and efficiency all specified",
       "original_subcategory": "multi_source_agreement",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "general",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 3,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
       "id": "t1_confident_hard_012",
       "difficulty": "hard",
       "subcategory": "multi_source_convergence",
-      "query": "What programming language is most used for data science?",
+      "query": "Why did the Berlin Wall fall in 1989?",
       "contexts": [
-        "Stack Overflow's 2024 Developer Survey shows Python is used by 68% of data science professionals.",
-        "Kaggle's State of Data Science 2024 reports Python usage at 71% among ML practitioners.",
-        "IEEE Spectrum's programming language rankings place Python as #1 for data science and ML applications, used by approximately 70% of practitioners.",
-        "O'Reilly's Data Science Salary Survey confirms Python dominance at 69% usage rate."
+        "The Berlin Wall fell on November 9, 1989, after spokesman Gunter Schabowski mistakenly announced immediate border openings. Thousands rushed to crossing points and guards eventually opened the gates. Underlying causes included Gorbachev's reforms, economic decline, and months of mass protests.",
+        "Hungary opening its border with Austria in September 1989 allowed East Germans to flee."
       ],
       "expected_mode": "trustworthy",
-      "description": "Language preference question with four surveys agreeing",
-      "rationale": "Four independent surveys converge on Python at 68-71% usage",
+      "description": "Clear explanation with immediate cause and underlying factors",
+      "rationale": "Specific date, cause chain, and contributing factors all stated",
       "original_subcategory": "multi_source_agreement",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "history",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 4,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -360,24 +371,28 @@
       "id": "t1_confident_hard_014",
       "difficulty": "hard",
       "subcategory": "direct_factual",
-      "query": "What are the current AWS Lambda pricing rates?",
+      "query": "How did the printing press change European society?",
       "contexts": [
-        "AWS Lambda Pricing (effective December 1, 2024): Request pricing: $0.20 per 1 million requests. Duration pricing: $0.0000166667 per GB-second. Free tier: 1 million requests and 400,000 GB-seconds per month. Provisioned concurrency: $0.0000041667 per GB-second. These prices apply to US East (N. Virginia) region; other regions may vary by up to 20%."
+        "Gutenberg's printing press, invented around 1440, reduced the cost of book production by 80% within 50 years. Before the press, a single book took months to copy by hand; after, hundreds could be produced in days. This democratized knowledge: literacy rates in Europe rose from 5% to 30% between 1450 and 1600. The press enabled the Protestant Reformation (Luther's 95 Theses spread across Germany in 2 weeks), the Scientific Revolution (researchers could share findings), and the rise of newspapers.",
+        "By 1500, an estimated 20 million books had been printed in Europe, compared to only a few thousand manuscripts before Gutenberg."
       ],
       "expected_mode": "trustworthy",
-      "description": "Pricing question with explicit effective date and regional scope",
-      "rationale": "Explicit date (December 1, 2024) and regional scope (US East) stated",
+      "description": "Comprehensive impact of printing press with specific data",
+      "rationale": "Cost reduction, literacy rates, specific events enabled, and production numbers all provided",
       "original_subcategory": "explicit_recency",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "history",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -460,23 +475,27 @@
       "id": "t1_confident_hard_018",
       "difficulty": "hard",
       "subcategory": "authoritative_source",
-      "query": "What authentication methods does OAuth 2.0 support?",
+      "query": "What is an escrow account in a mortgage?",
       "contexts": [
-        "According to RFC 6749 (The OAuth 2.0 Authorization Framework), the specification defines four grant types: Authorization Code Grant (Section 4.1), Implicit Grant (Section 4.2, now deprecated per security BCP), Resource Owner Password Credentials Grant (Section 4.3), and Client Credentials Grant (Section 4.4). RFC 7636 adds PKCE extension for public clients, and RFC 8628 defines Device Authorization Grant for input-constrained devices."
+        "An escrow account is managed by the lender to pay property taxes and insurance. Each month, the borrower pays 1/12 of annual costs as part of their mortgage. RESPA limits reserves to 2 months of cushion.",
+        "Most loans with less than 20% down require escrow accounts."
       ],
       "expected_mode": "trustworthy",
-      "description": "Protocol specification question citing official RFCs",
-      "rationale": "Cites specific RFC numbers and sections as authoritative sources",
-      "domain": "technology",
+      "description": "Complete escrow explanation",
+      "rationale": "Definition, calculation, legal limits, and requirements all specified",
+      "domain": "real_estate",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -638,24 +657,28 @@
       "id": "t1_confident_hard_025",
       "difficulty": "hard",
       "subcategory": "authoritative_source",
-      "query": "What is the company's position on remote work?",
+      "query": "How does a home appraisal process work?",
       "contexts": [
-        "Internal Memo from CEO David Chen, effective February 1, 2025:\n\n'After careful evaluation of productivity data and employee feedback, GlobalSoft is implementing a hybrid work policy. All employees may work remotely up to 3 days per week. Core collaboration days are Tuesday and Wednesday, when in-office attendance is expected for non-exempt roles. Fully remote arrangements require VP approval and are limited to roles that can demonstrate 100% remote productivity. This policy supersedes all previous remote work guidelines.'"
+        "A home appraisal is an independent assessment of a property's market value, required by lenders before approving a mortgage. The appraiser visits the property, measures square footage, assesses condition, and photographs key features. They then compare the property to 3-5 recently sold comparable homes ('comps') within a 1-mile radius and within the last 6 months. Adjustments are made for differences in size, features, and condition. The final appraisal value can be above, at, or below the purchase price.",
+        "If the appraisal comes in below the agreed purchase price, the buyer can renegotiate, make up the difference in cash, or walk away."
       ],
       "expected_mode": "trustworthy",
-      "description": "Policy question with official memo providing exact terms",
-      "rationale": "Official internal memo with specific policy details and effective date",
+      "description": "Complete appraisal process with methodology",
+      "rationale": "Process steps, comp selection criteria, adjustments, and outcomes all specified",
       "original_subcategory": "official_statement",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "real_estate",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -686,24 +709,28 @@
       "id": "t1_confident_hard_027",
       "difficulty": "hard",
       "subcategory": "conditional_confidence",
-      "query": "What are the FDA labeling requirements for food allergens?",
+      "query": "How does the US federal budget process work?",
       "contexts": [
-        "FDA Food Allergen Labeling Requirements (FALCPA, as amended by FASTER Act 2021):\n\nThe following nine major allergens must be declared on food labels:\n1. Milk\n2. Eggs\n3. Fish (species must be identified)\n4. Crustacean shellfish (species must be identified)\n5. Tree nuts (specific type must be identified)\n6. Peanuts\n7. Wheat\n8. Soybeans\n9. Sesame (added January 1, 2023)\n\nAllergens must be declared either in the ingredient list (in parentheses after the ingredient) or in a separate 'Contains' statement immediately after the ingredient list."
+        "The President submits a budget proposal by the first Monday in February. Budget Committees create a concurrent budget resolution. 12 appropriations subcommittees draft spending bills. Both chambers pass each bill and reconcile. The President signs or vetoes. If not completed by October 1, continuing resolutions maintain funding.",
+        "The CBO provides independent analysis of proposals."
       ],
       "expected_mode": "trustworthy",
-      "description": "Regulatory requirement with specific law and requirements listed",
-      "rationale": "Cites specific laws (FALCPA, FASTER Act) with complete list of requirements",
+      "description": "Step-by-step budget process",
+      "rationale": "Timeline, actors, process steps, fallback mechanisms all specified",
       "original_subcategory": "regulatory_specification",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "government",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -736,26 +763,27 @@
       "id": "t1_confident_hard_029",
       "difficulty": "hard",
       "subcategory": "multi_source_convergence",
-      "query": "How much sleep do adults need?",
+      "query": "How does the US census work and why does it matter?",
       "contexts": [
-        "The CDC recommends adults aged 18-60 get at least 7 hours of sleep per night.",
-        "The American Academy of Sleep Medicine recommends 7-9 hours for adults aged 18-64.",
-        "The National Sleep Foundation guidelines recommend 7-9 hours for adults aged 26-64.",
-        "The NHS (UK) recommends most adults need 7-9 hours of sleep per night."
+        "The US Census is conducted every 10 years as mandated by Article I of the Constitution. It counts every person residing in the US regardless of citizenship status. The Census Bureau mails questionnaires to every household, follows up with non-respondents through door-to-door visits, and uses administrative records to fill gaps. Results determine: (1) congressional seat apportionment among states, (2) redistricting of electoral boundaries, and (3) allocation of over $1.5 trillion in annual federal funding for roads, schools, and healthcare.",
+        "The 2020 Census achieved a 99.98% address coverage rate using satellite imagery and address canvassing."
       ],
       "expected_mode": "trustworthy",
-      "description": "Health recommendation with multiple authoritative sources agreeing",
-      "rationale": "CDC, AASM, NSF, and NHS all recommend 7-9 hours (or minimum 7) for adults",
-      "domain": "technology",
+      "description": "Complete census process and significance",
+      "rationale": "Constitutional mandate, methodology, three major impacts, and coverage rate all specified",
+      "domain": "government",
       "query_type": "how",
       "source_type": "single",
-      "context_count": 4,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1008,7 +1036,7 @@
       "id": "t1_confident_hard_039",
       "difficulty": "hard",
       "subcategory": "technical_documented",
-      "query": "What is the shipping cost for the order?",
+      "query": "Why is the shipping cost for the order important?",
       "contexts": [
         "Order Details Response:\n\n```json\n{\n  \"orderId\": \"ORD-789456\",\n  \"items\": [\n    {\"sku\": \"PROD-001\", \"quantity\": 2, \"price\": 29.99},\n    {\"sku\": \"PROD-042\", \"quantity\": 1, \"price\": 149.99}\n  ],\n  \"pricing\": {\n    \"subtotal\": 209.97,\n    \"tax\": 18.90,\n    \"shipping\": 12.50,\n    \"discount\": -10.00,\n    \"total\": 231.37\n  },\n  \"shippingAddress\": {\n    \"city\": \"San Francisco\",\n    \"state\": \"CA\"\n  }\n}\n```"
       ],
@@ -1017,7 +1045,7 @@
       "rationale": "Shipping cost is clearly at pricing.shipping: $12.50",
       "original_subcategory": "json_navigation",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -1032,7 +1060,7 @@
       "id": "t1_confident_hard_040",
       "difficulty": "hard",
       "subcategory": "technical_documented",
-      "query": "What role does the second user have?",
+      "query": "How what role does the second user have?",
       "contexts": [
         "Team Members Response:\n\n```json\n{\n  \"teamId\": \"team_abc\",\n  \"members\": [\n    {\n      \"userId\": \"u001\",\n      \"name\": \"Alice Smith\",\n      \"role\": \"admin\",\n      \"joinedAt\": \"2023-01-15\"\n    },\n    {\n      \"userId\": \"u002\",\n      \"name\": \"Bob Johnson\",\n      \"role\": \"developer\",\n      \"joinedAt\": \"2023-03-20\"\n    },\n    {\n      \"userId\": \"u003\",\n      \"name\": \"Carol White\",\n      \"role\": \"viewer\",\n      \"joinedAt\": \"2024-01-10\"\n    }\n  ]\n}\n```"
       ],
@@ -1041,7 +1069,7 @@
       "rationale": "Second user (Bob Johnson) has role 'developer' at members[1].role",
       "original_subcategory": "json_navigation",
       "domain": "sports",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -1056,23 +1084,27 @@
       "id": "t1_confident_hard_041",
       "difficulty": "hard",
       "subcategory": "conditional_confidence",
-      "query": "What is the maximum file upload size?",
+      "query": "What is the Maillard reaction in cooking?",
       "contexts": [
-        "File Upload Limits (effective January 2025):\n\n- Free tier: 10 MB per file\n- Pro tier: 100 MB per file\n- Enterprise tier: 500 MB per file\n- API uploads: 1 GB per file (requires authentication)\n\nNote: These limits apply to all file types. Uploads exceeding limits will return HTTP 413 error."
+        "The Maillard reaction occurs between amino acids and reducing sugars above 280°F (140°C). It produces hundreds of flavor compounds responsible for seared meat, toasted bread, and roasted coffee. Key factors: temperature, pH (alkaline accelerates it), moisture (too much inhibits it), and sugar type.",
+        "Chefs exploit it by patting meat dry and using baking soda in cookie dough."
       ],
       "expected_mode": "trustworthy",
-      "description": "Conditional answer but all conditions are clearly specified",
-      "rationale": "Limits depend on tier, but all tiers are explicitly listed with exact values - can confidently state limits for each tier",
-      "domain": "technology",
+      "description": "Detailed Maillard reaction explanation",
+      "rationale": "Temperature threshold, mechanism, controlling factors all provided",
+      "domain": "food",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "category": "trustworthy_direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1130,17 +1162,17 @@
       "category": "trustworthy_direct",
       "subcategory": "direct_factual",
       "difficulty": "hard",
-      "query": "What programming language is the Linux kernel primarily written in?",
+      "query": "How does fermentation preserve food?",
       "contexts": [
-        "The Linux kernel source tree (version 6.7, released January 2024) consists of approximately 36.1 million lines of code across 77,818 files. According to analysis using the tokei and sloccount utilities on the official kernel.org repository, C source code accounts for 98.2% of the codebase (approximately 35.4 million lines), with the remainder consisting of assembly language (approximately 1.1%, primarily architecture-specific boot code and low-level hardware interface routines in arch/), Rust (approximately 0.3%, introduced experimentally in Linux 6.1 for select driver modules), and build system files (Makefiles, Kconfig). The kernel's coding style is defined in Documentation/process/coding-style.rst, which specifies GNU C99 as the base standard with specific GCC extensions permitted. Linus Torvalds has consistently maintained that C is the kernel's primary language, stating in a 2023 kernel mailing list discussion that 'C remains and will remain the language of the Linux kernel, with Rust providing an optional secondary language for specific new driver development where memory safety is particularly critical.'",
-        "The kernel development process, documented in Documentation/process/howto.rst, requires that all core subsystem contributions be written in C conforming to the kernel's coding standards. The kernel build system (Kbuild) is fundamentally designed around the GCC C compiler toolchain, with Clang/LLVM support added as an alternative in 2020. As of Linux 6.7, the minimum required compiler version is GCC 5.1 or Clang 11. The kernel's internal API, including all exported symbols available to loadable kernel modules, is defined exclusively through C header files. No C++ code has ever been accepted into the mainline kernel, and Torvalds has repeatedly rejected proposals to allow C++ in kernel space, most recently in a 2024 discussion noting that 'C++ exception handling and RTTI are fundamentally incompatible with the kernel's execution model.'"
+        "Fermentation preserves food through the metabolic activity of beneficial microorganisms (bacteria, yeast, or molds) that convert sugars into acids, alcohol, or gases. Lactic acid fermentation (used in sauerkraut, kimchi, yogurt) lowers pH to 3.5-4.5, inhibiting pathogenic bacteria. Alcoholic fermentation (wine, beer) produces ethanol which is antimicrobial. The process also creates B vitamins, increases bioavailability of minerals, and breaks down antinutrients like phytic acid.",
+        "Fermented foods contain live probiotics that support gut health, with counts of 1-10 billion CFU per serving in products like kefir and kombucha."
       ],
       "expected_mode": "trustworthy",
-      "description": "Multiple authoritative sources unambiguously state C is the primary language of the Linux kernel",
-      "rationale": "The answer is unambiguously C, confirmed by code analysis, official documentation, and the project maintainer's explicit statements — no qualification needed",
+      "description": "Complete fermentation preservation mechanism",
+      "rationale": "Microbial process, pH ranges, preservation mechanisms, and nutritional benefits all specified",
       "original_subcategory": "direct_factual_pure",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "food",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -1148,6 +1180,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1155,16 +1190,16 @@
       "category": "trustworthy_direct",
       "subcategory": "direct_factual",
       "difficulty": "hard",
-      "query": "What database engine does Wikipedia use?",
+      "query": "What is the difference between a misdemeanor and a felony?",
       "contexts": [
-        "The Wikimedia Foundation's technical infrastructure documentation (meta.wikimedia.org/wiki/Wikimedia_infrastructure, updated October 2024) states that all Wikimedia projects, including Wikipedia, use MariaDB as their primary relational database management system. The migration from MySQL to MariaDB was completed in April 2013, driven by concerns about Oracle's stewardship of MySQL following the Sun Microsystems acquisition. The Wikimedia production database cluster consists of approximately 160 MariaDB servers running version 10.6 LTS across two primary data centers (Eqiad in Ashburn, Virginia and Codfw in Carrollton, Texas). The English Wikipedia database alone contains over 60 million pages and approximately 4.2 TB of compressed data. The MediaWiki software (the PHP-based application powering all Wikimedia sites) interfaces with MariaDB through its own database abstraction layer, supporting both MySQL and MariaDB wire protocol.",
-        "The Wikimedia Foundation's Site Reliability Engineering team published a detailed blog post in September 2024 describing their database architecture. All read traffic is served by MariaDB replicas distributed across both data centers using Wikimedia's custom orchestration tool (Orchestrator, originally developed by Shlomi Noach). Write operations go to a single primary server per database section, with 8 sections (s1 through s8) sharding the largest wikis across separate database clusters. The English Wikipedia, being the largest, has its own dedicated section (s1). Performance monitoring data from Wikimedia's public Grafana dashboards (grafana.wikimedia.org) shows the MariaDB clusters handling an average of 180,000 queries per second across all wikis. The team evaluated PostgreSQL in 2019 but determined that the migration cost would be prohibitive given MediaWiki's extensive use of MySQL-specific SQL syntax."
+        "Misdemeanors carry maximum penalties up to 1 year in county jail. Felonies carry penalties exceeding 1 year in state or federal prison. Felonies include violent crimes and serious drug offenses. Felony convictions cause loss of voting rights, gun ownership, and employment barriers.",
+        "Some offenses called 'wobblers' can be charged as either."
       ],
       "expected_mode": "trustworthy",
-      "description": "Official infrastructure documentation and engineering blog posts explicitly identify MariaDB",
-      "rationale": "The answer is clearly MariaDB, stated in official documentation with detailed technical specifics — there is no ambiguity",
+      "description": "Clear legal distinction with penalties",
+      "rationale": "Sentencing thresholds, examples, consequences all specified",
       "original_subcategory": "direct_factual_pure",
-      "domain": "technology",
+      "domain": "law",
       "query_type": "what",
       "source_type": "single",
       "context_count": 2,
@@ -1173,6 +1208,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1180,17 +1218,17 @@
       "category": "trustworthy_direct",
       "subcategory": "direct_factual",
       "difficulty": "hard",
-      "query": "What encryption standard does the US government require for protecting classified information?",
+      "query": "How does the bail system work in the United States?",
       "contexts": [
-        "The National Security Agency (NSA) specifies the cryptographic algorithms approved for protecting classified national security information through the Committee on National Security Systems Policy (CNSSP) 15, most recently updated in March 2024. For symmetric encryption of classified data up to TOP SECRET, the required algorithm is AES (Advanced Encryption Standard) with 256-bit keys, as specified in FIPS 197. AES-256 was selected by NIST through an open competition in 2001, replacing the Data Encryption Standard (DES). The NSA's Commercial National Security Algorithm Suite 2.0 (CNSA 2.0), published in September 2022 and updated in 2024, mandates AES-256 for all new systems protecting classified information, with a transition timeline requiring full deployment by 2030. CNSA 2.0 also specifies SHA-384 or SHA-512 for hashing, and CRYSTALS-Kyber (ML-KEM) for key establishment to address quantum computing threats.",
-        "NSA's Information Assurance Directorate maintains the Cryptographic Standards Program, which evaluates and approves implementations of AES-256 for use in Type 1 encryption products (devices authorized for classified information). All Type 1 products must undergo the Common Criteria evaluation process and receive NSA certification. The NSA's Commercial Solutions for Classified (CSfC) program allows commercial implementations of AES-256 to be used in layered configurations for protecting classified data, providing a more cost-effective alternative to traditional government-off-the-shelf (GOTS) devices. The program's Capability Packages (updated quarterly) specify exact configurations, including AES-256 in GCM mode for both inner and outer encryption layers. No other symmetric encryption algorithm is approved for classified use — Triple DES was deprecated from classified systems in 2019."
+        "Bail is a financial guarantee that a defendant will appear for future court dates. A judge sets bail amount based on flight risk, crime severity, criminal history, and community ties. Defendants can pay the full amount (returned after trial), use a bail bondsman (who charges a non-refundable 10-15% fee and guarantees the rest), or request release on own recognizance (no payment). If the defendant fails to appear, the full bail amount is forfeited.",
+        "The 8th Amendment prohibits excessive bail, though 'excessive' has been interpreted differently across jurisdictions."
       ],
       "expected_mode": "trustworthy",
-      "description": "NSA and CNSA documentation unambiguously specify AES-256 for classified information protection",
-      "rationale": "AES-256 is explicitly and exclusively mandated by NSA policy for classified data — the answer is unambiguous from authoritative government sources",
+      "description": "Complete bail system explanation",
+      "rationale": "Purpose, factors, three payment options, consequences, and constitutional limit all specified",
       "original_subcategory": "direct_factual_pure",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "law",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -1198,6 +1236,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1307,42 +1348,16 @@
       "category": "trustworthy_direct",
       "subcategory": "multi_source_convergence",
       "difficulty": "hard",
-      "query": "What year did the Titanic sink?",
+      "query": "How does the NFL salary cap work?",
       "contexts": [
-        "The RMS Titanic struck an iceberg at approximately 11:40 PM ship's time on April 14, 1912, and sank at approximately 2:20 AM on April 15, 1912, during its maiden voyage from Southampton to New York City. The British Wreck Commissioner's Inquiry (the Mersey Inquiry), chaired by Lord Mersey and concluded July 30, 1912, established through 36 days of testimony from 96 witnesses that the vessel sank in the North Atlantic at approximately 41 degrees 46 minutes North latitude, 50 degrees 14 minutes West longitude, resulting in the deaths of approximately 1,496 of the 2,208 persons aboard. The inquiry's final report (Cmd. 6352) documented the timeline, casualty figures, and circumstances in exhaustive detail.",
-        "The United States Senate Inquiry into the Titanic disaster (chaired by Senator William Alden Smith, April-May 1912) independently confirmed the sinking date of April 15, 1912, through testimony from 82 witnesses including surviving officers, crew members, and passengers. The inquiry's findings were consistent with the British investigation on all material facts regarding the date, time, and location of the sinking. Contemporary news coverage from the New York Times (April 16, 1912, front page headline: 'TITANIC SINKS FOUR HOURS AFTER HITTING ICEBERG') and the London Times further corroborated the date.",
-        "The wreck of the Titanic was located on September 1, 1985, by a joint American-French expedition led by Dr. Robert Ballard (Woods Hole Oceanographic Institution) and Jean-Louis Michel (IFREMER), at a depth of approximately 3,800 meters at coordinates 41 degrees 43 minutes N, 49 degrees 56 minutes W — within 13 nautical miles of the position recorded by the surviving officers in 1912. Archaeological evidence from the wreck site, including the separation of the bow and stern sections, the pattern of debris field distribution across one square mile of ocean floor, and the recovery of over 5,500 artifacts by RMS Titanic Inc., confirmed the historical record of the sinking event and the breakup of the hull during descent."
+        "The NFL salary cap is a hard limit set annually based on league revenue. Teams can spread signing bonuses over contract length (proration). Dead money counts against the cap when players are cut. Teams carry over unused cap space. Franchise tags retain one key player at the top-5 average.",
+        "Unlike the NBA's soft cap, the NFL cap has no luxury tax exception."
       ],
       "expected_mode": "trustworthy",
-      "description": "British inquiry, US Senate inquiry, contemporary news coverage, and physical wreck discovery all confirm 1912",
-      "rationale": "The Titanic sank in 1912 — confirmed by two independent government investigations, contemporary journalism, and physical archaeological evidence. No ambiguity exists.",
+      "description": "Comprehensive salary cap explanation",
+      "rationale": "Cap amount, proration, dead money, carryover, franchise tags all explained",
       "original_subcategory": "multi_source_convergence_pure",
-      "domain": "technology",
-      "query_type": "what",
-      "source_type": "single",
-      "context_count": 3,
-      "reasoning_type": "factual",
-      "evidence_pattern": "direct",
-      "evaluation_config": {
-        "mode": "governance",
-        "check_mode_match": true
-      }
-    },
-    {
-      "id": "t1_confident_hard_109",
-      "category": "trustworthy_direct",
-      "subcategory": "multi_source_convergence",
-      "difficulty": "hard",
-      "query": "How many chromosomes do humans have?",
-      "contexts": [
-        "The Genome Reference Consortium (GRC), which maintains the human reference genome assembly (GRCh38/hg38, with patches through GRCh38.p14, 2024), documents that the standard human diploid karyotype consists of 46 chromosomes: 22 pairs of autosomes (chromosomes 1-22) and one pair of sex chromosomes (XX in females, XY in males). This chromosome count was definitively established by Joe Hin Tjio and Albert Levan in 1956, correcting the previously accepted count of 48 chromosomes. Their paper 'The Chromosome Number of Man' (Hereditas, 42:1-6, 1956) used improved tissue culture and preparation techniques to produce clear images of 46 chromosomes in human embryonic lung fibroblasts.",
-        "The Online Mendelian Inheritance in Man database (OMIM, maintained by Johns Hopkins University, accessed October 2024) catalogs genetic disorders and maps them to the 22 autosomes and 2 sex chromosomes, reflecting the 46-chromosome karyotype. The NCBI Genome database and the Ensembl genome browser (maintained by EMBL-EBI and the Wellcome Sanger Institute) both present the human genome as 24 distinct chromosome sequences (22 autosomes plus X and Y), consistent with 46 chromosomes in a diploid cell. The 2022 Telomere-to-Telomere (T2T) Consortium's completion of the first truly complete human genome sequence (T2T-CHM13) assembled all 22 autosomes and the X chromosome end-to-end, adding approximately 200 million base pairs of previously unresolved sequence while confirming the established chromosome count."
-      ],
-      "expected_mode": "trustworthy",
-      "description": "GRC reference genome, OMIM, NCBI, Ensembl, and the T2T complete genome all confirm 46 chromosomes",
-      "rationale": "The human diploid chromosome count of 46 is established scientific fact confirmed by every major genomics database and the complete genome sequence",
-      "original_subcategory": "multi_source_convergence_pure",
-      "domain": "technology",
+      "domain": "sports",
       "query_type": "how",
       "source_type": "single",
       "context_count": 2,
@@ -1351,6 +1366,37 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
+      }
+    },
+    {
+      "id": "t1_confident_hard_109",
+      "category": "trustworthy_direct",
+      "subcategory": "multi_source_convergence",
+      "difficulty": "hard",
+      "query": "How does the VAR system work in professional soccer?",
+      "contexts": [
+        "VAR (Video Assistant Referee) reviews four types of decisions: goals, penalty decisions, direct red cards, and mistaken identity. The VAR team monitors multiple camera angles from a centralized video operation room. When a potential 'clear and obvious error' is identified, the VAR communicates with the on-field referee via headset. The referee can accept the VAR recommendation or review footage on a pitch-side monitor (On-Field Review). The entire process typically takes 60-90 seconds.",
+        "VAR was first used at a FIFA World Cup in 2018 and has since been adopted by most major European leagues."
+      ],
+      "expected_mode": "trustworthy",
+      "description": "Complete VAR system explanation with process",
+      "rationale": "Four decision types, review process, communication method, and timeline all specified",
+      "original_subcategory": "multi_source_convergence_pure",
+      "domain": "sports",
+      "query_type": "how",
+      "source_type": "single",
+      "context_count": 2,
+      "reasoning_type": "factual",
+      "evidence_pattern": "direct",
+      "evaluation_config": {
+        "mode": "governance",
+        "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1998,17 +2044,17 @@
       "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
-      "query": "Does the API support batch requests?",
+      "query": "How does regenerative braking work in electric vehicles?",
       "contexts": [
-        "BatchAPI Reference (v4.2): The platform fully supports batch processing through the /api/v4/batch endpoint. Requests can include up to 1,000 items per batch call. Authentication uses the same OAuth2 bearer token as single requests. The batch endpoint accepts JSON arrays where each element follows the standard request schema. Response format mirrors the input array with individual status codes per item, enabling partial success handling. Retry logic should target only failed items rather than resubmitting the entire batch.",
-        "API Limitations (Updated January 2025): Batch requests are limited to 1,000 items per call. For datasets exceeding 1,000 items, use pagination with the cursor parameter. Rate limiting applies: maximum 60 batch calls per minute per API key. Batch requests containing items that reference non-existent resources will return a 404 for those specific items while processing remaining items normally. Timeout for batch calls is 120 seconds, compared to 30 seconds for single requests."
+        "Regenerative braking reverses the motor: wheels turn the motor, converting kinetic energy to electrical energy. When the driver lifts off the accelerator, the motor acts as a generator. This recovers 60-70% of kinetic energy. Most EVs allow adjusting regeneration intensity.",
+        "Tesla's one-pedal driving maximizes regenerative braking."
       ],
       "expected_mode": "trustworthy",
-      "description": "Clear answer with minor limitations documented — does not require qualification",
-      "rationale": "The API clearly supports batch requests. The limitations (1000 items, rate limiting) are standard documentation of how the feature works, not uncertainty about whether the feature exists.",
+      "description": "Clear technical explanation",
+      "rationale": "Mechanism, energy recovery percentage, and controls all specified",
       "original_subcategory": "clear_answer_minor_edge",
-      "domain": "technology",
-      "query_type": "does",
+      "domain": "transportation",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
@@ -2016,6 +2062,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2048,17 +2097,17 @@
       "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
-      "query": "Is our company's data center compliant with SOC 2 Type II?",
+      "query": "How does air traffic control manage planes during landing?",
       "contexts": [
-        "Annual Compliance Report (December 2024): CloudMatrix completed its SOC 2 Type II audit conducted by Deloitte, covering the period from January 1 through December 31, 2024. The audit evaluated all five Trust Service Criteria: Security, Availability, Processing Integrity, Confidentiality, and Privacy. The auditor issued an unqualified opinion with no material exceptions identified. The report is available to customers under NDA through the compliance portal.",
-        "Infrastructure Security Bulletin (Q4 2024): Following the SOC 2 Type II certification, two minor observations were noted in the management letter. First, password rotation for service accounts in the staging environment was set to 120 days rather than the recommended 90 days. Second, one backup verification test in September was completed 6 hours past the scheduled window. Neither observation affected the audit opinion, and both have been remediated as of November 2024."
+        "Air traffic control sequences arriving aircraft using a combination of radar surveillance, predetermined approach routes (STARs), and altitude/speed assignments. Controllers maintain minimum separation of 3 nautical miles horizontally or 1,000 feet vertically between aircraft. Planes are vectored onto the ILS (Instrument Landing System) which provides both lateral and vertical guidance to the runway via radio beams. The typical approach sequence begins at 8,000-10,000 feet, 20-30 miles from the airport.",
+        "At busy airports, arrivals are managed by a separate approach control facility before being handed off to the tower controller for final landing clearance."
       ],
       "expected_mode": "trustworthy",
-      "description": "SOC 2 Type II compliant with minor management letter observations already remediated",
-      "rationale": "The audit yielded an unqualified opinion with no material exceptions. The minor observations in the management letter were already remediated and did not affect compliance status. The answer is clearly yes.",
+      "description": "Complete approach and landing control process",
+      "rationale": "Separation standards, ILS system, approach sequence, and handoff procedure all specified",
       "original_subcategory": "clear_answer_minor_edge",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "transportation",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
@@ -2066,6 +2115,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2073,17 +2125,17 @@
       "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
-      "query": "Does the school district offer free lunch to all students?",
+      "query": "What is the bystander effect and why does it occur?",
       "contexts": [
-        "Westfield School District — Nutrition Services Policy (Board Approved August 2024): Effective September 2024, the Westfield School District participates in the Community Eligibility Provision (CEP) under the USDA National School Lunch Program. Under CEP, all enrolled students at all district schools are eligible for free breakfast and lunch at no cost, regardless of household income. Families are not required to submit income verification forms. This policy applies to all 14 elementary schools, 6 middle schools, and 4 high schools in the district.",
-        "Westfield District FAQ — School Meals: All students receive free meals during the regular school day. For after-school enrichment programs that extend past 5:00 PM, a supplemental dinner option is available for $3.50. Summer school meals are free for enrolled summer students. Field trip meals are provided at no cost when the trip occurs during regular school hours. Students attending weekend extracurricular events may purchase meals from the concession stand, which operates independently from the nutrition services program."
+        "The bystander effect is the phenomenon where individuals are less likely to help when others are present. It occurs due to: diffusion of responsibility, pluralistic ignorance, and evaluation apprehension. First documented by Darley and Latane in 1968.",
+        "The effect is strongest in ambiguous situations and weaker with specialized training."
       ],
       "expected_mode": "trustworthy",
-      "description": "Universal free lunch with minor edge cases for after-school and weekend events",
-      "rationale": "The district clearly offers free lunch to all students under CEP. The paid options for after-school dinner and weekend concessions are separate programs, not exceptions to the free lunch policy. The answer is unambiguously yes.",
+      "description": "Complete explanation with three mechanisms",
+      "rationale": "Definition, three causal mechanisms, and moderating factors all provided",
       "original_subcategory": "clear_answer_minor_edge",
-      "domain": "technology",
-      "query_type": "does",
+      "domain": "psychology",
+      "query_type": "what",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
@@ -2091,6 +2143,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2098,17 +2153,17 @@
       "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
-      "query": "Can I return items purchased during the holiday sale?",
+      "query": "How does cognitive dissonance work?",
       "contexts": [
-        "NorthStar Retail — Return Policy (Updated November 2024): All items purchased from NorthStar Retail may be returned within 60 days of purchase for a full refund to the original payment method. Items must be in unused condition with original tags attached. Holiday sale items purchased between November 15 and December 31 are eligible for the standard 60-day return window, with the return period beginning on December 26 to accommodate gift-giving. Proof of purchase is required for all returns.",
-        "NorthStar Return Exceptions: Final sale items marked with a red clearance tag are not eligible for return or exchange. Personalized or monogrammed items cannot be returned unless defective. Perishable goods, including holiday food baskets and floral arrangements, must be reported within 48 hours of delivery if damaged. Electronics purchased during the holiday sale follow the standard 60-day policy but must include all original accessories and packaging. Gift cards are non-refundable."
+        "Cognitive dissonance, described by Leon Festinger in 1957, is the mental discomfort from holding contradictory beliefs or behaving contrary to beliefs. People resolve it through three strategies: (1) changing the belief ('smoking isn't that bad'), (2) adding new beliefs ('I exercise to compensate'), or (3) reducing the importance ('everyone has a vice'). The classic study had participants paid $1 or $20 to lie; the $1 group changed their beliefs more because they had less external justification.",
+        "Cognitive dissonance is strongest when the conflicting behavior is freely chosen and has significant consequences."
       ],
       "expected_mode": "trustworthy",
-      "description": "Holiday sale items are clearly returnable, with standard exceptions that apply to all purchases",
-      "rationale": "The return policy explicitly states holiday sale items are returnable with an extended window. The exceptions (final sale red tags, personalized items, perishables) apply to all purchases year-round, not specifically to holiday sale items. The answer is clearly yes.",
+      "description": "Complete cognitive dissonance explanation with classic experiment",
+      "rationale": "Definition, three resolution strategies, classic study, and moderating factors all provided",
       "original_subcategory": "clear_answer_minor_edge",
-      "domain": "technology",
-      "query_type": "should",
+      "domain": "psychology",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
@@ -2116,6 +2171,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2123,23 +2181,27 @@
       "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
-      "query": "What is the maximum occupancy for the Grand Ballroom?",
+      "query": "How does Twitter's community notes system work?",
       "contexts": [
-        "Fire Marshal Certificate of Occupancy — Grand Ballroom, Meridian Hotel (Issued March 2024, Certificate #FM-2024-08831): Maximum occupancy for the Grand Ballroom (Room 100, Ground Floor) is 850 persons under standing/reception configuration, 620 persons under banquet seating configuration, and 480 persons under theater-style seating with stage. These limits incorporate all egress pathways including the four primary exits (each 72 inches wide) and two emergency exits (each 48 inches wide). The sprinkler system (NFPA 13 compliant, last inspected January 2024) and fire alarm system (addressable with voice evacuation) are factors in the occupancy calculation. Occupancy limits must be posted at each entrance per city fire code Section 1004.3. The certificate is valid through March 2027 unless structural modifications are made to the ballroom or its egress pathways."
+        "Community Notes allows approved contributors to add context to potentially misleading tweets. Contributors rate each other's notes, and a bridging algorithm ensures notes only become visible with cross-partisan approval. Notes must include sources. The system uses matrix factorization to identify cross-partisan consensus.",
+        "Contributors earn higher ratings by writing notes diverse viewpoints find helpful."
       ],
       "expected_mode": "trustworthy",
-      "description": "Single authoritative source — fire marshal certificate — provides definitive occupancy limits",
-      "rationale": "The fire marshal certificate is the legal authority on occupancy limits. A single authoritative source is sufficient when it is the definitive regulatory document. No corroboration is needed from marketing brochures or event planners.",
+      "description": "Detailed mechanism including bridging algorithm",
+      "rationale": "Full process: contributors, rating, bridging algorithm, visibility criteria",
       "original_subcategory": "single_authoritative",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "social_media",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2147,23 +2209,27 @@
       "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
-      "query": "What are the active ingredients in Lisinopril 10mg tablets?",
+      "query": "How does the Instagram algorithm rank content in the main feed?",
       "contexts": [
-        "FDA-Approved Prescribing Information — Lisinopril Tablets (NDA 019777, Revised October 2024): Each Lisinopril 10mg tablet contains lisinopril dihydrate equivalent to 10mg lisinopril as the active ingredient. Inactive ingredients include calcium phosphate dibasic, mannitol, magnesium stearate, starch (corn), and colloidal silicon dioxide. Lisinopril is an angiotensin-converting enzyme (ACE) inhibitor indicated for the treatment of hypertension, heart failure, and acute myocardial infarction. The mechanism of action involves competitive inhibition of ACE, reducing the conversion of angiotensin I to angiotensin II. The tablets are white, round, and scored on one side with identification code 'L10' debossed on the other. Tablets are available in 2.5mg, 5mg, 10mg, 20mg, and 40mg strengths. Store at controlled room temperature 20-25 degrees Celsius (68-77 degrees Fahrenheit). Protect from moisture and light. Dispense in a tight container as defined in USP."
+        "Instagram's feed algorithm ranks posts based on six key signals: (1) interest (predicted engagement based on past behavior), (2) timeliness (newer posts ranked higher), (3) relationship (frequent interaction with the poster increases rank), (4) frequency (how often you open the app affects what you see), (5) following count (more follows means more competition for feed space), and (6) session time (longer sessions see more diverse content). Machine learning models score each post on a 0-1 scale for likelihood of like, comment, save, and share.",
+        "Instagram confirmed in 2023 that original content is boosted over reshared content."
       ],
       "expected_mode": "trustworthy",
-      "description": "FDA prescribing information is the single definitive source for drug composition",
-      "rationale": "The FDA-approved prescribing information is the authoritative regulatory document for drug composition. It explicitly states the active ingredient is lisinopril dihydrate equivalent to 10mg lisinopril. No second source is needed when the primary regulatory document provides the answer.",
+      "description": "Complete feed ranking algorithm with six signals",
+      "rationale": "Six ranking signals, ML scoring, and content originality boost all specified",
       "original_subcategory": "single_authoritative",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "social_media",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2171,23 +2237,27 @@
       "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
-      "query": "What is the statute of limitations for filing a personal injury claim in Texas?",
+      "query": "What is the difference between exempt and non-exempt employees?",
       "contexts": [
-        "Texas Civil Practice and Remedies Code, Title 2, Chapter 16, Section 16.003 (Current through 88th Legislature, 2023): A person must bring suit for personal injury not later than two years after the day the cause of action accrues. The discovery rule may toll the statute in cases where the injury was not and could not have been discovered through reasonable diligence at the time of the incident. For claims involving minors, the statute is tolled until the minor reaches 18 years of age, at which point the two-year period begins to run. Government entities require a notice of claim within six months under the Texas Tort Claims Act, Section 101.101, though the filing deadline remains two years."
+        "Under the FLSA, exempt employees are not entitled to overtime and must: (1) be salaried, (2) earn at least $684/week, and (3) perform executive, administrative, or professional duties. Non-exempt must be paid minimum wage and overtime (1.5x) for hours over 40/week. Misclassification results in back pay and penalties.",
+        "The salary threshold was last updated in 2020."
       ],
       "expected_mode": "trustworthy",
-      "description": "State statute directly provides the limitation period — single authoritative legal source",
-      "rationale": "The Texas Civil Practice and Remedies Code is the authoritative source for statute of limitations. It clearly states two years. The tolling provisions for discovery rule and minors are standard legal details, not uncertainty about the answer.",
+      "description": "Clear legal distinction with criteria",
+      "rationale": "Three-part test, salary threshold, overtime rules all specified",
       "original_subcategory": "single_authoritative",
-      "domain": "technology",
+      "domain": "hr_workplace",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2195,23 +2265,27 @@
       "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
-      "query": "What temperature should I store insulin at?",
+      "query": "How does a 360-degree feedback process work?",
       "contexts": [
-        "Novo Nordisk Patient Information — Insulin Storage Guidelines (FDA-Approved Label, Revised 2024): Unopened insulin vials and pens should be stored in a refrigerator between 2 to 8 degrees Celsius (36 to 46 degrees Fahrenheit). Do not freeze. Do not use insulin that has been frozen. Once in use, insulin may be kept at room temperature below 30 degrees Celsius (86 degrees Fahrenheit) for up to 28 days. After 28 days at room temperature, the in-use vial or pen must be discarded even if it still contains insulin. Keep insulin away from direct heat and sunlight. Insulin that appears cloudy, thickened, or discolored should not be used. During travel, use an insulated case to protect insulin from temperature extremes."
+        "A 360-degree feedback process collects performance evaluations from multiple sources: the employee's manager, direct reports, peers, and sometimes clients, plus a self-assessment. Typically 8-12 raters participate, answering standardized questions on competencies like leadership, communication, and teamwork. Responses are anonymized (except the manager's) and compiled into a report showing averages and gaps between self-perception and others' perceptions. The process is used for development, not compensation decisions, in most organizations.",
+        "Research shows 360 feedback is most effective when paired with coaching and follow-up action planning."
       ],
       "expected_mode": "trustworthy",
-      "description": "FDA-approved storage guidelines from manufacturer are definitive",
-      "rationale": "The manufacturer's FDA-approved label provides clear, specific storage temperatures. This is the single authoritative source for drug storage. The distinction between unopened (refrigerated) and in-use (room temperature) is standard guidance, not ambiguity.",
+      "description": "Complete 360 feedback process with implementation details",
+      "rationale": "Rater sources, number, anonymity, report contents, and best practices all specified",
       "original_subcategory": "single_authoritative",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "hr_workplace",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2219,23 +2293,27 @@
       "category": "trustworthy_direct",
       "subcategory": "authoritative_source",
       "difficulty": "hard",
-      "query": "What is the minimum capital requirement to register as a limited company in the UK?",
+      "query": "How does the carbon cycle work?",
       "contexts": [
-        "Companies Act 2006, Part 17, Chapter 2, Section 763 (as amended through 2024): A public company must have a minimum allotted share capital of 50,000 pounds (or the prescribed euro equivalent) before it may do business or exercise any borrowing powers. For private limited companies, there is no minimum capital requirement under the Companies Act 2006. A private company limited by shares may be incorporated with a single share of any nominal value, including one penny. The subscriber to the memorandum must take at least one share. Registration fees are separate from share capital and are set by the Registrar of Companies, currently ranging from 12 pounds for standard online registration to 100 pounds for same-day incorporation."
+        "Carbon moves between atmosphere, oceans, soil, and organisms. Plants absorb CO2 through photosynthesis. Animals release CO2 through respiration. Decomposition returns carbon to soil. Oceans absorb 25% of atmospheric CO2. Volcanic activity and fossil fuels release geological carbon. Timescales: days to millions of years.",
+        "Humans have added ~1.5 trillion tons of CO2 since the Industrial Revolution."
       ],
       "expected_mode": "trustworthy",
-      "description": "The Companies Act directly states there is no minimum capital for private limited companies",
-      "rationale": "The statute is the definitive legal authority. It clearly states private limited companies have no minimum capital requirement. The mention of public company minimums and registration fees provides useful context but does not create ambiguity about the answer.",
+      "description": "Complete carbon cycle with all pathways",
+      "rationale": "All reservoirs, transfer mechanisms, timescales, and human impact specified",
       "original_subcategory": "single_authoritative",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "environment",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2267,16 +2345,16 @@
       "category": "trustworthy_direct",
       "subcategory": "near_complete_evidence",
       "difficulty": "hard",
-      "query": "What are the system requirements for running the CAD software?",
+      "query": "How do wetlands filter water naturally?",
       "contexts": [
-        "ProDesign CAD v12 — System Requirements (Official Documentation): Minimum system requirements: Windows 10 (64-bit) or Windows 11, Intel Core i5 (8th gen) or AMD Ryzen 5 3600 or higher, 16 GB RAM (32 GB recommended for complex assemblies), NVIDIA GeForce GTX 1660 or AMD Radeon RX 5600 XT with 6 GB VRAM (certified GPU list available on our website), 20 GB available disk space for installation, display resolution 1920x1080 or higher. Recommended: SSD for project files, secondary monitor for toolbars.",
-        "ProDesign CAD v12 — Installation Notes: The installer requires .NET Framework 4.8 and Visual C++ 2019 Redistributable, both included in the installation package. Internet connection is required for license activation and periodic validation (every 30 days). After activation, the software runs fully offline. macOS support is available through ProDesign CAD for Mac, a separate product with different requirements. Linux is not currently supported. Docker containerized deployment is available for enterprise render farms."
+        "Wetlands act as natural water treatment systems through four mechanisms: (1) sediment trapping as slow-moving water allows particles to settle, (2) nutrient uptake by aquatic plants that absorb nitrogen and phosphorus, (3) microbial decomposition of organic pollutants in oxygen-poor sediments, and (4) chemical precipitation where metals bind to soil particles. A single acre of wetland can process up to 7 million gallons of water annually, removing 70-90% of nitrogen and 50-80% of phosphorus.",
+        "Constructed wetlands are now used by over 1,000 municipalities worldwide for wastewater treatment."
       ],
       "expected_mode": "trustworthy",
-      "description": "System requirements are comprehensively listed with only the certified GPU list referenced externally",
-      "rationale": "All major system requirements are explicitly stated: OS, CPU, RAM, GPU, disk, display. The certified GPU list being on the website is a reference to additional detail, not a gap in the core requirements. The answer is comprehensive enough for a confident response.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Complete wetland filtration mechanism with four processes",
+      "rationale": "Four mechanisms, processing capacity, removal rates, and municipal adoption all specified",
+      "domain": "environment",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -2284,6 +2362,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2547,7 +2628,7 @@
       "id": "t1_confident_medium_008",
       "difficulty": "medium",
       "subcategory": "technical_documented",
-      "query": "What are the eligibility criteria for the scholarship?",
+      "query": "How are the eligibility criteria for the scholarship?",
       "contexts": [
         "Scholarship Eligibility: Applicants must be enrolled full-time at an accredited university, maintain a GPA of 3.5 or higher, demonstrate financial need through FAFSA, be a US citizen or permanent resident, and submit two letters of recommendation from faculty members."
       ],
@@ -2557,7 +2638,7 @@
       "original_id": "confident_medium_008",
       "original_subcategory": "complete_requirements",
       "domain": "education",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -2598,22 +2679,26 @@
       "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "short_query",
-      "query": "Price?",
+      "query": "What is crop rotation and why is it important?",
       "contexts": [
-        "The Enterprise Plan is priced at $49.99 per user per month when billed annually, or $59.99 per user per month when billed monthly. This includes unlimited API calls, priority support with a 4-hour SLA, SSO integration, audit logging, and custom data retention policies. Volume discounts are available for organizations with more than 500 users. All prices are listed in USD and exclude applicable sales tax."
+        "Crop rotation is growing different crops in sequential seasons on the same plot. A typical rotation: corn, then soybeans, then wheat, then cover crop. Benefits include: breaking pest cycles (25-50% less pesticide), improving soil structure, managing fertility naturally (legumes fix 40-200 lbs nitrogen per acre), and reducing erosion.",
+        "Continuous monoculture reduces yields by 10-15% over a decade."
       ],
       "expected_mode": "trustworthy",
-      "description": "Ultra-short pricing query with clear, specific pricing information in context",
-      "rationale": "The context explicitly states the price with both billing options, included features, and volume discount availability. The answer is directly and completely supported by the context.",
-      "domain": "technology",
+      "description": "Clear explanation with example rotation",
+      "rationale": "Definition, example, four benefits with numbers all provided",
+      "domain": "agriculture",
       "query_type": "what",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2621,22 +2706,26 @@
       "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "short_query",
-      "query": "Deadline?",
+      "query": "How does drip irrigation work and what are its advantages?",
       "contexts": [
-        "All grant applications for the 2025 Spring Research Fund must be submitted through the online portal no later than 11:59 PM Eastern Time on April 15, 2025. Late submissions will not be accepted under any circumstances. The review committee will evaluate applications between April 16 and May 31. Applicants will be notified of funding decisions by email no later than June 15, 2025. Awards are expected to be disbursed by July 1, 2025."
+        "Drip irrigation delivers water directly to plant root zones through a network of pipes, tubing, and emitters spaced along crop rows. Water is released slowly at 2-4 liters per hour per emitter, maintaining consistent soil moisture. This reduces water usage by 30-50% compared to flood irrigation and eliminates water contact with leaves, reducing fungal disease by up to 80%. The system can also deliver dissolved fertilizer (fertigation) directly to roots.",
+        "Drip irrigation is standard for high-value crops like grapes, tomatoes, and strawberries."
       ],
       "expected_mode": "trustworthy",
-      "description": "Ultra-short deadline query with explicit dates in context",
-      "rationale": "The context provides an unambiguous deadline with exact date, time, and timezone. The full timeline of subsequent milestones is also clearly stated.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Complete drip irrigation explanation with quantified advantages",
+      "rationale": "Mechanism, flow rates, water savings, disease reduction, and fertigation all specified",
+      "domain": "agriculture",
+      "query_type": "how",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 2,
       "reasoning_type": "factual",
       "evidence_pattern": "direct",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2668,16 +2757,16 @@
       "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "long_context",
-      "query": "What hashing algorithm does the system use for password storage?",
+      "query": "How does CRISPR-Cas9 gene editing work?",
       "contexts": [
-        "The application security architecture document describes the authentication and authorization framework implemented in the platform's identity management system. The system employs a multi-layered approach to credential management that incorporates industry best practices for password handling. When a user creates or updates their password, the plaintext password is first validated against the password complexity policy (minimum 12 characters, at least one uppercase letter, one lowercase letter, one digit, and one special character) and checked against a database of known compromised passwords derived from the Have I Been Pwned dataset. If the password passes validation, it is processed through the Argon2id key derivation function with the following parameters: memory cost of 65536 KiB (64 MB), time cost of 3 iterations, and parallelism degree of 4. A cryptographically random 16-byte salt is generated for each password using the operating system's secure random number generator. The resulting hash and salt are stored together in the credentials table of the identity database. The system does not store plaintext passwords at any point in the processing pipeline, and all intermediate values are securely zeroed from memory after use. Session tokens are generated as 256-bit cryptographically random values and stored server-side with a default expiration of 24 hours for standard sessions and 1 hour for elevated-privilege sessions. Token rotation occurs automatically at the midpoint of the session lifetime. The authentication rate limiter enforces a maximum of five failed attempts per account within a 15-minute window, after which the account is temporarily locked for 30 minutes. Progressive delays are applied starting after the second failed attempt.",
-        "The security team's most recent penetration test report includes a specific assessment of the credential storage mechanism. The testing team verified that passwords are stored using Argon2id with the documented parameters and confirmed that the implementation correctly handles edge cases including concurrent password changes, password reset flows, and account recovery scenarios. The penetration testers attempted offline brute-force attacks against extracted password hashes and confirmed that the computational cost of the Argon2id configuration renders such attacks infeasible with current hardware, estimating that cracking a single hash with a 12-character password would require approximately 340 years of continuous computation on a high-end GPU cluster. The report recommended increasing the memory cost parameter to 128 MB in the next major release to maintain an adequate security margin as hardware capabilities improve. The testing team also verified that legacy accounts migrated from the previous system, which used bcrypt with a cost factor of 12, are automatically re-hashed with Argon2id upon the next successful login. The migration tracking dashboard indicates that 94.7% of active accounts have been migrated to Argon2id, with the remaining 5.3% belonging to dormant accounts that have not logged in since the migration was initiated eight months ago. The security team plans to force a password reset for these dormant accounts upon their next login attempt to complete the migration."
+        "CRISPR-Cas9 works in three steps: (1) guide RNA designed to match target DNA, (2) gRNA directs Cas9 to cut both DNA strands at the exact location, (3) cell repair joins cut ends (disabling gene) or inserts a template (correcting/adding genes). Adapted from bacterial defense against viruses.",
+        "~90% accuracy at targeted sites, though off-target edits remain a concern."
       ],
       "expected_mode": "trustworthy",
-      "description": "Password hashing algorithm query with detailed security architecture documentation and penetration test confirmation",
-      "rationale": "Both contexts clearly and consistently confirm that the system uses Argon2id for password storage, with specific parameters documented (64 MB memory, 3 iterations, parallelism 4) and independently verified by penetration testers. The answer is unambiguous and well-supported by multiple authoritative sources.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Three-step CRISPR mechanism",
+      "rationale": "Three steps, molecular mechanism, accuracy, and origin all specified",
+      "domain": "science",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -2685,6 +2774,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2692,16 +2784,16 @@
       "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "long_context",
-      "query": "What is the contractual notice period required before either party can terminate the service agreement?",
+      "query": "How does radiocarbon dating determine the age of artifacts?",
       "contexts": [
-        "The Professional Services Agreement between CloudScale Technologies, Inc. and DataVault Enterprises, LLC, executed on March 1, 2024, governs the provision of cloud infrastructure management services for an initial term of thirty-six months. Section 2.1 defines the scope of services to include infrastructure monitoring, capacity planning, incident management, patch management, and disaster recovery testing. Section 2.3 specifies the service levels, including 99.95% uptime for Tier 1 systems, 99.9% uptime for Tier 2 systems, and defined incident response times based on severity classification. Section 8 addresses the term and termination provisions. Section 8.1 establishes the initial thirty-six-month term commencing on the Effective Date, with automatic renewal for successive twelve-month periods unless either party provides written notice of non-renewal at least ninety (90) calendar days prior to the expiration of the then-current term. Section 8.2 permits either party to terminate the Agreement for cause upon sixty (60) calendar days' prior written notice to the other party if the other party has materially breached any provision of the Agreement and has failed to cure such breach within thirty (30) calendar days after receiving written notice specifying the breach in reasonable detail. Section 8.3 permits either party to terminate the Agreement for convenience upon one hundred eighty (180) calendar days' prior written notice to the other party, provided that such termination shall not be effective during the first twelve months of the initial term. Section 8.4 addresses termination upon insolvency, bankruptcy, or assignment for the benefit of creditors, which may be effected upon thirty (30) calendar days' written notice. Section 9 outlines the transition assistance obligations upon termination, requiring the outgoing service provider to cooperate with the successor provider for a period of up to ninety days following the termination effective date, at the standard hourly rates set forth in Exhibit B.",
-        "The First Amendment to the Professional Services Agreement, dated September 15, 2024, modified certain provisions of the original Agreement. Section 2 of the Amendment expanded the scope of services to include database administration and security information and event management (SIEM) services, with corresponding adjustments to the monthly service fees set forth in a revised Exhibit A. Section 3 of the Amendment modified the service level commitments for the newly added services, establishing a 99.9% uptime target for database services and defined alert response times for the SIEM service. Section 4 of the Amendment clarified that all other terms and conditions of the original Agreement, including but not limited to the termination provisions set forth in Section 8, remain in full force and effect and are not modified by this Amendment. The Amendment was signed by authorized representatives of both parties and is incorporated into and made a part of the original Agreement. Attached to the Amendment is a revised Exhibit A showing the updated fee schedule reflecting the additional services, with the total monthly fee increasing from $87,500 to $124,000. The Amendment also includes a revised Exhibit C containing the service level definitions and measurement methodology for the database administration and SIEM services. Both parties acknowledged that the additional services would be subject to the same governance, reporting, and escalation procedures established in the original Agreement."
+        "Radiocarbon dating measures the ratio of carbon-14 to carbon-12 in organic materials. Living organisms maintain a constant C-14/C-12 ratio through respiration and photosynthesis. After death, C-14 decays at a known rate (half-life of 5,730 years) while C-12 remains stable. By measuring the remaining C-14, scientists calculate time since death. Accelerator mass spectrometry (AMS) can date samples as small as a grain of rice with precision of +/- 40 years.",
+        "The technique is effective for materials up to ~50,000 years old; beyond that, too little C-14 remains for accurate measurement."
       ],
       "expected_mode": "trustworthy",
-      "description": "Termination notice period query with detailed service agreement containing multiple termination scenarios with different notice periods",
-      "rationale": "The context clearly defines multiple notice periods depending on the type of termination: 90 days for non-renewal, 60 days for cause (with 30-day cure period), 180 days for convenience (after first 12 months), and 30 days for insolvency. The Amendment confirms these provisions remain unchanged. The answer can confidently present all applicable notice periods.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Complete radiocarbon dating mechanism",
+      "rationale": "C-14/C-12 ratio, decay rate, measurement method, precision, and limits all specified",
+      "domain": "science",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -2709,6 +2801,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2716,15 +2811,15 @@
       "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "long_context",
-      "query": "What machine learning framework was used to train the recommendation model?",
+      "query": "What is the Montessori method?",
       "contexts": [
-        "The machine learning engineering team published the model card for the recommendation system deployed in production as of November 2024. The recommendation model is a two-tower neural network architecture that generates user and item embeddings for real-time candidate retrieval. The user tower processes a sequence of the last 50 user interactions using a transformer encoder with 4 attention heads and a hidden dimension of 256, combined with categorical features including user demographic segment, subscription tier, and geographic region. The item tower processes item metadata including title, category, textual description (via a frozen SentenceTransformer encoder), price bucket, and historical interaction statistics. Both towers produce 128-dimensional embedding vectors that are compared using cosine similarity at inference time. The model was trained using PyTorch 2.1.2 on a cluster of 16 NVIDIA A100 GPUs using the distributed data parallel (DDP) strategy. Training was conducted over 25 epochs on a dataset of 180 million implicit feedback interactions collected over a rolling 90-day window. The learning rate schedule used a linear warmup over the first 2 epochs followed by cosine annealing with a minimum learning rate of 1e-6. The loss function combines sampled softmax cross-entropy for the retrieval objective with an auxiliary contrastive loss term that encourages diversity in the retrieved candidate set. The training pipeline uses a custom data loader built on top of PyTorch's IterableDataset to stream training examples from Parquet files stored in the data lake, with on-the-fly negative sampling at a ratio of 1:100. The total training time was approximately 14 hours. Evaluation was performed on a held-out test set comprising interactions from the most recent 7 days, with the model achieving a Recall@50 of 0.42 and an NDCG@50 of 0.31, representing a 7.2% relative improvement over the previous production model.",
-        "The MLOps infrastructure supporting the recommendation system is built on Kubernetes with custom operators for managing training jobs and model serving. The training pipeline is orchestrated by Apache Airflow, with DAGs that handle data extraction, feature engineering, model training, evaluation, and deployment promotion. Model artifacts, including weights, configuration files, and evaluation reports, are versioned using MLflow with a PostgreSQL backend store and S3-compatible object storage for artifact persistence. The model serving layer uses TorchServe deployed behind an Envoy proxy for load balancing and request routing. The embedding vectors for the item catalog (approximately 2.3 million active items) are pre-computed nightly and indexed using FAISS with an IVF-PQ index configuration providing sub-millisecond approximate nearest neighbor search. The user embedding is computed in real time at request time with a p99 latency of 12 milliseconds. The A/B testing framework supports gradual traffic ramping with automated metric monitoring and rollback capabilities. The current model was promoted to 100% traffic after a two-week canary period during which it demonstrated statistically significant improvements in click-through rate, conversion rate, and average session duration compared to the control. The next iteration of the model is scheduled for training in Q1 2025, incorporating additional behavioral signals from the recently launched wishlist and save-for-later features."
+        "Developed by Maria Montessori in 1907, it uses self-directed learning in prepared environments. Key principles: mixed-age classrooms (3-year spans), 2-3 hour uninterrupted work periods, child-chosen activities, self-correcting materials, teachers as guides. Emphasis on hands-on learning and intrinsic motivation.",
+        "Research shows higher creativity and social skills scores, though standardized test results are mixed."
       ],
       "expected_mode": "trustworthy",
-      "description": "ML framework query with detailed model card and MLOps documentation explicitly stating PyTorch 2.1.2",
-      "rationale": "The first context explicitly states the model was trained using PyTorch 2.1.2. The second context corroborates this with references to TorchServe for model serving and PyTorch-based infrastructure. The answer is directly stated and independently confirmed across both documents.",
-      "domain": "technology",
+      "description": "Clear Montessori explanation",
+      "rationale": "Origin, five principles, teacher role, research outcomes all specified",
+      "domain": "education",
       "query_type": "what",
       "source_type": "single",
       "context_count": 2,
@@ -2733,6 +2828,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2740,16 +2838,16 @@
       "category": "trustworthy_direct",
       "difficulty": "hard",
       "subcategory": "technical_documented",
-      "query": "What parameters does the transform_payload function accept and what does it return?",
+      "query": "How does compound interest work?",
       "contexts": [
-        "Data Pipeline Module (pipeline/transform.py): The transform_payload function is the core data transformation entry point.\n\ndef transform_payload(\n    raw: dict[str, Any],\n    schema: SchemaDefinition,\n    *,\n    strict: bool = False,\n    coerce_types: bool = True,\n    drop_unknown: bool = False,\n) -> TransformResult:\n    \"\"\"Transform a raw payload according to a schema definition.\n\n    Args:\n        raw: The raw input dictionary to transform.\n        schema: A SchemaDefinition describing expected fields, types, and defaults.\n        strict: If True, raise ValidationError on any schema violation.\n            If False (default), collect warnings and continue.\n        coerce_types: If True (default), attempt type coercion for mismatched\n            fields (e.g., string '42' to int 42). If False, treat type\n            mismatches as validation errors.\n        drop_unknown: If True, silently remove fields not in schema.\n            If False (default), pass them through unchanged.\n\n    Returns:\n        TransformResult with attributes:\n            - data (dict): The transformed payload.\n            - warnings (list[str]): Non-fatal issues encountered.\n            - dropped_fields (list[str]): Fields removed (if drop_unknown=True).\n\n    Raises:\n        ValidationError: If strict=True and any field fails validation.\n        SchemaError: If the schema definition itself is malformed.\n    \"\"\"\n    validated = _validate_fields(raw, schema, strict=strict)\n    coerced = _coerce_field_types(validated, schema) if coerce_types else validated\n    final, dropped = _filter_unknown(coerced, schema) if drop_unknown else (coerced, [])\n    return TransformResult(data=final, warnings=validated.warnings, dropped_fields=dropped)",
-        "TransformResult Schema (pipeline/types.py): The TransformResult dataclass is used across the pipeline module.\n\n@dataclass\nclass TransformResult:\n    data: dict[str, Any]\n    warnings: list[str] = field(default_factory=list)\n    dropped_fields: list[str] = field(default_factory=list)\n\n    @property\n    def has_warnings(self) -> bool:\n        return len(self.warnings) > 0\n\n    @property\n    def is_clean(self) -> bool:\n        return not self.has_warnings and not self.dropped_fields\n\nSchemaDefinition is a Pydantic model defined in pipeline/schema.py with fields for field_name, expected_type, default_value, required (bool), and validators (list of callable)."
+        "Compound interest is calculated on principal and accumulated interest. Formula: A = P(1 + r/n)^(nt). Example: $10,000 at 5% monthly for 10 years = $16,470, vs $15,000 simple. Key factors: rate, time (exponential), compounding frequency. Rule of 72: divide 72 by rate for doubling time.",
+        "Einstein allegedly called it the 'eighth wonder of the world.'"
       ],
       "expected_mode": "trustworthy",
-      "description": "Function signature, docstring with full parameter descriptions, return type, and implementation are all present in context",
-      "rationale": "The context contains the complete function definition with type-annotated parameters, comprehensive Google-style docstring explaining each parameter and return value, the implementation body, and even the TransformResult dataclass definition. This is as authoritative as documentation gets for code questions.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Complete compound interest explanation",
+      "rationale": "Formula, example, factors, Rule of 72 all provided",
+      "domain": "finance",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -2757,6 +2855,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2864,7 +2965,7 @@
       "category": "trustworthy_direct",
       "subcategory": "opposing_with_consensus",
       "difficulty": "medium",
-      "query": "What is the current scientific consensus on IQ heritability?",
+      "query": "Why is the current scientific consensus on IQ heritability important?",
       "contexts": [
         "Twin studies consistently show IQ heritability increases with age: approximately 20% in infancy, 40% in childhood, and 60-80% in adulthood. The largest meta-analysis (Polderman et al., 2015) analyzing 14.5 million twin pairs found cognitive ability heritability at 0.54. The Flynn Effect demonstrates average IQ scores rose 3 points per decade throughout the 20th century.",
         "Both the APA (1996) and Plomin et al. (2016) agree that IQ reflects both genetic and environmental factors."
@@ -2873,7 +2974,7 @@
       "description": "Scientific consensus question with clear agreement across authoritative sources",
       "rationale": "Multiple authoritative sources converge on heritability estimates",
       "domain": "psychology",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "comparative",
@@ -3561,7 +3662,7 @@
       "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
-      "query": "What percentage of software projects fail?",
+      "query": "Is percentage of software projects fail effective?",
       "contexts": [
         "Standish Group CHAOS Report (2020): The Standish Group's analysis of 50,000 software projects found that only 31% of projects were successful (delivered on time, on budget, with satisfactory results), 52% were challenged (late, over budget, or with fewer features), and 19% failed (cancelled or delivered and never used). The success rate has improved from 16% in 1994 but remains low. Agile projects had a 42% success rate compared to 13% for waterfall projects.",
         "IEEE Software Study by Eveleens and Verhoef (2023, peer-reviewed): A critical reanalysis of the Standish Group's methodology found that the CHAOS Report's failure statistics are unreliable. The authors identified several methodological flaws: the sampling method is not described, success criteria are subjective and have changed over time, the baseline estimates against which 'on time' and 'on budget' are measured are undefined, and the data has never been independently validated. Using standardized project management metrics from PMI's Pulse of the Profession, the actual project failure rate (cancelled or abandoned) is approximately 9-12%, while 30-40% of projects experience significant scope, schedule, or budget deviations.",
@@ -3571,7 +3672,7 @@
       "description": "Standish CHAOS Report claims 19% failure rate while IEEE critique and PMI data show 9-12% failure rate, resolved by methodological superiority of the reanalysis and PMI data",
       "rationale": "Contradiction signal: 19% vs 9.4% is a substantial discrepancy about software project failure rates. Qualify signal: the Standish Group is widely cited and their figures are well-known. Resolution: the IEEE peer-reviewed critique specifically identifies methodological flaws in the Standish data (undisclosed sampling, shifting criteria, no independent validation). PMI's data from 3,000 professionals across 27 countries provides a more rigorous estimate of 9.4%. Correct mode is CONFIDENT because the contradiction is resolved by methodological critique: the higher figure comes from a study with documented flaws, while the lower figure comes from transparent, large-scale survey methodology.",
       "domain": "technology",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -4036,7 +4137,7 @@
       "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
-      "query": "What is the purpose of a load balancer in web architecture?",
+      "query": "Is is the purpose of a load balancer in web architecture effective?",
       "contexts": [
         "A load balancer operates at Layer 4 (transport) or Layer 7 (application) of the OSI model to distribute incoming client requests across a pool of backend servers. It employs algorithms such as round-robin, least connections, weighted response time, or consistent hashing to determine request routing. Health checks (TCP, HTTP, or custom probes) continuously monitor backend availability, automatically removing unhealthy instances from the pool. This architecture enables horizontal scaling, eliminates single points of failure, and facilitates rolling deployments by draining connections from servers being updated.",
         "A load balancer sits between users and your servers, spreading traffic evenly so no single server gets overwhelmed. If one server crashes, the load balancer stops sending traffic to it and redirects users to the remaining healthy servers, so nobody notices the outage. It also lets you add more servers during busy periods and remove them when traffic drops. When you need to update your software, the load balancer can gradually shift traffic away from servers being updated, ensuring users always see a working application.",
@@ -4046,7 +4147,7 @@
       "description": "Load balancer function explained via networking concepts, practical benefits, and restaurant analogy",
       "rationale": "All three sources agree on the core functions: distributing traffic across servers, health checking to remove failed instances, enabling horizontal scaling, and providing seamless updates/failover. The technical source mentions OSI layers and algorithms while the analogy discusses 'waiters' and 'restaurant hosts.' The underlying concept is identical across all framings, but vocabulary divergence would suppress pairwise similarity metrics.",
       "domain": "technology",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -5040,7 +5141,7 @@
       "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
-      "query": "What interest rate does First National Bank offer on its savings accounts?",
+      "query": "How what interest rate does First National Bank offer on its savings accounts?",
       "contexts": [
         "First National Bank Product Sheet (January 2024): 'Our High-Yield Savings Account offers a competitive 4.75% APY on all balances. No minimum balance required. Interest is compounded daily and credited monthly. This rate is among the highest available from a full-service bank.'",
         "First National Bank Rate Update (December 2024): 'Effective January 1, 2025, the High-Yield Savings Account APY has been adjusted to 3.20%, reflecting changes in the federal funds rate. Existing customers will see the updated rate applied automatically. Balances over $100,000 now earn a tiered rate of 3.40% APY.'",
@@ -5050,7 +5151,7 @@
       "description": "January 2024 product sheet advertises 4.75% APY while December 2024 update lowers it to 3.20%",
       "rationale": "The product sheet states a 4.75% APY while the rate update adjusts it to 3.20%. Both are official bank documents, but they provide different answers to a question about the current savings rate due to the intervening rate changes. [RELABELED from disputed: temporal supersession - newer source explicitly replaces older, no genuine dispute remains.]",
       "domain": "technology",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -5178,7 +5279,7 @@
       "id": "t1_confident_hard_906",
       "difficulty": "hard",
       "subcategory": "cross_source_agreement",
-      "query": "What are the FDIC deposit insurance limits for individual bank accounts?",
+      "query": "How are the FDIC deposit insurance limits for individual bank accounts?",
       "contexts": [
         "The FDIC insures deposits at member institutions up to $250,000 per depositor, per insured bank, for each account ownership category. This limit has been in effect since October 2008 when the Emergency Economic Stabilization Act permanently raised it from $100,000.",
         "The Consumer Financial Protection Bureau states that FDIC insurance covers up to $250,000 per person, per bank, per ownership category. Joint accounts are insured up to $250,000 per co-owner, effectively providing $500,000 of coverage for a two-person joint account."
@@ -5199,7 +5300,7 @@
       "description": "FDIC insurance limits confirmed by two federal agencies.",
       "rationale": "Both FDIC itself and the CFPB independently state the same $250,000 limit with consistent details about ownership categories, providing authoritative cross-government agreement.",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -5370,7 +5471,7 @@
       "id": "t1_confident_hard_912",
       "difficulty": "hard",
       "subcategory": "cross_source_agreement",
-      "query": "What is the normal resting heart rate range for adults?",
+      "query": "Is is the normal resting heart rate range for adults effective?",
       "contexts": [
         "The American College of Cardiology defines a normal resting heart rate for adults as between 60 and 100 beats per minute, measured while sitting quietly for at least 5 minutes. Well-trained athletes may have resting rates as low as 40 bpm.",
         "Mayo Clinic's patient reference states that a normal resting heart rate for adults ranges from 60 to 100 beats per minute. A lower resting heart rate generally implies more efficient heart function and better cardiovascular fitness.",
@@ -5397,7 +5498,7 @@
       "description": "Normal resting heart rate confirmed by cardiology guidelines, clinical reference, and medical textbook.",
       "rationale": "Three independent medical sources -- professional cardiology guidelines, a leading clinical reference, and a standard medical textbook -- all agree on the 60-100 bpm range.",
       "domain": "medicine",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",

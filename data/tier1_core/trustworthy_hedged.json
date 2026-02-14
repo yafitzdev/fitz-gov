@@ -91,18 +91,18 @@
       "id": "t1_qualify_hard_004",
       "difficulty": "hard",
       "subcategory": "causal_uncertainty",
-      "query": "Why do people who read more books live longer?",
+      "query": "Why did pyramid-building civilizations tend to decline?",
       "contexts": [
-        "Yale research found book readers had a 23-month survival advantage over non-readers.",
-        "The study controlled for age, race, self-reported health, and employment.",
-        "Reading 3.5 hours per week was associated with maximum longevity benefit."
+        "Multiple pyramid-building civilizations eventually experienced decline.",
+        "Resource depletion from monument construction has been proposed as a factor.",
+        "Climate shifts, foreign invasion, and internal conflict also coincided."
       ],
       "expected_mode": "trustworthy",
-      "description": "Controlled study but causation still uncertain",
-      "rationale": "Even with controls, reading may be marker for other healthy behaviors not measured",
+      "description": "Pattern observed but causation unclear",
+      "rationale": "Pyramid building could be symptom rather than cause of decline",
       "original_id": "qualify_hard_004",
       "original_subcategory": "correlation_causation",
-      "domain": "technology",
+      "domain": "history",
       "query_type": "why",
       "source_type": "single",
       "context_count": 3,
@@ -112,6 +112,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -288,29 +291,30 @@
       "id": "t1_qualify_hard_011",
       "difficulty": "hard",
       "subcategory": "implicit_assumptions",
-      "query": "Why did our NPS score improve this quarter?",
+      "query": "Why did the Silk Road decline after the fall of the Mongol Empire?",
       "contexts": [
-        "NPS increased from 32 to 48 this quarter.",
-        "We launched a new customer success program in month 1.",
-        "We also fixed 15 long-standing bugs reported by customers.",
-        "Our main competitor had a major security breach that was widely publicized.",
-        "We changed our NPS survey methodology to follow up faster after interactions."
+        "Trade volumes along the Silk Road dropped significantly after 1368.",
+        "The rise of maritime trade routes offered cheaper and faster alternatives.",
+        "Political fragmentation after the Mongol collapse made overland routes more dangerous."
       ],
       "expected_mode": "trustworthy",
-      "description": "Multiple simultaneous changes affecting NPS",
-      "rationale": "CS program, bug fixes, competitor issues, AND survey changes all occurred - can't isolate which improved NPS",
+      "description": "Multiple factors correlate with Silk Road decline",
+      "rationale": "Maritime competition, political instability, and timing all coincide",
       "original_id": "qualify_hard_011",
       "original_subcategory": "attribution_error",
-      "domain": "technology",
+      "domain": "history",
       "query_type": "why",
       "source_type": "single",
-      "context_count": 5,
+      "context_count": 3,
       "reasoning_type": "causal",
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -375,7 +379,7 @@
       "id": "t1_qualify_hard_014",
       "difficulty": "hard",
       "subcategory": "mixed_evidence",
-      "query": "Will our product succeed in the Japanese market?",
+      "query": "Is will our product succeed in the Japanese market?",
       "contexts": [
         "Our product is successful in the US and UK markets.",
         "Japan has the third-largest economy and high smartphone penetration.",
@@ -388,7 +392,7 @@
       "original_id": "qualify_hard_014",
       "original_subcategory": "prediction_insufficient_data",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
@@ -403,28 +407,30 @@
       "id": "t1_qualify_hard_015",
       "difficulty": "hard",
       "subcategory": "mixed_evidence",
-      "query": "Is our security adequate against sophisticated attackers?",
+      "query": "Why do homes with solar panels sell for more?",
       "contexts": [
-        "We passed our annual penetration test with no critical findings.",
-        "The pentest was conducted over 5 days by a mid-tier security firm.",
-        "We use industry-standard encryption and authentication.",
-        "No breaches have occurred in our 3-year history."
+        "A Zillow analysis found solar homes sold for 4.1% more.",
+        "Solar buyers may be environmentally conscious and willing to pay premiums.",
+        "Energy savings are estimated at $20,000-30,000 over system lifetime."
       ],
       "expected_mode": "trustworthy",
-      "description": "Security assessment with significant gaps",
-      "rationale": "5-day pentest can't find all vulnerabilities; no breaches doesn't mean no vulnerabilities; sophisticated attackers have more resources than mid-tier firms",
+      "description": "Price premium with causal ambiguity",
+      "rationale": "Premium could reflect energy savings OR buyer demographics",
       "original_id": "qualify_hard_015",
       "original_subcategory": "incomplete_evidence",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "real_estate",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 4,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -483,18 +489,18 @@
       "id": "t1_qualify_hard_018",
       "difficulty": "hard",
       "subcategory": "hedged_evidence",
-      "query": "Will autonomous vehicles be mainstream by 2030?",
+      "query": "Does living near a Whole Foods increase property values?",
       "contexts": [
-        "Industry analysts believe autonomous vehicles are likely to achieve significant market penetration by 2030.",
-        "McKinsey report notes: 'Under optimistic assumptions, AVs could represent 10-15% of new vehicle sales.'",
-        "Regulatory experts suggest approval timelines remain uncertain in key markets."
+        "A study found homes within 1 mile of a Whole Foods appreciated 34% faster than the metro average.",
+        "Whole Foods selects locations in already-appreciating neighborhoods.",
+        "Higher-income residents who demand premium grocers also invest in home improvements."
       ],
       "expected_mode": "trustworthy",
-      "description": "Prediction sources use hedging throughout",
-      "rationale": "All sources hedge: 'believe', 'likely', 'could', 'under optimistic assumptions', 'uncertain' - no confident prediction is warranted",
+      "description": "Appreciation correlation with store location selection bias",
+      "rationale": "Whole Foods may follow appreciation rather than cause it",
       "original_subcategory": "hedged_source",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "real_estate",
+      "query_type": "does",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -503,6 +509,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -937,16 +946,16 @@
       "category": "trustworthy_hedged",
       "subcategory": "mixed_evidence",
       "difficulty": "hard",
-      "query": "Does intermittent fasting help with weight loss?",
+      "query": "Does voter ID legislation reduce fraud or suppress turnout?",
       "contexts": [
-        "A systematic review and meta-analysis published in the New England Journal of Medicine (de Cabo & Mattson, 2019; updated 2023) analyzed 41 randomized controlled trials involving 3,847 participants across time-restricted eating (TRE), alternate-day fasting (ADF), and 5:2 protocols. The pooled analysis found statistically significant weight loss of 4.3 kg (95% CI: 3.1-5.5 kg) over 12 months compared to ad libitum eating controls. Notably, three large trials (TREAT, n=116; MATADOR, n=108; DRIFT, n=209) demonstrated that intermittent fasting preserved lean mass better than continuous caloric restriction, with fat-free mass loss of 1.2 kg vs 2.8 kg respectively. Metabolic biomarkers including fasting insulin and HOMA-IR improved significantly in the IF groups.",
-        "However, a 2024 Cochrane Review (Allaf et al., updated November 2024) that applied stricter inclusion criteria — requiring at least 12 months follow-up, intention-to-treat analysis, and active dietary counseling controls — found the evidence substantially weaker. Of the 41 trials in the NEJM review, only 9 met Cochrane criteria. The pooled effect in these higher-quality trials was 1.7 kg (95% CI: 0.4-3.0 kg), which the reviewers classified as 'clinically modest.' Furthermore, three RCTs published in 2024 (TIMELOSS, CHRONO-2, and the Salk TRE trial) comparing 16:8 TRE against matched caloric restriction found no significant difference in weight loss at 12 months (mean difference 0.3 kg, p=0.71). The Cochrane authors concluded that 'intermittent fasting does not appear superior to conventional caloric restriction for weight management' and rated the overall evidence certainty as 'low' due to heterogeneity and attrition bias.",
-        "Adherence data from the US National Weight Control Registry (2024 annual report) adds further complexity. Among 2,340 registry members who maintained >13.6 kg weight loss for >1 year, only 4.2% reported using any form of intermittent fasting as their primary strategy, compared to 67% using daily caloric monitoring. Self-reported long-term adherence rates for IF protocols average 38% at 12 months versus 52% for flexible caloric restriction in real-world settings."
+        "A GAO study found strict ID states saw 2-3% lower minority turnout.",
+        "Proponents cite cases of impersonation fraud voter ID would prevent.",
+        "In-person voter fraud frequency is estimated at 0.00004% to 0.0025%."
       ],
       "expected_mode": "trustworthy",
-      "description": "Multiple studies with conflicting conclusions depending on methodology and comparison group",
-      "rationale": "Initial evidence looks positive but higher-quality reviews find modest effects no better than standard dieting — genuinely mixed evidence requiring qualification",
-      "domain": "technology",
+      "description": "Voter ID effects with limited fraud data",
+      "rationale": "Turnout suppression documented but prevention benefit depends on fraud rate",
+      "domain": "government",
       "query_type": "does",
       "source_type": "single",
       "context_count": 3,
@@ -955,6 +964,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -962,23 +974,27 @@
       "category": "trustworthy_hedged",
       "subcategory": "mixed_evidence",
       "difficulty": "hard",
-      "query": "Are microservices architectures better than monoliths for enterprise applications?",
+      "query": "Does increasing the minimum wage cause job losses?",
       "contexts": [
-        "A 2024 survey by the DevOps Research and Assessment (DORA) team at Google, covering 3,200 engineering organizations, found that teams using microservices reported 46% faster deployment frequency and 31% lower change failure rates compared to monolithic teams, after controlling for organization size and industry. Netflix, Amazon, and Uber have published extensively about their microservices transformations, with Netflix reporting that their move from a monolithic Java application to over 700 microservices reduced deployment time from weeks to minutes and enabled them to scale from 10 million to 250 million subscribers. The Cloud Native Computing Foundation's 2024 annual survey reported that 78% of organizations running production microservices rated them as 'meeting or exceeding expectations.'",
-        "Conversely, the 'Monolith First' movement has gained significant traction, supported by empirical data. A longitudinal study by Thoughtworks (2023-2024) tracking 47 organizations that migrated from monoliths to microservices found that 62% experienced a net increase in operational complexity that exceeded productivity gains during the first 24 months. Total cost of ownership increased by an average of 34% due to infrastructure overhead, inter-service communication latency management, and distributed debugging tooling. Basecamp's DHH published detailed cost analyses showing their monolithic Rails application serves millions of users at a fraction of the infrastructure cost of comparable microservices architectures. Kelsey Hightower, a prominent Kubernetes advocate, publicly stated in 2024 that 'most companies would be better served by a well-structured monolith than a poorly implemented microservices architecture.' The study also found that organizations with fewer than 50 engineers showed no statistically significant improvement in any DORA metric after microservices adoption."
+        "The famous Card-Krueger study found no job losses after New Jersey raised its minimum wage.",
+        "A Congressional Budget Office analysis projected 1.4 million job losses from a $15 federal minimum.",
+        "Effects vary significantly by region, with rural areas more sensitive than urban centers."
       ],
       "expected_mode": "trustworthy",
-      "description": "Large-scale surveys support microservices but longitudinal studies show high costs and complexity",
-      "rationale": "Evidence directly conflicts: survey data favors microservices while longitudinal cost studies and expert opinion favor monoliths for many cases — genuinely mixed",
-      "domain": "technology",
-      "query_type": "is",
+      "description": "Conflicting economic evidence on minimum wage employment effects",
+      "rationale": "Landmark study says no losses, CBO says yes, regional variation complicates both",
+      "domain": "government",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -986,23 +1002,27 @@
       "category": "trustworthy_hedged",
       "subcategory": "mixed_evidence",
       "difficulty": "hard",
-      "query": "Does body camera usage reduce police use of force incidents?",
+      "query": "Why do Mediterranean diet followers tend to live longer?",
       "contexts": [
-        "The Rialto Police Department randomized controlled trial (Ariel et al., 2015), widely considered the foundational study, found a 59% reduction in use-of-force incidents when officers wore body cameras. Subsequent replication studies in Orlando (53% reduction, n=89 officers), Phoenix (37% reduction across 4 precincts), and Mesa (42% reduction) produced consistent findings. A 2023 meta-analysis in the Journal of Criminal Justice synthesizing 28 studies found a pooled odds ratio of 0.62 (95% CI: 0.51-0.75) for use-of-force incidents with body cameras, corresponding to approximately a 38% overall reduction. The U.S. Department of Justice cited this evidence in awarding $143 million in body camera grants to 527 law enforcement agencies between 2020 and 2024.",
-        "The largest and most methodologically rigorous study to date, however, reached different conclusions. The Washington, D.C. Metropolitan Police Department RCT (Yokum, Ravishankar, & Coppock, 2019) randomly assigned 2,224 officers — ten times larger than the Rialto study — and found no statistically significant effect on use of force (IRR = 0.97, 95% CI: 0.83-1.14), civilian complaints, or policing activity. A 2024 follow-up covering six additional large departments (Chicago, Los Angeles, Houston, Philadelphia, San Antonio, and Las Vegas) found similarly null results in five of six departments, with only Las Vegas showing a significant reduction. The authors argued that earlier positive findings suffered from Hawthorne effects, small sample sizes, and the novelty of cameras. They noted that as body cameras became routine rather than novel, the behavioral modification effect appeared to diminish substantially."
+        "A 20-year study found Mediterranean diet adherents had 25% lower mortality.",
+        "Mediterranean populations also have stronger social ties and more activity.",
+        "The diet is rich in olive oil and fish with known anti-inflammatory properties."
       ],
       "expected_mode": "trustworthy",
-      "description": "Early smaller studies show large reductions but the largest rigorous studies find null effects",
-      "rationale": "Classic mixed evidence where study size and methodology drive divergent conclusions — smaller studies positive, largest studies null",
-      "domain": "technology",
-      "query_type": "does",
+      "description": "Longevity correlation with confounding lifestyle factors",
+      "rationale": "Diet may be one factor among many lifestyle differences",
+      "domain": "food",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1083,24 +1103,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "hedged_evidence",
       "difficulty": "hard",
-      "query": "Will quantum computing break current encryption standards?",
+      "query": "Does eating locally grown food reduce your carbon footprint?",
       "contexts": [
-        "The National Institute of Standards and Technology (NIST) published its Post-Quantum Cryptography standardization final selections in August 2024, describing the threat timeline as 'uncertain but potentially within 10-15 years for cryptographically relevant quantum computers.' IBM's quantum roadmap projects a 100,000-qubit processor by 2033, but their researchers note that 'achieving the millions of error-corrected logical qubits needed to run Shor's algorithm against RSA-2048 may require fundamental breakthroughs in error correction that are not guaranteed.' Google's Quantum AI team published a 2024 analysis estimating that breaking RSA-2048 would require approximately 20 million physical qubits with current error rates — roughly 4,000 times the largest existing quantum processor. The analysis concluded that 'while the trajectory is concerning, significant engineering challenges separate current capabilities from cryptographic relevance.'",
-        "The cryptographic research community remains divided on timelines. Dr. Michele Mosca's widely-cited risk framework estimates a 33% probability of a cryptographically relevant quantum computer existing by 2033, based on expert elicitation surveys. However, skeptics including Gil Kalai (Hebrew University) and Mikhail Dyakonov (Université de Montpellier) have published detailed arguments that decoherence at scale may represent a fundamental physical barrier rather than an engineering challenge, suggesting that 'the prospect of large-scale fault-tolerant quantum computing remains speculative.' The NSA's Commercial National Security Algorithm Suite 2.0 guidance describes the quantum threat as 'anticipated' rather than 'imminent,' recommending migration to post-quantum algorithms 'as soon as practicable' while emphasizing that 'current encryption remains secure against all known classical and quantum attacks today.' CISA's post-quantum migration roadmap uses language like 'may be vulnerable in the future' and 'organizations should begin planning now as a precautionary measure.'"
+        "Transportation accounts for only 6% of food's total carbon emissions.",
+        "Large-scale farms often use fewer resources per unit of food produced.",
+        "However, local food systems can reduce packaging waste and support regional ecosystems."
       ],
       "expected_mode": "trustworthy",
-      "description": "Expert sources consistently use hedged language about quantum threat timelines and feasibility",
-      "rationale": "Every authoritative source — NIST, NSA, IBM, Google, academic researchers — uses probabilistic and uncertain language; the evidence does not support a definitive answer",
+      "description": "Local food benefits questioned by lifecycle analysis",
+      "rationale": "Transport is a small fraction; production efficiency may matter more",
       "original_subcategory": "hedged_claims",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "food",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1108,24 +1132,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "hedged_evidence",
       "difficulty": "hard",
-      "query": "Does the Mediterranean diet reduce cardiovascular disease risk?",
+      "query": "Does mandatory minimum sentencing reduce recidivism?",
       "contexts": [
-        "The PREDIMED trial (Estruch et al., republished in NEJM 2018 after correction) randomized 7,447 Spanish adults at high cardiovascular risk to Mediterranean diet supplemented with extra-virgin olive oil, Mediterranean diet with mixed nuts, or a control low-fat diet. Over a median 4.8-year follow-up, the Mediterranean diet groups showed a 30% relative risk reduction in the composite endpoint of myocardial infarction, stroke, and cardiovascular death (HR 0.70, 95% CI: 0.54-0.92). However, the 2018 republication was necessitated by protocol violations at one site where household members were non-randomly assigned to the same group, and a NEJM editorial stated that the corrected analysis 'largely supports but somewhat weakens the original conclusions.' The investigators acknowledged that 'the generalizability of these findings to populations outside the Mediterranean basin remains uncertain, as dietary patterns interact with cultural, genetic, and environmental factors that may not be replicable.'",
-        "Subsequent evidence has been characterized as 'supportive but with important caveats.' A 2024 Cochrane Review of Mediterranean diet interventions identified 30 RCTs but noted 'moderate heterogeneity in how the Mediterranean diet was defined and implemented across trials.' The review concluded that 'there is moderate-certainty evidence suggesting that a Mediterranean-style diet may reduce cardiovascular events, though the magnitude of benefit and the specific dietary components driving the effect require further investigation.' The Lyon Diet Heart Study showed even larger effects but has been criticized for its small sample size (n=605) and the inclusion of alpha-linolenic acid-enriched margarine, which is not traditionally Mediterranean. Observational studies from non-Mediterranean populations (Japan, US, Northern Europe) show attenuated associations compared to Southern European cohorts, leading researchers to hypothesize that 'lifestyle factors co-occurring with Mediterranean dietary patterns may confound the observed associations.'"
+        "Some studies show states with mandatory minimums have lower drug recidivism.",
+        "A RAND review found no consistent evidence longer sentences deter crime.",
+        "Mandatory minimums may incapacitate offenders but do not address causes."
       ],
       "expected_mode": "trustworthy",
-      "description": "Landmark trial had methodology corrections, and evidence described as 'supportive but with caveats' by systematic reviews",
-      "rationale": "The evidence base itself is hedged — corrected trials, moderate-certainty ratings, and acknowledged generalizability limitations mean confident claims go beyond what the sources support",
+      "description": "Mixed evidence on mandatory minimum effectiveness",
+      "rationale": "Some reduction in specific categories but no broad deterrence",
       "original_subcategory": "hedged_claims",
-      "domain": "technology",
+      "domain": "law",
       "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1133,24 +1161,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "hedged_evidence",
       "difficulty": "hard",
-      "query": "Can carbon capture and storage technology help meet climate targets?",
+      "query": "Does the presence of security cameras deter crime?",
       "contexts": [
-        "The IPCC Sixth Assessment Report (Working Group III, 2022; updated synthesis 2024) describes carbon capture and storage (CCS) as 'an option that could contribute to mitigation' but notes that 'its deployment has been significantly below projections in prior scenarios.' The Global CCS Institute's 2024 Status Report identifies 41 operational CCS facilities worldwide capturing approximately 49 MtCO2/year — less than 0.1% of annual global emissions. The IEA's Net Zero Emissions scenario requires CCS capacity to scale to 5.6 GtCO2/year by 2050, a 114-fold increase from current levels. The IEA describes this scaling requirement as 'ambitious but technically achievable with sustained policy support,' while acknowledging that 'historical deployment rates would need to accelerate dramatically.' The U.S. Department of Energy's 2024 assessment of direct air capture characterizes costs as 'currently $400-$600 per ton, with potential to reach $100-$200 per ton by 2035 contingent on learning-rate assumptions that remain unvalidated at scale.'",
-        "Independent analyses are more cautious. A 2024 study in Nature Energy auditing the performance of operational CCS projects found that average capture rates across existing facilities were 55-80%, significantly below the 90%+ design specifications commonly cited in climate models. The Petra Nova facility in Texas, the largest post-combustion capture project in the US, was mothballed in 2020 due to economic underperformance and only partially restarted in 2024. The Sleipner project in Norway, operational since 1996, has captured 26 Mt total — impressive as a demonstration but representing only hours of global emissions. Stanford professor Mark Jacobson's team published a critique arguing that CCS 'may delay the transition to renewables by providing a justification for continued fossil fuel use,' a position described as 'controversial but not without merit' by the IPCC authors. The evidence suggests CCS could play a role but the scale, cost, and timeline uncertainties are substantial."
+        "A meta-analysis found surveillance cameras reduced crime by 13% in parking lots.",
+        "The effect was negligible in city centers and public housing.",
+        "Critics argue cameras merely displace crime to unmonitored areas rather than preventing it."
       ],
       "expected_mode": "trustworthy",
-      "description": "Authoritative sources consistently describe CCS potential in hedged, conditional language with acknowledged uncertainties",
-      "rationale": "IPCC, IEA, and DOE all use hedged language ('could contribute,' 'contingent on,' 'ambitious but') — the technology has potential but is far from proven at necessary scale",
+      "description": "Context-dependent deterrence with displacement concerns",
+      "rationale": "Works in some settings but not others, and displacement is hard to measure",
       "original_subcategory": "hedged_claims",
-      "domain": "technology",
-      "query_type": "should",
+      "domain": "law",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1213,24 +1245,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "temporal_uncertainty",
       "difficulty": "hard",
-      "query": "What are the recommended COVID-19 vaccination guidelines?",
+      "query": "Does home field advantage significantly affect outcomes?",
       "contexts": [
-        "The CDC's Advisory Committee on Immunization Practices (ACIP) issued updated COVID-19 vaccination recommendations on September 12, 2023, following FDA authorization of the updated 2023-2024 monovalent XBB.1.5 vaccines from Pfizer-BioNTech and Moderna. The committee recommended that everyone aged 6 months and older receive one dose of the updated vaccine, regardless of prior vaccination history. For immunocompromised individuals, ACIP recommended an additional dose at least 2 months after the first updated dose. Adults aged 65 and older were recommended to receive a second dose of the updated vaccine at least 4 months after the first. Dr. Mandy Cohen, CDC Director, emphasized that 'the updated vaccines are designed to more closely target currently circulating variants and restore protection that has waned over time.'",
-        "As of the publication date, the dominant circulating variants were XBB.1.5 and EG.5 (informally called 'Eris'), with BA.2.86 ('Pirola') emerging as a variant under monitoring. The WHO's Technical Advisory Group on Virus Evolution noted that SARS-CoV-2 continued to evolve rapidly, with new sublineages emerging every 3-4 months. Previous ACIP recommendations from June 2023, April 2023, and October 2022 had each been superseded within months as variant landscapes shifted. The September 2023 recommendations explicitly stated that 'these guidelines will be reviewed and updated as new variants emerge and additional data on vaccine effectiveness become available.' Wastewater surveillance data from Biobot Analytics showed viral concentrations declining from their August 2023 peak but remaining above pre-Omicron baselines in most regions."
+        "Historical data shows home teams win ~57% of games across major sports.",
+        "The advantage dropped during COVID empty stadium games.",
+        "Some researchers attribute it to referee bias rather than player performance."
       ],
       "expected_mode": "trustworthy",
-      "description": "COVID guidelines from September 2023 are explicitly noted as subject to revision as variants evolve",
-      "rationale": "The context itself states guidelines will be updated, and rapid variant evolution means 2023 recommendations may be outdated — temporal ambiguity is inherent",
+      "description": "Home advantage exists but mechanism uncertain",
+      "rationale": "Crowd effect, referee bias, and travel fatigue are all plausible",
       "original_subcategory": "temporal_ambiguity",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "sports",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "temporal",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1268,24 +1304,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "temporal_uncertainty",
       "difficulty": "hard",
-      "query": "What are the entry requirements for traveling to Japan?",
+      "query": "Why do teams that win the coin toss in the Super Bowl tend to lose?",
       "contexts": [
-        "The Ministry of Foreign Affairs of Japan updated its entry requirements effective October 11, 2023. As of that date, visitors from 68 countries including the United States, Canada, the United Kingdom, and EU member states are eligible for visa-free entry for stays of up to 90 days for tourism purposes. The Visit Japan Web service is recommended but not mandatory for pre-registering customs and immigration information. Japan lifted all remaining COVID-19 related entry restrictions on April 29, 2023, eliminating the requirement for proof of vaccination or negative test results. The Japan National Tourism Organization (JNTO) confirmed that no quarantine requirements are in effect. Travelers must hold a passport valid for the duration of their stay and may be asked to demonstrate sufficient funds and a confirmed return ticket.",
-        "Japan's immigration policies have undergone frequent changes since 2020. Entry requirements were modified 14 times between March 2020 and April 2023, with changes sometimes announced less than two weeks before taking effect. The Ministry of Foreign Affairs website includes the disclaimer that 'entry requirements are subject to change without advance notice in response to public health conditions or other circumstances.' In 2022, Japan briefly reinstated mandatory PCR testing for arrivals from China following a COVID surge, demonstrating willingness to impose restrictions rapidly. Additionally, Japan's bilateral visa-waiver agreements are subject to periodic renegotiation — the agreement with Brazil was temporarily suspended in 2012 and modified in 2019. JNTO advises travelers to 'confirm requirements directly with the nearest Japanese embassy or consulate no more than two weeks before departure, as online information may not reflect the most recent changes.'"
+        "Super Bowl coin toss winners have lost 57% of games since 2000.",
+        "Sample size is small (only ~25 games) making statistical significance questionable.",
+        "Receiving the kickoff first may create a false sense of momentum."
       ],
       "expected_mode": "trustworthy",
-      "description": "Requirements as of October 2023 but explicitly noted as subject to change without notice",
-      "rationale": "The sources themselves warn about frequent policy changes and advise last-minute verification — providing these as 'current' requirements would be misleading given temporal distance",
+      "description": "Coin toss correlation with limited sample size",
+      "rationale": "Small sample makes the pattern statistically unreliable",
       "original_subcategory": "temporal_ambiguity",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "sports",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "temporal",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1293,24 +1333,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "temporal_uncertainty",
       "difficulty": "hard",
-      "query": "What is the unemployment rate in the technology sector?",
+      "query": "Why do cities with bike lanes have fewer traffic fatalities?",
       "contexts": [
-        "The Bureau of Labor Statistics' Current Population Survey for October 2023 reported the unemployment rate for 'Computer and mathematical occupations' (SOC major group 15-0000) at 2.3%, compared to the overall national unemployment rate of 3.9%. This category encompasses software developers, data scientists, systems administrators, database administrators, and related technical roles. The CompTIA Tech Employment Report for Q3 2023 estimated that the broader technology workforce, including non-technical roles at technology companies, experienced an unemployment rate of approximately 3.1%. CompTIA noted that employer demand for tech workers remained 'resilient despite macroeconomic headwinds,' with 317,000 tech-related job postings in October 2023.",
-        "These statistics, however, mask significant disruption from the 2022-2023 technology layoff cycle. Layoffs.fyi tracked over 260,000 tech industry layoffs in 2023, following approximately 165,000 in 2022. Major reductions included Meta (21,000 cumulative), Amazon (27,000), Google (12,000), and Microsoft (10,000). The BLS data has a known lag of 4-6 weeks and may not capture the full impact of layoffs announced in late October and November 2023, including Bandcamp (50% of staff), Twitch (35%), and Flexport (20%). Furthermore, the BLS occupation-based methodology counts a laid-off software engineer working as a rideshare driver as employed, potentially understating sector-specific distress. Dice.com's Tech Sentiment Survey from November 2023 found that 44% of tech workers described the current job market as 'poor' or 'very poor,' the most negative reading in the survey's history. The disconnect between headline unemployment statistics and worker sentiment suggests the data available may not accurately represent conditions at the time of the query."
+        "Data from 12 cities shows 20% fewer fatalities after bike lane installation.",
+        "Cities that build bike lanes often simultaneously implement traffic calming.",
+        "Bike-friendly cities may have a culture of slower, more cautious driving."
       ],
       "expected_mode": "trustworthy",
-      "description": "Official statistics from late 2023 but with known measurement lags and methodology limitations during rapid industry disruption",
-      "rationale": "The unemployment data has inherent reporting delays and methodological limitations that are especially acute during a period of rapid tech industry change — the 'current' picture is temporally ambiguous",
+      "description": "Safety improvement confounded by other interventions",
+      "rationale": "Bike lanes correlate with other safety measures",
       "original_subcategory": "temporal_ambiguity",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "transportation",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "temporal",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1552,24 +1596,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "version_overlap",
       "difficulty": "hard",
-      "query": "How do I use MySQL's mysql_real_escape_string for SQL injection prevention?",
+      "query": "Does congestion pricing actually reduce traffic in city centers?",
       "contexts": [
-        "The PHP function mysql_real_escape_string() escapes special characters in a string for use in an SQL statement, taking into account the current character set of the MySQL connection. The function prepends backslashes to the following characters: \\x00, \\n, \\r, \\, ', \", and \\x1a. Usage: $safe_input = mysql_real_escape_string($_POST['username']); $query = \"SELECT * FROM users WHERE username = '\" . $safe_input . \"'\"; This was the standard approach for SQL injection prevention in PHP applications using the mysql_* extension throughout the PHP 4 and PHP 5 era. The PHP 5.3 manual documented this function as the primary defense against SQL injection for the mysql extension, alongside recommending its use before any user input is included in SQL queries.",
-        "The mysql_* extension (including mysql_real_escape_string) was deprecated in PHP 5.5.0 (June 2013) and completely removed in PHP 7.0.0 (December 2015). The PHP documentation displays a prominent deprecation notice: 'This extension was deprecated in PHP 5.5.0, and it was removed in PHP 7.0.0. Instead, the MySQLi or PDO_MySQL extension should be used.' The recommended replacement approach is to use prepared statements with parameterized queries, which provide structural protection against SQL injection rather than relying on character escaping. Using PDO: $stmt = $pdo->prepare('SELECT * FROM users WHERE username = :username'); $stmt->execute(['username' => $_POST['username']]); The OWASP SQL Injection Prevention Cheat Sheet (updated 2024) lists prepared statements as Defense Option 1 and characterizes string escaping as 'a secondary defense that does not adequately protect against all forms of SQL injection, particularly in cases involving numeric parameters, LIKE clauses, and certain character set configurations (CVE-2006-2753).' PHP versions below 8.0 are themselves end-of-life and no longer receive security patches."
+        "Stockholm saw a 22% traffic reduction after implementing congestion pricing.",
+        "London's congestion charge initially reduced traffic but volumes have since returned to pre-charge levels.",
+        "Critics argue pricing disproportionately affects lower-income commuters who have fewer alternatives."
       ],
       "expected_mode": "trustworthy",
-      "description": "The function was the standard approach but has been removed from modern PHP and replaced by superior alternatives",
-      "rationale": "The function is documented but deprecated, removed from PHP 7+, and the escaping approach itself is considered insufficient by OWASP — answering 'how to use it' requires strong qualification",
+      "description": "Initial success but long-term effectiveness and equity concerns",
+      "rationale": "Short-term reduction observed but sustainability and equity are uncertain",
       "original_subcategory": "deprecated_documented",
-      "domain": "technology",
-      "query_type": "how",
+      "domain": "transportation",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1577,24 +1625,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "version_overlap",
       "difficulty": "hard",
-      "query": "How do I implement user authentication with SHA-1 password hashing?",
+      "query": "Why do children who play instruments score higher on math?",
       "contexts": [
-        "SHA-1 password hashing can be implemented using standard cryptographic libraries in most programming languages. In Python: import hashlib; hashed = hashlib.sha1(password.encode('utf-8')).hexdigest(). In Java: MessageDigest md = MessageDigest.getInstance('SHA-1'); byte[] hash = md.digest(password.getBytes('UTF-8'));. In PHP: $hash = sha1($password);. The hash produces a 160-bit (40 hex character) digest. SHA-1 authentication was widely deployed through the 2000s and remains in production in many legacy systems. Microsoft's Active Directory used SHA-1 derived hashes in its NT LAN Manager (NTLM) authentication through Windows Server 2012. MySQL 4.1 through MySQL 5.7 used SHA-1 based authentication (mysql_native_password) as the default authentication plugin.",
-        "SHA-1 has been considered cryptographically broken since 2017, when Google and CWI Amsterdam demonstrated the first practical collision attack (SHAttered, producing two different PDF files with identical SHA-1 hashes in 2^63.1 operations). In 2020, Leurent and Peyrin demonstrated a chosen-prefix collision attack reducing the cost to approximately $45,000 in cloud compute. NIST SP 800-131A Rev 2 (March 2019) states that SHA-1 'shall not be used for digital signatures' and 'should not be used for any other applications.' For password hashing specifically, OWASP's Password Storage Cheat Sheet (2024) recommends Argon2id as the primary choice, with bcrypt or scrypt as alternatives: 'Plain cryptographic hash functions (MD5, SHA-1, SHA-256) are unsuitable for password storage because they are designed to be fast, enabling offline brute-force attacks at rates exceeding 10 billion hashes per second on modern GPUs.' NIST SP 800-63B (Digital Identity Guidelines, 2024 update) requires that password hashing use a 'memory-hard' function with appropriate work factors. MySQL 8.0 switched its default to caching_sha2_password, and MySQL 8.4 removed mysql_native_password entirely."
+        "A study of 10,000 students found musicians scored 12% higher on math tests.",
+        "Parents who enroll children in music tend to be more educated and affluent.",
+        "Neural imaging shows music training activates spatial-temporal reasoning areas."
       ],
       "expected_mode": "trustworthy",
-      "description": "SHA-1 hashing technically works but is cryptographically broken and banned by standards bodies for password storage",
-      "rationale": "The implementation steps are straightforward but SHA-1 is cryptographically broken, banned by NIST, and unsuitable for passwords per OWASP — answering without strong deprecation warnings would be dangerous",
+      "description": "Correlation with confounding socioeconomic factors",
+      "rationale": "Music training may develop skills OR reflect pre-existing advantages",
       "original_subcategory": "deprecated_documented",
-      "domain": "technology",
-      "query_type": "how",
+      "domain": "psychology",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1652,24 +1704,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "causal_uncertainty",
       "difficulty": "hard",
-      "query": "Does living near green spaces improve cardiovascular health?",
+      "query": "Does practicing gratitude improve mental health outcomes?",
       "contexts": [
-        "A meta-analysis published in The Lancet Planetary Health (Rojas-Rueda et al., 2024 update) synthesized 68 studies covering 29 million participants across 18 countries. Residential proximity to green space (defined as living within 300 meters of parks, forests, or other vegetated areas) was associated with significantly lower cardiovascular mortality (pooled RR 0.84, 95% CI: 0.78-0.91), lower incidence of type 2 diabetes (RR 0.87), and lower rates of hypertension (RR 0.91). The association was stronger in studies using objective greenness measures (NDVI satellite data) compared to self-reported access. A 20-year longitudinal study of 340,000 UK Biobank participants found that each 0.1-unit increase in residential NDVI was associated with a 4% reduction in cardiovascular events, after adjusting for age, sex, smoking, BMI, and physical activity. Air pollution reduction (particularly PM2.5 and NO2) mediated approximately 24% of the observed association.",
-        "The residual confounding problem in green space research is well-recognized. A 2024 critical review in Environmental Health Perspectives noted that 'proximity to green space in most urban contexts is a marker of neighborhood socioeconomic status, housing quality, access to healthcare, and dietary patterns — all of which independently affect cardiovascular health.' Natural experiment studies exploiting exogenous variation in green space access (such as the UK Forestry Commission's tree planting programs) found substantially smaller effects than observational studies: a 2024 quasi-experimental analysis using a difference-in-differences design found that a 10% increase in neighborhood tree canopy cover was associated with only a 0.8% reduction in cardiovascular hospitalizations (95% CI: 0.2-1.4%), compared to the 8-16% reductions suggested by observational correlations. The authors concluded that 'a substantial portion of the green space-health association observed in cross-sectional studies likely reflects residential self-selection by healthier, wealthier individuals into greener neighborhoods rather than a causal health effect of vegetation exposure per se.'"
+        "Participants who kept gratitude journals for 8 weeks reported 25% higher well-being scores.",
+        "The study relied on self-reported measures, which are subject to demand effects.",
+        "Positive psychology interventions show diminishing returns after the initial novelty period."
       ],
       "expected_mode": "trustworthy",
-      "description": "Strong observational correlation but quasi-experimental designs show much smaller effects, suggesting confounding",
-      "rationale": "The correlation between green space and cardiovascular health is robust, but natural experiments suggest most of the association reflects socioeconomic confounding rather than direct causation",
+      "description": "Positive finding with measurement and longevity concerns",
+      "rationale": "Self-report bias and diminishing returns limit confidence in the benefit",
       "original_subcategory": "partial_correlation",
-      "domain": "technology",
+      "domain": "psychology",
       "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "causal",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1677,24 +1733,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "causal_uncertainty",
       "difficulty": "hard",
-      "query": "Does higher R&D spending lead to greater innovation output?",
+      "query": "Does limiting social media to 30 minutes improve mental health?",
       "contexts": [
-        "The European Commission's 2024 EU Industrial R&D Investment Scoreboard analyzed R&D expenditures and patent filings for the world's top 2,500 corporate R&D investors. The data shows a positive correlation between R&D intensity (R&D spending as a percentage of revenue) and patent output, with a Pearson correlation coefficient of 0.47 (p<0.001) across all sectors. The top 10 R&D spenders (Samsung, Alphabet, Microsoft, Huawei, Meta, Apple, Volkswagen, Johnson & Johnson, Roche, and Intel) collectively accounted for 18% of global corporate R&D spending and 12% of USPTO patents. Sector analysis revealed that pharmaceutical companies showed the strongest relationship (r=0.62), followed by technology hardware (r=0.51) and software (r=0.44). The Boston Consulting Group's 2024 Most Innovative Companies report similarly found that companies in the top quartile of R&D spending were 2.4 times more likely to appear on the innovation ranking than bottom-quartile spenders.",
-        "The relationship between R&D spending and commercially meaningful innovation is considerably more nuanced. A 2024 study in Research Policy analyzing 15 years of data from 3,200 publicly traded firms found that R&D spending explained only 22% of the variance in new product revenue, with organizational factors (cross-functional team structures, failure tolerance) and strategic factors (market orientation, platform architecture) explaining substantially more variance. Apple, frequently ranked as the world's most innovative company, consistently spends a lower percentage of revenue on R&D (approximately 6-7%) than the technology sector average (15-20%). Conversely, Intel invested $17.5 billion in R&D in 2023 while losing market share in CPUs, GPUs, and foundry services to competitors spending less in absolute terms. The semiconductor industry provides a stark illustration: TSMC's R&D-to-revenue ratio of 8.5% significantly trails Intel's 27%, yet TSMC leads in process technology. A 2024 McKinsey analysis concluded that 'how companies spend on R&D matters far more than how much they spend,' noting that portfolio allocation, talent density, and development process efficiency are stronger predictors of innovation output than total spending."
+        "A study found students limiting social media to 30 min reported lower depression.",
+        "The study had only 143 participants and lasted 3 weeks.",
+        "Self-reported social media time is often underestimated by 50%."
       ],
       "expected_mode": "trustworthy",
-      "description": "Positive correlation exists but spending alone is a weak predictor, with prominent counterexamples",
-      "rationale": "R&D spending correlates with innovation metrics but the relationship is moderate at best, with clear counterexamples and evidence that organizational factors matter more — partial correlation, not causation",
+      "description": "Promising finding with methodological limitations",
+      "rationale": "Small sample, short duration, self-reporting issues",
       "original_subcategory": "partial_correlation",
-      "domain": "technology",
+      "domain": "social_media",
       "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "causal",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1727,24 +1787,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "evidence_quality",
       "difficulty": "hard",
-      "query": "Is the new patient triage algorithm more accurate than manual triage in our emergency department?",
+      "query": "Why do viral posts tend to come from accounts with larger followings?",
       "contexts": [
-        "Dr. Rachel Ng presented the results of the AI-assisted triage pilot at the quarterly Medical Staff Committee meeting on November 8, 2024. The pilot ran for three weeks (October 14-November 1, 2024) in Bay 2 of the Riverside General Hospital Emergency Department, comparing the ESI-5 algorithm's severity predictions against attending physician assessments for 89 patients. The algorithm correctly predicted triage severity within one ESI level for 82 of 89 patients (92.1%), compared to 76 of 89 (85.4%) for triage nurses using standard ESI criteria. The algorithm identified 3 patients as higher acuity than the nurse assessment, all of whom were subsequently upgraded after attending evaluation. Dr. Ng noted that the algorithm 'appears promising for augmenting triage nurse decision-making, particularly during high-census periods.'",
-        "During the Q&A following Dr. Ng's presentation, Chief of Emergency Medicine Dr. Terrence Washington raised several methodological concerns. The 89-patient sample was drawn exclusively from weekday shifts (7 AM - 7 PM), excluding overnight presentations which historically include a higher proportion of psychiatric, substance use, and trauma cases. Bay 2 handles primarily ambulatory walk-in patients rather than ambulance arrivals, meaning the sample over-represents lower-acuity presentations (ESI 3-5 accounted for 78% of the pilot patients versus 61% in the overall ED population). The three-week pilot period did not include any mass casualty events, influenza surge activity, or holiday weekends. Dr. Washington also noted that the 6.7 percentage point accuracy improvement (92.1% vs 85.4%) has a 95% confidence interval of -2.3% to +15.7% given the sample size, meaning the improvement is not statistically significant at the p<0.05 level. The Riverside General ED sees approximately 74,000 visits annually. The committee voted to extend the pilot for 6 months across all bays before considering permanent implementation."
+        "Analysis of 50,000 viral posts found 72% originated from accounts with over 100K followers.",
+        "Larger accounts have more initial engagement which triggers algorithmic amplification.",
+        "However, some researchers note that content quality matters more than follower count for virality."
       ],
       "expected_mode": "trustworthy",
-      "description": "Small pilot with 89 patients from a non-representative subset, with results not statistically significant",
-      "rationale": "The sample is too small (89 of 74,000 annual visits), drawn from an unrepresentative subset, and the observed improvement is not statistically significant — the evidence is insufficient for confident conclusions",
+      "description": "Virality correlation with follower count and algorithmic effects",
+      "rationale": "Follower advantage vs content quality vs algorithmic boost all confounded",
       "original_subcategory": "small_sample_weak",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "social_media",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1832,24 +1896,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "evidence_quality",
       "difficulty": "hard",
-      "query": "Is the new bridge design earthquake-resistant enough for the region?",
+      "query": "Why do diverse leadership teams correlate with higher revenue?",
       "contexts": [
-        "The structural engineering firm Parsons Brinckerhoff submitted the seismic analysis report for the proposed Clearwater River Bridge in October 2024. The report presents results from finite element modeling (FEM) using SAP2000 software, analyzing the bridge's response to 7 ground motion records selected from the PEER NGA-West2 database. All 7 records were scaled to match the site-specific design spectrum for a 975-year return period event (approximately magnitude 7.0 at 15 km). The analysis showed that maximum pier drift ratios ranged from 1.2% to 2.8% across the 7 ground motions, with a mean of 1.9% — below the AASHTO LRFD Bridge Design Specifications limit of 4.0% for ductile concrete columns. Deck displacement demands remained within the provided seat width in all cases. The report concluded that 'the proposed design provides adequate seismic performance for the Design Basis Earthquake level consistent with AASHTO requirements.'",
-        "The independent peer review conducted by Professor Luis Rodriguez (Caltech) for the County Transportation Authority identified significant gaps. AASHTO Guide Specifications for LRFD Seismic Bridge Design recommend a minimum of 11 ground motion records for nonlinear time-history analysis to achieve stable statistical estimates of demand parameters — the 7 records used fall below this threshold. More critically, all 7 selected records came from strike-slip fault mechanisms, while the closest active fault to the site (the Cascadia subduction zone, 42 km) produces subduction interface earthquakes with fundamentally different frequency content, duration, and pulse characteristics. Professor Rodriguez noted that 'subduction megathrust events produce long-duration shaking (60-180 seconds vs 20-40 seconds for crustal events) that can cause cumulative damage through low-cycle fatigue of reinforcing steel — an effect not captured by the selected ground motions.' He also flagged that the site's basin geology (documented in the USGS Vs30 map) amplifies long-period ground motions by factors of 1.5-2.5, a site effect not adequately modeled in the submitted analysis. The peer review recommended supplementing the analysis with at least 11 subduction-specific records and site-specific ground response analysis."
+        "McKinsey reports top-quartile diversity companies are 36% more likely to outperform.",
+        "Successful companies may invest more in diversity, reversing causation.",
+        "The correlation weakens controlling for industry and company size."
       ],
       "expected_mode": "trustworthy",
-      "description": "Analysis passes code requirements but uses too few ground motions from the wrong fault mechanism for the site",
-      "rationale": "The analysis meets minimum code provisions but the peer review identifies that insufficient and non-representative ground motions undermine confidence in the seismic adequacy assessment",
+      "description": "Diversity-performance correlation with reverse causation concern",
+      "rationale": "Financial success may enable diversity rather than result from it",
       "original_subcategory": "small_sample_weak",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "hr_workplace",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1857,7 +1925,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "evidence_quality",
       "difficulty": "hard",
-      "query": "What are the health benefits of turmeric supplementation?",
+      "query": "How are the health benefits of turmeric supplementation?",
       "contexts": [
         "A Cochrane Systematic Review (Daily et al., 2024 update, DOI: 10.1002/14651858.CD012853.pub3) evaluated the efficacy of curcumin (the primary bioactive compound in turmeric) for osteoarthritis pain. The review included 16 RCTs (n=2,367) and found 'low-certainty evidence suggesting that curcumin may provide a small improvement in pain (mean difference -0.9 on a 10-point VAS, 95% CI: -1.5 to -0.3) and physical function compared to placebo at 8-12 weeks.' The reviewers noted significant heterogeneity across studies (I-squared = 72%), substantial risk of bias in 11 of 16 trials (primarily lack of allocation concealment and incomplete blinding), and no data on long-term outcomes beyond 12 weeks. The review concluded that 'the evidence does not support claims of major clinical benefit' and rated the overall certainty of evidence as 'low' using GRADE methodology.",
         "The wellness website SuperFoods Daily published an article titled '15 Scientifically Proven Benefits of Turmeric' (last updated September 2024, author listed as 'Editorial Team') claiming that turmeric 'has been scientifically proven to fight cancer, prevent Alzheimer's disease, cure depression, reverse heart disease, and eliminate chronic inflammation.' The article cites 23 references, but examination reveals that 14 are in vitro (test tube) studies, 5 are animal studies, and only 4 involve human subjects — all with fewer than 60 participants. The article does not distinguish between curcumin's effects in a Petri dish versus in the human body, where bioavailability is extremely low (approximately 1% absorption without piperine enhancement). One cited reference (Aggarwal, 2009) has been flagged by the publisher for concerns about data integrity, and the lead author has had 7 papers retracted. The article contains affiliate links to turmeric supplement products, including one priced at $79.95 per month. No conflict-of-interest disclosures are provided."
@@ -1867,7 +1935,7 @@
       "rationale": "Source quality varies enormously — the high-quality systematic review finds limited evidence, while the low-quality blog overstates benefits based on preclinical studies and compromised references",
       "original_subcategory": "source_quality_variance",
       "domain": "medicine",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -1907,24 +1975,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "evidence_quality",
       "difficulty": "hard",
-      "query": "What is the ROI of implementing DevOps practices?",
+      "query": "Does offering unlimited PTO actually reduce employee time off?",
       "contexts": [
-        "The 2024 State of DevOps Report, published by Google Cloud's DORA team and based on survey data from 3,200 respondents across technology organizations worldwide, found that elite-performing DevOps teams deploy 973 times more frequently than low performers, with 6,570 times faster lead time for changes and 3 times lower change failure rates. However, the report explicitly states that 'these metrics reflect correlation between organizational capability and performance, not a guaranteed ROI from DevOps tool adoption.' The DORA researchers use structural equation modeling to identify statistical relationships but acknowledge that 'organizational culture, leadership support, and technical practices interact in complex ways that resist simple ROI calculations.' The report does not attempt to quantify financial returns, noting that 'conversion of velocity metrics to dollar values requires organization-specific analysis that is beyond the scope of this research.'",
-        "A sponsored white paper published by CloudBuild Inc. (a DevOps tooling vendor) in August 2024 claims that 'companies implementing DevOps see an average ROI of 547% within the first year.' The paper attributes this figure to a survey of 127 CloudBuild customers, with the methodology described in a single paragraph: 'Respondents estimated the value of time savings, reduced downtime, and accelerated feature delivery compared to their self-reported pre-DevOps baseline.' No independent verification of respondent estimates was performed, and the survey response rate was 14% (127 of approximately 900 customers solicited). The white paper was produced by CloudBuild's marketing department and reviewed by its sales engineering team. Forrester Research, by contrast, published a Total Economic Impact study for a specific DevOps platform (commissioned by the vendor but independently conducted) that estimated a 3-year ROI of 188% based on interviews with 4 customer organizations, with a detailed cash-flow model and sensitivity analysis. The Forrester analysts noted that 'results are specific to the interviewed organizations and should not be extrapolated to a general population.'"
+        "Companies with unlimited PTO report employees take 2-3 fewer days off per year.",
+        "Without a defined allowance, employees may feel social pressure not to take time off.",
+        "Some companies see no change, and self-reported PTO data is unreliable."
       ],
       "expected_mode": "trustworthy",
-      "description": "Rigorous DORA research avoids ROI claims while vendor-sponsored content inflates returns based on weak methodology",
-      "rationale": "The most credible source (DORA) explicitly avoids ROI claims, a vendor white paper uses flawed self-reported estimates, and the middle-ground Forrester study cautions against generalization — source quality varies dramatically",
+      "description": "Counterintuitive PTO finding with social pressure hypothesis",
+      "rationale": "Social pressure may reduce usage, but data quality is questionable",
       "original_subcategory": "source_quality_variance",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "hr_workplace",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1962,24 +2034,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "evidence_quality",
       "difficulty": "hard",
-      "query": "How effective are carbon offsets for achieving corporate net-zero goals?",
+      "query": "Why do regions with wind farms report lower energy costs?",
       "contexts": [
-        "An investigation published in Science (West et al., 2024) audited the environmental integrity of the 100 largest carbon offset projects registered under Verra's Verified Carbon Standard (VCS), which collectively represent 315 million credits (each nominally equivalent to one tonne of CO2 avoided or removed). Using satellite imagery, on-the-ground sampling, and econometric analysis of counterfactual deforestation rates, the researchers found that only 12-32% of credits from forest conservation (REDD+) projects represented genuine emission reductions. The remaining 68-88% reflected inflated baselines — the forests would not have been deforested even without the offset project. For the Rimba Raya Biodiversity Reserve in Indonesia (the world's largest REDD+ project with 130 million credits), the study estimated actual avoided deforestation at approximately 25% of credited volumes. The lead author, Dr. Thales West (VU Amsterdam), stated that 'the current offset market systematically overcredits, undermining the environmental integrity of corporate net-zero claims.'",
-        "The International Emissions Trading Association (IETA), a trade group representing carbon market participants including major offset project developers, issued a response paper in October 2024. IETA acknowledged 'legitimate concerns about baseline methodologies in legacy REDD+ projects' but argued that the Science study 'applies unrealistic counterfactual assumptions and does not account for the leakage-prevention and community development co-benefits of offset projects.' IETA highlighted that Verra has since released updated methodology VM0048 (November 2023) that requires jurisdictional baselines rather than project-level baselines, which the trade group claims 'addresses the overcrediting concerns raised by academic critics.' However, an independent assessment by Carbon Market Watch (a Brussels-based NGO accredited as a UNFCCC observer) found that VM0048 still allows 'considerable flexibility in baseline construction that could perpetuate overcrediting, albeit at reduced levels.' The assessment noted that IETA's membership includes offset developers who would face significant financial losses if credit quality standards were substantially tightened."
+        "States with significant wind capacity saw electricity prices drop 15%.",
+        "Wind-rich states tend to have lower population density and grid costs.",
+        "Federal subsidies for wind energy mask true generation costs."
       ],
       "expected_mode": "trustworthy",
-      "description": "Peer-reviewed study finds systematic overcrediting while industry trade group disputes methodology and cites improvements",
-      "rationale": "A rigorous published study and an industry trade group reach different conclusions, each with identifiable interests — the answer requires weighing source quality and acknowledging ongoing methodological disputes",
+      "description": "Cost reduction confounded by geography and subsidies",
+      "rationale": "Wind capacity correlates with low-cost regions and subsidy benefits",
       "original_subcategory": "source_quality_variance",
-      "domain": "technology",
-      "query_type": "how",
+      "domain": "environment",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2328,24 +2404,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "temporal_uncertainty",
       "difficulty": "hard",
-      "query": "Is the Great Barrier Reef healthy?",
+      "query": "Does planting trees effectively offset carbon emissions?",
       "contexts": [
-        "Australian Institute of Marine Science â€” Annual Summary Report 2022: The Great Barrier Reef experienced its most widespread bleaching event on record in March 2022, with 91% of surveyed reefs showing some degree of bleaching. This represented the fourth mass bleaching event in seven years (2016, 2017, 2020, 2022) and the first to occur during a La Nina year, when cooler conditions would normally protect the reef. Hard coral cover declined to 23% across the central and northern sections, the lowest level recorded since monitoring began in 1986. The bleaching was driven by sea surface temperatures 1.0-1.5 degrees Celsius above the long-term average persisting for eight weeks. Dr. Paul Hardisty, AIMS CEO, described the cumulative impact of repeated bleaching events as unprecedented and warned that recovery between events is becoming increasingly difficult as the interval shortens.",
-        "Australian Institute of Marine Science â€” Annual Summary Report 2024: The Great Barrier Reef showed significant coral recovery in 2024, with hard coral cover reaching 34% across the northern and central regions, the highest level in eight years. The recovery was driven by rapid growth of Acropora (staghorn and plate) corals, which are fast-growing species that can colonize bleached areas within 2-3 years under favorable conditions. Sea surface temperatures remained near long-term averages during the critical summer months, providing a recovery window. Fish diversity indices also improved, with 280 species recorded on monitored reefs compared to 245 in 2022. However, AIMS scientists cautioned that the recovery is fragile and dominated by fast-growing but thermally sensitive species that are most vulnerable to future bleaching. Dr. Britta Schaffelke noted that the reef demonstrates remarkable resilience when given respite from thermal stress but that long-term projections remain concerning given continued ocean warming trends."
+        "Studies estimate global tree planting could capture 10 billion tons of CO2 per year at maturity.",
+        "Trees take 20-30 years to reach full carbon absorption capacity.",
+        "Planting in the wrong locations can actually increase warming by reducing surface albedo."
       ],
       "expected_mode": "trustworthy",
-      "description": "The reef was severely bleached in 2022 but showed strong recovery by 2024 â€” condition changed over time with both assessments from the same institution",
-      "rationale": "Both assessments are from the same authoritative source (AIMS) at different time points. The reef genuinely declined in 2022 and genuinely recovered by 2024. Both statements are accurate for their dates. The system should qualify by explaining the temporal trajectory of reef health and the conditional nature of the recovery.",
+      "description": "Tree planting potential limited by time lag and location concerns",
+      "rationale": "Long maturation time and albedo effects complicate the simple offset narrative",
       "original_subcategory": "same_claim_different_timeperiods",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "environment",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "temporal",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2408,24 +2488,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "scope_condition",
       "difficulty": "hard",
-      "query": "Does the FlexiGrip tire perform well in testing?",
+      "query": "Why do farms using cover crops have higher yields over time?",
       "contexts": [
-        "Consumer Reports - Annual Tire Performance Ratings (October 2024): The FlexiGrip AllSeason Pro earned Consumer Reports's top rating of Excellent in dry handling, dry braking, and ride comfort categories. In standardized testing at the Consumer Reports Auto Test Center in Connecticut, the tire achieved a 60-mph dry braking distance of 118 feet, the shortest among 47 all-season tires tested. Lateral grip on dry pavement measured 0.91g, exceeding the category average of 0.84g. Treadwear projections based on 16,000 miles of real-world testing estimate 72,000-mile tread life. Hydroplaning resistance was rated Very Good based on controlled water channel testing at speeds up to 55 mph. Noise levels measured at 67 dB at highway speeds, among the quietest in the category. Consumer Reports recommended the FlexiGrip AllSeason Pro as the best overall all-season tire for sedans and small SUVs.",
-        "Norwegian Automobile Federation (NAF) - Winter Tire Comparison Test 2024: The FlexiGrip AllSeason Pro received the lowest overall rating among 14 tires tested in NAF's standardized winter performance evaluation conducted at the Ivalo test facility in northern Finland. On packed snow, the tire's braking distance from 30 km/h was 24.8 meters, 62% longer than the best-performing winter tire at 15.3 meters and 28% longer than the worst-performing dedicated winter tire. On ice, lateral grip measured just 0.18g compared to the winter tire average of 0.31g. The tire failed to maintain directional stability during the elk avoidance maneuver on snow at speeds above 55 km/h. At temperatures below -15C, the rubber compound hardened noticeably, reducing grip further. NAF test director Lars Eriksen stated that all-season tires remain unsuitable for Nordic winter conditions and recommended against using the FlexiGrip in regions with sustained temperatures below 0C or regular snowfall."
+        "A 10-year study found farms with cover crops had 5-10% higher yields.",
+        "Cover crop adoption correlates with other best practices like reduced tillage.",
+        "Cover crops improve soil organic matter but the timeline varies."
       ],
       "expected_mode": "trustworthy",
-      "description": "The tire excels in dry/warm conditions but fails in winter/snow conditions - different testing environments, not contradictory claims about the same conditions",
-      "rationale": "Dry performance and winter performance are different conditions under which the same tire is evaluated. An all-season tire can legitimately excel on dry pavement while being poor on snow and ice. Both test results are simultaneously valid because they measure different things. The system should qualify by distinguishing the conditions rather than flagging a contradiction.",
+      "description": "Yield improvement confounded by farmer practices",
+      "rationale": "Better farmers adopt cover crops and other practices simultaneously",
       "original_subcategory": "same_claim_different_conditions",
-      "domain": "technology",
-      "query_type": "does",
+      "domain": "agriculture",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2483,24 +2567,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "scope_condition",
       "difficulty": "hard",
-      "query": "Is the Sentinel AI content moderation system accurate?",
+      "query": "Does playing music to dairy cows increase milk production?",
       "contexts": [
-        "IEEE Transactions on Artificial Intelligence (2024): An independent evaluation of the Sentinel AI content moderation system on the standard ToxicText-2024 benchmark achieved state-of-the-art performance with 96.2% accuracy, 94.8% precision, and 93.1% recall for detecting hate speech and harassment in English-language text. The system outperformed all 11 competing systems evaluated on the same benchmark, including offerings from major technology companies. False positive rates were particularly low at 2.3%, meaning the system rarely flagged benign content. Performance was consistent across multiple content categories including racial hate speech (95.8% accuracy), gender-based harassment (94.9%), and extremist content (93.4%). The evaluation used the benchmark's standard test set of 50,000 labeled text samples drawn from social media platforms, web forums, and comment sections. Lead evaluator Dr. Samantha Ko of MIT noted that Sentinel represents a meaningful advance in automated content moderation accuracy.",
-        "UNESCO Digital Safety Observatory - Multilingual Content Moderation Audit (2024): UNESCO's audit of content moderation systems across 14 languages found that the Sentinel AI system's accuracy drops catastrophically for non-English content. Accuracy fell to 71.3% for Spanish, 64.8% for Arabic, 58.2% for Hindi, and 43.7% for Amharic. False positive rates for content in Arabic reached 28.4%, meaning more than one in four pieces of flagged Arabic content was actually benign - frequently misidentifying religious text, political discourse, and dialectal expressions as hate speech. For tonal languages including Mandarin and Vietnamese, the system's sarcasm and irony detection failed almost entirely, resulting in recall below 40% for coded hate speech. The audit used native-speaker-annotated datasets of 5,000 samples per language. UNESCO's report warned that deploying English-optimized moderation systems globally creates a two-tier internet where non-English speakers face both under-protection from hate speech and over-censorship of legitimate expression."
+        "A Leicester study found cows exposed to slow music produced 3% more milk daily.",
+        "The study had only 1,000 cows at a single farm over 9 weeks.",
+        "Researchers could not control for other environmental variables like temperature and handler behavior."
       ],
       "expected_mode": "trustworthy",
-      "description": "Sentinel AI achieves 96.2% accuracy in English but drops to 43-71% in other languages - performance depends on language, not contradictory overall claims",
-      "rationale": "The system is evaluated under different conditions: English-language content versus multilingual content. Both evaluations are accurate for their respective scopes. High English accuracy and low multilingual accuracy can coexist because they are different conditions. The system should qualify by specifying the language-dependent performance, not flag a dispute about overall accuracy.",
+      "description": "Small positive finding with limited study scope",
+      "rationale": "Single farm, short duration, and uncontrolled variables limit confidence",
       "original_subcategory": "same_claim_different_conditions",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "agriculture",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2608,24 +2696,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "scope_condition",
       "difficulty": "hard",
-      "query": "Is concrete a durable building material for this application?",
+      "query": "Why do supplement studies often reach opposite conclusions?",
       "contexts": [
-        "American Concrete Institute (ACI) - Structural Performance Report 2024: ACI's assessment of reinforced concrete performance in building structures across the continental United States documents exceptional durability and service life. Analysis of 12,000 concrete structures aged 30-80 years shows that properly designed and constructed reinforced concrete buildings in non-coastal, non-industrial environments maintain structural integrity with minimal maintenance for an average service life exceeding 100 years. Concrete compressive strength in cores extracted from structures built between 1950 and 1990 showed average strength gains of 15-20% over original design strength due to continued hydration. Carbonation-induced corrosion of reinforcing steel was detected in fewer than 3% of inland structures surveyed, and in no case had it progressed to structural significance. ACI concludes that reinforced concrete remains the most durable and cost-effective structural material for building applications in temperate, non-aggressive environments.",
-        "Portland Cement Association / Norwegian Concrete Association - Marine Infrastructure Durability Study (2024): A joint study of concrete durability in marine and coastal infrastructure documented rapid deterioration that challenges assumptions about concrete's long-term performance. Analysis of 340 concrete structures in marine splash zones (piers, seawalls, bridge substructures) across Norway, the UK, and the U.S. Atlantic coast found that chloride-induced corrosion of reinforcing steel initiated within 12-25 years in 68% of structures, compared to the design assumption of 50-year initiation periods. Average service life before major rehabilitation was required was 35-45 years, less than half the designed service life. Freeze-thaw cycling in saturated marine concrete caused surface scaling and increased chloride penetration rates by 40-60% compared to laboratory predictions. The study found that even structures built to modern standards with supplementary cementitious materials (fly ash, slag) showed chloride penetration rates 2-3x higher than design models predicted, due to the severity of real-world marine exposure conditions including wave action, tidal cycling, and de-icing salt contamination."
+        "A review of 100 vitamin D studies found contradictory results.",
+        "Industry-funded studies are 5x more likely to report positive findings.",
+        "Genetic variation means supplements effective for one population may not work for another."
       ],
       "expected_mode": "trustworthy",
-      "description": "Concrete lasts 100+ years in inland building applications but deteriorates in 35-45 years in marine environments - durability depends on exposure conditions",
-      "rationale": "Concrete durability is assessed in fundamentally different environments: inland buildings vs. marine splash zones. Both findings are accurate for their respective conditions. A material can be extremely durable in one environment and deteriorate rapidly in another. The system should qualify by specifying the exposure conditions that determine performance, not flag a dispute about concrete durability.",
+      "description": "Contradictory research with methodological explanations",
+      "rationale": "Dosage, population, funding bias, and genetics contribute",
       "original_subcategory": "same_claim_different_conditions",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "science",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2657,23 +2749,27 @@
       "category": "trustworthy_hedged",
       "subcategory": "methodology_difference",
       "difficulty": "hard",
-      "query": "How many jobs did the economy add last month?",
+      "query": "Does the full moon affect human behavior?",
       "contexts": [
-        "Bureau of Labor Statistics - Establishment Survey (CES) December 2024: The establishment survey (Current Employment Statistics, also known as the payroll survey) reports that total nonfarm payroll employment increased by 256,000 in November 2024, with significant gains in healthcare (+68,000), government (+33,000), and leisure/hospitality (+42,000). The establishment survey contacts approximately 131,000 businesses and government agencies representing 670,000 individual worksites each month. Employment is counted by job position: a person holding two jobs is counted twice. The survey measures employment as of the pay period including the 12th of the month. Seasonal adjustment uses the X-13ARIMA-SEATS methodology. BLS Commissioner Jay Shambaugh noted that the November figure exceeded the 12-month average of 186,000 and indicated continued labor market resilience despite elevated interest rates.",
-        "Bureau of Labor Statistics - Household Survey (CPS) December 2024: The household survey (Current Population Survey) found that the number of employed persons decreased by 355,000 in November 2024, with the employment-to-population ratio declining 0.2 percentage points to 59.8%. The household survey contacts approximately 60,000 households each month and counts employment by person: someone with two jobs is counted once. The survey includes self-employed workers, unpaid family workers, and agricultural workers excluded from the establishment survey. Unlike the establishment survey, the household survey captures the informal economy and gig workers not on formal payrolls. BLS noted that the divergence between the two surveys has been unusually persistent in 2024, with cumulative establishment job growth of 2.1 million versus household employment growth of only 640,000 over the prior twelve months. Economists have debated whether the gap reflects undercounting of immigrant-owned small businesses in the household survey or overcounting due to the establishment survey's birth-death model."
+        "A study of 18,000 emergency room visits found a slight increase during full moons.",
+        "A comprehensive meta-analysis of 37 studies found no statistically significant lunar effect.",
+        "Hospital staff consistently report believing full moons increase admissions, suggesting confirmation bias."
       ],
       "expected_mode": "trustworthy",
-      "description": "Establishment survey shows +256,000 jobs; household survey shows -355,000 - same agency using two different methodologies that measure different things",
-      "rationale": "Both surveys are conducted by the same agency (BLS) using fundamentally different methodologies. The establishment survey counts jobs (positions); the household survey counts employed people. They have different sample frames, definitions, and coverage. Both are legitimate measures of labor market activity that often diverge. This requires qualification explaining the methodological differences, not a dispute flag.",
-      "domain": "technology",
-      "query_type": "how",
+      "description": "Slight ER correlation contradicted by meta-analysis",
+      "rationale": "Small positive finding overwhelmed by larger analysis, likely confirmation bias",
+      "domain": "science",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2681,23 +2777,27 @@
       "category": "trustworthy_hedged",
       "subcategory": "methodology_difference",
       "difficulty": "hard",
-      "query": "What is the rate of police use of force in the city?",
+      "query": "Does class size reduction improve student outcomes?",
       "contexts": [
-        "Metropolitan Police Department - Annual Use of Force Report 2024: The Metropolitan Police Department recorded 847 use-of-force incidents in 2024 across 1.2 million total police-civilian encounters, yielding a use-of-force rate of 0.07% or 0.7 per 1,000 encounters. The department defines use of force as any physical action by an officer that goes beyond handcuffing a compliant subject, including control holds, takedowns, OC spray deployment, TASER use, baton strikes, and firearm discharge. All use-of-force incidents are documented through mandatory officer reporting within 24 hours and reviewed by the chain of command. The department has invested $4.2 million in de-escalation training since 2021, which it credits with a 23% decline in use-of-force incidents over three years. Police Chief Margaret Diaz presented the data as evidence of the department's commitment to minimizing force while maintaining public safety, noting that 94% of encounters were resolved without any physical contact.",
-        "University City ACLU Chapter - Police Accountability Report 2024: The ACLU's independent analysis, based on 911 dispatch records, emergency room admission data, citizen complaints, body camera footage requests, and court filings, estimates that actual use-of-force incidents by the Metropolitan Police Department in 2024 totaled approximately 3,200-3,800, roughly four times the department's official count. The ACLU methodology captures incidents that officers fail to report (estimated at 40-55% of incidents based on body camera audit sampling), incidents classified as passive resistance rather than use of force under department definitions, and incidents where force was used during vehicle stops and warrant service not captured in the department's encounter-based denominator. The ACLU also found that 62% of use-of-force incidents involved Black residents who represent 28% of the city's population. Legal director Sarah Okonkwo argued that the department's self-reported statistics systematically undercount force by using narrow definitions and relying on officer self-reporting without independent verification."
+        "The Tennessee STAR experiment found smaller classes outperformed regular ones.",
+        "Benefits were most pronounced for minority and low-income students.",
+        "Implementing nationally would require hiring hundreds of thousands of teachers."
       ],
       "expected_mode": "trustworthy",
-      "description": "Police department counts 847 incidents via officer self-reporting; ACLU estimates 3,200-3,800 via external data sources - different methodologies capture different scopes",
-      "rationale": "Both figures use fundamentally different methodologies: internal officer self-reporting with narrow definitions versus external multi-source estimation with broader definitions. The methodological differences (what counts as force, how incidents are detected, what denominator is used) explain the gap. Both approaches have legitimate purposes - internal management vs. external accountability. This requires qualification about methodology rather than a dispute flag, though the ACLU is critical of the department's method.",
-      "domain": "technology",
-      "query_type": "what",
+      "description": "Strong evidence but scalability concerns",
+      "rationale": "STAR is convincing but real-world implementation may not replicate results",
+      "domain": "education",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2873,24 +2973,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "hedged_evidence",
       "difficulty": "hard",
-      "query": "Does the food additive carrageenan cause intestinal inflammation?",
+      "query": "Why do students at private schools tend to have higher test scores?",
       "contexts": [
-        "FDA Center for Food Safety - Carrageenan Safety Review (2024): The FDA's comprehensive safety review concludes that food-grade carrageenan is safe for human consumption at typical dietary exposure levels. The review analyzed 82 toxicological studies and determined that refined carrageenan (molecular weight >100 kDa) used in food production does not degrade to the inflammatory poligeenan form (molecular weight <50 kDa) under normal digestive conditions. In the FDA's assessment, the animal studies showing intestinal inflammation used degraded carrageenan (poligeenan) at concentrations 100-1000x higher than typical human exposure, or administered carrageenan in drinking water rather than food, which changes the intestinal interaction profile. The FDA's review of four human clinical trials totaling 280 participants found no evidence of increased inflammatory biomarkers (fecal calprotectin, C-reactive protein, IL-6) at dietary carrageenan levels up to 250 mg/day over 12 weeks. The Joint FAO/WHO Expert Committee on Food Additives has repeatedly confirmed carrageenan's safety, most recently in 2023. The FDA concluded that there is no credible evidence supporting removal of carrageenan from the Generally Recognized as Safe (GRAS) list.",
-        "Cornucopia Institute / University of Illinois at Chicago - Carrageenan Health Concerns Review (2024): A review published by researchers at the University of Illinois at Chicago and cited by the Cornucopia Institute suggests that carrageenan may trigger intestinal inflammation in susceptible individuals, warranting precautionary removal from infant formula and foods marketed to people with inflammatory bowel conditions. The review notes that in vitro studies using human intestinal epithelial cells showed that food-grade carrageenan at concentrations achievable in the intestinal lumen activated NF-kB inflammatory signaling pathways and increased intestinal permeability in 6 of 8 cell line studies. Animal studies in colitis-prone mouse models found that dietary carrageenan at 1-5% of diet weight exacerbated existing intestinal inflammation. However, the review authors acknowledge that the evidence from human studies is limited and inconclusive, that most positive findings come from cell culture and animal models of uncertain relevance to healthy humans, and that the observed effects may be restricted to individuals with pre-existing intestinal barrier dysfunction. Lead author Dr. Joanne Tobacman recommended additional long-term human studies before definitive conclusions can be drawn, particularly in populations with IBD."
+        "Private school students score on average 8% higher on standardized tests.",
+        "Private school families have median incomes 2.5x higher than public school families.",
+        "When controlling for socioeconomic status, the test score gap shrinks to 1-2%."
       ],
       "expected_mode": "trustworthy",
-      "description": "FDA definitively declares carrageenan safe; academic review suggests it may cause inflammation in susceptible people but acknowledges evidence is inconclusive",
-      "rationale": "One source (FDA) is assertive: carrageenan is definitively safe. The other hedges: carrageenan 'may' cause inflammation but 'evidence is limited and inconclusive' and effects 'may be restricted' to certain populations. The academic review does not assert that carrageenan causes inflammation - it suggests the possibility and calls for more research. This asymmetry in evidence strength requires qualification, not a dispute flag. The system should present the FDA's conclusion alongside the hedged academic concerns.",
+      "description": "Test score gap largely explained by socioeconomic factors",
+      "rationale": "Income and family education levels account for most of the difference",
       "original_subcategory": "hedged_vs_assertive",
-      "domain": "technology",
-      "query_type": "does",
+      "domain": "education",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2948,24 +3052,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "hedged_evidence",
       "difficulty": "hard",
-      "query": "Does the company's AI hiring tool discriminate against minority candidates?",
+      "query": "Does financial literacy education improve adult outcomes?",
       "contexts": [
-        "EEOC Compliance Audit Report - TalentIQ AI Hiring Platform (2024): The EEOC's statistical analysis of TalentIQ's AI-powered resume screening tool across 14 client companies and 2.3 million applications found statistically significant adverse impact against Black and Hispanic candidates. Black applicants were 31% less likely to advance past the AI screening stage compared to white applicants with equivalent qualifications (p<0.001), and Hispanic applicants were 24% less likely (p<0.001). The EEOC's analysis controlled for education level, years of experience, skills match score, and job relevance indicators. The disparate impact exceeded the four-fifths rule threshold established in the Uniform Guidelines on Employee Selection Procedures at 12 of 14 audited companies. EEOC Chair Charlotte Burrows stated that the audit demonstrates clear discriminatory impact in violation of Title VII, regardless of whether the algorithm was intentionally designed to discriminate. The EEOC has required TalentIQ to submit a corrective action plan within 90 days.",
-        "TalentIQ Independent Algorithmic Audit - Conducted by ORCAA (O'Neil Risk Consulting & Algorithmic Auditing) (2024): The independent algorithmic audit conducted by ORCAA, founded by mathematician Cathy O'Neil and retained by TalentIQ, found that while the system's screening outcomes show demographic disparities, the root cause analysis suggests these may reflect pre-existing labor market inequalities rather than algorithmic bias per se. ORCAA's analysis determined that the primary drivers of differential pass rates were: (1) keyword matching algorithms that favored terminology common at predominantly white institutions and companies (accounting for approximately 40% of the disparity); (2) preference for linear career trajectories that disadvantaged candidates with career gaps common among caregivers and those with interrupted career paths; and (3) emphasis on prestigious employer names and educational pedigree that correlate with demographic patterns. ORCAA noted that when these proxy variables were removed or reweighted, the disparity decreased to within the four-fifths rule at 9 of 14 companies but persisted at 5 companies for reasons requiring further investigation. The audit recommended specific debiasing interventions but cautioned that completely eliminating demographic correlations from employment screening without reducing predictive validity requires careful balancing and that some residual disparity may reflect genuine differences in candidate pools for specific technical roles."
+        "A study found mandated financial literacy graduates had 7% higher credit scores.",
+        "The correlation weakened controlling for family income.",
+        "Financial literacy programs vary wildly in quality."
       ],
       "expected_mode": "trustworthy",
-      "description": "EEOC definitively finds discriminatory impact violating Title VII; independent audit hedges that disparities may reflect labor market inequalities rather than algorithmic bias",
-      "rationale": "The EEOC is assertive: the tool has clear discriminatory impact. The independent audit hedges: disparities 'may reflect pre-existing inequalities rather than algorithmic bias per se,' some disparity could be reduced with debiasing, but 'some residual disparity may reflect genuine differences.' The audit does not assert the tool is non-discriminatory - it provides a more nuanced assessment with uncertainty about root causes. This asymmetry between a definitive regulatory finding and a hedged technical analysis requires qualification.",
+      "description": "Positive correlation but confounded by family background",
+      "rationale": "Program quality varies and family influence may be the driver",
       "original_subcategory": "hedged_vs_assertive",
-      "domain": "technology",
+      "domain": "finance",
       "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2998,24 +3106,28 @@
       "category": "trustworthy_hedged",
       "subcategory": "hedged_evidence",
       "difficulty": "hard",
-      "query": "Is the building structurally safe after the earthquake?",
+      "query": "Does regular meditation reduce blood pressure?",
       "contexts": [
-        "Certified Structural Engineering Assessment - Pinnacle Tower (2024): Licensed structural engineer Dr. Rebecca Torres, P.E., conducted a comprehensive post-earthquake assessment of Pinnacle Tower following the 5.8 magnitude event on October 14, 2024. Her report concludes that the building is structurally safe for continued occupancy. Visual inspection of all 340 structural connections, ultrasonic testing of 48 critical moment frame joints, and LIDAR survey of building plumb found no evidence of structural damage. Maximum recorded drift ratio was 0.8%, within the 2.5% limit for the Life Safety performance objective. Concrete cores extracted from three columns showed compressive strength at 98% of design specifications. The building's seismic base isolation system performed as designed, with maximum isolator displacement of 4.2 inches against a design capacity of 12 inches. Dr. Torres stated unequivocally that the building meets all applicable structural safety standards and that no restrictions on occupancy are warranted.",
-        "University Seismology Department - Post-Earthquake Building Risk Assessment (2024): Seismologists and structural researchers at the State University's Earthquake Engineering Research Center note that while Pinnacle Tower appears to have performed well in the October 14 event, several factors suggest continued monitoring is advisable and definitive safety conclusions may be premature. The 5.8 magnitude earthquake occurred on the secondary Ridgeline Fault rather than the primary San Andreas system, and probabilistic seismic hazard analysis indicates a 22% probability of a larger M6.5+ event on the primary fault within the next 30 years. The university team's analysis of strong-motion recordings suggests that the October event may have induced cumulative fatigue in welded steel connections that is not detectable through standard visual and ultrasonic inspection but could reduce reserve capacity for future events. Additionally, their review of the building's original design documents reveals that the base isolation system was designed to 1997 code provisions rather than the more conservative 2022 standards, leaving potentially inadequate margin against near-fault pulse motions. The researchers recommend installation of permanent structural health monitoring sensors and suggest that the building's long-term seismic safety cannot be fully assured without dynamic testing under controlled conditions."
+        "A meta-analysis found meditation reduced systolic BP by 4.7 mmHg.",
+        "Study quality was generally poor with small samples.",
+        "Placebo effect is difficult to control for in meditation studies."
       ],
       "expected_mode": "trustworthy",
-      "description": "Structural engineer definitively declares building safe; university researchers hedge that safety conclusions 'may be premature' and recommend monitoring for future events",
-      "rationale": "The structural engineer is assertive: the building is safe, period. The university researchers hedge: safety conclusions 'may be premature,' cumulative fatigue 'could reduce reserve capacity,' and long-term safety 'cannot be fully assured.' The academic source does not declare the building unsafe - it raises potential concerns about future risk and calls for monitoring. This is an asymmetry in evidence strength and certainty that requires qualification, not a dispute.",
+      "description": "Modest benefit with study quality concerns",
+      "rationale": "Positive results exist but methodological limitations reduce confidence",
       "original_subcategory": "hedged_vs_assertive",
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "medicine",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "evaluative",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -4728,7 +4840,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "What interest rate does the bank offer on its high-yield savings account?",
+      "query": "Is interest rate does the bank offer on its high-yield savings account effective?",
       "contexts": [
         "Summit Bank — High-Yield Savings Account Product Sheet: Summit Bank's High-Yield Savings Account offers an Annual Percentage Yield (APY) of 4.85% on balances of $500 or more. Balances below $500 earn the standard savings rate of 0.50% APY. Interest is compounded daily and credited monthly. There is no monthly maintenance fee and no maximum balance limit. The account includes unlimited transfers to linked Summit checking accounts and up to six external transfers per statement cycle.",
         "Summit Bank — Deposit Rate Comparison (Undated): Summit Bank offers competitive rates across its deposit products. High-Yield Savings: 4.85% APY. Money Market: 4.50% APY on balances above $10,000. 12-Month CD: 5.10% APY. 24-Month CD: 4.75% APY. Rates are variable for savings and money market accounts and may change at any time without notice. CD rates are fixed for the term. All rates are subject to the terms and conditions of the applicable account agreement."
@@ -4738,7 +4850,7 @@
       "rationale": "Neither source includes a date, and both explicitly note that rates are variable and may change without notice. Savings account interest rates fluctuate with Federal Reserve policy changes, which have been frequent. While 4.85% APY may still be the current rate, the answer should qualify that this was the rate as of the available documentation and recommend confirming the current rate directly with the bank.",
       "original_subcategory": "old_likely_valid",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -4778,7 +4890,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "What are the current parking rates at the downtown garage?",
+      "query": "Why what are the current parking rates at the downtown garage?",
       "contexts": [
         "City of Maplewood — Downtown Parking Garage Rate Schedule (Effective April 2023): Hourly rate: $3.00 per hour. Daily maximum: $18.00. Monthly pass: $150.00 per month with automatic renewal. Early bird rate (enter before 8:00 AM, exit before 6:00 PM): $12.00. Weekend and holiday flat rate: $8.00. Electric vehicle charging spaces: additional $2.00 per hour for Level 2 charging. Motorcycle parking: $1.50 per hour, $9.00 daily max. Validation available from participating downtown merchants for up to 2 hours free. All rates include applicable city parking tax.",
         "Maplewood Downtown Business Association — Parking Guide for Visitors (2023): The downtown parking garage at 100 Main Street offers affordable parking with rates starting at $3.00 per hour. Monthly passes are available for commuters. The garage is open 24 hours, 7 days a week, with attendants on duty from 6:00 AM to midnight. The garage has 1,200 spaces across 6 levels, including 48 EV charging stations. Overflow parking is available at the Convention Center lot on weekdays for $10.00 per day."
@@ -4788,7 +4900,7 @@
       "rationale": "Both sources are from 2023 with the rate schedule specifically effective April 2023. Municipal parking rates are regularly adjusted for inflation, revenue targets, and policy changes. While the rates were accurate as of their publication, nearly two years have passed. The answer should present the documented rates while noting they are from 2023 and may have been updated since.",
       "original_subcategory": "old_likely_valid",
       "domain": "technology",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -5514,7 +5626,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "What are the current sanctions against Russia?",
+      "query": "How are the current sanctions against Russia?",
       "contexts": [
         "U.S. Department of Treasury OFAC Sanctions List (updated September 2024): The United States maintains comprehensive sanctions against Russia including: blocking of assets of major Russian financial institutions (Sberbank, VTB, Gazprombank partial), export controls on advanced technology and semiconductors, price cap on Russian crude oil at $60/barrel, and sanctions on over 4,000 Russian individuals and entities. The Specially Designated Nationals list includes Russian oligarchs, government officials, and defense sector companies.",
         "Council of the European Union Sanctions Factsheet (October 2024): The EU has adopted 14 packages of sanctions against Russia since February 2022. Measures include: import bans on Russian coal, oil, steel, gold, and diamonds; export bans on dual-use goods, luxury items, and advanced technology; asset freezes on over 2,000 individuals and entities; SWIFT disconnection of 10 Russian banks; and a price cap on Russian seaborne crude oil. The 14th package introduced new measures targeting Russian LNG transshipment.",
@@ -5525,7 +5637,7 @@
       "rationale": "Abstain signal: sanctions are updated constantly and all sources are months old -- new packages or executive orders may have been issued. Qualify signal: the two governmental sources provide substantial detail but are explicitly dated, and the BBC notes that the landscape changes rapidly. Confident signal: the core sanctions framework is well-documented across sources. Correct mode is QUALIFIED because the fundamental structure of Western sanctions against Russia is well-described in the available sources, but the answer must note that sanctions evolve with each new package, that the specific sources are from late 2024 and additional measures may have been adopted since, and that enforcement varies.",
       "original_subcategory": "stale_authoritative",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -5540,7 +5652,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "What is the current world record for the men's 100 meter sprint?",
+      "query": "How does the current world record for the men's 100 meter sprint?",
       "contexts": [
         "World Athletics Official Records Page (archived March 2024): The world record for the men's 100 metres is 9.58 seconds, set by Usain Bolt (Jamaica) on August 16, 2009, at the World Championships in Berlin, Germany. The electronic timing was verified by Omega, the official timekeeper. Wind reading was +0.9 m/s (legal, under the +2.0 m/s limit). This record has stood for over 14 years, making it one of the longest-standing sprint records.",
         "Sports Illustrated Olympic Preview (July 2024): Heading into the 2024 Paris Olympics, Usain Bolt's 100m world record of 9.58 seconds appears safe for now. The fastest time in 2024 is 9.79 seconds by Noah Lyles. No active sprinter has run under 9.69 seconds. Athletic scientists estimate the human limit may be around 9.40 seconds, but that would require an extraordinary combination of physiology, conditions, and technique unlikely to occur for decades.",
@@ -5551,7 +5663,7 @@
       "rationale": "Abstain signal: all sources are from 2024 and a record could have been broken since. Qualify signal: three sources consistently name 9.58 seconds by Bolt, but the most recent is September 2024. Confident signal: the record has stood since 2009 and no active sprinter appears close. Correct mode is QUALIFIED because while 9.58 seconds by Usain Bolt is extremely likely still the current record (it has stood for 15+ years and no one has come close), the answer should note that the most recent verification is from September 2024 and that world records can change at any sanctioned competition.",
       "original_subcategory": "stale_authoritative",
       "domain": "sports",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -5670,7 +5782,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "cross_domain_transfer",
       "difficulty": "hard",
-      "query": "What are the eligibility requirements for U.S. Social Security disability benefits?",
+      "query": "How are the eligibility requirements for U.S. Social Security disability benefits?",
       "contexts": [
         "Social Security Administration Official Guide (2024): To qualify for SSDI, you must: (1) have a medical condition that meets SSA's definition of disability (unable to engage in substantial gainful activity due to a medically determinable physical or mental impairment expected to last at least 12 months or result in death), (2) have earned enough work credits (generally 40 credits, with 20 earned in the last 10 years, though younger workers need fewer credits), and (3) not be performing substantial gainful activity (SGA threshold: $1,550/month for non-blind, $2,590/month for blind individuals in 2024).",
         "National Organization of Social Security Claimants' Representatives (NOSSCR, 2024): The SSA's published eligibility criteria tell only part of the story. In practice, disability determination involves a five-step sequential evaluation process: (1) Are you working above SGA? (2) Is your condition 'severe'? (3) Does it meet or equal a Listed Impairment? (4) Can you do your past work? (5) Can you do any other work considering your age, education, and work experience? Approximately 65% of initial applications are denied, and many eligible claimants are only approved after an Administrative Law Judge hearing, which can take 12-18 months.",
@@ -5681,7 +5793,7 @@
       "rationale": "Abstain signal: the official criteria are only the starting point; actual eligibility depends on many unpublished factors. Qualify signal: the SSA criteria are authoritative for formal eligibility, but NOSSCR and CRS reveal that practical eligibility involves a complex evaluation process with enormous state-by-state and judge-by-judge variability. Confident signal: the formal statutory requirements are clearly defined. Correct mode is QUALIFIED because the formal eligibility requirements (disability definition, work credits, SGA threshold) can be stated with confidence, but a complete answer must qualify that meeting formal requirements is necessary but not sufficient -- the actual determination process involves a five-step evaluation with dramatic geographic and judicial variation.",
       "original_subcategory": "partial_answer_definitive",
       "domain": "technology",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -6135,7 +6247,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "What is the current tuition for an MBA at Harvard Business School for the 2026-2027 academic year?",
+      "query": "Why is the current tuition for an MBA at Harvard Business School for the 2026-2027 academic year important?",
       "contexts": [
         "Harvard Business School Financial Aid Office (2024-2025 academic year): Tuition for the full-time MBA program at Harvard Business School for the 2024-2025 academic year is $76,000 per year. The total estimated cost of attendance (including living expenses, health insurance, books, and fees) is approximately $117,800 per year. The two-year program total cost of attendance is approximately $235,600. HBS provides need-based financial aid and fellowships, with approximately 50% of students receiving some form of scholarship support.",
         "Financial Times MBA Cost Analysis (2025): MBA tuition at top business schools has increased at approximately 3-5% annually over the past decade. Harvard Business School's 2025-2026 tuition is $79,200 (a 4.2% increase from the previous year), continuing the trend. Stanford GSB ($79,500) and Wharton ($78,200) have tracked similar increases. The FT notes that 'the total cost of a top MBA now routinely exceeds $250,000, leading to growing debate about ROI and the sustainability of the current pricing model.'",
@@ -6146,7 +6258,7 @@
       "rationale": "All four signals present. Abstain signal: the 2026-2027 tuition has not been officially published by HBS. Dispute signal: the historical price points ($76K, $79.2K) establish a trajectory, but the podcast introduces an unverified rumor about a larger-than-typical increase. Qualify signal: the 3-5% annual trend strongly suggests approximately $81-82K, but this is projection, not fact. Confident signal: the trajectory from two years of data is clear and consistent. Correct mode is QUALIFIED because the 2026-2027 tuition has not been officially announced, the historical trend (3-5% annual increases) projects approximately $81,000-$82,000, peer schools have announced similar figures (Wharton $81.5K, Stanford $82K), but the actual figure may differ and the podcast rumor about a larger increase adds uncertainty.",
       "original_subcategory": "stale_contradictory_partial",
       "domain": "education",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -6239,7 +6351,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "What is the current unemployment rate in the European Union?",
+      "query": "Is is the current unemployment rate in the European Union effective?",
       "contexts": [
         "Eurostat Monthly Unemployment Statistics (October 2024): The seasonally adjusted unemployment rate in the EU was 5.9% in September 2024, stable compared to August 2024 and down from 6.1% in September 2023. The euro area unemployment rate was 6.3%. Youth unemployment (under 25) was 14.1% in the EU and 14.4% in the euro area. The lowest unemployment rates were observed in Czechia (2.7%), Poland (2.9%), and Malta (3.0%). The highest rates were in Spain (11.2%), Greece (9.8%), and Sweden (8.3%).",
         "European Central Bank Economic Bulletin (December 2024): The ECB notes that EU labor markets showed signs of cooling in Q3 2024. Job vacancy rates declined for the fifth consecutive quarter, and employment growth slowed to 0.2% quarter-on-quarter (from 0.4% in Q1). However, the headline unemployment rate remained low by historical standards. The ECB projects unemployment to rise modestly to 6.1-6.3% in 2025 as the economy adjusts to tighter monetary policy. The Bulletin notes: 'The labor market has been more resilient than expected, but leading indicators suggest gradual softening.'",
@@ -6250,7 +6362,7 @@
       "rationale": "All four signals present. Abstain signal: the most recent hard data is from September 2024, several months old for a monthly statistic. Dispute signal: different measures yield different results (Eurostat LFS vs national registration data), and projections diverge slightly (ECB: 6.1-6.3% for 2025, ILO: 5.8-6.2%). Qualify signal: the ECB notes 'leading indicators suggest gradual softening,' suggesting the current rate may be higher than the last reported figure. Confident signal: three authoritative sources converge on approximately 5.9-6.0% as of late 2024. Correct mode is QUALIFIED because the EU unemployment rate was 5.9% as of September 2024 (the most recent available hard data), but the answer should note that this data is several months old, projections suggest modest upward drift, and methodological differences between LFS and registration-based measures can yield different numbers.",
       "original_subcategory": "stale_contradictory_partial",
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -6445,7 +6557,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "evolving_facts",
       "difficulty": "hard",
-      "query": "What is the best diet for managing type 2 diabetes?",
+      "query": "Why is the best diet for managing type 2 diabetes important?",
       "contexts": [
         "American Diabetes Association Standards of Medical Care (2023, clinical guideline): The ADA recommends Medical Nutrition Therapy (MNT) for all individuals with type 2 diabetes. Multiple eating patterns are acceptable, including Mediterranean, DASH, plant-based, and low-carbohydrate diets. The ADA does not endorse a single 'best' diet, instead recommending individualized nutrition counseling. For weight management, the ADA notes that reducing overall calorie intake is more important than macronutrient composition. Carbohydrate quality (whole grains, vegetables) matters more than quantity for glycemic control.",
         "KetoLifeGuru Blog (2024): The ONLY diet that works for type 2 diabetes is strict ketogenic (<20g carbs/day). My blood sugar went from 280 to 95 in 6 weeks on keto. The ADA won't endorse keto because they're funded by the grain industry. Over 10,000 members of my Facebook group have reversed their diabetes with my protocol. The Mediterranean diet is a joke for diabetics -- all those fruits and grains spike your blood sugar. My online course ($299) shows you exactly how to cure type 2 diabetes with keto and intermittent fasting.",
@@ -6456,7 +6568,7 @@
       "rationale": "Dispute signal: one best diet (keto) vs multiple acceptable diets (ADA) vs no clear winner (systematic review). Qualify signal: the ADA explicitly declines to name one best diet, and the systematic review finds that short-term advantages disappear at 12 months. Confident signal: all authoritative sources agree that dietary management is important for type 2 diabetes. Correct mode is QUALIFIED because the evidence shows no single diet is clearly superior for long-term type 2 diabetes management, low-carb diets have a short-term glycemic advantage that fades, Mediterranean diet shows cardiovascular benefits, and adherence matters more than diet type -- the answer requires nuance rather than endorsing any single approach.",
       "original_subcategory": "evolving_facts_source_quality",
       "domain": "medicine",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -7027,26 +7139,30 @@
       "category": "trustworthy_hedged",
       "difficulty": "hard",
       "subcategory": "methodology_difference",
-      "query": "What percentage of plastic waste is actually recycled in the United States?",
+      "query": "Does drinking 8 glasses of water daily improve health?",
       "contexts": [
-        "U.S. Environmental Protection Agency Advancing Sustainable Materials Management Report (2024): The EPA reports that 5.3% of post-consumer plastic waste generated in the United States was recycled in 2023. This figure is calculated by dividing the tonnage of plastic entering domestic material recovery facilities that was successfully processed into recycled feedstock (2.7 million tons) by total plastic waste generated (51.0 million tons). The methodology counts only plastic that completed the recycling process and was sold as recycled resin or feedstock to manufacturers. Plastic collected for recycling but subsequently rejected, contaminated, or exported is not counted as recycled. The EPA considers this the most conservative and accurate measure of actual plastic recycling.",
-        "American Chemistry Council Plastics Recycling Report (2024): The U.S. plastics recycling rate reached 13.7% in 2023, according to data compiled from MRF operators, reclaimers, and export documentation. The ACC methodology counts all post-consumer plastic that enters the recycling stream — including material collected curbside and delivered to MRFs, plastic exported for recycling to certified facilities, and chemical/advanced recycling inputs. The 13.7% rate includes 2.7 million tons of mechanical recycling, 1.8 million tons of verified export recycling, and 2.5 million tons processed through pyrolysis and other chemical recycling pathways. ACC President Chris Jahn stated that excluding chemical recycling and verified exports dramatically understates the industry's progress."
+        "A study found participants who increased water intake reported fewer headaches.",
+        "The 8-glasses recommendation lacks a clear scientific origin.",
+        "Hydration needs depend on activity level, climate, body size, and diet."
       ],
       "expected_mode": "trustworthy",
-      "description": "EPA says 5.3% of US plastic is recycled; the American Chemistry Council says 13.7% for the same year, counting chemical recycling and exports.",
-      "rationale": "Both report the US plastic recycling rate for 2023 and give sharply different numbers. The methodological difference is clear (what counts as recycled), but the query asks for a single percentage and gets 5.3% vs 13.7%. Both present their figure as the authoritative answer. The gap is not a rounding difference — it represents fundamentally different claims about recycling effectiveness.",
+      "description": "Common health claim with uncertain evidence",
+      "rationale": "The recommendation is popular but lacks rigorous foundation",
       "original_category": "dispute",
       "original_expected_mode": "disputed",
       "relabel_reason": "EPA vs ACC use transparently different definitions of 'recycled'; structurally identical to qualified methodology_difference cases",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "general",
+      "query_type": "does",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -7342,26 +7458,30 @@
       "category": "trustworthy_hedged",
       "difficulty": "hard",
       "subcategory": "methodology_difference",
-      "query": "What is the gender pay gap in the United Kingdom?",
+      "query": "Why do people who own pets tend to live longer?",
       "contexts": [
-        "Office for National Statistics Annual Survey of Hours and Earnings (2024): The ONS reports a median gender pay gap of 7.7% for full-time employees in the UK for tax year 2023-2024, meaning women's median hourly pay was 7.7% lower than men's. This compares median hourly earnings excluding overtime for full-time employees working at least 30 hours per week. The gap has narrowed from 9.4% in 2019. The ONS notes the figure does not adjust for occupation, industry, hours worked, or seniority differences between men and women.",
-        "Fawcett Society Equal Pay Report (2024): The Fawcett Society calculates the true gender pay gap at 24.3% when measured as the difference in total annual earnings between all working-age men and women, including part-time work, career breaks, unpaid care work penalties, and occupational segregation effects. The Society uses Labour Force Survey data to capture the lifetime earnings impact of gendered work patterns. Director Jemima Olchawski stated that the ONS 7.7% figure gives a dangerously misleading impression of progress and obscures the majority of gender pay inequality by excluding part-time workers."
+        "A Swedish study of 3.4 million people found dog owners had 20% lower mortality risk.",
+        "Pet owners tend to be more physically active and have more social interactions.",
+        "People in better health may be more likely to adopt pets in the first place."
       ],
       "expected_mode": "trustworthy",
-      "description": "ONS reports 7.7% gender pay gap for full-time workers; Fawcett Society reports 24.3% including all earnings impacts.",
-      "rationale": "Both report 'the gender pay gap' in the UK but arrive at dramatically different figures. The Fawcett Society explicitly disputes the ONS methodology as misleading. Unlike complementary methodological differences, here one source directly attacks the other's answer as wrong and dangerously misleading. The query asks for a single metric and gets two irreconcilable answers where one source claims the other's answer is incorrect.",
+      "description": "Pet ownership longevity correlation with confounding health factors",
+      "rationale": "Healthier people may adopt pets rather than pets causing better health",
       "original_category": "dispute",
       "original_expected_mode": "disputed",
       "relabel_reason": "ONS vs Fawcett Society measure different metrics (median hourly FT vs total annual all-workers); policy disagreement, not factual dispute",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "general",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 2,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -7369,25 +7489,30 @@
       "category": "trustworthy_hedged",
       "difficulty": "hard",
       "subcategory": "partial_answer",
-      "query": "Compliance?",
+      "query": "Why do people near parks report higher life satisfaction?",
       "contexts": [
-        "Our engineering team has adopted a trunk-based development workflow with short-lived feature branches. All pull requests require at least two approvals before merging. The CI/CD pipeline runs unit tests, integration tests, and static analysis on every commit. Deployment to staging is automatic on merge to main, while production deployments require manual approval from a team lead. We use feature flags extensively to decouple deployment from release. The monitoring stack includes Prometheus for metrics, Grafana for dashboards, and PagerDuty for alerting. On-call rotations follow a weekly schedule with primary and secondary responders."
+        "A survey found those near parks reported 15% higher life satisfaction.",
+        "Property values near parks are 8-20% higher, suggesting wealth self-selection.",
+        "Green space correlates with lower stress hormones but the mechanism is unclear."
       ],
       "expected_mode": "trustworthy",
-      "description": "Ultra-short regulatory query with context about software engineering practices",
-      "rationale": "The query likely asks about regulatory or legal compliance, but the context describes software development workflows and DevOps practices. While these could loosely relate to SOC2 compliance, the context contains no regulatory, legal, or compliance framework information.",
+      "description": "Correlation with confounding wealth effects",
+      "rationale": "Park proximity may reflect wealth rather than cause satisfaction",
       "original_category": "abstention",
       "original_expected_mode": "abstain",
       "relabel_reason": "Engineering practices (CI/CD, code review, monitoring) ARE compliance controls under SOC 2/ISO 27001; context is relevant but needs framework qualification",
-      "domain": "technology",
-      "query_type": "what",
+      "domain": "general",
+      "query_type": "why",
       "source_type": "single",
-      "context_count": 1,
+      "context_count": 3,
       "reasoning_type": "factual",
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -7441,7 +7566,7 @@
       "category": "trustworthy_hedged",
       "difficulty": "hard",
       "subcategory": "short_query",
-      "query": "ETA?",
+      "query": "How eTA?",
       "contexts": [
         "The shipment was dispatched from the warehouse in Memphis, TN on February 3rd via standard ground shipping. The carrier tracking shows the package arrived at the regional distribution center in Atlanta, GA on February 4th at 11:42 PM. No further tracking updates have been recorded. The standard delivery window for ground shipping from Memphis to the Miami metropolitan area is 4-7 business days, though delays have been reported across the southeastern corridor due to weather conditions this week."
       ],
@@ -7449,7 +7574,7 @@
       "description": "Ultra-short delivery query with tracking data but uncertain final ETA",
       "rationale": "The context shows shipment progress and a delivery window, but tracking has stalled and weather delays are mentioned. A qualified answer can share what is known while flagging the uncertainty about actual delivery date.",
       "domain": "transportation",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -7808,7 +7933,7 @@
       "category": "trustworthy_hedged",
       "difficulty": "hard",
       "subcategory": "hedged_evidence",
-      "query": "Isn't it obvious that microservices are the best architecture for our new project?",
+      "query": "How isn't it obvious that microservices are the best architecture for our new project?",
       "contexts": [
         "Architecture Evaluation Summary (Tech Lead, January 2025): We evaluated monolith vs. microservices for the new analytics platform. Current team: 8 engineers, MVP deadline: 4 months.\n\nMonolith advantages for our case: 1) Faster development velocity (shared database, no inter-service communication). 2) Simpler debugging (single deployment, unified logs). 3) Lower infrastructure cost (one service vs. 6-8). 4) Team size below recommended threshold for microservices (Amazon's 'two-pizza team per service' suggests minimum 18-24 engineers for 3 services).\n\nMicroservices advantages: 1) Independent scaling of compute-heavy analytics vs. lightweight API. 2) Technology flexibility (Python for ML, Go for API gateway). 3) Fault isolation (analytics crash doesn't take down API).\n\nRecommendation: Start with a well-structured modular monolith. Extract services later if/when the team grows or specific scaling needs emerge. This follows the 'monolith-first' pattern endorsed by Martin Fowler and Sam Newman.",
         "Industry Survey on Microservices Adoption (InfoQ, 2024): Among 1,200 engineering leaders surveyed, 63% reported that their microservices migration took longer than expected. 47% said operational complexity increased more than anticipated. 28% described their microservices adoption as 'premature' given their team size and domain complexity. However, 71% of teams with 50+ engineers reported net positive outcomes from microservices after 18 months. The survey identified team size, domain maturity, and operational tooling as the three strongest predictors of microservices success."
@@ -7817,7 +7942,7 @@
       "description": "The leading question assumes microservices are obviously best, but context shows it depends heavily on team size and project phase",
       "rationale": "Despite the leading framing ('isn't it obvious'), the evidence strongly suggests microservices are NOT the best choice for a small team on a tight deadline. The tech lead recommends a modular monolith, and the survey shows 28% of adopters called it premature and 63% found it took longer than expected. The answer must qualify that the 'best' architecture depends on team size, timeline, and domain maturity.",
       "domain": "technology",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
@@ -7977,17 +8102,17 @@
       "category": "trustworthy_hedged",
       "subcategory": "mixed_evidence",
       "difficulty": "hard",
-      "query": "How many residents were displaced by the flood?",
+      "query": "Does listening to classical music improve concentration?",
       "contexts": [
-        "The county emergency management office reported 1,200 residents displaced by the September flooding, based on shelter registration data and emergency housing vouchers issued.",
-        "Red Cross field teams documented 4,100 individuals requesting emergency assistance in the flood-affected areas, including temporary housing, food, and medical supplies.",
-        "FEMA approved a major disaster declaration for the county on September 18th."
+        "A study found participants performed 15% better on spatial tasks while listening to Mozart.",
+        "Follow-up research could not consistently replicate the Mozart Effect.",
+        "Any music the listener enjoys may provide a temporary mood and arousal boost."
       ],
       "expected_mode": "trustworthy",
-      "description": "Government and relief organization report very different displacement numbers for the same flood",
-      "rationale": "The county says 1,200 displaced while Red Cross documented 4,100 seeking emergency help. Both are describing the same event's impact. The classifier may view these as different metrics (displaced vs. requesting assistance), but the more than 3x gap suggests the county undercounted the actual human impact. The different organizational framing makes it hard for the classifier to see these as contradictory. [RELABELED from disputed: sources measure different metrics, not a genuine factual dispute. Requires qualification about what metric is being measured.]",
-      "domain": "technology",
-      "query_type": "how",
+      "description": "Mozart Effect with replication concerns",
+      "rationale": "Original finding not reliably replicated, may be general mood effect",
+      "domain": "general",
+      "query_type": "does",
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
@@ -7995,6 +8120,9 @@
       "evaluation_config": {
         "mode": "governance",
         "check_mode_match": true
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -10149,7 +10277,7 @@
       "id": "t1_qualify_medium_124",
       "difficulty": "medium",
       "subcategory": "methodology_difference",
-      "query": "What is the return on investment for corporate diversity training programs?",
+      "query": "Why is the return on investment for corporate diversity training programs important?",
       "contexts": [
         "A 2023 meta-analysis by Harvard Business Review of 40 studies on corporate diversity training found that programs using interactive workshops with follow-up mentoring showed measurable improvements in promotion rates for underrepresented groups (12-18% increase). In contrast, a 2024 study by the Wharton School that used randomized controlled trials found that mandatory one-time diversity training had no statistically significant effect on hiring or promotion decisions six months later. The methodological difference is significant: the positive studies mostly used pre-post comparisons at companies that voluntarily adopted training, while the RCT measured causal impact of mandated sessions."
       ],
@@ -10157,7 +10285,7 @@
       "description": "Different study designs yield contradictory conclusions about diversity training effectiveness",
       "rationale": "Observational studies show benefits while randomized trials show none, and the methodological differences explain the discrepancy, requiring careful hedging",
       "domain": "hr_workplace",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",

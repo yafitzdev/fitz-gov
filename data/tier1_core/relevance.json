@@ -44,7 +44,7 @@
       "id": "t1_relevance_medium_002",
       "difficulty": "medium",
       "subcategory": "wrong_entity_focus",
-      "query": "What is the battery life of the ProTab X1?",
+      "query": "Is is the battery life of the ProTab X1 effective?",
       "contexts": [
         "The ProTab X2 features a stunning 12.9-inch OLED display with 120Hz refresh rate. It offers an impressive 14-hour battery life with fast charging support. The device weighs just 450 grams and is available in silver, space gray, and gold."
       ],
@@ -61,7 +61,7 @@
       ],
       "original_id": "relevance_medium_002",
       "domain": "environment",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -463,25 +463,24 @@
       "id": "t1_relevance_hard_005",
       "difficulty": "hard",
       "subcategory": "symptom_only",
-      "query": "WHY did the algorithm produce biased outputs?",
+      "query": "What is the return policy AND shipping cost for online orders?",
       "contexts": [
-        "Analysis revealed the algorithm rejected 23% more applications from minority groups. The disparity was consistent across multiple test datasets. After the bias was discovered, the model was immediately taken offline for review. The company issued a public apology and pledged to implement fairness audits."
+        "Our online store offers free returns within 30 days. Items must be unworn and in original packaging. Refunds are processed within 5-7 business days."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks for cause of bias but context only describes the bias and response",
-      "rationale": "LLM should acknowledge the root cause of bias is not explained",
+      "description": "Asks return policy AND shipping cost, only return provided",
+      "rationale": "Shipping cost not mentioned",
       "required_elements": [
-        "why",
-        "cause",
+        "shipping",
         "not specified",
-        "reason",
-        "not explained",
-        "training data",
-        "not mentioned"
+        "not mentioned",
+        "cost",
+        "delivery",
+        "not provided"
       ],
       "original_id": "relevance_hard_005",
-      "domain": "technology",
-      "query_type": "why",
+      "domain": "general",
+      "query_type": "what",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "causal",
@@ -492,30 +491,32 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
       "id": "t1_relevance_hard_006",
       "difficulty": "hard",
       "subcategory": "partial_answer",
-      "query": "What are the PREREQUISITES, duration, AND certification exam format for the course?",
+      "query": "What were the economic AND social consequences of the Black Death?",
       "contexts": [
-        "The Advanced Data Science certification course requires proficiency in Python and basic statistics. Students should have completed at least one introductory machine learning course. The program covers deep learning, NLP, and computer vision with hands-on projects."
+        "The Black Death killed 30-60% of Europe's population. The labor shortage led to higher wages and decline of serfdom. Land prices collapsed."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks for prereqs, duration, AND exam format - only prereqs provided",
-      "rationale": "LLM should acknowledge duration and exam format are not mentioned",
+      "description": "Asks economic AND social consequences, only economic provided",
+      "rationale": "Social consequences not covered",
       "required_elements": [
-        "duration",
-        "exam",
+        "social",
         "not specified",
-        "weeks",
-        "format",
         "not mentioned",
-        "how long"
+        "cultural",
+        "society",
+        "not provided"
       ],
       "original_id": "relevance_hard_006",
-      "domain": "technology",
+      "domain": "history",
       "query_type": "what",
       "source_type": "single",
       "context_count": 1,
@@ -527,26 +528,29 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
       "id": "t1_relevance_hard_007",
       "difficulty": "hard",
       "subcategory": "tangent_drift",
-      "query": "What is the INTEREST RATE for the business loan?",
+      "query": "What is the square footage AND year the house was built?",
       "contexts": [
-        "Our business loans offer flexible repayment terms from 1 to 10 years. Borrowers can choose between fixed and variable rate options. The application process is streamlined with decisions within 48 hours. Collateral requirements depend on loan amount and business history."
+        "This colonial-style home features 4 bedrooms and 2.5 bathrooms. The property sits on a half-acre lot with a fenced backyard and two-car garage."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks for specific interest rate but context discusses loan terms without rates",
-      "rationale": "LLM should acknowledge the actual interest rate percentage is not provided",
+      "description": "Asks square footage AND year, neither provided",
+      "rationale": "Both metrics missing",
       "required_elements": [
-        "interest rate",
+        "square footage",
+        "year",
+        "built",
         "not specified",
-        "percent",
-        "APR",
         "not mentioned",
-        "rate"
+        "not provided"
       ],
       "forbidden_elements": [
         "\\d+(\\.\\d+)?\\s*%",
@@ -555,7 +559,7 @@
         "\\d+(\\.\\d+)?\\s*percent"
       ],
       "original_id": "relevance_hard_007",
-      "domain": "technology",
+      "domain": "real_estate",
       "query_type": "what",
       "source_type": "single",
       "context_count": 1,
@@ -567,6 +571,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -607,20 +614,22 @@
       "id": "t1_relevance_hard_009",
       "difficulty": "hard",
       "subcategory": "format_mismatch",
-      "query": "Give me a BULLETED LIST of the key features.",
+      "query": "What is the budget AND timeline for the infrastructure project?",
       "contexts": [
-        "Our product combines cutting-edge AI with an intuitive interface. The machine learning engine continuously improves recommendations based on user behavior. Real-time analytics provide instant insights into customer patterns. The cloud-native architecture ensures 99.99% uptime and seamless scaling."
+        "The city council approved infrastructure improvements for roads and transit. The project will create thousands of jobs. Community input sessions were held."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks for bulleted list but context is prose",
-      "rationale": "LLM should acknowledge information is available but not in requested list format, or extract and format appropriately while noting the source format",
+      "description": "Asks budget AND timeline, neither provided",
+      "rationale": "Budget and timeline not specified",
       "required_elements": [
-        "AI",
-        "analytics",
-        "machine learning",
-        "cloud"
+        "budget",
+        "timeline",
+        "not specified",
+        "not mentioned",
+        "cost",
+        "not provided"
       ],
-      "domain": "technology",
+      "domain": "government",
       "query_type": "what",
       "source_type": "single",
       "context_count": 1,
@@ -632,30 +641,34 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
       "id": "t1_relevance_hard_010",
       "difficulty": "hard",
       "subcategory": "granularity_mismatch",
-      "query": "What is the population of Springfield, Illinois specifically?",
+      "query": "What are the ingredients AND allergen info for this dish?",
       "contexts": [
-        "Illinois has a population of approximately 12.8 million people. The state capital is Springfield. Major cities include Chicago (2.7 million), Aurora (180,000), and Rockford (148,000). The state saw a 0.5% population decline between 2020 and 2023."
+        "This signature dish has been a favorite since opening. It is prepared using traditional techniques. It pairs well with white wine."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks for Springfield population but context only has state and other cities",
-      "rationale": "LLM should acknowledge Springfield's specific population is not provided despite it being mentioned as the capital",
+      "description": "Asks ingredients AND allergens, neither provided",
+      "rationale": "Specific ingredients and allergens missing",
       "required_elements": [
-        "Springfield",
+        "ingredient",
+        "allergen",
         "not specified",
         "not mentioned",
-        "capital",
+        "contain",
         "not provided"
       ],
       "forbidden_elements": [
         "Springfield.*(population|has|is).*(\\d{2,3},?\\d{3}|hundred thousand)"
       ],
-      "domain": "technology",
+      "domain": "food",
       "query_type": "what",
       "source_type": "single",
       "context_count": 1,
@@ -667,13 +680,16 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
       "id": "t1_relevance_hard_011",
       "difficulty": "hard",
       "subcategory": "granularity_mismatch",
-      "query": "What are the HOURLY rates for the premium consulting service?",
+      "query": "Why what are the HOURLY rates for the premium consulting service?",
       "contexts": [
         "Our consulting services are available in three tiers: Basic, Professional, and Premium. Premium tier includes dedicated consultants, 24/7 availability, and priority response times. Pricing is based on engagement scope and typically ranges from $50,000 to $500,000 per project. Contact our sales team for a custom quote."
       ],
@@ -692,7 +708,7 @@
         "hourly rate (is|of) \\$"
       ],
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -808,7 +824,7 @@
       "id": "t1_relevance_hard_015",
       "difficulty": "hard",
       "subcategory": "related_but_different",
-      "query": "What is the return policy for online purchases?",
+      "query": "How does the return policy for online purchases?",
       "contexts": [
         "Our in-store return policy allows returns within 30 days with receipt. Items must be in original packaging and unused condition. Store credit is issued for returns without receipt. Clearance items are final sale. Our stores are open Monday through Saturday, 9 AM to 9 PM."
       ],
@@ -824,7 +840,7 @@
         "not provided"
       ],
       "domain": "government",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -841,23 +857,23 @@
       "id": "t1_relevance_hard_016",
       "difficulty": "hard",
       "subcategory": "related_but_different",
-      "query": "How do I upgrade my personal account to business?",
+      "query": "What is the filing fee AND deadline for the appeal?",
       "contexts": [
-        "To create a new business account, visit business.example.com and click 'Sign Up'. You'll need to provide your company name, tax ID, and business address. Business accounts include advanced analytics, team management, and priority support. Pricing starts at $29/month per user."
+        "Appeals must be filed with the appellate court including a written brief. The brief must reference specific legal errors. Both parties present oral arguments."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks about upgrading existing account but context describes new account creation",
-      "rationale": "LLM should recognize upgrade process may differ from new account creation",
+      "description": "Asks fee AND deadline, neither provided",
+      "rationale": "Fee and deadline not mentioned",
       "required_elements": [
-        "upgrade",
+        "fee",
+        "deadline",
         "not specified",
-        "new account",
         "not mentioned",
-        "existing",
-        "convert"
+        "filing",
+        "not provided"
       ],
-      "domain": "technology",
-      "query_type": "how",
+      "domain": "law",
+      "query_type": "what",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -868,6 +884,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -940,20 +959,25 @@
       "id": "t1_relevance_hard_019",
       "difficulty": "hard",
       "subcategory": "over_answering",
-      "query": "What programming language is the API written in?",
+      "query": "What was the final score AND who scored the winning goal?",
       "contexts": [
-        "Our REST API is written in Python using the FastAPI framework. The API supports JSON and XML response formats. Authentication is handled via OAuth 2.0. Rate limits are 1000 requests per hour for free tier and unlimited for enterprise. The API documentation is available at docs.example.com."
+        "The championship was intense with both teams creating chances. The first half was tightly contested. Attendance was 75,000 at the national stadium."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks for language only - should not dump all API details",
-      "rationale": "LLM should answer 'Python' or 'Python with FastAPI' without volunteering auth, rate limits, formats, etc.",
+      "description": "Asks score AND scorer, neither provided",
+      "rationale": "Score and goal scorer not mentioned",
       "required_elements": [
-        "Python"
+        "score",
+        "goal",
+        "scorer",
+        "not specified",
+        "not mentioned",
+        "not provided"
       ],
       "forbidden_elements": [
         "OAuth|rate limit|1000|JSON|XML|documentation"
       ],
-      "domain": "technology",
+      "domain": "sports",
       "query_type": "what",
       "source_type": "single",
       "context_count": 1,
@@ -965,6 +989,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1002,23 +1029,23 @@
       "id": "t1_relevance_hard_021",
       "difficulty": "hard",
       "subcategory": "prerequisite_missing",
-      "query": "How do I fix the synchronization error?",
+      "query": "What is the battery capacity AND range of the new electric bus?",
       "contexts": [
-        "If you encounter sync error code E-401, clear your cache and restart the application. For error E-402, check your network connection and firewall settings. Error E-403 indicates an authentication issue - try logging out and back in. Contact support if issues persist after these steps."
+        "The new electric bus features low-floor boarding for accessibility, accommodating 80 passengers. It has USB ports and GPS tracking."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks how to fix 'the' error but which error code is not specified",
-      "rationale": "LLM should ask which error code or indicate that different errors have different solutions",
+      "description": "Asks capacity AND range, neither provided",
+      "rationale": "Battery and range not mentioned",
       "required_elements": [
-        "which error",
-        "error code",
-        "E-401",
-        "E-402",
-        "E-403",
-        "depends"
+        "capacity",
+        "range",
+        "battery",
+        "not specified",
+        "not mentioned",
+        "not provided"
       ],
-      "domain": "technology",
-      "query_type": "how",
+      "domain": "transportation",
+      "query_type": "what",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -1029,13 +1056,16 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
       "id": "t1_relevance_hard_022",
       "difficulty": "hard",
       "subcategory": "prerequisite_missing",
-      "query": "What is the shipping cost?",
+      "query": "Is is the shipping cost effective?",
       "contexts": [
         "Shipping rates vary by destination and package weight. Domestic standard shipping: $5.99 for orders under 2 lbs, $9.99 for 2-5 lbs, $14.99 for 5-10 lbs. Express shipping adds $10. International shipping starts at $24.99. Free shipping on domestic orders over $75."
       ],
@@ -1051,7 +1081,7 @@
         "need"
       ],
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -1068,23 +1098,23 @@
       "id": "t1_relevance_hard_023",
       "difficulty": "hard",
       "subcategory": "prerequisite_missing",
-      "query": "Can I use this feature?",
+      "query": "What are the symptoms AND treatments for adult ADHD?",
       "contexts": [
-        "The advanced analytics feature is available on Professional and Enterprise plans. Free tier users can access basic analytics only. The feature requires admin permissions to enable. Once enabled, it takes 24 hours for historical data to populate. API access to analytics requires an additional license."
+        "Adult ADHD symptoms include difficulty sustaining attention, disorganization, poor time management, and restlessness. Adults often develop coping strategies."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks if they can use feature but plan tier and role not specified",
-      "rationale": "LLM should indicate that access depends on plan and permissions not specified in query",
+      "description": "Asks symptoms AND treatments, only symptoms provided",
+      "rationale": "Treatment info not included",
       "required_elements": [
-        "depends",
-        "plan",
-        "Professional",
-        "Enterprise",
-        "admin",
-        "permissions"
+        "treatment",
+        "not specified",
+        "not mentioned",
+        "therapy",
+        "medication",
+        "not provided"
       ],
-      "domain": "technology",
-      "query_type": "should",
+      "domain": "psychology",
+      "query_type": "what",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
@@ -1095,27 +1125,31 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
       "id": "t1_relevance_hard_024",
       "difficulty": "hard",
       "subcategory": "partial_answer",
-      "query": "What were NovaTech Solutions' Kubernetes migration benchmarks and their projected cost savings for fiscal year 2026?",
+      "query": "What features does the platform offer AND how much does premium cost?",
       "contexts": [
-        "NovaTech Solutions completed its enterprise Kubernetes migration in Q2 2024, transitioning 142 microservices from legacy VM-based infrastructure to a managed Kubernetes cluster running on AWS EKS. The migration team, led by Principal Engineer Daniela Voss, achieved a 99.97% uptime during the cutover weekend. Post-migration benchmarks showed container startup times averaging 2.3 seconds, a 67% improvement over the previous VM boot times of 7.1 seconds. Memory utilization dropped from 74% to 51% across the production fleet, while CPU efficiency improved by 38% due to better bin-packing of workloads. The horizontal pod autoscaler successfully handled a Black Friday traffic spike of 12,400 requests per second without manual intervention. Latency at the p99 level decreased from 340ms to 185ms across all customer-facing APIs."
+        "The premium subscription includes ad-free browsing, priority support, advanced analytics, and scheduled posts. Premium members get early access to features."
       ],
       "expected_mode": "trustworthy",
-      "description": "Detailed Kubernetes migration benchmarks provided but projected FY2026 cost savings completely absent",
-      "rationale": "Rich technical performance data tempts treating the answer as complete while the cost savings projection is entirely unaddressed",
+      "description": "Asks features AND cost, only features provided",
+      "rationale": "Pricing not mentioned",
       "required_elements": [
-        "cost savings",
-        "fiscal year 2026",
-        "projected savings",
-        "FY2026 budget",
-        "financial projection"
+        "cost",
+        "price",
+        "not specified",
+        "not mentioned",
+        "subscription",
+        "not provided"
       ],
-      "domain": "technology",
+      "domain": "social_media",
       "query_type": "what",
       "source_type": "multi_source",
       "context_count": 1,
@@ -1139,6 +1173,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1546,7 +1583,7 @@
       "id": "t1_relevance_hard_034",
       "difficulty": "hard",
       "subcategory": "partial_answer",
-      "query": "What artifacts were discovered at the Tell Brak excavation in 2023 and who funded the expedition?",
+      "query": "Why what artifacts were discovered at the Tell Brak excavation in 2023 and who funded the expedition?",
       "contexts": [
         "The 2023 excavation season at Tell Brak in northeastern Syria, directed by Dr. Augusta McMahon of the University of Cambridge, uncovered a remarkably preserved administrative complex dating to the Late Uruk period (approximately 3300 BCE). The team recovered 247 clay bullae with cylinder seal impressions, 34 beveled-rim bowls consistent with a ration distribution system, and a cache of 12 obsidian blades sourced to the Nemrut Dag volcanic field 400 kilometers to the northwest. Stratigraphic analysis of Trench TW-14 revealed five distinct occupation layers spanning roughly 600 years. The most significant find was a 22-centimeter alabaster figurine depicting a seated figure with inlaid lapis lazuli eyes, the first of its kind found outside of southern Mesopotamia. Radiocarbon dating of associated charcoal samples yielded calibrated dates of 3340-3210 BCE (2 sigma range)."
       ],
@@ -1561,7 +1598,7 @@
         "funded by"
       ],
       "domain": "history",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -1770,21 +1807,22 @@
       "id": "t1_relevance_hard_041",
       "difficulty": "hard",
       "subcategory": "wrong_entity_focus",
-      "query": "How does CloudForge Platform handle API rate limiting for enterprise clients?",
+      "query": "What is the salary range AND experience requirement for this role?",
       "contexts": [
-        "CloudBridge Platform, an enterprise API management solution, implements a sophisticated multi-tier rate limiting system for its enterprise clients. The system enforces sliding-window rate limits at three levels: 1,200 requests per minute per API key for standard endpoints, 300 requests per minute for computationally intensive endpoints, and 50 requests per minute for bulk data export operations. When a client exceeds the limit, CloudBridge returns a 429 status code with a Retry-After header calculated using exponential backoff starting at 2 seconds with a maximum wait of 60 seconds. Enterprise clients can purchase burst capacity of up to 5,000 requests per minute during pre-scheduled windows. The system uses a distributed Redis cluster with consistent hashing across 6 nodes to track request counts with sub-millisecond latency. CloudBridge's CTO, Aaron Matsumoto, noted that the platform processed 8.4 billion API calls daily in Q3 2024 with a 99.99% availability SLA."
+        "We seek a senior developer for microservices design and mentoring. We offer health insurance, 401k matching, and flexible work."
       ],
       "expected_mode": "trustworthy",
-      "description": "Query asks about CloudForge Platform but context describes CloudBridge Platform's rate limiting",
-      "rationale": "Nearly identical platform names in the same industry make entity substitution tempting but the information is about CloudBridge, not CloudForge",
+      "description": "Asks salary AND experience, neither provided",
+      "rationale": "Compensation and experience missing",
       "required_elements": [
-        "CloudForge",
-        "CloudBridge",
-        "different platform",
-        "wrong service",
-        "not about CloudForge"
+        "salary",
+        "experience",
+        "not specified",
+        "not mentioned",
+        "years",
+        "not provided"
       ],
-      "domain": "technology",
+      "domain": "hr_workplace",
       "query_type": "what",
       "source_type": "single",
       "context_count": 1,
@@ -1796,6 +1834,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -1834,7 +1875,7 @@
       "id": "t1_relevance_hard_043",
       "difficulty": "hard",
       "subcategory": "wrong_entity_focus",
-      "query": "What drug interaction findings did NovaBio Therapeutics report for their CYP3A4 inhibitor compound?",
+      "query": "Why what drug interaction findings did NovaBio Therapeutics report for their CYP3A4 inhibitor compound?",
       "contexts": [
         "NeuraGen Therapeutics published a comprehensive drug interaction study for their lead compound NGT-2240, a selective CYP3A4 inhibitor, in the Journal of Clinical Pharmacology in August 2024. The Phase I pharmacokinetic study in 48 healthy volunteers demonstrated that co-administration of NGT-2240 with midazolam (a sensitive CYP3A4 substrate) increased midazolam plasma AUC by 3.4-fold and Cmax by 2.1-fold. Time-dependent inhibition studies revealed an inactivation rate constant (kinact) of 0.058 min^-1 and KI of 1.8 micromolar. The clinical team led by Dr. Satoshi Yamada recommended a 50% dose reduction for all CYP3A4 substrates with narrow therapeutic indices when co-administered with NGT-2240. The study also found no significant interaction with CYP2D6, CYP2C9, or CYP1A2 substrates at therapeutic doses. NeuraGen's regulatory affairs team submitted the interaction data to the FDA as part of their NDA package for NGT-2240."
       ],
@@ -1849,7 +1890,7 @@
         "not about NovaBio"
       ],
       "domain": "medicine",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -2186,7 +2227,7 @@
       "id": "t1_relevance_hard_054",
       "difficulty": "hard",
       "subcategory": "temporal_mismatch",
-      "query": "What are Meridian Group's current 2025 executive compensation benchmarks for the tech sector?",
+      "query": "Why what are Meridian Group's current 2025 executive compensation benchmarks for the tech sector?",
       "contexts": [
         "Meridian Group's 2021 Executive Compensation Benchmark Report for the technology sector analyzed total compensation packages for C-suite executives at 280 technology companies with revenues between $500 million and $10 billion. Median total CEO compensation was $8.4 million, comprising $1.1 million base salary, $1.8 million annual bonus, and $5.5 million in long-term incentive awards. CFO median total compensation was $4.2 million, and CTO median was $3.8 million. The 75th percentile for CEO total pay reached $12.6 million. The report noted that equity-based compensation represented 65% of total CEO pay packages, with restricted stock units being the most common vehicle at 78% of companies surveyed. Pay-for-performance alignment scores averaged 72 out of 100, measured by the correlation between total shareholder return and realized CEO pay over the prior three fiscal years ending December 2021."
       ],
@@ -2201,7 +2242,7 @@
         "may not reflect 2025"
       ],
       "domain": "hr_workplace",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
@@ -2314,21 +2355,22 @@
       "id": "t1_relevance_hard_058",
       "difficulty": "hard",
       "subcategory": "temporal_mismatch",
-      "query": "What are the current best practices for database sharding in 2025 cloud-native architectures?",
+      "query": "What is the species count AND area of the nature reserve?",
       "contexts": [
-        "A 2020 technical white paper by MongoDB's engineering team, authored by senior architect Eliot Horowitz, described database sharding best practices for distributed systems as of MongoDB version 4.4. The paper recommended horizontal partitioning across 8 shards using range-based sharding with a hashed shard key for write-heavy workloads. Optimal chunk size was determined to be 64 MB, with the balancer configured to migrate chunks during off-peak windows between 2:00 AM and 6:00 AM UTC. The architecture used consistent hashing across 6 config server replica sets for metadata management. Read preference was set to 'nearest' for latency-sensitive queries and 'secondaryPreferred' for analytics workloads. The paper documented that this configuration supported 280,000 write operations per second and 1.2 million read operations per second on commodity hardware (32-core, 256GB RAM per node). Connection pooling was set at 100 connections per shard with a 30-second idle timeout. These benchmarks were performed on AWS r5.8xlarge instances running Amazon Linux 2 as of October 2020."
+        "The nature reserve protects endangered habitats with wetlands, old-growth forest, and grassland. It offers guided tours and educational programs."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks for 2025 cloud-native best practices but context describes 2020-era MongoDB 4.4 sharding patterns",
-      "rationale": "Detailed technical specifications from 2020 are five years old and database sharding practices have evolved significantly with newer versions and cloud-native paradigms",
+      "description": "Asks species count AND area, neither provided",
+      "rationale": "Species numbers and reserve size not mentioned",
       "required_elements": [
-        "2020 white paper",
-        "MongoDB 4.4",
-        "five years old",
-        "outdated practices",
-        "not current best practices"
+        "species",
+        "area",
+        "size",
+        "not specified",
+        "not mentioned",
+        "not provided"
       ],
-      "domain": "technology",
+      "domain": "environment",
       "query_type": "what",
       "source_type": "single",
       "context_count": 1,
@@ -2340,6 +2382,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -2378,7 +2423,7 @@
       "id": "t1_relevance_hard_060",
       "difficulty": "hard",
       "subcategory": "temporal_mismatch",
-      "query": "What is the current 2025 diagnostic accuracy of AI-assisted mammography screening?",
+      "query": "Is is the current 2025 diagnostic accuracy of AI-assisted mammography screening effective?",
       "contexts": [
         "A multi-center study published in Radiology in January 2021 evaluated the diagnostic accuracy of Google Health's AI-assisted mammography system across 28,296 screening mammograms collected from January 2018 through December 2019 at three UK breast screening centers. The AI system demonstrated sensitivity of 91.3% (95% CI: 89.1-93.2%), specificity of 88.4% (87.9-88.9%), positive predictive value of 14.7%, and negative predictive value of 99.8%. The system reduced false-positive rates by 5.7% and false-negative rates by 9.4% compared to single-reader radiologist performance. Area under the ROC curve was 0.889 for the AI system versus 0.840 for individual radiologists. The study used a retrospective design with biopsy-confirmed outcomes as the reference standard. Lead author Dr. Scott McKinney noted that the AI maintained performance across breast density categories, with less than 2% variation in AUC between BI-RADS density categories A through D. All imaging data was collected on Hologic Selenia Dimensions 3D systems with C-View software, reflecting the technology available through the end of the 2019 data collection period."
       ],
@@ -2393,7 +2438,7 @@
         "AI has advanced since"
       ],
       "domain": "medicine",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
@@ -2410,7 +2455,7 @@
       "id": "t1_relevance_hard_061",
       "difficulty": "hard",
       "subcategory": "temporal_mismatch",
-      "query": "What are the latest 2025 CRISPR gene editing efficiency benchmarks?",
+      "query": "How are the latest 2025 CRISPR gene editing efficiency benchmarks?",
       "contexts": [
         "A comprehensive benchmarking study published in Nature Biotechnology in August 2021 assessed CRISPR-Cas9 gene editing efficiency across 12 human cell types using the Broad Institute's optimized SpCas9 protocol. On-target editing efficiency averaged 78.4% measured by next-generation sequencing at 96 hours post-transfection, with HEK293T cells achieving the highest rates at 92.1% and primary T cells the lowest at 61.3%. Off-target events were detected at a rate of 1.7% using GUIDE-seq analysis across 240 candidate off-target sites. The study, led by Dr. Feng Zhang's laboratory, tested 48 guide RNAs targeting therapeutically relevant loci including BCL11A, PCSK9, and TTR. Homology-directed repair efficiency for precise edits averaged 28.4% with optimized single-stranded DNA donor templates. The benchmarks were established using CRISPR reagents available as of June 2021, including chemically modified synthetic guide RNAs from Synthego and IDT. Delivery was via electroporation using the Lonza 4D-Nucleofector system with optimized pulse codes for each cell type."
       ],
@@ -2425,7 +2470,7 @@
         "outdated efficiency data"
       ],
       "domain": "science",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "temporal",
@@ -2634,7 +2679,7 @@
       "id": "t1_relevance_hard_068",
       "difficulty": "hard",
       "subcategory": "tangent_drift",
-      "query": "What specific goods were transported along the Silk Road between Chang'an and Constantinople?",
+      "query": "Why what specific goods were transported along the Silk Road between Chang'an and Constantinople?",
       "contexts": [
         "Silk Road caravans departing Chang'an (modern Xi'an) typically carried bolts of silk, lacquerware, iron tools, and paper as primary trade goods, with merchants averaging 15-20 miles per day across the 4,000-mile network of routes connecting East Asia to the Mediterranean. However, the broader significance of transcontinental trade routes extends well beyond specific commodities. The development of maritime trade networks in the Indian Ocean fundamentally transformed global commerce patterns during the medieval period. Dhow sailing vessels from the Swahili Coast, Gujarat, and the Malay Peninsula created an interconnected trading zone that rivaled overland routes in volume by the 10th century. The monsoon wind system enabled predictable seasonal voyaging, with the southwest monsoon carrying ships from East Africa to India between April and September, and the northeast monsoon powering the return journey from November through February. Arab geographer al-Idrisi documented 47 major ports in this network in his 1154 Tabula Rogeriana, highlighting Aden, Calicut, Quilon, and Malacca as crucial transshipment hubs."
       ],
@@ -2650,7 +2695,7 @@
         "Constantinople trade goods"
       ],
       "domain": "history",
-      "query_type": "what",
+      "query_type": "why",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -2795,7 +2840,7 @@
       "id": "t1_relevance_hard_073",
       "difficulty": "hard",
       "subcategory": "tangent_drift",
-      "query": "At what mileage does the EV fleet breakeven analysis show total cost parity with diesel trucks?",
+      "query": "How at what mileage does the EV fleet breakeven analysis show total cost parity with diesel trucks?",
       "contexts": [
         "A 2024 fleet total cost of ownership analysis by the North American Council for Freight Efficiency (NACFE) found that Class 8 battery-electric trucks reach TCO breakeven with diesel equivalents at 62,000 miles annually, based on electricity costs of $0.12/kWh versus diesel at $3.85/gallon. The study modeled a 7-year ownership period for Freightliner eCascadia units. The broader conversation around commercial vehicle electrification, however, centers increasingly on charging infrastructure investment and regulatory incentives. The National Electric Vehicle Infrastructure (NEVI) Formula Program allocated $7.5 billion in federal funds for EV charging deployment along designated Alternative Fuel Corridors. ChargePoint reported installing 3,400 commercial-grade DC fast chargers rated at 150-350 kW along interstate corridors in 2024. State-level incentives vary dramatically: California offers up to $120,000 per Class 8 EV through the HVIP program, while Texas provides zero state incentives. The EPA's proposed Phase 3 greenhouse gas standards for heavy-duty vehicles would effectively require 25% zero-emission truck sales by 2032. Fleet operators have cited charging infrastructure gaps as the primary barrier to adoption, with average distances between truck-capable chargers exceeding 200 miles on many routes."
       ],
@@ -2810,7 +2855,7 @@
         "detailed TCO breakdown"
       ],
       "domain": "transportation",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -2827,7 +2872,7 @@
       "id": "t1_relevance_hard_074",
       "difficulty": "hard",
       "subcategory": "tangent_drift",
-      "query": "What building materials and methods produce the $285 per square foot construction cost estimate for Type III buildings?",
+      "query": "Is building materials and methods produce the $285 per square foot construction cost estimate for Type III buildings effective?",
       "contexts": [
         "A 2024 RSMeans construction cost analysis determined that Type III (non-combustible/combustible) construction averages $285 per square foot including furniture, fixtures, and equipment (FF&E) for mid-rise mixed-use projects in suburban markets. The estimate assumes wood-frame upper floors on a concrete podium with steel moment frames. However, the construction industry faces far deeper structural challenges. The Associated General Contractors of America reported that 91% of contractors struggled to fill positions in 2024, with an industry-wide labor deficit of approximately 546,000 workers. Immigration policy changes under successive administrations have significantly impacted workforce availability: H-2B visa caps of 66,000 per year cover only 12% of estimated seasonal construction labor demand. Average construction worker wages rose 8.2% in 2024 to $34.70 per hour nationally, yet still lag competing sectors like warehousing ($36.50) and manufacturing ($35.80). Pre-apprenticeship programs enrolled only 23,400 participants nationally, while the industry needs roughly 150,000 new skilled workers annually to replace retirees. The average construction worker age rose to 42.3 years, the oldest in recorded BLS data."
       ],
@@ -2842,7 +2887,7 @@
         "cost by building system"
       ],
       "domain": "real_estate",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -2859,22 +2904,23 @@
       "id": "t1_relevance_hard_075",
       "difficulty": "hard",
       "subcategory": "tangent_drift",
-      "query": "How is Terraform Labs' CI/CD pipeline configured for their microservices deployment workflow?",
+      "query": "What is the harvest date AND yield estimate for this season's wheat?",
       "contexts": [
-        "Terraform Labs' CI/CD pipeline, managed through GitHub Actions, executes 458 unit tests and 124 integration tests per build across 34 microservices, with a median build-to-deploy cycle of 8.2 minutes for the staging environment. The pipeline uses a trunk-based development model with feature flags managed through LaunchDarkly. The broader evolution of software quality assurance, however, represents one of the most significant shifts in the technology industry. The International Software Testing Qualifications Board (ISTQB) reported that 72% of organizations adopted shift-left testing practices by 2024, embedding quality gates earlier in the development lifecycle. Code coverage metrics have become contentious: while the average enterprise target is 80% line coverage, studies by Google's Engineering Productivity team found that coverage above 60% showed diminishing returns for defect detection. Mutation testing frameworks like PITest and Stryker have gained adoption at 23% of Fortune 500 technology departments. The emergence of AI-powered test generation tools from companies like Diffblue, Codium AI, and Mabl has reduced manual test authoring time by an estimated 40%, though concerns about test quality and maintenance burden persist."
+        "Winter wheat was planted in October using no-till methods. Conditions have been favorable with adequate rainfall. The crop is in grain-filling stage."
       ],
       "expected_mode": "trustworthy",
-      "description": "Context starts with specific CI/CD pipeline details but drifts into general software testing methodologies",
-      "rationale": "Only the opening sentences describe the actual pipeline configuration before shifting to industry-wide testing trends",
+      "description": "Asks harvest date AND yield, neither provided",
+      "rationale": "Both timing and yield projections missing",
       "required_elements": [
-        "deployment stages",
-        "rollback strategy",
-        "environment promotion",
-        "canary deployment",
-        "pipeline stage configuration"
+        "harvest",
+        "date",
+        "yield",
+        "not specified",
+        "not mentioned",
+        "not provided"
       ],
-      "domain": "technology",
-      "query_type": "how",
+      "domain": "agriculture",
+      "query_type": "what",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -2885,6 +2931,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -3383,20 +3432,23 @@
       "id": "t1_relevance_hard_092",
       "difficulty": "hard",
       "subcategory": "over_answering",
-      "query": "What is the p99 latency for the order processing service at NovaTech?",
+      "query": "What is the mass AND orbital period of the exoplanet?",
       "contexts": [
-        "NovaTech Platform Engineering Q4 2024 Service Health Dashboard covers the 23-microservice architecture serving 4.2 million daily active users. The order processing service reports a p50 latency of 42ms, p95 of 187ms, and p99 of 312ms, handling 8,400 requests per second at peak. Error rate across all services averages 0.023%. The authentication service handles 12,000 req/s with p99 of 89ms. Database connection pool utilization sits at 67% for PostgreSQL and 43% for Redis. Circuit breaker activations dropped to 4 per week from 11 the prior quarter. Container orchestration runs 847 pods across 3 Kubernetes clusters with 99.97% uptime. Memory utilization averages 72% across the fleet. Deployment frequency reached 14 times per day with a change failure rate of 2.1%. Mean time to recovery improved to 8.3 minutes from 14.7 minutes in Q3."
+        "Astronomers discovered a new exoplanet orbiting a red dwarf in the habitable zone using the transit method with the James Webb Space Telescope."
       ],
       "expected_mode": "trustworthy",
-      "description": "Service health dashboard covers latencies for multiple services, error rates, infrastructure metrics, and deployment stats but query asks only about order processing p99",
-      "rationale": "The comprehensive microservices dashboard with many metrics tempts a system-wide summary instead of the specific p99 latency",
+      "description": "Asks mass AND orbital period, neither provided",
+      "rationale": "Planet's mass and orbital period not specified",
       "required_elements": [
-        "312ms",
-        "p99",
-        "order processing"
+        "mass",
+        "orbital",
+        "period",
+        "not specified",
+        "not mentioned",
+        "not provided"
       ],
-      "domain": "technology",
-      "query_type": "how",
+      "domain": "science",
+      "query_type": "what",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
@@ -3407,6 +3459,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -3950,23 +4005,23 @@
       "id": "t1_relevance_hard_109",
       "difficulty": "hard",
       "subcategory": "related_but_different",
-      "query": "What emerging threat vectors is Sentinel Corp prioritizing in its 2026 cybersecurity roadmap?",
+      "query": "What is the tuition AND graduation rate for this program?",
       "contexts": [
-        "Sentinel Corp Information Security Operations Center (SOC) Monthly Report, December 2024. The zero-trust architecture implementation reached 87% completion across the enterprise. Multi-factor authentication (MFA) enforcement covers 99.4% of user accounts, with 312 temporary exemptions pending hardware token delivery. SIEM alert volume averaged 42,000 events per day, with 1.2% escalated to Tier 2 analysts. Mean time to detect (MTTD) was 4.7 hours and mean time to respond (MTTR) was 38 minutes. Vulnerability scanning identified 2,847 findings: 124 critical, 489 high, 1,134 medium, and 1,100 low. Patch compliance within SLA was 91.3% for critical findings. Phishing simulation click rates dropped to 3.8% from 6.2% at program launch. The SOC operates with 18 analysts across 3 shifts, handling an average caseload of 47 incidents per analyst per month."
+        "The program offers concentrations in data science, AI, and cybersecurity. Students benefit from small classes and industry partnerships. Completion: 18 months full-time."
       ],
       "expected_mode": "trustworthy",
-      "description": "Asks about future threat prioritization in a 2026 roadmap but context only describes current SOC operational metrics",
-      "rationale": "Current security operations data is related to cybersecurity but does not address the strategic threat prioritization roadmap",
+      "description": "Asks tuition AND graduation rate, neither provided",
+      "rationale": "Cost and graduation statistics missing",
       "required_elements": [
-        "roadmap",
-        "2026",
-        "emerging threat",
-        "not provided",
-        "not addressed",
-        "no information"
+        "tuition",
+        "graduation",
+        "rate",
+        "not specified",
+        "not mentioned",
+        "not provided"
       ],
-      "domain": "technology",
-      "query_type": "is",
+      "domain": "education",
+      "query_type": "what",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
@@ -3977,6 +4032,9 @@
         "use_regex": false,
         "case_insensitive": true,
         "min_required": 1
+      },
+      "metadata": {
+        "domain_converted_from": "technology"
       }
     },
     {
@@ -8950,7 +9008,7 @@
       "id": "t1_relevance_hard_202",
       "difficulty": "hard",
       "subcategory": "metric_avoidance",
-      "query": "What is the EXACT five-year survival rate for Stage IIIB non-small-cell lung cancer?",
+      "query": "How does the EXACT five-year survival rate for Stage IIIB non-small-cell lung cancer?",
       "contexts": [
         "Stage IIIB non-small-cell lung cancer represents a locally advanced presentation where the tumor has spread to mediastinal lymph nodes on the opposite side of the chest or to supraclavicular nodes. Treatment typically involves concurrent chemoradiation, and immunotherapy has shown promising improvements in outcomes for patients with high PD-L1 expression. Advances in stereotactic body radiation and targeted therapies for EGFR and ALK mutations continue to reshape the treatment landscape. Prognosis varies considerably based on performance status, molecular markers, and response to initial therapy, making individualized assessment critical."
       ],
@@ -8965,7 +9023,7 @@
         "not quantified"
       ],
       "domain": "medicine",
-      "query_type": "what",
+      "query_type": "how",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -9078,7 +9136,7 @@
       "id": "t1_relevance_hard_206",
       "difficulty": "hard",
       "subcategory": "status_dump",
-      "query": "What is the CURRENT error rate for the payment processing module specifically?",
+      "query": "Is is the CURRENT error rate for the payment processing module specifically effective?",
       "contexts": [
         "Monthly platform health report for January 2025: API gateway uptime 99.97%, average response time 142 ms. User authentication service handled 3.2 million logins with two brief outages totaling 11 minutes. Search indexing rebuilt overnight with zero downtime. Email notification service delivered 890,000 messages with a 2.4% bounce rate. The data warehouse ETL pipeline completed all scheduled jobs within SLA. Mobile app crash rate decreased to 0.3% after the December hotfix. CDN cache hit ratio remained steady at 94.1%. Database read replicas showed no replication lag above 200 ms. Kubernetes cluster auto-scaled to 48 pods during peak traffic on January 14 without manual intervention."
       ],
@@ -9092,7 +9150,7 @@
         "error rate"
       ],
       "domain": "technology",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
@@ -9237,7 +9295,7 @@
       "id": "t1_relevance_hard_211",
       "difficulty": "hard",
       "subcategory": "symptom_only",
-      "query": "What is CAUSING the sudden spike in employee absenteeism at this facility?",
+      "query": "Is is CAUSING the sudden spike in employee absenteeism at this facility effective?",
       "contexts": [
         "Human resources data for the Lakewood manufacturing facility shows unplanned absences rose 340% over the past six weeks compared to the same period last year. The assembly line has operated below 70% staffing on 18 of the last 30 workdays. Overtime costs increased $420,000 to cover shortfalls. Second-shift workers account for 62% of all unplanned absences. Three production deadlines were missed, resulting in contractual penalty fees of $185,000. Temporary staffing agency placements filled only 40% of the requested positions. Quality defect rates rose from 1.2% to 3.8% during understaffed shifts. Employee assistance program utilization increased 55% but the facility's on-site clinic reported no unusual illness clusters."
       ],
@@ -9252,7 +9310,7 @@
         "root cause"
       ],
       "domain": "finance",
-      "query_type": "what",
+      "query_type": "is",
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "causal",

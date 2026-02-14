@@ -204,6 +204,43 @@ class TestGroundingEvaluation:
         )
         assert result.passed is True
 
+    def test_grounding_allowed_phrase_no_escape_hatch(self, evaluator):
+        """Allowed phrase elsewhere must NOT clear an unrelated forbidden match."""
+        case = make_grounding_case(
+            evaluation_config={
+                "mode": "answer_quality",
+                "use_regex": True,
+                "case_insensitive": True,
+                "allowed_phrases": ["budget (was|is) not specified"],
+            },
+        )
+        # Response contains BOTH a real hallucination AND the allowed phrase,
+        # but in separate sentences. The hallucination should still be caught.
+        result = evaluator.evaluate_case(
+            case,
+            "The budget was $5 million for the project. "
+            "The timeline budget is not specified in the documents.",
+        )
+        assert result.passed is False
+        assert "HALLUCINATION" in result.failure_reason
+
+    def test_grounding_allowed_phrase_covers_match(self, evaluator):
+        """Allowed phrase that fully contains the forbidden match should pass."""
+        case = make_grounding_case(
+            forbidden_claims=[r"budget (was|is) \$?\d"],
+            evaluation_config={
+                "mode": "answer_quality",
+                "use_regex": True,
+                "case_insensitive": True,
+                # The allowed phrase is a superset of the forbidden pattern
+                "allowed_phrases": [r"budget (was|is) \$?\d.*per the original estimate"],
+            },
+        )
+        result = evaluator.evaluate_case(
+            case, "The budget was $5 per the original estimate."
+        )
+        assert result.passed is True
+
     def test_grounding_regex_case_insensitive(self, evaluator):
         """Case-insensitive matching should catch uppercase variants."""
         case = make_grounding_case(
