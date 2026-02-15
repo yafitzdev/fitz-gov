@@ -11,6 +11,90 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [4.1.0] - 2026-02-15
+
+### Highlights
+
+**Benchmark Credibility Hardening** - From 2,488 to 2,980 test cases (60 tier0 + 2,920 tier1). Addressed five structural gaps that would undermine credibility with serious benchmark consumers: expanded trustworthy_direct from 218 to 400 cases, added 310 medium-difficulty cases across 5 categories, expanded multi-source cases from 138 to 264, eliminated all "general" domain cases, and added a 250-case human validation sample with annotation guide.
+
+### Data Expansion
+
+- **2,920 tier1 cases** (up from 2,428):
+  - Abstention: 685 (+60 medium)
+  - Dispute: 675 (+50 medium)
+  - Trustworthy Hedged: 484 (+70 medium)
+  - Trustworthy Direct: 400 (+182 mixed hard/medium)
+  - Grounding: 336 (+65 medium)
+  - Relevance: 340 (+65 medium)
+- **Difficulty rebalance**: 37.3% medium / 62.7% hard (was 28.4% / 71.6%)
+- **Multi-source expansion**: 264 cases (9.0%, up from 138 / 5.7%), all with `context_sources` metadata
+- **Domain cleanup**: Eliminated all 63 "general" domain cases, reclassified into proper 17 domains
+- **Zero duplicate queries**: Fixed 26 duplicate groups introduced during generation
+- **Zero sparse subcategories**: All subcategories have >= 5 cases
+
+### New Features
+
+- **Human validation sample** (`data/validation/human_validation_sample.json`):
+  - 250 cases stratified by category, difficulty, and domain (seed=42)
+  - Null-initialized annotator fields for inter-annotator agreement (IAA) studies
+  - Gold labels mapped from categories (abstention->abstain, dispute->disputed, etc.)
+- **Annotation guide** (`docs/ANNOTATION_GUIDE.md`):
+  - Decision tree for TRUSTWORTHY vs DISPUTED vs ABSTAIN classification
+  - 6 worked examples (2 per mode) with query, context, label, and reasoning
+  - Edge case documentation for common confusion points
+  - Cohen's kappa interpretation guide
+
+### New Subcategories
+
+- **Trustworthy Direct**: `step_by_step` (13 cases) - procedural answers with clear steps, `definitional` (13 cases) - clear term/concept definitions
+- All existing subcategories expanded proportionally with new medium-difficulty cases
+
+### Corpus & Infrastructure
+
+- **5,043 corpus documents** (up from 4,271), 772 new documents from expanded cases
+- **3,800 query mappings** (up from 3,248), 552 new mappings
+- **Manifest updated** to v4.1.0 with accurate domain counts
+- **README rewritten** with comprehensive statistics: categories, modes, difficulty, domains, query types, source types, reasoning types, evidence patterns, context counts, and all 113 subcategories
+
+### Distribution (Tier 1)
+
+| Category | Cases | Medium | Hard | Med % |
+|----------|------:|-------:|-----:|------:|
+| Abstention | 685 | 255 | 430 | 37% |
+| Dispute | 675 | 261 | 414 | 39% |
+| Trustworthy Hedged | 484 | 171 | 313 | 35% |
+| Trustworthy Direct | 400 | 145 | 255 | 36% |
+| Relevance | 340 | 129 | 211 | 38% |
+| Grounding | 336 | 128 | 208 | 38% |
+
+| Mode | Cases | % |
+|------|------:|--:|
+| TRUSTWORTHY | 1,560 | 53.4% |
+| ABSTAIN | 685 | 23.5% |
+| DISPUTED | 675 | 23.1% |
+
+| Domain | Cases | % | Domain | Cases | % |
+|--------|------:|--:|--------|------:|--:|
+| Technology | 412 | 14.1% | Transportation | 131 | 4.5% |
+| Medicine | 309 | 10.6% | Sports | 127 | 4.3% |
+| Finance | 296 | 10.1% | Agriculture | 126 | 4.3% |
+| Science | 192 | 6.6% | History | 122 | 4.2% |
+| Government | 155 | 5.3% | HR/Workplace | 121 | 4.1% |
+| Education | 152 | 5.2% | Real Estate | 119 | 4.1% |
+| Environment | 147 | 5.0% | Psychology | 119 | 4.1% |
+| Food | 143 | 4.9% | Social Media | 113 | 3.9% |
+| Law | 136 | 4.7% | | | |
+
+### Migration Notes
+
+- All existing case IDs preserved
+- 17 field value corrections: 3 invalid domains, 11 invalid reasoning_types, 3 invalid evidence_patterns
+- 4 tier0 subcategory merges (sparse into established subcategories)
+- Score comparisons between v4.0 and v4.1 are NOT directly comparable due to case count and difficulty distribution changes
+- `pip install fitz-gov==4.1.0` to upgrade
+
+---
+
 ## [4.0.0] - 2026-02-12
 
 ### Highlights
@@ -413,7 +497,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/yafitzdev/fitz-gov/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...v4.0.0
 [3.0.1]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v2.0.0...v3.0.0
