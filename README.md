@@ -1,345 +1,107 @@
-# fitz-gov: Comprehensive RAG Governance Benchmark
+# fitz-gov
 
-fitz-gov is a benchmark for evaluating RAG system governance - the ability to know when to abstain, dispute, or provide trustworthy answers.
+A benchmark for measuring whether RAG systems know when to answer, when to push back, and when to shut up.
 
-## Why fitz-gov?
+## The Problem
 
-Most RAG benchmarks focus on retrieval quality (BEIR) or answer correctness (RAGAS). But real-world RAG systems need **epistemic honesty** - knowing what they don't know.
+Every RAG benchmark today measures the same thing: *did the system get the right answer?* BEIR measures retrieval. RAGAS measures generation quality. But none of them measure the thing that actually matters in production: **does the system know what it doesn't know?**
 
-fitz-gov measures:
+Ask a typical RAG system "What was Acme Corp's revenue last quarter?" and give it a context passage that only mentions Acme Corp's founding date. Most systems will confidently hallucinate a revenue figure. A well-governed system would say "the provided context doesn't contain revenue information."
 
-| Category | What it Tests | Maps to |
-|----------|--------------|---------|
-| **Abstention** | Refuses when context is insufficient | `ABSTAIN` mode |
-| **Dispute** | Flags conflicting sources | `DISPUTED` mode |
-| **Trustworthy Hedged** | Hedges uncertain claims | `TRUSTWORTHY` mode |
-| **Trustworthy Direct** | Answers confidently when evidence is clear | `TRUSTWORTHY` mode |
-| **Grounding** | Answers are grounded in context (no hallucination) | Answer quality |
-| **Relevance** | Answers address the actual question | Answer quality |
+Give it two analyst reports that directly contradict each other -- one says the market is growing 12%, the other says it's shrinking 3%. Most systems will pick one and present it as fact. A well-governed system would flag the contradiction.
 
-## Installation
+This is the **governance problem**: RAG systems need to make a meta-decision about their own evidence *before* they generate an answer. Should I answer this confidently? Should I hedge? Should I flag conflicting sources? Should I refuse entirely?
 
-```bash
-pip install fitz-gov
-```
+fitz-gov measures that meta-decision.
 
-Or install from local path during development:
+## The Three Modes
 
-```bash
-pip install -e path/to/fitz-gov
-```
+Every query + context pair in fitz-gov maps to one of three governance modes:
 
-## Quick Start
+**TRUSTWORTHY** -- The context provides sufficient evidence to answer. The system should respond, either confidently (when evidence is clear) or with appropriate hedging (when evidence is partial or uncertain).
 
-### Tiered Evaluation (Recommended)
+> *Query: "What is the boiling point of water at sea level?"*
+> *Context: "At standard atmospheric pressure (1 atm), pure water boils at 100 degrees Celsius (212 degrees Fahrenheit)."*
+> *Correct mode: TRUSTWORTHY -- answer directly.*
 
-fitz-gov uses a two-tier evaluation system:
-- **Tier 0 (Sanity)**: 60 easy cases with 95% pass threshold - gates Tier 1
-- **Tier 1 (Core)**: 2,920 discriminative cases with gradient scoring
+**DISPUTED** -- The context contains conflicting information from different sources. The system should surface the contradiction rather than silently picking a side.
 
-```python
-from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
+> *Query: "Is remote work more productive than office work?"*
+> *Context A: "Stanford research found remote workers were 13% more productive."*
+> *Context B: "Microsoft's study found remote work decreased collaboration by 25% and reduced innovation metrics."*
+> *Correct mode: DISPUTED -- present both sides, don't pick a winner.*
 
-# Load tiered cases
-tier0_cases = load_tier(Tier.SANITY)  # 60 cases
-tier1_cases = load_tier(Tier.CORE)    # 2,920 cases
+**ABSTAIN** -- The context is irrelevant, insufficient, or about the wrong entity/time period. The system should refuse to answer rather than speculate.
 
-# Your RAG system generates responses and modes for each tier
-tier0_responses, tier0_modes = your_rag_system.evaluate(tier0_cases)
-tier1_responses, tier1_modes = your_rag_system.evaluate(tier1_cases)
+> *Query: "What are the side effects of ibuprofen?"*
+> *Context: "Python was created by Guido van Rossum and first released in 1991."*
+> *Correct mode: ABSTAIN -- the context has nothing to do with the question.*
 
-# Run tiered evaluation
-evaluator = FitzGovEvaluator()
-result = evaluator.evaluate_tiered(
-    tier0_cases, tier0_responses, tier0_modes,
-    tier1_cases, tier1_responses, tier1_modes,
-)
+## What Makes This Hard
 
-print(result)
-# fitz-gov Tiered Evaluation
-# ==========================
-#
-# TIER 0 (Sanity Check): PASSED
-#   Threshold: 95% | Achieved: 98.3% (59/60)
-#
-# TIER 1 (Core Benchmark): 69.1%
-#   By Category:
-#     abstention: 201/237 (84.8%)
-#     dispute: 131/196 (66.8%)
-#     ...
-#
-# Summary: Tier 0 PASSED, Tier 1 Score: 69.1%
-```
+The easy cases are obvious. Nobody confuses a biology passage with a finance question. fitz-gov includes those as a sanity check, but the real benchmark lives in the hard cases:
 
-### With Fitz RAG Engine
+- **Near-miss abstention**: The context discusses the right *topic* but the wrong *entity*, wrong *time period*, or wrong *jurisdiction*. "What are Tesla's Q4 earnings?" with a context about Ford's Q4 earnings.
+- **Implicit contradiction**: Sources don't directly say opposite things, but their claims are logically incompatible. One says a company "exceeded all growth targets" while another says it "failed to meet analyst expectations."
+- **Hedged vs. confident**: The context contains a correlation study. The query asks about causation. The system should answer (TRUSTWORTHY) but hedge -- not abstain, and not state the correlation as proven causation.
+- **Methodology conflicts vs. genuine disputes**: Two studies report different numbers for the same thing. Is it because they used different methodologies (TRUSTWORTHY with caveats) or because they genuinely disagree (DISPUTED)?
 
-```python
-from fitz_ai.evaluation.benchmarks import FitzGovBenchmark
+These boundary cases are where production RAG systems actually fail, and where fitz-gov differentiates between a good governance classifier and a great one.
 
-# Create benchmark and evaluate your engine
-benchmark = FitzGovBenchmark()
-results = benchmark.evaluate(engine)
+## What the Score Means
 
-print(results)
-```
+A fitz-gov score is the accuracy of your system's governance mode classification across 2,920 test cases.
 
-**Note**: Both fitz-ai and fitz-gov use the same 3-mode system (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (trustworthy_hedged, trustworthy_direct) are test categories that describe what aspect of governance is being tested, not different modes.
+- **90%+**: Exceptional governance. The system almost always makes the right meta-decision.
+- **75-90%**: Strong governance. Handles most cases correctly, occasional misjudgments on boundary cases.
+- **60-75%**: Moderate governance. Gets the obvious cases right, struggles with subtlety.
+- **Below 60%**: The system is frequently making the wrong meta-decision -- answering when it should abstain, or treating contradictions as settled facts.
 
-### Standalone Usage (Any RAG System)
+The score breaks down by category, so you can see exactly *where* your system fails. A system scoring 90% on abstention but 55% on dispute knows when to shut up but doesn't catch contradictions. A system scoring 40% on trustworthy_direct is being overly cautious -- refusing to answer even when the evidence is clear.
 
-The `fitz-gov` package contains all evaluation logic, so any RAG system can be evaluated:
+## Six Test Categories
 
-```python
-from fitz_gov import FitzGovEvaluator, load_cases, FitzGovCategory, AnswerMode
+The three governance modes are tested through six categories, each targeting a specific failure mode:
 
-# Load test cases
-cases = load_cases()
+| Category | Cases | Mode | What it catches |
+|----------|------:|------|-----------------|
+| **Abstention** | 685 | ABSTAIN | System answers when it has no relevant evidence |
+| **Dispute** | 675 | DISPUTED | System ignores contradictions between sources |
+| **Trustworthy Hedged** | 484 | TRUSTWORTHY | System either over-hedges (abstains) or under-hedges (states uncertain things as fact) |
+| **Trustworthy Direct** | 400 | TRUSTWORTHY | System refuses to answer or hedges when evidence clearly supports a confident answer |
+| **Relevance** | 340 | TRUSTWORTHY | System discusses the topic but doesn't actually answer the question asked |
+| **Grounding** | 336 | TRUSTWORTHY | System hallucinates specific details (names, numbers, dates) not in the context |
 
-# Create evaluator
-evaluator = FitzGovEvaluator()
+Grounding and relevance use two-pass validation: a fast regex check for forbidden patterns (hallucinated numbers, invented names), with optional LLM-based semantic verification for edge cases.
 
-# Evaluate your RAG system's responses
-responses = []
-modes = []
-
-for case in cases:
-    # Your RAG system generates response
-    response = your_rag_system.query(case.query, case.contexts)
-    mode = your_rag_system.classify_mode(response)  # Your mode classification
-
-    responses.append(response)
-    modes.append(mode)
-
-# Get comprehensive results
-results = evaluator.evaluate_all(cases, responses, modes)
-print(f"Overall accuracy: {results.overall_accuracy:.1%}")
-```
-
-### Evaluating Individual Cases
-
-```python
-from fitz_gov import FitzGovEvaluator, load_case_by_id
-
-evaluator = FitzGovEvaluator()
-
-# Load specific test case (IDs prefixed with t0_ or t1_)
-case = load_case_by_id("t1_abstain_medium_001")
-
-# Your system's response
-response = "Based on the context provided, I cannot find information about..."
-mode = AnswerMode.ABSTAIN
-
-# Evaluate
-result = evaluator.evaluate_case(case, response, mode)
-print(f"Passed: {result.passed}")
-print(f"Expected: {case.expected_mode.value}, Got: {mode.value}")
-```
-
-## Two-Pass Validation (Answer Quality Categories)
-
-For grounding categories, fitz-gov uses **two-pass validation** to reduce false positives:
-
-1. **Regex pass**: Fast pattern matching catches obvious violations
-2. **LLM pass**: Semantic validation for flagged cases
-
-### Enable LLM Validation
-
-```python
-from fitz_gov import FitzGovEvaluator
-
-# Enable LLM validation with local Ollama
-evaluator = FitzGovEvaluator(
-    llm_validation=True,
-    llm_model="qwen2.5:14b",  # or any Ollama model
-    llm_base_url="http://localhost:11434"
-)
-
-# Responses flagged by regex are sent to LLM for semantic check
-results = evaluator.evaluate_all(cases, responses, modes)
-```
-
-### Validation Flow
-
-```
-Response contains forbidden_claim pattern?
-    |
-    +- No  -> PASS (no hallucination detected)
-    |
-    +- Yes -> LLM validates: "Is this an actual hallucination?"
-                |
-                +- LLM says no (e.g., "no revenue mentioned") -> PASS
-                |
-                +- LLM says yes (fabricated specific value) -> FAIL
-```
-
-### Caching
-
-LLM validation results are cached for 7 days to speed up repeated evaluations:
-- Cache location: `~/.fitz/cache/llm_validation/`
-- Automatic cache cleanup on expiry
-
-## API Reference
-
-### Core Classes
-
-```python
-from fitz_gov import (
-    # Evaluator
-    FitzGovEvaluator,
-
-    # Data loading
-    load_cases,
-    load_tier,
-    load_case_by_id,
-    get_category_info,
-    get_tier_info,
-    get_data_dir,
-    get_tier_dir,
-    Tier,
-
-    # Models
-    FitzGovCategory,
-    AnswerMode,
-    FitzGovCase,
-    FitzGovCaseResult,
-    FitzGovCategoryResult,
-    FitzGovConfusionMatrix,
-    FitzGovResult,
-
-    # Tiered Results
-    TieredResult,
-    Tier0Result,
-    Tier1Result,
-
-    # LLM Validation
-    OllamaValidator,
-    ValidatorConfig,
-    ValidationResult,
-)
-```
-
-### FitzGovEvaluator
-
-```python
-evaluator = FitzGovEvaluator(
-    llm_validation=False,      # Enable two-pass validation
-    llm_model="qwen2.5:14b",   # Ollama model for validation
-    llm_base_url="http://localhost:11434"
-)
-
-# Tiered evaluation (recommended)
-result = evaluator.evaluate_tiered(
-    tier0_cases, tier0_responses, tier0_modes,
-    tier1_cases, tier1_responses, tier1_modes,
-    tier0_threshold=0.95,      # Default: 95%
-    gating_enabled=True,       # Skip Tier 1 if Tier 0 fails
-)
-
-# Flat evaluation (all cases together)
-results = evaluator.evaluate_all(cases, responses, modes)
-
-# Evaluate single case
-result = evaluator.evaluate_case(case, response, mode)
-```
-
-### Loading Test Cases
-
-```python
-# Load by tier (recommended)
-tier0_cases = load_tier(Tier.SANITY)  # 60 sanity cases
-tier1_cases = load_tier(Tier.CORE)    # 2,920 core cases
-
-# Load all cases (2,980 total)
-all_cases = load_cases()
-
-# Load specific categories from a tier
-abstention_tier0 = load_tier(Tier.SANITY, [FitzGovCategory.ABSTENTION])
-
-# Load specific categories across all tiers
-governance_cases = load_cases([
-    FitzGovCategory.ABSTENTION,
-    FitzGovCategory.DISPUTE,
-])
-
-# Load single case by ID (IDs prefixed with t0_ or t1_)
-case = load_case_by_id("t1_dispute_medium_005")
-```
-
-## Data Format
-
-Test cases are organized in a tiered structure:
-
-```
-data/
-+-- tier0_sanity/               # 60 cases - baseline verification (95% threshold)
-|   +-- abstention.json         # 12 cases
-|   +-- dispute.json            # 12 cases
-|   +-- trustworthy_hedged.json # 10 cases
-|   +-- trustworthy_direct.json # 10 cases
-|   +-- grounding.json          # 8 cases
-|   +-- relevance.json          # 8 cases
-+-- tier1_core/                 # 2,920 cases - discriminative benchmark
-|   +-- abstention.json         # 685 cases
-|   +-- dispute.json            # 675 cases
-|   +-- trustworthy_hedged.json # 484 cases
-|   +-- trustworthy_direct.json # 400 cases
-|   +-- relevance.json          # 340 cases
-|   +-- grounding.json          # 336 cases
-+-- corpus/
-|   +-- documents.jsonl    # reference documents
-+-- queries/
-|   +-- query_mappings.json  # query-to-document mappings
-+-- validation/
-    +-- human_validation_sample.json  # 250-case stratified sample for IAA
-```
-
-### Benchmark Distribution (v4.1)
-
-#### Categories
-
-**Tier 1 Core** (2,920 cases across 6 categories):
-
-| Category | Cases | Med | Hard | Med % | Mode | Purpose |
-|----------|------:|----:|-----:|------:|------|---------|
-| Abstention | 685 | 255 | 430 | 37% | `abstain` | Refuses when evidence is insufficient |
-| Dispute | 675 | 261 | 414 | 39% | `disputed` | Flags conflicting sources |
-| Trustworthy Hedged | 484 | 171 | 313 | 35% | `trustworthy` | Hedges uncertain claims |
-| Trustworthy Direct | 400 | 145 | 255 | 36% | `trustworthy` | Answers confidently when clear |
-| Relevance | 340 | 129 | 211 | 38% | `trustworthy` | Answers address the actual question |
-| Grounding | 336 | 128 | 208 | 38% | `trustworthy` | No hallucination beyond context |
-
-**Tier 0 Sanity** (60 easy cases, 95% pass threshold):
-
-| Category | Cases |
-|----------|------:|
-| Abstention | 12 |
-| Dispute | 12 |
-| Trustworthy Hedged | 10 |
-| Trustworthy Direct | 10 |
-| Grounding | 8 |
-| Relevance | 8 |
-
-#### Governance Mode Distribution
-
-The 3-class classifier target distribution across tier1:
-
-| Mode | Cases | % | Categories |
-|------|------:|--:|------------|
-| TRUSTWORTHY | 1,560 | 53.4% | Trustworthy Hedged + Direct + Grounding + Relevance |
-| ABSTAIN | 685 | 23.5% | Abstention |
-| DISPUTED | 675 | 23.1% | Dispute |
-
-#### Difficulty Distribution
-
-| Difficulty | Cases | % | Description |
-|------------|------:|--:|-------------|
-| Hard | 1,831 | 62.7% | Subtle patterns requiring careful reasoning |
-| Medium | 1,089 | 37.3% | Clear patterns, moderate complexity |
-| Easy | 60 | tier0 only | Obvious cases for sanity checking |
-
-#### Domain Distribution
-
-17 domains with no catch-all "general" category. Every case maps to a specific domain:
+## Benchmark at a Glance
+
+**2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113 subcategories**, **17 domains**, and **10 query types**.
+
+| | |
+|---|---|
+| **Mode split** | TRUSTWORTHY 53.4% / ABSTAIN 23.5% / DISPUTED 23.1% |
+| **Difficulty** | 62.7% hard / 37.3% medium (tier1), easy (tier0 only) |
+| **Multi-source** | 264 cases (9.0%) with source metadata |
+| **Domains** | Technology, Medicine, Finance, Science, Education, Environment, Food, Law, Government, Transportation, Sports, Agriculture, History, HR/Workplace, Real Estate, Psychology, Social Media |
+| **Query types** | what, how, is, does, why, should, when, which, who, compare |
+| **Reasoning types** | Factual, Evaluative, Causal, Comparative, Temporal, Procedural |
+
+<details>
+<summary>Full distribution tables</summary>
+
+### Categories (Tier 1)
+
+| Category | Cases | Medium | Hard | Med % |
+|----------|------:|-------:|-----:|------:|
+| Abstention | 685 | 255 | 430 | 37% |
+| Dispute | 675 | 261 | 414 | 39% |
+| Trustworthy Hedged | 484 | 171 | 313 | 35% |
+| Trustworthy Direct | 400 | 145 | 255 | 36% |
+| Relevance | 340 | 129 | 211 | 38% |
+| Grounding | 336 | 128 | 208 | 38% |
+
+### Domain Distribution
 
 | Domain | Cases | % | Domain | Cases | % |
 |--------|------:|--:|--------|------:|--:|
@@ -353,7 +115,7 @@ The 3-class classifier target distribution across tier1:
 | Food | 143 | 4.9% | Social Media | 113 | 3.9% |
 | Law | 136 | 4.7% | | | |
 
-#### Query Type Distribution
+### Query Type Distribution
 
 | Type | Cases | % | Type | Cases | % |
 |------|------:|--:|------|------:|--:|
@@ -363,36 +125,29 @@ The 3-class classifier target distribution across tier1:
 | does | 284 | 9.7% | who | 77 | 2.6% |
 | why | 213 | 7.3% | compare | 41 | 1.4% |
 
-#### Source Type Distribution
+### Reasoning Type Distribution
 
-| Source Type | Cases | % | Description |
-|-------------|------:|--:|-------------|
-| Single source | 2,656 | 91.0% | All contexts from one source |
-| Multi-source | 264 | 9.0% | Contexts from different sources with `context_sources` metadata |
+| Reasoning Type | Cases | % |
+|----------------|------:|--:|
+| Factual | 1,588 | 54.4% |
+| Evaluative | 596 | 20.4% |
+| Causal | 239 | 8.2% |
+| Comparative | 187 | 6.4% |
+| Temporal | 178 | 6.1% |
+| Procedural | 132 | 4.5% |
 
-#### Reasoning Type Distribution
+### Evidence Pattern Distribution
 
-| Reasoning Type | Cases | % | Description |
-|----------------|------:|--:|-------------|
-| Factual | 1,588 | 54.4% | Straightforward fact retrieval |
-| Evaluative | 596 | 20.4% | Requires judgment or assessment |
-| Causal | 239 | 8.2% | Cause-and-effect reasoning |
-| Comparative | 187 | 6.4% | Comparing entities or claims |
-| Temporal | 178 | 6.1% | Time-dependent reasoning |
-| Procedural | 132 | 4.5% | Step-by-step or process reasoning |
+| Evidence Pattern | Cases | % |
+|------------------|------:|--:|
+| Direct | 1,039 | 35.6% |
+| Absent | 637 | 21.8% |
+| Conflicting | 587 | 20.1% |
+| Partial | 428 | 14.7% |
+| Indirect | 195 | 6.7% |
+| Mixed | 34 | 1.2% |
 
-#### Evidence Pattern Distribution
-
-| Evidence Pattern | Cases | % | Description |
-|------------------|------:|--:|-------------|
-| Direct | 1,039 | 35.6% | Context directly addresses the query |
-| Absent | 637 | 21.8% | No relevant evidence in context |
-| Conflicting | 587 | 20.1% | Sources contradict each other |
-| Partial | 428 | 14.7% | Some evidence, but incomplete |
-| Indirect | 195 | 6.7% | Evidence requires inference |
-| Mixed | 34 | 1.2% | Combination of patterns |
-
-#### Context Count Distribution
+### Context Count Distribution
 
 | Contexts per Case | Cases | % |
 |-------------------|------:|--:|
@@ -402,118 +157,117 @@ The 3-class classifier target distribution across tier1:
 | 4 | 115 | 3.9% |
 | 5 | 3 | 0.1% |
 
-#### Subcategories per Category
+### Source Type Distribution
 
-**Abstention** (23 subcategories):
+| Source Type | Cases | % |
+|-------------|------:|--:|
+| Single source | 2,656 | 91.0% |
+| Multi-source | 264 | 9.0% |
 
-| Subcategory | Cases | Subcategory | Cases |
-|-------------|------:|-------------|------:|
-| wrong_entity | 88 | converted_insufficient | 20 |
-| wrong_specificity | 70 | converted_off_domain | 15 |
-| temporal_mismatch | 66 | wrong_version | 12 |
-| missing_data | 66 | implicit_only | 12 |
-| off_topic_contradiction | 53 | wrong_granularity | 12 |
-| wrong_domain | 51 | converted_wrong_entity | 10 |
-| wrong_jurisdiction | 38 | multi_source_gap | 10 |
-| outdated_context | 37 | cross_source_irrelevant | 9 |
-| wrong_product | 34 | code_abstention | 8 |
-| cross_domain_insufficient | 31 | topic_adjacent | 5 |
-| decoy_keywords | 28 | format_impossible | 5 |
-| | | converted_wrong_scope | 5 |
+### Subcategories
 
-**Dispute** (19 subcategories):
+**Abstention** (23): wrong_entity, wrong_specificity, temporal_mismatch, missing_data, off_topic_contradiction, wrong_domain, wrong_jurisdiction, outdated_context, wrong_product, cross_domain_insufficient, decoy_keywords, converted_insufficient, converted_off_domain, wrong_version, implicit_only, wrong_granularity, converted_wrong_entity, multi_source_gap, cross_source_irrelevant, code_abstention, topic_adjacent, format_impossible, converted_wrong_scope
 
-| Subcategory | Cases | Subcategory | Cases |
-|-------------|------:|-------------|------:|
-| numerical_conflict | 86 | methodology_conflict | 38 |
-| implicit_contradiction | 81 | interpretation_conflict | 33 |
-| binary_conflict | 73 | competing_theories | 27 |
-| opposing_conclusions | 72 | scientific_replication | 21 |
-| temporal_conflict | 56 | cross_source_contradiction | 20 |
-| statistical_direction_conflict | 45 | converted_contradiction | 19 |
-| source_authority_conflict | 44 | conditional_conflict | 15 |
-| | | converted_consensus_removed | 15 |
-| | | converted_framing_conflict | 10 |
-| | | temporal_source_conflict | 10 |
-| | | contradictory_attribution | 5 |
-| | | converted_version_conflict | 5 |
+**Dispute** (19): numerical_conflict, implicit_contradiction, binary_conflict, opposing_conclusions, temporal_conflict, statistical_direction_conflict, source_authority_conflict, methodology_conflict, interpretation_conflict, competing_theories, scientific_replication, cross_source_contradiction, converted_contradiction, conditional_conflict, converted_consensus_removed, converted_framing_conflict, temporal_source_conflict, contradictory_attribution, converted_version_conflict
 
-**Trustworthy Hedged** (20 subcategories):
+**Trustworthy Hedged** (20): evidence_quality, hedged_evidence, different_aspects, causal_uncertainty, mixed_evidence, temporal_uncertainty, version_overlap, methodology_difference, stale_source, evolving_facts, entity_ambiguity, partial_answer, scope_condition, numerical_near_miss, cross_source_partial, implicit_assumptions, adjacent_entity, cross_domain_transfer, hedged_contradiction_corroborated, different_framing
 
-| Subcategory | Cases | Subcategory | Cases |
-|-------------|------:|-------------|------:|
-| evidence_quality | 50 | evolving_facts | 26 |
-| hedged_evidence | 33 | entity_ambiguity | 23 |
-| different_aspects | 33 | partial_answer | 22 |
-| causal_uncertainty | 32 | scope_condition | 21 |
-| mixed_evidence | 32 | numerical_near_miss | 18 |
-| temporal_uncertainty | 32 | cross_source_partial | 18 |
-| version_overlap | 30 | implicit_assumptions | 17 |
-| methodology_difference | 28 | adjacent_entity | 15 |
-| stale_source | 28 | cross_domain_transfer | 13 |
-| | | hedged_contradiction_corroborated | 8 |
-| | | different_framing | 5 |
+**Trustworthy Direct** (14): technical_documented, clear_explanation, contradiction_resolved, opposing_with_consensus, different_framing, quantitative_answer, cross_source_agreement, direct_factual, multi_source_convergence, authoritative_source, near_complete_evidence, conditional_confidence, step_by_step, definitional
 
-**Trustworthy Direct** (14 subcategories):
+**Grounding** (18): numerical_hallucination, attribution_hallucination, temporal_confusion, entity_blending, process_hallucination, quote_fabrication, statistical_inference, code_hallucination, table_inference, causal_hallucination, comparative_hallucination, geographic_hallucination, technical_hallucination, date_hallucination, location_hallucination, code_grounding, medical_hallucination, quote_extension
 
-| Subcategory | Cases | Subcategory | Cases |
-|-------------|------:|-------------|------:|
-| technical_documented | 51 | cross_source_agreement | 25 |
-| clear_explanation | 50 | direct_factual | 23 |
-| contradiction_resolved | 40 | multi_source_convergence | 23 |
-| opposing_with_consensus | 38 | authoritative_source | 22 |
-| different_framing | 34 | near_complete_evidence | 21 |
-| quantitative_answer | 30 | conditional_confidence | 17 |
-| | | step_by_step | 13 |
-| | | definitional | 13 |
+**Relevance** (19): partial_answer, wrong_entity_focus, temporal_mismatch, tangent_drift, related_but_different, over_answering, granularity_mismatch, prerequisite_missing, scope_mismatch, format_mismatch, summarization_vs_answer, cherry_picking, false_precision, assumption_injection, symptom_only, status_dump, feature_dump, instruction_only, metric_avoidance
 
-**Grounding** (18 subcategories):
+</details>
 
-| Subcategory | Cases | Subcategory | Cases |
-|-------------|------:|-------------|------:|
-| numerical_hallucination | 37 | causal_hallucination | 16 |
-| attribution_hallucination | 33 | comparative_hallucination | 13 |
-| temporal_confusion | 33 | geographic_hallucination | 11 |
-| entity_blending | 30 | technical_hallucination | 8 |
-| process_hallucination | 28 | date_hallucination | 7 |
-| quote_fabrication | 26 | location_hallucination | 7 |
-| statistical_inference | 26 | code_grounding | 6 |
-| code_hallucination | 23 | medical_hallucination | 5 |
-| table_inference | 22 | quote_extension | 5 |
+## Installation
 
-**Relevance** (19 subcategories):
+```bash
+pip install fitz-gov
+```
 
-| Subcategory | Cases | Subcategory | Cases |
-|-------------|------:|-------------|------:|
-| partial_answer | 31 | format_mismatch | 18 |
-| wrong_entity_focus | 27 | summarization_vs_answer | 18 |
-| temporal_mismatch | 27 | cherry_picking | 15 |
-| tangent_drift | 26 | false_precision | 13 |
-| related_but_different | 26 | assumption_injection | 10 |
-| over_answering | 26 | symptom_only | 7 |
-| granularity_mismatch | 24 | status_dump | 7 |
-| prerequisite_missing | 24 | feature_dump | 7 |
-| scope_mismatch | 22 | instruction_only | 6 |
-| | | metric_avoidance | 6 |
+## Quick Start
 
-#### Classification Attributes
+### Tiered Evaluation
 
-Every case has 6 structured fields for slicing results:
+fitz-gov uses a two-tier system. Tier 0 is a 60-case sanity check (95% pass threshold) that gates Tier 1, the actual benchmark.
 
-| Field | Values | Purpose |
-|-------|--------|---------|
-| `domain` | 17 domains (technology, finance, medicine, ...) | Slice by topic area |
-| `query_type` | what, how, is, does, why, should, when, who, which, compare | Slice by question form |
-| `source_type` | single, multi_source | Single vs multi-source evidence |
-| `context_count` | 1-5 | Number of context passages |
-| `reasoning_type` | factual, evaluative, temporal, comparative, causal, procedural | What reasoning is tested |
-| `evidence_pattern` | direct, absent, partial, conflicting, indirect, mixed | Evidence relationship to query |
+```python
+from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
 
-#### Human Validation
+tier0_cases = load_tier(Tier.SANITY)  # 60 cases
+tier1_cases = load_tier(Tier.CORE)    # 2,920 cases
 
-A stratified 250-case sample is included at `data/validation/human_validation_sample.json` for computing inter-annotator agreement (IAA). See `docs/ANNOTATION_GUIDE.md` for annotation instructions and the decision tree for TRUSTWORTHY vs DISPUTED vs ABSTAIN classification.
+# Your RAG system classifies each case
+tier0_responses, tier0_modes = your_system.evaluate(tier0_cases)
+tier1_responses, tier1_modes = your_system.evaluate(tier1_cases)
 
-Each case has:
+evaluator = FitzGovEvaluator()
+result = evaluator.evaluate_tiered(
+    tier0_cases, tier0_responses, tier0_modes,
+    tier1_cases, tier1_responses, tier1_modes,
+)
+
+print(result)
+# TIER 0 (Sanity Check): PASSED  |  95% threshold, achieved 98.3%
+# TIER 1 (Core Benchmark): 69.1%
+#   abstention:        84.8%
+#   dispute:           66.8%
+#   trustworthy_hedged: 71.2%
+#   ...
+```
+
+### Standalone Usage
+
+Any RAG system can be evaluated -- fitz-gov is not tied to any specific framework:
+
+```python
+from fitz_gov import FitzGovEvaluator, load_cases, AnswerMode
+
+cases = load_cases()  # 2,980 cases
+evaluator = FitzGovEvaluator()
+
+responses, modes = [], []
+for case in cases:
+    response = your_system.query(case.query, case.contexts)
+    mode = your_system.classify_mode(response)
+    responses.append(response)
+    modes.append(mode)
+
+results = evaluator.evaluate_all(cases, responses, modes)
+print(f"Governance accuracy: {results.overall_accuracy:.1%}")
+```
+
+### Two-Pass Validation
+
+Grounding and relevance categories use regex + optional LLM validation to catch hallucinations:
+
+```python
+evaluator = FitzGovEvaluator(
+    llm_validation=True,
+    llm_model="qwen2.5:14b",
+    llm_base_url="http://localhost:11434"
+)
+```
+
+## Data Format
+
+```
+data/
++-- tier0_sanity/               # 60 easy cases (95% gate)
++-- tier1_core/                 # 2,920 medium/hard cases
+|   +-- abstention.json         # 685 cases
+|   +-- dispute.json            # 675 cases
+|   +-- trustworthy_hedged.json # 484 cases
+|   +-- trustworthy_direct.json # 400 cases
+|   +-- relevance.json          # 340 cases
+|   +-- grounding.json          # 336 cases
++-- corpus/                     # 5,043 reference documents
++-- queries/                    # 3,800 query-to-document mappings
++-- validation/                 # 250-case human validation sample
+```
+
+Each case:
 
 ```json
 {
@@ -524,61 +278,22 @@ Each case has:
   "category": "abstention",
   "subcategory": "wrong_entity",
   "difficulty": "medium",
-  "description": "Query asks about revenue but context has no financial data",
-  "rationale": "Context contains no financial data for the queried entity",
-  "forbidden_claims": ["\\$\\d"],
-  "required_elements": [],
   "domain": "finance",
   "query_type": "what",
   "source_type": "single",
   "context_count": 1,
   "reasoning_type": "factual",
-  "evidence_pattern": "absent",
-  "metadata": {"tier": "tier1_core"}
+  "evidence_pattern": "absent"
 }
 ```
 
-### Case Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `id` | string | Unique ID (prefixed `t0_` or `t1_`) |
-| `query` | string | The question to answer |
-| `contexts` | list[str] | Context passages provided to the RAG system |
-| `expected_mode` | string | Expected governance mode (`abstain`, `disputed`, `trustworthy`) |
-| `category` | string | Evaluation category (abstention, dispute, trustworthy_hedged, trustworthy_direct, grounding, relevance) |
-| `subcategory` | string | Specific test pattern (e.g., `wrong_entity`, `implicit_contradiction`) |
-| `difficulty` | string | `easy`, `medium`, or `hard` |
-| `description` | string | What the case tests |
-| `rationale` | string | Why this mode is expected |
-| `forbidden_claims` | list[str] | Regex patterns indicating hallucination (grounding) |
-| `required_elements` | list[str] | Elements that must appear in the answer (relevance) |
-| `domain` | string | Topic area (technology, finance, medicine, etc.) |
-| `query_type` | string | Question form (what, how, is, does, why, etc.) |
-| `source_type` | string | `single` or `multi_source` |
-| `context_count` | int | Number of context passages |
-| `reasoning_type` | string | factual, causal, comparative, procedural, evaluative, temporal |
-| `evidence_pattern` | string | direct, indirect, conflicting, absent, partial, mixed |
+Every case has 6 classification attributes for slicing results by domain, query type, source type, context count, reasoning type, and evidence pattern.
 
 ## Version
 
-Current version: **4.1.0**
-
-See [CHANGELOG.md](CHANGELOG.md) for release history and [docs/roadmap](docs/roadmap/) for implementation details.
-
-## Architecture Note
-
-fitz-gov is designed as a standalone package so that:
-
-1. **Any RAG system** can benchmark against the same test cases
-2. **Evaluation logic is consistent** - all systems get identical evaluation
-3. **Test data is versioned** - reproducible benchmarks across releases
-
-For Fitz RAG engine integration, see `fitz_ai.evaluation.benchmarks.FitzGovBenchmark` which wraps this package. Both fitz-ai and fitz-gov use the same 3-mode system (TRUSTWORTHY, DISPUTED, ABSTAIN). The benchmark categories (trustworthy_hedged, trustworthy_direct, etc.) are test categories that describe different governance behaviors being tested, not different output modes.
+Current version: **4.1.0** -- See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## Contributing
-
-We welcome contributions! To add new test cases:
 
 1. Fork this repo
 2. Add cases to the appropriate `data/tier0_sanity/` or `data/tier1_core/` JSON file
