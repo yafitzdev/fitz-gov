@@ -59,24 +59,30 @@ A fitz-gov score is the accuracy of your system's governance mode classification
 
 The score breaks down by category, so you can see exactly *where* your system fails. A system scoring 90% on abstention but 55% on dispute knows when to shut up but doesn't catch contradictions. A system scoring 40% on trustworthy_direct is being overly cautious -- refusing to answer even when the evidence is clear.
 
-## Six Test Categories
+## Four Test Categories
 
-The three governance modes are tested through six categories, each targeting a specific failure mode:
+The three governance modes are tested through four categories, each targeting a specific failure mode:
 
 | Category | Cases | Mode | What it catches |
 |----------|------:|------|-----------------|
 | **Abstention** | 685 | ABSTAIN | System answers when it has no relevant evidence |
 | **Dispute** | 675 | DISPUTED | System ignores contradictions between sources |
-| **Trustworthy Hedged** | 484 | TRUSTWORTHY | System either over-hedges (abstains) or under-hedges (states uncertain things as fact) |
+| **Trustworthy Hedged** | 1,160 | TRUSTWORTHY | System either over-hedges (abstains) or under-hedges (states uncertain things as fact) |
 | **Trustworthy Direct** | 400 | TRUSTWORTHY | System refuses to answer or hedges when evidence clearly supports a confident answer |
-| **Relevance** | 340 | TRUSTWORTHY | System discusses the topic but doesn't actually answer the question asked |
-| **Grounding** | 336 | TRUSTWORTHY | System hallucinates specific details (names, numbers, dates) not in the context |
 
-Grounding and relevance use two-pass validation: a fast regex check for forbidden patterns (hallucinated numbers, invented names), with optional LLM-based semantic verification for edge cases.
+### Cross-Cutting Quality Checks
+
+Every trustworthy case (hedged and direct) is evaluated on three dimensions:
+
+1. **Governance mode**: Did the system correctly classify this as TRUSTWORTHY? (vs. ABSTAIN or DISPUTED)
+2. **Grounding**: Did the response avoid hallucinating details not present in the context? Checked via `forbidden_claims` regex patterns.
+3. **Relevance**: Did the response actually address the question asked? Checked via `required_elements` pattern matching.
+
+A trustworthy case only passes if *all three* checks succeed. This means the benchmark catches systems that pick the right mode but then hallucinate the answer, or discuss the topic without answering the question.
 
 ## Benchmark at a Glance
 
-**2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113 subcategories**, **17 domains**, and **10 query types**.
+**2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113+ subcategories**, **17 domains**, and **10 query types**.
 
 | | |
 |---|---|
@@ -96,10 +102,8 @@ Grounding and relevance use two-pass validation: a fast regex check for forbidde
 |----------|------:|-------:|-----:|------:|
 | Abstention | 685 | 255 | 430 | 37% |
 | Dispute | 675 | 261 | 414 | 39% |
-| Trustworthy Hedged | 484 | 171 | 313 | 35% |
+| Trustworthy Hedged | 1,160 | 435 | 725 | 38% |
 | Trustworthy Direct | 400 | 145 | 255 | 36% |
-| Relevance | 340 | 129 | 211 | 38% |
-| Grounding | 336 | 128 | 208 | 38% |
 
 ### Domain Distribution
 
@@ -170,13 +174,9 @@ Grounding and relevance use two-pass validation: a fast regex check for forbidde
 
 **Dispute** (19): numerical_conflict, implicit_contradiction, binary_conflict, opposing_conclusions, temporal_conflict, statistical_direction_conflict, source_authority_conflict, methodology_conflict, interpretation_conflict, competing_theories, scientific_replication, cross_source_contradiction, converted_contradiction, conditional_conflict, converted_consensus_removed, converted_framing_conflict, temporal_source_conflict, contradictory_attribution, converted_version_conflict
 
-**Trustworthy Hedged** (20): evidence_quality, hedged_evidence, different_aspects, causal_uncertainty, mixed_evidence, temporal_uncertainty, version_overlap, methodology_difference, stale_source, evolving_facts, entity_ambiguity, partial_answer, scope_condition, numerical_near_miss, cross_source_partial, implicit_assumptions, adjacent_entity, cross_domain_transfer, hedged_contradiction_corroborated, different_framing
+**Trustworthy Hedged** (57): evidence_quality, hedged_evidence, different_aspects, causal_uncertainty, mixed_evidence, temporal_uncertainty, version_overlap, methodology_difference, stale_source, evolving_facts, entity_ambiguity, partial_answer, scope_condition, numerical_near_miss, cross_source_partial, implicit_assumptions, adjacent_entity, cross_domain_transfer, hedged_contradiction_corroborated, different_framing, grounding_numerical_hallucination, grounding_attribution_hallucination, grounding_temporal_confusion, grounding_entity_blending, grounding_process_hallucination, grounding_quote_fabrication, grounding_statistical_inference, grounding_code_hallucination, grounding_table_inference, grounding_causal_hallucination, grounding_comparative_hallucination, grounding_geographic_hallucination, grounding_technical_hallucination, grounding_date_hallucination, grounding_location_hallucination, grounding_code_grounding, grounding_medical_hallucination, grounding_quote_extension, relevance_partial_answer, relevance_wrong_entity_focus, relevance_temporal_mismatch, relevance_tangent_drift, relevance_related_but_different, relevance_over_answering, relevance_granularity_mismatch, relevance_prerequisite_missing, relevance_scope_mismatch, relevance_format_mismatch, relevance_summarization_vs_answer, relevance_cherry_picking, relevance_false_precision, relevance_assumption_injection, relevance_symptom_only, relevance_status_dump, relevance_feature_dump, relevance_instruction_only, relevance_metric_avoidance
 
 **Trustworthy Direct** (14): technical_documented, clear_explanation, contradiction_resolved, opposing_with_consensus, different_framing, quantitative_answer, cross_source_agreement, direct_factual, multi_source_convergence, authoritative_source, near_complete_evidence, conditional_confidence, step_by_step, definitional
-
-**Grounding** (18): numerical_hallucination, attribution_hallucination, temporal_confusion, entity_blending, process_hallucination, quote_fabrication, statistical_inference, code_hallucination, table_inference, causal_hallucination, comparative_hallucination, geographic_hallucination, technical_hallucination, date_hallucination, location_hallucination, code_grounding, medical_hallucination, quote_extension
-
-**Relevance** (19): partial_answer, wrong_entity_focus, temporal_mismatch, tangent_drift, related_but_different, over_answering, granularity_mismatch, prerequisite_missing, scope_mismatch, format_mismatch, summarization_vs_answer, cherry_picking, false_precision, assumption_injection, symptom_only, status_dump, feature_dump, instruction_only, metric_avoidance
 
 </details>
 
@@ -211,10 +211,10 @@ result = evaluator.evaluate_tiered(
 print(result)
 # TIER 0 (Sanity Check): PASSED  |  95% threshold, achieved 98.3%
 # TIER 1 (Core Benchmark): 69.1%
-#   abstention:        84.8%
-#   dispute:           66.8%
-#   trustworthy_hedged: 71.2%
-#   ...
+#   abstention:         84.8% (581/685)
+#   dispute:            66.8% (451/675)
+#   trustworthy_hedged: 71.2% (826/1160)  |  grounding: 89.3%, relevance: 85.1%
+#   trustworthy_direct: 78.5% (314/400)   |  grounding: 92.1%, relevance: 88.7%
 ```
 
 ### Standalone Usage
@@ -240,7 +240,7 @@ print(f"Governance accuracy: {results.overall_accuracy:.1%}")
 
 ### Two-Pass Validation
 
-Grounding and relevance categories use regex + optional LLM validation to catch hallucinations:
+Grounding and relevance quality checks use regex + optional LLM validation:
 
 ```python
 evaluator = FitzGovEvaluator(
@@ -258,10 +258,8 @@ data/
 +-- tier1_core/                 # 2,920 medium/hard cases
 |   +-- abstention.json         # 685 cases
 |   +-- dispute.json            # 675 cases
-|   +-- trustworthy_hedged.json # 484 cases
+|   +-- trustworthy_hedged.json # 1,160 cases
 |   +-- trustworthy_direct.json # 400 cases
-|   +-- relevance.json          # 340 cases
-|   +-- grounding.json          # 336 cases
 +-- corpus/                     # 5,043 reference documents
 +-- queries/                    # 3,800 query-to-document mappings
 +-- validation/                 # 250-case human validation sample
@@ -283,15 +281,17 @@ Each case:
   "source_type": "single",
   "context_count": 1,
   "reasoning_type": "factual",
-  "evidence_pattern": "absent"
+  "evidence_pattern": "absent",
+  "forbidden_claims": ["\\$\\d+\\s*billion"],
+  "required_elements": ["revenue", "not provided"]
 }
 ```
 
-Every case has 6 classification attributes for slicing results by domain, query type, source type, context count, reasoning type, and evidence pattern.
+Every case has 6 classification attributes for slicing results by domain, query type, source type, context count, reasoning type, and evidence pattern. Trustworthy cases additionally have `forbidden_claims` (grounding) and `required_elements` (relevance) for quality scoring.
 
 ## Version
 
-Current version: **4.1.0** -- See [CHANGELOG.md](CHANGELOG.md) for release history.
+Current version: **5.0.0** -- See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## Contributing
 

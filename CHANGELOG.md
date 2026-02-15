@@ -11,6 +11,82 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [5.0.0] - 2026-02-15
+
+### Highlights
+
+**Grounding & Relevance Are Now Cross-Cutting Quality Checks** - Eliminated grounding and relevance as standalone categories. They are now quality dimensions applied to every trustworthy case (hedged and direct). Each trustworthy case now produces three scores: governance mode accuracy, grounding (did the response avoid hallucination?), and relevance (did the response address the question?). The benchmark drops from 6 categories to 4, with no data loss -- all 2,980 cases preserved.
+
+### Breaking Changes
+
+- **Removed `FitzGovCategory.GROUNDING` and `FitzGovCategory.RELEVANCE`** enum values
+- **4 categories only**: abstention, dispute, trustworthy_hedged, trustworthy_direct
+- `grounding.json` and `relevance.json` data files no longer exist (merged into `trustworthy_hedged.json`)
+- `FitzGovCaseResult` has new fields: `mode_correct`, `grounding_passed`, `relevance_passed`, `grounding_failure`, `relevance_failure`
+- `FitzGovCategoryResult` has new fields: `grounding_accuracy`, `relevance_accuracy`
+- Score comparisons between v4.1 and v5.0 are NOT directly comparable due to structural changes
+
+### Data Migration
+
+- **676 grounding/relevance cases** converted to trustworthy_hedged with prefixed subcategories (`grounding_*`, `relevance_*`)
+- **884 existing trustworthy cases** enriched with `forbidden_claims` and `required_elements` annotations
+- All trustworthy cases (1,560 tier1 + 36 tier0) now have both quality annotation fields
+- Trustworthy Hedged tier1: 484 → 1,160 cases (absorbed 336 grounding + 340 relevance)
+- Trustworthy Direct: unchanged at 400 tier1 / 10 tier0
+- All existing case IDs preserved
+
+### Evaluation Changes
+
+- **Unified evaluation flow**: All categories use governance mode classification. Trustworthy categories additionally run grounding and relevance quality checks when mode is correct.
+- **Quality checks are conditional**: If the system picks the wrong governance mode, quality checks are skipped (no point checking answer quality when the meta-decision is wrong)
+- **3-dimensional scoring** for trustworthy categories:
+  ```
+  trustworthy_hedged: 71.2% (826/1160)  |  grounding: 89.3%  relevance: 85.1%
+  trustworthy_direct: 78.5% (314/400)   |  grounding: 92.1%  relevance: 88.7%
+  ```
+- **No LLM-as-judge**: Quality checks use regex-only validation (optional LLM validation still supported)
+- All 4 categories participate in the confusion matrix
+
+### Quality Annotation Details
+
+- **Hedged cases**: `forbidden_claims` catch hallucinated specifics (dollar amounts, percentages, dates not in context); `required_elements` require hedging language appropriate to subcategory
+- **Direct cases**: `forbidden_claims` catch unsupported embellishments; `required_elements` require key factual terms from context
+- Annotations are subcategory-aware (e.g., `causal_uncertainty` cases require correlation/confounding language)
+
+### Distribution (Tier 1)
+
+| Category | Cases | Medium | Hard | Med % |
+|----------|------:|-------:|-----:|------:|
+| Trustworthy Hedged | 1,160 | 435 | 725 | 38% |
+| Abstention | 685 | 255 | 430 | 37% |
+| Dispute | 675 | 261 | 414 | 39% |
+| Trustworthy Direct | 400 | 145 | 255 | 36% |
+
+| Metric | v4.1 | v5.0 |
+|--------|------|------|
+| Categories | 6 | 4 |
+| Total cases | 2,980 | 2,980 |
+| Cases with forbidden_claims | 344 | ~1,596 |
+| Cases with required_elements | 348 | ~1,596 |
+| Subcategories | 113 | 113 |
+
+### Subcategories (Trustworthy Hedged)
+
+57 subcategories after merge:
+- **20 original hedged**: evidence_quality, hedged_evidence, different_aspects, causal_uncertainty, mixed_evidence, temporal_uncertainty, version_overlap, methodology_difference, stale_source, evolving_facts, entity_ambiguity, partial_answer, scope_condition, numerical_near_miss, cross_source_partial, implicit_assumptions, adjacent_entity, cross_domain_transfer, hedged_contradiction_corroborated, different_framing
+- **18 from grounding**: grounding_numerical_hallucination, grounding_attribution_hallucination, grounding_temporal_confusion, grounding_entity_blending, grounding_process_hallucination, grounding_quote_fabrication, grounding_statistical_inference, grounding_code_hallucination, grounding_table_inference, grounding_causal_hallucination, grounding_comparative_hallucination, grounding_geographic_hallucination, grounding_technical_hallucination, grounding_date_hallucination, grounding_location_hallucination, grounding_code_grounding, grounding_medical_hallucination, grounding_quote_extension
+- **19 from relevance**: relevance_partial_answer, relevance_wrong_entity_focus, relevance_temporal_mismatch, relevance_tangent_drift, relevance_related_but_different, relevance_over_answering, relevance_granularity_mismatch, relevance_prerequisite_missing, relevance_scope_mismatch, relevance_format_mismatch, relevance_summarization_vs_answer, relevance_cherry_picking, relevance_false_precision, relevance_assumption_injection, relevance_symptom_only, relevance_status_dump, relevance_feature_dump, relevance_instruction_only, relevance_metric_avoidance
+
+### Migration Notes
+
+- `pip install fitz-gov==5.0.0` to upgrade
+- Remove any references to `FitzGovCategory.GROUNDING` or `FitzGovCategory.RELEVANCE`
+- `GOVERNANCE_MODE_CATEGORIES` and `ANSWER_QUALITY_CATEGORIES` constants removed; use `TRUSTWORTHY_CATEGORIES` instead
+- Case IDs unchanged -- grounding/relevance case IDs still work with `load_case_by_id()`
+- `evaluate_case()` now returns richer results with quality check fields
+
+---
+
 ## [4.1.0] - 2026-02-15
 
 ### Highlights
@@ -497,7 +573,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v4.1.0...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v4.1.0...v5.0.0
 [4.1.0]: https://github.com/yafitzdev/fitz-gov/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...v4.0.0
 [3.0.1]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...v3.0.1

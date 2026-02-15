@@ -14,7 +14,6 @@ from typing import Any
 class FitzGovCategory(str, Enum):
     """Categories of governance test cases."""
 
-    # Governance Mode Categories
     ABSTENTION = "abstention"
     """Cases where the system should refuse to answer."""
 
@@ -26,13 +25,6 @@ class FitzGovCategory(str, Enum):
 
     TRUSTWORTHY_DIRECT = "trustworthy_direct"
     """Cases where the system should answer clearly and directly (maps to TRUSTWORTHY mode)."""
-
-    # Answer Quality Categories
-    GROUNDING = "grounding"
-    """Cases testing if answers are grounded in context (no hallucination)."""
-
-    RELEVANCE = "relevance"
-    """Cases testing if answers address the actual question asked."""
 
 
 class AnswerMode(str, Enum):
@@ -74,15 +66,15 @@ class FitzGovCase:
     difficulty: str = "medium"
     """Difficulty level: easy, medium, hard."""
 
-    # Answer quality fields (for grounding/relevance categories)
+    # Answer quality fields (cross-cutting checks on trustworthy categories)
     forbidden_claims: list[str] = field(default_factory=list)
-    """For GROUNDING: Regex patterns that indicate hallucination."""
+    """Regex patterns that indicate hallucination (grounding check)."""
 
     required_elements: list[str] = field(default_factory=list)
-    """For RELEVANCE: Elements that MUST appear in the answer."""
+    """Elements that MUST appear in the answer (relevance check)."""
 
     forbidden_elements: list[str] = field(default_factory=list)
-    """For RELEVANCE: Patterns that indicate false confidence."""
+    """Patterns that indicate false confidence (relevance check)."""
 
     evaluation_config: dict[str, Any] = field(default_factory=dict)
     """Evaluation configuration (use_regex, allowed_phrases, etc.)."""
@@ -188,30 +180,53 @@ class FitzGovCaseResult:
     """The test case."""
 
     passed: bool
-    """Whether the test passed."""
+    """Whether the test passed (mode correct AND quality checks, if applicable)."""
 
     response: str
     """The response being evaluated."""
 
     actual_mode: AnswerMode | None = None
-    """Actual answer mode (for governance categories)."""
+    """Actual answer mode."""
 
     failure_reason: str | None = None
     """Why the test failed (if applicable)."""
+
+    mode_correct: bool = True
+    """Whether the governance mode matched."""
+
+    grounding_passed: bool | None = None
+    """Whether grounding check passed. None if not checked."""
+
+    relevance_passed: bool | None = None
+    """Whether relevance check passed. None if not checked."""
+
+    grounding_failure: str | None = None
+    """Grounding failure details."""
+
+    relevance_failure: str | None = None
+    """Relevance failure details."""
 
     llm_validations: list[dict[str, Any]] = field(default_factory=list)
     """LLM validation results for debugging."""
 
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
-        return {
+        result = {
             "case_id": self.case.id,
             "passed": self.passed,
             "response": self.response,
             "actual_mode": self.actual_mode.value if self.actual_mode else None,
             "failure_reason": self.failure_reason,
+            "mode_correct": self.mode_correct,
             "llm_validations": self.llm_validations,
         }
+        if self.grounding_passed is not None:
+            result["grounding_passed"] = self.grounding_passed
+            result["grounding_failure"] = self.grounding_failure
+        if self.relevance_passed is not None:
+            result["relevance_passed"] = self.relevance_passed
+            result["relevance_failure"] = self.relevance_failure
+        return result
 
 
 @dataclass
@@ -236,9 +251,15 @@ class FitzGovCategoryResult:
     subcategory_accuracy: dict[str, float] = field(default_factory=dict)
     """Accuracy by subcategory."""
 
+    grounding_accuracy: float | None = None
+    """Grounding accuracy for trustworthy categories (None for abstention/dispute)."""
+
+    relevance_accuracy: float | None = None
+    """Relevance accuracy for trustworthy categories (None for abstention/dispute)."""
+
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
-        return {
+        result = {
             "category": self.category.value,
             "accuracy": self.accuracy,
             "num_correct": self.num_correct,
@@ -246,6 +267,11 @@ class FitzGovCategoryResult:
             "case_results": [r.to_dict() for r in self.case_results],
             "subcategory_accuracy": self.subcategory_accuracy,
         }
+        if self.grounding_accuracy is not None:
+            result["grounding_accuracy"] = self.grounding_accuracy
+        if self.relevance_accuracy is not None:
+            result["relevance_accuracy"] = self.relevance_accuracy
+        return result
 
 
 @dataclass
@@ -334,30 +360,22 @@ class FitzGovResult:
             f"fitz-gov Results (n={self.num_cases}):",
             f"  Overall Accuracy: {self.overall_accuracy:.2%}",
             "",
+            "By Category:",
         ]
 
-        # Governance categories
-        gov_cats = [
-            FitzGovCategory.ABSTENTION,
-            FitzGovCategory.DISPUTE,
-            FitzGovCategory.TRUSTWORTHY_HEDGED,
-            FitzGovCategory.TRUSTWORTHY_DIRECT,
-        ]
-        lines.append("Governance Mode Categories:")
-        for cat in gov_cats:
+        for cat in FitzGovCategory:
             if cat in self.category_results:
                 r = self.category_results[cat]
-                lines.append(f"  {cat.value}: {r.accuracy:.2%} ({r.num_correct}/{r.num_total})")
-
-        # Quality categories
-        quality_cats = [FitzGovCategory.GROUNDING, FitzGovCategory.RELEVANCE]
-        if any(cat in self.category_results for cat in quality_cats):
-            lines.append("")
-            lines.append("Answer Quality Categories:")
-            for cat in quality_cats:
-                if cat in self.category_results:
-                    r = self.category_results[cat]
-                    lines.append(f"  {cat.value}: {r.accuracy:.2%} ({r.num_correct}/{r.num_total})")
+                line = f"  {cat.value}: {r.accuracy:.2%} ({r.num_correct}/{r.num_total})"
+                # Show quality scores for trustworthy categories
+                if r.grounding_accuracy is not None or r.relevance_accuracy is not None:
+                    quality_parts = []
+                    if r.grounding_accuracy is not None:
+                        quality_parts.append(f"grounding: {r.grounding_accuracy:.1%}")
+                    if r.relevance_accuracy is not None:
+                        quality_parts.append(f"relevance: {r.relevance_accuracy:.1%}")
+                    line += f"  |  {', '.join(quality_parts)}"
+                lines.append(line)
 
         lines.append("")
         lines.append(str(self.confusion_matrix))
@@ -418,7 +436,15 @@ class Tier0Result:
         for cat in FitzGovCategory:
             if cat in self.category_results:
                 r = self.category_results[cat]
-                lines.append(f"    {cat.value}: {r.num_correct}/{r.num_total} ({r.accuracy:.1%})")
+                line = f"    {cat.value}: {r.num_correct}/{r.num_total} ({r.accuracy:.1%})"
+                if r.grounding_accuracy is not None or r.relevance_accuracy is not None:
+                    quality_parts = []
+                    if r.grounding_accuracy is not None:
+                        quality_parts.append(f"grounding: {r.grounding_accuracy:.1%}")
+                    if r.relevance_accuracy is not None:
+                        quality_parts.append(f"relevance: {r.relevance_accuracy:.1%}")
+                    line += f"  |  {', '.join(quality_parts)}"
+                lines.append(line)
 
         if self.failure_cases:
             lines.append("")
@@ -500,7 +526,15 @@ class Tier1Result:
         for cat in FitzGovCategory:
             if cat in self.category_results:
                 r = self.category_results[cat]
-                lines.append(f"    {cat.value}: {r.num_correct}/{r.num_total} ({r.accuracy:.1%})")
+                line = f"    {cat.value}: {r.num_correct}/{r.num_total} ({r.accuracy:.1%})"
+                if r.grounding_accuracy is not None or r.relevance_accuracy is not None:
+                    quality_parts = []
+                    if r.grounding_accuracy is not None:
+                        quality_parts.append(f"grounding: {r.grounding_accuracy:.1%}")
+                    if r.relevance_accuracy is not None:
+                        quality_parts.append(f"relevance: {r.relevance_accuracy:.1%}")
+                    line += f"  |  {', '.join(quality_parts)}"
+                lines.append(line)
 
         if self.difficulty_breakdown:
             lines.append("")

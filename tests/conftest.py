@@ -41,11 +41,11 @@ def sample_governance_case():
 
 @pytest.fixture
 def sample_grounding_case():
-    """A sample grounding case with forbidden_claims."""
+    """A sample trustworthy_hedged case with forbidden_claims (grounding check)."""
     return FitzGovCase(
         id="test_grounding_001",
-        category=FitzGovCategory.GROUNDING,
-        subcategory="numerical_hallucination",
+        category=FitzGovCategory.TRUSTWORTHY_HEDGED,
+        subcategory="grounding_numerical_hallucination",
         query="What was the project budget?",
         contexts=[
             "The migration deployed 47 microservices across 3 regions with 23 engineers."
@@ -56,7 +56,7 @@ def sample_grounding_case():
         difficulty="hard",
         forbidden_claims=["budget (was|is) \\$?\\d", "\\$\\d+\\s*(million|billion)"],
         evaluation_config={
-            "mode": "answer_quality",
+            "mode": "governance",
             "use_regex": True,
             "case_insensitive": True,
             "allowed_phrases": [],
@@ -68,11 +68,11 @@ def sample_grounding_case():
 
 @pytest.fixture
 def sample_relevance_case():
-    """A sample relevance case with required_elements."""
+    """A sample trustworthy_hedged case with required_elements (relevance check)."""
     return FitzGovCase(
         id="test_relevance_001",
-        category=FitzGovCategory.RELEVANCE,
-        subcategory="partial_answer",
+        category=FitzGovCategory.TRUSTWORTHY_HEDGED,
+        subcategory="relevance_partial_answer",
         query="What are the results AND the timeline?",
         contexts=["The trial showed 85% success rate across 200 patients."],
         expected_mode=AnswerMode.TRUSTWORTHY,
@@ -81,7 +81,7 @@ def sample_relevance_case():
         difficulty="hard",
         required_elements=["timeline", "not mentioned", "not specified"],
         evaluation_config={
-            "mode": "answer_quality",
+            "mode": "governance",
             "use_regex": False,
             "case_insensitive": True,
             "min_required": 1,

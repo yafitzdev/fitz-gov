@@ -3,7 +3,8 @@
 fitz-gov evaluation logic.
 
 This module provides the core evaluation functionality for the fitz-gov benchmark.
-It evaluates responses against test cases using regex patterns and optional LLM validation.
+All categories use governance mode matching. Trustworthy categories additionally
+run grounding (forbidden_claims) and relevance (required_elements) quality checks.
 """
 
 from __future__ import annotations
@@ -32,19 +33,10 @@ from .models import (
 
 logger = logging.getLogger(__name__)
 
-
-# Categories that test governance mode selection
-GOVERNANCE_MODE_CATEGORIES = {
-    FitzGovCategory.ABSTENTION,
-    FitzGovCategory.DISPUTE,
+# Categories where quality checks (grounding + relevance) apply
+TRUSTWORTHY_CATEGORIES = {
     FitzGovCategory.TRUSTWORTHY_HEDGED,
     FitzGovCategory.TRUSTWORTHY_DIRECT,
-}
-
-# Categories that test answer quality (required_elements / forbidden_claims checks)
-ANSWER_QUALITY_CATEGORIES = {
-    FitzGovCategory.GROUNDING,
-    FitzGovCategory.RELEVANCE,
 }
 
 
@@ -53,8 +45,10 @@ class FitzGovEvaluator:
     Evaluator for fitz-gov benchmark.
 
     Evaluates responses against test cases using:
-    1. Regex pattern matching for forbidden/required elements
-    2. Optional LLM validation for semantic verification (two-pass)
+    1. Governance mode matching (all categories)
+    2. Grounding checks via forbidden_claims regex (trustworthy categories)
+    3. Relevance checks via required_elements regex (trustworthy categories)
+    4. Optional LLM validation for semantic verification (two-pass)
 
     Example:
         evaluator = FitzGovEvaluator(llm_validation=True)
@@ -76,7 +70,7 @@ class FitzGovEvaluator:
         Initialize evaluator.
 
         Args:
-            llm_validation: Enable two-pass LLM validation for grounding/relevance.
+            llm_validation: Enable two-pass LLM validation for quality checks.
             llm_model: Ollama model for LLM validation.
             llm_base_url: Ollama API URL.
         """
@@ -102,22 +96,79 @@ class FitzGovEvaluator:
         """
         Evaluate a single test case.
 
+        All categories check governance mode. Trustworthy categories additionally
+        run grounding and relevance quality checks when mode is correct.
+
         Args:
             case: The test case to evaluate.
             response: The response to evaluate.
-            actual_mode: The actual answer mode (for governance categories).
+            actual_mode: The actual answer mode.
 
         Returns:
-            FitzGovCaseResult with pass/fail and analysis.
+            FitzGovCaseResult with pass/fail and quality analysis.
         """
-        if case.category in GOVERNANCE_MODE_CATEGORIES:
-            return self._evaluate_governance(case, response, actual_mode)
-        elif case.category == FitzGovCategory.GROUNDING:
-            return self._evaluate_grounding(case, response)
-        elif case.category == FitzGovCategory.RELEVANCE:
-            return self._evaluate_relevance(case, response)
-        else:
-            raise ValueError(f"Unknown category: {case.category}")
+        # Step 1: Governance mode check
+        if actual_mode is None:
+            return FitzGovCaseResult(
+                case=case,
+                passed=False,
+                response=response,
+                actual_mode=None,
+                failure_reason="No actual_mode provided",
+                mode_correct=False,
+            )
+
+        mode_correct = actual_mode == case.expected_mode
+        failure_reason = None
+        if not mode_correct:
+            failure_reason = (
+                f"Expected {case.expected_mode.value}, got {actual_mode.value}"
+            )
+
+        # Step 2: Quality checks (trustworthy categories only, only when mode correct)
+        grounding_passed = None
+        relevance_passed = None
+        grounding_failure = None
+        relevance_failure = None
+        llm_validations: list[dict[str, Any]] = []
+
+        if case.category in TRUSTWORTHY_CATEGORIES and mode_correct:
+            if case.forbidden_claims:
+                grounding_passed, grounding_failure, g_llm = self._check_grounding(
+                    case, response
+                )
+                llm_validations.extend(g_llm)
+
+            if case.required_elements:
+                relevance_passed, relevance_failure, r_llm = self._check_relevance(
+                    case, response
+                )
+                llm_validations.extend(r_llm)
+
+        # Overall: mode correct AND quality checks passed
+        passed = mode_correct
+        if grounding_passed is False:
+            passed = False
+            if not failure_reason:
+                failure_reason = grounding_failure
+        if relevance_passed is False:
+            passed = False
+            if not failure_reason:
+                failure_reason = relevance_failure
+
+        return FitzGovCaseResult(
+            case=case,
+            passed=passed,
+            response=response,
+            actual_mode=actual_mode,
+            failure_reason=failure_reason,
+            mode_correct=mode_correct,
+            grounding_passed=grounding_passed,
+            relevance_passed=relevance_passed,
+            grounding_failure=grounding_failure,
+            relevance_failure=relevance_failure,
+            llm_validations=llm_validations,
+        )
 
     def evaluate_all(
         self,
@@ -166,8 +217,8 @@ class FitzGovEvaluator:
                 result = self.evaluate_case(case, response, mode)
                 case_results.append(result)
 
-                # Update confusion matrix for governance categories
-                if cat in GOVERNANCE_MODE_CATEGORIES and result.actual_mode:
+                # Update confusion matrix for all categories
+                if result.actual_mode:
                     confusion_matrix.add(case.expected_mode, result.actual_mode)
 
                 # Track subcategory stats
@@ -182,6 +233,20 @@ class FitzGovEvaluator:
             }
 
             num_correct = sum(1 for r in case_results if r.passed)
+
+            # Calculate quality scores for trustworthy categories
+            grounding_accuracy = None
+            relevance_accuracy = None
+            if cat in TRUSTWORTHY_CATEGORIES:
+                g_checked = sum(1 for r in case_results if r.grounding_passed is not None)
+                g_passed = sum(1 for r in case_results if r.grounding_passed is True)
+                r_checked = sum(1 for r in case_results if r.relevance_passed is not None)
+                r_passed = sum(1 for r in case_results if r.relevance_passed is True)
+                if g_checked > 0:
+                    grounding_accuracy = g_passed / g_checked
+                if r_checked > 0:
+                    relevance_accuracy = r_passed / r_checked
+
             category_results[cat] = FitzGovCategoryResult(
                 category=cat,
                 accuracy=num_correct / len(case_results) if case_results else 0.0,
@@ -189,6 +254,8 @@ class FitzGovEvaluator:
                 num_total=len(case_results),
                 case_results=case_results,
                 subcategory_accuracy=subcategory_accuracy,
+                grounding_accuracy=grounding_accuracy,
+                relevance_accuracy=relevance_accuracy,
             )
 
         # Calculate overall accuracy
@@ -224,10 +291,10 @@ class FitzGovEvaluator:
         Args:
             tier0_cases: Tier 0 (sanity) test cases.
             tier0_responses: Responses for tier 0 cases.
-            tier0_modes: Actual modes for tier 0 governance cases.
+            tier0_modes: Actual modes for tier 0 cases.
             tier1_cases: Tier 1 (core) test cases.
             tier1_responses: Responses for tier 1 cases.
-            tier1_modes: Actual modes for tier 1 governance cases.
+            tier1_modes: Actual modes for tier 1 cases.
             tier0_threshold: Required accuracy to pass tier 0 (default 0.95).
             gating_enabled: If True, skip tier 1 if tier 0 fails.
 
@@ -369,42 +436,14 @@ class FitzGovEvaluator:
             for dim in dimensions
         }
 
-    def _evaluate_governance(
-        self,
-        case: FitzGovCase,
-        response: str,
-        actual_mode: AnswerMode | None,
-    ) -> FitzGovCaseResult:
-        """Evaluate governance mode category."""
-        if actual_mode is None:
-            return FitzGovCaseResult(
-                case=case,
-                passed=False,
-                response=response,
-                actual_mode=None,
-                failure_reason="No actual_mode provided for governance category",
-            )
-
-        passed = actual_mode == case.expected_mode
-        failure_reason = None
-        if not passed:
-            failure_reason = f"Expected {case.expected_mode.value}, got {actual_mode.value}"
-
-        return FitzGovCaseResult(
-            case=case,
-            passed=passed,
-            response=response,
-            actual_mode=actual_mode,
-            failure_reason=failure_reason,
-        )
-
-    def _evaluate_grounding(self, case: FitzGovCase, response: str) -> FitzGovCaseResult:
+    def _check_grounding(
+        self, case: FitzGovCase, response: str
+    ) -> tuple[bool, str | None, list[dict[str, Any]]]:
         """
-        Evaluate grounding: response should not contain forbidden claims.
+        Check grounding: response should not contain forbidden claims.
 
-        Uses two-pass validation if LLM validation is enabled:
-        1. Regex pass: Check for forbidden patterns
-        2. LLM pass: Validate flagged matches to reduce false positives
+        Returns:
+            Tuple of (passed, failure_reason, llm_validations).
         """
         eval_config = case.evaluation_config
         use_regex = eval_config.get("use_regex", False)
@@ -455,10 +494,10 @@ class FitzGovEvaluator:
                     })
 
         if not found_violations:
-            return FitzGovCaseResult(case=case, passed=True, response=response)
+            return True, None, []
 
         # Pass 2: LLM validation (if enabled)
-        llm_validations = []
+        llm_validations: list[dict[str, Any]] = []
         if self._validator and self._validator.is_available():
             confirmed_violations = []
             for violation in found_violations:
@@ -484,36 +523,27 @@ class FitzGovEvaluator:
                     )
 
             if not confirmed_violations:
-                return FitzGovCaseResult(
-                    case=case,
-                    passed=True,
-                    response=response,
-                    llm_validations=llm_validations,
-                )
+                return True, None, llm_validations
 
             violations_list = [v["matched_text"] for v in confirmed_violations]
-            return FitzGovCaseResult(
-                case=case,
-                passed=False,
-                response=response,
-                failure_reason=f"HALLUCINATION: {violations_list}",
-                llm_validations=llm_validations,
+            return (
+                False,
+                f"HALLUCINATION: {violations_list}",
+                llm_validations,
             )
 
         # No LLM: trust regex results
         violations_list = [v["matched_text"] for v in found_violations]
-        return FitzGovCaseResult(
-            case=case,
-            passed=False,
-            response=response,
-            failure_reason=f"HALLUCINATION: {violations_list}",
-        )
+        return False, f"HALLUCINATION: {violations_list}", []
 
-    def _evaluate_relevance(self, case: FitzGovCase, response: str) -> FitzGovCaseResult:
+    def _check_relevance(
+        self, case: FitzGovCase, response: str
+    ) -> tuple[bool, str | None, list[dict[str, Any]]]:
         """
-        Evaluate relevance: response should contain required elements and not forbidden.
+        Check relevance: response should contain required elements and not forbidden ones.
 
-        Uses two-pass validation if LLM validation is enabled.
+        Returns:
+            Tuple of (passed, failure_reason, llm_validations).
         """
         eval_config = case.evaluation_config
         use_regex = eval_config.get("use_regex", False)
@@ -539,11 +569,10 @@ class FitzGovEvaluator:
                     matched_required += 1
 
         if matched_required < min_required:
-            return FitzGovCaseResult(
-                case=case,
-                passed=False,
-                response=response,
-                failure_reason=f"Missing required elements: need {min_required}, found {matched_required}",
+            return (
+                False,
+                f"Missing required elements: need {min_required}, found {matched_required}",
+                [],
             )
 
         # Check forbidden elements
@@ -571,10 +600,10 @@ class FitzGovEvaluator:
                     })
 
         if not found_forbidden:
-            return FitzGovCaseResult(case=case, passed=True, response=response)
+            return True, None, []
 
         # Pass 2: LLM validation for forbidden elements
-        llm_validations = []
+        llm_validations: list[dict[str, Any]] = []
         if self._validator and self._validator.is_available():
             confirmed_forbidden = []
             for violation in found_forbidden:
@@ -595,30 +624,18 @@ class FitzGovEvaluator:
                     confirmed_forbidden.append(violation)
 
             if not confirmed_forbidden:
-                return FitzGovCaseResult(
-                    case=case,
-                    passed=True,
-                    response=response,
-                    llm_validations=llm_validations,
-                )
+                return True, None, llm_validations
 
             forbidden_list = [v["matched_text"] for v in confirmed_forbidden]
-            return FitzGovCaseResult(
-                case=case,
-                passed=False,
-                response=response,
-                failure_reason=f"FALSE_CONFIDENCE: {forbidden_list}",
-                llm_validations=llm_validations,
+            return (
+                False,
+                f"FALSE_CONFIDENCE: {forbidden_list}",
+                llm_validations,
             )
 
         # No LLM: trust regex results
         forbidden_list = [v["matched_text"] for v in found_forbidden]
-        return FitzGovCaseResult(
-            case=case,
-            passed=False,
-            response=response,
-            failure_reason=f"FALSE_CONFIDENCE: {forbidden_list}",
-        )
+        return False, f"FALSE_CONFIDENCE: {forbidden_list}", []
 
     def _check_allowed_phrases(
         self,

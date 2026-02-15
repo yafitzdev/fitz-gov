@@ -44,13 +44,13 @@ class TestLoadTier:
         assert len(cases) == 2920
 
     def test_load_tier0_categories(self, data_dir):
-        """All 6 categories present in tier0."""
+        """All 4 categories present in tier0."""
         cases = load_tier(Tier.SANITY, data_dir=data_dir)
         categories = {c.category for c in cases}
         assert categories == set(FitzGovCategory)
 
     def test_load_tier1_categories(self, data_dir):
-        """All 6 categories present in tier1."""
+        """All 4 categories present in tier1."""
         cases = load_tier(Tier.CORE, data_dir=data_dir)
         categories = {c.category for c in cases}
         assert categories == set(FitzGovCategory)
@@ -150,10 +150,10 @@ class TestInfoFunctions:
         assert info[Tier.CORE.value]["total_cases"] == 2920
 
     def test_get_category_info(self, data_dir):
-        """Returns info for all 6 categories."""
+        """Returns info for all 4 categories."""
         info = get_category_info(data_dir=data_dir)
 
-        assert len(info) == 6
+        assert len(info) == 4
         for cat in FitzGovCategory:
             assert cat.value in info, f"Missing category: {cat.value}"
             assert info[cat.value]["case_count"] > 0

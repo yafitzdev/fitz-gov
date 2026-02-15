@@ -80,17 +80,22 @@ class TestCheckQuality:
         issues = check_quality(case)
         assert any("too many" in issue.lower() for issue in issues)
 
-    def test_check_quality_grounding_no_forbidden(self):
-        """Grounding case without forbidden_claims flagged."""
-        case = make_valid_case(category="grounding")
-        # Make sure forbidden_claims is missing or empty
+    def test_check_quality_grounding_subcategory_no_forbidden(self):
+        """Grounding subcategory case without forbidden_claims flagged."""
+        case = make_valid_case(
+            category="trustworthy_hedged",
+            subcategory="grounding_numerical_hallucination",
+        )
         case.pop("forbidden_claims", None)
         issues = check_quality(case)
         assert any("forbidden_claims" in issue for issue in issues)
 
-    def test_check_quality_relevance_no_required(self):
-        """Relevance case without required_elements flagged."""
-        case = make_valid_case(category="relevance")
+    def test_check_quality_relevance_subcategory_no_required(self):
+        """Relevance subcategory case without required_elements flagged."""
+        case = make_valid_case(
+            category="trustworthy_hedged",
+            subcategory="relevance_partial_answer",
+        )
         case.pop("required_elements", None)
         issues = check_quality(case)
         assert any("required_elements" in issue for issue in issues)

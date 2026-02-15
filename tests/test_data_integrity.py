@@ -18,8 +18,6 @@ TIER1_DIR = DATA_DIR / "tier1_core"
 VALID_CATEGORIES = {
     "abstention",
     "dispute",
-    "grounding",
-    "relevance",
     "trustworthy_direct",
     "trustworthy_hedged",
 }
@@ -97,9 +95,9 @@ class TestDataFileParsing:
     """Tests that data files parse correctly."""
 
     def test_all_tier0_files_parse(self):
-        """All 6 tier0 JSON files load without error."""
+        """All 4 tier0 JSON files load without error."""
         tier0_files = list(TIER0_DIR.glob("*.json"))
-        assert len(tier0_files) == 6, f"Expected 6 tier0 files, found {len(tier0_files)}"
+        assert len(tier0_files) == 4, f"Expected 4 tier0 files, found {len(tier0_files)}"
         for json_file in tier0_files:
             with open(json_file, encoding="utf-8") as f:
                 data = json.load(f)
@@ -107,9 +105,9 @@ class TestDataFileParsing:
             assert len(data["cases"]) > 0, f"{json_file.name} has empty cases array"
 
     def test_all_tier1_files_parse(self):
-        """All 6 tier1 JSON files load without error."""
+        """All 4 tier1 JSON files load without error."""
         tier1_files = list(TIER1_DIR.glob("*.json"))
-        assert len(tier1_files) == 6, f"Expected 6 tier1 files, found {len(tier1_files)}"
+        assert len(tier1_files) == 4, f"Expected 4 tier1 files, found {len(tier1_files)}"
         for json_file in tier1_files:
             with open(json_file, encoding="utf-8") as f:
                 data = json.load(f)
@@ -232,25 +230,27 @@ class TestFieldValues:
 class TestCategorySpecificFields:
     """Tests for category-specific required fields."""
 
-    def test_grounding_have_forbidden_claims(self):
-        """All grounding cases have non-empty forbidden_claims."""
+    def test_trustworthy_cases_with_grounding_subcategory_have_forbidden_claims(self):
+        """Cases with grounding_ subcategory prefix have non-empty forbidden_claims."""
         missing = []
         for case in ALL_CASES:
-            if case.get("category") == "grounding" or case.get("_category_file") == "grounding":
+            subcat = case.get("subcategory", "")
+            if subcat.startswith("grounding_"):
                 fc = case.get("forbidden_claims", [])
                 if not fc:
                     missing.append(f"Case {case.get('id', 'UNKNOWN')}: empty forbidden_claims")
-        assert missing == [], f"Grounding cases missing forbidden_claims:\n" + "\n".join(missing)
+        assert missing == [], f"Grounding subcategory cases missing forbidden_claims:\n" + "\n".join(missing)
 
-    def test_relevance_have_required_elements(self):
-        """All relevance cases have non-empty required_elements."""
+    def test_trustworthy_cases_with_relevance_subcategory_have_required_elements(self):
+        """Cases with relevance_ subcategory prefix have non-empty required_elements."""
         missing = []
         for case in ALL_CASES:
-            if case.get("category") == "relevance" or case.get("_category_file") == "relevance":
+            subcat = case.get("subcategory", "")
+            if subcat.startswith("relevance_"):
                 re_list = case.get("required_elements", [])
                 if not re_list:
                     missing.append(f"Case {case.get('id', 'UNKNOWN')}: empty required_elements")
-        assert missing == [], f"Relevance cases missing required_elements:\n" + "\n".join(missing)
+        assert missing == [], f"Relevance subcategory cases missing required_elements:\n" + "\n".join(missing)
 
 
 class TestContextConsistency:

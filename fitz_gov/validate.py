@@ -174,16 +174,16 @@ def check_quality(case: dict) -> list[str]:
             elif src["authority"] not in valid_authorities:
                 issues.append(f"context_sources[{i}] invalid authority: {src['authority']}")
 
-    # Category-specific checks
-    category = case.get("category", "")
+    # Category-specific checks: trustworthy cases with quality subcategories
+    subcategory = case.get("subcategory", "")
 
-    if category == "grounding":
+    if subcategory.startswith("grounding_"):
         if not case.get("forbidden_claims"):
-            issues.append("Grounding case missing forbidden_claims")
+            issues.append("Grounding subcategory case missing forbidden_claims")
 
-    if category == "relevance":
+    if subcategory.startswith("relevance_"):
         if not case.get("required_elements"):
-            issues.append("Relevance case missing required_elements")
+            issues.append("Relevance subcategory case missing required_elements")
 
     return issues
 

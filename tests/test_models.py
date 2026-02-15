@@ -31,18 +31,16 @@ class TestEnums:
         assert len(AnswerMode) == 3
 
     def test_category_values(self):
-        """All 6 FitzGovCategory values exist."""
+        """All 4 FitzGovCategory values exist."""
         expected = {
             "abstention",
             "dispute",
             "trustworthy_hedged",
             "trustworthy_direct",
-            "grounding",
-            "relevance",
         }
         actual = {cat.value for cat in FitzGovCategory}
         assert actual == expected
-        assert len(FitzGovCategory) == 6
+        assert len(FitzGovCategory) == 4
 
 
 # ---------------------------------------------------------------------------
@@ -287,7 +285,7 @@ class TestFitzGovResult:
 
         assert "fitz-gov Results" in text
         assert "abstention" in text
-        assert "Governance Mode Categories" in text
+        assert "By Category" in text
 
 
 # ---------------------------------------------------------------------------

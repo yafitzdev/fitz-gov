@@ -3,7 +3,7 @@
 
 import pytest
 
-from fitz_gov.evaluator import FitzGovEvaluator, GOVERNANCE_MODE_CATEGORIES
+from fitz_gov.evaluator import FitzGovEvaluator, TRUSTWORTHY_CATEGORIES
 from fitz_gov.models import (
     AnswerMode,
     FitzGovCase,
@@ -55,11 +55,11 @@ def make_governance_case(category, expected_mode, **kwargs):
 
 
 def make_grounding_case(**kwargs):
-    """Create a grounding test case with sensible defaults."""
+    """Create a trustworthy_hedged case with grounding checks (forbidden claims)."""
     defaults = {
         "id": "test_ground_001",
-        "category": FitzGovCategory.GROUNDING,
-        "subcategory": "numerical_hallucination",
+        "category": FitzGovCategory.TRUSTWORTHY_HEDGED,
+        "subcategory": "grounding_numerical_hallucination",
         "query": "What was the budget?",
         "contexts": ["The project had 47 services."],
         "expected_mode": AnswerMode.TRUSTWORTHY,
@@ -68,7 +68,7 @@ def make_grounding_case(**kwargs):
         "difficulty": "medium",
         "forbidden_claims": ["budget (was|is) \\$?\\d"],
         "evaluation_config": {
-            "mode": "answer_quality",
+            "mode": "governance",
             "use_regex": True,
             "case_insensitive": True,
             "allowed_phrases": [],
@@ -79,11 +79,11 @@ def make_grounding_case(**kwargs):
 
 
 def make_relevance_case(**kwargs):
-    """Create a relevance test case with sensible defaults."""
+    """Create a trustworthy_hedged case with relevance checks (required elements)."""
     defaults = {
         "id": "test_rel_001",
-        "category": FitzGovCategory.RELEVANCE,
-        "subcategory": "partial_answer",
+        "category": FitzGovCategory.TRUSTWORTHY_HEDGED,
+        "subcategory": "relevance_partial_answer",
         "query": "What are the results AND timeline?",
         "contexts": ["Success rate was 85%."],
         "expected_mode": AnswerMode.TRUSTWORTHY,
@@ -92,7 +92,7 @@ def make_relevance_case(**kwargs):
         "difficulty": "medium",
         "required_elements": ["timeline", "not mentioned"],
         "evaluation_config": {
-            "mode": "answer_quality",
+            "mode": "governance",
             "use_regex": False,
             "case_insensitive": True,
             "min_required": 1,
@@ -170,37 +170,57 @@ class TestGovernanceMode:
 
 
 class TestGroundingEvaluation:
-    """Tests for _evaluate_grounding (forbidden claims / hallucination detection)."""
+    """Tests for grounding checks (forbidden claims / hallucination detection).
+
+    Since grounding is now a cross-cutting quality check on trustworthy categories,
+    all tests must pass actual_mode=AnswerMode.TRUSTWORTHY so the mode check passes
+    first, allowing the quality check to run.
+    """
 
     def test_grounding_no_forbidden_match(self, evaluator):
         """Response without any forbidden pattern match should pass."""
         case = make_grounding_case()
-        result = evaluator.evaluate_case(case, "The project deployed 47 services.")
+        result = evaluator.evaluate_case(
+            case, "The project deployed 47 services.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is True
+        assert result.mode_correct is True
+        assert result.grounding_passed is True
 
     def test_grounding_forbidden_match(self, evaluator):
         """Response containing a forbidden regex match should fail."""
         case = make_grounding_case()
-        result = evaluator.evaluate_case(case, "The budget was $5 million.")
+        result = evaluator.evaluate_case(
+            case, "The budget was $5 million.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is False
+        assert result.mode_correct is True
+        assert result.grounding_passed is False
         assert "HALLUCINATION" in result.failure_reason
+
+    def test_grounding_wrong_mode_skips_quality(self, evaluator):
+        """Wrong mode should fail without running quality checks."""
+        case = make_grounding_case()
+        result = evaluator.evaluate_case(
+            case, "The budget was $5 million.", AnswerMode.ABSTAIN
+        )
+        assert result.passed is False
+        assert result.mode_correct is False
+        assert result.grounding_passed is None  # not checked
 
     def test_grounding_allowed_phrase_override(self, evaluator):
         """A forbidden match inside an allowed phrase should still pass."""
         case = make_grounding_case(
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": True,
                 "case_insensitive": True,
-                # allowed_phrases is a regex that matches the *response*
                 "allowed_phrases": ["budget (was|is) not specified"],
             },
         )
-        # The forbidden claim "budget (was|is) \$?\d" matches, but the response
-        # also matches the allowed phrase pattern "budget (was|is) not specified",
-        # so _check_allowed_phrases returns True and the violation is cleared.
         result = evaluator.evaluate_case(
-            case, "The budget is not specified in the documents."
+            case, "The budget is not specified in the documents.",
+            AnswerMode.TRUSTWORTHY,
         )
         assert result.passed is True
 
@@ -208,18 +228,17 @@ class TestGroundingEvaluation:
         """Allowed phrase elsewhere must NOT clear an unrelated forbidden match."""
         case = make_grounding_case(
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": True,
                 "case_insensitive": True,
                 "allowed_phrases": ["budget (was|is) not specified"],
             },
         )
-        # Response contains BOTH a real hallucination AND the allowed phrase,
-        # but in separate sentences. The hallucination should still be caught.
         result = evaluator.evaluate_case(
             case,
             "The budget was $5 million for the project. "
             "The timeline budget is not specified in the documents.",
+            AnswerMode.TRUSTWORTHY,
         )
         assert result.passed is False
         assert "HALLUCINATION" in result.failure_reason
@@ -229,15 +248,15 @@ class TestGroundingEvaluation:
         case = make_grounding_case(
             forbidden_claims=[r"budget (was|is) \$?\d"],
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": True,
                 "case_insensitive": True,
-                # The allowed phrase is a superset of the forbidden pattern
                 "allowed_phrases": [r"budget (was|is) \$?\d.*per the original estimate"],
             },
         )
         result = evaluator.evaluate_case(
-            case, "The budget was $5 per the original estimate."
+            case, "The budget was $5 per the original estimate.",
+            AnswerMode.TRUSTWORTHY,
         )
         assert result.passed is True
 
@@ -245,13 +264,15 @@ class TestGroundingEvaluation:
         """Case-insensitive matching should catch uppercase variants."""
         case = make_grounding_case(
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": True,
                 "case_insensitive": True,
                 "allowed_phrases": [],
             },
         )
-        result = evaluator.evaluate_case(case, "The BUDGET WAS $9 allocated.")
+        result = evaluator.evaluate_case(
+            case, "The BUDGET WAS $9 allocated.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is False
 
     def test_grounding_multiple_patterns(self, evaluator):
@@ -259,14 +280,15 @@ class TestGroundingEvaluation:
         case = make_grounding_case(
             forbidden_claims=["pattern_alpha", "pattern_beta"],
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": False,
                 "case_insensitive": True,
                 "allowed_phrases": [],
             },
         )
-        # Only pattern_beta is present, but that's enough to fail
-        result = evaluator.evaluate_case(case, "This has pattern_beta in it.")
+        result = evaluator.evaluate_case(
+            case, "This has pattern_beta in it.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is False
         assert "HALLUCINATION" in result.failure_reason
 
@@ -275,14 +297,15 @@ class TestGroundingEvaluation:
         case = make_grounding_case(
             forbidden_claims=["budget[invalid"],  # broken regex
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": True,
                 "case_insensitive": True,
                 "allowed_phrases": [],
             },
         )
-        # The invalid regex triggers re.error, then substring fallback kicks in
-        result = evaluator.evaluate_case(case, "The budget[invalid is mentioned.")
+        result = evaluator.evaluate_case(
+            case, "The budget[invalid is mentioned.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is False
         assert "HALLUCINATION" in result.failure_reason
 
@@ -293,36 +316,59 @@ class TestGroundingEvaluation:
 
 
 class TestRelevanceEvaluation:
-    """Tests for relevance evaluation via evaluate_case (content quality checks)."""
+    """Tests for relevance checks (required elements) on trustworthy cases.
+
+    Since relevance is now a cross-cutting quality check on trustworthy categories,
+    all tests must pass actual_mode=AnswerMode.TRUSTWORTHY so the mode check passes
+    first, allowing the quality check to run.
+    """
 
     def test_relevance_required_present(self, evaluator):
         """Response that contains a required element should pass."""
         case = make_relevance_case()
         result = evaluator.evaluate_case(
-            case, "The timeline was not mentioned in the source."
+            case, "The timeline was not mentioned in the source.",
+            AnswerMode.TRUSTWORTHY,
         )
         assert result.passed is True
+        assert result.mode_correct is True
+        assert result.relevance_passed is True
 
     def test_relevance_required_missing(self, evaluator):
         """Response missing all required elements should fail."""
         case = make_relevance_case()
-        result = evaluator.evaluate_case(case, "The success rate was 85%.")
+        result = evaluator.evaluate_case(
+            case, "The success rate was 85%.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is False
+        assert result.mode_correct is True
+        assert result.relevance_passed is False
         assert "Missing required elements" in result.failure_reason
+
+    def test_relevance_wrong_mode_skips_quality(self, evaluator):
+        """Wrong mode should fail without running quality checks."""
+        case = make_relevance_case()
+        result = evaluator.evaluate_case(
+            case, "The success rate was 85%.", AnswerMode.ABSTAIN
+        )
+        assert result.passed is False
+        assert result.mode_correct is False
+        assert result.relevance_passed is None  # not checked
 
     def test_relevance_min_required_1(self, evaluator):
         """Only 1 of N required elements needed when min_required=1 (default)."""
         case = make_relevance_case(
             required_elements=["alpha", "beta", "gamma"],
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": False,
                 "case_insensitive": True,
                 "min_required": 1,
             },
         )
-        # Only "beta" present
-        result = evaluator.evaluate_case(case, "We found beta results.")
+        result = evaluator.evaluate_case(
+            case, "We found beta results.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is True
 
     def test_relevance_min_required_2(self, evaluator):
@@ -330,19 +376,19 @@ class TestRelevanceEvaluation:
         case = make_relevance_case(
             required_elements=["alpha", "beta", "gamma"],
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": False,
                 "case_insensitive": True,
                 "min_required": 2,
             },
         )
-        # Only 1 of 3 present -> fail
-        result_one = evaluator.evaluate_case(case, "Found alpha here.")
+        result_one = evaluator.evaluate_case(
+            case, "Found alpha here.", AnswerMode.TRUSTWORTHY
+        )
         assert result_one.passed is False
 
-        # 2 of 3 present -> pass
         result_two = evaluator.evaluate_case(
-            case, "Found alpha and beta here."
+            case, "Found alpha and beta here.", AnswerMode.TRUSTWORTHY
         )
         assert result_two.passed is True
 
@@ -352,14 +398,15 @@ class TestRelevanceEvaluation:
             required_elements=["success"],
             forbidden_elements=["guaranteed"],
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": False,
                 "case_insensitive": True,
                 "min_required": 1,
             },
         )
         result = evaluator.evaluate_case(
-            case, "The success is guaranteed by design."
+            case, "The success is guaranteed by design.",
+            AnswerMode.TRUSTWORTHY,
         )
         assert result.passed is False
         assert "FALSE_CONFIDENCE" in result.failure_reason
@@ -369,13 +416,15 @@ class TestRelevanceEvaluation:
         case = make_relevance_case(
             required_elements=["timeline"],
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": False,
                 "case_insensitive": True,
                 "min_required": 1,
             },
         )
-        result = evaluator.evaluate_case(case, "The TIMELINE was not given.")
+        result = evaluator.evaluate_case(
+            case, "The TIMELINE was not given.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is True
 
 
@@ -645,21 +694,23 @@ class TestEdgeCases:
         result = evaluator.evaluate_case(gov_case, "", AnswerMode.TRUSTWORTHY)
         assert result.passed is False
 
-        # Grounding: empty response has no forbidden matches -> pass
+        # Grounding: empty response with correct mode has no forbidden matches -> pass
         ground_case = make_grounding_case()
-        result = evaluator.evaluate_case(ground_case, "")
+        result = evaluator.evaluate_case(ground_case, "", AnswerMode.TRUSTWORTHY)
         assert result.passed is True
 
     def test_empty_forbidden_claims(self, evaluator):
-        """Grounding case with empty forbidden_claims list should pass."""
+        """Trustworthy case with empty forbidden_claims list should pass."""
         case = make_grounding_case(
             forbidden_claims=[],
             evaluation_config={
-                "mode": "answer_quality",
+                "mode": "governance",
                 "use_regex": True,
                 "case_insensitive": True,
                 "allowed_phrases": [],
             },
         )
-        result = evaluator.evaluate_case(case, "Anything at all is fine here.")
+        result = evaluator.evaluate_case(
+            case, "Anything at all is fine here.", AnswerMode.TRUSTWORTHY
+        )
         assert result.passed is True

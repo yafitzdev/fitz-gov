@@ -6,18 +6,19 @@ A benchmark for evaluating RAG system governance - knowing when to abstain,
 dispute, or answer trustworthily based on available evidence.
 
 Example:
-    from fitz_gov import FitzGovEvaluator, load_cases, FitzGovCategory
+    from fitz_gov import FitzGovEvaluator, load_cases, FitzGovCategory, AnswerMode
 
     # Load test cases
-    cases = load_cases([FitzGovCategory.GROUNDING])
+    cases = load_cases([FitzGovCategory.TRUSTWORTHY_HEDGED])
 
-    # Create evaluator with LLM validation
-    evaluator = FitzGovEvaluator(llm_validation=True)
+    # Create evaluator
+    evaluator = FitzGovEvaluator()
 
     # Evaluate responses
     for case in cases:
         response = my_rag_system.query(case.query, case.contexts)
-        result = evaluator.evaluate_case(case, response)
+        mode = my_rag_system.classify_mode(response)
+        result = evaluator.evaluate_case(case, response, mode)
         print(f"{case.id}: {'PASS' if result.passed else 'FAIL'}")
 
 Tiered Evaluation Example:
@@ -36,7 +37,7 @@ Tiered Evaluation Example:
     print(result)
 """
 
-__version__ = "4.0.0"
+__version__ = "5.0.0"
 
 from .evaluator import FitzGovEvaluator
 from .loader import (

@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fitz-gov"
-version = "4.1.0"
+version = "5.0.0"
 description = "fitz-gov: Comprehensive RAG Governance Benchmark"
 readme = "README.md"
 license = "MIT"
