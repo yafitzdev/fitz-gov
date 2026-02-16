@@ -1642,7 +1642,7 @@
       "id": "t1_confident_hard_040",
       "difficulty": "hard",
       "subcategory": "technical_documented",
-      "query": "How what role does the second user have?",
+      "query": "What role does the second user have?",
       "contexts": [
         "Team Members Response:\n\n```json\n{\n  \"teamId\": \"team_abc\",\n  \"members\": [\n    {\n      \"userId\": \"u001\",\n      \"name\": \"Alice Smith\",\n      \"role\": \"admin\",\n      \"joinedAt\": \"2023-01-15\"\n    },\n    {\n      \"userId\": \"u002\",\n      \"name\": \"Bob Johnson\",\n      \"role\": \"developer\",\n      \"joinedAt\": \"2023-03-20\"\n    },\n    {\n      \"userId\": \"u003\",\n      \"name\": \"Carol White\",\n      \"role\": \"viewer\",\n      \"joinedAt\": \"2024-01-10\"\n    }\n  ]\n}\n```"
       ],
@@ -5688,7 +5688,7 @@
       "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "hard",
-      "query": "Is percentage of software projects fail effective?",
+      "query": "What percentage of software projects fail?",
       "contexts": [
         "Standish Group CHAOS Report (2020): The Standish Group's analysis of 50,000 software projects found that only 31% of projects were successful (delivered on time, on budget, with satisfactory results), 52% were challenged (late, over budget, or with fewer features), and 19% failed (cancelled or delivered and never used). The success rate has improved from 16% in 1994 but remains low. Agile projects had a 42% success rate compared to 13% for waterfall projects.",
         "IEEE Software Study by Eveleens and Verhoef (2023, peer-reviewed): A critical reanalysis of the Standish Group's methodology found that the CHAOS Report's failure statistics are unreliable. The authors identified several methodological flaws: the sampling method is not described, success criteria are subjective and have changed over time, the baseline estimates against which 'on time' and 'on budget' are measured are undefined, and the data has never been independently validated. Using standardized project management metrics from PMI's Pulse of the Profession, the actual project failure rate (cancelled or abandoned) is approximately 9-12%, while 30-40% of projects experience significant scope, schedule, or budget deviations.",
@@ -6439,7 +6439,7 @@
       "category": "trustworthy_direct",
       "subcategory": "different_framing",
       "difficulty": "medium",
-      "query": "Is is the purpose of a load balancer in web architecture effective?",
+      "query": "What is the purpose of a load balancer in web architecture?",
       "contexts": [
         "A load balancer operates at Layer 4 (transport) or Layer 7 (application) of the OSI model to distribute incoming client requests across a pool of backend servers. It employs algorithms such as round-robin, least connections, weighted response time, or consistent hashing to determine request routing. Health checks (TCP, HTTP, or custom probes) continuously monitor backend availability, automatically removing unhealthy instances from the pool. This architecture enables horizontal scaling, eliminates single points of failure, and facilitates rolling deployments by draining connections from servers being updated.",
         "A load balancer sits between users and your servers, spreading traffic evenly so no single server gets overwhelmed. If one server crashes, the load balancer stops sending traffic to it and redirects users to the remaining healthy servers, so nobody notices the outage. It also lets you add more servers during busy periods and remove them when traffic drops. When you need to update your software, the load balancer can gradually shift traffic away from servers being updated, ensuring users always see a working application.",
@@ -8024,7 +8024,7 @@
       "category": "trustworthy_direct",
       "subcategory": "contradiction_resolved",
       "difficulty": "medium",
-      "query": "How what interest rate does First National Bank offer on its savings accounts?",
+      "query": "What interest rate does First National Bank offer on its savings accounts?",
       "contexts": [
         "First National Bank Product Sheet (January 2024): 'Our High-Yield Savings Account offers a competitive 4.75% APY on all balances. No minimum balance required. Interest is compounded daily and credited monthly. This rate is among the highest available from a full-service bank.'",
         "First National Bank Rate Update (December 2024): 'Effective January 1, 2025, the High-Yield Savings Account APY has been adjusted to 3.20%, reflecting changes in the federal funds rate. Existing customers will see the updated rate applied automatically. Balances over $100,000 now earn a tiered rate of 3.40% APY.'",
@@ -8486,7 +8486,7 @@
       "id": "t1_confident_hard_912",
       "difficulty": "hard",
       "subcategory": "cross_source_agreement",
-      "query": "Is is the normal resting heart rate range for adults effective?",
+      "query": "What is the normal resting heart rate range for adults?",
       "contexts": [
         "The American College of Cardiology defines a normal resting heart rate for adults as between 60 and 100 beats per minute, measured while sitting quietly for at least 5 minutes. Well-trained athletes may have resting rates as low as 40 bpm.",
         "Mayo Clinic's patient reference states that a normal resting heart rate for adults ranges from 60 to 100 beats per minute. A lower resting heart rate generally implies more efficient heart function and better cardiovascular fitness.",

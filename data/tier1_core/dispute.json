@@ -3763,7 +3763,7 @@
       "category": "dispute",
       "difficulty": "hard",
       "subcategory": "implicit_contradiction",
-      "query": "Is caused the Northfield bridge collapse in 2024 effective?",
+      "query": "What caused the Northfield bridge collapse in 2024?",
       "contexts": [
         "National Transportation Safety Board Preliminary Report — Northfield Bridge Collapse (August 2024): NTSB investigators determined that the primary cause of the Northfield Highway 9 bridge collapse on June 14, 2024, was fatigue cracking in the lower chord of truss member L9-U10, originating from a fabrication defect introduced during the 1987 rehabilitation. Metallurgical analysis revealed incomplete fusion in a critical groove weld, creating a 4.2mm flaw that propagated under cyclic loading over 37 years. The investigation found no evidence that the bridge was overloaded at the time of collapse. The defect would have been detectable through ultrasonic inspection, but MnDOT records showed the last hands-on inspection occurred in 2016.",
         "Minnesota Department of Transportation Internal Review (September 2024): MnDOT's engineering review concluded that the collapse resulted from unanticipated overloading caused by the concurrent passage of two permitted overweight vehicles (combined gross weight 187 tons) while carrying normal traffic at 94% of design lane loading. The permit office had issued both overweight permits without checking for temporal overlap, and combined loading exceeded rated capacity by approximately 22%. Finite element analysis showed truss member L9-U10 experienced stresses 31% above factored resistance. The review recommended immediate reform of the overweight vehicle permitting system."
@@ -6394,7 +6394,7 @@
       "category": "dispute",
       "subcategory": "converted_contradiction",
       "difficulty": "hard",
-      "query": "Why what was Meridian Corp's total revenue for fiscal year 2024?",
+      "query": "What was Meridian Corp's total revenue for fiscal year 2024?",
       "contexts": [
         "Meridian Corp 10-K Annual Report (filed March 2025, SEC audited): Total revenue for fiscal year ending December 31, 2024 was $5,023,456,000. This figure was audited by Deloitte & Touche LLP in accordance with PCAOB standards. The audit opinion was unqualified. Revenue recognition followed ASC 606, with performance obligations satisfied at a point in time for product sales and over time for service contracts. The company restated Q2 revenue by $12M due to a contract modification that should have been treated as a separate performance obligation.",
         "Meridian Corp Preliminary Earnings Press Release (January 2025, unaudited): Meridian Corporation announces preliminary fiscal year 2024 revenue of approximately $5.2 billion, exceeding analyst consensus of $5.1 billion. CEO Janet Morrison stated: 'Our strong performance reflects the momentum in our cloud services division.' Note: These figures are preliminary and unaudited. Final audited results may differ. Certain revenue recognition timing adjustments and year-end contract reviews are still being finalized."
@@ -8901,7 +8901,7 @@
       "id": "t1_dispute_hard_650",
       "difficulty": "hard",
       "subcategory": "numerical_conflict",
-      "query": "Why what was the peak unemployment rate during the 2008 financial crisis in the United States?",
+      "query": "What was the peak unemployment rate during the 2008 financial crisis in the United States?",
       "contexts": [
         "The Bureau of Labor Statistics (BLS) official U-3 unemployment rate reached a peak of 10.0% in October 2009, representing 15.4 million unemployed Americans who were actively seeking work.",
         "The BLS's broader U-6 unemployment measure, which includes discouraged workers who stopped looking for jobs and those working part-time for economic reasons, peaked at 17.1% in late 2009 and remained above 15% through most of 2010.",
@@ -15660,7 +15660,7 @@
       "id": "t1_dispute_medium_736",
       "difficulty": "medium",
       "subcategory": "interpretation_conflict",
-      "query": "How what do rising cryptocurrency adoption rates indicate?",
+      "query": "What do rising cryptocurrency adoption rates indicate?",
       "contexts": [
         "Crypto advocates interpret rising adoption as validation of decentralized finance and growing distrust in traditional banking institutions.",
         "Financial regulators interpret the same adoption data as evidence of speculative mania and growing systemic risk that requires immediate regulatory intervention."
@@ -15832,7 +15832,7 @@
       "id": "t1_dispute_medium_742",
       "difficulty": "medium",
       "subcategory": "competing_theories",
-      "query": "Why what drives long-term stock market returns?",
+      "query": "What drives long-term stock market returns?",
       "contexts": [
         "The Efficient Market Hypothesis holds that stock prices always reflect all available information and long-term returns are driven by fundamental economic growth.",
         "Behavioral finance theory argues that markets are driven by investor psychology, herd behavior, and cognitive biases that create persistent mispricings.",

@@ -425,7 +425,7 @@
       "id": "t1_abstain_hard_016",
       "difficulty": "hard",
       "subcategory": "temporal_mismatch",
-      "query": "How what were the specific policy recommendations in the 2024 CBO climate report?",
+      "query": "What were the specific policy recommendations in the 2024 CBO climate report?",
       "contexts": [
         "The CBO publishes annual budget outlooks since 1975. The 2023 report projected $1.4 trillion deficits.",
         "CBO analyses cover healthcare, defense, Social Security, and environmental spending.",
@@ -542,7 +542,7 @@
       "id": "t1_abstain_hard_020",
       "difficulty": "hard",
       "subcategory": "missing_data",
-      "query": "Why what are the ingredients, nutritional information, AND allergens for this product?",
+      "query": "What are the ingredients, nutritional information, AND allergens for this product?",
       "contexts": [
         "This product contains wheat flour, sugar, vegetable oil, salt, and natural flavors.",
         "Manufactured in a facility that also processes peanuts and tree nuts.",
@@ -855,7 +855,7 @@
       "id": "t1_abstain_hard_031",
       "difficulty": "hard",
       "subcategory": "temporal_mismatch",
-      "query": "How what were the specific technical failures in the Boeing 737 MAX MCAS system?",
+      "query": "What were the specific technical failures in the Boeing 737 MAX MCAS system?",
       "contexts": [
         "The 737 MAX was grounded March 2019 to December 2020 after two crashes killing 346 people.",
         "Congressional investigations found Boeing prioritized cost over safety. FAA delegated certification to Boeing.",
@@ -1109,7 +1109,7 @@
       "category": "abstention",
       "subcategory": "wrong_entity",
       "difficulty": "hard",
-      "query": "Why what are the structural specifications of the Millau Viaduct in France?",
+      "query": "What are the structural specifications of the Millau Viaduct in France?",
       "contexts": [
         "The Akashi Kaikyo Bridge, spanning the Seto Inland Sea between Kobe and Awaji Island in Japan, holds the record for the longest central span of any suspension bridge at 1,991 meters (6,532 ft). Completed in 1998, the bridge has a total length of 3,911 meters and rises 298.3 meters above sea level at its highest point. The two main cables each contain 36,830 strands of wire, with a total cable length of approximately 300,000 km. Construction required approximately 181,000 tonnes of steel and 1.42 million cubic meters of concrete. The bridge was designed to withstand earthquakes up to magnitude 8.5 and wind speeds of 286 km/h.",
         "Engineering analysis of the Tsing Ma Bridge in Hong Kong, published in the Journal of Bridge Engineering (Vol. 29, No. 3), documents the structure's dual-deck design accommodating both highway traffic on the upper deck and rail traffic on the enclosed lower deck. The main span measures 1,377 meters, making it the longest span for a bridge carrying both road and rail traffic. The bridge's aerodynamic performance was validated through extensive wind tunnel testing at the Danish Maritime Institute, simulating typhoon conditions exceeding 340 km/h. Notable structural features include the orthotropic steel deck panels and the 36-meter-wide cross-section that provides exceptional torsional rigidity."
@@ -2146,7 +2146,7 @@
       "category": "abstention",
       "subcategory": "topic_adjacent",
       "difficulty": "hard",
-      "query": "Is are the withdrawal penalties for early 401(k) distributions before age 59.5 effective?",
+      "query": "What are the withdrawal penalties for early 401(k) distributions before age 59.5?",
       "contexts": [
         "401(k) Contribution Limits and Employer Match — IRS Publication 525, 2025 Tax Year. The elective deferral limit for 401(k) plans in 2025 is $23,500 ($31,000 for participants age 50 or older, reflecting the $7,500 catch-up contribution). The total annual addition limit (employee + employer contributions) is $70,000 ($77,500 with catch-up). Employer matching contributions are not counted toward the employee's elective deferral limit but are counted toward the Section 415(c) annual addition limit. Safe harbor 401(k) plans must provide either a basic match (100% of first 3% + 50% of next 2%) or an enhanced match (100% of first 4%) to avoid ADP/ACP nondiscrimination testing. Highly compensated employees (HCE threshold: $155,000 in 2025) are subject to additional contribution limits if the plan fails nondiscrimination testing. Roth 401(k) contributions are made with after-tax dollars and do not reduce current taxable income.",
         "401(k) Investment Options and Asset Allocation — Vanguard Participant Guide, 2025. Most 401(k) plans offer a menu of 15-25 investment options spanning multiple asset classes. Target-date funds (TDFs) automatically adjust asset allocation based on the participant's expected retirement year, shifting from growth-oriented (80-90% equity) to conservative (30-40% equity) as the target date approaches. The Vanguard Target Retirement 2050 Fund currently allocates 88% to equities (56% U.S., 32% international) and 12% to bonds. Index funds typically carry expense ratios of 0.03-0.10%, compared to 0.50-1.25% for actively managed options. Self-directed brokerage windows (available in 40% of large plans) provide access to individual stocks, ETFs, and mutual funds outside the core menu. Participants should review asset allocation at least annually and consider factors including risk tolerance, time horizon, and other retirement savings (IRA, pension, HSA)."
@@ -2525,7 +2525,7 @@
       "category": "abstention",
       "subcategory": "wrong_domain",
       "difficulty": "hard",
-      "query": "Why what are the eviction procedures for commercial tenants in California?",
+      "query": "What are the eviction procedures for commercial tenants in California?",
       "contexts": [
         "California Residential Eviction Law (AB 1482 Tenant Protection Act): Under California's residential tenant protections, landlords must provide just cause for eviction of tenants who have occupied the unit for 12 months or more. Just cause includes at-fault reasons such as nonpayment of rent, breach of lease terms, and nuisance, as well as no-fault reasons including owner move-in, substantial renovation, and withdrawal from the rental market. Notice requirements vary: 3-day notice for nonpayment, 3-day notice to cure or quit for lease violations, and 60-day notice for no-fault terminations. Relocation assistance equal to one month's rent is required for no-fault evictions. Local jurisdictions may impose additional protections.",
         "California Landlord-Tenant Relations: California has among the strongest tenant protection laws in the United States. The state's rent control provisions cap annual increases at 5% plus local CPI or 10%, whichever is lower, for qualifying properties. The COVID-era protections added additional layers including rental assistance programs and extended notice periods. Courts generally interpret ambiguous lease provisions in favor of tenants under California law. Legal aid organizations report that tenant rights awareness has increased significantly since the pandemic, with hotline call volumes up 60% compared to pre-2020 levels. Several cities have implemented right-to-counsel programs for tenants facing eviction proceedings. Property management companies have increasingly invested in compliance training to ensure staff understand the detailed procedural requirements that differ significantly across property types."
@@ -2974,7 +2974,7 @@
       "category": "abstention",
       "subcategory": "missing_data",
       "difficulty": "hard",
-      "query": "How what were the patient-reported outcomes for quality of life in the post-surgical cohort?",
+      "query": "What were the patient-reported outcomes for quality of life in the post-surgical cohort?",
       "contexts": [
         "Post-Surgical Outcomes Study — Clinical Endpoints: In our retrospective analysis of 342 patients undergoing laparoscopic sleeve gastrectomy, clinical outcomes at 12 months showed mean excess weight loss of 65.3% (SD 14.2), BMI reduction from 44.7 to 31.2 kg/m², and resolution of type 2 diabetes in 78% of diabetic patients. Hypertension resolved in 62% of patients and improved in an additional 21%. Surgical complications included anastomotic leak (1.5%), bleeding requiring transfusion (2.3%), and stricture (3.2%). 30-day readmission rate was 4.7%. Mortality was 0.3% (1 patient) due to pulmonary embolism. Complication rates were comparable to published multi-center benchmarks for high-volume bariatric surgery centers. The study was approved by the institutional review board and all patients provided informed consent for data inclusion in the outcomes registry.",
         "Bariatric Surgery Research Design: Comprehensive bariatric surgery outcomes assessment should include both clinical endpoints (weight loss, comorbidity resolution, complications) and patient-reported outcomes (PROs) using validated instruments such as the BAROS, SF-36, or IWQOL-Lite. PROs capture dimensions of health-related quality of life that clinical metrics miss, including physical functioning, emotional well-being, social interactions, and body image satisfaction. Our institution collects PRO data separately from clinical outcomes using a dedicated patient survey platform. The growing emphasis on value-based healthcare has increased the importance of PRO data in evaluating surgical interventions, as payers and regulators increasingly require evidence of meaningful patient benefit beyond traditional clinical endpoints to support coverage and reimbursement decisions."
@@ -3948,7 +3948,7 @@
       "id": "t1_abstain_medium_007",
       "difficulty": "medium",
       "subcategory": "temporal_mismatch",
-      "query": "How what was the unemployment rate in 2024?",
+      "query": "What was the unemployment rate in 2024?",
       "contexts": [
         "The unemployment rate reached 14.7% in April 2020 during the COVID-19 pandemic.",
         "By December 2021, unemployment had fallen to 3.9% as the economy recovered."
@@ -4975,7 +4975,7 @@
       "category": "abstention",
       "difficulty": "hard",
       "subcategory": "code_abstention",
-      "query": "How what columns and constraints are defined in the orders table schema?",
+      "query": "What columns and constraints are defined in the orders table schema?",
       "contexts": [
         "Payment Gateway Integration (API Reference v2.4): The payment processing module handles transaction routing and settlement. Key endpoints:\n\nPOST /api/v2/payments/charge\nBody: { amount: number, currency: string, payment_method_id: string, idempotency_key: string }\nResponse: { transaction_id: string, status: 'pending'|'completed'|'failed', created_at: string }\n\nPOST /api/v2/payments/refund\nBody: { transaction_id: string, amount?: number, reason: string }\nResponse: { refund_id: string, status: 'processing'|'completed', estimated_completion: string }\n\nWebhook events are sent for status transitions. Configure webhook URLs in the dashboard under Settings > Integrations. All amounts are in the smallest currency unit (cents for USD).",
         "Notification Service Architecture (Design Doc): The notification service dispatches messages across channels (email, SMS, push). It reads from a Kafka topic 'notification-events' and routes based on user preferences stored in Redis. Message templates are stored in PostgreSQL in the templates table with columns: id (UUID), channel (enum), subject (text), body_template (text), created_at (timestamptz). The service supports rate limiting per user (max 10 notifications/hour) and deduplication via a 24-hour sliding window on message hash."
@@ -5443,7 +5443,7 @@
       "category": "abstention",
       "subcategory": "off_topic_contradiction",
       "difficulty": "hard",
-      "query": "Why what are the structural engineering requirements for earthquake-resistant building foundations?",
+      "query": "What are the structural engineering requirements for earthquake-resistant building foundations?",
       "contexts": [
         "Building Insulation Standards Debate (Energy Efficiency Council, 2024): Updated building codes require minimum R-38 insulation in attic spaces and R-20 in walls for climate zones 5-8. Spray foam manufacturers argue closed-cell foam (R-6.5 per inch) outperforms fiberglass batts (R-3.7 per inch) and provides additional structural rigidity. Fiberglass industry representatives counter that spray foam's higher cost ($1.50-$3.50/sqft vs $0.64-$1.19/sqft) is not justified by marginal performance gains and cite potential off-gassing concerns. Some builders report moisture issues with improper spray foam installation.",
         "LEED vs Passive House Certification Debate (Sustainable Architecture Forum): LEED and Passive House represent competing approaches to green building certification. LEED uses a point-based system across categories (energy, water, materials, indoor air quality) and allows trade-offs between categories. Passive House demands specific thermal performance metrics: maximum heating demand of 15 kWh/m2/year and air tightness below 0.6 ACH50. Critics of LEED argue it allows energy-intensive buildings to achieve certification through non-energy credits. Passive House advocates contend their standard delivers measurably lower energy consumption.",
@@ -7912,7 +7912,7 @@
       "id": "t1_abstain_hard_1011",
       "difficulty": "hard",
       "subcategory": "multi_source_gap",
-      "query": "Is is the exact orbital period of the newly discovered exoplanet Kepler-442b effective?",
+      "query": "What is the exact orbital period of the newly discovered exoplanet Kepler-442b?",
       "contexts": [
         "Kepler-442b is a super-Earth exoplanet located in the habitable zone of its host star, approximately 1,206 light-years from Earth. It has an Earth Similarity Index of 0.84, making it one of the most Earth-like planets discovered.",
         "The Kepler space telescope identified over 2,600 confirmed exoplanets during its primary and extended missions. Its transit photometry method detects planets by measuring periodic dips in stellar brightness.",
@@ -8549,7 +8549,7 @@
       "id": "t1_abstain_hard_1029",
       "difficulty": "hard",
       "subcategory": "wrong_entity",
-      "query": "Is is the maximum depth of Lake Superior effective?",
+      "query": "What is the maximum depth of Lake Superior?",
       "contexts": [
         "Lake Michigan has a maximum depth of 923 feet (281 meters) and a surface area of 22,404 square miles. It is the only Great Lake located entirely within the United States.",
         "Lake Huron reaches a maximum depth of 750 feet (229 meters) and contains Manitoulin Island, the largest freshwater island in the world at 1,068 square miles."
@@ -8632,7 +8632,7 @@
       "id": "t1_abstain_hard_1032",
       "difficulty": "hard",
       "subcategory": "wrong_entity",
-      "query": "Why what specific allergens are present in the menu items at Olive Garden's 2025 seasonal menu?",
+      "query": "What specific allergens are present in the menu items at Olive Garden's 2025 seasonal menu?",
       "contexts": [
         "Olive Garden is an American casual dining restaurant chain specializing in Italian-American cuisine.",
         "The chain operates over 900 locations across the United States and Canada.",
@@ -14320,7 +14320,7 @@
       "id": "t1_abstain_hard_1105",
       "difficulty": "hard",
       "subcategory": "wrong_entity",
-      "query": "Is fertilizer schedule does Monsanto recommend for Roundup Ready soybeans in clay soil effective?",
+      "query": "What fertilizer schedule does Monsanto recommend for Roundup Ready soybeans in clay soil?",
       "contexts": [
         "Monsanto's Roundup Ready corn varieties have been engineered to tolerate glyphosate herbicide applications during the growing season.",
         "Recommended planting density for Roundup Ready corn is 32,000 to 36,000 seeds per acre depending on soil moisture availability."
@@ -14416,7 +14416,7 @@
       "id": "t1_abstain_hard_1109",
       "difficulty": "hard",
       "subcategory": "missing_data",
-      "query": "Is is the error rate of GPT-4 on the MMLU benchmark broken down by subject effective?",
+      "query": "What is the error rate of GPT-4 on the MMLU benchmark broken down by subject?",
       "contexts": [
         "GPT-4 achieved an overall accuracy of 86.4% on the MMLU benchmark, surpassing previous models.",
         "The MMLU benchmark covers 57 subjects spanning STEM, humanities, social sciences, and other domains."
@@ -14986,7 +14986,7 @@
       "id": "t1_abstain_hard_1132",
       "difficulty": "hard",
       "subcategory": "wrong_specificity",
-      "query": "Why what are the exact zoning setback requirements for residential construction in unincorporated Maricopa County?",
+      "query": "What are the exact zoning setback requirements for residential construction in unincorporated Maricopa County?",
       "contexts": [
         "Zoning regulations control land use by designating areas for residential, commercial, industrial, and agricultural purposes.",
         "Setback requirements define the minimum distance a building must be placed from property lines, streets, and other structures.",
@@ -15686,7 +15686,7 @@
       "id": "t1_abstain_hard_1160",
       "difficulty": "hard",
       "subcategory": "wrong_jurisdiction",
-      "query": "How what food safety certifications are required for exporting processed meat to Japan?",
+      "query": "What food safety certifications are required for exporting processed meat to Japan?",
       "contexts": [
         "The USDA's Food Safety and Inspection Service inspects all domestic meat processing facilities for compliance with federal standards.",
         "European food safety regulations require HACCP implementation and traceability systems for all meat products.",
@@ -16165,7 +16165,7 @@
       "id": "t1_abstain_hard_1179",
       "difficulty": "hard",
       "subcategory": "wrong_product",
-      "query": "How what warranty coverage does John Deere provide for its X700 series residential riding mowers?",
+      "query": "What warranty coverage does John Deere provide for its X700 series residential riding mowers?",
       "contexts": [
         "John Deere's commercial zero-turn mowers in the Z900 series offer cutting widths from 48 to 72 inches for professional landscapers.",
         "John Deere provides a 2-year or 2,000-hour bumper-to-bumper warranty on its compact utility tractor line.",

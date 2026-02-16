@@ -575,7 +575,7 @@
       "id": "t1_qualify_hard_014",
       "difficulty": "hard",
       "subcategory": "mixed_evidence",
-      "query": "Is will our product succeed in the Japanese market?",
+      "query": "Will our product succeed in the Japanese market?",
       "contexts": [
         "Our product is successful in the US and UK markets.",
         "Japan has the third-largest economy and high smartphone penetration.",
@@ -7419,7 +7419,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "Is interest rate does the bank offer on its high-yield savings account effective?",
+      "query": "What interest rate does the bank offer on its high-yield savings account?",
       "contexts": [
         "Summit Bank — High-Yield Savings Account Product Sheet: Summit Bank's High-Yield Savings Account offers an Annual Percentage Yield (APY) of 4.85% on balances of $500 or more. Balances below $500 earn the standard savings rate of 0.50% APY. Interest is compounded daily and credited monthly. There is no monthly maintenance fee and no maximum balance limit. The account includes unlimited transfers to linked Summit checking accounts and up to six external transfers per statement cycle.",
         "Summit Bank — Deposit Rate Comparison (Undated): Summit Bank offers competitive rates across its deposit products. High-Yield Savings: 4.85% APY. Money Market: 4.50% APY on balances above $10,000. 12-Month CD: 5.10% APY. 24-Month CD: 4.75% APY. Rates are variable for savings and money market accounts and may change at any time without notice. CD rates are fixed for the term. All rates are subject to the terms and conditions of the applicable account agreement."
@@ -7497,7 +7497,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "Why what are the current parking rates at the downtown garage?",
+      "query": "What are the current parking rates at the downtown garage?",
       "contexts": [
         "City of Maplewood — Downtown Parking Garage Rate Schedule (Effective April 2023): Hourly rate: $3.00 per hour. Daily maximum: $18.00. Monthly pass: $150.00 per month with automatic renewal. Early bird rate (enter before 8:00 AM, exit before 6:00 PM): $12.00. Weekend and holiday flat rate: $8.00. Electric vehicle charging spaces: additional $2.00 per hour for Level 2 charging. Motorcycle parking: $1.50 per hour, $9.00 daily max. Validation available from participating downtown merchants for up to 2 hours free. All rates include applicable city parking tax.",
         "Maplewood Downtown Business Association — Parking Guide for Visitors (2023): The downtown parking garage at 100 Main Street offers affordable parking with rates starting at $3.00 per hour. Monthly passes are available for commuters. The garage is open 24 hours, 7 days a week, with attendants on duty from 6:00 AM to midnight. The garage has 1,200 spaces across 6 levels, including 48 EV charging stations. Overflow parking is available at the Convention Center lot on weekdays for $10.00 per day."
@@ -9756,7 +9756,7 @@
       "category": "trustworthy_hedged",
       "subcategory": "stale_source",
       "difficulty": "hard",
-      "query": "Is is the current unemployment rate in the European Union effective?",
+      "query": "What is the current unemployment rate in the European Union?",
       "contexts": [
         "Eurostat Monthly Unemployment Statistics (October 2024): The seasonally adjusted unemployment rate in the EU was 5.9% in September 2024, stable compared to August 2024 and down from 6.1% in September 2023. The euro area unemployment rate was 6.3%. Youth unemployment (under 25) was 14.1% in the EU and 14.4% in the euro area. The lowest unemployment rates were observed in Czechia (2.7%), Poland (2.9%), and Malta (3.0%). The highest rates were in Spain (11.2%), Greece (9.8%), and Sweden (8.3%).",
         "European Central Bank Economic Bulletin (December 2024): The ECB notes that EU labor markets showed signs of cooling in Q3 2024. Job vacancy rates declined for the fifth consecutive quarter, and employment growth slowed to 0.2% quarter-on-quarter (from 0.4% in Q1). However, the headline unemployment rate remained low by historical standards. The ECB projects unemployment to rise modestly to 6.1-6.3% in 2025 as the economy adjusts to tighter monetary policy. The Bulletin notes: 'The labor market has been more resilient than expected, but leading indicators suggest gradual softening.'",
@@ -22188,7 +22188,7 @@
       "id": "t1_grounding_hard_001",
       "difficulty": "hard",
       "subcategory": "grounding_numerical_hallucination",
-      "query": "How what was the conversion rate improvement?",
+      "query": "What was the conversion rate improvement?",
       "contexts": [
         "After implementing the new checkout flow, the e-commerce team saw meaningful improvements in conversion metrics. The A/B test ran for six weeks with statistically significant results. Customer feedback was overwhelmingly positive."
       ],
@@ -23590,7 +23590,7 @@
       "id": "t1_grounding_hard_033",
       "difficulty": "hard",
       "subcategory": "grounding_numerical_hallucination",
-      "query": "Is how many participants were enrolled in the Lyon Mediterranean diet intervention study?",
+      "query": "How many participants were enrolled in the Lyon Mediterranean diet intervention study?",
       "contexts": [
         "The Lyon Mediterranean Diet Intervention Study measured adherence using a validated 14-point dietary questionnaire administered quarterly. Results published in the European Journal of Nutrition showed that participants following a strict Mediterranean diet pattern experienced a 31% reduction in cardiovascular event risk (HR 0.69, 95% CI 0.54-0.88, p=0.003). Daily olive oil consumption averaged 42 grams, with omega-3 fatty acid intake reaching 2.8 grams per day. Adherent participants consumed an average of 7.2 servings of fruits and vegetables daily compared to 3.4 in the control group. HDL cholesterol levels increased by 8.2 mg/dL in the intervention arm, while LDL decreased by 14.7 mg/dL. The intervention period lasted 4.5 years with follow-up assessments every 6 months at 12 clinical sites across southern France."
       ],
@@ -23884,7 +23884,7 @@
       "id": "t1_grounding_hard_040",
       "difficulty": "hard",
       "subcategory": "grounding_numerical_hallucination",
-      "query": "Is is the average fuel cost per mile for TransNational Logistics fleet operations effective?",
+      "query": "What is the average fuel cost per mile for TransNational Logistics fleet operations?",
       "contexts": [
         "TransNational Logistics operates a fleet of 4,217 Class 8 trucks and 1,890 trailers, covering 8.3 million miles monthly across 48 states and 3 Canadian provinces. The fleet achieved an average fuel efficiency of 7.2 miles per gallon in 2024, a 6% improvement over 2023 due to aerodynamic retrofits and driver training programs. On-time delivery performance reached 96.8%, with an average transit time of 2.4 days for shipments. The company's 14 distribution centers process 127,000 shipments daily with a damage rate of only 0.03%. Driver retention improved to 88% annually, well above the industry average of 72%. The fleet includes 312 electric vehicles operating on dedicated urban routes averaging 142 miles per day. GPS telematics data from all vehicles is processed through the company's proprietary dispatch optimization platform."
       ],
@@ -24053,7 +24053,7 @@
       "id": "t1_grounding_hard_044",
       "difficulty": "hard",
       "subcategory": "grounding_numerical_hallucination",
-      "query": "How what dosage of vancomycin was administered to patients in the RESIST-4 antibiotic trial?",
+      "query": "What dosage of vancomycin was administered to patients in the RESIST-4 antibiotic trial?",
       "contexts": [
         "The RESIST-4 clinical trial evaluated a novel beta-lactamase inhibitor combination against multidrug-resistant gram-negative infections. In vitro susceptibility testing showed 89% efficacy against carbapenem-resistant Enterobacteriaceae isolates, with minimum inhibitory concentrations ranging from 0.25 to 4 micrograms per milliliter. The study was conducted at 37 hospital sites across the United States and European Union between June 2022 and December 2024. Clinical cure rates at the test-of-cure visit (day 28) were 74.2% in the treatment arm versus 58.6% for the comparator (difference 15.6%, 95% CI 7.8-23.4%, p<0.001). Nephrotoxicity occurred in 8.4% of participants, and Clostridioides difficile infection developed in 3.2%. The trial's independent Data Monitoring Committee reviewed unblinded safety data at three interim analyses without recommending early termination."
       ],
@@ -24311,7 +24311,7 @@
       "id": "t1_grounding_hard_049",
       "difficulty": "hard",
       "subcategory": "grounding_attribution_hallucination",
-      "query": "Is statistical analysis did the NBA publish regarding Premier League defensive ratings effective?",
+      "query": "What statistical analysis did the NBA publish regarding Premier League defensive ratings?",
       "contexts": [
         "The Premier League's 2023-24 Season Review reported that Arsenal's defensive efficiency rating of 104.2 ranked third, behind Manchester City (107.8) and Liverpool (105.1). Arsenal conceded only 29 goals in 38 matches, with a clean sheet percentage of 47.4%. The report credited Arsenal's high press, which forced turnovers in the opponent's half 14.3 times per match, and goalkeeper David Raya's save percentage of 78.6%, the highest among regular starters.",
         "The NBA's official 2023-24 statistical report highlighted that the Boston Celtics posted the league's best defensive rating of 110.6 points allowed per 100 possessions. The NBA analytics department raised methodological questions about comparing defensive metrics across eras, noting that rule changes on take fouls and transition play artificially inflated scoring by an estimated 2.4 points per game league-wide. The report covered data from 1,230 regular season games."
@@ -24949,7 +24949,7 @@
       "id": "t1_grounding_hard_061",
       "difficulty": "hard",
       "subcategory": "grounding_attribution_hallucination",
-      "query": "Why what patient recovery timeline did Johns Hopkins researchers report for robotic-assisted knee replacements?",
+      "query": "What patient recovery timeline did Johns Hopkins researchers report for robotic-assisted knee replacements?",
       "contexts": [
         "A 2024 WHO global surgical outcomes report analyzed data from 147 countries, finding that robotic-assisted surgery reduced average post-operative hospital stays from 5.2 to 2.8 days across all procedure types studied (n=2.4 million surgeries). Surgical site infection rates dropped from 3.7% to 1.9% when robotic systems were used. The WHO report covered general surgery, cardiac procedures, and orthopedic operations collectively but did not break out knee replacement data separately. WHO noted that 73% of robotic surgical systems were concentrated in just 12 high-income countries.",
         "Johns Hopkins Hospital published a 2024 quality report covering their 42,000 annual surgical cases, documenting that their operating room utilization rate averaged 82.4% and first-case on-time start rate was 91.3%. Johns Hopkins raised methodological concerns about comparing hospital quality metrics when case mix indices varied significantly, noting that their CMI of 2.47 was among the highest in the nation, reflecting more complex patient populations. The Johns Hopkins report covered operational metrics and did not publish procedure-specific recovery timelines."
@@ -25201,7 +25201,7 @@
       "id": "t1_grounding_hard_067",
       "difficulty": "hard",
       "subcategory": "grounding_temporal_confusion",
-      "query": "Is were U.S. organic food sales figures for fiscal year 2019 effective?",
+      "query": "What were U.S. organic food sales figures for fiscal year 2019?",
       "contexts": [
         "The Organic Trade Association's 2024 Industry Survey reported that organic food sales in the United States grew 12.8% in 2023 to reach $67.6 billion, making it the strongest growth year since 2016. Produce remained the top category at $23.4 billion (up 14.1%), followed by dairy and eggs at $10.2 billion (up 9.7%) and beverages at $8.9 billion (up 15.3%). The survey collected data from 287 retailers and 142 manufacturers representing approximately 80% of the organic market by revenue.",
         "Historical context from the same OTA survey series showed that the U.S. organic market reached $50.1 billion in 2019, but this figure combined food and non-food categories. A separate 2020 OTA retrospective noted that the association revised its methodology in 2021 to separately track food and non-food organics, making direct comparisons to pre-2021 figures problematic. The survey explicitly stated that disaggregated food-only figures for years before 2021 were not available in the current reporting framework."
@@ -31412,7 +31412,7 @@
       "id": "t1_grounding_hard_205",
       "difficulty": "hard",
       "subcategory": "grounding_technical_hallucination",
-      "query": "How what throughput does the Nexus data pipeline achieve?",
+      "query": "What throughput does the Nexus data pipeline achieve?",
       "contexts": [
         "The Nexus data pipeline is a real-time streaming architecture designed for large-scale event processing in financial services environments. The pipeline ingests market data feeds, applies enrichment rules, and distributes processed events to multiple downstream consumers including risk engines and compliance monitoring systems. It is built on a distributed commit log architecture with configurable partitioning and replication. The pipeline supports schema evolution through a central registry and includes built-in data quality checks that flag anomalies before downstream delivery. Operational dashboards provide visibility into lag, throughput, and error rates across all pipeline stages. The system was designed to handle peak trading volumes with minimal latency degradation."
       ],
@@ -35767,7 +35767,7 @@
       "id": "t1_relevance_medium_002",
       "difficulty": "medium",
       "subcategory": "relevance_wrong_entity_focus",
-      "query": "Is is the battery life of the ProTab X1 effective?",
+      "query": "What is the battery life of the ProTab X1?",
       "contexts": [
         "The ProTab X2 features a stunning 12.9-inch OLED display with 120Hz refresh rate. It offers an impressive 14-hour battery life with fast charging support. The device weighs just 450 grams and is available in silver, space gray, and gold."
       ],
@@ -36524,7 +36524,7 @@
       "id": "t1_relevance_hard_011",
       "difficulty": "hard",
       "subcategory": "relevance_granularity_mismatch",
-      "query": "Why what are the HOURLY rates for the premium consulting service?",
+      "query": "What are the HOURLY rates for the premium consulting service?",
       "contexts": [
         "Our consulting services are available in three tiers: Basic, Professional, and Premium. Premium tier includes dedicated consultants, 24/7 availability, and priority response times. Pricing is based on engagement scope and typically ranges from $50,000 to $500,000 per project. Contact our sales team for a custom quote."
       ],
@@ -36969,7 +36969,7 @@
       "id": "t1_relevance_hard_022",
       "difficulty": "hard",
       "subcategory": "relevance_prerequisite_missing",
-      "query": "Is is the shipping cost effective?",
+      "query": "What is the shipping cost?",
       "contexts": [
         "Shipping rates vary by destination and package weight. Domestic standard shipping: $5.99 for orders under 2 lbs, $9.99 for 2-5 lbs, $14.99 for 5-10 lbs. Express shipping adds $10. International shipping starts at $24.99. Free shipping on domestic orders over $75."
       ],
@@ -37561,7 +37561,7 @@
       "id": "t1_relevance_hard_034",
       "difficulty": "hard",
       "subcategory": "relevance_partial_answer",
-      "query": "Why what artifacts were discovered at the Tell Brak excavation in 2023 and who funded the expedition?",
+      "query": "What artifacts were discovered at the Tell Brak excavation in 2023 and who funded the expedition?",
       "contexts": [
         "The 2023 excavation season at Tell Brak in northeastern Syria, directed by Dr. Augusta McMahon of the University of Cambridge, uncovered a remarkably preserved administrative complex dating to the Late Uruk period (approximately 3300 BCE). The team recovered 247 clay bullae with cylinder seal impressions, 34 beveled-rim bowls consistent with a ration distribution system, and a cache of 12 obsidian blades sourced to the Nemrut Dag volcanic field 400 kilometers to the northwest. Stratigraphic analysis of Trench TW-14 revealed five distinct occupation layers spanning roughly 600 years. The most significant find was a 22-centimeter alabaster figurine depicting a seated figure with inlaid lapis lazuli eyes, the first of its kind found outside of southern Mesopotamia. Radiocarbon dating of associated charcoal samples yielded calibrated dates of 3340-3210 BCE (2 sigma range)."
       ],
@@ -37908,7 +37908,7 @@
       "id": "t1_relevance_hard_043",
       "difficulty": "hard",
       "subcategory": "relevance_wrong_entity_focus",
-      "query": "Why what drug interaction findings did NovaBio Therapeutics report for their CYP3A4 inhibitor compound?",
+      "query": "What drug interaction findings did NovaBio Therapeutics report for their CYP3A4 inhibitor compound?",
       "contexts": [
         "NeuraGen Therapeutics published a comprehensive drug interaction study for their lead compound NGT-2240, a selective CYP3A4 inhibitor, in the Journal of Clinical Pharmacology in August 2024. The Phase I pharmacokinetic study in 48 healthy volunteers demonstrated that co-administration of NGT-2240 with midazolam (a sensitive CYP3A4 substrate) increased midazolam plasma AUC by 3.4-fold and Cmax by 2.1-fold. Time-dependent inhibition studies revealed an inactivation rate constant (kinact) of 0.058 min^-1 and KI of 1.8 micromolar. The clinical team led by Dr. Satoshi Yamada recommended a 50% dose reduction for all CYP3A4 substrates with narrow therapeutic indices when co-administered with NGT-2240. The study also found no significant interaction with CYP2D6, CYP2C9, or CYP1A2 substrates at therapeutic doses. NeuraGen's regulatory affairs team submitted the interaction data to the FDA as part of their NDA package for NGT-2240."
       ],
@@ -38326,7 +38326,7 @@
       "id": "t1_relevance_hard_054",
       "difficulty": "hard",
       "subcategory": "relevance_temporal_mismatch",
-      "query": "Why what are Meridian Group's current 2025 executive compensation benchmarks for the tech sector?",
+      "query": "What are Meridian Group's current 2025 executive compensation benchmarks for the tech sector?",
       "contexts": [
         "Meridian Group's 2021 Executive Compensation Benchmark Report for the technology sector analyzed total compensation packages for C-suite executives at 280 technology companies with revenues between $500 million and $10 billion. Median total CEO compensation was $8.4 million, comprising $1.1 million base salary, $1.8 million annual bonus, and $5.5 million in long-term incentive awards. CFO median total compensation was $4.2 million, and CTO median was $3.8 million. The 75th percentile for CEO total pay reached $12.6 million. The report noted that equity-based compensation represented 65% of total CEO pay packages, with restricted stock units being the most common vehicle at 78% of companies surveyed. Pay-for-performance alignment scores averaged 72 out of 100, measured by the correlation between total shareholder return and realized CEO pay over the prior three fiscal years ending December 2021."
       ],
@@ -38558,7 +38558,7 @@
       "id": "t1_relevance_hard_060",
       "difficulty": "hard",
       "subcategory": "relevance_temporal_mismatch",
-      "query": "Is is the current 2025 diagnostic accuracy of AI-assisted mammography screening effective?",
+      "query": "What is the current 2025 diagnostic accuracy of AI-assisted mammography screening?",
       "contexts": [
         "A multi-center study published in Radiology in January 2021 evaluated the diagnostic accuracy of Google Health's AI-assisted mammography system across 28,296 screening mammograms collected from January 2018 through December 2019 at three UK breast screening centers. The AI system demonstrated sensitivity of 91.3% (95% CI: 89.1-93.2%), specificity of 88.4% (87.9-88.9%), positive predictive value of 14.7%, and negative predictive value of 99.8%. The system reduced false-positive rates by 5.7% and false-negative rates by 9.4% compared to single-reader radiologist performance. Area under the ROC curve was 0.889 for the AI system versus 0.840 for individual radiologists. The study used a retrospective design with biopsy-confirmed outcomes as the reference standard. Lead author Dr. Scott McKinney noted that the AI maintained performance across breast density categories, with less than 2% variation in AUC between BI-RADS density categories A through D. All imaging data was collected on Hologic Selenia Dimensions 3D systems with C-View software, reflecting the technology available through the end of the 2019 data collection period."
       ],
@@ -38862,7 +38862,7 @@
       "id": "t1_relevance_hard_068",
       "difficulty": "hard",
       "subcategory": "relevance_tangent_drift",
-      "query": "Why what specific goods were transported along the Silk Road between Chang'an and Constantinople?",
+      "query": "What specific goods were transported along the Silk Road between Chang'an and Constantinople?",
       "contexts": [
         "Silk Road caravans departing Chang'an (modern Xi'an) typically carried bolts of silk, lacquerware, iron tools, and paper as primary trade goods, with merchants averaging 15-20 miles per day across the 4,000-mile network of routes connecting East Asia to the Mediterranean. However, the broader significance of transcontinental trade routes extends well beyond specific commodities. The development of maritime trade networks in the Indian Ocean fundamentally transformed global commerce patterns during the medieval period. Dhow sailing vessels from the Swahili Coast, Gujarat, and the Malay Peninsula created an interconnected trading zone that rivaled overland routes in volume by the 10th century. The monsoon wind system enabled predictable seasonal voyaging, with the southwest monsoon carrying ships from East Africa to India between April and September, and the northeast monsoon powering the return journey from November through February. Arab geographer al-Idrisi documented 47 major ports in this network in his 1154 Tabula Rogeriana, highlighting Aden, Calicut, Quilon, and Malacca as crucial transshipment hubs."
       ],
@@ -39091,7 +39091,7 @@
       "id": "t1_relevance_hard_074",
       "difficulty": "hard",
       "subcategory": "relevance_tangent_drift",
-      "query": "Is building materials and methods produce the $285 per square foot construction cost estimate for Type III buildings effective?",
+      "query": "What building materials and methods produce the $285 per square foot construction cost estimate for Type III buildings?",
       "contexts": [
         "A 2024 RSMeans construction cost analysis determined that Type III (non-combustible/combustible) construction averages $285 per square foot including furniture, fixtures, and equipment (FF&E) for mid-rise mixed-use projects in suburban markets. The estimate assumes wood-frame upper floors on a concrete podium with steel moment frames. However, the construction industry faces far deeper structural challenges. The Associated General Contractors of America reported that 91% of contractors struggled to fill positions in 2024, with an industry-wide labor deficit of approximately 546,000 workers. Immigration policy changes under successive administrations have significantly impacted workforce availability: H-2B visa caps of 66,000 per year cover only 12% of estimated seasonal construction labor demand. Average construction worker wages rose 8.2% in 2024 to $34.70 per hour nationally, yet still lag competing sectors like warehousing ($36.50) and manufacturing ($35.80). Pre-apprenticeship programs enrolled only 23,400 participants nationally, while the industry needs roughly 150,000 new skilled workers annually to replace retirees. The average construction worker age rose to 42.3 years, the oldest in recorded BLS data."
       ],
@@ -46487,7 +46487,7 @@
       "id": "t1_relevance_hard_206",
       "difficulty": "hard",
       "subcategory": "relevance_status_dump",
-      "query": "Is is the CURRENT error rate for the payment processing module specifically effective?",
+      "query": "What is the CURRENT error rate for the payment processing module specifically?",
       "contexts": [
         "Monthly platform health report for January 2025: API gateway uptime 99.97%, average response time 142 ms. User authentication service handled 3.2 million logins with two brief outages totaling 11 minutes. Search indexing rebuilt overnight with zero downtime. Email notification service delivered 890,000 messages with a 2.4% bounce rate. The data warehouse ETL pipeline completed all scheduled jobs within SLA. Mobile app crash rate decreased to 0.3% after the December hotfix. CDN cache hit ratio remained steady at 94.1%. Database read replicas showed no replication lag above 200 ms. Kubernetes cluster auto-scaled to 48 pods during peak traffic on January 14 without manual intervention."
       ],
@@ -46676,7 +46676,7 @@
       "id": "t1_relevance_hard_211",
       "difficulty": "hard",
       "subcategory": "relevance_symptom_only",
-      "query": "Is is CAUSING the sudden spike in employee absenteeism at this facility effective?",
+      "query": "What is CAUSING the sudden spike in employee absenteeism at this facility?",
       "contexts": [
         "Human resources data for the Lakewood manufacturing facility shows unplanned absences rose 340% over the past six weeks compared to the same period last year. The assembly line has operated below 70% staffing on 18 of the last 30 workdays. Overtime costs increased $420,000 to cover shortfalls. Second-shift workers account for 62% of all unplanned absences. Three production deadlines were missed, resulting in contractual penalty fees of $185,000. Temporary staffing agency placements filled only 40% of the requested positions. Quality defect rates rose from 1.2% to 3.8% during understaffed shifts. Employee assistance program utilization increased 55% but the facility's on-site clinic reported no unusual illness clusters."
       ],
