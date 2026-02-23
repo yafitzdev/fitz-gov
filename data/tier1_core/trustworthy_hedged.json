@@ -6806,6 +6806,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -6845,6 +6846,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -6962,6 +6964,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -7472,6 +7475,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -7511,6 +7515,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -8294,6 +8299,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -8534,6 +8540,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -8574,6 +8581,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -8614,6 +8622,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -8654,6 +8663,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -8694,6 +8704,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -8774,6 +8785,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -9331,6 +9343,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -9371,6 +9384,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -9491,6 +9505,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -9571,6 +9586,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -9611,6 +9627,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -9651,6 +9668,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -9771,6 +9789,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -9890,6 +9909,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -10009,6 +10029,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -10049,6 +10070,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -11784,6 +11806,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "evaluation_config": {
         "mode": "governance",
@@ -12405,6 +12428,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "mixed",
       "evaluation_config": {
         "mode": "governance",
@@ -13366,6 +13390,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -13886,6 +13911,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -14895,6 +14921,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -15266,6 +15293,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -16241,6 +16269,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -16428,6 +16457,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -17968,6 +17998,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -18395,6 +18426,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -18470,6 +18502,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -18809,6 +18842,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -19696,6 +19730,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -21343,6 +21378,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -23483,6 +23519,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -32168,6 +32205,7 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -35747,6 +35785,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -36073,6 +36112,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -36193,6 +36233,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -36502,6 +36543,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -36787,6 +36829,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -36908,6 +36951,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -37028,6 +37072,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -37227,6 +37272,7 @@
       "source_type": "multi_source",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "partial",
       "context_sources": [
         {
@@ -39229,6 +39275,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "indirect",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -39562,6 +39609,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -40140,6 +40188,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -41875,6 +41924,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "indirect",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -43312,6 +43362,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -43469,6 +43520,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "partial",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -46505,6 +46557,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "indirect",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -46581,6 +46634,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "indirect",
       "category": "trustworthy_hedged",
       "evaluation_config": {
@@ -47361,6 +47415,7 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "indirect",
       "context_sources": [
         {

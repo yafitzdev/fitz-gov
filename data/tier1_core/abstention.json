@@ -528,6 +528,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -641,6 +642,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "metadata": {
         "domain_converted_from": "sports",
@@ -1365,6 +1367,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -2109,6 +2112,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -2132,6 +2136,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -2206,6 +2211,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -2232,6 +2238,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -2258,6 +2265,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -2284,6 +2292,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "evaluative",
+      "detection_labels": ["aggregation", "freshness"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -3013,6 +3022,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "metadata": {
         "domain_converted_from": "technology"
@@ -3330,6 +3340,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -3804,6 +3815,7 @@
       "expected_mode": "abstain",
       "description": "Same domain (automotive) but wrong company",
       "rationale": "Ford and GM info cannot answer Tesla-specific stock questions",
+      "detection_labels": ["freshness"],
       "original_id": "abstain_medium_001",
       "domain": "finance",
       "query_type": "what",
@@ -4589,6 +4601,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -4892,6 +4905,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -6907,6 +6921,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -7499,6 +7514,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "evaluation_config": {
         "mode": "governance",
@@ -7731,6 +7747,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -7773,6 +7790,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -7858,6 +7876,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -8398,6 +8417,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -8646,6 +8666,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "metadata": {
         "domain_converted_from": "technology",
@@ -8675,6 +8696,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -8853,6 +8875,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -8936,6 +8959,7 @@
       "query_type": "how",
       "source_type": "single",
       "context_count": 3,
+      "detection_labels": ["aggregation"],
       "reasoning_type": "factual",
       "evidence_pattern": "absent",
       "category": "abstention",
@@ -9022,6 +9046,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -9645,6 +9670,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -9714,6 +9740,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -9806,6 +9833,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -9854,6 +9882,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -9882,6 +9911,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -10028,6 +10058,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "abstention",
       "evaluation_config": {
@@ -10417,6 +10448,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -10486,6 +10518,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -10509,6 +10542,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -10555,6 +10589,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation", "freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -11521,6 +11556,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -11981,6 +12017,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -12211,6 +12248,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -12257,6 +12295,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -12303,6 +12342,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -12421,6 +12461,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -12591,6 +12632,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -12733,6 +12775,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -12880,6 +12923,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -12952,6 +12996,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -13849,6 +13894,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -14017,6 +14063,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -14040,6 +14087,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation", "freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -14068,6 +14116,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -14115,6 +14164,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -14187,6 +14237,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -14212,6 +14263,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -14405,6 +14457,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -15849,6 +15902,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -16000,6 +16054,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -16464,6 +16519,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -16546,6 +16602,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -16802,6 +16859,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -16920,6 +16978,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -17366,6 +17425,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -17412,6 +17472,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -17435,6 +17496,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -17635,6 +17697,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {
@@ -17727,6 +17790,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "absent",
       "category": "abstention",
       "evaluation_config": {

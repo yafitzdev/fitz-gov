@@ -707,6 +707,7 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -2308,6 +2309,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -2463,6 +2465,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -2896,6 +2899,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -3210,6 +3214,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -3365,6 +3370,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -3459,6 +3465,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -3832,6 +3839,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -4650,6 +4658,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "medicine",
@@ -4838,6 +4847,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -4928,6 +4938,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -5079,6 +5090,7 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "metadata": {
         "domain_converted_from": "medicine",
@@ -5928,6 +5940,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -5958,6 +5971,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -6078,6 +6092,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -6248,6 +6263,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -6356,6 +6372,7 @@
       "source_type": "single",
       "context_count": 1,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -6443,6 +6460,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -6539,6 +6557,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -6571,6 +6590,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -7415,6 +7435,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -7479,6 +7500,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "evaluation_config": {
         "mode": "governance",
@@ -7684,6 +7706,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -7720,6 +7743,7 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -7804,6 +7828,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8014,6 +8039,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8170,6 +8196,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8296,6 +8323,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8332,6 +8360,7 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8374,6 +8403,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8416,6 +8446,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8458,6 +8489,7 @@
       "source_type": "multi_source",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8830,6 +8862,7 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "direct",
       "category": "dispute",
       "evaluation_config": {
@@ -8855,6 +8888,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -8945,6 +8979,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -9005,6 +9040,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -9035,6 +9071,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -9065,6 +9102,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -9252,6 +9290,7 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -9874,6 +9913,7 @@
       "source_type": "single",
       "context_count": 4,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -10747,6 +10787,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -10775,6 +10816,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -10803,6 +10845,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -10831,6 +10874,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -10859,6 +10903,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -10887,6 +10932,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -10943,6 +10989,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -11811,6 +11858,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -11839,6 +11887,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -11895,6 +11944,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -11923,6 +11973,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -11951,6 +12002,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -12343,6 +12395,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -12539,6 +12592,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -12567,6 +12621,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -12623,6 +12678,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -12651,6 +12707,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -12707,6 +12764,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "evaluative",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -12820,6 +12878,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -12970,6 +13029,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -13000,6 +13060,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -13090,6 +13151,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -15960,6 +16022,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -15989,6 +16052,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -16018,6 +16082,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -16048,6 +16113,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -16078,6 +16144,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -16138,6 +16205,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -17206,6 +17274,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -17626,6 +17695,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -17776,6 +17846,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -17806,6 +17877,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -17956,6 +18028,7 @@
       "source_type": "single",
       "context_count": 3,
       "reasoning_type": "evaluative",
+      "detection_labels": ["freshness"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -19181,6 +19254,7 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -19209,6 +19283,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -19258,6 +19333,7 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -19286,6 +19362,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -19334,6 +19411,7 @@
       "source_type": "multi_source",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
@@ -20186,6 +20264,7 @@
       "source_type": "single",
       "context_count": 2,
       "reasoning_type": "factual",
+      "detection_labels": ["aggregation"],
       "evidence_pattern": "conflicting",
       "category": "dispute",
       "evaluation_config": {
