@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 fitz-gov is a RAG governance benchmark for evaluating whether RAG systems know when to abstain, dispute, hedge, or confidently answer based on available evidence. It focuses on epistemic honesty rather than just retrieval quality or answer correctness.
 
-**Current version:** 4.0.0 with 2,488 test cases (60 tier0 + 2,428 tier1) across 6 categories
+**Current version:** 5.0.0 with 2,980 test cases (60 tier0 + 2,920 tier1) across 4 governance categories (grounding/relevance are now cross-cutting quality checks)
 
 ## Commands
 
@@ -58,17 +58,13 @@ data/
 ├── tier0_sanity/                    # 60 easy cases (sanity check, 95% threshold)
 │   ├── abstention.json              # 12 cases
 │   ├── dispute.json                 # 12 cases
-│   ├── trustworthy_hedged.json      # 10 cases
-│   ├── trustworthy_direct.json      # 10 cases
-│   ├── grounding.json               # 8 cases
-│   └── relevance.json               # 8 cases
-├── tier1_core/                      # 2,428 medium+hard cases (core benchmark)
-│   ├── abstention.json              # 625 cases
-│   ├── dispute.json                 # 625 cases
-│   ├── trustworthy_hedged.json      # 414 cases
-│   ├── trustworthy_direct.json      # 218 cases
-│   ├── grounding.json               # 271 cases
-│   └── relevance.json               # 275 cases
+│   ├── trustworthy_hedged.json      # 26 cases
+│   └── trustworthy_direct.json      # 10 cases
+├── tier1_core/                      # 2,920 medium+hard cases (core benchmark)
+│   ├── abstention.json              # 685 cases
+│   ├── dispute.json                 # 675 cases
+│   ├── trustworthy_hedged.json      # 1,160 cases
+│   └── trustworthy_direct.json      # 400 cases
 ├── corpus/
 │   ├── documents.jsonl              # Reference corpus
 │   └── manifest.json                # Corpus metadata
@@ -80,7 +76,7 @@ Each JSON file contains `cases` array with fields: `id`, `query`, `contexts`, `e
 
 ### Key Enums
 
-- `FitzGovCategory`: ABSTENTION, DISPUTE, TRUSTWORTHY_HEDGED, TRUSTWORTHY_DIRECT, GROUNDING, RELEVANCE
+- `FitzGovCategory`: ABSTENTION, DISPUTE, TRUSTWORTHY_HEDGED, TRUSTWORTHY_DIRECT
 - `AnswerMode`: ABSTAIN, DISPUTED, TRUSTWORTHY
 
 ## Code Style
