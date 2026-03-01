@@ -1,63 +1,148 @@
+
+
+<div align="center">
+
 # fitz-gov
 
-A benchmark for measuring whether RAG systems know when to answer, when to push back, and when to shut up.
+### A benchmark for measuring whether RAG systems know when to answer, when to push back, and when to shut up.
 
-## 🎯 The Problem
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![PyPI version](https://badge.fury.io/py/fitz-gov.svg)](https://pypi.org/project/fitz-gov/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-5.0.0-green.svg)](CHANGELOG.md)
+
+[The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-installation--quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov)
+
+</div>
+
+<br />
+
+---
+
+```python
+from fitz_gov import FitzGovEvaluator, load_tier, Tier
+
+tier0 = load_tier(Tier.SANITY)   # 60 sanity cases
+tier1 = load_tier(Tier.CORE)     # 2,920 real cases
+
+# plug in your RAG system
+result = evaluator.evaluate_tiered(tier0_cases, ..., tier1_cases, ...)
+print(result)
+```
+
+That's it. 2,980 test cases. One score that tells you if your RAG system actually knows what it doesn't know.
+
+---
+
+### About 🧑‍🌾
+
+Solo project by Yan Fitzner ([LinkedIn](https://www.linkedin.com/in/yan-fitzner/), [GitHub](https://github.com/yafitzdev)).
+
+Built for [fitz-ai](https://github.com/yafitzdev/fitz-ai) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases).
+
+---
+
+### The Problem
 
 Every RAG benchmark today measures the same thing: *did the system get the right answer?* BEIR measures retrieval. RAGAS measures generation quality. But none of them measure the thing that actually matters in production: **does the system know what it doesn't know?**
 
-Ask a typical RAG system "What was Acme Corp's revenue last quarter?" and give it a context passage that only mentions Acme Corp's founding date. Most systems will confidently hallucinate a revenue figure. A well-governed system would say "the provided context doesn't contain revenue information."
+Ask a typical RAG system "What was Acme Corp's revenue last quarter?" and give it context that only mentions Acme Corp's founding date. Most systems will confidently hallucinate a revenue figure. A well-governed system would say "the provided context doesn't contain revenue information."
 
-Give it two analyst reports that directly contradict each other -- one says the market is growing 12%, the other says it's shrinking 3%. Most systems will pick one and present it as fact. A well-governed system would flag the contradiction.
+Give it two analyst reports that directly contradict each other — one says the market is growing 12%, the other says it's shrinking 3%. Most systems will pick one and present it as fact. A well-governed system would flag the contradiction.
 
-This is the **governance problem**: RAG systems need to make a meta-decision about their own evidence *before* they generate an answer. Should I answer this confidently? Should I hedge? Should I flag conflicting sources? Should I refuse entirely?
+This is the **governance problem**: RAG systems need to make a meta-decision about their own evidence *before* they generate an answer. Should I answer confidently? Hedge? Flag conflicting sources? Refuse entirely?
 
 fitz-gov measures that meta-decision.
 
-## 🔀 The Three Modes
+---
+
+### The Three Modes 🔀
 
 Every query + context pair in fitz-gov maps to one of three governance modes:
 
-**TRUSTWORTHY** -- The context provides sufficient evidence to answer. The system should respond, either confidently (when evidence is clear) or with appropriate hedging (when evidence is partial or uncertain).
+**TRUSTWORTHY** ✅ — The context provides sufficient evidence. Answer confidently or with appropriate hedging.
+> *"What is the boiling point of water at sea level?"*
+> *Context: "At standard atmospheric pressure, pure water boils at 100°C."*
+> → Answer directly.
 
-> *Query: "What is the boiling point of water at sea level?"*
-> *Context: "At standard atmospheric pressure (1 atm), pure water boils at 100 degrees Celsius (212 degrees Fahrenheit)."*
-> *Correct mode: TRUSTWORTHY -- answer directly.*
+**DISPUTED** ⚠️ — The context contains conflicting information. Surface the contradiction, don't pick a side.
+> *"Is remote work more productive?"*
+> *Context A: "Stanford found remote workers were 13% more productive."*
+> *Context B: "Microsoft found remote work decreased collaboration by 25%."*
+> → Present both sides.
 
-**DISPUTED** -- The context contains conflicting information from different sources. The system should surface the contradiction rather than silently picking a side.
+**ABSTAIN** 🚫 — The context is irrelevant, insufficient, or about the wrong entity/time period. Refuse to answer.
+> *"What are the side effects of ibuprofen?"*
+> *Context: "Python was created by Guido van Rossum in 1991."*
+> → "I don't have relevant information to answer this."
 
-> *Query: "Is remote work more productive than office work?"*
-> *Context A: "Stanford research found remote workers were 13% more productive."*
-> *Context B: "Microsoft's study found remote work decreased collaboration by 25% and reduced innovation metrics."*
-> *Correct mode: DISPUTED -- present both sides, don't pick a winner.*
+---
 
-**ABSTAIN** -- The context is irrelevant, insufficient, or about the wrong entity/time period. The system should refuse to answer rather than speculate.
-
-> *Query: "What are the side effects of ibuprofen?"*
-> *Context: "Python was created by Guido van Rossum and first released in 1991."*
-> *Correct mode: ABSTAIN -- the context has nothing to do with the question.*
-
-## 🧩 What Makes This Hard
+### What Makes This Hard 🧩
 
 The easy cases are obvious. Nobody confuses a biology passage with a finance question. fitz-gov includes those as a sanity check, but the real benchmark lives in the hard cases:
 
-- **Near-miss abstention**: The context discusses the right *topic* but the wrong *entity*, wrong *time period*, or wrong *jurisdiction*. "What are Tesla's Q4 earnings?" with a context about Ford's Q4 earnings.
-- **Implicit contradiction**: Sources don't directly say opposite things, but their claims are logically incompatible. One says a company "exceeded all growth targets" while another says it "failed to meet analyst expectations."
-- **Hedged vs. confident**: The context contains a correlation study. The query asks about causation. The system should answer (TRUSTWORTHY) but hedge -- not abstain, and not state the correlation as proven causation.
-- **Methodology conflicts vs. genuine disputes**: Two studies report different numbers for the same thing. Is it because they used different methodologies (TRUSTWORTHY with caveats) or because they genuinely disagree (DISPUTED)?
+**Near-miss abstention 🎯**
+> The context discusses the right *topic* but the wrong *entity*, wrong *time period*, or wrong *jurisdiction*. "What are Tesla's Q4 earnings?" with context about Ford's Q4 earnings.
+
+**Implicit contradiction 🔇**
+> Sources don't directly say opposite things, but their claims are logically incompatible. One says a company "exceeded all growth targets" while another says it "failed to meet analyst expectations."
+
+**Hedged vs. confident 🤔**
+> The context contains a correlation study. The query asks about causation. The system should answer (TRUSTWORTHY) but hedge — not abstain, and not state correlation as proven causation.
+
+**Methodology conflicts vs. genuine disputes 📊**
+> Two studies report different numbers for the same thing. Is it because they used different methodologies (TRUSTWORTHY with caveats) or because they genuinely disagree (DISPUTED)?
 
 These boundary cases are where production RAG systems actually fail, and where fitz-gov differentiates between a good governance classifier and a great one.
 
-## 📊 What the Score Means
+---
 
-A fitz-gov score is the accuracy of your system's governance mode classification across 2,920 test cases.
+### What the Score Means 📈
 
-- **90%+**: Exceptional governance. The system almost always makes the right meta-decision.
-- **75-90%**: Strong governance. Handles most cases correctly, occasional misjudgments on boundary cases.
-- **60-75%**: Moderate governance. Gets the obvious cases right, struggles with subtlety.
-- **Below 60%**: The system is frequently making the wrong meta-decision -- answering when it should abstain, or treating contradictions as settled facts.
+A fitz-gov score is governance mode accuracy across 2,920 test cases.
 
-The score breaks down by category, so you can see exactly *where* your system fails. A system scoring 90% on abstention but 55% on dispute knows when to shut up but doesn't catch contradictions. A system scoring 40% on trustworthy_direct is being overly cautious -- refusing to answer even when the evidence is clear.
+| Score | Meaning |
+|-------|---------|
+| **90%+** | Exceptional. Almost always makes the right meta-decision. |
+| **75-90%** | Strong. Handles most cases, occasional misjudgments on boundaries. |
+| **60-75%** | Moderate. Gets obvious cases right, struggles with subtlety. |
+| **< 60%** | Frequently making the wrong meta-decision. |
+
+The score breaks down by category — so you can see exactly *where* your system fails. 90% on abstention but 55% on disputes? It knows when to shut up but doesn't catch contradictions. 40% on trustworthy_direct? It's being overly cautious, refusing to answer even when evidence is clear.
+
+<br>
+
+> [!NOTE]
+> Trustworthy cases are evaluated on three dimensions: governance mode, grounding (no hallucinated details via `forbidden_claims`), and relevance (actually addresses the question via `required_elements`). A case only passes if all three checks succeed.
+
+---
+
+### Benchmark at a Glance 🔍
+
+**2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113+ subcategories**, **17 domains**, and **10 query types**.
+
+| | |
+|---|---|
+| **Mode split** | TRUSTWORTHY 53.4% / ABSTAIN 23.5% / DISPUTED 23.1% |
+| **Difficulty** | 62.7% hard / 37.3% medium (tier1), easy (tier0 only) |
+| **Multi-source** | 264 cases (9.0%) with source metadata |
+| **Domains** | Technology, Medicine, Finance, Science, Education, Environment, Food, Law, Government, Transportation, Sports, Agriculture, History, HR/Workplace, Real Estate, Psychology, Social Media |
+| **Query types** | what, how, is, does, why, should, when, which, who, compare |
+| **Reasoning types** | Factual, Evaluative, Causal, Comparative, Temporal, Procedural |
+
+---
+
+### Four Test Categories 📋
+
+| Category | Cases | Mode | What it catches |
+|----------|------:|------|-----------------|
+| **Abstention** | 685 | ABSTAIN | System answers when it has no relevant evidence |
+| **Dispute** | 675 | DISPUTED | System ignores contradictions between sources |
+| **Trustworthy Hedged** | 1,160 | TRUSTWORTHY | System over-hedges (abstains) or under-hedges (states uncertain things as fact) |
+| **Trustworthy Direct** | 400 | TRUSTWORTHY | System refuses or hedges when evidence clearly supports a confident answer |
+
+---
 
 ### Evaluation Flow
 
@@ -79,138 +164,21 @@ flowchart TD
     M --> N[Pass only if all 3 checks succeed]
 ```
 
-## 📋 Four Test Categories
-
-The three governance modes are tested through four categories, each targeting a specific failure mode:
-
-| Category | Cases | Mode | What it catches |
-|----------|------:|------|-----------------|
-| **Abstention** | 685 | ABSTAIN | System answers when it has no relevant evidence |
-| **Dispute** | 675 | DISPUTED | System ignores contradictions between sources |
-| **Trustworthy Hedged** | 1,160 | TRUSTWORTHY | System either over-hedges (abstains) or under-hedges (states uncertain things as fact) |
-| **Trustworthy Direct** | 400 | TRUSTWORTHY | System refuses to answer or hedges when evidence clearly supports a confident answer |
-
-### Cross-Cutting Quality Checks
-
-Every trustworthy case (hedged and direct) is evaluated on three dimensions:
-
-1. **Governance mode**: Did the system correctly classify this as TRUSTWORTHY? (vs. ABSTAIN or DISPUTED)
-2. **Grounding**: Did the response avoid hallucinating details not present in the context? Checked via `forbidden_claims` regex patterns.
-3. **Relevance**: Did the response actually address the question asked? Checked via `required_elements` pattern matching.
-
-A trustworthy case only passes if *all three* checks succeed. This means the benchmark catches systems that pick the right mode but then hallucinate the answer, or discuss the topic without answering the question.
-
-## 🔍 Benchmark at a Glance
-
-**2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113+ subcategories**, **17 domains**, and **10 query types**.
-
-| | |
-|---|---|
-| **Mode split** | TRUSTWORTHY 53.4% / ABSTAIN 23.5% / DISPUTED 23.1% |
-| **Difficulty** | 62.7% hard / 37.3% medium (tier1), easy (tier0 only) |
-| **Multi-source** | 264 cases (9.0%) with source metadata |
-| **Domains** | Technology, Medicine, Finance, Science, Education, Environment, Food, Law, Government, Transportation, Sports, Agriculture, History, HR/Workplace, Real Estate, Psychology, Social Media |
-| **Query types** | what, how, is, does, why, should, when, which, who, compare |
-| **Reasoning types** | Factual, Evaluative, Causal, Comparative, Temporal, Procedural |
+---
 
 <details>
-<summary>Full distribution tables</summary>
 
-### Categories (Tier 1)
+<summary><strong>📦 Installation & Quick Start</strong></summary>
 
-| Category | Cases | Medium | Hard | Med % |
-|----------|------:|-------:|-----:|------:|
-| Abstention | 685 | 255 | 430 | 37% |
-| Dispute | 675 | 261 | 414 | 39% |
-| Trustworthy Hedged | 1,160 | 428 | 732 | 37% |
-| Trustworthy Direct | 400 | 145 | 255 | 36% |
-
-### Domain Distribution
-
-| Domain | Cases | % | Domain | Cases | % |
-|--------|------:|--:|--------|------:|--:|
-| Technology | 412 | 14.1% | Transportation | 131 | 4.5% |
-| Medicine | 309 | 10.6% | Sports | 127 | 4.3% |
-| Finance | 296 | 10.1% | Agriculture | 126 | 4.3% |
-| Science | 192 | 6.6% | History | 122 | 4.2% |
-| Government | 155 | 5.3% | HR/Workplace | 121 | 4.1% |
-| Education | 152 | 5.2% | Real Estate | 119 | 4.1% |
-| Environment | 147 | 5.0% | Psychology | 119 | 4.1% |
-| Food | 143 | 4.9% | Social Media | 113 | 3.9% |
-| Law | 136 | 4.7% | | | |
-
-### Query Type Distribution
-
-| Type | Cases | % | Type | Cases | % |
-|------|------:|--:|------|------:|--:|
-| what | 821 | 28.1% | should | 135 | 4.6% |
-| how | 694 | 23.8% | when | 121 | 4.1% |
-| is | 437 | 15.0% | which | 97 | 3.3% |
-| does | 284 | 9.7% | who | 77 | 2.6% |
-| why | 213 | 7.3% | compare | 41 | 1.4% |
-
-### Reasoning Type Distribution
-
-| Reasoning Type | Cases | % |
-|----------------|------:|--:|
-| Factual | 1,588 | 54.4% |
-| Evaluative | 596 | 20.4% |
-| Causal | 239 | 8.2% |
-| Comparative | 187 | 6.4% |
-| Temporal | 178 | 6.1% |
-| Procedural | 132 | 4.5% |
-
-### Evidence Pattern Distribution
-
-| Evidence Pattern | Cases | % |
-|------------------|------:|--:|
-| Direct | 1,039 | 35.6% |
-| Absent | 637 | 21.8% |
-| Conflicting | 587 | 20.1% |
-| Partial | 428 | 14.7% |
-| Indirect | 195 | 6.7% |
-| Mixed | 34 | 1.2% |
-
-### Context Count Distribution
-
-| Contexts per Case | Cases | % |
-|-------------------|------:|--:|
-| 1 | 923 | 31.6% |
-| 2 | 1,094 | 37.5% |
-| 3 | 785 | 26.9% |
-| 4 | 115 | 3.9% |
-| 5 | 3 | 0.1% |
-
-### Source Type Distribution
-
-| Source Type | Cases | % |
-|-------------|------:|--:|
-| Single source | 2,656 | 91.0% |
-| Multi-source | 264 | 9.0% |
-
-### Subcategories
-
-**Abstention** (23): wrong_entity, wrong_specificity, temporal_mismatch, missing_data, off_topic_contradiction, wrong_domain, wrong_jurisdiction, outdated_context, wrong_product, cross_domain_insufficient, decoy_keywords, converted_insufficient, converted_off_domain, wrong_version, implicit_only, wrong_granularity, converted_wrong_entity, multi_source_gap, cross_source_irrelevant, code_abstention, topic_adjacent, format_impossible, converted_wrong_scope
-
-**Dispute** (19): numerical_conflict, implicit_contradiction, binary_conflict, opposing_conclusions, temporal_conflict, statistical_direction_conflict, source_authority_conflict, methodology_conflict, interpretation_conflict, competing_theories, scientific_replication, cross_source_contradiction, converted_contradiction, conditional_conflict, converted_consensus_removed, converted_framing_conflict, temporal_source_conflict, contradictory_attribution, converted_version_conflict
-
-**Trustworthy Hedged** (57): evidence_quality, hedged_evidence, different_aspects, causal_uncertainty, mixed_evidence, temporal_uncertainty, version_overlap, methodology_difference, stale_source, evolving_facts, entity_ambiguity, partial_answer, scope_condition, numerical_near_miss, cross_source_partial, implicit_assumptions, adjacent_entity, cross_domain_transfer, hedged_contradiction_corroborated, different_framing, grounding_numerical_hallucination, grounding_attribution_hallucination, grounding_temporal_confusion, grounding_entity_blending, grounding_process_hallucination, grounding_quote_fabrication, grounding_statistical_inference, grounding_code_hallucination, grounding_table_inference, grounding_causal_hallucination, grounding_comparative_hallucination, grounding_geographic_hallucination, grounding_technical_hallucination, grounding_date_hallucination, grounding_location_hallucination, grounding_code_grounding, grounding_medical_hallucination, grounding_quote_extension, relevance_partial_answer, relevance_wrong_entity_focus, relevance_temporal_mismatch, relevance_tangent_drift, relevance_related_but_different, relevance_over_answering, relevance_granularity_mismatch, relevance_prerequisite_missing, relevance_scope_mismatch, relevance_format_mismatch, relevance_summarization_vs_answer, relevance_cherry_picking, relevance_false_precision, relevance_assumption_injection, relevance_symptom_only, relevance_status_dump, relevance_feature_dump, relevance_instruction_only, relevance_metric_avoidance
-
-**Trustworthy Direct** (14): technical_documented, clear_explanation, contradiction_resolved, opposing_with_consensus, different_framing, quantitative_answer, cross_source_agreement, direct_factual, multi_source_convergence, authoritative_source, near_complete_evidence, conditional_confidence, step_by_step, definitional
-
-</details>
-
-## ⚙️ Installation
+<br>
 
 ```bash
 pip install fitz-gov
 ```
 
-## 🚀 Quick Start
+#### Tiered Evaluation
 
-### Tiered Evaluation
-
-fitz-gov uses a two-tier system. Tier 0 is a 60-case sanity check (95% pass threshold) that gates Tier 1, the actual benchmark.
+fitz-gov uses a two-tier system. Tier 0 is a 60-case sanity check (95% pass threshold) that gates Tier 1.
 
 ```python
 from fitz_gov import FitzGovEvaluator, load_tier, Tier, AnswerMode
@@ -237,9 +205,9 @@ print(result)
 #   trustworthy_direct: 78.5% (314/400)   |  grounding: 92.1%, relevance: 88.7%
 ```
 
-### Standalone Usage
+#### Standalone Usage
 
-Any RAG system can be evaluated -- fitz-gov is not tied to any specific framework:
+Any RAG system can be evaluated — fitz-gov is framework-agnostic:
 
 ```python
 from fitz_gov import FitzGovEvaluator, load_cases, AnswerMode
@@ -258,7 +226,7 @@ results = evaluator.evaluate_all(cases, responses, modes)
 print(f"Governance accuracy: {results.overall_accuracy:.1%}")
 ```
 
-### Two-Pass Validation
+#### Two-Pass Validation
 
 Grounding and relevance quality checks use regex + optional LLM validation:
 
@@ -270,19 +238,27 @@ evaluator = FitzGovEvaluator(
 )
 ```
 
-## 📁 Data Format
+</details>
+
+---
+
+<details>
+
+<summary><strong>📦 Data Format</strong></summary>
+
+<br>
 
 ```
 data/
-+-- tier0_sanity/               # 60 easy cases (95% gate)
-+-- tier1_core/                 # 2,920 medium/hard cases
-|   +-- abstention.json         # 685 cases
-|   +-- dispute.json            # 675 cases
-|   +-- trustworthy_hedged.json # 1,160 cases
-|   +-- trustworthy_direct.json # 400 cases
-+-- corpus/                     # 5,043 reference documents
-+-- queries/                    # 3,800 query-to-document mappings
-+-- validation/                 # 250-case human validation sample
+├── tier0_sanity/               # 60 easy cases (95% gate)
+├── tier1_core/                 # 2,920 medium/hard cases
+│   ├── abstention.json         # 685 cases
+│   ├── dispute.json            # 675 cases
+│   ├── trustworthy_hedged.json # 1,160 cases
+│   └── trustworthy_direct.json # 400 cases
+├── corpus/                     # 5,043 reference documents
+├── queries/                    # 3,800 query-to-document mappings
+└── validation/                 # 250-case human validation sample
 ```
 
 Each case:
@@ -307,23 +283,125 @@ Each case:
 }
 ```
 
-Every case has 6 classification attributes for slicing results by domain, query type, source type, context count, reasoning type, and evidence pattern. Trustworthy cases additionally have `forbidden_claims` (grounding) and `required_elements` (relevance) for quality scoring.
+Every case has 6 classification attributes for slicing results. Trustworthy cases additionally have `forbidden_claims` (grounding) and `required_elements` (relevance) for quality scoring.
 
-## 📌 Version
+</details>
 
-Current version: **5.0.0** -- See [CHANGELOG.md](CHANGELOG.md) for release history.
+---
 
-For deeper dives into how scoring works and how test cases are categorized, see:
-- [Evaluation Guide](docs/evaluation-guide.md) -- How to interpret scores and diagnose failures
-- [Mode Decision Tree](docs/mode-decision-tree.md) -- How expected modes are assigned to test cases
+<details>
 
-## 🤝 Contributing
+<summary><strong>📦 Full Distribution Tables</strong></summary>
+
+<br>
+
+#### Categories (Tier 1)
+
+| Category | Cases | Medium | Hard | Med % |
+|----------|------:|-------:|-----:|------:|
+| Abstention | 685 | 255 | 430 | 37% |
+| Dispute | 675 | 261 | 414 | 39% |
+| Trustworthy Hedged | 1,160 | 428 | 732 | 37% |
+| Trustworthy Direct | 400 | 145 | 255 | 36% |
+
+#### Domain Distribution
+
+| Domain | Cases | % | Domain | Cases | % |
+|--------|------:|--:|--------|------:|--:|
+| Technology | 412 | 14.1% | Transportation | 131 | 4.5% |
+| Medicine | 309 | 10.6% | Sports | 127 | 4.3% |
+| Finance | 296 | 10.1% | Agriculture | 126 | 4.3% |
+| Science | 192 | 6.6% | History | 122 | 4.2% |
+| Government | 155 | 5.3% | HR/Workplace | 121 | 4.1% |
+| Education | 152 | 5.2% | Real Estate | 119 | 4.1% |
+| Environment | 147 | 5.0% | Psychology | 119 | 4.1% |
+| Food | 143 | 4.9% | Social Media | 113 | 3.9% |
+| Law | 136 | 4.7% | | | |
+
+#### Query Type Distribution
+
+| Type | Cases | % | Type | Cases | % |
+|------|------:|--:|------|------:|--:|
+| what | 821 | 28.1% | should | 135 | 4.6% |
+| how | 694 | 23.8% | when | 121 | 4.1% |
+| is | 437 | 15.0% | which | 97 | 3.3% |
+| does | 284 | 9.7% | who | 77 | 2.6% |
+| why | 213 | 7.3% | compare | 41 | 1.4% |
+
+#### Reasoning Type Distribution
+
+| Reasoning Type | Cases | % |
+|----------------|------:|--:|
+| Factual | 1,588 | 54.4% |
+| Evaluative | 596 | 20.4% |
+| Causal | 239 | 8.2% |
+| Comparative | 187 | 6.4% |
+| Temporal | 178 | 6.1% |
+| Procedural | 132 | 4.5% |
+
+#### Evidence Pattern Distribution
+
+| Evidence Pattern | Cases | % |
+|------------------|------:|--:|
+| Direct | 1,039 | 35.6% |
+| Absent | 637 | 21.8% |
+| Conflicting | 587 | 20.1% |
+| Partial | 428 | 14.7% |
+| Indirect | 195 | 6.7% |
+| Mixed | 34 | 1.2% |
+
+#### Context Count Distribution
+
+| Contexts per Case | Cases | % |
+|-------------------|------:|--:|
+| 1 | 923 | 31.6% |
+| 2 | 1,094 | 37.5% |
+| 3 | 785 | 26.9% |
+| 4 | 115 | 3.9% |
+| 5 | 3 | 0.1% |
+
+#### Source Type Distribution
+
+| Source Type | Cases | % |
+|-------------|------:|--:|
+| Single source | 2,656 | 91.0% |
+| Multi-source | 264 | 9.0% |
+
+#### Subcategories
+
+**Abstention** (23): wrong_entity, wrong_specificity, temporal_mismatch, missing_data, off_topic_contradiction, wrong_domain, wrong_jurisdiction, outdated_context, wrong_product, cross_domain_insufficient, decoy_keywords, converted_insufficient, converted_off_domain, wrong_version, implicit_only, wrong_granularity, converted_wrong_entity, multi_source_gap, cross_source_irrelevant, code_abstention, topic_adjacent, format_impossible, converted_wrong_scope
+
+**Dispute** (19): numerical_conflict, implicit_contradiction, binary_conflict, opposing_conclusions, temporal_conflict, statistical_direction_conflict, source_authority_conflict, methodology_conflict, interpretation_conflict, competing_theories, scientific_replication, cross_source_contradiction, converted_contradiction, conditional_conflict, converted_consensus_removed, converted_framing_conflict, temporal_source_conflict, contradictory_attribution, converted_version_conflict
+
+**Trustworthy Hedged** (57): evidence_quality, hedged_evidence, different_aspects, causal_uncertainty, mixed_evidence, temporal_uncertainty, version_overlap, methodology_difference, stale_source, evolving_facts, entity_ambiguity, partial_answer, scope_condition, numerical_near_miss, cross_source_partial, implicit_assumptions, adjacent_entity, cross_domain_transfer, hedged_contradiction_corroborated, different_framing, grounding_numerical_hallucination, grounding_attribution_hallucination, grounding_temporal_confusion, grounding_entity_blending, grounding_process_hallucination, grounding_quote_fabrication, grounding_statistical_inference, grounding_code_hallucination, grounding_table_inference, grounding_causal_hallucination, grounding_comparative_hallucination, grounding_geographic_hallucination, grounding_technical_hallucination, grounding_date_hallucination, grounding_location_hallucination, grounding_code_grounding, grounding_medical_hallucination, grounding_quote_extension, relevance_partial_answer, relevance_wrong_entity_focus, relevance_temporal_mismatch, relevance_tangent_drift, relevance_related_but_different, relevance_over_answering, relevance_granularity_mismatch, relevance_prerequisite_missing, relevance_scope_mismatch, relevance_format_mismatch, relevance_summarization_vs_answer, relevance_cherry_picking, relevance_false_precision, relevance_assumption_injection, relevance_symptom_only, relevance_status_dump, relevance_feature_dump, relevance_instruction_only, relevance_metric_avoidance
+
+**Trustworthy Direct** (14): technical_documented, clear_explanation, contradiction_resolved, opposing_with_consensus, different_framing, quantitative_answer, cross_source_agreement, direct_factual, multi_source_convergence, authoritative_source, near_complete_evidence, conditional_confidence, step_by_step, definitional
+
+</details>
+
+---
+
+### 🤝 Contributing
 
 1. Fork this repo
 2. Add cases to the appropriate `data/tier0_sanity/` or `data/tier1_core/` JSON file
 3. Run validation: `python -m fitz_gov.cli validate --data-dir data`
 4. Submit a PR
 
-## License
+---
 
-MIT License - see [LICENSE](LICENSE) for details.
+### License
+
+MIT
+
+---
+
+### Links
+
+- [GitHub](https://github.com/yafitzdev/fitz-gov)
+- [PyPI](https://pypi.org/project/fitz-gov/)
+- [Changelog](CHANGELOG.md)
+
+**Documentation:**
+- [Evaluation Guide](docs/evaluation-guide.md) — How to interpret scores and diagnose failures
+- [Mode Decision Tree](docs/mode-decision-tree.md) — How expected modes are assigned to test cases
