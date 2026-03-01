@@ -2,19 +2,17 @@
 
 Complete taxonomy of governance case types for the fitz-gov benchmark.
 
-**Status**: Complete. All cases merged into `fitz-gov/data/tier1_core/`. Current version: **v3.0.0**.
+**Status**: Complete. All cases merged into `fitz-gov/data/tier1_core/`. Current version: **v5.0.0**.
 
-**Production mapping**: fitz-gov uses 3-mode labels (abstain/disputed/trustworthy) and 6 test categories: abstention, dispute, trustworthy_hedged, trustworthy_direct, grounding, relevance. Both trustworthy_hedged and trustworthy_direct map to TRUSTWORTHY mode — the category name describes the expected response behavior (hedged vs direct). See [fitz-gov-3.0-results.md](fitz-gov-3.0-results.md) for details on the 3-class taxonomy.
+**Production mapping**: fitz-gov uses 3-mode labels (abstain/disputed/trustworthy) and 4 test categories: abstention, dispute, trustworthy_hedged, trustworthy_direct. Both trustworthy_hedged and trustworthy_direct map to TRUSTWORTHY mode — the category name describes the expected response behavior (hedged vs direct). Grounding and relevance are cross-cutting quality checks applied to all trustworthy cases.
 
-**Repository**: `C:\Users\yanfi\PycharmProjects\fitz-gov`
-
-**Data structure** (after cleanup):
+**Data structure**:
 ```
 fitz-gov/data/
 ├── tier0_sanity/    60 sanity cases (baseline, models should score 95%+)
-├── tier1_core/      1113 cases (1047 governance + 66 grounding/relevance)
-├── corpus/          378 test documents
-└── queries/         Query-to-document mappings for Mode B evaluation
+├── tier1_core/      2,920 cases across 4 categories
+├── corpus/          5,043 reference documents
+└── queries/         3,800 query-to-document mappings
 ```
 
 ---
@@ -23,24 +21,24 @@ fitz-gov/data/
 
 | Metric | Value |
 |--------|-------|
-| Total cases (tier0 + tier1) | 1173 |
-| Governance cases (abstain/dispute/trustworthy_hedged/trustworthy_direct) | 1091 (1047 tier1 + 44 tier0) |
-| Other cases (grounding/relevance) | 82 |
-| Unique subcategories (consolidated) | 54 |
-| Total cases removed (duplicates) | 8 |
-| Total cases relabeled (blind validation) | 20 |
+| Total cases (tier0 + tier1) | 2,980 |
+| Tier 0 (sanity) | 60 |
+| Tier 1 (core) | 2,920 |
+| Categories | 4 (+ cross-cutting grounding/relevance quality checks) |
+| Unique subcategories | 113 |
+| Difficulty split (tier1) | 37.3% medium / 62.7% hard |
 
-### Per-Mode Distribution (tier1_core, governance only)
+### Per-Category Distribution (tier1_core)
 
 | Category | Cases | % |
 |------|-------|---|
-| Trustworthy Hedged | 360 | 34.4% |
-| Trustworthy Direct | 254 | 24.3% |
-| Abstention | 237 | 22.6% |
-| Dispute | 196 | 18.7% |
-| **Total** | **1047** | 100% |
+| Trustworthy Hedged | 1,160 | 39.7% |
+| Abstention | 685 | 23.5% |
+| Dispute | 675 | 23.1% |
+| Trustworthy Direct | 400 | 13.7% |
+| **Total** | **2,920** | 100% |
 
-Max:min class ratio is 2.2:1. Trustworthy Hedged remains largest but class balance improved significantly from v2.0 (was 2.9:1).
+Max:min class ratio is 2.9:1 (Trustworthy Hedged vs Trustworthy Direct). Trustworthy Hedged is the largest category, absorbing 676 former grounding/relevance cases in v5.0.
 
 ---
 

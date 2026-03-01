@@ -13,11 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [5.0.0] - 2026-02-15
 
-### Highlights
+### 🎉 Highlights
 
 **Grounding & Relevance Are Now Cross-Cutting Quality Checks** - Eliminated grounding and relevance as standalone categories. They are now quality dimensions applied to every trustworthy case (hedged and direct). Each trustworthy case now produces three scores: governance mode accuracy, grounding (did the response avoid hallucination?), and relevance (did the response address the question?). The benchmark drops from 6 categories to 4, with no data loss -- all 2,980 cases preserved.
 
-### Breaking Changes
+### ⚠️ Breaking Changes
 
 - **Removed `FitzGovCategory.GROUNDING` and `FitzGovCategory.RELEVANCE`** enum values
 - **4 categories only**: abstention, dispute, trustworthy_hedged, trustworthy_direct
@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `FitzGovCategoryResult` has new fields: `grounding_accuracy`, `relevance_accuracy`
 - Score comparisons between v4.1 and v5.0 are NOT directly comparable due to structural changes
 
-### Data Migration
+### 📊 Data Migration
 
 - **676 grounding/relevance cases** converted to trustworthy_hedged with prefixed subcategories (`grounding_*`, `relevance_*`)
 - **884 existing trustworthy cases** enriched with `forbidden_claims` and `required_elements` annotations
@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Trustworthy Direct: unchanged at 400 tier1 / 10 tier0
 - All existing case IDs preserved
 
-### Evaluation Changes
+### 🔧 Evaluation Changes
 
 - **Unified evaluation flow**: All categories use governance mode classification. Trustworthy categories additionally run grounding and relevance quality checks when mode is correct.
 - **Quality checks are conditional**: If the system picks the wrong governance mode, quality checks are skipped (no point checking answer quality when the meta-decision is wrong)
@@ -47,13 +47,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **No LLM-as-judge**: Quality checks use regex-only validation (optional LLM validation still supported)
 - All 4 categories participate in the confusion matrix
 
-### Quality Annotation Details
+### 🆕 Quality Annotation Details
 
 - **Hedged cases**: `forbidden_claims` catch hallucinated specifics (dollar amounts, percentages, dates not in context); `required_elements` require hedging language appropriate to subcategory
 - **Direct cases**: `forbidden_claims` catch unsupported embellishments; `required_elements` require key factual terms from context
 - Annotations are subcategory-aware (e.g., `causal_uncertainty` cases require correlation/confounding language)
 
-### Distribution (Tier 1)
+### 📊 Distribution (Tier 1)
 
 | Category | Cases | Medium | Hard | Med % |
 |----------|------:|-------:|-----:|------:|
@@ -70,14 +70,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | Cases with required_elements | 348 | ~1,596 |
 | Subcategories | 113 | 113 |
 
-### Subcategories (Trustworthy Hedged)
+### 🆕 Subcategories (Trustworthy Hedged)
 
 57 subcategories after merge:
 - **20 original hedged**: evidence_quality, hedged_evidence, different_aspects, causal_uncertainty, mixed_evidence, temporal_uncertainty, version_overlap, methodology_difference, stale_source, evolving_facts, entity_ambiguity, partial_answer, scope_condition, numerical_near_miss, cross_source_partial, implicit_assumptions, adjacent_entity, cross_domain_transfer, hedged_contradiction_corroborated, different_framing
 - **18 from grounding**: grounding_numerical_hallucination, grounding_attribution_hallucination, grounding_temporal_confusion, grounding_entity_blending, grounding_process_hallucination, grounding_quote_fabrication, grounding_statistical_inference, grounding_code_hallucination, grounding_table_inference, grounding_causal_hallucination, grounding_comparative_hallucination, grounding_geographic_hallucination, grounding_technical_hallucination, grounding_date_hallucination, grounding_location_hallucination, grounding_code_grounding, grounding_medical_hallucination, grounding_quote_extension
 - **19 from relevance**: relevance_partial_answer, relevance_wrong_entity_focus, relevance_temporal_mismatch, relevance_tangent_drift, relevance_related_but_different, relevance_over_answering, relevance_granularity_mismatch, relevance_prerequisite_missing, relevance_scope_mismatch, relevance_format_mismatch, relevance_summarization_vs_answer, relevance_cherry_picking, relevance_false_precision, relevance_assumption_injection, relevance_symptom_only, relevance_status_dump, relevance_feature_dump, relevance_instruction_only, relevance_metric_avoidance
 
-### Migration Notes
+### 📦 Migration Notes
 
 - `pip install fitz-gov==5.0.0` to upgrade
 - Remove any references to `FitzGovCategory.GROUNDING` or `FitzGovCategory.RELEVANCE`
@@ -89,11 +89,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.1.0] - 2026-02-15
 
-### Highlights
+### 🎉 Highlights
 
 **Benchmark Credibility Hardening** - From 2,488 to 2,980 test cases (60 tier0 + 2,920 tier1). Addressed five structural gaps that would undermine credibility with serious benchmark consumers: expanded trustworthy_direct from 218 to 400 cases, added 310 medium-difficulty cases across 5 categories, expanded multi-source cases from 138 to 264, eliminated all "general" domain cases, and added a 250-case human validation sample with annotation guide.
 
-### Data Expansion
+### 📊 Data Expansion
 
 - **2,920 tier1 cases** (up from 2,428):
   - Abstention: 685 (+60 medium)
@@ -108,7 +108,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Zero duplicate queries**: Fixed 26 duplicate groups introduced during generation
 - **Zero sparse subcategories**: All subcategories have >= 5 cases
 
-### New Features
+### 🆕 New Features
 
 - **Human validation sample** (`data/validation/human_validation_sample.json`):
   - 250 cases stratified by category, difficulty, and domain (seed=42)
@@ -120,19 +120,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Edge case documentation for common confusion points
   - Cohen's kappa interpretation guide
 
-### New Subcategories
+### 🆕 New Subcategories
 
 - **Trustworthy Direct**: `step_by_step` (13 cases) - procedural answers with clear steps, `definitional` (13 cases) - clear term/concept definitions
 - All existing subcategories expanded proportionally with new medium-difficulty cases
 
-### Corpus & Infrastructure
+### 📦 Corpus & Infrastructure
 
 - **5,043 corpus documents** (up from 4,271), 772 new documents from expanded cases
 - **3,800 query mappings** (up from 3,248), 552 new mappings
 - **Manifest updated** to v4.1.0 with accurate domain counts
 - **README rewritten** with comprehensive statistics: categories, modes, difficulty, domains, query types, source types, reasoning types, evidence patterns, context counts, and all 113 subcategories
 
-### Distribution (Tier 1)
+### 📊 Distribution (Tier 1)
 
 | Category | Cases | Medium | Hard | Med % |
 |----------|------:|-------:|-----:|------:|
@@ -161,7 +161,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | Food | 143 | 4.9% | Social Media | 113 | 3.9% |
 | Law | 136 | 4.7% | | | |
 
-### Migration Notes
+### 📦 Migration Notes
 
 - All existing case IDs preserved
 - 17 field value corrections: 3 invalid domains, 11 invalid reasoning_types, 3 invalid evidence_patterns
@@ -173,11 +173,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.0.0] - 2026-02-12
 
-### Highlights
+### 🎉 Highlights
 
 **Massive Benchmark Expansion** - From 1,173 to 2,114 test cases (60 tier0 + 2,054 tier1). Added 364 medium-difficulty cases (25% of tier1), expanded grounding from 34 to 271 cases and relevance from 32 to 275 cases with hand-written rich content, added 6 classification attributes to every case for results slicing.
 
-### Data Expansion
+### 📊 Data Expansion
 
 - **2,054 tier1 cases** (up from 1,113):
   - Abstention: 467 (+230), Dispute: 409 (+213)
@@ -191,7 +191,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Sparse subcategory expansion** - all subcategories now have >= 5 cases
 - **29 duplicate queries removed** via deduplication pass
 
-### New Features
+### 🆕 New Features
 
 - **6 classification attributes** on every case for results slicing:
   - `domain` (18 values), `query_type` (10 values), `source_type`, `context_count`, `reasoning_type` (6 values), `evidence_pattern` (6 values)
@@ -199,7 +199,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CLI `--breakdown` flag** - `python -m fitz_gov.cli stats --data-dir data --breakdown` shows distribution by domain, query type, etc.
 - **Comprehensive test suite** - 103 tests covering models, loader, evaluator, data integrity, validation, CLI
 
-### Code Quality
+### 🔧 Code Quality
 
 - Removed dead `schema.py` (duplicate of `models.py`)
 - Fixed `__init__.py` version (was stuck at 3.0.0)
@@ -207,7 +207,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed 107 `context_count` mismatches in grounding/relevance data
 - Fixed stale docstrings in generator.py referencing old category names
 
-### Distribution
+### 📊 Distribution
 
 | Category | Cases | % |
 |----------|------:|--:|
@@ -223,7 +223,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | Hard | 1,551 | 75.5% |
 | Medium | 503 | 24.5% |
 
-### Migration Notes
+### 📦 Migration Notes
 
 - All existing case IDs preserved
 - `context_sources` field added for multi-source cases (138 cases)

@@ -2,7 +2,7 @@
 
 A benchmark for measuring whether RAG systems know when to answer, when to push back, and when to shut up.
 
-## The Problem
+## 🎯 The Problem
 
 Every RAG benchmark today measures the same thing: *did the system get the right answer?* BEIR measures retrieval. RAGAS measures generation quality. But none of them measure the thing that actually matters in production: **does the system know what it doesn't know?**
 
@@ -14,7 +14,7 @@ This is the **governance problem**: RAG systems need to make a meta-decision abo
 
 fitz-gov measures that meta-decision.
 
-## The Three Modes
+## 🔀 The Three Modes
 
 Every query + context pair in fitz-gov maps to one of three governance modes:
 
@@ -37,7 +37,7 @@ Every query + context pair in fitz-gov maps to one of three governance modes:
 > *Context: "Python was created by Guido van Rossum and first released in 1991."*
 > *Correct mode: ABSTAIN -- the context has nothing to do with the question.*
 
-## What Makes This Hard
+## 🧩 What Makes This Hard
 
 The easy cases are obvious. Nobody confuses a biology passage with a finance question. fitz-gov includes those as a sanity check, but the real benchmark lives in the hard cases:
 
@@ -48,7 +48,7 @@ The easy cases are obvious. Nobody confuses a biology passage with a finance que
 
 These boundary cases are where production RAG systems actually fail, and where fitz-gov differentiates between a good governance classifier and a great one.
 
-## What the Score Means
+## 📊 What the Score Means
 
 A fitz-gov score is the accuracy of your system's governance mode classification across 2,920 test cases.
 
@@ -59,7 +59,27 @@ A fitz-gov score is the accuracy of your system's governance mode classification
 
 The score breaks down by category, so you can see exactly *where* your system fails. A system scoring 90% on abstention but 55% on dispute knows when to shut up but doesn't catch contradictions. A system scoring 40% on trustworthy_direct is being overly cautious -- refusing to answer even when the evidence is clear.
 
-## Four Test Categories
+### Evaluation Flow
+
+```mermaid
+flowchart TD
+    A[Run Benchmark] --> B[Tier 0: Sanity Check\n60 cases]
+    B -->|"≥ 95%"| C[PASS → Tier 1: Core Benchmark\n2,920 cases]
+    B -->|"< 95%"| D[FAIL → Fix fundamentals first]
+    C --> E{Classify governance mode\nper case}
+    E --> F[Abstention — 685 cases\nMode check only]
+    E --> G[Dispute — 675 cases\nMode check only]
+    E --> H[Trustworthy Hedged — 1,160 cases]
+    E --> I[Trustworthy Direct — 400 cases]
+    H --> J{Mode correct?}
+    I --> J
+    J -->|No| K[Fail case]
+    J -->|Yes| L[Grounding check\nforbidden_claims]
+    L --> M[Relevance check\nrequired_elements]
+    M --> N[Pass only if all 3 checks succeed]
+```
+
+## 📋 Four Test Categories
 
 The three governance modes are tested through four categories, each targeting a specific failure mode:
 
@@ -80,7 +100,7 @@ Every trustworthy case (hedged and direct) is evaluated on three dimensions:
 
 A trustworthy case only passes if *all three* checks succeed. This means the benchmark catches systems that pick the right mode but then hallucinate the answer, or discuss the topic without answering the question.
 
-## Benchmark at a Glance
+## 🔍 Benchmark at a Glance
 
 **2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113+ subcategories**, **17 domains**, and **10 query types**.
 
@@ -180,13 +200,13 @@ A trustworthy case only passes if *all three* checks succeed. This means the ben
 
 </details>
 
-## Installation
+## ⚙️ Installation
 
 ```bash
 pip install fitz-gov
 ```
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Tiered Evaluation
 
@@ -250,7 +270,7 @@ evaluator = FitzGovEvaluator(
 )
 ```
 
-## Data Format
+## 📁 Data Format
 
 ```
 data/
@@ -289,11 +309,15 @@ Each case:
 
 Every case has 6 classification attributes for slicing results by domain, query type, source type, context count, reasoning type, and evidence pattern. Trustworthy cases additionally have `forbidden_claims` (grounding) and `required_elements` (relevance) for quality scoring.
 
-## Version
+## 📌 Version
 
 Current version: **5.0.0** -- See [CHANGELOG.md](CHANGELOG.md) for release history.
 
-## Contributing
+For deeper dives into how scoring works and how test cases are categorized, see:
+- [Evaluation Guide](docs/evaluation-guide.md) -- How to interpret scores and diagnose failures
+- [Mode Decision Tree](docs/mode-decision-tree.md) -- How expected modes are assigned to test cases
+
+## 🤝 Contributing
 
 1. Fork this repo
 2. Add cases to the appropriate `data/tier0_sanity/` or `data/tier1_core/` JSON file

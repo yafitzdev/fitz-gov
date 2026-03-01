@@ -1,7 +1,7 @@
 # fitz-gov Evaluation Guide
 
-> **Version**: 3.0.0
-> **Last Updated**: 2026-02-11
+> **Version**: 5.0.0
+> **Last Updated**: 2026-03-01
 
 This guide explains how to interpret fitz-gov benchmark results and understand what the scores mean for your RAG system.
 
@@ -38,11 +38,11 @@ If a model fails Tier 0, it indicates serious problems with:
 
 | Property | Value |
 |----------|-------|
-| Cases | 1113 |
-| Governance cases | 1047 (abstain/dispute/qualification/confidence) |
-| Answer quality cases | 66 (grounding/relevance) |
+| Cases | 2,920 |
+| Categories | 4 (abstention / dispute / trustworthy_hedged / trustworthy_direct) |
 | Scoring | Gradient (0-100%) |
-| Unique subcategories | 54 |
+| Unique subcategories | 113 |
+| Difficulty | 37.3% medium / 62.7% hard |
 | Expected range | 60-75% for production models |
 | Purpose | Discriminate between good and excellent governance |
 
@@ -52,21 +52,17 @@ If a model fails Tier 0, it indicates serious problems with:
 - **65-75%**: Good governance capability
 - **>75%**: Excellent governance capability
 
-**Note**: fitz-gov v3.0 is significantly harder than v2.0 due to the addition of boundary cases, three-way ambiguity cases, and targeted edge cases. A score of 69% on v3.0 represents strong governance capability.
-
 ---
 
 ## Category Breakdown
 
-### Governance Mode Categories
+fitz-gov v5.0 uses 4 test categories. All categories test governance mode classification. Trustworthy categories additionally run cross-cutting quality checks.
 
-These categories test whether your system chooses the correct response mode.
-
-#### Abstention (237 Tier 1 cases)
+### Abstention (685 Tier 1 cases)
 
 Tests whether your system refuses to answer when context is insufficient.
 
-**Subcategory clusters**: wrong entity, wrong domain, wrong version, wrong jurisdiction, wrong time period, decoy keywords, domain bleed, partial schema match, code abstention, and more.
+**Subcategory clusters**: wrong entity, wrong specificity, temporal mismatch, missing data, off-topic contradiction, wrong domain, wrong jurisdiction, outdated context, wrong product, cross-domain insufficient, decoy keywords, code abstention, and more.
 
 **Common failure patterns:**
 - Answering with general knowledge when context is irrelevant
@@ -81,11 +77,11 @@ Tests whether your system refuses to answer when context is insufficient.
 - Don't attempt to extrapolate beyond available evidence
 - Resist high embedding similarity when entities don't match
 
-#### Dispute (196 Tier 1 cases)
+### Dispute (675 Tier 1 cases)
 
 Tests whether your system recognizes and flags conflicting information.
 
-**Subcategory clusters**: same metric different values, opposing conclusions, contradictory dates/attribution/status, implicit contradiction, binary fact conflict, statistical direction conflict, competing theories, conditional conflict, and more.
+**Subcategory clusters**: numerical conflict, implicit contradiction, binary conflict, opposing conclusions, temporal conflict, statistical direction conflict, source authority conflict, methodology conflict, interpretation conflict, competing theories, scientific replication, and more.
 
 **Common failure patterns:**
 - Cherry-picking one source without acknowledging conflict
@@ -100,11 +96,11 @@ Tests whether your system recognizes and flags conflicting information.
 - Explain the nature of the conflict
 - Distinguish genuine disputes from methodology differences
 
-#### Qualification (360 Tier 1 cases)
+### Trustworthy Hedged (1,160 Tier 1 cases)
 
 Tests whether your system appropriately hedges uncertain claims. Cases in this category expect TRUSTWORTHY mode with appropriate hedging language. This is the largest and most nuanced category.
 
-**Subcategory clusters**: same topic different aspects, mixed evidence, conditional applicability, hedged claims, temporal/entity/scope ambiguity, deprecated documentation, partial correlation, small sample, source quality variance, methodology difference, hedged vs assertive, numerical near-miss, evolving facts, pros vs cons, risk vs benefit, correlation vs causation, and more.
+**Subcategory clusters**: evidence quality, hedged evidence, different aspects, causal uncertainty, mixed evidence, temporal uncertainty, methodology difference, evolving facts, entity ambiguity, partial answer, scope condition, numerical near-miss, grounding hallucination types (18 subcategories), relevance quality types (19 subcategories), and more.
 
 **Common failure patterns:**
 - Presenting correlations as causation
@@ -112,19 +108,22 @@ Tests whether your system appropriately hedges uncertain claims. Cases in this c
 - Extrapolating confidently from insufficient data
 - Treating methodology differences as factual contradictions
 - Ignoring hedging language in source material ("may", "suggests")
+- Hallucinating specific numbers, quotes, or dates not in context
+- Answering a related but different question
 
 **What good systems do:**
 - Use hedging language ("may", "suggests", "based on limited data")
 - Distinguish between what is stated vs. implied
 - Note when causal explanations are not provided
 - Recognize that different values can reflect different methodologies, not disputes
-- Acknowledge temporal, scope, or entity ambiguity
+- Only include information present in or derivable from context
+- Directly address the specific question asked
 
-#### Confidence (254 Tier 1 cases)
+### Trustworthy Direct (400 Tier 1 cases)
 
 Tests whether your system answers confidently when evidence is clear. Cases in this category expect TRUSTWORTHY mode with direct, confident language.
 
-**Subcategory clusters**: direct factual, multi-source convergence, clear procedural, unambiguous extraction, well-documented technical, clear causal explanation, different framing same fact, opposing with consensus, numerical diff methodology explained, contradiction with clear winner, and more.
+**Subcategory clusters**: technical documented, clear explanation, contradiction resolved, opposing with consensus, different framing, quantitative answer, cross-source agreement, direct factual, multi-source convergence, step-by-step, definitional, and more.
 
 **Common failure patterns:**
 - Over-hedging when answer is clearly stated
@@ -139,45 +138,47 @@ Tests whether your system answers confidently when evidence is clear. Cases in t
 - Recognize when apparent contradictions are resolved (different framing, methodology explained)
 - Trust strong consensus across multiple sources
 
-### Answer Quality Categories
+---
 
-These categories test the content of responses, not just the mode.
+## Cross-Cutting Quality Checks
 
-#### Grounding (34 Tier 1 cases)
+In v5.0, grounding and relevance are no longer standalone categories. They are quality dimensions applied to every trustworthy case (hedged and direct).
 
-Tests whether responses stay grounded in context (no hallucination).
+### How It Works
 
-**Subcategory clusters**: numerical hallucination, name hallucination, code hallucination, table inference, quote extension, temporal confusion, and more.
+```mermaid
+flowchart TD
+    A[Trustworthy Case] --> B{Mode correct?}
+    B -->|No| C[Fail — wrong governance mode]
+    B -->|Yes| D[Grounding check]
+    D -->|forbidden_claims matched| E[Fail — hallucination detected]
+    D -->|Clean| F[Relevance check]
+    F -->|required_elements missing| G[Fail — question not addressed]
+    F -->|Present| H[Pass — all 3 checks succeeded]
+```
 
-**Common failure patterns:**
-- Inventing specific numbers not in context
-- Fabricating quotes from people mentioned
-- Adding details from training data not in provided context
-- Hallucinating function parameters or return types (code context)
-- Inventing data not in provided tables
+### Grounding
 
-**What good systems do:**
-- Only include information present in or directly derivable from context
-- Explicitly note when specific details are not provided
-- Avoid filling gaps with plausible-sounding fabrications
+Tests whether responses stay grounded in context (no hallucination). Evaluated via `forbidden_claims` regex patterns on each trustworthy case.
 
-#### Relevance (32 Tier 1 cases)
+**What it catches**: Inventing specific numbers, fabricating quotes, adding training-data details not in context, hallucinating function parameters, inventing table data.
 
-Tests whether responses address the actual question asked.
+### Relevance
 
-**Subcategory clusters**: summarization vs answer, related but different, over-answering, prerequisite missing, format mismatch, granularity mismatch, and more.
+Tests whether responses address the actual question asked. Evaluated via `required_elements` pattern matching on each trustworthy case.
 
-**Common failure patterns:**
-- Answering a related but different question
-- Providing information about wrong entity/timeframe
-- Summarizing context instead of answering the question
-- Dumping features when pricing was asked
-- Providing unrequested details instead of the specific answer
+**What it catches**: Answering a related but different question, summarizing context instead of answering, providing information about wrong entity/timeframe, dumping features when pricing was asked.
 
-**What good systems do:**
-- Directly address the specific question asked
-- Note when only partial information is available
-- Acknowledge mismatches between question and available data
+### 3-Dimensional Scoring
+
+Trustworthy categories report three scores:
+
+```
+trustworthy_hedged: 71.2% (826/1160)  |  grounding: 89.3%  relevance: 85.1%
+trustworthy_direct: 78.5% (314/400)   |  grounding: 92.1%  relevance: 88.7%
+```
+
+A trustworthy case only passes if **all three** checks succeed. Quality checks are conditional — if the system picks the wrong governance mode, quality checks are skipped (no point checking answer quality when the meta-decision is wrong).
 
 ---
 
@@ -216,10 +217,10 @@ The confusion matrix shows how often each expected mode was predicted as each ac
 Tier 1 cases are tagged with difficulty:
 
 - **Easy**: Only in Tier 0 (sanity checks)
-- **Medium**: Requires inference but patterns are recognizable
-- **Hard**: Edge cases, subtle distinctions, boundary cases, three-way ambiguity
+- **Medium**: Requires inference but patterns are recognizable (37.3% of Tier 1)
+- **Hard**: Edge cases, subtle distinctions, boundary cases (62.7% of Tier 1)
 
-v3.0 is 92% hard cases by design. A typical distribution for a good model:
+A typical distribution for a good model:
 - Medium: 80-90% accuracy
 - Hard: 60-75% accuracy
 
@@ -231,16 +232,16 @@ If your hard accuracy is similar to medium, you may be overfitting to surface pa
 
 The hardest cases in fitz-gov sit at mode boundaries. Understanding these helps diagnose failures:
 
-| Boundary | Cases | Key Challenge |
-|----------|-------|---------------|
-| Dispute <-> Trustworthy | ~175 | Methodology difference vs genuine contradiction |
-| Abstain <-> Trustworthy | ~25 | Topic-adjacent but no direct answer |
-| Abstain <-> Dispute | ~20 | Real contradiction about wrong subject |
-| Three-way ambiguity | ~90 | Multiple competing signals |
+| Boundary | Key Challenge |
+|----------|---------------|
+| Dispute <-> Trustworthy | Methodology difference vs genuine contradiction |
+| Abstain <-> Trustworthy | Topic-adjacent but no direct answer |
+| Abstain <-> Dispute | Real contradiction about wrong subject |
+| Three-way ambiguity | Multiple competing signals |
 
 The **Dispute <-> Trustworthy boundary** is the primary bottleneck. The key rule: if the numerical gap is FULLY EXPLAINED by a stated methodology/scope difference, it should be trustworthy (with appropriate hedging or confidence based on the evidence), not disputed.
 
-Note: Within the TRUSTWORTHY mode, the benchmark categories (qualification vs confidence) test different behaviors - whether the answer should include hedging language or be stated confidently - but both expect the same TRUSTWORTHY mode.
+Note: Within the TRUSTWORTHY mode, the benchmark categories (trustworthy_hedged vs trustworthy_direct) test different behaviors — whether the answer should include hedging language or be stated confidently — but both expect the same TRUSTWORTHY mode.
 
 ---
 
@@ -285,7 +286,7 @@ Note: Within the TRUSTWORTHY mode, the benchmark categories (qualification vs co
 1. **Use consistent evaluation settings** across model comparisons
 2. **Report both Tier 0 pass/fail and Tier 1 score**
 3. **Include category breakdown** for detailed analysis
-4. **Note LLM validation settings** if enabled for grounding
+4. **Note LLM validation settings** if enabled for grounding/relevance
 5. **Version your benchmark** (fitz-gov version affects results)
 
 ---
@@ -306,12 +307,20 @@ A: Check for false positives in regex patterns. Enable LLM validation with `llm_
 
 **Q: How do I improve my score on a specific category?**
 
-A: Analyze the subcategory breakdown and failure cases. Each subcategory tests a specific pattern - focus on the patterns where your system fails most often.
+A: Analyze the subcategory breakdown and failure cases. Each subcategory tests a specific pattern — focus on the patterns where your system fails most often.
 
-**Q: What does 69% on v3.0 mean compared to 72% on v2.0?**
+**Q: What changed between v4.1 and v5.0?**
 
-A: v3.0 is significantly harder. It has 4.5x more Tier 1 cases, with 92% at hard difficulty targeting real-world failure modes. A v3.0 score of 69% represents stronger governance than a v2.0 score of 72%.
+A: Grounding and relevance are no longer standalone categories. They are now cross-cutting quality checks on all trustworthy cases. The benchmark dropped from 6 categories to 4, but all 2,980 cases were preserved. Scores are not directly comparable between versions due to the structural change.
 
-**Q: What's the difference between the qualification and confidence categories if both expect TRUSTWORTHY mode?**
+**Q: What's the difference between trustworthy_hedged and trustworthy_direct if both expect TRUSTWORTHY mode?**
 
-A: Both categories expect TRUSTWORTHY mode, but they test different answer behaviors. Qualification cases test whether your system appropriately hedges uncertain claims (using "may", "suggests", noting limitations), while confidence cases test whether your system answers directly when evidence is clear. The categories diagnose different failure modes: over-confidence vs over-caution. Both are critical for epistemic honesty, just at opposite ends of the certainty spectrum.
+A: Both categories expect TRUSTWORTHY mode, but they test different answer behaviors. Trustworthy_hedged cases test whether your system appropriately hedges uncertain claims (using "may", "suggests", noting limitations), while trustworthy_direct cases test whether your system answers directly when evidence is clear. The categories diagnose different failure modes: over-confidence vs over-caution. Both are critical for epistemic honesty, just at opposite ends of the certainty spectrum.
+
+---
+
+## Version History
+
+- v5.0.0: Updated for 2,920-case tier1 benchmark with 4 categories, 113 subcategories, cross-cutting quality checks, 37.3%/62.7% medium/hard split
+- v3.0.0: Updated for 1,113-case benchmark, added boundary decision rules, three-way ambiguity, dispute vs qualification guidelines
+- v0.9.0: Initial decision tree document created
