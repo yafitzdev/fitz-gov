@@ -57,7 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 | Category | Cases | Medium | Hard | Med % |
 |----------|------:|-------:|-----:|------:|
-| Trustworthy Hedged | 1,160 | 435 | 725 | 38% |
+| Trustworthy Hedged | 1,160 | 428 | 732 | 37% |
 | Abstention | 685 | 255 | 430 | 37% |
 | Dispute | 675 | 261 | 414 | 39% |
 | Trustworthy Direct | 400 | 145 | 255 | 36% |
