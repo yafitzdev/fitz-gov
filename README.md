@@ -38,7 +38,7 @@ print(result)
 
 Solo project by Yan Fitzner ([LinkedIn](https://www.linkedin.com/in/yan-fitzner/), [GitHub](https://github.com/yafitzdev)).
 
-- ~4k lines of Python, 2,980 hand-labeled benchmark cases
+- ~4k lines of Python, 2,980 benchmark cases
 - 107 tests
 - Built for [fitz-ai](https://github.com/yafitzdev/fitz-ai) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases)
 
