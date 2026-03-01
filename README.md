@@ -11,7 +11,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-5.0.0-green.svg)](CHANGELOG.md)
 
-[The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-installation--quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov)
+[The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov)
 
 </div>
 
@@ -25,12 +25,12 @@ from fitz_gov import FitzGovEvaluator, load_tier, Tier
 tier0 = load_tier(Tier.SANITY)   # 60 sanity cases
 tier1 = load_tier(Tier.CORE)     # 2,920 real cases
 
-# plug in your RAG system
+evaluator = FitzGovEvaluator()
 result = evaluator.evaluate_tiered(tier0_cases, ..., tier1_cases, ...)
 print(result)
 ```
 
-That's it. 2,980 test cases. One score that tells you if your RAG system actually knows what it doesn't know.
+2,980 test cases. One score that tells you if your RAG system knows what it doesn't know.
 
 ---
 
@@ -38,7 +38,9 @@ That's it. 2,980 test cases. One score that tells you if your RAG system actuall
 
 Solo project by Yan Fitzner ([LinkedIn](https://www.linkedin.com/in/yan-fitzner/), [GitHub](https://github.com/yafitzdev)).
 
-Built for [fitz-ai](https://github.com/yafitzdev/fitz-ai) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases).
+- ~4k lines of Python, 2,980 hand-labeled benchmark cases
+- 107 tests
+- Built for [fitz-ai](https://github.com/yafitzdev/fitz-ai) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases)
 
 ---
 
@@ -58,20 +60,20 @@ fitz-gov measures that meta-decision.
 
 ### The Three Modes 🔀
 
-Every query + context pair in fitz-gov maps to one of three governance modes:
+Every query + context pair maps to one of three governance modes:
 
-**TRUSTWORTHY** ✅ — The context provides sufficient evidence. Answer confidently or with appropriate hedging.
+**TRUSTWORTHY** ✅ — Sufficient evidence. Answer confidently or with appropriate hedging.
 > *"What is the boiling point of water at sea level?"*
 > *Context: "At standard atmospheric pressure, pure water boils at 100°C."*
 > → Answer directly.
 
-**DISPUTED** ⚠️ — The context contains conflicting information. Surface the contradiction, don't pick a side.
+**DISPUTED** ⚠️ — Conflicting information. Surface the contradiction, don't pick a side.
 > *"Is remote work more productive?"*
 > *Context A: "Stanford found remote workers were 13% more productive."*
 > *Context B: "Microsoft found remote work decreased collaboration by 25%."*
 > → Present both sides.
 
-**ABSTAIN** 🚫 — The context is irrelevant, insufficient, or about the wrong entity/time period. Refuse to answer.
+**ABSTAIN** 🚫 — Irrelevant, insufficient, or wrong entity/time period. Refuse to answer.
 > *"What are the side effects of ibuprofen?"*
 > *Context: "Python was created by Guido van Rossum in 1991."*
 > → "I don't have relevant information to answer this."
@@ -94,81 +96,45 @@ The easy cases are obvious. Nobody confuses a biology passage with a finance que
 **Methodology conflicts vs. genuine disputes 📊**
 > Two studies report different numbers for the same thing. Is it because they used different methodologies (TRUSTWORTHY with caveats) or because they genuinely disagree (DISPUTED)?
 
-These boundary cases are where production RAG systems actually fail, and where fitz-gov differentiates between a good governance classifier and a great one.
-
----
-
-### What the Score Means 📈
-
-A fitz-gov score is governance mode accuracy across 2,920 test cases.
-
-| Score | Meaning |
-|-------|---------|
-| **90%+** | Exceptional. Almost always makes the right meta-decision. |
-| **75-90%** | Strong. Handles most cases, occasional misjudgments on boundaries. |
-| **60-75%** | Moderate. Gets obvious cases right, struggles with subtlety. |
-| **< 60%** | Frequently making the wrong meta-decision. |
-
-The score breaks down by category — so you can see exactly *where* your system fails. 90% on abstention but 55% on disputes? It knows when to shut up but doesn't catch contradictions. 40% on trustworthy_direct? It's being overly cautious, refusing to answer even when evidence is clear.
-
-<br>
+These boundary cases are where production RAG systems actually fail, and where fitz-gov separates a good governance classifier from a great one.
 
 > [!NOTE]
-> Trustworthy cases are evaluated on three dimensions: governance mode, grounding (no hallucinated details via `forbidden_claims`), and relevance (actually addresses the question via `required_elements`). A case only passes if all three checks succeed.
-
----
-
-### Benchmark at a Glance 🔍
-
-**2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113+ subcategories**, **17 domains**, and **10 query types**.
-
-| | |
-|---|---|
-| **Mode split** | TRUSTWORTHY 53.4% / ABSTAIN 23.5% / DISPUTED 23.1% |
-| **Difficulty** | 62.7% hard / 37.3% medium (tier1), easy (tier0 only) |
-| **Multi-source** | 264 cases (9.0%) with source metadata |
-| **Domains** | Technology, Medicine, Finance, Science, Education, Environment, Food, Law, Government, Transportation, Sports, Agriculture, History, HR/Workplace, Real Estate, Psychology, Social Media |
-| **Query types** | what, how, is, does, why, should, when, which, who, compare |
-| **Reasoning types** | Factual, Evaluative, Causal, Comparative, Temporal, Procedural |
-
----
-
-### Four Test Categories 📋
-
-| Category | Cases | Mode | What it catches |
-|----------|------:|------|-----------------|
-| **Abstention** | 685 | ABSTAIN | System answers when it has no relevant evidence |
-| **Dispute** | 675 | DISPUTED | System ignores contradictions between sources |
-| **Trustworthy Hedged** | 1,160 | TRUSTWORTHY | System over-hedges (abstains) or under-hedges (states uncertain things as fact) |
-| **Trustworthy Direct** | 400 | TRUSTWORTHY | System refuses or hedges when evidence clearly supports a confident answer |
-
----
-
-### Evaluation Flow
-
-```mermaid
-flowchart TD
-    A[Run Benchmark] --> B[Tier 0: Sanity Check\n60 cases]
-    B -->|"≥ 95%"| C[PASS → Tier 1: Core Benchmark\n2,920 cases]
-    B -->|"< 95%"| D[FAIL → Fix fundamentals first]
-    C --> E{Classify governance mode\nper case}
-    E --> F[Abstention — 685 cases\nMode check only]
-    E --> G[Dispute — 675 cases\nMode check only]
-    E --> H[Trustworthy Hedged — 1,160 cases]
-    E --> I[Trustworthy Direct — 400 cases]
-    H --> J{Mode correct?}
-    I --> J
-    J -->|No| K[Fail case]
-    J -->|Yes| L[Grounding check\nforbidden_claims]
-    L --> M[Relevance check\nrequired_elements]
-    M --> N[Pass only if all 3 checks succeed]
-```
+> 62.7% of tier1 cases are rated "hard." This is deliberate — the easy cases exist as a sanity gate, not the benchmark.
 
 ---
 
 <details>
 
-<summary><strong>📦 Installation & Quick Start</strong></summary>
+<summary><strong>📦 What is RAG governance?</strong></summary>
+
+<br>
+
+Most RAG systems have two jobs: (1) find relevant documents, (2) generate an answer. But there's a critical third job they skip: **decide whether you should answer at all.**
+
+A governance classifier sits between retrieval and generation. It looks at the query and the retrieved context and makes a meta-decision:
+
+```
+Query + Retrieved Context
+        │
+        ▼
+┌─────────────────┐
+│   Governance     │──► TRUSTWORTHY → generate answer
+│   Classifier     │──► DISPUTED    → flag contradictions
+│                  │──► ABSTAIN     → refuse to answer
+└─────────────────┘
+```
+
+Without governance, your RAG system will confidently answer "The company's Q4 revenue was $2.3 billion" when the context only mentions Q1-Q3 data. With governance, it says "I don't have Q4 revenue figures."
+
+fitz-gov provides the test cases to measure how well your governance classifier makes these decisions.
+
+</details>
+
+---
+
+<details>
+
+<summary><strong>📦 Quick Start</strong></summary>
 
 <br>
 
@@ -228,7 +194,7 @@ print(f"Governance accuracy: {results.overall_accuracy:.1%}")
 
 #### Two-Pass Validation
 
-Grounding and relevance quality checks use regex + optional LLM validation:
+Grounding and relevance checks use regex + optional LLM validation:
 
 ```python
 evaluator = FitzGovEvaluator(
@@ -237,6 +203,87 @@ evaluator = FitzGovEvaluator(
     llm_base_url="http://localhost:11434"
 )
 ```
+
+</details>
+
+---
+
+<details>
+
+<summary><strong>📦 Interpreting Your Score</strong></summary>
+
+<br>
+
+A fitz-gov score is governance mode accuracy across 2,920 test cases.
+
+| Score | Meaning |
+|-------|---------|
+| **90%+** | Exceptional. Almost always makes the right meta-decision. |
+| **75-90%** | Strong. Handles most cases, occasional misjudgments on boundaries. |
+| **60-75%** | Moderate. Gets obvious cases right, struggles with subtlety. |
+| **< 60%** | Frequently making the wrong meta-decision. |
+
+The score breaks down by category — so you can see exactly *where* your system fails. 90% on abstention but 55% on disputes? It knows when to shut up but doesn't catch contradictions. 40% on trustworthy_direct? It's being overly cautious, refusing to answer even when evidence is clear.
+
+**Four test categories:**
+
+| Category | Cases | Mode | What it catches |
+|----------|------:|------|-----------------|
+| **Abstention** | 685 | ABSTAIN | System answers when it has no relevant evidence |
+| **Dispute** | 675 | DISPUTED | System ignores contradictions between sources |
+| **Trustworthy Hedged** | 1,160 | TRUSTWORTHY | System over-hedges (abstains) or under-hedges (states uncertain things as fact) |
+| **Trustworthy Direct** | 400 | TRUSTWORTHY | System refuses or hedges when evidence clearly supports a confident answer |
+
+Trustworthy cases are evaluated on three dimensions: governance mode, grounding (no hallucinated details via `forbidden_claims`), and relevance (actually addresses the question via `required_elements`). A case only passes if all three checks succeed.
+
+→ [Evaluation Guide](docs/evaluation-guide.md) for deeper analysis
+
+</details>
+
+---
+
+<details>
+
+<summary><strong>📦 Evaluation Flow</strong></summary>
+
+<br>
+
+```mermaid
+flowchart TD
+    A[Run Benchmark] --> B[Tier 0: Sanity Check\n60 cases]
+    B -->|"≥ 95%"| C[PASS → Tier 1: Core Benchmark\n2,920 cases]
+    B -->|"< 95%"| D[FAIL → Fix fundamentals first]
+    C --> E{Classify governance mode\nper case}
+    E --> F[Abstention — 685 cases\nMode check only]
+    E --> G[Dispute — 675 cases\nMode check only]
+    E --> H[Trustworthy Hedged — 1,160 cases]
+    E --> I[Trustworthy Direct — 400 cases]
+    H --> J{Mode correct?}
+    I --> J
+    J -->|No| K[Fail case]
+    J -->|Yes| L[Grounding check\nforbidden_claims]
+    L --> M[Relevance check\nrequired_elements]
+    M --> N[Pass only if all 3 checks succeed]
+```
+
+</details>
+
+---
+
+<details>
+
+<summary><strong>📦 Benchmark Stats</strong></summary>
+
+<br>
+
+**2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113+ subcategories**, **17 domains**, and **10 query types**.
+
+- **Mode split:** TRUSTWORTHY 53.4% / ABSTAIN 23.5% / DISPUTED 23.1%
+- **Difficulty:** 62.7% hard / 37.3% medium (tier1), easy (tier0 only)
+- **Multi-source:** 264 cases (9.0%) with source metadata
+- **Domains:** Technology, Medicine, Finance, Science, Education, Environment, Food, Law, Government, Transportation, Sports, Agriculture, History, HR/Workplace, Real Estate, Psychology, Social Media
+- **Query types:** what, how, is, does, why, should, when, which, who, compare
+- **Reasoning types:** Factual, Evaluative, Causal, Comparative, Temporal, Procedural
 
 </details>
 
@@ -350,23 +397,6 @@ Every case has 6 classification attributes for slicing results. Trustworthy case
 | Indirect | 195 | 6.7% |
 | Mixed | 34 | 1.2% |
 
-#### Context Count Distribution
-
-| Contexts per Case | Cases | % |
-|-------------------|------:|--:|
-| 1 | 923 | 31.6% |
-| 2 | 1,094 | 37.5% |
-| 3 | 785 | 26.9% |
-| 4 | 115 | 3.9% |
-| 5 | 3 | 0.1% |
-
-#### Source Type Distribution
-
-| Source Type | Cases | % |
-|-------------|------:|--:|
-| Single source | 2,656 | 91.0% |
-| Multi-source | 264 | 9.0% |
-
 #### Subcategories
 
 **Abstention** (23): wrong_entity, wrong_specificity, temporal_mismatch, missing_data, off_topic_contradiction, wrong_domain, wrong_jurisdiction, outdated_context, wrong_product, cross_domain_insufficient, decoy_keywords, converted_insufficient, converted_off_domain, wrong_version, implicit_only, wrong_granularity, converted_wrong_entity, multi_source_gap, cross_source_irrelevant, code_abstention, topic_adjacent, format_impossible, converted_wrong_scope
@@ -381,12 +411,20 @@ Every case has 6 classification attributes for slicing results. Trustworthy case
 
 ---
 
-### 🤝 Contributing
+<details>
+
+<summary><strong>📦 Contributing</strong></summary>
+
+<br>
 
 1. Fork this repo
 2. Add cases to the appropriate `data/tier0_sanity/` or `data/tier1_core/` JSON file
 3. Run validation: `python -m fitz_gov.cli validate --data-dir data`
 4. Submit a PR
+
+→ [Mode Decision Tree](docs/mode-decision-tree.md) — how expected modes are assigned
+
+</details>
 
 ---
 
