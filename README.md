@@ -118,9 +118,9 @@ Query + Retrieved Context
         │
         ▼
 ┌─────────────────┐
-│   Governance     │──► TRUSTWORTHY → generate answer
-│   Classifier     │──► DISPUTED    → flag contradictions
-│                  │──► ABSTAIN     → refuse to answer
+│   Governance    │──► TRUSTWORTHY → generate answer
+│   Classifier    │──► DISPUTED    → flag contradictions
+│                 │──► ABSTAIN     → refuse to answer
 └─────────────────┘
 ```
 
