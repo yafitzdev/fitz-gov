@@ -10,12 +10,21 @@
 [![PyPI version](https://badge.fury.io/py/fitz-gov.svg)](https://pypi.org/project/fitz-gov/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-5.1.0-green.svg)](CHANGELOG.md)
+[![HuggingFace Dataset](https://img.shields.io/badge/🤗%20HuggingFace-yafitzdev%2Ffitz--gov-yellow)](https://huggingface.co/datasets/yafitzdev/fitz-gov)
 
-[The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov)
+[The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov) • [🤗 HuggingFace](https://huggingface.co/datasets/yafitzdev/fitz-gov)
 
 </div>
 
 <br />
+
+> **Now on HuggingFace** — load any of the three configs in two lines:
+> ```python
+> from datasets import load_dataset
+> ds = load_dataset("yafitzdev/fitz-gov")                    # default: tier1_core/train (2,920 cases)
+> sanity = load_dataset("yafitzdev/fitz-gov", "tier0_sanity") # 60 sanity cases
+> ```
+> See the dataset card for full schema, splits, and a working baseline at **86.13% accuracy** ([pyrrho-modernbert-base-v1](https://huggingface.co/yafitzdev/pyrrho-modernbert-base-v1)).
 
 ---
 
