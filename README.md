@@ -9,7 +9,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI version](https://badge.fury.io/py/fitz-gov.svg)](https://pypi.org/project/fitz-gov/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-5.0.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-5.1.0-green.svg)](CHANGELOG.md)
 
 [The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov)
 
@@ -36,11 +36,11 @@ print(result)
 
 ### About 🧑‍🌾
 
-Solo project by Yan Fitzner ([LinkedIn](https://www.linkedin.com/in/yan-fitzner/), [GitHub](https://github.com/yafitzdev)).
+Solo project by Yan Fitzner ([LinkedIn](https://www.linkedin.com/in/yan-fitzner/), [GitHub](https://github.com/yafitzdev), [HuggingFace](https://huggingface.co/yafitzdev)).
 
 - ~4k lines of Python, 2,980 benchmark cases
 - 107 tests
-- Built for [fitz-ai](https://github.com/yafitzdev/fitz-ai) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases)
+- Built for [fitz-sage](https://github.com/yafitzdev/fitz-sage) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases)
 
 ---
 

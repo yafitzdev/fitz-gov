@@ -11,6 +11,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [5.1.0] - 2026-03-01
+
+### 🔧 Data Fixes
+
+- **Relabeled 199 trustworthy-with-gap cases** to abstain — cases where context had insufficient evidence were incorrectly labeled as trustworthy
+- **Removed 10 mislabeled single-context dispute cases** — disputes require multiple sources; single-context cases cannot be genuine disputes
+- **Fixed 51 broken queries** across the dataset
+- Updated test suite to match new labels
+
+### 📚 Documentation Refresh
+
+- **README.md**: Redesigned with centered header, badges, hero code snippet, collapsible sections, Mermaid evaluation flow diagram, and "About" section
+- **docs/evaluation-guide.md**: Full rewrite for v5 — 4 categories, cross-cutting quality checks, updated counts/difficulty/FAQ, Mermaid per-case evaluation diagram
+- **docs/mode-decision-tree.md**: Updated category names (qualification → trustworthy_hedged, confidence → trustworthy_direct), rewrote grounding/relevance as cross-cutting checks, added v5.0.0 version history entry
+- **docs/GOVERNANCE_CASE_TAXONOMY.md**: Updated version to 5.0.0, case counts to current values, removed hardcoded Windows path and broken link
+- **CHANGELOG.md**: Restored emoji consistency on v4.0–v5.0 subsection headers
+- **CLAUDE.md**: Updated to reflect v5.0.0 architecture
+- **Archived** completed `docs/v5-plan/` and `docs/roadmap/PROPOSAL_MULTI_SOURCE_TESTS.md` to `docs/roadmap/archive/`
+
+### 📊 Data Corrections
+
+- Fixed stale trustworthy_hedged difficulty breakdown (435/725 → 428/732 medium/hard) in README and CHANGELOG
+
+---
+
 ## [5.0.0] - 2026-02-15
 
 ### 🎉 Highlights
@@ -573,7 +598,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v5.0.0...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v5.1.0...HEAD
+[5.1.0]: https://github.com/yafitzdev/fitz-gov/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v4.1.0...v5.0.0
 [4.1.0]: https://github.com/yafitzdev/fitz-gov/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v3.0.0...v4.0.0
