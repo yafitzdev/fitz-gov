@@ -8,16 +8,16 @@ name = "fitz-gov"
 version = "5.1.0"
 description = "fitz-gov: Comprehensive RAG Governance Benchmark"
 readme = "README.md"
-license = "MIT"
+license = "CC-BY-NC-4.0"
 requires-python = ">=3.10"
 authors = [
-    { name = "Fitz AI", email = "dev@fitz.ai" }
+    { name = "Yan Fitzner", email = "yanfitzner@yahoo.de" }
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
+    "License :: Other/Proprietary License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",

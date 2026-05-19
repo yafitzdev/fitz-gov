@@ -71,7 +71,7 @@ def load_validation_to_jsonl(val_file: Path, out_path: Path) -> int:
 def write_dataset_card(staging: Path, version: str, t1_counts: dict, t0_counts: dict, n_val: int) -> Path:
     """Write README.md with the YAML frontmatter that HF Datasets needs."""
     card = f"""---
-license: mit
+license: cc-by-nc-4.0
 task_categories:
   - text-classification
 language:
@@ -158,7 +158,7 @@ sanity = load_dataset("yafitzdev/fitz-gov", "tier0_sanity", split="test")
 val = load_dataset("yafitzdev/fitz-gov", "validation", split="test")
 ```
 
-For an example 3-class fine-tune that uses this dataset, see [**pyrrho**](https://huggingface.co/yafitzdev/pyrrho-modernbert-base-v1) — a CPU-friendly ModernBERT-base governance classifier with **86.13 ± 0.86%** accuracy on the tier1 eval hold-out (vs 78.7% for the sklearn baseline).
+For an example 3-class fine-tune that uses this dataset, see [**pyrrho**](https://huggingface.co/yafitzdev/pyrrho-nano-g1) — a CPU-friendly ModernBERT-base governance classifier with **86.13 ± 0.86%** accuracy on the tier1 eval hold-out (vs 78.7% for the sklearn baseline).
 
 ---
 
@@ -196,13 +196,13 @@ Each case carries the following fields (some are category-specific):
 
 Most RAG benchmarks measure retrieval quality (did we get the right document?) or answer correctness (is the generated text right?). They under-measure the *third* axis: did the system know when **not** to answer? RAG failures in production are dominated by confident hallucination on cases where the retrieved evidence is insufficient or contradictory — exactly the cases fitz-gov is built to surface.
 
-The benchmark is used by [pyrrho](https://huggingface.co/yafitzdev/pyrrho-modernbert-base-v1) (CPU-friendly fine-tuned governance classifiers) and [fitz-sage](https://github.com/yafitzdev/fitz-sage) (a production RAG library that runs governance inline at inference time). All three projects are public.
+The benchmark is used by [pyrrho](https://huggingface.co/yafitzdev/pyrrho-nano-g1) (CPU-friendly fine-tuned governance classifiers) and [fitz-sage](https://github.com/yafitzdev/fitz-sage) (a production RAG library that runs governance inline at inference time). All three projects are public.
 
 ---
 
 ## License
 
-MIT — see [LICENSE](https://github.com/yafitzdev/fitz-gov/blob/main/LICENSE).
+CC BY-NC 4.0 — see [LICENSE](https://github.com/yafitzdev/fitz-gov/blob/main/LICENSE). Free for research, evaluation, and personal use; commercial use of the benchmark or derivatives requires a separate license.
 
 ## Citation
 
@@ -217,7 +217,7 @@ MIT — see [LICENSE](https://github.com/yafitzdev/fitz-gov/blob/main/LICENSE).
 
 ## Related projects
 
-- [**pyrrho**](https://huggingface.co/yafitzdev/pyrrho-modernbert-base-v1) — fine-tuned classifiers trained against this benchmark.
+- [**pyrrho**](https://huggingface.co/yafitzdev/pyrrho-nano-g1) — fine-tuned classifiers trained against this benchmark.
 - [**fitz-sage**](https://github.com/yafitzdev/fitz-sage) — production RAG library that uses pyrrho models for governance.
 - [Source repository](https://github.com/yafitzdev/fitz-gov) with full schema docs and generation tooling.
 """

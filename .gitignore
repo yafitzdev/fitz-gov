@@ -34,6 +34,9 @@ ENV/
 # Generated data (users generate their own)
 generated_data/
 
+# Dataset corpus — distributed via HuggingFace (yafitzdev/fitz-gov), not git.
+data/
+
 # Release artifacts
 *.zip
 
