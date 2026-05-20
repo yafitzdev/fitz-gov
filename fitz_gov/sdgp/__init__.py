@@ -35,6 +35,13 @@ from .checker import (
     case_dedup_hash,
     hashes_from,
 )
+from .cost import CostTracker, estimate_tokens
+from .near_miss import (
+    PATTERN_NEIGHBORS,
+    NearMissOrchestrator,
+    build_near_miss_prompt,
+    neighbors_of,
+)
 from .gap_detector import (
     CellFilter,
     CellTarget,
@@ -193,4 +200,12 @@ __all__ = [
     "format_coverage_report",
     "report_for_vault",
     "write_coverage_report",
+    # cost
+    "CostTracker",
+    "estimate_tokens",
+    # near-miss
+    "PATTERN_NEIGHBORS",
+    "NearMissOrchestrator",
+    "build_near_miss_prompt",
+    "neighbors_of",
 ]

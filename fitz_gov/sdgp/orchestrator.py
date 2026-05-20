@@ -28,6 +28,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from .checker import CheckResult, Checker, case_dedup_hash, hashes_from
+from .cost import CostTracker
 from .gap_detector import Gap, GapDetector
 from .prompts import (
     SYSTEM_MESSAGE,
@@ -216,6 +217,7 @@ class Orchestrator:
     provider: Provider
     blind_label_pair: BlindLabelPair | None = None
     checker: Checker = field(default_factory=Checker)
+    cost_tracker: CostTracker | None = None
     max_new_tokens: int = 2048
     generator_temperature: float = 0.7
     validator_temperature: float = 0.0
@@ -251,12 +253,33 @@ class Orchestrator:
         try:
             raw = self.provider.generate(req)
         except ProviderError as exc:
+            if self.cost_tracker is not None:
+                self.cost_tracker.record(
+                    provider=self.provider.name, cell_id=cell.cell_id,
+                    request_text=prompt.text, response_text=None,
+                    outcome="rejected_provider",
+                )
             return Outcome.REJECTED_PROVIDER, None, None, f"provider failed: {exc}"
 
         try:
             case = parse_case_json(raw)
         except ValueError as exc:
+            if self.cost_tracker is not None:
+                self.cost_tracker.record(
+                    provider=self.provider.name, cell_id=cell.cell_id,
+                    request_text=prompt.text, response_text=raw,
+                    outcome="rejected_parse",
+                )
             return Outcome.REJECTED_PARSE, None, None, f"parse failed: {exc} | raw[:200]={raw[:200]!r}"
+
+        # Successful call (parse OK) — outcome is filled in by the caller
+        # once it knows accepted/rejected_checker/conflict.
+        if self.cost_tracker is not None:
+            self.cost_tracker.record(
+                provider=self.provider.name, cell_id=cell.cell_id,
+                request_text=prompt.text, response_text=raw,
+                outcome=None,  # patched by caller via _patch_last_outcome
+            )
 
         # Make sure the case carries cell metadata even if the generator forgot.
         case = _patch_cell_metadata(case, cell)
@@ -318,6 +341,7 @@ class Orchestrator:
                 if val_label is not None and val_label != gen_label:
                     # Blind-label disagreement → conflict, NOT vaulted.
                     self._record_conflict(case, gen_label, val_label, batch_id=batch)
+                    self._patch_last_outcome("conflict")
                     return GenerationResult(
                         cell=cell,
                         outcome=Outcome.CONFLICT,
@@ -341,6 +365,7 @@ class Orchestrator:
                 h = case_dedup_hash(case)
                 if h:
                     seen.add(h)
+                self._patch_last_outcome("accepted")
                 return GenerationResult(
                     cell=cell,
                     outcome=Outcome.ACCEPTED,
@@ -352,6 +377,8 @@ class Orchestrator:
                 )
 
             # REJECTED_PARSE or REJECTED_CHECKER — retry.
+            if outcome == Outcome.REJECTED_CHECKER:
+                self._patch_last_outcome("rejected_checker")
             last_failure = GenerationResult(
                 cell=cell, outcome=outcome, attempts=attempt,
                 case=case, check_result=check, error=err,
@@ -426,6 +453,14 @@ class Orchestrator:
         }
         path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
         return path
+
+    def _patch_last_outcome(self, outcome: str) -> None:
+        """Backfill the outcome on the most recent CostTracker entry. No-op if
+        cost tracking is disabled. Called once per generate_one_cell attempt
+        right after the success/failure verdict is known."""
+        if self.cost_tracker is None or not self.cost_tracker.calls:
+            return
+        self.cost_tracker.calls[-1].outcome = outcome
 
     def list_conflicts(self) -> list[Path]:
         root = self.vault.root / "conflicts"
