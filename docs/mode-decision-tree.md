@@ -288,7 +288,7 @@ Before assigning expected_mode, verify:
 
 ## Version History
 
-- v6.0.0: Schema overlay — adds LLM-enriched governance signals (query_rewritten, context summaries, hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance, near_miss_reason). No category, mode, or labeling changes — decision tree unchanged.
+- v6.0.0: Schema overlay in two phases. Phase 0b adds LLM-enriched governance signals (query_rewritten, context summaries, hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance, near_miss_reason). Phase 0c adds MoE multi-task training ground truth (per-chunk boundary_quality, evidence_bias_score, evidence_chain for multi-chunk cases, grounding_targets for TRUSTWORTHY cases). No category, mode, or labeling changes — decision tree unchanged.
 - v5.0.0: Updated for 2,920-case tier1 benchmark with 4 categories (trustworthy_hedged/trustworthy_direct replacing qualification/confidence), grounding and relevance as cross-cutting quality checks, 113 subcategories
 - v3.0.0: Updated for 1,173-case benchmark, added boundary decision rules, three-way ambiguity, dispute vs qualification guidelines
 - v0.9.0: Initial decision tree document created

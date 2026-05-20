@@ -136,7 +136,9 @@ Version: **{version}**. See [CHANGELOG.md](https://github.com/yafitzdev/fitz-gov
 
 V6 adds **LLM-enriched signals** to every case. A reasoning-capable model (Sonnet 3.7 / Qwen3-35B) annotated the following fields that were previously stubs or absent:
 
-| New field | Location | Description |
+**Phase 0b enrichment (core governance signals):**
+
+| Field | Location | Description |
 |---|---|---|
 | `query_rewritten` | `input` | Semantically equivalent query re-expressed for retrieval clarity |
 | `summary` | `input.contexts[]` | One-sentence context summary |
@@ -149,7 +151,16 @@ V6 adds **LLM-enriched signals** to every case. A reasoning-capable model (Sonne
 | `distance` | `governance.boundary_proximity` | 0–1 distance from the decision boundary to the nearest other class |
 | `near_miss_reason` | `meta` | Plain-English explanation of why this case could fool a model |
 
-These signals enable fine-grained training objectives (e.g. multi-task heads on `hallucination_pressure` and `answer_coverage`) and richer per-case diagnostics.
+**Phase 0c enrichment (multi-task MoE training ground truth):**
+
+| Field | Location | Description |
+|---|---|---|
+| `boundary_quality` | `input.contexts[]` | 0–1 chunk-cut quality (1.0 = clean sentence boundary, 0.3 = hard mid-sentence cut). Ground truth for the Chunk Boundary Detection head. |
+| `evidence_bias_score` | `governance` | 0–1 sourcing one-sidedness (0 = balanced independent sources, 1 = single perspective dominates). Ground truth for the Evidence Bias Detection head. |
+| `evidence_chain` | `input` | `{{order: [chunk_id, ...], reasoning: "why this order"}}` — present for multi-chunk cases only. Ground truth for the Evidence Chain Construction head. |
+| `grounding_targets` | `meta` | `{{gold_answer: "2–6 sentences", sentences: [{{text, attributions: [chunk_id, ...]}}]}}` — present for TRUSTWORTHY cases only. Ground truth for the Answer Grounding Verification head. |
+
+These signals enable fine-grained training objectives (multi-task heads on per-chunk and per-case targets simultaneously) and richer per-case diagnostics.
 
 ---
 
@@ -184,8 +195,17 @@ print(ds[0]["label"])   # "abstain"
 row = ds[0]
 print(row["input"]["query_rewritten"])
 print(row["input"]["contexts"][0]["summary"])
+print(row["input"]["contexts"][0]["boundary_quality"])  # per-chunk cut quality
 print(row["governance"]["hallucination_pressure"])
+print(row["governance"]["evidence_bias_score"])         # source diversity
 print(row["meta"]["near_miss_reason"])
+
+# Multi-chunk reasoning order + sentence-level grounding (TRUSTWORTHY only)
+if row.get("input", {{}}).get("evidence_chain"):
+    print(row["input"]["evidence_chain"]["order"])
+if row.get("meta", {{}}).get("grounding_targets"):
+    print(row["meta"]["grounding_targets"]["gold_answer"])
+    print(row["meta"]["grounding_targets"]["sentences"][0]["attributions"])
 ```
 
 For a fine-tuned classifier trained against this benchmark, see [**pyrrho**](https://huggingface.co/yafitzdev/pyrrho-nano-g1) — a CPU-friendly ModernBERT-base governance classifier.
@@ -217,6 +237,15 @@ Top-level fields:
 | `query_rewritten` | string | **[V6]** LLM-rewritten form of the query. |
 | `contexts` | list[object] | Retrieved document chunks. |
 
+`input` object:
+
+| Field | Type | Description |
+|---|---|---|
+| `query` | string | Original user query. |
+| `query_rewritten` | string | **[V6]** LLM-rewritten form of the query. |
+| `contexts` | list[object] | Retrieved document chunks. |
+| `evidence_chain` | object | **[V6]** `{{order, reasoning}}` — chunk ids in the order a reader should consume them, plus a one-sentence justification. Multi-chunk cases only. |
+
 `input.contexts[]` object:
 
 | Field | Type | Description |
@@ -228,6 +257,7 @@ Top-level fields:
 | `temporality` | object | `is_time_sensitive`, `anchor_period` **[V6]**, `staleness_risk`. |
 | `summary` | string | **[V6]** One-sentence LLM summary of the chunk. |
 | `relevance_to_query` | float | **[V6]** 0–1 relevance to the query. |
+| `boundary_quality` | float | **[V6]** 0–1 chunk-cut quality (1.0 = clean sentence boundary, 0.3 = hard mid-sentence cut). |
 
 `governance` object (key fields):
 
@@ -241,6 +271,14 @@ Top-level fields:
 | `query_evidence_alignment` | float | **[V6]** 0–1: semantic overlap between query and contexts. |
 | `answer_coverage` | float | **[V6]** 0–1: fraction of query answerable from contexts. |
 | `boundary_proximity.distance` | float | **[V6]** Distance from decision boundary to nearest other class. |
+| `evidence_bias_score` | float | **[V6]** 0–1: source one-sidedness (0 = balanced, 1 = one-sided). |
+
+`meta` object (V6 additions):
+
+| Field | Type | Description |
+|---|---|---|
+| `near_miss_reason` | string | **[V6]** One sentence explaining why a naive reader could misclassify this case. |
+| `grounding_targets` | object | **[V6]** `{{gold_answer, sentences: [{{text, attributions: [chunk_id, ...]}}]}}` — TRUSTWORTHY cases only. Per-sentence attributions enable sentence-level grounding verification training. |
 
 ---
 

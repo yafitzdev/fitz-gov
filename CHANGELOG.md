@@ -13,12 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [6.0.0] - 2026-05-20
 
-### LLM-Enriched Schema (SDGP Phase 0b)
+### LLM-Enriched Schema (SDGP Phase 0b + 0c)
 
-All 2,980 cases annotated with V6 fields via Sonnet 3.7 subagents and Qwen3-35B (LM Studio).
+All 2,980 cases annotated with V6 fields via Sonnet 3.7 subagents and Qwen3-35B / Qwen3-27B (LM Studio).
 No case IDs changed; this is a schema overlay on V5.1.
 
-**New fields added to every case:**
+**Phase 0b — Core governance signals (every case):**
 
 | Field | Location | Description |
 |---|---|---|
@@ -33,13 +33,22 @@ No case IDs changed; this is a schema overlay on V5.1.
 | `distance` | `governance.boundary_proximity` | Distance from decision boundary to nearest other class |
 | `near_miss_reason` | `meta` | Plain-English explanation of why this case could fool a model |
 
+**Phase 0c — Multi-task MoE training ground truth:**
+
+| Field | Location | Description |
+|---|---|---|
+| `boundary_quality` | `input.contexts[]` | 0–1 chunk-cut quality (1.0 = clean sentence boundary, 0.3 = hard mid-sentence cut) |
+| `evidence_bias_score` | `governance` | 0–1 source one-sidedness (0 = balanced, 1 = single perspective) |
+| `evidence_chain` | `input` | `{order, reasoning}` — chunk consumption order + one-sentence rationale; multi-chunk cases only |
+| `grounding_targets` | `meta` | `{gold_answer, sentences: [{text, attributions}]}` — TRUSTWORTHY cases only; per-sentence chunk attributions |
+
 **Schema additions:**
 
 - Top-level `label` field (lowercase: `abstain` / `disputed` / `trustworthy`) for quick consumption
 - Top-level `tier` field (0 or 1)
 - `taxonomy.{governance_class, pattern, cell_id}` — cell-targeted generation taxonomy
 
-**HF dataset:** Updated at `yafitzdev/fitz-gov` (three configs: `tier1_core`, `tier0_sanity`, `validation`).
+**HF dataset:** Published at `yafitzdev/fitz-gov` (three configs: `tier1_core`, `tier0_sanity`, `validation`). 16.4 MB of JSONL.
 
 **No breaking changes** — all V5.1 fields preserved under their original keys; V6 fields are additive.
 

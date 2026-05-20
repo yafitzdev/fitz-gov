@@ -6,7 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 fitz-gov is a RAG governance benchmark for evaluating whether RAG systems know when to abstain, dispute, hedge, or confidently answer based on available evidence. It focuses on epistemic honesty rather than just retrieval quality or answer correctness.
 
-**Current version:** 6.0.0 with 2,980 test cases (60 tier0 + 2,920 tier1) across 4 governance categories (grounding/relevance are now cross-cutting quality checks). V6 = V5.1 schema overlaid with LLM-enriched governance signals (query_rewritten, context summaries, hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance, near_miss_reason). Same 2,980 case IDs as V5.1; V6 fields are additive (no breaking changes).
+**Current version:** 6.0.0 with 2,980 test cases (60 tier0 + 2,920 tier1) across 4 governance categories (grounding/relevance are now cross-cutting quality checks). V6 = V5.1 schema overlaid with LLM-enriched signals. Two enrichment phases:
+
+- **Phase 0b — core governance signals (every case):** `query_rewritten`, per-chunk `summary`/`relevance_to_query`/`temporality.anchor_period`, `governance.{hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance}`, `meta.near_miss_reason`.
+- **Phase 0c — MoE multi-task training ground truth:** per-chunk `boundary_quality` (0–1 cut quality), `governance.evidence_bias_score` (0–1 source one-sidedness), `input.evidence_chain` (`{order, reasoning}` — multi-chunk only), `meta.grounding_targets` (`{gold_answer, sentences[].attributions}` — TRUSTWORTHY only).
+
+Same 2,980 case IDs as V5.1; V6 fields are additive (no breaking changes).
 
 ## Commands
 

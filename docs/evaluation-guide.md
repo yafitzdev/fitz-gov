@@ -325,7 +325,7 @@ A: Both categories expect TRUSTWORTHY mode, but they test different answer behav
 
 ## Version History
 
-- v6.0.0: Schema overlay on v5.1. Adds LLM-enriched signals (query_rewritten, context summaries, hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance, near_miss_reason) and top-level label/tier convenience fields. No labeling changes — v5.1 metrics directly comparable.
+- v6.0.0: Schema overlay on v5.1. Adds LLM-enriched signals in two phases. Phase 0b — core governance signals on every case: query_rewritten, per-chunk summary/relevance_to_query/temporality.anchor_period, governance.{hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance}, meta.near_miss_reason. Phase 0c — MoE multi-task training ground truth: per-chunk boundary_quality, governance.evidence_bias_score, input.evidence_chain (multi-chunk only), meta.grounding_targets (TRUSTWORTHY only, gold_answer + per-sentence chunk attributions). Plus top-level label/tier convenience fields. No labeling changes — v5.1 metrics directly comparable.
 - v5.0.0: Updated for 2,920-case tier1 benchmark with 4 categories, 113 subcategories, cross-cutting quality checks, 37.3%/62.7% medium/hard split
 - v3.0.0: Updated for 1,113-case benchmark, added boundary decision rules, three-way ambiguity, dispute vs qualification guidelines
 - v0.9.0: Initial decision tree document created
