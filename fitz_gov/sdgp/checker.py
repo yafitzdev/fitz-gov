@@ -141,11 +141,18 @@ class Checker:
     """Programmatic consistency checks for SDGP cases.
 
     Stateless — safe to share. Caller threads in `seen_hashes` for dedup.
+
+    `pattern_structure_warning_only`: when True, structural pattern failures
+    (e.g. AUTHORITY_CONFLICT needing authority-score spread) downgrade from
+    errors to warnings. Use this for migrated V5.1 cases whose pattern label
+    was inferred from a different taxonomy and may not match structurally
+    even though the case is human-validated.
     """
 
     # Threshold for "imbalanced" warnings on conflict_density, etc.
     high_signal: float = 0.5
     low_signal: float = 0.3
+    pattern_structure_warning_only: bool = False
 
     def check(
         self,
@@ -360,9 +367,12 @@ class Checker:
             return
         struct: PatternCheckResult = check_pattern_structure(pattern, case)
         if not struct.passed:
-            result.issues.append(
-                CheckIssue(Severity.ERROR, "pattern_structure", struct.reason)
+            sev = (
+                Severity.WARNING
+                if self.pattern_structure_warning_only
+                else Severity.ERROR
             )
+            result.issues.append(CheckIssue(sev, "pattern_structure", struct.reason))
 
     def _check_signal_coherence(self, case: dict[str, Any], result: CheckResult) -> None:
         gov = case.get("governance", {})
