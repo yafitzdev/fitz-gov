@@ -153,13 +153,44 @@ def build_enrichment_prompt(case: dict[str, Any]) -> str:
 
 _FENCED = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL)
 _FIRST = re.compile(r"\{.*\}", re.DOTALL)
+_THINK_BLOCK = re.compile(r"<think>.*?</think>", re.DOTALL | re.IGNORECASE)
+
+
+def _strip_thinking(text: str) -> str:
+    """Remove reasoning-model <think>...</think> blocks from `text`.
+
+    Qwen3.6 reasoning variants (and similar models) wrap their internal
+    deliberation in <think>...</think>; the JSON response follows. We
+    strip the blocks before JSON extraction so the parser sees only the
+    answer. Also handles malformed cases where <think> never closes by
+    falling back to the substring after the last </think>."""
+    if "<think" not in text.lower():
+        return text
+    cleaned = _THINK_BLOCK.sub("", text)
+    # Handle unclosed <think>: drop everything before the last </think>.
+    if "<think" in cleaned.lower():
+        idx = cleaned.lower().rfind("</think>")
+        if idx >= 0:
+            cleaned = cleaned[idx + len("</think>"):]
+        else:
+            # No closing tag at all — drop the <think> opening forward.
+            idx_open = cleaned.lower().find("<think")
+            cleaned = cleaned[:idx_open]
+    return cleaned.strip()
 
 
 def parse_enrichment_response(raw: str) -> dict[str, Any]:
-    """Best-effort JSON extraction. Raises ValueError on nothing-parseable."""
+    """Best-effort JSON extraction. Raises ValueError on nothing-parseable.
+
+    Handles plain JSON, ```json fences, JSON embedded in prose, and
+    reasoning-model output wrapped in <think>...</think> blocks (Qwen3.6
+    35B-A3B etc.).
+    """
     if not raw or not raw.strip():
         raise ValueError("empty enrichment response")
-    text = raw.strip()
+    text = _strip_thinking(raw.strip())
+    if not text:
+        raise ValueError("response contained only thinking blocks, no answer")
     for candidate in (text, *(m.group(1) if m and m.lastindex else m.group(0)
                               for m in (_FENCED.search(text), _FIRST.search(text)) if m)):
         try:
