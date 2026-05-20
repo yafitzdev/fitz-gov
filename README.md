@@ -9,7 +9,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI version](https://badge.fury.io/py/fitz-gov.svg)](https://pypi.org/project/fitz-gov/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-5.1.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-6.0.0-green.svg)](CHANGELOG.md)
 [![HuggingFace Dataset](https://img.shields.io/badge/🤗%20HuggingFace-yafitzdev%2Ffitz--gov-yellow)](https://huggingface.co/datasets/yafitzdev/fitz-gov)
 
 [The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov) • [🤗 HuggingFace](https://huggingface.co/datasets/yafitzdev/fitz-gov)

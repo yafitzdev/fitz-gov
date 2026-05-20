@@ -2,7 +2,7 @@
 
 Complete taxonomy of governance case types for the fitz-gov benchmark.
 
-**Status**: Complete. All cases merged into `fitz-gov/data/tier1_core/`. Current version: **v5.0.0**.
+**Status**: Complete. All cases merged into `fitz-gov/data/tier1_core/`. Current version: **v6.0.0** (V5.1 + LLM-enriched schema overlay; same case IDs and labels as v5.0).
 
 **Production mapping**: fitz-gov uses 3-mode labels (abstain/disputed/trustworthy) and 4 test categories: abstention, dispute, trustworthy_hedged, trustworthy_direct. Both trustworthy_hedged and trustworthy_direct map to TRUSTWORTHY mode — the category name describes the expected response behavior (hedged vs direct). Grounding and relevance are cross-cutting quality checks applied to all trustworthy cases.
 

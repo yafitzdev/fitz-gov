@@ -1,7 +1,7 @@
 # fitz-gov Evaluation Guide
 
-> **Version**: 5.0.0
-> **Last Updated**: 2026-03-01
+> **Version**: 6.0.0
+> **Last Updated**: 2026-05-20
 
 This guide explains how to interpret fitz-gov benchmark results and understand what the scores mean for your RAG system.
 
@@ -56,7 +56,7 @@ If a model fails Tier 0, it indicates serious problems with:
 
 ## Category Breakdown
 
-fitz-gov v5.0 uses 4 test categories. All categories test governance mode classification. Trustworthy categories additionally run cross-cutting quality checks.
+fitz-gov v6.0 uses 4 test categories (unchanged since v5.0). All categories test governance mode classification. Trustworthy categories additionally run cross-cutting quality checks.
 
 ### Abstention (685 Tier 1 cases)
 
@@ -309,6 +309,10 @@ A: Check for false positives in regex patterns. Enable LLM validation with `llm_
 
 A: Analyze the subcategory breakdown and failure cases. Each subcategory tests a specific pattern — focus on the patterns where your system fails most often.
 
+**Q: What changed between v5.1 and v6.0?**
+
+A: v6.0 is a schema overlay on v5.1 — same 2,980 cases, same labels, same categories. Every case now carries LLM-enriched signals (`query_rewritten`, per-context `summary`/`relevance_to_query`/`anchor_period`, governance signals `hallucination_pressure`/`retrieval_retry_value`/`query_evidence_alignment`/`answer_coverage`/`boundary_proximity.distance`, and `near_miss_reason`). Top-level `label` and `tier` convenience fields added. No breaking changes — v5.1 evaluations remain directly comparable.
+
 **Q: What changed between v4.1 and v5.0?**
 
 A: Grounding and relevance are no longer standalone categories. They are now cross-cutting quality checks on all trustworthy cases. The benchmark dropped from 6 categories to 4, but all 2,980 cases were preserved. Scores are not directly comparable between versions due to the structural change.
@@ -321,6 +325,7 @@ A: Both categories expect TRUSTWORTHY mode, but they test different answer behav
 
 ## Version History
 
+- v6.0.0: Schema overlay on v5.1. Adds LLM-enriched signals (query_rewritten, context summaries, hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance, near_miss_reason) and top-level label/tier convenience fields. No labeling changes — v5.1 metrics directly comparable.
 - v5.0.0: Updated for 2,920-case tier1 benchmark with 4 categories, 113 subcategories, cross-cutting quality checks, 37.3%/62.7% medium/hard split
 - v3.0.0: Updated for 1,113-case benchmark, added boundary decision rules, three-way ambiguity, dispute vs qualification guidelines
 - v0.9.0: Initial decision tree document created

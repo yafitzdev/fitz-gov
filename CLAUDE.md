@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 fitz-gov is a RAG governance benchmark for evaluating whether RAG systems know when to abstain, dispute, hedge, or confidently answer based on available evidence. It focuses on epistemic honesty rather than just retrieval quality or answer correctness.
 
-**Current version:** 5.0.0 with 2,980 test cases (60 tier0 + 2,920 tier1) across 4 governance categories (grounding/relevance are now cross-cutting quality checks)
+**Current version:** 6.0.0 with 2,980 test cases (60 tier0 + 2,920 tier1) across 4 governance categories (grounding/relevance are now cross-cutting quality checks). V6 = V5.1 schema overlaid with LLM-enriched governance signals (query_rewritten, context summaries, hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance, near_miss_reason). Same 2,980 case IDs as V5.1; V6 fields are additive (no breaking changes).
 
 ## Commands
 
@@ -45,7 +45,7 @@ python -m fitz_gov.cli stats --data-dir data --breakdown
 
 ### SDGP (Synthetic Data Generation Pipeline) — `fitz_gov/sdgp/`
 
-New subpackage targeting the V6+ scale-up per [pyrrho ROADMAP.md §3–§4](../pyrrho/docs/ROADMAP.md). Cell-targeted generation of taxonomy × domain × difficulty cases. Distinct from the legacy corpus-based `fitz_gov.generator` (which stays for backward compat).
+New subpackage targeting the V7+ scale-up per [pyrrho ROADMAP.md §3–§4](../pyrrho/docs/ROADMAP.md). Cell-targeted generation of taxonomy × domain × difficulty cases. Distinct from the legacy corpus-based `fitz_gov.generator` (which stays for backward compat). (V6 = V5.1 schema overlay; V7 is the first SDGP-scaled major version.)
 
 - **`sdgp/taxonomy.py`** — 18 canonical evidence patterns (6 per governance class), 7 primary domains + 1 meta, 3 difficulty levels. `Cell` is the (pattern, domain, difficulty) coordinate; `cell_id` format is `"{pattern}__{domain}__{difficulty}"`. Includes cheap structural pattern checks (`check_pattern_structure`) — e.g. `numerical_conflict` requires ≥2 digit-bearing contexts.
 - **`sdgp/vault.py`** — Append-only JSONL store with a `cell_id → case_ids` index. `Vault.open(path).add(case, provenance=...)` is idempotent and stamps `_vault` metadata (provider, prompt_version, batch_id, run_seed, added_at). Index rebuilds from JSONL after a crash. `Vault.cell_counts()` is the input the gap detector reads.
@@ -61,17 +61,17 @@ New subpackage targeting the V6+ scale-up per [pyrrho ROADMAP.md §3–§4](../p
 - **`sdgp/__init__.py`** — re-exports the full public API (70 symbols).
 
 **Runners**:
-- `scripts/sdgp_enrich_v51.py` — Phase 0 enrichment (V5.1 → V5.1-enriched vault).
+- `scripts/sdgp_enrich_v51.py` — Phase 0a heuristic enrichment (V5.1 → V6 vault; Phase 0b LLM enrichment via `scripts/sdgp_enrich_v51_llm.py` fills the `<TODO_LLM>` markers). Phase 0 complete 2026-05-20; vault published as `yafitzdev/fitz-gov` v6.0.0.
 - `scripts/sdgp_generate.py` — Phase 2 generation. Reads vault → ranks gaps → picks provider(s) from env / args → drives orchestrator → writes coverage report. Provider auto-selection (`--provider env`) picks up `SDGP_LOCAL_MODEL` and `SDGP_HANDOFF_DIR`; passing two providers enables blind labeling. Supports `--filter-pattern` / `--filter-class` / `--filter-difficulty` / `--filter-domain` for targeted batches.
 
 **Coverage as of 2026-05-20** (after V5.1 enrichment, target 20/cell):
 - 2,980 cases, 34 / 378 cells at target (9.0%), 148 cells empty (39.2%), total gap 5,584.
-- Skew: science_medicine 29.6% at target vs history_geography 1.9%; TRUSTWORTHY 15.1% vs ABSTAIN 4.8%; hard 18.3% vs easy 0.0%. These are the V6 generation targets the gap detector now prioritizes.
+- Skew: science_medicine 29.6% at target vs history_geography 1.9%; TRUSTWORTHY 15.1% vs ABSTAIN 4.8%; hard 18.3% vs easy 0.0%. These are the V7 generation targets the gap detector will prioritize once V7 scale-out begins.
 - See `data/sdgp_reports/v51_enriched.md` for the full markdown breakdown.
 
 Test suite: `tests/sdgp/` covers all SDGP modules (194 tests as of 2026-05-20). Run via `pytest tests/sdgp/ -q`.
 
-Still to build (lower priority — operational quality, not on the critical path to V6):
+Still to build (lower priority — operational quality, not on the critical path to V7):
 - **Conflict-resolution CLI** (triage `<vault>/conflicts/*.json` interactively — currently they're just written to disk for manual handling).
 - **Cost tracking per cell** (tokens × provider).
 - **Near-miss generation mode** (ROADMAP §3: 20–25% of cases should be at taxonomy boundaries; needs a separate generator path that takes *two* adjacent patterns).
