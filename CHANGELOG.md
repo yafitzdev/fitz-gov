@@ -11,6 +11,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [6.0.0] - 2026-05-20
+
+### LLM-Enriched Schema (SDGP Phase 0b)
+
+All 2,980 cases annotated with V6 fields via Sonnet 3.7 subagents and Qwen3-35B (LM Studio).
+No case IDs changed; this is a schema overlay on V5.1.
+
+**New fields added to every case:**
+
+| Field | Location | Description |
+|---|---|---|
+| `query_rewritten` | `input` | Semantically equivalent query re-expressed for retrieval clarity |
+| `summary` | `input.contexts[]` | One-sentence LLM summary of the context chunk |
+| `relevance_to_query` | `input.contexts[]` | 0–1 float relevance to the query |
+| `anchor_period` | `input.contexts[].temporality` | Detected temporal anchor (e.g. "2023 Q4") |
+| `hallucination_pressure` | `governance` | 0–1 — how strongly this query pattern invites confabulation |
+| `retrieval_retry_value` | `governance` | 0–1 — expected gain from better retrieval |
+| `query_evidence_alignment` | `governance` | 0–1 — semantic overlap between query and contexts |
+| `answer_coverage` | `governance` | 0–1 — fraction of query answerable from contexts |
+| `distance` | `governance.boundary_proximity` | Distance from decision boundary to nearest other class |
+| `near_miss_reason` | `meta` | Plain-English explanation of why this case could fool a model |
+
+**Schema additions:**
+
+- Top-level `label` field (lowercase: `abstain` / `disputed` / `trustworthy`) for quick consumption
+- Top-level `tier` field (0 or 1)
+- `taxonomy.{governance_class, pattern, cell_id}` — cell-targeted generation taxonomy
+
+**HF dataset:** Updated at `yafitzdev/fitz-gov` (three configs: `tier1_core`, `tier0_sanity`, `validation`).
+
+**No breaking changes** — all V5.1 fields preserved under their original keys; V6 fields are additive.
+
+---
+
 ## [5.1.0] - 2026-03-01
 
 ### 🔧 Data Fixes
@@ -598,7 +632,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v5.1.0...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v6.0.0...HEAD
+[6.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v5.1.0...v6.0.0
 [5.1.0]: https://github.com/yafitzdev/fitz-gov/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v4.1.0...v5.0.0
 [4.1.0]: https://github.com/yafitzdev/fitz-gov/compare/v4.0.0...v4.1.0
