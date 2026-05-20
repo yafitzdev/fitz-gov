@@ -36,6 +36,16 @@ from .checker import (
     hashes_from,
 )
 from .cost import CostTracker, estimate_tokens
+from .llm_enrich import (
+    ENRICHMENT_SYSTEM,
+    EnrichmentResult,
+    build_enrichment_prompt,
+    case_needs_enrichment,
+    cases_needing_enrichment,
+    enrich_case_with_provider,
+    merge_enrichment,
+    parse_enrichment_response,
+)
 from .near_miss import (
     PATTERN_NEIGHBORS,
     NearMissOrchestrator,
@@ -208,4 +218,13 @@ __all__ = [
     "NearMissOrchestrator",
     "build_near_miss_prompt",
     "neighbors_of",
+    # llm enrichment (Phase 0b)
+    "ENRICHMENT_SYSTEM",
+    "EnrichmentResult",
+    "build_enrichment_prompt",
+    "case_needs_enrichment",
+    "cases_needing_enrichment",
+    "enrich_case_with_provider",
+    "merge_enrichment",
+    "parse_enrichment_response",
 ]

@@ -329,6 +329,93 @@ class Vault:
         self._persist_index()
         return True
 
+    def update_cases(
+        self,
+        updates: dict[str, dict[str, Any]],
+        *,
+        merge_vault_meta: bool = True,
+    ) -> dict[str, int]:
+        """Rewrite the JSONL in-place, replacing matching cases with their
+        updated dicts. Atomic via tempfile + os.replace.
+
+        `updates` is `{case_id: new_case_dict}`. Cases not in `updates` are
+        passed through unchanged. Returns `{"updated": n, "passthrough": n,
+        "unknown": n}` (unknown = case_ids in `updates` that didn't match
+        any vault case).
+
+        `merge_vault_meta=True` (default) preserves the `_vault` provenance
+        block from the original case and updates `added_at` to mark the
+        revision. Pass False to overwrite with whatever's in `new_case_dict`.
+        """
+        if not updates:
+            return {"updated": 0, "passthrough": 0, "unknown": 0}
+        if not self.cases_path.exists():
+            return {"updated": 0, "passthrough": 0, "unknown": len(updates)}
+
+        seen_in_vault: set[str] = set()
+        n_updated = 0
+        n_passthrough = 0
+
+        self.cases_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=str(self.cases_path.parent),
+            prefix=self.cases_path.name + ".update.",
+            suffix=".tmp",
+            delete=False,
+        )
+        try:
+            for _, case in _read_jsonl(self.cases_path):
+                cid = case.get("id")
+                if not isinstance(cid, str):
+                    # Keep malformed-id rows as-is rather than dropping them.
+                    tmp.write(json.dumps(case, ensure_ascii=False))
+                    tmp.write("\n")
+                    n_passthrough += 1
+                    continue
+                seen_in_vault.add(cid)
+                new_case = updates.get(cid)
+                if new_case is None:
+                    tmp.write(json.dumps(case, ensure_ascii=False))
+                    tmp.write("\n")
+                    n_passthrough += 1
+                    continue
+                merged = dict(new_case)
+                # Force the id to match (no silent id-change via update)
+                merged["id"] = cid
+                if merge_vault_meta:
+                    old_vault = case.get(VAULT_KEY, {})
+                    new_vault = dict(old_vault)
+                    new_vault["added_at"] = _utcnow_iso()
+                    new_vault["last_modified_at"] = _utcnow_iso()
+                    revs = int(new_vault.get("revisions", 0)) + 1
+                    new_vault["revisions"] = revs
+                    merged[VAULT_KEY] = new_vault
+                tmp.write(json.dumps(merged, ensure_ascii=False))
+                tmp.write("\n")
+                n_updated += 1
+            tmp.flush()
+            os.fsync(tmp.fileno())
+            tmp.close()
+            os.replace(tmp.name, str(self.cases_path))
+        except Exception:
+            tmp.close()
+            try:
+                os.unlink(tmp.name)
+            except OSError:
+                pass
+            raise
+
+        # Anything in updates that wasn't in the vault is unknown
+        unknown = len(set(updates.keys()) - seen_in_vault)
+
+        # State updates: case_ids set is unchanged; cell index may need rebuild
+        # if the update changed any cell_id. Cheap-and-safe: rebuild.
+        self.rebuild_index()
+
+        return {"updated": n_updated, "passthrough": n_passthrough, "unknown": unknown}
+
     def add_many(
         self,
         cases: Iterable[dict[str, Any]],
