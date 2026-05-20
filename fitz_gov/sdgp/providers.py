@@ -190,6 +190,121 @@ class LocalLlmProvider(Provider):
 
 
 # ---------------------------------------------------------------------------
+# LmStudioProvider — OpenAI-compatible HTTP backend (LM Studio default :1234)
+# ---------------------------------------------------------------------------
+
+
+@dataclass(slots=True)
+class LmStudioProvider(Provider):
+    """OpenAI-compatible backend (LM Studio, vLLM, llama-server, etc.).
+
+    Talks to `POST {base_url}/v1/chat/completions` synchronously.
+    Default targets LM Studio at `localhost:1234`. `model_id` should match
+    whatever the server has loaded (LM Studio surfaces it under
+    `/v1/models`).
+    """
+
+    model_id: str = "qwen/qwen3.6-35b-a3b"
+    base_url: str = "http://localhost:1234"
+    api_key: str = "lm-studio"  # LM Studio accepts any non-empty string
+    request_timeout_s: float = 180.0
+    name: str = ""
+    version: str = ""
+
+    def __post_init__(self) -> None:
+        if not self.name:
+            self.name = "lm_studio"
+        if not self.version:
+            self.version = self.model_id
+
+    def healthcheck(self) -> bool:
+        import urllib.error
+        import urllib.request
+
+        try:
+            req = urllib.request.Request(
+                self.base_url + "/v1/models",
+                headers={"Authorization": f"Bearer {self.api_key}"},
+                method="GET",
+            )
+            with urllib.request.urlopen(req, timeout=2.0) as resp:
+                return resp.status == 200
+        except (urllib.error.URLError, TimeoutError, OSError):
+            return False
+
+    def list_models(self) -> list[str]:
+        """Return ids of currently-loaded models. Best-effort; [] on failure."""
+        import urllib.error
+        import urllib.request
+
+        try:
+            req = urllib.request.Request(
+                self.base_url + "/v1/models",
+                headers={"Authorization": f"Bearer {self.api_key}"},
+                method="GET",
+            )
+            with urllib.request.urlopen(req, timeout=2.0) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            return [m.get("id", "") for m in data.get("data", []) if m.get("id")]
+        except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError):
+            return []
+
+    def generate(self, req: GenerateRequest) -> str:
+        import urllib.error
+        import urllib.request
+
+        messages: list[dict[str, Any]] = []
+        if req.system:
+            messages.append({"role": "system", "content": req.system})
+        messages.append({"role": "user", "content": req.prompt})
+
+        payload: dict[str, Any] = {
+            "model": self.model_id,
+            "messages": messages,
+            "temperature": req.temperature,
+            "max_tokens": req.max_tokens,
+            "stream": False,
+        }
+        if req.stop:
+            payload["stop"] = list(req.stop)
+
+        body = json.dumps(payload).encode("utf-8")
+        http_req = urllib.request.Request(
+            self.base_url + "/v1/chat/completions",
+            data=body,
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {self.api_key}",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(http_req, timeout=self.request_timeout_s) as resp:
+                if resp.status != 200:
+                    raise ProviderHTTPError(
+                        f"lm_studio returned HTTP {resp.status}: {resp.read()!r:.200}"
+                    )
+                data = json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            raise ProviderHTTPError(f"lm_studio HTTPError: {exc}") from exc
+        except urllib.error.URLError as exc:
+            raise ProviderError(f"lm_studio unreachable at {self.base_url}: {exc}") from exc
+        except TimeoutError as exc:
+            raise ProviderTimeoutError(
+                f"lm_studio did not respond within {self.request_timeout_s}s"
+            ) from exc
+
+        choices = data.get("choices") or []
+        if not choices:
+            raise ProviderError(f"lm_studio response has no choices: {data!r:.200}")
+        msg = choices[0].get("message") or {}
+        text = msg.get("content")
+        if not isinstance(text, str):
+            raise ProviderError(f"lm_studio response has no message.content: {data!r:.200}")
+        return text
+
+
+# ---------------------------------------------------------------------------
 # FileHandoffProvider — Claude Code / Codex subagent integration
 # ---------------------------------------------------------------------------
 
@@ -368,6 +483,8 @@ def providers_from_env() -> list[Provider]:
     Recognized vars:
       - `SDGP_LOCAL_MODEL` — Ollama model id (default: qwen3.5:0.8b).
       - `SDGP_LOCAL_URL` — Ollama base URL (default: http://localhost:11434).
+      - `SDGP_LMSTUDIO_MODEL` — LM Studio model id (default: qwen/qwen3.6-35b-a3b).
+      - `SDGP_LMSTUDIO_URL` — LM Studio base URL (default: http://localhost:1234).
       - `SDGP_HANDOFF_DIR` — file-handoff path (enables FileHandoffProvider).
       - `SDGP_HANDOFF_TIMEOUT` — handoff timeout seconds (default: 600).
     """
@@ -377,6 +494,13 @@ def providers_from_env() -> list[Provider]:
             LocalLlmProvider(
                 model_id=os.environ.get("SDGP_LOCAL_MODEL", "qwen3.5:0.8b"),
                 base_url=os.environ.get("SDGP_LOCAL_URL", "http://localhost:11434"),
+            )
+        )
+    if os.environ.get("SDGP_LMSTUDIO_MODEL") or os.environ.get("SDGP_LMSTUDIO_URL"):
+        out.append(
+            LmStudioProvider(
+                model_id=os.environ.get("SDGP_LMSTUDIO_MODEL", "qwen/qwen3.6-35b-a3b"),
+                base_url=os.environ.get("SDGP_LMSTUDIO_URL", "http://localhost:1234"),
             )
         )
     if handoff := os.environ.get("SDGP_HANDOFF_DIR"):
