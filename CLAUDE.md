@@ -43,6 +43,19 @@ python -m fitz_gov.cli stats --data-dir data --breakdown
 - **`fitz_gov/loader.py`** - Test case loading from JSON files: `load_cases()`, `load_tier()`, `load_case_by_id()`
 - **`fitz_gov/llm_validator.py`** - Two-pass validation (regex + LLM semantic check) via `OllamaValidator`. Results cached in `~/.cache/fitz_gov/`
 
+### SDGP (Synthetic Data Generation Pipeline) — `fitz_gov/sdgp/`
+
+New subpackage targeting the V6+ scale-up per [pyrrho ROADMAP.md §3–§4](../pyrrho/docs/ROADMAP.md). Cell-targeted generation of taxonomy × domain × difficulty cases. Distinct from the legacy corpus-based `fitz_gov.generator` (which stays for backward compat).
+
+- **`sdgp/taxonomy.py`** — 18 canonical evidence patterns (6 per governance class), 7 primary domains + 1 meta, 3 difficulty levels. `Cell` is the (pattern, domain, difficulty) coordinate; `cell_id` format is `"{pattern}__{domain}__{difficulty}"`. Includes cheap structural pattern checks (`check_pattern_structure`) — e.g. `numerical_conflict` requires ≥2 digit-bearing contexts.
+- **`sdgp/vault.py`** — Append-only JSONL store with a `cell_id → case_ids` index. `Vault.open(path).add(case, provenance=...)` is idempotent and stamps `_vault` metadata (provider, prompt_version, batch_id, run_seed, added_at). Index rebuilds from JSONL after a crash. `Vault.cell_counts()` is the input the gap detector reads.
+- **`sdgp/checker.py`** — Programmatic consistency checks. Schema, class consistency (`taxonomy.pattern` ↔ `governance.classification`), cell_id alignment with `meta.difficulty` + `routing.expert_fired`, pattern structure (delegates to taxonomy), signal coherence (`conflict_density` high for DISPUTED, low for TRUSTWORTHY; argmax of (a, d, t) matches classification; hallucination_pressure tracks classification), and dedup against a caller-supplied `seen_hashes` set. Errors block the case; warnings don't. Version-aware: V5.1-shaped rows (no taxonomy) get warnings rather than errors for fields they don't carry.
+- **`sdgp/__init__.py`** — re-exports the public API of all three modules.
+
+Test suite: `tests/sdgp/` covers all of the above (74 tests as of 2026-05-20). Run via `pytest tests/sdgp/ -v`.
+
+Pieces still to build (per the design discussion): provider abstraction (Claude Code / Codex subagent / local LLM), 3D gap detector, prompt library, blind-label loop, conflict-resolution queue, distribution monitor dashboard, orchestrator. Build in that order; each layer plugs into the foundation above.
+
 ### Evaluation Flow
 
 1. **Governance categories** (abstention, dispute, trustworthy_hedged, trustworthy_direct): Compare `actual_mode` to `expected_mode`
