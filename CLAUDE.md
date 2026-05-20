@@ -53,20 +53,28 @@ New subpackage targeting the V6+ scale-up per [pyrrho ROADMAP.md §3–§4](../p
 - **`sdgp/enrich.py`** — Phase 0 V5.1 → V5.1-enriched mapping. Programmatic (no LLM): 17 domains → 7 expert domains, 4 categories → 3 governance classes, 115 subcategories → 18 taxonomy patterns (~70 explicit 1:1 mappings + keyword/category-default fallback), per-chunk authority_score + temporality, deterministic governance signals from `category`/`evidence_pattern`/`difficulty`, near-miss heuristics. Fields requiring real LLM reasoning (`query_rewritten`, `near_miss_reason`, per-chunk `anchor_period`) land as `<TODO_LLM>` markers so a Phase 0b enrichment pass can find-and-replace them.
 - **`sdgp/__init__.py`** — re-exports the public API of all four modules.
 
-**Runner**: `scripts/sdgp_enrich_v51.py` reads `data/{tier0_sanity,tier1_core}/*.json`, applies `enrich_case` to each, checks with `pattern_structure_warning_only=True` (since migrated cases' inferred patterns may not match structurally), and writes survivors to a vault at `data/sdgp_vault_v51_enriched/`. As of 2026-05-20: 2,980 cases enriched, 0 hard failures, 652 pattern-structure warnings, 230 / 378 primary cells filled with V5.1 — the remaining 148 are the V6 generation targets.
+- **`sdgp/providers.py`** — Pluggable LLM backends behind a single `Provider` ABC. `LocalLlmProvider` (Ollama HTTP at `localhost:11434`), `FileHandoffProvider` (writes prompt files to `handoff_dir/in/`, polls `out/` for the subagent's response — the "no API!" path for Claude Code / Codex subagents), `RoundRobinProvider` (rotates per call), `StubProvider` (deterministic, for tests), `BlindLabelPair` (enforces ROADMAP §4: generator and validator must never be the same instance). `providers_from_env()` reads `SDGP_LOCAL_MODEL` / `SDGP_HANDOFF_DIR` for CLI defaults.
+- **`sdgp/gap_detector.py`** — 3D cell-coverage analysis. `GapDetector().rank(cell_counts, target, weights, filter)` returns a list of `Gap(priority, cell, current, target)` sorted highest-priority first. `PriorityWeights` multiplies per-pattern / per-domain / per-difficulty / per-class boosts onto the raw gap. `CellFilter` scopes the queue (single pattern, single class, etc.). `CellTarget` allows per-cell threshold overrides.
+- **`sdgp/prompts.py`** — Per-pattern × per-domain × per-difficulty prompt library. `PATTERN_GUIDANCE` has one paragraph per pattern explaining structural requirements; `DOMAIN_HINTS` per domain; `DIFFICULTY_HINTS` per level. `build_prompt(cell)` composes the full generator prompt. `few_shot_for_cell(vault, cell, n=2)` pulls matching examples from the vault (prefers same domain → same pattern → same class). `SYSTEM_MESSAGE` constrains the model to JSON-only output.
+- **`sdgp/orchestrator.py`** — Ties everything together. `Orchestrator(vault, provider, blind_label_pair).fill_gaps(gaps, n_per_cell)` builds prompts, calls providers, parses JSON (robust to fences / prose), runs the checker, blind-labels with the validator, and either vaults or routes to `<vault>/conflicts/<batch_id>/<case_id>.json`. Retries parse/checker rejections up to `max_attempts_per_cell`; aborts the batch on provider errors. `parse_case_json` handles common LLM wrappings (fences, leading prose).
+- **`sdgp/monitor.py`** — Markdown coverage report. `write_coverage_report(cell_counts, out_path, target)` produces a stats table grouped by class / pattern / domain / difficulty, plus top-N most-filled and most-empty cells. Drop-in source-of-truth for "where are we?".
+- **`sdgp/__init__.py`** — re-exports the full public API (70 symbols).
 
-Test suite: `tests/sdgp/` covers all four modules (105 tests as of 2026-05-20). Run via `pytest tests/sdgp/ -v`.
+**Runners**:
+- `scripts/sdgp_enrich_v51.py` — Phase 0 enrichment (V5.1 → V5.1-enriched vault).
+- `scripts/sdgp_generate.py` — Phase 2 generation. Reads vault → ranks gaps → picks provider(s) from env / args → drives orchestrator → writes coverage report. Provider auto-selection (`--provider env`) picks up `SDGP_LOCAL_MODEL` and `SDGP_HANDOFF_DIR`; passing two providers enables blind labeling. Supports `--filter-pattern` / `--filter-class` / `--filter-difficulty` / `--filter-domain` for targeted batches.
 
-Pieces still to build (per the design discussion):
-- **Provider abstraction** (Claude Code / Codex subagent / local LLM) — needed before Phase 0b can replace the `<TODO_LLM>` markers
-- **3D gap detector** — reads `vault.cell_counts()`, ranks cells by gap-to-threshold, emits a generation queue
-- **Prompt library** (per-pattern × per-domain × per-difficulty templates with V5.1 few-shot examples)
-- **Blind-label loop** (second-pass validator using a different provider)
-- **Conflict-resolution queue** (generator/validator disagreements → CLI triage)
-- **Distribution monitor dashboard** (markdown coverage report)
-- **Orchestrator** (ties all of the above into a single CLI pipeline)
+**Coverage as of 2026-05-20** (after V5.1 enrichment, target 20/cell):
+- 2,980 cases, 34 / 378 cells at target (9.0%), 148 cells empty (39.2%), total gap 5,584.
+- Skew: science_medicine 29.6% at target vs history_geography 1.9%; TRUSTWORTHY 15.1% vs ABSTAIN 4.8%; hard 18.3% vs easy 0.0%. These are the V6 generation targets the gap detector now prioritizes.
+- See `data/sdgp_reports/v51_enriched.md` for the full markdown breakdown.
 
-Build in that order; each layer plugs into the foundation above.
+Test suite: `tests/sdgp/` covers all SDGP modules (194 tests as of 2026-05-20). Run via `pytest tests/sdgp/ -q`.
+
+Still to build (lower priority — operational quality, not on the critical path to V6):
+- **Conflict-resolution CLI** (triage `<vault>/conflicts/*.json` interactively — currently they're just written to disk for manual handling).
+- **Cost tracking per cell** (tokens × provider).
+- **Near-miss generation mode** (ROADMAP §3: 20–25% of cases should be at taxonomy boundaries; needs a separate generator path that takes *two* adjacent patterns).
 
 ### Evaluation Flow
 
