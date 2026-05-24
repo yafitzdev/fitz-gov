@@ -11,6 +11,131 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [7.0.1] - 2026-05-24
+
+### Changed
+
+- Republished V7 as a schema-clean public contract with the same 10,500 rows, labels, and query-grouped splits as V7.0.0.
+- Removed pre-SDGP report axes from public rows: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, and `meta.evidence_pattern`.
+- Removed V5/V6 compatibility configs from the Hugging Face dataset card/export path; the public config is now the canonical `v7` split set.
+- Updated the strict training-schema completeness gate to use SDGP canonical fields instead of requiring old report axes.
+
+---
+
+## [7.0.0] - 2026-05-24
+
+### Added
+
+- Strict V7 training-schema audit tooling:
+  - `fitz_gov.sdgp.completeness`
+  - `scripts/sdgp_audit_training_schema.py`
+- V7 schema-completion workflow:
+  - `fitz_gov.sdgp.v7_completion`
+  - `scripts/sdgp_complete_v7_schema.py`
+  - `scripts/sdgp_merge_v7_completion_outputs.py`
+- Tests for training-schema completeness and V7 completion merge logic.
+- Local V7 vault schema completion: all 1,400 V7 rows now pass the strict rich V6/MoE training-schema audit.
+- Local V7 expansion to the 10.5k target: vault is now **10,500 rows** total (**2,980 V6 + 7,520 V7**) with strict training-schema completeness at **7,520/7,520 V7 rows**.
+- Target 25/cell coverage is complete across all **378/378** primary taxonomy cells; target 30/cell remains a future stretch target with 1,575 rows of gap.
+- Gap-ranked subagent expansion tooling:
+  - `scripts/sdgp_prepare_v7_generation_batches.py`
+  - `scripts/sdgp_merge_v7_generation_jsonl.py`
+- V7 QA audit tooling:
+  - `fitz_gov.sdgp.qa`
+  - `scripts/sdgp_v7_qa_audit.py`
+  - `tests/sdgp/test_qa.py`
+- V7 blind-label execution and scoring tooling:
+  - `fitz_gov.sdgp.blind_label`
+  - `scripts/sdgp_run_blind_label.py`
+  - `scripts/sdgp_score_blind_labels.py`
+  - `tests/sdgp/test_blind_label.py`
+- Canonical evaluator-field unification tooling:
+  - `fitz_gov.sdgp.evaluation_fields`
+  - `fitz_gov.sdgp.evaluation_completion`
+  - `scripts/sdgp_promote_evaluation_fields.py`
+  - `scripts/sdgp_prepare_evaluation_field_batches.py`
+  - `scripts/sdgp_merge_evaluation_field_outputs.py`
+  - `tests/sdgp/test_evaluation_fields.py`
+- Coverage snapshots for expansion milestones:
+  - `data/sdgp_handoff_v7_expand/coverage_target1_5520.md`
+  - `data/sdgp_handoff_v7_expand/coverage_target2_6510.md`
+  - `data/sdgp_handoff_v7_expand/coverage_target3_7500.md`
+- Final local coverage reports:
+  - `data/sdgp_vault_v51_enriched/coverage_report_v7_target25.md`
+  - `data/sdgp_vault_v51_enriched/coverage_report_v7_target30.md`
+- V7 QA artifacts:
+  - `data/sdgp_v7_qa/summary.json`
+  - `data/sdgp_v7_qa/report.md`
+  - `data/sdgp_v7_qa/query_duplicate_groups.jsonl`
+  - `data/sdgp_v7_qa/cross_label_query_groups.jsonl`
+  - `data/sdgp_v7_qa/split_assignments.jsonl`
+  - `data/sdgp_v7_qa/blind_label_queue.jsonl`
+  - `data/sdgp_v7_qa/blind_label_manifest.jsonl`
+- Initial 50-row V7 blind-label pilot artifacts:
+  - `data/sdgp_v7_qa/pilots/20260522_initial50_qwen36_35b_a3b/pilot_assessment.md`
+  - `data/sdgp_v7_qa/pilots/20260522_initial50_qwen36_35b_a3b/blind_label_validated.jsonl`
+  - `data/sdgp_v7_qa/pilots/20260522_initial50_qwen36_35b_a3b/blind_label_triage.jsonl`
+  - `data/sdgp_v7_qa/blind_label_second_pass_ledger.jsonl`
+- Second 100-row V7 blind-label pilot artifacts:
+  - `data/sdgp_v7_qa/pilots/20260523_next100_qwen36_35b_a3b/pilot_assessment.md`
+  - `data/sdgp_v7_qa/pilots/20260523_next100_qwen36_35b_a3b/blind_label_validated.jsonl`
+  - `data/sdgp_v7_qa/pilots/20260523_next100_qwen36_35b_a3b/blind_label_triage.jsonl`
+- Full remaining-row blind-label run artifacts:
+  - `data/sdgp_v7_qa/pilots/20260523_remaining7370_qwen36_35b_a3b/blind_label_sample.jsonl`
+  - `data/sdgp_v7_qa/pilots/20260523_remaining7370_qwen36_35b_a3b/blind_label_predictions.jsonl`
+  - `data/sdgp_v7_qa/pilots/20260523_remaining7370_qwen36_35b_a3b/blind_label_predictions_combined.jsonl`
+  - `data/sdgp_v7_qa/pilots/20260523_remaining7370_qwen36_35b_a3b/blind_label_retry_predictions_max1024.jsonl`
+  - `data/sdgp_v7_qa/pilots/20260523_remaining7370_qwen36_35b_a3b/blind_label_retry2_predictions_max2048.jsonl`
+- Global blind-label bucket artifacts:
+  - `data/sdgp_v7_qa/blind_label_global_summary.json`
+  - `data/sdgp_v7_qa/blind_label_validated_case_ids_all.txt`
+  - `data/sdgp_v7_qa/blind_label_triage_case_ids_all.txt`
+  - `data/sdgp_v7_qa/training_excluded_triage_case_ids.txt`
+- V7 triage repair workflow and artifacts:
+  - `scripts/sdgp_repair_v7_triage_cases.py`
+  - `data/sdgp_v7_qa/triage_recheck_20260523/`
+  - `data/sdgp_v7_qa/triage_repair_20260523*/`
+  - `data/sdgp_v7_qa/triage_repair_20260523_final/`
+  - `data/sdgp_v7_qa/blind_label_final_resolution_ledger.jsonl`
+  - `data/sdgp_v7_qa/training_schema_after_final_triage_repair.json`
+- V7 cross-label exact-query semantic review tooling and artifacts:
+  - `scripts/sdgp_review_cross_label_queries.py`
+  - `data/sdgp_v7_qa/cross_label_query_semantic_review_summary.json`
+  - `data/sdgp_v7_qa/cross_label_query_semantic_review_candidates.jsonl`
+  - `data/sdgp_v7_qa/cross_label_query_semantic_review_adjudications.jsonl`
+  - `data/sdgp_v7_qa/cross_label_query_semantic_review.md`
+- V7 Hugging Face publish tooling:
+  - `scripts/sdgp_upload_v7_hf.py`
+  - Default HF config `v7` with query-grouped `train` / `validation` / `test` Parquet splits.
+  - Compatibility HF configs: `tier1_core`, `tier0_sanity`, and `validation`.
+- Canonical evaluator-field batch artifacts under `data/sdgp_handoff_evaluation_fields/` for all 2,348 V7 TRUSTWORTHY rows.
+
+### Changed
+
+- V7 generator prompt now requests complete V7 training rows instead of treating rich V6/MoE fields as optional.
+- `scripts/sdgp_generate.py` and `scripts/sdgp_merge_v7_outputs.py` now reject schema-thin V7 rows by default via `Checker(require_training_schema=True)`. `--allow-thin` remains available for legacy diagnostics.
+- V7 completion overlay merge now rejects duplicate case IDs and backfills legacy `governance.*_score` probability aliases into the canonical `governance.{abstain,disputed,trustworthy}` triplet.
+- Vault rewrites retry transient Windows `PermissionError` failures around atomic replace with a longer retry window.
+- The local V7 candidate vault now uses one canonical evaluator field block: `evaluation.{mode,check_mode_match,required_elements,forbidden_claims,forbidden_elements,config}`.
+- Duplicate legacy/compatibility fields were removed from the local vault after promotion: `meta.v51_legacy`, root evaluator fields, root `conflict_density` / `evidence_sufficiency` / `near_miss_class`, `governance.*_score`, misplaced `grounding_targets`, and sparse old metadata aliases.
+- `scripts/sdgp_merge_evaluation_field_outputs.py` now indexes vault cases once instead of scanning the JSONL once per overlay.
+- V7 expansion batch preparation now accounts for pending, unmerged batch specs when ranking gaps, preventing parallel workers from repeatedly reserving the same sparse cells before merges land.
+- V7 JSONL generation merge now reports checker failures via `CheckIssue.rule` instead of crashing while formatting a rejected row.
+- V7 scope decision: keep the existing 7-domain taxonomy at the reached 10,500-row target; defer new primary domains and domain-focused packs, including automotive/ECU test analysis, to V8.
+- V7 QA split decision: use query-grouped split assignments before training to prevent repeated-query leakage across train/validation/test. Current generated split is train=8,400 / validation=1,050 / test=1,050 with 0 query-group leakage.
+- V7 blind-label decision: keep gold labels in `blind_label_manifest.jsonl` only; provider predictions are written separately to `blind_label_predictions.jsonl`, then joined by the scorer into disagreement/review queues.
+- V7 blind-label pilot result: `qwen3.6-35b-a3b` validated 46 / 50 random sampled rows. The 4 triage rows are all `scope_conflict` cases where the local model treats scoped/conditional evidence as TRUSTWORTHY rather than DISPUTED.
+- V7 blind-label pilot cumulative result after the second pilot: **150 unique rows audited**, **137 validated**, **13 triage**. The second 100-row pilot validated 91 / 100; manual read suggests 8 / 9 triage rows are legitimate dataset/convention flags and 1 is a Qwen temporal-staleness miss.
+- V7 evaluator unification result: **10,500/10,500** vault rows have canonical `evaluation`; **2,348/2,348** V7 TRUSTWORTHY rows received quality constraints; **0** V6/V7 TRUSTWORTHY rows are missing evaluator quality constraints; strict V6/V7 training-schema audit remains clean.
+- Full V7 blind-label result: **7,520/7,520** V7 rows ledgered; **6,678 validated / 842 triage**. The full 7,370-row pass required retrying truncated outputs with higher token budgets (`max_tokens=1024`, final 21 at `2048`) because `128` tokens produced mostly prose truncated before JSON.
+- V7 blind-label triage result after repair: **7,520/7,520 validated / 0 triage**. The original 842-row triage queue was resolved via stricter validator prompt/parser repair (**362**), provider-authored row repairs validated by recheck (**389 + 52 + 21** across three passes), and final manual holdout repairs (**18**). `training_excluded_triage_case_ids.txt` is now empty. Post-repair strict schema audit remains **V6 2,980/2,980 complete** and **V7 7,520/7,520 complete**.
+- V7 QA duplicate counts improved slightly after repair: exact-query duplicate groups **581 → 562**, cross-label exact-query groups **219 → 218**, with **0** duplicate IDs, exact inputs, checker hashes, or query-group split leakage.
+- V7 cross-label exact-query semantic review passed across the full 10,500-row vault: **218** cross-label exact-query groups / **921** rows, **0** cross-label pairs with the same exact context set, **1** shared-context pair manually adjudicated valid, **0** unresolved review pairs. Repeated raw queries are intentionally allowed when retrieved contexts differ; the release blocker is materially equivalent evidence with different labels.
+- V7.0.0 published to Hugging Face at `yafitzdev/fitz-gov`, commit `c41e5aa113699273240c6cc5ab2e8357c6d518cd`, tag `v7.0.0`. Published files are Parquet to avoid brittle nested-schema inference from chunked JSONL loading.
+- Blind-label parser now avoids treating allowed-label setup text like "label should be ABSTAIN, DISPUTED, or TRUSTWORTHY" as an ABSTAIN prediction and accepts explicit decision phrasing such as "DISPUTED is appropriate."
+
+---
+
 ## [6.0.0] - 2026-05-20
 
 ### LLM-Enriched Schema (SDGP Phase 0b + 0c)
@@ -641,7 +766,9 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v6.0.0...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v7.0.1...HEAD
+[7.0.1]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v7.0.1
+[7.0.0]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v7.0.0
 [6.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v5.1.0...v6.0.0
 [5.1.0]: https://github.com/yafitzdev/fitz-gov/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v4.1.0...v5.0.0

@@ -32,6 +32,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Iterable, Sequence
 
+from .completeness import audit_case_completeness
 from .taxonomy import (
     PATTERN_TO_CLASS,
     Cell,
@@ -43,7 +44,6 @@ from .taxonomy import (
     check_pattern_structure,
     parse_cell_id,
 )
-
 
 # ---------------------------------------------------------------------------
 # Result types
@@ -105,9 +105,7 @@ def case_dedup_hash(case: dict[str, Any]) -> str:
     """
     query = _normalize_text(str(case.get("input", {}).get("query", case.get("query", ""))))
     raw_contexts: Sequence[Any] = (
-        case.get("input", {}).get("contexts")
-        or case.get("contexts")
-        or []
+        case.get("input", {}).get("contexts") or case.get("contexts") or []
     )
     norm_ctxs: list[str] = []
     for c in raw_contexts:
@@ -131,9 +129,15 @@ def case_dedup_hash(case: dict[str, Any]) -> str:
 _V6_REQUIRED_TOP = ("id", "input", "governance", "taxonomy", "meta")
 
 # Signals where pattern → class consistency rules apply
-_DISPUTED_PATTERNS = frozenset(p for p, c in PATTERN_TO_CLASS.items() if c == GovernanceClass.DISPUTED)
-_TRUSTWORTHY_PATTERNS = frozenset(p for p, c in PATTERN_TO_CLASS.items() if c == GovernanceClass.TRUSTWORTHY)
-_ABSTAIN_PATTERNS = frozenset(p for p, c in PATTERN_TO_CLASS.items() if c == GovernanceClass.ABSTAIN)
+_DISPUTED_PATTERNS = frozenset(
+    p for p, c in PATTERN_TO_CLASS.items() if c == GovernanceClass.DISPUTED
+)
+_TRUSTWORTHY_PATTERNS = frozenset(
+    p for p, c in PATTERN_TO_CLASS.items() if c == GovernanceClass.TRUSTWORTHY
+)
+_ABSTAIN_PATTERNS = frozenset(
+    p for p, c in PATTERN_TO_CLASS.items() if c == GovernanceClass.ABSTAIN
+)
 
 
 @dataclass(slots=True)
@@ -153,6 +157,7 @@ class Checker:
     high_signal: float = 0.5
     low_signal: float = 0.3
     pattern_structure_warning_only: bool = False
+    require_training_schema: bool = False
 
     def check(
         self,
@@ -171,6 +176,8 @@ class Checker:
             self._check_pattern_structure(case, result)
             self._check_signal_coherence(case, result)
             self._check_routing(case, result)
+            if self.require_training_schema:
+                self._check_training_schema(case, result)
         self._check_contexts(case, result)
         if seen_hashes is not None:
             self._check_dedup(case, result, seen_hashes)
@@ -241,7 +248,9 @@ class Checker:
         if cls_str is None:
             sev = Severity.ERROR if v6 else Severity.WARNING
             result.issues.append(
-                CheckIssue(sev, "missing_classification", "no governance.classification or expected_mode")
+                CheckIssue(
+                    sev, "missing_classification", "no governance.classification or expected_mode"
+                )
             )
             return
         try:
@@ -367,11 +376,7 @@ class Checker:
             return
         struct: PatternCheckResult = check_pattern_structure(pattern, case)
         if not struct.passed:
-            sev = (
-                Severity.WARNING
-                if self.pattern_structure_warning_only
-                else Severity.ERROR
-            )
+            sev = Severity.WARNING if self.pattern_structure_warning_only else Severity.ERROR
             result.issues.append(CheckIssue(sev, "pattern_structure", struct.reason))
 
     def _check_signal_coherence(self, case: dict[str, Any], result: CheckResult) -> None:
@@ -501,12 +506,16 @@ class Checker:
             )
 
     def _check_contexts(self, case: dict[str, Any], result: CheckResult) -> None:
-        nested = case.get("input", {}).get("contexts") if isinstance(case.get("input"), dict) else None
+        nested = (
+            case.get("input", {}).get("contexts") if isinstance(case.get("input"), dict) else None
+        )
         flat = case.get("contexts")
         ctxs = nested if nested is not None else flat
         if ctxs is None:
             result.issues.append(
-                CheckIssue(Severity.WARNING, "missing_contexts", "case has no contexts field at all")
+                CheckIssue(
+                    Severity.WARNING, "missing_contexts", "case has no contexts field at all"
+                )
             )
             return
         if not isinstance(ctxs, list):
@@ -533,6 +542,16 @@ class Checker:
                     Severity.ERROR,
                     "context_bad_shape",
                     f"contexts[{i}] is neither a string nor an object: {type(c).__name__}",
+                )
+            )
+
+    def _check_training_schema(self, case: dict[str, Any], result: CheckResult) -> None:
+        for issue in audit_case_completeness(case):
+            result.issues.append(
+                CheckIssue(
+                    Severity.ERROR,
+                    "training_schema_incomplete",
+                    f"{issue.path}: {issue.message}",
                 )
             )
 

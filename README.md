@@ -9,7 +9,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI version](https://badge.fury.io/py/fitz-gov.svg)](https://pypi.org/project/fitz-gov/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-6.0.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-7.0.1-green.svg)](CHANGELOG.md)
 [![HuggingFace Dataset](https://img.shields.io/badge/🤗%20HuggingFace-yafitzdev%2Ffitz--gov-yellow)](https://huggingface.co/datasets/yafitzdev/fitz-gov)
 
 [The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov) • [🤗 HuggingFace](https://huggingface.co/datasets/yafitzdev/fitz-gov)
@@ -18,13 +18,12 @@
 
 <br />
 
-> **Now on HuggingFace** — load any of the three configs in two lines:
+> **Now on HuggingFace** — V7 is the default query-grouped release:
 > ```python
 > from datasets import load_dataset
-> ds = load_dataset("yafitzdev/fitz-gov")                    # default: tier1_core/train (2,920 cases)
-> sanity = load_dataset("yafitzdev/fitz-gov", "tier0_sanity") # 60 sanity cases
+> ds = load_dataset("yafitzdev/fitz-gov")                     # default: v7, train/validation/test
 > ```
-> See the dataset card for full schema, splits, and a working baseline at **86.13% accuracy** ([pyrrho-nano-g1](https://huggingface.co/yafitzdev/pyrrho-nano-g1)).
+> See the dataset card for full schema, splits, and a working baseline at **95.24% accuracy** ([pyrrho-nano-g2](https://huggingface.co/yafitzdev/pyrrho-nano-g2)).
 
 ---
 
@@ -39,7 +38,7 @@ result = evaluator.evaluate_tiered(tier0_cases, ..., tier1_cases, ...)
 print(result)
 ```
 
-2,980 test cases. One score that tells you if your RAG system knows what it doesn't know.
+10,500 benchmark rows. One score that tells you if your RAG system knows what it doesn't know.
 
 ---
 
@@ -47,8 +46,8 @@ print(result)
 
 Solo project by Yan Fitzner ([LinkedIn](https://www.linkedin.com/in/yan-fitzner/), [GitHub](https://github.com/yafitzdev), [HuggingFace](https://huggingface.co/yafitzdev)).
 
-- ~4k lines of Python, 2,980 benchmark cases
-- 107 tests
+- ~4k lines of Python, 10,500 benchmark rows
+- 264 SDGP tests
 - Built for [fitz-sage](https://github.com/yafitzdev/fitz-sage) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases)
 
 ---
@@ -187,7 +186,7 @@ Any RAG system can be evaluated — fitz-gov is framework-agnostic:
 ```python
 from fitz_gov import FitzGovEvaluator, load_cases, AnswerMode
 
-cases = load_cases()  # 2,980 cases
+cases = load_cases()  # packaged legacy cases; use HuggingFace for V7
 evaluator = FitzGovEvaluator()
 
 responses, modes = [], []
@@ -285,14 +284,14 @@ flowchart TD
 
 <br>
 
-**2,980 total cases** (60 tier0 sanity + 2,920 tier1 core) across **113+ subcategories**, **17 domains**, and **10 query types**.
+**10,500 V7.0.1 rows** on Hugging Face by default: 8,400 train / 1,050 validation / 1,050 test, query-grouped to prevent repeated-query split leakage. V7.0.1 is schema-clean: same rows/splits/labels as V7.0.0, with pre-SDGP report axes removed from public rows.
 
-- **Mode split:** TRUSTWORTHY 53.4% / ABSTAIN 23.5% / DISPUTED 23.1%
-- **Difficulty:** 62.7% hard / 37.3% medium (tier1), easy (tier0 only)
-- **Multi-source:** 264 cases (9.0%) with source metadata
-- **Domains:** Technology, Medicine, Finance, Science, Education, Environment, Food, Law, Government, Transportation, Sports, Agriculture, History, HR/Workplace, Real Estate, Psychology, Social Media
-- **Query types:** what, how, is, does, why, should, when, which, who, compare
-- **Reasoning types:** Factual, Evaluative, Causal, Comparative, Temporal, Procedural
+- **Mode split:** TRUSTWORTHY 3,944 (37.6%) / DISPUTED 3,325 (31.7%) / ABSTAIN 3,231 (30.8%)
+- **Difficulty:** hard 3,827 (36.4%) / medium 3,449 (32.8%) / easy 3,224 (30.7%)
+- **SDGP matrix:** 18 taxonomy patterns x 7 primary domains x 3 difficulties = 378 primary cells
+- **Coverage:** target 25/cell complete across all 378 cells; target 30/cell remains a stretch backlog with 1,575 rows remaining
+- **Primary domains:** science_medicine 1,823; general_commonsense 1,492; economics_finance 1,477; technology_computing 1,476; law_policy 1,441; culture_society 1,406; history_geography 1,385
+- **QA:** strict V6/V7 SDGP schema complete; blind-label QA is 7,520 / 7,520 V7 rows validated with 0 triage; cross-label exact-query semantic review has 0 unresolved pairs
 
 </details>
 
@@ -304,42 +303,61 @@ flowchart TD
 
 <br>
 
+Published Hugging Face config:
+
 ```
-data/
-├── tier0_sanity/               # 60 easy cases (95% gate)
-├── tier1_core/                 # 2,920 medium/hard cases
-│   ├── abstention.json         # 685 cases
-│   ├── dispute.json            # 675 cases
-│   ├── trustworthy_hedged.json # 1,160 cases
-│   └── trustworthy_direct.json # 400 cases
-├── corpus/                     # 5,043 reference documents
-├── queries/                    # 3,800 query-to-document mappings
-└── validation/                 # 250-case human validation sample
+v7/                 # default: train=8,400 / validation=1,050 / test=1,050
 ```
 
-Each case:
+Each public V7 row uses the SDGP schema:
 
 ```json
 {
-  "id": "t1_abstain_medium_001",
-  "query": "What is the company's revenue for 2024?",
-  "contexts": ["The company was founded in 2010..."],
-  "expected_mode": "abstain",
-  "category": "abstention",
-  "subcategory": "wrong_entity",
-  "difficulty": "medium",
-  "domain": "finance",
-  "query_type": "what",
-  "source_type": "single",
-  "context_count": 1,
-  "reasoning_type": "factual",
-  "evidence_pattern": "absent",
-  "forbidden_claims": ["\\$\\d+\\s*billion"],
-  "required_elements": ["revenue", "not provided"]
+  "id": "sdgp_v7_wrong_entity__history_geography__easy__0",
+  "label": "abstain",
+  "tier": 1,
+  "input": {
+    "query": "What treaty ended the War of 1812?",
+    "query_rewritten": "Which treaty formally ended the War of 1812?",
+    "contexts": [
+      {
+        "id": "ctx_001",
+        "text": "The Treaty of Versailles ended World War I in 1919.",
+        "summary": "This chunk describes a different treaty.",
+        "relevance_to_query": 0.1
+      }
+    ]
+  },
+  "governance": {
+    "classification": "ABSTAIN",
+    "abstain": 0.86,
+    "disputed": 0.07,
+    "trustworthy": 0.07
+  },
+  "taxonomy": {
+    "governance_class": "ABSTAIN",
+    "pattern": "wrong_entity",
+    "cell_id": "wrong_entity__history_geography__easy"
+  },
+  "routing": {
+    "expert_fired": "history_geography"
+  },
+  "meta": {
+    "dataset_version": "v7",
+    "difficulty": "easy",
+    "confidence_level": "high",
+    "near_miss_class": "TRUSTWORTHY",
+    "near_miss_reason": "A naive reader might see treaty facts, but the evidence is about the wrong war."
+  },
+  "evaluation": {
+    "config": {
+      "mode": "abstain"
+    }
+  }
 }
 ```
 
-Every case has 6 classification attributes for slicing results. Trustworthy cases additionally have `forbidden_claims` (grounding) and `required_elements` (relevance) for quality scoring.
+The public V7.0.1 contract does not include the pre-SDGP report axes `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, or `meta.evidence_pattern`. Use `routing.expert_fired`, `taxonomy.pattern`, `taxonomy.cell_id`, and `meta.difficulty` for canonical breakdowns.
 
 </details>
 
@@ -350,6 +368,8 @@ Every case has 6 classification attributes for slicing results. Trustworthy case
 <summary><strong>📦 Full Distribution Tables</strong></summary>
 
 <br>
+
+These tables describe the legacy V5.1/V6 `tier1_core` compatibility benchmark. V7's active release contract is the 378-cell SDGP matrix summarized above.
 
 #### Categories (Tier 1)
 
@@ -427,8 +447,8 @@ Every case has 6 classification attributes for slicing results. Trustworthy case
 <br>
 
 1. Fork this repo
-2. Add cases to the appropriate `data/tier0_sanity/` or `data/tier1_core/` JSON file
-3. Run validation: `python -m fitz_gov.cli validate --data-dir data`
+2. For V7+ work, add cases through the SDGP vault/generation workflow so `taxonomy.cell_id`, `routing.expert_fired`, and `evaluation` stay coherent
+3. Run the relevant SDGP audit before publishing
 4. Submit a PR
 
 → [Mode Decision Tree](docs/mode-decision-tree.md) — how expected modes are assigned

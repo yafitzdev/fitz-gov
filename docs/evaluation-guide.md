@@ -313,6 +313,10 @@ A: Analyze the subcategory breakdown and failure cases. Each subcategory tests a
 
 A: v6.0 is a schema overlay on v5.1 — same 2,980 cases, same labels, same categories. Every case now carries LLM-enriched signals (`query_rewritten`, per-context `summary`/`relevance_to_query`/`anchor_period`, governance signals `hallucination_pressure`/`retrieval_retry_value`/`query_evidence_alignment`/`answer_coverage`/`boundary_proximity.distance`, and `near_miss_reason`). Top-level `label` and `tier` convenience fields added. No breaking changes — v5.1 evaluations remain directly comparable.
 
+**Q: What changed in v7.0.1?**
+
+A: v7.0.1 is the schema-clean SDGP release and current default Hugging Face contract. It publishes the same 10,500 rows, labels, and query-grouped train/validation/test splits as v7.0.0 (8,400 / 1,050 / 1,050), but removes pre-SDGP report axes from public rows: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, and `meta.evidence_pattern`. Canonical breakdowns are `routing.expert_fired`, `taxonomy.pattern`, `taxonomy.cell_id`, and `meta.difficulty`.
+
 **Q: What changed between v4.1 and v5.0?**
 
 A: Grounding and relevance are no longer standalone categories. They are now cross-cutting quality checks on all trustworthy cases. The benchmark dropped from 6 categories to 4, but all 2,980 cases were preserved. Scores are not directly comparable between versions due to the structural change.
@@ -325,6 +329,8 @@ A: Both categories expect TRUSTWORTHY mode, but they test different answer behav
 
 ## Version History
 
+- v7.0.1: Schema-clean SDGP release. Same 10,500 query-grouped rows, labels, and splits as v7.0.0; public rows no longer expose the pre-SDGP report axes. Default Hugging Face config `v7` has train=8,400 / validation=1,050 / test=1,050.
+- v7.0.0: SDGP-scaled release. Default Hugging Face config `v7` has 10,500 query-grouped rows with train=8,400 / validation=1,050 / test=1,050. Adds 7,520 V7 rows on top of V6, completes target 25/cell across 378 primary taxonomy cells, completes canonical evaluator fields and rich training schema, and closes blind-label/cross-label QA blockers.
 - v6.0.0: Schema overlay on v5.1. Adds LLM-enriched signals in two phases. Phase 0b — core governance signals on every case: query_rewritten, per-chunk summary/relevance_to_query/temporality.anchor_period, governance.{hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance}, meta.near_miss_reason. Phase 0c — MoE multi-task training ground truth: per-chunk boundary_quality, governance.evidence_bias_score, input.evidence_chain (multi-chunk only), meta.grounding_targets (TRUSTWORTHY only, gold_answer + per-sentence chunk attributions). Plus top-level label/tier convenience fields. No labeling changes — v5.1 metrics directly comparable.
 - v5.0.0: Updated for 2,920-case tier1 benchmark with 4 categories, 113 subcategories, cross-cutting quality checks, 37.3%/62.7% medium/hard split
 - v3.0.0: Updated for 1,113-case benchmark, added boundary decision rules, three-way ambiguity, dispute vs qualification guidelines

@@ -6,12 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 fitz-gov is a RAG governance benchmark for evaluating whether RAG systems know when to abstain, dispute, hedge, or confidently answer based on available evidence. It focuses on epistemic honesty rather than just retrieval quality or answer correctness.
 
-**Current version:** 6.0.0 with 2,980 test cases (60 tier0 + 2,920 tier1) across 4 governance categories (grounding/relevance are now cross-cutting quality checks). V6 = V5.1 schema overlaid with LLM-enriched signals. Two enrichment phases:
+**Current dataset version:** 7.0.0 on Hugging Face (`yafitzdev/fitz-gov`, tag `v7.0.0`) with 10,500 rows in the default `v7` config (`train=8,400`, `validation=1,050`, `test=1,050`). V6.0.0 remains the 2,980-row V5.1 schema overlay baseline.
 
 - **Phase 0b — core governance signals (every case):** `query_rewritten`, per-chunk `summary`/`relevance_to_query`/`temporality.anchor_period`, `governance.{hallucination_pressure, retrieval_retry_value, query_evidence_alignment, answer_coverage, boundary_proximity.distance}`, `meta.near_miss_reason`.
 - **Phase 0c — MoE multi-task training ground truth:** per-chunk `boundary_quality` (0–1 cut quality), `governance.evidence_bias_score` (0–1 source one-sidedness), `input.evidence_chain` (`{order, reasoning}` — multi-chunk only), `meta.grounding_targets` (`{gold_answer, sentences[].attributions}` — TRUSTWORTHY only).
 
-Same 2,980 case IDs as V5.1; V6 fields are additive (no breaking changes).
+V6 uses the same 2,980 case IDs as V5.1 with additive fields. V7 adds 7,520 SDGP-generated rows and publishes a query-grouped train/validation/test contract.
 
 ## Commands
 
@@ -62,19 +62,40 @@ New subpackage targeting the V7+ scale-up per [pyrrho ROADMAP.md §3–§4](../p
 - **`sdgp/gap_detector.py`** — 3D cell-coverage analysis. `GapDetector().rank(cell_counts, target, weights, filter)` returns a list of `Gap(priority, cell, current, target)` sorted highest-priority first. `PriorityWeights` multiplies per-pattern / per-domain / per-difficulty / per-class boosts onto the raw gap. `CellFilter` scopes the queue (single pattern, single class, etc.). `CellTarget` allows per-cell threshold overrides.
 - **`sdgp/prompts.py`** — Per-pattern × per-domain × per-difficulty prompt library. `PATTERN_GUIDANCE` has one paragraph per pattern explaining structural requirements; `DOMAIN_HINTS` per domain; `DIFFICULTY_HINTS` per level. `build_prompt(cell)` composes the full generator prompt. `few_shot_for_cell(vault, cell, n=2)` pulls matching examples from the vault (prefers same domain → same pattern → same class). `SYSTEM_MESSAGE` constrains the model to JSON-only output.
 - **`sdgp/orchestrator.py`** — Ties everything together. `Orchestrator(vault, provider, blind_label_pair).fill_gaps(gaps, n_per_cell)` builds prompts, calls providers, parses JSON (robust to fences / prose), runs the checker, blind-labels with the validator, and either vaults or routes to `<vault>/conflicts/<batch_id>/<case_id>.json`. Retries parse/checker rejections up to `max_attempts_per_cell`; aborts the batch on provider errors. `parse_case_json` handles common LLM wrappings (fences, leading prose).
+- **`sdgp/blind_label.py`** — Provider-agnostic blind-label prompt/parse/score helpers. Builds gold-label-free prompts from `blind_label_queue.jsonl`, parses JSON or plain label responses, joins predictions to `blind_label_manifest.jsonl`, and emits agreement/disagreement/review summaries.
+- **`sdgp/evaluation_fields.py`** — Canonical evaluator-field promotion/audit helpers. Promotes old evaluator-only fields into `case["evaluation"]`, strips duplicate legacy aliases, and detects TRUSTWORTHY rows missing answer-quality constraints.
+- **`sdgp/evaluation_completion.py`** — Prompt/parser helpers for model-authored canonical evaluator quality constraints.
 - **`sdgp/monitor.py`** — Markdown coverage report. `write_coverage_report(cell_counts, out_path, target)` produces a stats table grouped by class / pattern / domain / difficulty, plus top-N most-filled and most-empty cells. Drop-in source-of-truth for "where are we?".
 - **`sdgp/__init__.py`** — re-exports the full public API (70 symbols).
 
 **Runners**:
 - `scripts/sdgp_enrich_v51.py` — Phase 0a heuristic enrichment (V5.1 → V6 vault; Phase 0b LLM enrichment via `scripts/sdgp_enrich_v51_llm.py` fills the `<TODO_LLM>` markers). Phase 0 complete 2026-05-20; vault published as `yafitzdev/fitz-gov` v6.0.0.
-- `scripts/sdgp_generate.py` — Phase 2 generation. Reads vault → ranks gaps → picks provider(s) from env / args → drives orchestrator → writes coverage report. Provider auto-selection (`--provider env`) picks up `SDGP_LOCAL_MODEL` and `SDGP_HANDOFF_DIR`; passing two providers enables blind labeling. Supports `--filter-pattern` / `--filter-class` / `--filter-difficulty` / `--filter-domain` for targeted batches.
+- `scripts/sdgp_generate.py` — Phase 2 generation. Reads vault → ranks gaps → picks provider(s) from env / args → drives orchestrator → writes coverage report. Provider auto-selection (`--provider env`) picks up `SDGP_LOCAL_MODEL` and `SDGP_HANDOFF_DIR`; passing two providers enables blind labeling. Supports `--filter-pattern` / `--filter-class` / `--filter-difficulty` / `--filter-domain` for targeted batches. Rejects schema-thin rows by default; `--allow-thin` is diagnostic-only.
+- `scripts/sdgp_audit_training_schema.py` — strict audit for full V6/MoE training-schema completeness. Use before publishing or expanding V7.
+- `scripts/sdgp_complete_v7_schema.py` — provider-backed completion runner for schema-thin V7 rows. Sends one completion prompt per case and only writes rows that pass `audit_case_completeness()`.
+- `scripts/sdgp_merge_v7_completion_outputs.py` — merges JSONL completion overlays produced by subagents, then validates with `audit_case_completeness()` + `Checker(require_training_schema=True)` before writing to the vault.
+- `scripts/sdgp_merge_v7_outputs.py` — V7 merge now rejects schema-thin rows by default via `Checker(require_training_schema=True)`. Use `--allow-thin` only for legacy diagnostics.
+- `scripts/sdgp_prepare_v7_generation_batches.py` — gap-ranked V7 expansion batch builder for subagents. Uses `GapDetector`, reserves existing vault IDs and pending batch IDs, and subtracts pending unmerged slots from coverage counts so parallel workers do not overfill the same cells.
+- `scripts/sdgp_merge_v7_generation_jsonl.py` — strict JSONL merge path for subagent-generated expansion batches. Requires exact batch ID-set coverage, `Checker(require_training_schema=True)`, and dedup checks before vault writes.
+- `scripts/sdgp_v7_qa_audit.py` — V7 release-candidate QA artifact builder. Emits duplicate/leakage reports, query-grouped split assignments, a blind-label queue without gold labels, and a gold-label manifest for later disagreement scoring.
+- `scripts/sdgp_run_blind_label.py` — provider-backed runner for `blind_label_queue.jsonl`. Supports LM Studio, Ollama, file handoff, stub smoke tests, resume mode, and health checks. Default output: `data/sdgp_v7_qa/blind_label_predictions.jsonl`.
+- `scripts/sdgp_score_blind_labels.py` — joins prediction rows to `blind_label_manifest.jsonl` and emits `blind_label_score_summary.json`, `blind_label_score_report.md`, `blind_label_assessments.jsonl`, `blind_label_disagreements.jsonl`, and `blind_label_review_queue.jsonl`.
+- `scripts/sdgp_promote_evaluation_fields.py` — promotes legacy evaluator fields into canonical `evaluation` and strips duplicate aliases from the vault.
+- `scripts/sdgp_prepare_evaluation_field_batches.py` — prepares subagent batches for V7 TRUSTWORTHY rows missing evaluator quality constraints.
+- `scripts/sdgp_merge_evaluation_field_outputs.py` — validates and merges subagent-produced evaluator constraints into the vault.
+- `scripts/sdgp_upload_v7_hf.py` — stages and publishes cleaned V7 to Hugging Face as Parquet. Default config is `v7` with query-grouped `train` / `validation` / `test`; compatibility configs are `tier1_core`, `tier0_sanity`, and `validation`.
 
-**Coverage as of 2026-05-20** (after V5.1 enrichment, target 20/cell):
-- 2,980 cases, 34 / 378 cells at target (9.0%), 148 cells empty (39.2%), total gap 5,584.
-- Skew: science_medicine 29.6% at target vs history_geography 1.9%; TRUSTWORTHY 15.1% vs ABSTAIN 4.8%; hard 18.3% vs easy 0.0%. These are the V7 generation targets the gap detector will prioritize once V7 scale-out begins.
-- See `data/sdgp_reports/v51_enriched.md` for the full markdown breakdown.
+**Coverage as of 2026-05-24** (after V7 expansion + evaluator unification + triage repair + cross-label query review + HF publish):
+- 10,500 cases = 2,980 v6 + 7,520 v7. Target 25/cell is complete across all 378 primary cells; target 30/cell has 20 / 378 cells at target and a remaining gap of 1,575.
+- V7 training-schema completeness is complete: strict audit shows **7,520/7,520 V7 rows complete**. Canonical evaluator fields are also complete: **10,500/10,500 rows** have `evaluation`, and **0** V6/V7 TRUSTWORTHY rows are missing answer-quality constraints. Do not add new primary domains to V7; domain-focused expansions such as automotive/ECU test analysis are deferred to V8.
+- V7 is published on Hugging Face as `yafitzdev/fitz-gov` v7.0.0, commit `c41e5aa113699273240c6cc5ab2e8357c6d518cd`, tag `v7.0.0`. The default `v7` config is query-grouped and leakage-safe: train=8,400 / validation=1,050 / test=1,050. QA audit artifacts exist under `data/sdgp_v7_qa/`: `blind_label_queue.jsonl` has 7,520 V7 rows for an independent labeler; duplicate reports list 562 exact-query duplicate groups and 218 cross-label exact-query groups. Cross-label semantic review passed: 0 cross-label pairs have the same exact context set, and the only shared-context pair was adjudicated valid because the DISPUTED row adds a contradictory second source.
+- Blind-label QA with LM Studio `qwen3.6-35b-a3b`: full second-pass coverage is **7,520/7,520 V7 rows**, with **7,520 validated / 0 triage** after strict-prompt recheck and repair. The original full pass flagged 842 rows; resolution path was 362 fixed by stricter prompt/parser recheck, 389 by repair pass 1, 52 by repair pass 2, 21 by repair pass 3, and 18 by final manual holdout repair. `data/sdgp_v7_qa/training_excluded_triage_case_ids.txt` is now empty. Global summary is `data/sdgp_v7_qa/blind_label_global_summary.json`; final resolution ledger is `data/sdgp_v7_qa/blind_label_final_resolution_ledger.jsonl`.
+- Remaining pyrrho-side work: train/evaluate `pyrrho-nano-g2` on the published V7 contract, then decide whether to run `small-g2`. The previous 842-row human-triage blocker, cross-label exact-query review blocker, and final export/publish blocker are closed.
+- Biggest remaining target-30 coverage gaps: `history_geography` (235), `law_policy` (232), `culture_society` (232), `technology_computing` (228), `general_commonsense` (226), `economics_finance` (225), `science_medicine` (197).
 
-Test suite: `tests/sdgp/` covers all SDGP modules (194 tests as of 2026-05-20). Run via `pytest tests/sdgp/ -q`.
+**Legacy fields:** the local V7 candidate vault has been unified. Canonical consumers should read `evaluation`, `governance.*`, `meta.*`, `taxonomy.*`, `routing.*`, and `input.*`. The old V6 `meta.v51_legacy` block and early V7 compatibility aliases were removed after promoting useful evaluator fields into `evaluation`: `evaluation_config` -> `evaluation.{mode,check_mode_match,config}`, plus `required_elements`, `forbidden_claims`, and `forbidden_elements`. Old `description`, `rationale`, `detection_labels`, provenance, and sparse metadata aliases are superseded by V6/MoE canonical fields.
+
+Test suite: `tests/sdgp/` covers all SDGP modules (264 tests as of 2026-05-23). Run via `pytest tests/sdgp/ -q`.
 
 Still to build (lower priority — operational quality, not on the critical path to V7):
 - **Conflict-resolution CLI** (triage `<vault>/conflicts/*.json` interactively — currently they're just written to disk for manual handling).

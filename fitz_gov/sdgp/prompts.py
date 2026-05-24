@@ -40,16 +40,15 @@ from dataclasses import dataclass
 from typing import Any, Iterable
 
 from .taxonomy import (
+    PATTERN_DESCRIPTIONS,
     Cell,
     Difficulty,
     Domain,
     GovernanceClass,
-    PATTERN_DESCRIPTIONS,
     TaxonomyPattern,
     governance_class_of,
 )
 from .vault import Vault, drop_vault_fields
-
 
 # ---------------------------------------------------------------------------
 # Per-pattern guidance
@@ -269,32 +268,91 @@ DIFFICULTY_HINTS: dict[Difficulty, str] = {
 
 OUTPUT_SCHEMA_HINT = textwrap.dedent("""\
     Output a single valid JSON object (no markdown fences, no commentary).
-    The JSON must include AT LEAST these fields:
+    The JSON must be a COMPLETE V7 training row, not a thin structural row.
+    Every field below is required unless marked conditional:
 
     {
       "id": "<short stable id you choose — alphanumeric + underscores>",
+      "version": "fitz-gov-7.0",
       "input": {
         "query": "<the user query>",
+        "query_rewritten": "<semantically equivalent query sharpened for retrieval>",
         "contexts": [
           { "id": "ctx_001", "text": "<context body>", "authority_score": 0.7,
             "authority_signal": "<one of: peer_reviewed | official_primary |
               domain_expert | encyclopedic_general | news_secondary |
-              blog_or_user_content | multi_source_diverse>" }
-        ]
+              blog_or_user_content | multi_source_diverse>",
+            "temporality": {
+              "is_time_sensitive": true,
+              "anchor_period": "<current | none | explicit year/quarter/date range>",
+              "staleness_risk": "<none | low | medium | high>"
+            },
+            "summary": "<one-sentence semantic summary, not a truncation>",
+            "relevance_to_query": 0.0,
+            "boundary_quality": 0.0 }
+        ],
+        "evidence_chain": {
+          "order": ["ctx_001", "ctx_002"],
+          "reasoning": "<required only when there are 2+ contexts>"
+        }
       },
-      "governance": { "classification": "<ABSTAIN|DISPUTED|TRUSTWORTHY>" },
+      "governance": {
+        "classification": "<ABSTAIN|DISPUTED|TRUSTWORTHY>",
+        "abstain": 0.0,
+        "disputed": 0.0,
+        "trustworthy": 0.0,
+        "confidence": 0.0,
+        "grounding": 0.0,
+        "conflict_density": 0.0,
+        "evidence_sufficiency": 0.0,
+        "boundary_proximity": {
+          "nearest_class": "<nearest non-actual class>",
+          "distance": 0.0
+        },
+        "domain_familiarity": 0.0,
+        "false_trustworthy_risk": 0.0,
+        "hallucination_pressure": 0.0,
+        "retrieval_retry_value": 0.0,
+        "human_escalation_score": 0.0,
+        "query_evidence_alignment": 0.0,
+        "answer_coverage": 0.0,
+        "evidence_bias_score": 0.0
+      },
       "taxonomy": {
         "governance_class": "<same as classification>",
         "pattern": "<the pattern slug — see cell spec>",
+        "pattern_description": "<canonical pattern description>",
         "cell_id": "<the cell_id from the cell spec, verbatim>"
       },
-      "routing": { "expert_fired": "<the expert domain from the cell spec>" },
-      "meta": { "difficulty": "<easy|medium|hard, matching the cell spec>" }
+      "routing": {
+        "expert_fired": "<the expert domain from the cell spec>",
+        "secondary_expert": null,
+        "routing_confidence": 0.0
+      },
+      "meta": {
+        "dataset_version": "v7",
+        "difficulty": "<easy|medium|hard, matching the cell spec>",
+        "domain": "<the expert domain from the cell spec>",
+        "category": "<abstention | dispute | trustworthy_hedged | trustworthy_direct>",
+        "subcategory": "<the pattern slug>",
+        "query_type": "<what | how | why | when | who | which | does | is | should | compare | other>",
+        "reasoning_type": "<factual | inferential | comparative | causal | temporal | procedural | definitional | quantitative | evaluative>",
+        "confidence_level": "<high | medium | borderline>",
+        "near_miss_class": "<nearest non-actual class>",
+        "near_miss_reason": "<specific one-sentence boundary explanation>",
+        "grounding_targets": {
+          "gold_answer": "<TRUSTWORTHY only: grounded 2-6 sentence answer>",
+          "sentences": [
+            { "text": "<sentence>", "attributions": ["ctx_001"] }
+          ]
+        }
+      }
     }
 
-    Additional fields from the V6+ schema (conflict_density,
-    evidence_sufficiency, near_miss_class, etc.) are welcome but optional;
-    the pipeline fills in deterministic defaults if absent.
+    Conditional omissions:
+    - Omit `input.evidence_chain` only for single-context cases.
+    - Omit `meta.grounding_targets` unless `governance.classification` is TRUSTWORTHY.
+    - All numeric scores must be in [0.0, 1.0].
 """)
 
 
@@ -439,10 +497,12 @@ def _format_few_shot_block(examples: list[dict[str, Any]]) -> str:
             for c in compact["input"]["contexts"][:3]:
                 if isinstance(c, dict):
                     t = c.get("text", "")
-                    trimmed.append({
-                        "id": c.get("id"),
-                        "text": t[:400] + ("..." if len(t) > 400 else ""),
-                    })
+                    trimmed.append(
+                        {
+                            "id": c.get("id"),
+                            "text": t[:400] + ("..." if len(t) > 400 else ""),
+                        }
+                    )
                 elif isinstance(c, str):
                     trimmed.append(c[:400] + ("..." if len(c) > 400 else ""))
             compact["input"]["contexts"] = trimmed

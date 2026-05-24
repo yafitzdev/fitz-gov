@@ -2,11 +2,11 @@
 
 Complete taxonomy of governance case types for the fitz-gov benchmark.
 
-**Status**: Complete. All cases merged into `fitz-gov/data/tier1_core/`. Current version: **v6.0.0** (V5.1 + LLM-enriched schema overlay; same case IDs and labels as v5.0).
+**Status**: Legacy V5.1/V6 category taxonomy, retained as historical reference. Current published dataset version is **v7.0.1** on Hugging Face: 10,500 query-grouped rows in the default `v7` config. Public V7 rows use the SDGP fields (`taxonomy.pattern`, `taxonomy.cell_id`, `routing.expert_fired`, `meta.difficulty`) rather than the old category/subcategory breakdown axes.
 
 **Production mapping**: fitz-gov uses 3-mode labels (abstain/disputed/trustworthy) and 4 test categories: abstention, dispute, trustworthy_hedged, trustworthy_direct. Both trustworthy_hedged and trustworthy_direct map to TRUSTWORTHY mode — the category name describes the expected response behavior (hedged vs direct). Grounding and relevance are cross-cutting quality checks applied to all trustworthy cases.
 
-**Data structure**:
+**Legacy data structure**:
 ```
 fitz-gov/data/
 ├── tier0_sanity/    60 sanity cases (baseline, models should score 95%+)
@@ -18,6 +18,10 @@ fitz-gov/data/
 ---
 
 ## Dataset Overview
+
+V7 active contract: 10,500 rows, query-grouped splits (`train=8,400`, `validation=1,050`, `test=1,050`), target 25/cell complete across 378 SDGP primary cells, blind-label QA clean, and cross-label exact-query review clean.
+
+Legacy V5.1/V6 compatibility benchmark:
 
 | Metric | Value |
 |--------|-------|

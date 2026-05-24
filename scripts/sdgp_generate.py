@@ -62,28 +62,56 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--vault", type=Path, default=Path("data/sdgp_vault_v51_enriched"))
     p.add_argument("--target", type=int, default=20, help="Min cases per cell (ROADMAP §3: 20–25)")
     p.add_argument("--n-per-cell", type=int, default=1)
-    p.add_argument("--max-cells", type=int, default=10, help="Cap how many cells to attempt in this run")
+    p.add_argument(
+        "--max-cells", type=int, default=10, help="Cap how many cells to attempt in this run"
+    )
     p.add_argument(
         "--provider",
         choices=["local", "handoff", "stub", "env"],
         default="env",
     )
     p.add_argument("--no-blind-label", action="store_true", help="Skip the second-pass validator")
-    p.add_argument("--report-path", type=Path, default=None, help="Markdown coverage report destination")
+    p.add_argument(
+        "--report-path", type=Path, default=None, help="Markdown coverage report destination"
+    )
     p.add_argument("--max-attempts-per-cell", type=int, default=3)
     p.add_argument("--n-few-shots", type=int, default=2)
     p.add_argument("--temperature", type=float, default=0.7)
     # Filters
-    p.add_argument("--filter-pattern", type=str, default=None,
-                   help="Restrict to one TaxonomyPattern (slug, e.g. 'numerical_conflict')")
-    p.add_argument("--filter-class", type=str, default=None,
-                   help="Restrict to one GovernanceClass (ABSTAIN | DISPUTED | TRUSTWORTHY)")
-    p.add_argument("--filter-difficulty", type=str, default=None,
-                   help="Restrict to one Difficulty (easy | medium | hard)")
-    p.add_argument("--filter-domain", type=str, default=None,
-                   help="Restrict to one expert Domain (e.g. 'science_medicine')")
-    p.add_argument("--dry-run", action="store_true",
-                   help="Show what would happen but don't call providers or write to vault")
+    p.add_argument(
+        "--filter-pattern",
+        type=str,
+        default=None,
+        help="Restrict to one TaxonomyPattern (slug, e.g. 'numerical_conflict')",
+    )
+    p.add_argument(
+        "--filter-class",
+        type=str,
+        default=None,
+        help="Restrict to one GovernanceClass (ABSTAIN | DISPUTED | TRUSTWORTHY)",
+    )
+    p.add_argument(
+        "--filter-difficulty",
+        type=str,
+        default=None,
+        help="Restrict to one Difficulty (easy | medium | hard)",
+    )
+    p.add_argument(
+        "--filter-domain",
+        type=str,
+        default=None,
+        help="Restrict to one expert Domain (e.g. 'science_medicine')",
+    )
+    p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Show what would happen but don't call providers or write to vault",
+    )
+    p.add_argument(
+        "--allow-thin",
+        action="store_true",
+        help="Allow structurally valid but training-schema-incomplete rows",
+    )
     return p.parse_args()
 
 
@@ -91,17 +119,25 @@ def build_providers(args: argparse.Namespace) -> list[Provider]:
     if args.provider == "env":
         return providers_from_env()
     if args.provider == "local":
-        return [LocalLlmProvider(
-            model_id=os.environ.get("SDGP_LOCAL_MODEL", "qwen3.5:0.8b"),
-            base_url=os.environ.get("SDGP_LOCAL_URL", "http://localhost:11434"),
-        )]
+        return [
+            LocalLlmProvider(
+                model_id=os.environ.get("SDGP_LOCAL_MODEL", "qwen3.5:0.8b"),
+                base_url=os.environ.get("SDGP_LOCAL_URL", "http://localhost:11434"),
+            )
+        ]
     if args.provider == "handoff":
-        return [FileHandoffProvider(
-            handoff_dir=Path(os.environ.get("SDGP_HANDOFF_DIR", "data/sdgp_handoff")),
-            timeout_s=float(os.environ.get("SDGP_HANDOFF_TIMEOUT", "600")),
-        )]
+        return [
+            FileHandoffProvider(
+                handoff_dir=Path(os.environ.get("SDGP_HANDOFF_DIR", "data/sdgp_handoff")),
+                timeout_s=float(os.environ.get("SDGP_HANDOFF_TIMEOUT", "600")),
+            )
+        ]
     if args.provider == "stub":
-        return [StubProvider(response='{"id":"stub_001","input":{"query":"q","contexts":[]},"governance":{"classification":"ABSTAIN"}}')]
+        return [
+            StubProvider(
+                response='{"id":"stub_001","input":{"query":"q","contexts":[]},"governance":{"classification":"ABSTAIN"}}'
+            )
+        ]
     raise SystemExit(f"unknown provider: {args.provider}")
 
 
@@ -147,8 +183,10 @@ def main() -> int:
 
     # Cap
     gaps = gaps[: args.max_cells]
-    print(f"\nAttempting {len(gaps)} cells × {args.n_per_cell} cases = "
-          f"{len(gaps) * args.n_per_cell} cases max")
+    print(
+        f"\nAttempting {len(gaps)} cells × {args.n_per_cell} cases = "
+        f"{len(gaps) * args.n_per_cell} cases max"
+    )
 
     if args.dry_run:
         print("\n--dry-run set, exiting before provider calls.")
@@ -180,7 +218,7 @@ def main() -> int:
         vault=vault,
         provider=generator,
         blind_label_pair=blind_pair,
-        checker=Checker(),
+        checker=Checker(require_training_schema=not args.allow_thin),
         max_attempts_per_cell=args.max_attempts_per_cell,
         n_few_shots=args.n_few_shots,
         generator_temperature=args.temperature,
@@ -220,7 +258,9 @@ def main() -> int:
     # Conflicts
     conflicts = orch.list_conflicts()
     if conflicts:
-        print(f"\nConflict queue: {len(conflicts)} unresolved cases under {vault.root / 'conflicts'}")
+        print(
+            f"\nConflict queue: {len(conflicts)} unresolved cases under {vault.root / 'conflicts'}"
+        )
 
     return 0
 

@@ -25,6 +25,7 @@ import json
 import os
 import shutil
 import tempfile
+import time
 import uuid
 from collections import defaultdict
 from dataclasses import asdict, dataclass, field
@@ -398,7 +399,18 @@ class Vault:
             tmp.flush()
             os.fsync(tmp.fileno())
             tmp.close()
-            os.replace(tmp.name, str(self.cases_path))
+            target = self.cases_path.resolve()
+            last_exc: OSError | None = None
+            for attempt in range(60):
+                try:
+                    os.replace(tmp.name, str(target))
+                    last_exc = None
+                    break
+                except PermissionError as exc:
+                    last_exc = exc
+                    time.sleep(min(2.0, 0.2 * (attempt + 1)))
+            if last_exc is not None:
+                raise last_exc
         except Exception:
             tmp.close()
             try:

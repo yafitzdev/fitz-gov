@@ -29,10 +29,20 @@ def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--vault", type=Path, default=Path("data/sdgp_vault_v51_enriched"))
     p.add_argument("--out-dir", type=Path, default=Path("data/sdgp_handoff_v7/out"))
-    p.add_argument("--batch-id", type=str, default=None,
-                   help="Vault provenance batch_id (default: auto-generated)")
-    p.add_argument("--no-archive", action="store_true",
-                   help="Don't move processed out/*.json files")
+    p.add_argument(
+        "--batch-id",
+        type=str,
+        default=None,
+        help="Vault provenance batch_id (default: auto-generated)",
+    )
+    p.add_argument(
+        "--no-archive", action="store_true", help="Don't move processed out/*.json files"
+    )
+    p.add_argument(
+        "--allow-thin",
+        action="store_true",
+        help="Allow structurally valid but training-schema-incomplete rows",
+    )
     return p.parse_args()
 
 
@@ -51,10 +61,11 @@ def main() -> int:
     if not files:
         return 0
 
-    checker = Checker()
+    checker = Checker(require_training_schema=not args.allow_thin)
     seen_hashes = hashes_from(vault.iter_cases())
     batch_id = args.batch_id or new_batch_id()
     print(f"Using batch_id: {batch_id}")
+    print(f"Require training schema: {not args.allow_thin}")
 
     n_added = 0
     n_parse_fail = 0
@@ -73,7 +84,9 @@ def main() -> int:
             case = parse_case_json(raw)
         except Exception as exc:
             n_parse_fail += 1
-            (rejected_dir / f.name).write_text(f"PARSE FAIL: {exc}\n\n{raw[:2000]}", encoding="utf-8")
+            (rejected_dir / f.name).write_text(
+                f"PARSE FAIL: {exc}\n\n{raw[:2000]}", encoding="utf-8"
+            )
             f.unlink(missing_ok=True)
             continue
 
