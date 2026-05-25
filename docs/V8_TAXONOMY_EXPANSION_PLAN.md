@@ -14,19 +14,49 @@ It does not add subpattern fields and does not rewrite existing rows.
 
 ## Local Status
 
-The 525-row probe pack has been generated and merged into the local vault:
+### Active Clean Stop Point
 
-- Vault total: **11025 rows**
-- V8 rows: **525**
-- Cell coverage: **105/105 cells at 5 rows/cell**
-- Training-schema audit: **525/525 complete**
+The active local vault is clean at **840 V8 rows**:
+
+- Vault total: **11,340 rows**
+- V8 rows: **840**
+- Clean manifest:
+  `data/sdgp_v8_qa/blind_label_manifest_clean_840.jsonl`
+- Clean score:
+  `data/sdgp_v8_qa/clean_840_score/` = **840/840 agreement**,
+  **0 missing / 0 invalid / 0 error**, **0 triage**
 - Forbidden old/shim fields: **0**
-- Exact duplicate checker hashes: **0**
+- Exact duplicate checker hashes: **0** at merge audit time
 - Query-group leakage: **0**
-- QA artifacts: `data/sdgp_v8_qa/`
-- Blind-label QA: LM Studio `qwen3.6-35b-a3b@q5_k_s` scored **525/525** rows.
-- Triage repair: repaired all 210 rows in the two affected patterns, `missing_execution_result` and `authority_status_conflict`, after the initial pass found **502 validated / 23 triage**.
-- Final blind-label result: **525 validated / 0 triage**, with **0 missing / 0 invalid / 0 error**.
+- Composition: original **525** QA-clean V8 probe rows + **105** QA-clean
+  hard `verdict_conflict` rows + **210** QA-clean repaired balanced controls
+  for `resolved_candidate_selection` and `version_build_mismatch`
+
+The failed pre-fix balanced-control QA artifact remains historical only:
+`data/sdgp_v8_qa/balanced_controls_repaired_clean_20260525/` scored
+**148/210 agreement** and must not be used for training or merge decisions.
+
+### Unvalidated Claude Candidate Expansion
+
+A later candidate-generation handoff exists at:
+
+`data/sdgp_handoff_v8_candidate_20260525_claude_expand/`
+
+This is **not** part of the active vault and has not passed structural dry-run
+or blind-label QA. Counts are a moving snapshot because generation continued
+during inspection. Snapshot at 2026-05-25 18:09 Europe/Berlin:
+
+- Planned batch specs: **113** files / **3,360** assigned slots
+- Main output files observed: **89** `batch_*.jsonl`
+- Raw output lines observed: **2,646**
+- Parseable unique candidate IDs observed: **2,643**
+- Duplicate candidate IDs observed: **0**
+- Malformed JSON lines observed: **3**
+- Parsed rows missing core classification/domain/difficulty fields: **15**
+
+The only safe next action for this handoff is the clean candidate cycle:
+structural dry-run, normalize/fix malformed rows if needed, build offline
+blind-label QA, pilot, full QA, and merge only if every candidate row is clean.
 
 ## Pattern Targets
 

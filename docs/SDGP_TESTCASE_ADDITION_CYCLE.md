@@ -104,6 +104,28 @@ For deterministic template generation:
 For subagent generation, write one `batch_*.jsonl` file per batch spec under
 `$HANDOFF\subagent_outputs`. Do not edit the vault directly.
 
+### Current Candidate Handoff Snapshot
+
+The current Claude-generated V8 candidate handoff is:
+
+`data/sdgp_handoff_v8_candidate_20260525_claude_expand/`
+
+It is an **unvalidated candidate directory**, not active data. As of the
+2026-05-25 evening inspection, generation was still moving; the observed
+snapshot at 18:09 Europe/Berlin was:
+
+- Planned batch specs: **113** files / **3,360** assigned slots
+- Main output files observed: **89** `batch_*.jsonl`
+- Raw output lines observed: **2,646**
+- Parseable unique candidate IDs observed: **2,643**
+- Duplicate candidate IDs observed: **0**
+- Malformed JSON lines observed: **3**
+- Parsed rows missing core classification/domain/difficulty fields: **15**
+
+These numbers are not an acceptance count. The candidate handoff must be
+normalized and pass Step 4 through Step 7 before any merge. The active clean
+vault remains **11,340 total rows / 840 V8 rows** until Step 8 succeeds.
+
 ## Step 4: Structural Dry Run
 
 Run the merge checker in dry-run mode before any QA:

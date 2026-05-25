@@ -68,6 +68,36 @@ difficulties = **105 new primary cells**. At 5 rows/cell this is a **525-row
 probe pack**. Full V7-style parity at 25 rows/cell would be **2,625 rows**.
 See `docs/V8_TAXONOMY_EXPANSION_PLAN.md`.
 
+## Current Local V8 State
+
+As of 2026-05-25 evening, the active local vault remains the clean stop point:
+
+- Active vault: `data/sdgp_vault_v51_enriched/cases.jsonl`
+- Total rows: **11,340** = 10,500 V6/V7 rows + **840 V8 rows**
+- Clean V8 manifest:
+  `data/sdgp_v8_qa/blind_label_manifest_clean_840.jsonl`
+- Clean score:
+  `data/sdgp_v8_qa/clean_840_score/` = **840/840 agreement**,
+  **0 missing / 0 invalid / 0 error**, **0 triage**
+
+A later Claude-generated candidate expansion exists at:
+
+`data/sdgp_handoff_v8_candidate_20260525_claude_expand/`
+
+This directory is an **unvalidated candidate handoff**, not part of the active
+vault and not pyrrho training data. Its contents were still changing during the
+2026-05-25 evening inspection. Snapshot at 18:09 Europe/Berlin:
+
+- Main output files observed: **89** `batch_*.jsonl`
+- Raw output lines observed: **2,646**
+- Parseable unique candidate IDs observed: **2,643**
+- Duplicate candidate IDs observed: **0**
+- Malformed JSON lines observed: **3**
+- Parsed rows missing core classification/domain/difficulty fields: **15**
+
+Do not merge this candidate directory into the active vault until it passes the
+full testcase addition cycle in `docs/SDGP_TESTCASE_ADDITION_CYCLE.md`.
+
 ## Required V8 Workflow
 
 1. Add taxonomy gaps as first-class `TaxonomyPattern` enum values.
