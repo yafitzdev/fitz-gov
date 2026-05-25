@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Repaired the two ambiguous V8 templates surfaced by blind-label triage: `missing_execution_result` no longer states an explicit negative final outcome, and `authority_status_conflict` no longer phrases the query as asking specifically for source-of-record status.
 - V8 blind-label QA ran with LM Studio `qwen3.6-35b-a3b@q5_k_s`. The initial combined score was **502 validated / 23 triage**; after repairing all 210 affected-pattern rows and rerunning those rows at `max_tokens=2048`, the final combined score is **525/525 validated / 0 triage**, with **0 missing / 0 invalid / 0 error**.
 - Changed blind-label runner defaults to `max_tokens=2048` and `request_timeout_s=300` for the current Qwen thinking-model QA path. A 2026-05-25 config probe reproduced the old failure (`max_tokens=128` -> **0/3 scored, 3 invalid**) and verified the corrected parse budget (`max_tokens=2048` -> **3/3 scored, 0 invalid**).
+- Ran the clean testcase addition cycle on the repaired 210-row balanced-control candidate pack without merging it into the active vault. Structural dry-run passed and full blind-label QA parsed cleanly (**210/210 scored**, **0 missing / 0 invalid / 0 error**), but the candidate pack failed label agreement at **148/210**. The failures were concentrated in `version_build_mismatch` (**49/105** agreement), so the pack remains quarantined and must not be merged or used for training.
 
 ---
 
