@@ -44,15 +44,34 @@ A later candidate-generation handoff exists at:
 
 This is **not** part of the active vault and has not passed structural dry-run
 or blind-label QA. Counts are a moving snapshot because generation continued
-during inspection. Snapshot at 2026-05-25 18:09 Europe/Berlin:
+during inspection. Intake snapshot at 2026-05-25 18:56 Europe/Berlin:
 
 - Planned batch specs: **113** files / **3,360** assigned slots
 - Main output files observed: **89** `batch_*.jsonl`
 - Raw output lines observed: **2,646**
 - Parseable unique candidate IDs observed: **2,643**
 - Duplicate candidate IDs observed: **0**
-- Malformed JSON lines observed: **3**
+- Assigned slots still missing: **717**
+- Strict merge parser read-fail files: **4**
+  (`batch_042.jsonl` malformed concatenated JSON; `batch_070.jsonl`,
+  `batch_071.jsonl`, and `batch_072.jsonl` contain non-UTF8 bytes)
 - Parsed rows missing core classification/domain/difficulty fields: **15**
+- Fast structural dry-run result after the merge script was optimized to use
+  the vault ID index: **1,915 accepted / 0 existing / 624 rejected**.
+
+Dry-run rejection shape:
+
+| Bucket | Rows / issues |
+|---|---:|
+| Rows rejected only for `training_schema_incomplete` | 540 |
+| Rows with invalid cell/domain plus schema errors | 24 |
+| Rows with invalid cell IDs only | 21 |
+| Rows missing classification/cell/structure | 15 |
+| Rows with invalid cell/domain only | 6 |
+| Rows with class mismatch plus schema errors | 2 |
+| Total `training_schema_incomplete` issues | 1,176 |
+| Total `invalid_cell_id` issues | 54 |
+| Total `invalid_expert_fired` issues | 30 |
 
 The only safe next action for this handoff is the clean candidate cycle:
 structural dry-run, normalize/fix malformed rows if needed, build offline

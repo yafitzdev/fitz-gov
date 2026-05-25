@@ -111,16 +111,19 @@ The current Claude-generated V8 candidate handoff is:
 `data/sdgp_handoff_v8_candidate_20260525_claude_expand/`
 
 It is an **unvalidated candidate directory**, not active data. As of the
-2026-05-25 evening inspection, generation was still moving; the observed
-snapshot at 18:09 Europe/Berlin was:
+2026-05-25 evening inspection, generation was still moving; the intake snapshot
+at 18:56 Europe/Berlin was:
 
 - Planned batch specs: **113** files / **3,360** assigned slots
 - Main output files observed: **89** `batch_*.jsonl`
 - Raw output lines observed: **2,646**
 - Parseable unique candidate IDs observed: **2,643**
 - Duplicate candidate IDs observed: **0**
-- Malformed JSON lines observed: **3**
+- Assigned slots still missing: **717**
+- Strict merge parser read-fail files: **4**
 - Parsed rows missing core classification/domain/difficulty fields: **15**
+- Fast structural dry-run result: **1,915 accepted / 0 existing / 624
+  rejected**
 
 These numbers are not an acceptance count. The candidate handoff must be
 normalized and pass Step 4 through Step 7 before any merge. The active clean

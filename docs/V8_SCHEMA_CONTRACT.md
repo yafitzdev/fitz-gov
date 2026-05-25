@@ -86,14 +86,20 @@ A later Claude-generated candidate expansion exists at:
 
 This directory is an **unvalidated candidate handoff**, not part of the active
 vault and not pyrrho training data. Its contents were still changing during the
-2026-05-25 evening inspection. Snapshot at 18:09 Europe/Berlin:
+2026-05-25 evening inspection. Intake snapshot at 18:56 Europe/Berlin:
 
 - Main output files observed: **89** `batch_*.jsonl`
 - Raw output lines observed: **2,646**
 - Parseable unique candidate IDs observed: **2,643**
 - Duplicate candidate IDs observed: **0**
-- Malformed JSON lines observed: **3**
+- Assigned slots still missing: **717** of 3,360
+- Malformed/non-UTF8 output files under strict merge parsing: **4**
 - Parsed rows missing core classification/domain/difficulty fields: **15**
+- Fast structural dry-run result: **1,915 accepted / 0 existing / 624
+  rejected**. The dominant rejection bucket is training-schema incompleteness
+  (missing TRUSTWORTHY `meta.grounding_targets`, invalid `meta.category` such
+  as `trust`/`abstain`, invalid abbreviated cell IDs, and invalid domain names
+  such as `legal_compliance` or `clinical_evidence`).
 
 Do not merge this candidate directory into the active vault until it passes the
 full testcase addition cycle in `docs/SDGP_TESTCASE_ADDITION_CYCLE.md`.

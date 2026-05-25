@@ -153,7 +153,7 @@ def main() -> int:
                 print(f"BAD ROW {path}: expected case_id + case", file=sys.stderr)
                 n_bad += 1
                 continue
-            if vault.get(case_id) is not None:
+            if case_id in vault:
                 n_exists += 1
                 continue
 
