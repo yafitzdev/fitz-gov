@@ -253,13 +253,22 @@ Therefore:
 For `version_build_mismatch` ABSTAIN controls:
 
 - Good: contexts only show evidence for a neighboring build/version/platform.
+- Good: the neighboring key is a genuinely distinct value, such as `phase 1`
+  when the query asks for `phase 2`, or `Linux package 2.5` when the query asks
+  for `Linux package 2.6`.
 - Bad: contexts explicitly say no final row exists for the requested build. That
   is a trustworthy negative answer, not insufficient evidence.
+- Bad: the neighboring key contains the requested key as a substring, such as
+  `phase 2-previous` for a `phase 2` query. The blind labeler can reasonably
+  treat that as close enough to answer.
 
 For `resolved_candidate_selection` TRUSTWORTHY controls:
 
 - Good: one context marks an interim candidate as non-final, and another
   source-of-record explicitly supersedes or closes it with the final answer.
+- Good: the non-final item is phrased as an obsolete candidate ID with no
+  final-result field, while the source-of-record publishes the valid final
+  record and final result.
 - Risky: wording that reads like two answer candidates, such as `red` versus
   `green`, without enough resolution language. The blind labeler may reasonably
   choose DISPUTED.

@@ -72,6 +72,45 @@ DOMAIN_ITEMS: dict[Domain, list[dict[str, str]]] = {
 }
 
 
+NEIGHBOR_VARIANTS: dict[str, str] = {
+    "protocol P-14": "protocol P-13",
+    "cohort B": "cohort A",
+    "device build R3": "device build R2",
+    "analysis set 2": "analysis set 1",
+    "sterile pack v2": "sterile pack v1",
+    "permit NV-2026-04": "permit NV-2026-03",
+    "ordinance section 18B": "ordinance section 18A",
+    "case file HP-77": "case file HP-76",
+    "2026 renewal": "2025 renewal",
+    "revision 3": "revision 2",
+    "map sheet 12": "map sheet 11",
+    "catalog entry HM-42": "catalog entry HM-41",
+    "winter notebook": "autumn notebook",
+    "district table 7": "district table 6",
+    "station file 1908": "station file 1907",
+    "release 4.2.1": "release 4.1.9",
+    "SDK 3.8": "SDK 3.7",
+    "build 1187": "build 1186",
+    "Linux package 2.6": "Linux package 2.5",
+    "cluster eu-3": "cluster eu-2",
+    "Q1 2026": "Q4 2025",
+    "fiscal 2025": "fiscal 2024",
+    "series 2024B": "series 2024A",
+    "round 3": "round 2",
+    "April 2026": "March 2026",
+    "phase 2": "phase 1",
+    "2026 program": "2025 program",
+    "catalog 14": "catalog 13",
+    "urban sample": "rural sample",
+    "regional final": "district final",
+    "model AK-17": "model AK-16",
+    "size M": "size L",
+    "unit CN-40": "unit CN-39",
+    "weekday route": "weekend route",
+    "2026 policy": "2025 policy",
+}
+
+
 DIFF_WORDS = {
     Difficulty.EASY: {
         "confidence": "high",
@@ -234,13 +273,8 @@ def _case_texts(
     if pattern == TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION:
         if idx >= 5:
             record_id = f"{domain.value.upper().replace('_', '-')}-{difficulty.value.upper()}-{idx:02d}"
-            preliminary = [
-                "draft hold",
-                "needs-review marker",
-                "superseded candidate",
-                "pre-adjudication flag",
-                "provisional red marker",
-            ][idx % 5]
+            obsolete_candidate = f"candidate PRE-{idx:02d}"
+            final_record = f"record FINAL-{idx:02d}"
             final = ["PASS", "cleared", "approved", "accepted", "green"][idx % 5]
             query = (
                 f"What final result is supported for {entity} record {record_id} "
@@ -248,20 +282,20 @@ def _case_texts(
             )
             c1 = (
                 f"{tag}: The preliminary review extract for {entity} record {record_id} "
-                f"under {variant} listed an interim {preliminary}. The extract says this "
-                f"was a pre-adjudication marker, not a final result, and should not be used "
-                f"as the release answer."
+                f"under {variant} references {obsolete_candidate}. The extract marks "
+                f"{obsolete_candidate} as an obsolete candidate row, says it has no "
+                f"final-result field, and directs readers to the source-of-record entry."
             )
             c2 = (
                 f"{tag}: The {authority} source-of-record for {entity} record {record_id} "
-                f"under {variant} supersedes the preliminary extract. It lists final result: "
-                f"{final}, and says the earlier interim marker was closed during review."
+                f"under {variant} closes {obsolete_candidate} and publishes {final_record}. "
+                f"{final_record} is the valid final entry and lists final result: {final}."
             )
             contexts = [
                 _ctx(
                     "ctx_001",
                     c1,
-                    f"The preliminary source shows an interim {preliminary} result only.",
+                    f"The preliminary source names obsolete {obsolete_candidate} without a final result.",
                     authority_score=0.70,
                     authority_signal="domain_expert",
                     relevance=0.90,
@@ -271,7 +305,7 @@ def _case_texts(
                 _ctx(
                     "ctx_002",
                     c2,
-                    f"The source of record gives final result {final} for the exact record.",
+                    f"The source of record gives final result {final} for the valid final entry.",
                     authority_score=0.94,
                     authority_signal="official_primary",
                     relevance=0.98,
@@ -280,18 +314,18 @@ def _case_texts(
                 ),
             ]
             gold = f"The final supported result for {entity} record {record_id} under {variant} is {final}."
-            required = [record_id, variant, final, "final result"]
+            required = [record_id, variant, final_record, final, "final result"]
             forbidden = [
-                f"final result was {preliminary}",
+                f"{obsolete_candidate} was the final result",
                 "the final result is disputed",
                 "the sources are unresolved",
                 "there is no source-of-record answer",
             ]
             near = (
-                f"A surface reader sees {preliminary} and {final}, but the source-of-record "
-                f"explicitly supersedes the preliminary {preliminary} entry."
+                f"A surface reader sees an obsolete candidate row, but the source-of-record "
+                f"explicitly closes it and names {final_record} as the valid final entry."
             )
-            return query, gold, contexts, near, required, forbidden, [preliminary]
+            return query, gold, contexts, near, required, forbidden, [obsolete_candidate]
 
         valid = f"candidate {chr(66 + idx % 3)}"
         invalid = f"candidate {chr(65 + idx % 3)}"
@@ -413,7 +447,7 @@ def _case_texts(
     if pattern == TaxonomyPattern.VERSION_BUILD_MISMATCH:
         if idx >= 5:
             requested = variant
-            wrong = f"{variant}-previous"
+            wrong = NEIGHBOR_VARIANTS.get(variant, f"adjacent slice {idx}")
             record_id = f"{domain.value.upper().replace('_', '-')}-{difficulty.value.upper()}-{idx:02d}"
             wrong_result = ["PASS", "cleared", "accepted", "green", "completed"][idx % 5]
             query = (
@@ -421,14 +455,13 @@ def _case_texts(
                 f"on {requested}?"
             )
             c1 = (
-                f"{tag}: The retrieved final-result record is for {entity} record {record_id} "
-                f"on {wrong}. It lists final result: {wrong_result} for that neighboring "
-                f"build."
+                f"{tag}: The retrieved final-result record key is {wrong} for {entity} "
+                f"record {record_id}. It lists final result: {wrong_result} for {wrong}."
             )
             c2 = (
-                f"{tag}: The traceability appendix also maps record {record_id} to {wrong}. "
-                f"Its notes, reviewers, and archive references all describe that neighboring "
-                f"build."
+                f"{tag}: The traceability appendix repeats the {wrong} key for record "
+                f"{record_id}. Its notes, reviewers, and archive references are all indexed "
+                f"under {wrong}, an adjacent slice rather than the requested {requested}."
             )
             contexts = [
                 _ctx(
@@ -465,15 +498,15 @@ def _case_texts(
             return query, "", contexts, near, [wrong, record_id], forbidden, []
 
         requested = variant
-        wrong = f"{variant}-previous"
+        wrong = NEIGHBOR_VARIANTS.get(variant, f"adjacent slice {idx}")
         query = f"What was the final result for {entity} on {requested}?"
         c1 = (
-            f"{tag}: The retrieved record is for {entity} on {wrong}, not {requested}. It says "
-            f"the neighboring variant completed successfully."
+            f"{tag}: The retrieved record key is {wrong} for {entity}. It says "
+            f"that adjacent variant completed successfully."
         )
         c2 = (
-            f"{tag}: The appendix repeats that the result applies only to {wrong}. It does not "
-            f"state a final result for {entity} on {requested}."
+            f"{tag}: The appendix repeats the {wrong} key and keeps the archive references "
+            f"under that adjacent variant rather than the requested {requested}."
         )
         contexts = [
             _ctx("ctx_001", c1, "The evidence gives a result for the wrong neighboring variant.", authority_score=0.82, authority_signal="official_primary", relevance=0.70, boundary_quality=0.78, anchor=f"{wrong}; V8 probe {idx}"),
