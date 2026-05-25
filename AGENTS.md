@@ -7,6 +7,7 @@ Loaded into Codex sessions opened in this repository.
 Before touching V8 schema, generation, export, upload, or validation code, read:
 
 - [docs/V8_SCHEMA_CONTRACT.md](docs/V8_SCHEMA_CONTRACT.md)
+- [docs/SDGP_TESTCASE_ADDITION_CYCLE.md](docs/SDGP_TESTCASE_ADDITION_CYCLE.md)
 
 The short version:
 
@@ -21,3 +22,9 @@ The short version:
 
 Do not solve V8 by preserving old V5/V6/V7 report axes. Add new rows with the
 current canonical SDGP shape and update tooling to read that shape.
+
+For testcase additions, do not merge candidate rows into the active vault before
+offline structural and blind-label QA pass. The current local blind-label
+settings for LM Studio Qwen 35B Q5 are documented in
+`docs/SDGP_TESTCASE_ADDITION_CYCLE.md`; notably, Qwen thinking-model QA needs
+`--max-tokens 2048`, not the old 128-token budget.

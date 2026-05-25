@@ -206,7 +206,7 @@ def label_queue_row(
     row: Mapping[str, Any],
     provider: Provider,
     *,
-    max_tokens: int = 128,
+    max_tokens: int = 2048,
     temperature: float = 0.0,
 ) -> dict[str, Any]:
     """Run one blind-label queue row through a provider and return an audit row."""

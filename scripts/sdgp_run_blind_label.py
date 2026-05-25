@@ -40,7 +40,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--api-key", type=str, default=os.environ.get("LMSTUDIO_API_KEY", "lm-studio"))
     p.add_argument("--handoff-dir", type=Path, default=Path("data/sdgp_blind_label_handoff"))
     p.add_argument("--handoff-timeout-s", type=float, default=600.0)
-    p.add_argument("--request-timeout-s", type=float, default=180.0)
+    p.add_argument("--request-timeout-s", type=float, default=300.0)
     p.add_argument(
         "--stub-label", choices=("ABSTAIN", "DISPUTED", "TRUSTWORTHY"), default="ABSTAIN"
     )
@@ -57,7 +57,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--no-exclude-ledger", action="store_true")
     p.add_argument("--sample-out", type=Path, default=None)
     p.add_argument("--run-id", type=str, default=None)
-    p.add_argument("--max-tokens", type=int, default=128)
+    p.add_argument("--max-tokens", type=int, default=2048)
     p.add_argument("--temperature", type=float, default=0.0)
     p.add_argument("--healthcheck-only", action="store_true")
     p.add_argument("--no-healthcheck", action="store_true")
