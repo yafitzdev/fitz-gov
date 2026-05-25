@@ -47,7 +47,7 @@ print(result)
 Solo project by Yan Fitzner ([LinkedIn](https://www.linkedin.com/in/yan-fitzner/), [GitHub](https://github.com/yafitzdev), [HuggingFace](https://huggingface.co/yafitzdev)).
 
 - ~4k lines of Python, 10,500 benchmark rows
-- 264 SDGP tests
+- 271 SDGP tests
 - Built for [fitz-sage](https://github.com/yafitzdev/fitz-sage) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases)
 
 ---
@@ -292,6 +292,16 @@ flowchart TD
 - **Coverage:** target 25/cell complete across all 378 cells; target 30/cell remains a stretch backlog with 1,575 rows remaining
 - **Primary domains:** science_medicine 1,823; general_commonsense 1,492; economics_finance 1,477; technology_computing 1,476; law_policy 1,441; culture_society 1,406; history_geography 1,385
 - **QA:** strict V6/V7 SDGP schema complete; blind-label QA is 7,520 / 7,520 V7 rows validated with 0 triage; cross-label exact-query semantic review has 0 unresolved pairs
+
+**V8 dataset rule:** V8 keeps the current V7.0.1 SDGP row shape and adds the
+taxonomy gaps as first-class `taxonomy.pattern` values. No subpattern fields,
+no `meta.introduced_in`, no old report axes, and no compatibility configs. See
+[V8 schema contract](docs/V8_SCHEMA_CONTRACT.md). The initial V8 taxonomy-gap
+expansion is 105 new primary cells across the existing 7 primary domains,
+documented in [V8 taxonomy expansion plan](docs/V8_TAXONOMY_EXPANSION_PLAN.md).
+Locally, the 525-row V8 probe pack is generated, repaired, and blind-label
+clean: **525 / 525 validated with 0 triage** after Qwen 35B Q5 second-pass
+scoring. It is local-only until the next V8 publish/retrain decision.
 
 </details>
 

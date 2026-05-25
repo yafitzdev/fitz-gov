@@ -60,6 +60,13 @@ def _complete_case() -> dict:
             "pattern_description": "One high-authority source, no contradictions, directly answers query",
             "cell_id": "single_authoritative__culture_society__easy",
         },
+        "evaluation": {
+            "mode": "governance",
+            "check_mode_match": True,
+            "required_elements": ["Answer must identify William Shakespeare as the credited author."],
+            "forbidden_claims": [],
+            "forbidden_elements": [],
+        },
         "meta": {
             "dataset_version": "v7",
             "difficulty": "easy",

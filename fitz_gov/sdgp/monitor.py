@@ -5,7 +5,7 @@ report covering:
 
   - Header: vault size, target, % cells at target.
   - Breakdown by governance class (ABSTAIN / DISPUTED / TRUSTWORTHY).
-  - Breakdown by taxonomy pattern (all 18).
+  - Breakdown by taxonomy pattern.
   - Breakdown by expert domain (all 7 primary).
   - Breakdown by difficulty (easy / medium / hard).
   - Top-N most-filled cells and top-N most-empty cells.
@@ -204,7 +204,10 @@ def format_coverage_report(
         header_lines.append(f"**Vault**: `{vault_path}`")
     header_lines.extend([
         f"**Target per cell**: {target.default}",
-        f"**Total cells (primary 18 × 7 × 3)**: {total_cells}",
+        (
+            f"**Total cells (primary {len(TaxonomyPattern)} × "
+            f"{len(PRIMARY_DOMAINS)} × {len(Difficulty)})**: {total_cells}"
+        ),
         f"**Cells at target**: {at_target} ({100.0 * at_target / max(total_cells, 1):.1f}%)",
         f"**Cells empty**: {empty} ({100.0 * empty / max(total_cells, 1):.1f}%)",
         f"**Total cases**: {total_cases}",

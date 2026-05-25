@@ -68,17 +68,25 @@ PATTERN_NEIGHBORS: list[tuple[TaxonomyPattern, TaxonomyPattern]] = [
     (TaxonomyPattern.WRONG_ENTITY, TaxonomyPattern.EVIDENCE_ABSENT),
     (TaxonomyPattern.PARTIAL_OVERLAP, TaxonomyPattern.TOO_GENERAL),
     (TaxonomyPattern.TEMPORAL_MISMATCH, TaxonomyPattern.WRONG_SPECIFICITY),
+    (TaxonomyPattern.VERSION_BUILD_MISMATCH, TaxonomyPattern.WRONG_ENTITY),
+    (TaxonomyPattern.VERSION_BUILD_MISMATCH, TaxonomyPattern.TEMPORAL_MISMATCH),
+    (TaxonomyPattern.MISSING_EXECUTION_RESULT, TaxonomyPattern.PARTIAL_OVERLAP),
     # DISPUTED intra-class neighbours
     (TaxonomyPattern.NUMERICAL_CONFLICT, TaxonomyPattern.FACTUAL_CONTRADICTION),
     (TaxonomyPattern.TEMPORAL_CONFLICT, TaxonomyPattern.FACTUAL_CONTRADICTION),
     (TaxonomyPattern.DEFINITIONAL_CONFLICT, TaxonomyPattern.FACTUAL_CONTRADICTION),
     (TaxonomyPattern.AUTHORITY_CONFLICT, TaxonomyPattern.FACTUAL_CONTRADICTION),
     (TaxonomyPattern.SCOPE_CONFLICT, TaxonomyPattern.DEFINITIONAL_CONFLICT),
+    (TaxonomyPattern.VERDICT_CONFLICT, TaxonomyPattern.FACTUAL_CONTRADICTION),
+    (TaxonomyPattern.AUTHORITY_STATUS_CONFLICT, TaxonomyPattern.AUTHORITY_CONFLICT),
+    (TaxonomyPattern.AUTHORITY_STATUS_CONFLICT, TaxonomyPattern.VERDICT_CONFLICT),
     # TRUSTWORTHY intra-class neighbours
     (TaxonomyPattern.MULTI_SOURCE_CORROBORATION, TaxonomyPattern.EXPERT_CONSENSUS),
     (TaxonomyPattern.MULTI_SOURCE_CORROBORATION, TaxonomyPattern.QUANTITATIVE_CONSENSUS),
     (TaxonomyPattern.SINGLE_AUTHORITATIVE, TaxonomyPattern.DIRECT_ANSWER),
     (TaxonomyPattern.CONSISTENT_CHAIN, TaxonomyPattern.MULTI_SOURCE_CORROBORATION),
+    (TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION, TaxonomyPattern.CONSISTENT_CHAIN),
+    (TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION, TaxonomyPattern.MULTI_SOURCE_CORROBORATION),
     # CROSS-CLASS — the dangerous near-misses (false_trustworthy traps)
     (TaxonomyPattern.QUANTITATIVE_CONSENSUS, TaxonomyPattern.NUMERICAL_CONFLICT),
     (TaxonomyPattern.MULTI_SOURCE_CORROBORATION, TaxonomyPattern.FACTUAL_CONTRADICTION),
@@ -88,6 +96,9 @@ PATTERN_NEIGHBORS: list[tuple[TaxonomyPattern, TaxonomyPattern]] = [
     (TaxonomyPattern.WRONG_SPECIFICITY, TaxonomyPattern.NUMERICAL_CONFLICT),
     (TaxonomyPattern.EVIDENCE_ABSENT, TaxonomyPattern.PARTIAL_OVERLAP),
     (TaxonomyPattern.TEMPORAL_MISMATCH, TaxonomyPattern.TEMPORAL_CONFLICT),
+    (TaxonomyPattern.MISSING_EXECUTION_RESULT, TaxonomyPattern.DIRECT_ANSWER),
+    (TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION, TaxonomyPattern.FACTUAL_CONTRADICTION),
+    (TaxonomyPattern.VERSION_BUILD_MISMATCH, TaxonomyPattern.SCOPE_CONFLICT),
 ]
 
 

@@ -4,8 +4,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 from fitz_gov.sdgp.prompts import (
     BASE_TEMPLATE,
     DIFFICULTY_HINTS,
@@ -22,7 +20,6 @@ from fitz_gov.sdgp.taxonomy import (
     Cell,
     Difficulty,
     Domain,
-    GovernanceClass,
     TaxonomyPattern,
 )
 from fitz_gov.sdgp.vault import Provenance, Vault
@@ -97,6 +94,10 @@ def test_prompt_contains_output_schema() -> None:
     p = build_prompt(_cell())
     assert "Output a single valid JSON object" in p.text
     assert "taxonomy.cell_id" in p.text or "cell_id" in p.text
+    assert "evaluation" in p.text
+    assert "meta.domain" not in p.text
+    assert "meta.subcategory" not in p.text
+    assert "introduced_in" not in p.text
 
 
 def test_prompt_constraints_hardcode_cell_values() -> None:
@@ -109,6 +110,18 @@ def test_prompt_constraints_hardcode_cell_values() -> None:
     assert f"{cell.pattern.value!r}" in p.text
     assert f"{cell.domain.value!r}" in p.text
     assert f"{cell.difficulty.value!r}" in p.text
+
+
+def test_v8_gap_pattern_prompt_uses_primary_cell() -> None:
+    cell = Cell(
+        pattern=TaxonomyPattern.VERDICT_CONFLICT,
+        domain=Domain.TECHNOLOGY_COMPUTING,
+        difficulty=Difficulty.HARD,
+    )
+    p = build_prompt(cell)
+    assert "verdict_conflict" in p.text
+    assert cell.cell_id in p.text
+    assert "subpattern" not in p.text
 
 
 def test_prompt_with_few_shots_includes_them() -> None:

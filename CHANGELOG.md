@@ -9,6 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `docs/V8_SCHEMA_CONTRACT.md` and `AGENTS.md` to pin the V8 data rule: keep the current V7.0.1 SDGP row shape, no legacy shims, no compatibility configs, no subpattern fields, and no `meta.introduced_in`.
+- Added five V8 taxonomy gaps as first-class primary patterns: `resolved_candidate_selection`, `verdict_conflict`, `authority_status_conflict`, `version_build_mismatch`, and `missing_execution_result`.
+- Added `docs/V8_TAXONOMY_EXPANSION_PLAN.md` and `scripts/sdgp_plan_v8_taxonomy_expansion.py`, enumerating 105 new primary cells across the existing 7 primary domains and 3 difficulties.
+- Added V8 generation/merge helpers: `scripts/sdgp_prepare_v8_generation_batches.py` and `scripts/sdgp_merge_v8_generation_jsonl.py`.
+- Added `scripts/sdgp_generate_v8_template_outputs.py` and generated the initial **525-row** V8 taxonomy-gap probe pack locally.
+- Added V8 blind-label QA artifacts under `data/sdgp_v8_qa/`, including the full Qwen 35B Q5 prediction files, invalid-retry predictions, repaired-pattern predictions, combined score summaries, validated rows, and ledgers.
+- Updated the training-schema completeness gate so current rows and future V8 rows require the canonical `evaluation` block and accept `meta.dataset_version: "v8"`.
+
+### Changed
+
+- Local enriched vault is now **11,025 rows** after merging the 525 V8 probe rows. V8 training-schema audit is **525/525 complete**, all 105 new cells are at 5 rows/cell, and the V8 QA audit writes artifacts under `data/sdgp_v8_qa/`.
+- Repaired the two ambiguous V8 templates surfaced by blind-label triage: `missing_execution_result` no longer states an explicit negative final outcome, and `authority_status_conflict` no longer phrases the query as asking specifically for source-of-record status.
+- V8 blind-label QA ran with LM Studio `qwen3.6-35b-a3b@q5_k_s`. The initial combined score was **502 validated / 23 triage**; after repairing all 210 affected-pattern rows and rerunning those rows at `max_tokens=2048`, the final combined score is **525/525 validated / 0 triage**, with **0 missing / 0 invalid / 0 error**.
+
 ---
 
 ## [7.0.1] - 2026-05-24

@@ -247,7 +247,7 @@ def needs_evaluation_enrichment(case: Mapping[str, Any]) -> bool:
     if audit_evaluation_fields(case):
         return True
     meta = _as_mapping(case.get("meta"))
-    if meta.get("dataset_version") != "v7":
+    if meta.get("dataset_version") not in {"v7", "v8"}:
         return False
     classification = _as_mapping(case.get("governance")).get("classification")
     if classification != "TRUSTWORTHY":

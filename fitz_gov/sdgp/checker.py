@@ -35,8 +35,6 @@ from typing import Any, Iterable, Sequence
 from .completeness import audit_case_completeness
 from .taxonomy import (
     PATTERN_TO_CLASS,
-    Cell,
-    Difficulty,
     Domain,
     GovernanceClass,
     PatternCheckResult,

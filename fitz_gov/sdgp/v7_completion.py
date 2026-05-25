@@ -109,6 +109,14 @@ _PROMPT_TEMPLATE = textwrap.dedent("""\
         "routing_confidence": <0.0-1.0>
       }},
 
+      "evaluation": {{
+        "mode": "governance",
+        "check_mode_match": true,
+        "required_elements": ["<answer-quality requirements, if useful>"],
+        "forbidden_claims": ["<unsupported claims to forbid, if useful>"],
+        "forbidden_elements": ["<unsupported answer elements to forbid, if useful>"]
+      }},
+
       "meta": {{
         "category": "<abstention | dispute | trustworthy_hedged | trustworthy_direct>",
         "confidence_level": "<high | medium | borderline>",
@@ -298,6 +306,19 @@ def _locked_defaults(case: dict[str, Any], res: V7CompletionResult) -> None:
     case["version"] = "fitz-gov-7.0"
     case.setdefault("meta", {})["dataset_version"] = "v7"
     _fill_probability_triplet(case.setdefault("governance", {}), res)
+
+    evaluation = case.setdefault("evaluation", {})
+    defaults = {
+        "mode": "governance",
+        "check_mode_match": True,
+        "required_elements": [],
+        "forbidden_claims": [],
+        "forbidden_elements": [],
+    }
+    for key, value in defaults.items():
+        if key not in evaluation or evaluation[key] in (None, "", "<TODO_LLM>"):
+            evaluation[key] = value.copy() if isinstance(value, list) else value
+            res.fields_filled.append(f"evaluation.{key}")
 
     taxonomy = case.setdefault("taxonomy", {})
     pattern_s = taxonomy.get("pattern")
@@ -520,6 +541,48 @@ def _merge_routing(
     )
 
 
+def _list_str(value: Any) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    out: list[str] = []
+    for item in value:
+        if isinstance(item, str) and item.strip():
+            out.append(item.strip())
+    return out
+
+
+def _merge_evaluation(
+    case: dict[str, Any],
+    payload: dict[str, Any],
+    res: V7CompletionResult,
+    *,
+    overwrite: bool,
+) -> None:
+    evaluation_in = payload.get("evaluation") if isinstance(payload.get("evaluation"), dict) else {}
+    evaluation = case.setdefault("evaluation", {})
+    _set_if_present(
+        evaluation,
+        "mode",
+        evaluation_in.get("mode"),
+        res,
+        "evaluation.mode",
+        overwrite=overwrite,
+    )
+    _set_if_present(
+        evaluation,
+        "check_mode_match",
+        evaluation_in.get("check_mode_match"),
+        res,
+        "evaluation.check_mode_match",
+        overwrite=overwrite,
+    )
+    for key in ("required_elements", "forbidden_claims", "forbidden_elements"):
+        values = _list_str(evaluation_in.get(key))
+        if values and (overwrite or not _list_str(evaluation.get(key))):
+            evaluation[key] = values
+            res.fields_filled.append(f"evaluation.{key}")
+
+
 def merge_v7_completion(
     case: dict[str, Any],
     payload: dict[str, Any],
@@ -543,6 +606,7 @@ def merge_v7_completion(
     _merge_governance(case, payload, res, overwrite=overwrite)
     _merge_evidence_chain(case, payload, res, overwrite=overwrite)
     _merge_routing(case, payload, res, overwrite=overwrite)
+    _merge_evaluation(case, payload, res, overwrite=overwrite)
     _merge_meta(case, payload, res, overwrite=overwrite)
     return res
 

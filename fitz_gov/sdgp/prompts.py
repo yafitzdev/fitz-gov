@@ -44,7 +44,6 @@ from .taxonomy import (
     Cell,
     Difficulty,
     Domain,
-    GovernanceClass,
     TaxonomyPattern,
     governance_class_of,
 )
@@ -98,6 +97,22 @@ PATTERN_GUIDANCE: dict[TaxonomyPattern, str] = {
         "sources disagree on the time — here a single coherent time anchor "
         "just doesn't match the query."
     ),
+    TaxonomyPattern.VERSION_BUILD_MISMATCH: (
+        "The sources concern the right product/entity family but the wrong "
+        "concrete variant: version, build, release, platform, jurisdiction, "
+        "cohort, quarter, or other identity-bearing slice. Surface overlap "
+        "should be high, but the requested exact variant is not answered. "
+        "The correct outcome is ABSTAIN, not DISPUTED, because the sources "
+        "are not incompatible; they answer a neighboring target."
+    ),
+    TaxonomyPattern.MISSING_EXECUTION_RESULT: (
+        "The sources are clearly about the right topic and may include setup, "
+        "requirements, protocol, traceability, a plan, or a scheduled run, "
+        "but they never provide the final outcome/verdict/value/answer asked "
+        "for. Do not explicitly state that no final outcome was recorded; "
+        "that can become a grounded negative answer. The model must not infer "
+        "execution success or a final result from preparation evidence alone."
+    ),
     # --- DISPUTED ---
     TaxonomyPattern.NUMERICAL_CONFLICT: (
         "Multiple sources provide DIFFERENT NUMERICAL VALUES for the same "
@@ -140,6 +155,24 @@ PATTERN_GUIDANCE: dict[TaxonomyPattern, str] = {
         "different jurisdictions. The query doesn't specify scope; the "
         "answer depends on which scope."
     ),
+    TaxonomyPattern.VERDICT_CONFLICT: (
+        "Two or more sources give incompatible final verdicts or statuses "
+        "for the same target under the same scope and time/version/build. "
+        "Examples include pass/fail, approved/rejected, active/inactive, "
+        "compliant/non-compliant, profitable/unprofitable, or equivalent "
+        "binary/mutually exclusive statuses. Keep entity and scope aligned "
+        "so the conflict cannot be resolved as a version or scope mismatch."
+    ),
+    TaxonomyPattern.AUTHORITY_STATUS_CONFLICT: (
+        "A lower-authority, raw, intermediate, or secondary status conflicts "
+        "with the source of record or governing authority. The point is not "
+        "generic contradiction; it is that an authoritative system, regulator, "
+        "official filing, approval register, or governing document disagrees "
+        "with raw/intermediate evidence about the same target. Do not phrase "
+        "the query as asking specifically for the source-of-record status, and "
+        "do not let the authoritative context explicitly reconcile or invalidate "
+        "the lower-authority status."
+    ),
     # --- TRUSTWORTHY ---
     TaxonomyPattern.MULTI_SOURCE_CORROBORATION: (
         "MULTIPLE INDEPENDENT sources agree on the SAME claim. The agreement "
@@ -178,6 +211,13 @@ PATTERN_GUIDANCE: dict[TaxonomyPattern, str] = {
         "ambiguity. Could be a definitional source for a definition query, "
         "an official spec for a specification query, etc. No need for "
         "synthesis across multiple chunks."
+    ),
+    TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION: (
+        "The retrieved sources contain apparent candidate alternatives, but "
+        "they explicitly identify which candidate/run/record is valid and "
+        "which candidates are invalid, superseded, rejected, deprecated, or "
+        "out of scope. The correct outcome is TRUSTWORTHY because the sources "
+        "resolve the apparent competition themselves."
     ),
 }
 
@@ -268,12 +308,12 @@ DIFFICULTY_HINTS: dict[Difficulty, str] = {
 
 OUTPUT_SCHEMA_HINT = textwrap.dedent("""\
     Output a single valid JSON object (no markdown fences, no commentary).
-    The JSON must be a COMPLETE V7 training row, not a thin structural row.
+    The JSON must be a COMPLETE canonical SDGP training row, not a thin structural row.
     Every field below is required unless marked conditional:
 
     {
       "id": "<short stable id you choose — alphanumeric + underscores>",
-      "version": "fitz-gov-7.0",
+      "version": "fitz-gov-8.0",
       "input": {
         "query": "<the user query>",
         "query_rewritten": "<semantically equivalent query sharpened for retrieval>",
@@ -324,19 +364,28 @@ OUTPUT_SCHEMA_HINT = textwrap.dedent("""\
         "pattern_description": "<canonical pattern description>",
         "cell_id": "<the cell_id from the cell spec, verbatim>"
       },
+      "evaluation": {
+        "mode": "governance",
+        "check_mode_match": true,
+        "required_elements": [
+          "<answer-quality requirement; TRUSTWORTHY rows should have at least one>"
+        ],
+        "forbidden_claims": [
+          "<claim the governed answer must not make if unsupported>"
+        ],
+        "forbidden_elements": [
+          "<unsupported answer element to avoid>"
+        ]
+      },
       "routing": {
         "expert_fired": "<the expert domain from the cell spec>",
         "secondary_expert": null,
         "routing_confidence": 0.0
       },
       "meta": {
-        "dataset_version": "v7",
+        "dataset_version": "v8",
         "difficulty": "<easy|medium|hard, matching the cell spec>",
-        "domain": "<the expert domain from the cell spec>",
         "category": "<abstention | dispute | trustworthy_hedged | trustworthy_direct>",
-        "subcategory": "<the pattern slug>",
-        "query_type": "<what | how | why | when | who | which | does | is | should | compare | other>",
-        "reasoning_type": "<factual | inferential | comparative | causal | temporal | procedural | definitional | quantitative | evaluative>",
         "confidence_level": "<high | medium | borderline>",
         "near_miss_class": "<nearest non-actual class>",
         "near_miss_reason": "<specific one-sentence boundary explanation>",
@@ -352,6 +401,9 @@ OUTPUT_SCHEMA_HINT = textwrap.dedent("""\
     Conditional omissions:
     - Omit `input.evidence_chain` only for single-context cases.
     - Omit `meta.grounding_targets` unless `governance.classification` is TRUSTWORTHY.
+    - For non-TRUSTWORTHY rows, use empty arrays for `evaluation.required_elements`,
+      `evaluation.forbidden_claims`, and `evaluation.forbidden_elements` only when
+      no useful quality constraint applies.
     - All numeric scores must be in [0.0, 1.0].
 """)
 

@@ -14,7 +14,7 @@ from typing import Any, Iterable
 MISSING = "<missing>"
 
 GOVERNANCE_CLASSES = {"ABSTAIN", "DISPUTED", "TRUSTWORTHY"}
-DATASET_VERSIONS = {"v6", "v7"}
+DATASET_VERSIONS = {"v6", "v7", "v8"}
 CATEGORIES = {"abstention", "dispute", "trustworthy_hedged", "trustworthy_direct"}
 CONFIDENCE_LEVELS = {"high", "medium", "borderline"}
 STALENESS_RISKS = {"none", "low", "medium", "high"}
@@ -57,6 +57,11 @@ CASE_REQUIRED_PATHS: tuple[str, ...] = (
     "taxonomy.pattern",
     "taxonomy.pattern_description",
     "taxonomy.cell_id",
+    "evaluation.mode",
+    "evaluation.check_mode_match",
+    "evaluation.required_elements",
+    "evaluation.forbidden_claims",
+    "evaluation.forbidden_elements",
     "meta.dataset_version",
     "meta.difficulty",
     "meta.category",

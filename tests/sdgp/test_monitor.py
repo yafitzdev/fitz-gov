@@ -39,27 +39,30 @@ def test_by_class_returns_three_rows() -> None:
 
 
 def test_by_class_cells_total_is_consistent() -> None:
-    """Each class should account for 6 patterns × 7 domains × 3 difficulties = 126 cells."""
     rows = by_class({}, target=20)
-    for r in rows:
-        assert r.cells_total == 6 * 7 * 3
+    totals = {r.label: r.cells_total for r in rows}
+    assert totals == {
+        "ABSTAIN": 8 * 7 * 3,
+        "DISPUTED": 8 * 7 * 3,
+        "TRUSTWORTHY": 7 * 7 * 3,
+    }
 
 
-def test_by_pattern_returns_18_rows() -> None:
+def test_by_pattern_returns_23_rows() -> None:
     rows = by_pattern({}, target=20)
-    assert len(rows) == 18
+    assert len(rows) == 23
 
 
 def test_by_domain_returns_7_rows() -> None:
     rows = by_domain({}, target=20)
     assert len(rows) == 7
-    assert all(r.cells_total == 18 * 3 for r in rows)
+    assert all(r.cells_total == 23 * 3 for r in rows)
 
 
 def test_by_difficulty_returns_3_rows() -> None:
     rows = by_difficulty({}, target=20)
     assert len(rows) == 3
-    assert all(r.cells_total == 18 * 7 for r in rows)
+    assert all(r.cells_total == 23 * 7 for r in rows)
 
 
 def test_axis_percentages() -> None:
@@ -94,7 +97,7 @@ def test_format_coverage_report_has_all_sections() -> None:
 def test_format_coverage_report_includes_target_and_totals() -> None:
     text = format_coverage_report({}, target=25)
     assert "**Target per cell**: 25" in text
-    assert "**Total cells (primary 18 × 7 × 3)**: 378" in text
+    assert "**Total cells (primary 23 × 7 × 3)**: 483" in text
     assert "**Cells at target**: 0 (0.0%)" in text
 
 
@@ -102,7 +105,7 @@ def test_format_coverage_report_with_some_cases() -> None:
     cell = Cell(TaxonomyPattern.WRONG_ENTITY, Domain.HISTORY_GEOGRAPHY, Difficulty.HARD)
     text = format_coverage_report({cell.cell_id: 20}, target=20)
     assert "**Cells at target**: 1" in text
-    assert "**Cells empty**: 377" in text
+    assert "**Cells empty**: 482" in text
     assert cell.cell_id in text  # appears in the top-filled table
 
 

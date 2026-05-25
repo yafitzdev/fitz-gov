@@ -1,10 +1,14 @@
-"""SDGP taxonomy — the 18 canonical patterns + the 3D cell space.
+"""SDGP taxonomy — canonical patterns and cell spaces.
 
-The skeleton everything else hangs on. Three governance classes, six patterns
-per class, all enumerated. Cells are `(pattern, domain, difficulty)` triples
-that uniquely identify a generation slot; the distribution monitor tracks
-coverage per cell, the gap detector reads the count vector, the generator is
-prompted with the cell spec.
+The skeleton everything else hangs on. Three governance classes, primary
+evidence patterns, all enumerated. Cells are `(pattern, domain, difficulty)`
+triples that uniquely identify a generation slot; the distribution monitor
+tracks coverage per cell, the gap detector reads the count vector, the
+generator is prompted with the cell spec.
+
+V8 expands the primary pattern enum for cross-domain taxonomy gaps while
+keeping the public row shape unchanged. There is no compatibility/subpattern
+shim layer.
 
 See pyrrho ROADMAP.md §3 "Case Taxonomy" for the rationale.
 
@@ -73,12 +77,12 @@ PRIMARY_DOMAINS: tuple[Domain, ...] = tuple(
 
 
 # ---------------------------------------------------------------------------
-# Taxonomy patterns (18 total, 6 per governance class)
+# Taxonomy patterns
 # ---------------------------------------------------------------------------
 
 
 class TaxonomyPattern(str, Enum):
-    """The 18 canonical evidence patterns.
+    """The canonical evidence patterns.
 
     See ROADMAP.md §3 for the design tables. Each pattern maps deterministically
     to a single governance class via `PATTERN_TO_CLASS`.
@@ -91,6 +95,8 @@ class TaxonomyPattern(str, Enum):
     EVIDENCE_ABSENT = "evidence_absent"
     TOO_GENERAL = "too_general"
     TEMPORAL_MISMATCH = "temporal_mismatch"
+    VERSION_BUILD_MISMATCH = "version_build_mismatch"
+    MISSING_EXECUTION_RESULT = "missing_execution_result"
 
     # DISPUTED patterns
     NUMERICAL_CONFLICT = "numerical_conflict"
@@ -99,6 +105,8 @@ class TaxonomyPattern(str, Enum):
     FACTUAL_CONTRADICTION = "factual_contradiction"
     AUTHORITY_CONFLICT = "authority_conflict"
     SCOPE_CONFLICT = "scope_conflict"
+    VERDICT_CONFLICT = "verdict_conflict"
+    AUTHORITY_STATUS_CONFLICT = "authority_status_conflict"
 
     # TRUSTWORTHY patterns
     MULTI_SOURCE_CORROBORATION = "multi_source_corroboration"
@@ -107,6 +115,7 @@ class TaxonomyPattern(str, Enum):
     QUANTITATIVE_CONSENSUS = "quantitative_consensus"
     EXPERT_CONSENSUS = "expert_consensus"
     DIRECT_ANSWER = "direct_answer"
+    RESOLVED_CANDIDATE_SELECTION = "resolved_candidate_selection"
 
 
 PATTERN_TO_CLASS: dict[TaxonomyPattern, GovernanceClass] = {
@@ -117,6 +126,8 @@ PATTERN_TO_CLASS: dict[TaxonomyPattern, GovernanceClass] = {
     TaxonomyPattern.EVIDENCE_ABSENT: GovernanceClass.ABSTAIN,
     TaxonomyPattern.TOO_GENERAL: GovernanceClass.ABSTAIN,
     TaxonomyPattern.TEMPORAL_MISMATCH: GovernanceClass.ABSTAIN,
+    TaxonomyPattern.VERSION_BUILD_MISMATCH: GovernanceClass.ABSTAIN,
+    TaxonomyPattern.MISSING_EXECUTION_RESULT: GovernanceClass.ABSTAIN,
     # DISPUTED
     TaxonomyPattern.NUMERICAL_CONFLICT: GovernanceClass.DISPUTED,
     TaxonomyPattern.TEMPORAL_CONFLICT: GovernanceClass.DISPUTED,
@@ -124,6 +135,8 @@ PATTERN_TO_CLASS: dict[TaxonomyPattern, GovernanceClass] = {
     TaxonomyPattern.FACTUAL_CONTRADICTION: GovernanceClass.DISPUTED,
     TaxonomyPattern.AUTHORITY_CONFLICT: GovernanceClass.DISPUTED,
     TaxonomyPattern.SCOPE_CONFLICT: GovernanceClass.DISPUTED,
+    TaxonomyPattern.VERDICT_CONFLICT: GovernanceClass.DISPUTED,
+    TaxonomyPattern.AUTHORITY_STATUS_CONFLICT: GovernanceClass.DISPUTED,
     # TRUSTWORTHY
     TaxonomyPattern.MULTI_SOURCE_CORROBORATION: GovernanceClass.TRUSTWORTHY,
     TaxonomyPattern.SINGLE_AUTHORITATIVE: GovernanceClass.TRUSTWORTHY,
@@ -131,6 +144,7 @@ PATTERN_TO_CLASS: dict[TaxonomyPattern, GovernanceClass] = {
     TaxonomyPattern.QUANTITATIVE_CONSENSUS: GovernanceClass.TRUSTWORTHY,
     TaxonomyPattern.EXPERT_CONSENSUS: GovernanceClass.TRUSTWORTHY,
     TaxonomyPattern.DIRECT_ANSWER: GovernanceClass.TRUSTWORTHY,
+    TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION: GovernanceClass.TRUSTWORTHY,
 }
 
 
@@ -142,6 +156,8 @@ PATTERN_DESCRIPTIONS: dict[TaxonomyPattern, str] = {
     TaxonomyPattern.EVIDENCE_ABSENT: "Nothing retrieved is remotely relevant",
     TaxonomyPattern.TOO_GENERAL: "Evidence is true but too broad to answer the specific query",
     TaxonomyPattern.TEMPORAL_MISMATCH: "Evidence exists but is anchored to the wrong time period",
+    TaxonomyPattern.VERSION_BUILD_MISMATCH: "Evidence covers the right family but the wrong concrete version, build, release, platform, jurisdiction, cohort, or period",
+    TaxonomyPattern.MISSING_EXECUTION_RESULT: "Evidence provides setup, plan, protocol, or traceability but omits the requested final result",
     # DISPUTED
     TaxonomyPattern.NUMERICAL_CONFLICT: "Multiple sources provide different numerical values for the same entity and attribute",
     TaxonomyPattern.TEMPORAL_CONFLICT: "Sources describe different states at different times presented without temporal framing",
@@ -149,6 +165,8 @@ PATTERN_DESCRIPTIONS: dict[TaxonomyPattern, str] = {
     TaxonomyPattern.FACTUAL_CONTRADICTION: "Direct logical incompatibility between sources",
     TaxonomyPattern.AUTHORITY_CONFLICT: "One high-authority source contradicts one low-authority source",
     TaxonomyPattern.SCOPE_CONFLICT: "Sources are both correct but apply to different scopes presented as equivalent",
+    TaxonomyPattern.VERDICT_CONFLICT: "Sources give incompatible final verdicts or statuses for the same entity, scope, and check",
+    TaxonomyPattern.AUTHORITY_STATUS_CONFLICT: "A lower-authority or intermediate status conflicts with the source of record or governing authority",
     # TRUSTWORTHY
     TaxonomyPattern.MULTI_SOURCE_CORROBORATION: "Multiple independent sources agree on the same claim",
     TaxonomyPattern.SINGLE_AUTHORITATIVE: "One high-authority source, no contradictions, directly answers query",
@@ -156,12 +174,22 @@ PATTERN_DESCRIPTIONS: dict[TaxonomyPattern, str] = {
     TaxonomyPattern.QUANTITATIVE_CONSENSUS: "Multiple sources provide same or consistent numerical values",
     TaxonomyPattern.EXPERT_CONSENSUS: "Multiple domain-expert sources converge on same conclusion",
     TaxonomyPattern.DIRECT_ANSWER: "Single chunk directly and completely answers the query with no ambiguity",
+    TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION: "Evidence includes apparent candidate alternatives, but sources explicitly identify the valid answer and invalidate the others",
 }
 
 
 # Sanity: every pattern has a class + description.
 assert set(PATTERN_TO_CLASS.keys()) == set(TaxonomyPattern)
 assert set(PATTERN_DESCRIPTIONS.keys()) == set(TaxonomyPattern)
+
+
+V8_GAP_PATTERNS: tuple[TaxonomyPattern, ...] = (
+    TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION,
+    TaxonomyPattern.VERDICT_CONFLICT,
+    TaxonomyPattern.AUTHORITY_STATUS_CONFLICT,
+    TaxonomyPattern.VERSION_BUILD_MISMATCH,
+    TaxonomyPattern.MISSING_EXECUTION_RESULT,
+)
 
 
 def patterns_of(cls: GovernanceClass) -> tuple[TaxonomyPattern, ...]:
@@ -227,10 +255,13 @@ def parse_cell_id(s: str) -> Cell:
 def all_cells(*, include_meta_domain: bool = False) -> list[Cell]:
     """Enumerate the cell space.
 
-    Default: 18 patterns × 7 primary domains × 3 difficulties = **378 cells**.
-    With `include_meta_domain=True`: 18 × 8 × 3 = **432 cells** (the ROADMAP
-    estimate; includes `conflict_detection` which doesn't correspond to any
-    primary subject-matter domain but is the meta-expert routing target).
+    V7 contained 18 patterns. V8 adds five primary patterns for taxonomy gaps,
+    so default V8 enumeration is 23 patterns × 7 primary domains × 3
+    difficulties = **483 cells**.
+
+    With `include_meta_domain=True`: 23 × 8 × 3 = **552 cells**. The extra
+    `conflict_detection` domain is a meta-expert routing target, not a normal
+    subject-matter generation target.
     """
     domains = list(Domain) if include_meta_domain else list(PRIMARY_DOMAINS)
     return [
@@ -287,6 +318,11 @@ PATTERN_MIN_CONTEXTS: dict[TaxonomyPattern, int] = {
     TaxonomyPattern.EVIDENCE_ABSENT: 0,  # may legitimately have zero contexts
     TaxonomyPattern.TOO_GENERAL: 1,
     TaxonomyPattern.TEMPORAL_MISMATCH: 1,
+    TaxonomyPattern.VERSION_BUILD_MISMATCH: 1,
+    TaxonomyPattern.MISSING_EXECUTION_RESULT: 1,
+    TaxonomyPattern.VERDICT_CONFLICT: 2,
+    TaxonomyPattern.AUTHORITY_STATUS_CONFLICT: 2,
+    TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION: 2,
 }
 
 

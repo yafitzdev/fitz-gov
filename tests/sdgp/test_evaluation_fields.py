@@ -62,7 +62,7 @@ def test_promote_evaluation_fields_strips_legacy_and_aliases() -> None:
     assert audit_evaluation_fields(case) == []
 
 
-def test_needs_evaluation_enrichment_only_for_v7_trustworthy_without_quality_lists() -> None:
+def test_needs_evaluation_enrichment_for_v7_v8_trustworthy_without_quality_lists() -> None:
     trustworthy = {
         "id": "v7_t",
         "governance": {"classification": "TRUSTWORTHY"},
@@ -70,6 +70,14 @@ def test_needs_evaluation_enrichment_only_for_v7_trustworthy_without_quality_lis
     }
     promote_evaluation_fields(trustworthy)
     assert needs_evaluation_enrichment(trustworthy) is True
+
+    v8_trustworthy = {
+        "id": "v8_t",
+        "governance": {"classification": "TRUSTWORTHY"},
+        "meta": {"dataset_version": "v8"},
+    }
+    promote_evaluation_fields(v8_trustworthy)
+    assert needs_evaluation_enrichment(v8_trustworthy) is True
 
     abstain = {
         "id": "v7_a",

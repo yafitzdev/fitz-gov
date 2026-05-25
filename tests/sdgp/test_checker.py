@@ -206,6 +206,34 @@ def test_invalid_cell_id_is_error() -> None:
 
 
 # ---------------------------------------------------------------------------
+# V8 primary taxonomy gaps
+# ---------------------------------------------------------------------------
+
+
+def test_v8_gap_pattern_passes_when_primary_cell_is_consistent() -> None:
+    c = v6_case(
+        pattern=TaxonomyPattern.VERDICT_CONFLICT,
+        domain=Domain.TECHNOLOGY_COMPUTING,
+        classification=GovernanceClass.DISPUTED,
+        contexts=[{"text": "Verdict PASS"}, {"text": "Verdict FAIL"}],
+    )
+    r = Checker().check(c)
+    assert r.passed, [i.message for i in r.errors]
+
+
+def test_v8_gap_pattern_cell_mismatch_is_error() -> None:
+    c = v6_case(
+        pattern=TaxonomyPattern.VERDICT_CONFLICT,
+        domain=Domain.TECHNOLOGY_COMPUTING,
+        classification=GovernanceClass.DISPUTED,
+        contexts=[{"text": "Verdict PASS"}, {"text": "Verdict FAIL"}],
+    )
+    c["taxonomy"]["cell_id"] = "factual_contradiction__technology_computing__hard"
+    r = Checker().check(c)
+    assert any(i.rule == "cell_pattern_mismatch" for i in r.errors)
+
+
+# ---------------------------------------------------------------------------
 # Pattern structure (delegates to taxonomy.check_pattern_structure)
 # ---------------------------------------------------------------------------
 

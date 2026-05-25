@@ -85,8 +85,8 @@ def test_rank_sorted_biggest_first() -> None:
 def test_rank_empty_cells_have_full_gap() -> None:
     detector = GapDetector()
     gaps = detector.rank({}, target=20)
-    # Default cell space (excluding meta) = 18 * 7 * 3 = 378
-    assert len(gaps) == 378
+    # Default V8 cell space (excluding meta) = 23 * 7 * 3 = 483
+    assert len(gaps) == 483
     assert all(g.gap == 20 for g in gaps)
 
 
@@ -94,7 +94,7 @@ def test_rank_target_can_be_int_or_cell_target() -> None:
     detector = GapDetector()
     g1 = detector.rank({}, target=10)
     g2 = detector.rank({}, target=CellTarget(default=10))
-    assert len(g1) == len(g2) == 378
+    assert len(g1) == len(g2) == 483
     assert all(g.gap == 10 for g in g1)
     assert all(g.gap == 10 for g in g2)
 
@@ -171,16 +171,16 @@ def test_filter_to_single_class() -> None:
     detector = GapDetector()
     flt = CellFilter(classes={GovernanceClass.DISPUTED})
     gaps = detector.rank({}, target=20, filter=flt)
-    # 6 DISPUTED patterns * 7 domains * 3 difficulties = 126
-    assert len(gaps) == 126
+    # 8 DISPUTED patterns * 7 domains * 3 difficulties = 168
+    assert len(gaps) == 168
 
 
 def test_filter_to_difficulty() -> None:
     detector = GapDetector()
     flt = CellFilter(difficulties={Difficulty.HARD})
     gaps = detector.rank({}, target=20, filter=flt)
-    # 18 patterns * 7 domains * 1 difficulty = 126
-    assert len(gaps) == 126
+    # 23 patterns * 7 domains * 1 difficulty = 161
+    assert len(gaps) == 161
     assert all(g.cell.difficulty == Difficulty.HARD for g in gaps)
 
 
@@ -188,8 +188,8 @@ def test_filter_include_meta_domain() -> None:
     detector = GapDetector()
     flt = CellFilter(include_meta_domain=True)
     gaps = detector.rank({}, target=20, filter=flt)
-    # 18 * 8 * 3 = 432
-    assert len(gaps) == 432
+    # 23 * 8 * 3 = 552
+    assert len(gaps) == 552
 
 
 def test_filter_excludes_meta_domain_by_default() -> None:
@@ -206,11 +206,11 @@ def test_filter_excludes_meta_domain_by_default() -> None:
 def test_coverage_summary_all_empty() -> None:
     detector = GapDetector()
     s = detector.coverage_summary({}, target=20)
-    assert s["cells_considered"] == 378
-    assert s["cells_empty"] == 378
+    assert s["cells_considered"] == 483
+    assert s["cells_empty"] == 483
     assert s["cells_at_target"] == 0
     assert s["total_cases"] == 0
-    assert s["total_gap_to_fill"] == 378 * 20
+    assert s["total_gap_to_fill"] == 483 * 20
 
 
 def test_coverage_summary_some_filled() -> None:
@@ -220,9 +220,9 @@ def test_coverage_summary_some_filled() -> None:
     s = detector.coverage_summary(counts, target=20)
     assert s["cells_at_target"] == 1
     assert s["cells_with_some_cases"] == 1
-    assert s["cells_empty"] == 377
+    assert s["cells_empty"] == 482
     assert s["total_cases"] == 25
-    assert s["total_gap_to_fill"] == 377 * 20
+    assert s["total_gap_to_fill"] == 482 * 20
 
 
 # ---------------------------------------------------------------------------

@@ -1,8 +1,9 @@
-"""Prepare gap-ranked V7 generation batches for subagents.
+"""Prepare V8 taxonomy-gap generation batches for subagents.
 
-This writes JSON batch specs containing concrete generation prompts and
-preassigned case ids. Subagents write JSONL output; the parent process merges
-only rows that pass the strict V7 training-schema checker.
+This targets only the V8 primary gap patterns. It writes JSON batch specs with
+preassigned `sdgp_v8_...` case IDs. Subagents write JSONL rows shaped as
+`{"case_id":"...","case":{...}}`; the merge path should then run the normal
+checker, training-schema completeness, dedup, and blind-label QA.
 """
 
 from __future__ import annotations
@@ -18,9 +19,10 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from fitz_gov.sdgp.gap_detector import CellFilter, GapDetector
 from fitz_gov.sdgp.prompts import build_prompt
 from fitz_gov.sdgp.taxonomy import (
+    PRIMARY_DOMAINS,
+    Cell,
     Difficulty,
     Domain,
     GovernanceClass,
@@ -37,40 +39,53 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--out-dir",
         type=Path,
-        default=Path("data/sdgp_handoff_v7_expand/subagent_batches"),
+        default=Path("data/sdgp_handoff_v8_expand/subagent_batches"),
     )
-    p.add_argument("--target", type=int, default=20)
-    p.add_argument("--total-slots", type=int, default=180)
+    p.add_argument("--target-per-cell", type=int, default=5)
+    p.add_argument("--total-slots", type=int, default=None)
     p.add_argument("--batch-size", type=int, default=30)
     p.add_argument("--n-few-shots", type=int, default=2)
-    p.add_argument("--seed", type=int, default=20260522)
+    p.add_argument("--seed", type=int, default=20260525)
     p.add_argument("--start-batch", type=int, default=None)
     p.add_argument("--filter-pattern", type=str, default=None)
     p.add_argument("--filter-class", type=str, default=None)
     p.add_argument("--filter-difficulty", type=str, default=None)
     p.add_argument("--filter-domain", type=str, default=None)
-    p.add_argument(
-        "--exclude-case-ids",
-        type=Path,
-        default=None,
-        help="Optional newline-delimited case IDs to exclude from coverage counts.",
-    )
     return p.parse_args()
 
 
-def _build_filter(args: argparse.Namespace) -> CellFilter:
-    flt = CellFilter()
+def _patterns(args: argparse.Namespace) -> set[TaxonomyPattern]:
+    patterns = set(V8_GAP_PATTERNS)
     if args.filter_pattern:
-        flt.patterns = {TaxonomyPattern(args.filter_pattern)}
-    else:
-        flt.patterns = set(TaxonomyPattern) - set(V8_GAP_PATTERNS)
+        patterns &= {TaxonomyPattern(args.filter_pattern)}
     if args.filter_class:
-        flt.classes = {GovernanceClass(args.filter_class.upper())}
-    if args.filter_difficulty:
-        flt.difficulties = {Difficulty(args.filter_difficulty)}
+        cls = GovernanceClass(args.filter_class.upper())
+        patterns = {p for p in patterns if governance_class_of(p) == cls}
+    return patterns
+
+
+def _domains(args: argparse.Namespace) -> set[Domain]:
+    domains = set(PRIMARY_DOMAINS)
     if args.filter_domain:
-        flt.domains = {Domain(args.filter_domain)}
-    return flt
+        domains &= {Domain(args.filter_domain)}
+    return domains
+
+
+def _difficulties(args: argparse.Namespace) -> set[Difficulty]:
+    difficulties = set(Difficulty)
+    if args.filter_difficulty:
+        difficulties &= {Difficulty(args.filter_difficulty)}
+    return difficulties
+
+
+def _target_cells(args: argparse.Namespace) -> list[Cell]:
+    cells = [
+        Cell(pattern=pattern, domain=domain, difficulty=difficulty)
+        for pattern in sorted(_patterns(args), key=lambda p: p.value)
+        for domain in sorted(_domains(args), key=lambda d: d.value)
+        for difficulty in sorted(_difficulties(args), key=lambda d: d.value)
+    ]
+    return sorted(cells, key=lambda c: c.cell_id)
 
 
 def _next_batch_number(out_dir: Path) -> int:
@@ -82,20 +97,6 @@ def _next_batch_number(out_dir: Path) -> int:
     return max(nums, default=0) + 1
 
 
-def _existing_suffixes(vault: Vault) -> dict[str, set[int]]:
-    out: dict[str, set[int]] = defaultdict(set)
-    for case in vault.iter_cases():
-        cell_id = str(case.get("taxonomy", {}).get("cell_id") or "")
-        cid = str(case.get("id") or "")
-        prefix = f"sdgp_v7_{cell_id}__"
-        if not cell_id or not cid.startswith(prefix):
-            continue
-        suffix = cid.removeprefix(prefix)
-        if suffix.isdigit():
-            out[cell_id].add(int(suffix))
-    return out
-
-
 def _iter_existing_batch_slots(out_dir: Path) -> list[dict[str, Any]]:
     slots: list[dict[str, Any]] = []
     for path in out_dir.glob("batch_*.json"):
@@ -104,70 +105,58 @@ def _iter_existing_batch_slots(out_dir: Path) -> list[dict[str, Any]]:
         except (OSError, json.JSONDecodeError):
             continue
         for slot in data.get("slots", []):
-            if not isinstance(slot, dict):
-                continue
-            slots.append(slot)
+            if isinstance(slot, dict):
+                slots.append(slot)
     return slots
 
 
-def _reserve_existing_batches(out_dir: Path, suffixes: dict[str, set[int]]) -> None:
+def _existing_suffixes(vault: Vault, out_dir: Path) -> dict[str, set[int]]:
+    out: dict[str, set[int]] = defaultdict(set)
+    sources: list[tuple[str, str]] = []
+    for case in vault.iter_cases():
+        sources.append(
+            (
+                str(case.get("taxonomy", {}).get("cell_id") or ""),
+                str(case.get("id") or ""),
+            )
+        )
     for slot in _iter_existing_batch_slots(out_dir):
-            cell_id = str(slot.get("cell_id") or "")
-            case_id = str(slot.get("case_id") or "")
-            prefix = f"sdgp_v7_{cell_id}__"
-            if not cell_id or not case_id.startswith(prefix):
-                continue
-            suffix = case_id.removeprefix(prefix)
-            if suffix.isdigit():
-                suffixes[cell_id].add(int(suffix))
+        sources.append((str(slot.get("cell_id") or ""), str(slot.get("case_id") or "")))
+
+    for cell_id, case_id in sources:
+        prefix = f"sdgp_v8_{cell_id}__"
+        if not cell_id or not case_id.startswith(prefix):
+            continue
+        suffix = case_id.removeprefix(prefix)
+        if suffix.isdigit():
+            out[cell_id].add(int(suffix))
+    return out
 
 
-def _pending_batch_cell_counts(out_dir: Path, vault: Vault) -> dict[str, int]:
+def _current_counts(vault: Vault, out_dir: Path) -> dict[str, int]:
     existing_ids = {str(case.get("id") or "") for case in vault.iter_cases()}
-    pending: dict[str, int] = defaultdict(int)
+    counts = dict(vault.cell_counts())
     for slot in _iter_existing_batch_slots(out_dir):
         cell_id = str(slot.get("cell_id") or "")
         case_id = str(slot.get("case_id") or "")
         if cell_id and case_id and case_id not in existing_ids:
-            pending[cell_id] += 1
-    return pending
-
-
-def _read_excluded_case_ids(path: Path | None) -> set[str]:
-    if path is None or not path.exists():
-        return set()
-    return {line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()}
-
-
-def _cell_counts_excluding(vault: Vault, excluded_case_ids: set[str]) -> dict[str, int]:
-    if not excluded_case_ids:
-        return dict(vault.cell_counts())
-    counts: dict[str, int] = defaultdict(int)
-    for case in vault.iter_cases():
-        case_id = str(case.get("id") or "")
-        if case_id in excluded_case_ids:
-            continue
-        cell_id = str(case.get("taxonomy", {}).get("cell_id") or "")
-        if cell_id:
-            counts[cell_id] += 1
-    return dict(counts)
+            counts[cell_id] = counts.get(cell_id, 0) + 1
+    return counts
 
 
 def _build_few_shot_index(vault: Vault) -> dict[str, dict[Any, list[dict[str, Any]]]]:
-    """Index few-shot candidates once instead of scanning the vault per slot."""
     by_pattern_domain: dict[tuple[TaxonomyPattern, Domain], list[dict[str, Any]]] = defaultdict(list)
     by_pattern: dict[TaxonomyPattern, list[dict[str, Any]]] = defaultdict(list)
     by_class: dict[GovernanceClass, list[dict[str, Any]]] = defaultdict(list)
 
     for case in vault.iter_cases():
         tax = case.get("taxonomy") if isinstance(case.get("taxonomy"), dict) else {}
-        pattern_s = tax.get("pattern")
-        cell_id = str(tax.get("cell_id") or "")
         try:
-            pattern = TaxonomyPattern(pattern_s)
+            pattern = TaxonomyPattern(tax.get("pattern"))
         except (TypeError, ValueError):
             continue
         domain = None
+        cell_id = str(tax.get("cell_id") or "")
         for candidate in Domain:
             if candidate.value in cell_id:
                 domain = candidate
@@ -187,7 +176,7 @@ def _build_few_shot_index(vault: Vault) -> dict[str, dict[Any, list[dict[str, An
 
 def _few_shots_from_index(
     index: dict[str, dict[Any, list[dict[str, Any]]]],
-    cell,
+    cell: Cell,
     *,
     n: int,
     seed: int,
@@ -212,7 +201,7 @@ def _allocate_case_id(cell_id: str, suffixes: dict[str, set[int]]) -> str:
     while idx in used:
         idx += 1
     used.add(idx)
-    return f"sdgp_v7_{cell_id}__{idx}"
+    return f"sdgp_v8_{cell_id}__{idx}"
 
 
 def _slot_prompt(base_prompt: str, case_id: str) -> str:
@@ -220,36 +209,38 @@ def _slot_prompt(base_prompt: str, case_id: str) -> str:
         base_prompt
         + "\n\n## Additional hard requirement\n\n"
         + f'- The top-level `"id"` MUST equal "{case_id}" exactly.\n'
+        + '- The top-level `"version"` MUST equal "fitz-gov-8.0".\n'
+        + '- `"meta.dataset_version"` MUST equal "v8".\n'
+        + "- Do not add taxonomy subpattern fields or legacy report axes.\n"
         + "- Return one JSON object only; no markdown fences or prose.\n"
     )
 
 
 def _make_slots(args: argparse.Namespace, vault: Vault) -> list[dict[str, Any]]:
-    detector = GapDetector()
-    excluded_case_ids = _read_excluded_case_ids(args.exclude_case_ids)
-    cell_counts = _cell_counts_excluding(vault, excluded_case_ids)
-    for cell_id, pending in _pending_batch_cell_counts(args.out_dir, vault).items():
-        cell_counts[cell_id] = cell_counts.get(cell_id, 0) + pending
-    gaps = detector.rank(cell_counts, target=args.target, filter=_build_filter(args))
+    cells = _target_cells(args)
+    counts = _current_counts(vault, args.out_dir)
+    suffixes = _existing_suffixes(vault, args.out_dir)
     few_shot_index = _build_few_shot_index(vault)
-    remaining = {gap.cell.cell_id: gap.gap for gap in gaps}
-    suffixes = _existing_suffixes(vault)
-    _reserve_existing_batches(args.out_dir, suffixes)
+    limit = args.total_slots
     slots: list[dict[str, Any]] = []
 
-    while len(slots) < args.total_slots:
+    remaining = {
+        cell.cell_id: max(args.target_per_cell - int(counts.get(cell.cell_id, 0)), 0)
+        for cell in cells
+    }
+    while any(v > 0 for v in remaining.values()):
         made_progress = False
-        for gap in gaps:
-            if len(slots) >= args.total_slots:
-                break
-            if remaining.get(gap.cell.cell_id, 0) <= 0:
+        for cell in cells:
+            if remaining[cell.cell_id] <= 0:
                 continue
-            case_id = _allocate_case_id(gap.cell.cell_id, suffixes)
+            if limit is not None and len(slots) >= limit:
+                return slots
+            case_id = _allocate_case_id(cell.cell_id, suffixes)
             prompt = build_prompt(
-                gap.cell,
+                cell,
                 few_shot_examples=_few_shots_from_index(
                     few_shot_index,
-                    gap.cell,
+                    cell,
                     n=args.n_few_shots,
                     seed=args.seed + len(slots),
                 ),
@@ -257,17 +248,17 @@ def _make_slots(args: argparse.Namespace, vault: Vault) -> list[dict[str, Any]]:
             slots.append(
                 {
                     "case_id": case_id,
-                    "cell_id": gap.cell.cell_id,
-                    "pattern": gap.cell.pattern.value,
-                    "governance_class": gap.cell.governance_class.value,
-                    "domain": gap.cell.domain.value,
-                    "difficulty": gap.cell.difficulty.value,
-                    "current": gap.current,
-                    "target": gap.target,
+                    "cell_id": cell.cell_id,
+                    "pattern": cell.pattern.value,
+                    "governance_class": cell.governance_class.value,
+                    "domain": cell.domain.value,
+                    "difficulty": cell.difficulty.value,
+                    "current": counts.get(cell.cell_id, 0),
+                    "target": args.target_per_cell,
                     "prompt": _slot_prompt(prompt.text, case_id),
                 }
             )
-            remaining[gap.cell.cell_id] -= 1
+            remaining[cell.cell_id] -= 1
             made_progress = True
         if not made_progress:
             break
@@ -282,30 +273,30 @@ def main() -> int:
     slots = _make_slots(args, vault)
     start = args.start_batch if args.start_batch is not None else _next_batch_number(args.out_dir)
 
-    print("=== Prepare V7 generation batches ===")
-    print(f"Vault      : {args.vault} ({len(vault)} cases)")
-    print(f"Target/cell: {args.target}")
-    if args.exclude_case_ids:
-        print(f"Excluded IDs: {args.exclude_case_ids}")
-    print(f"Slots      : {len(slots)}")
-    print(f"Batch size : {args.batch_size}")
-    print(f"Out dir    : {args.out_dir}")
+    print("=== Prepare V8 taxonomy-gap generation batches ===")
+    print(f"Vault       : {args.vault} ({len(vault)} cases)")
+    print(f"Target/cell : {args.target_per_cell}")
+    print(f"Slots       : {len(slots)}")
+    print(f"Batch size  : {args.batch_size}")
+    print(f"Out dir     : {args.out_dir}")
 
     for i in range(0, len(slots), args.batch_size):
         batch_no = start + i // args.batch_size
         chunk = slots[i : i + args.batch_size]
         path = args.out_dir / f"batch_{batch_no:03d}.json"
         payload = {
-            "batch_id": f"v7_expand_{batch_no:03d}",
+            "batch_id": f"v8_taxonomy_gap_{batch_no:03d}",
             "expected_count": len(chunk),
             "output_path": str(
-                Path("data/sdgp_handoff_v7_expand/subagent_outputs") / f"batch_{batch_no:03d}.jsonl"
+                Path("data/sdgp_handoff_v8_expand/subagent_outputs")
+                / f"batch_{batch_no:03d}.jsonl"
             ),
             "instructions": (
-                "Generate exactly one complete V7 JSON case per slot. Write JSONL rows "
+                "Generate exactly one complete V8 JSON case per slot. Write JSONL rows "
                 'with shape {"case_id":"...","case":{...}}. The output case_id '
-                "set must exactly equal slots[].case_id. No duplicates. Do not edit "
-                "the vault."
+                "set must exactly equal slots[].case_id. Use the current SDGP row "
+                "shape; do not add subpattern fields or legacy report axes. Do not "
+                "edit the vault."
             ),
             "slots": chunk,
         }

@@ -9,6 +9,7 @@ from fitz_gov.sdgp.taxonomy import (
     PATTERN_MIN_CONTEXTS,
     PATTERN_TO_CLASS,
     PRIMARY_DOMAINS,
+    V8_GAP_PATTERNS,
     Cell,
     Difficulty,
     Domain,
@@ -34,10 +35,10 @@ def test_every_pattern_has_class_and_description() -> None:
     assert set(PATTERN_DESCRIPTIONS.keys()) == set(TaxonomyPattern)
 
 
-def test_six_patterns_per_class() -> None:
-    for cls in GovernanceClass:
-        ps = patterns_of(cls)
-        assert len(ps) == 6, f"{cls.value} has {len(ps)} patterns, expected 6"
+def test_expected_patterns_per_class() -> None:
+    assert len(patterns_of(GovernanceClass.ABSTAIN)) == 8
+    assert len(patterns_of(GovernanceClass.DISPUTED)) == 8
+    assert len(patterns_of(GovernanceClass.TRUSTWORTHY)) == 7
 
 
 def test_governance_class_of_is_inverse_of_patterns_of() -> None:
@@ -46,8 +47,15 @@ def test_governance_class_of_is_inverse_of_patterns_of() -> None:
         assert pattern in patterns_of(cls)
 
 
-def test_eighteen_total_patterns() -> None:
-    assert len(list(TaxonomyPattern)) == 18
+def test_total_patterns_includes_v8_gaps() -> None:
+    assert len(list(TaxonomyPattern)) == 23
+    assert set(V8_GAP_PATTERNS) == {
+        TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION,
+        TaxonomyPattern.VERDICT_CONFLICT,
+        TaxonomyPattern.AUTHORITY_STATUS_CONFLICT,
+        TaxonomyPattern.VERSION_BUILD_MISMATCH,
+        TaxonomyPattern.MISSING_EXECUTION_RESULT,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -96,20 +104,48 @@ def test_parse_cell_id_rejects_malformed() -> None:
 
 def test_all_cells_default_excludes_meta_domain() -> None:
     cells = all_cells()
-    assert len(cells) == 18 * 7 * 3  # 378
+    assert len(cells) == 23 * 7 * 3  # 483
     assert all(c.domain != Domain.CONFLICT_DETECTION for c in cells)
     assert len(PRIMARY_DOMAINS) == 7
 
 
 def test_all_cells_with_meta_domain() -> None:
     cells = all_cells(include_meta_domain=True)
-    assert len(cells) == 18 * 8 * 3  # 432 (the ROADMAP estimate)
+    assert len(cells) == 23 * 8 * 3  # 552
     assert any(c.domain == Domain.CONFLICT_DETECTION for c in cells)
 
 
 def test_all_cells_unique() -> None:
     cells = all_cells(include_meta_domain=True)
     assert len({c.cell_id for c in cells}) == len(cells)
+
+
+# ---------------------------------------------------------------------------
+# V8 primary taxonomy gaps
+# ---------------------------------------------------------------------------
+
+
+def test_v8_gap_patterns_are_first_class_cells() -> None:
+    cells = [
+        Cell(pattern=pattern, domain=Domain.TECHNOLOGY_COMPUTING, difficulty=Difficulty.HARD)
+        for pattern in V8_GAP_PATTERNS
+    ]
+    assert [c.cell_id for c in cells] == [
+        "resolved_candidate_selection__technology_computing__hard",
+        "verdict_conflict__technology_computing__hard",
+        "authority_status_conflict__technology_computing__hard",
+        "version_build_mismatch__technology_computing__hard",
+        "missing_execution_result__technology_computing__hard",
+    ]
+    assert parse_cell_id(cells[1].cell_id) == cells[1]
+
+
+def test_v8_gap_pattern_class_mappings() -> None:
+    assert governance_class_of(TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION) == GovernanceClass.TRUSTWORTHY
+    assert governance_class_of(TaxonomyPattern.VERDICT_CONFLICT) == GovernanceClass.DISPUTED
+    assert governance_class_of(TaxonomyPattern.AUTHORITY_STATUS_CONFLICT) == GovernanceClass.DISPUTED
+    assert governance_class_of(TaxonomyPattern.VERSION_BUILD_MISMATCH) == GovernanceClass.ABSTAIN
+    assert governance_class_of(TaxonomyPattern.MISSING_EXECUTION_RESULT) == GovernanceClass.ABSTAIN
 
 
 # ---------------------------------------------------------------------------
