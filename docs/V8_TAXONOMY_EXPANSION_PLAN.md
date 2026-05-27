@@ -9,42 +9,66 @@ It does not add subpattern fields and does not rewrite existing rows.
 - Current primary domains: **7**
 - Difficulties: **3**
 - New cells: **105**
-- Probe target: **5 rows/cell = 525 rows**
-- Full V7-style parity at 25 rows/cell: **2625 rows**
+- Initial probe target: **5 rows/cell = 525 rows** (complete, superseded)
+- Full V7-style parity at 25 rows/cell: **2,625 rows** (complete, superseded)
+- Published V8.0.0 target: **50 rows/cell across 483 canonical cells**
 
-## Local Status
+## Published / Local Status
 
 ### Active Clean Stop Point
 
-The active local vault is clean at **840 V8 rows**:
+The active local vault is clean at **14,092 V8 rows** and is published as
+Hugging Face dataset `yafitzdev/fitz-gov` **v8.0.0**:
 
-- Vault total: **11,340 rows**
-- V8 rows: **840**
+- Vault total: **24,592 rows**
+- V8 rows: **14,092**
+- HF data/tag commit: `56ec1016fbaf8f7a2c488eeb8952b28a75c111c3`
+- Current HF main commit after public card wording cleanup:
+  `be6bddaa39d6f87d0301e1358b9a1c4ab3329ca2`
+- Public config: one default config, `v8`
+- Public splits: train **19,674** / validation **2,459** / test **2,459**
 - Clean manifest:
-  `data/sdgp_v8_qa/blind_label_manifest_clean_840.jsonl`
-- Clean score:
-  `data/sdgp_v8_qa/clean_840_score/` = **840/840 agreement**,
-  **0 missing / 0 invalid / 0 error**, **0 triage**
+  `data/sdgp_v8_qa/blind_label_manifest.jsonl`
+- Training-schema audit:
+  `data/sdgp_v8_qa/training_schema_summary.json` = **14,092/14,092**
+  complete
 - Forbidden old/shim fields: **0**
 - Exact duplicate checker hashes: **0** at merge audit time
 - Query-group leakage: **0**
-- Composition: original **525** QA-clean V8 probe rows + **105** QA-clean
-  hard `verdict_conflict` rows + **210** QA-clean repaired balanced controls
-  for `resolved_candidate_selection` and `version_build_mismatch`
+- Composition: original **840** QA-clean V8 rows + **3,360** patched
+  Claude-handoff rows + **5,198** target-40 rows + **4,694** target-50 rows
+- Gap detector after merge:
+  `data/sdgp_v8_qa/gap_report_20260525_after_claude_patch.json` confirms
+  **105/105** V8 gap-pattern cells at **40 rows/cell** with **0** gap.
+  The patched Claude pack alone contributes **35/cell** for
+  `authority_status_conflict` and `missing_execution_result`, and **30/cell**
+  for `resolved_candidate_selection`, `verdict_conflict`, and
+  `version_build_mismatch`; the preexisting V8 rows supply the remaining
+  5 or 10 rows/cell.
+- Whole-dataset target-40 report:
+  `data/sdgp_v8_qa/full_dataset_gap_target40_after_merge.json` confirms
+  **483/483** primary cells at **40 rows/cell** with **0** total gap.
+- Whole-dataset target-50 report:
+  `data/sdgp_v8_qa/full_dataset_gap_target50_after_merge.json` confirms
+  **483/483** primary cells at **50 rows/cell** with **0** total gap.
+- Stricter full V8 second-pass blind QA:
+  `data/sdgp_v8_qa/score_claude_full_repaired87_combined_20260526/`
+  confirms **14,092/14,092** agreement with **0** missing / **0** invalid /
+  **0** error / **0** triage after the 87-row repair.
 
 The failed pre-fix balanced-control QA artifact remains historical only:
 `data/sdgp_v8_qa/balanced_controls_repaired_clean_20260525/` scored
 **148/210 agreement** and must not be used for training or merge decisions.
 
-### Unvalidated Claude Candidate Expansion
+### Claude Candidate Expansion
 
 A later candidate-generation handoff exists at:
 
 `data/sdgp_handoff_v8_candidate_20260525_claude_expand/`
 
-This is **not** part of the active vault and has not passed structural dry-run
-or blind-label QA. Counts are a moving snapshot because generation continued
-during inspection. Intake snapshot at 2026-05-25 18:56 Europe/Berlin:
+The raw handoff is historical; the repaired/patched output described below is
+part of the active vault. Raw intake snapshot at 2026-05-25 18:56
+Europe/Berlin:
 
 - Planned batch specs: **113** files / **3,360** assigned slots
 - Main output files observed: **89** `batch_*.jsonl`
@@ -73,9 +97,92 @@ Dry-run rejection shape:
 | Total `invalid_cell_id` issues | 54 |
 | Total `invalid_expert_fired` issues | 30 |
 
-The only safe next action for this handoff is the clean candidate cycle:
-structural dry-run, normalize/fix malformed rows if needed, build offline
-blind-label QA, pilot, full QA, and merge only if every candidate row is clean.
+The 2026-05-25 evening repair normalized the handoff into
+`data/sdgp_handoff_v8_candidate_20260525_claude_expand/subagent_outputs_normalized/`:
+
+- **2,646** unique Claude candidate rows recovered and normalized.
+- **714** missing slots filled by deterministic V8 template fallback.
+- **3,360** normalized rows across **113** batch files.
+- Structural dry-run: **3,360 accepted / 0 existing / 0 rejected**.
+- Candidate QA dir:
+  `data/sdgp_qa_v8_candidate_20260525_claude_expand_normalized/`
+- Blind-label pilot: **10/10 agreement**, **0 missing / 0 invalid / 0 error**.
+- Codex subagent combined blind-label score:
+  `data/sdgp_qa_v8_candidate_20260525_claude_expand_normalized/score_codex_subagents_combined/`
+  = **3,236/3,360 agreement** (**96.31%**), **124 triage**,
+  **0 missing / 0 invalid / 0 error**.
+
+The **124** triage rows were replaced with deterministic V8 template rows in
+`data/sdgp_handoff_v8_candidate_20260525_claude_expand/subagent_outputs_patched_124_template/`.
+The patched pack scored **3,360/3,360 agreement**, **0 missing / 0 invalid /
+0 error**, **0 triage** at
+`data/sdgp_qa_v8_candidate_20260525_claude_expand_patched_124_template/score_codex_subagents_combined/`.
+It was merged into the active vault as batch
+`v8_candidate_20260525_claude_expand_patched_124_template`
+(**3,360 added / 0 duplicate**).
+
+### Whole-Dataset Target-40 Expansion
+
+The 2026-05-26 target-40 handoff exists at:
+
+`data/sdgp_handoff_v8_target40/`
+
+It adds V8 rows into the 18 pre-V8 taxonomy patterns that were below
+whole-dataset 40/cell. It does not add new primary domains.
+
+- Batch specs: **174** files / **5,198** slots.
+- Generated outputs: **174** `batch_*.jsonl` files / **5,198** rows.
+- Structural dry-run: **5,198 accepted / 0 existing / 0 rejected**.
+- First Codex blind score found **63** triage rows, isolated to
+  `single_authoritative` samples 0/1 and `authority_conflict` sample 6.
+- After tightening those template families, final Codex subagent blind score:
+  `data/sdgp_qa_v8_target40/score_codex_subagents_combined/` =
+  **5,198/5,198 agreement**, **0 missing / 0 invalid / 0 error**,
+  **0 triage**.
+- Merge batch: `v8_target40_template_20260526`
+  (**5,198 added / 0 duplicate**), vault size **19,898**.
+
+### Whole-Dataset Target-50 Expansion
+
+The 2026-05-26 target-50 handoff exists at:
+
+`data/sdgp_handoff_v8_target50/`
+
+- Batch specs: **157** files / **4,694** slots.
+- Generated outputs: **157** `batch_*.jsonl` files / **4,694** rows.
+- Structural dry-run: **4,694 accepted / 0 existing / 0 rejected**.
+- Initial Codex blind score found **82** triage rows in
+  `factual_contradiction`, `numerical_conflict`, and
+  `resolved_candidate_selection`; the template families were tightened and the
+  full blind pass rerun.
+- Final Codex subagent blind score:
+  `data/sdgp_qa_v8_target50/score_codex_subagents_combined/` =
+  **4,694/4,694 agreement**, **0 missing / 0 invalid / 0 error**,
+  **0 triage**.
+- Merge batch: `v8_target50_template_20260526`
+  (**4,694 added / 0 duplicate**), vault size **24,592**.
+- Target-50 coverage after merge:
+  `data/sdgp_v8_qa/full_dataset_gap_target50_after_merge.json` =
+  **483/483** primary cells at target, **0** total gap.
+
+### Stricter Full V8 Second-Pass Repair
+
+After target-50 merge, a mixed LM Studio + Claude pass showed LM Studio was not
+clean enough for the hard V8-gap slice. An all-Claude/Codex full pass then
+reduced the issue to **87** false-trustworthy rows, concentrated in
+`authority_status_conflict`, `verdict_conflict`, and `version_build_mismatch`.
+Those active vault rows were repaired in-place with batch marker
+`v8_second_pass_triage87_repair_20260526`:
+
+- Repair backup:
+  `data/sdgp_vault_v51_enriched/cases.before_v8_second_pass_triage87_repair_20260526_102013.jsonl`
+- Narrow repaired-row recheck:
+  `data/sdgp_v8_qa/score_second_pass_triage87_repair_only_20260526/` =
+  **87/87 agreement**, **0 triage**
+- Final full all-Claude/Codex score:
+  `data/sdgp_v8_qa/score_claude_full_repaired87_combined_20260526/` =
+  **14,092/14,092 agreement**, **0 missing / 0 invalid / 0 error**,
+  **0 triage**
 
 ## Pattern Targets
 

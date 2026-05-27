@@ -16,7 +16,15 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from fitz_gov.sdgp.taxonomy import PATTERN_DESCRIPTIONS, Cell, Difficulty, Domain, TaxonomyPattern
+from fitz_gov.sdgp.taxonomy import (
+    PATTERN_DESCRIPTIONS,
+    Cell,
+    Difficulty,
+    Domain,
+    GovernanceClass,
+    TaxonomyPattern,
+    governance_class_of,
+)
 
 
 DOMAIN_ITEMS: dict[Domain, list[dict[str, str]]] = {
@@ -185,9 +193,12 @@ def _ctx(
 
 
 def _metadata(pattern: TaxonomyPattern, difficulty: Difficulty) -> tuple[str, str]:
-    if pattern == TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION:
+    cls = governance_class_of(pattern)
+    if cls == GovernanceClass.TRUSTWORTHY:
+        if difficulty == Difficulty.HARD:
+            return "TRUSTWORTHY", "trustworthy_hedged"
         return "TRUSTWORTHY", "trustworthy_direct"
-    if pattern in {TaxonomyPattern.VERDICT_CONFLICT, TaxonomyPattern.AUTHORITY_STATUS_CONFLICT}:
+    if cls == GovernanceClass.DISPUTED:
         return "DISPUTED", "dispute"
     return "ABSTAIN", "abstention"
 
@@ -269,6 +280,341 @@ def _case_texts(
     authority = item["authority"]
     tag = f"{domain.value.replace('_', '-')} {difficulty.value} sample {idx}"
     anchor = f"{variant}; V8 probe {idx}"
+    record_id = f"{domain.value.upper().replace('_', '-')}-{difficulty.value.upper()}-{idx:02d}"
+    other_item = DOMAIN_ITEMS[domain][(idx + 1) % len(DOMAIN_ITEMS[domain])]
+    other_entity = other_item["entity"]
+    other_variant = other_item["variant"]
+    value = 40 + (idx * 7) % 53
+    alternate_value = value + 9 + (idx % 4)
+    consensus_value = 100 + (idx * 11) % 80
+
+    if pattern == TaxonomyPattern.WRONG_SPECIFICITY:
+        query = f"What final deadline was set for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The {authority} overview for {entity} record {record_id} under {variant} "
+            f"describes eligibility, responsible reviewers, and the filing channel. It does not "
+            f"state the final deadline."
+        )
+        c2 = (
+            f"{tag}: A companion procedure note for {entity} record {record_id} explains "
+            f"appeal rights and notification format for {variant}, but it omits any deadline "
+            f"or due-date field."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "The record discusses the right entity but not the deadline.", authority_score=0.86, authority_signal="official_primary", relevance=0.78, boundary_quality=0.82, anchor=anchor),
+            _ctx("ctx_002", c2, "The procedure note stays on topic but omits the requested due date.", authority_score=0.80, authority_signal="domain_expert", relevance=0.76, boundary_quality=0.80, anchor=anchor),
+        ]
+        near = "The evidence is about the right record and process, but it answers a different aspect than the requested deadline."
+        return query, "", contexts, near, [], [f"deadline for {record_id}", "final deadline was"], []
+
+    if pattern == TaxonomyPattern.WRONG_ENTITY:
+        query = f"What final result was recorded for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The retrieved result table is for {other_entity} record {record_id}-ALT "
+            f"under {other_variant}. It lists final result: cleared for that different entity."
+        )
+        c2 = (
+            f"{tag}: The archive note repeats {other_entity} and {other_variant} as the target. "
+            f"It never references {entity} or {variant}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, f"The result belongs to {other_entity}, not the queried entity.", authority_score=0.84, authority_signal="official_primary", relevance=0.42, boundary_quality=0.78, anchor=f"{other_variant}; V8 target40 {idx}"),
+            _ctx("ctx_002", c2, "The archive confirms the neighboring entity only.", authority_score=0.79, authority_signal="domain_expert", relevance=0.38, boundary_quality=0.76, anchor=f"{other_variant}; V8 target40 {idx}"),
+        ]
+        near = f"The retrieved rows have a plausible result, but every source is about {other_entity}, not {entity}."
+        return query, "", contexts, near, [], [f"{entity} was cleared", f"final result for {entity}"], [other_entity]
+
+    if pattern == TaxonomyPattern.PARTIAL_OVERLAP:
+        query = f"Did {entity} record {record_id} satisfy all final acceptance criteria under {variant}?"
+        c1 = (
+            f"{tag}: The setup memo for {entity} record {record_id} under {variant} confirms "
+            f"that criterion A was reviewed and that criterion B was scheduled for later review."
+        )
+        c2 = (
+            f"{tag}: The interim checklist discusses reviewer assignment and preliminary notes "
+            f"for {record_id}, but it does not report the final all-criteria acceptance outcome."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "Only part of the requested acceptance evidence is present.", authority_score=0.78, authority_signal="domain_expert", relevance=0.72, boundary_quality=0.76, anchor=anchor),
+            _ctx("ctx_002", c2, "The checklist is interim and lacks the final all-criteria result.", authority_score=0.82, authority_signal="official_primary", relevance=0.74, boundary_quality=0.78, anchor=anchor),
+        ]
+        near = "The evidence overlaps with the requested review, but it covers only interim or partial criteria rather than the final all-criteria answer."
+        return query, "", contexts, near, [], ["all final acceptance criteria were satisfied", "final acceptance outcome"], []
+
+    if pattern == TaxonomyPattern.EVIDENCE_ABSENT:
+        query = f"What final status did the source of record assign to {entity} record {record_id}?"
+        c1 = (
+            f"{tag}: A retrieved help article explains how to format archive identifiers and "
+            f"how to request access to historical records. It does not mention {entity}."
+        )
+        c2 = (
+            f"{tag}: A general glossary entry defines review statuses such as pending, cleared, "
+            f"and blocked, without discussing record {record_id} or any source-of-record result."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "The source is procedural background and does not mention the target.", authority_score=0.48, authority_signal="encyclopedic_general", relevance=0.12, boundary_quality=0.52, anchor="general archive guidance"),
+            _ctx("ctx_002", c2, "The glossary is generic and lacks the requested case.", authority_score=0.46, authority_signal="encyclopedic_general", relevance=0.10, boundary_quality=0.50, anchor="general status glossary"),
+        ]
+        near = "The retrieved material is generic background rather than evidence about the queried record."
+        return query, "", contexts, near, [], [f"status for {entity}", f"record {record_id} was"], []
+
+    if pattern == TaxonomyPattern.TOO_GENERAL:
+        query = f"What exact threshold applies to {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The {authority} overview says threshold checks should be documented for "
+            f"{entity} reviews and that reviewers should compare each record against the applicable standard."
+        )
+        c2 = (
+            f"{tag}: A domain guide explains why thresholds vary by variant, jurisdiction, or build. "
+            f"It gives examples but no exact threshold for {record_id} under {variant}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "The source describes threshold governance generally.", authority_score=0.82, authority_signal="official_primary", relevance=0.62, boundary_quality=0.70, anchor=anchor),
+            _ctx("ctx_002", c2, "The guide explains variation but not the requested threshold.", authority_score=0.73, authority_signal="domain_expert", relevance=0.60, boundary_quality=0.70, anchor=anchor),
+        ]
+        near = "The sources provide true general guidance, but they are too broad to supply the exact requested threshold."
+        return query, "", contexts, near, [], [f"threshold is {value}", "exact threshold applies"], []
+
+    if pattern == TaxonomyPattern.TEMPORAL_MISMATCH:
+        query = f"What is the 2026 final status for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The 2024 archive for {entity} record {record_id} under {variant} lists "
+            f"status: pending as of the 2024 review window."
+        )
+        c2 = (
+            f"{tag}: A 2025 transition note says the record was scheduled for re-review before "
+            f"the 2026 cycle and warns that earlier status fields should not be used as 2026 results."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "The available status is anchored to 2024, not 2026.", authority_score=0.84, authority_signal="official_primary", relevance=0.70, boundary_quality=0.82, anchor="2024 review window", stale="high"),
+            _ctx("ctx_002", c2, "The transition note says older statuses do not answer the 2026 cycle.", authority_score=0.80, authority_signal="domain_expert", relevance=0.72, boundary_quality=0.82, anchor="2025 transition note", stale="medium"),
+        ]
+        near = "The retrieved evidence is about the right record, but it is anchored before the requested 2026 final status."
+        return query, "", contexts, near, [], ["2026 final status", "current final status was pending"], []
+
+    if pattern == TaxonomyPattern.NUMERICAL_CONFLICT:
+        query = f"What numeric threshold should be trusted for {entity} record {record_id} under {variant}?"
+        conflict_value = alternate_value + 17
+        c1 = (
+            f"{tag}: The {authority} table for {entity} record {record_id} under {variant} "
+            f"lists the applicable threshold as {value} units."
+        )
+        c2 = (
+            f"{tag}: An independent results appendix for the same {entity} record {record_id} "
+            f"under {variant} lists the applicable threshold as {conflict_value} units. The appendix "
+            f"uses the same units and the same threshold field as the {authority} table."
+        )
+        c3 = (
+            f"{tag}: The retrieved set contains no correction notice, unit conversion, or rounding "
+            f"explanation that reconciles {value} units with {conflict_value} units for record {record_id}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, f"One source gives threshold {value}.", authority_score=0.88, authority_signal="official_primary", relevance=0.96, boundary_quality=0.90, anchor=anchor),
+            _ctx("ctx_002", c2, f"Another source gives threshold {conflict_value} for the same field and units.", authority_score=0.86, authority_signal="domain_expert", relevance=0.96, boundary_quality=0.90, anchor=anchor),
+            _ctx("ctx_003", c3, "No retrieved source reconciles the conflicting numeric thresholds.", authority_score=0.78, authority_signal="domain_expert", relevance=0.92, boundary_quality=0.86, anchor=anchor),
+        ]
+        near = "Both sources address the same record, attribute, and units, but their numeric thresholds differ and no retrieved source reconciles the conflict."
+        return query, "", contexts, near, [], [f"threshold is {value}", f"threshold is {conflict_value}", "sources agree"], []
+
+    if pattern == TaxonomyPattern.TEMPORAL_CONFLICT:
+        query = f"What status is reported for {entity} record {record_id} during the {variant} review window?"
+        c1 = (
+            f"{tag}: The review log labels {entity} record {record_id} as open during the "
+            f"{variant} review window and says the status applied through checkpoint {idx + 2}."
+        )
+        c2 = (
+            f"{tag}: The closure register labels the same {entity} record {record_id} as closed "
+            f"during the {variant} review window and also ties the status to checkpoint {idx + 2}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "One source says the record was open at the checkpoint.", authority_score=0.82, authority_signal="domain_expert", relevance=0.94, boundary_quality=0.86, anchor=anchor),
+            _ctx("ctx_002", c2, "Another source says the same record was closed at the checkpoint.", authority_score=0.86, authority_signal="official_primary", relevance=0.94, boundary_quality=0.86, anchor=anchor),
+        ]
+        near = "The sources attach different states to the same target and checkpoint inside the requested review window."
+        return query, "", contexts, near, [], ["status was simply open", "status was simply closed", "no conflict"], []
+
+    if pattern == TaxonomyPattern.DEFINITIONAL_CONFLICT:
+        query = f"How is {entity} record {record_id} classified under {variant}?"
+        c1 = (
+            f"{tag}: The {authority} glossary classifies {entity} record {record_id} under "
+            f"{variant} as a binding approval record."
+        )
+        c2 = (
+            f"{tag}: A companion classification memo for the same {entity} record {record_id} "
+            f"under {variant} says it is only a non-binding advisory notice."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "One source defines the record as binding.", authority_score=0.84, authority_signal="official_primary", relevance=0.95, boundary_quality=0.88, anchor=anchor),
+            _ctx("ctx_002", c2, "Another source defines the same record as advisory.", authority_score=0.82, authority_signal="domain_expert", relevance=0.95, boundary_quality=0.88, anchor=anchor),
+        ]
+        near = "The conflict is about what the same record is, not merely about a downstream value."
+        return query, "", contexts, near, [], ["binding approval", "non-binding advisory", "sources agree on classification"], []
+
+    if pattern == TaxonomyPattern.FACTUAL_CONTRADICTION:
+        query = f"Do the retrieved sources agree on whether {entity} record {record_id} was approved under {variant}?"
+        c1 = (
+            f"{tag}: The approval ledger for {entity} record {record_id} under {variant} "
+            f"states that the record was approved and released to the final register."
+        )
+        c2 = (
+            f"{tag}: The final register note for the same {entity} record {record_id} under "
+            f"{variant} states that the record was not approved and was withheld from release."
+        )
+        c3 = (
+            f"{tag}: No retrieved amendment, supersession note, or correction notice explains "
+            f"which of the two incompatible approval statements controls for record {record_id}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "One source says the record was approved.", authority_score=0.86, authority_signal="official_primary", relevance=0.96, boundary_quality=0.90, anchor=anchor),
+            _ctx("ctx_002", c2, "Another source says the same record was not approved.", authority_score=0.86, authority_signal="official_primary", relevance=0.96, boundary_quality=0.90, anchor=anchor),
+            _ctx("ctx_003", c3, "No retrieved source resolves the approval contradiction.", authority_score=0.76, authority_signal="domain_expert", relevance=0.90, boundary_quality=0.86, anchor=anchor),
+        ]
+        near = "The sources make directly incompatible factual claims about approval of the same record and the retrieved set does not resolve the contradiction."
+        return query, "", contexts, near, [], ["was approved", "was not approved", "no contradiction"], []
+
+    if pattern == TaxonomyPattern.AUTHORITY_CONFLICT:
+        query = f"What final status is supported by the retrieved sources for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The official {authority} register for {entity} record {record_id} under "
+            f"{variant} lists final status: blocked."
+        )
+        c2 = (
+            f"{tag}: A secondary program bulletin for the same {entity} record {record_id} "
+            f"under the same {variant} review window lists final status: cleared. The bulletin "
+            f"does not cite a correction, supersession notice, or reconciliation with the register."
+        )
+        c3 = (
+            f"{tag}: The retrieved set contains no correction notice explaining whether blocked "
+            f"or cleared controls for {entity} record {record_id} under {variant}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "The high-authority source says blocked.", authority_score=0.94, authority_signal="official_primary", relevance=0.97, boundary_quality=0.90, anchor=anchor),
+            _ctx("ctx_002", c2, "The secondary source says cleared for the same record and period.", authority_score=0.68, authority_signal="news_secondary", relevance=0.95, boundary_quality=0.84, anchor=anchor),
+            _ctx("ctx_003", c3, "No retrieved correction resolves the conflicting statuses.", authority_score=0.76, authority_signal="domain_expert", relevance=0.90, boundary_quality=0.82, anchor=anchor),
+        ]
+        near = "A high-authority source and a secondary source contradict each other about the same final status, and the retrieved set does not resolve which status controls."
+        return query, "", contexts, near, [], ["status was simply blocked", "status was simply cleared", "sources agree"], []
+
+    if pattern == TaxonomyPattern.SCOPE_CONFLICT:
+        query = f"Is {entity} allowed under {variant}?"
+        c1 = (
+            f"{tag}: The national-scope rule for {entity} under {variant} says the activity "
+            f"is allowed when record {record_id} is filed through the central process."
+        )
+        c2 = (
+            f"{tag}: The local-scope rule for {entity} under {variant} says the same activity "
+            f"is not allowed unless a separate local waiver is granted."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "One source says allowed under the national scope.", authority_score=0.86, authority_signal="official_primary", relevance=0.93, boundary_quality=0.86, anchor=anchor),
+            _ctx("ctx_002", c2, "Another source says not allowed under the local scope.", authority_score=0.86, authority_signal="official_primary", relevance=0.93, boundary_quality=0.86, anchor=anchor),
+        ]
+        near = "Both statements can be true in their own scopes, but the unqualified query does not specify which scope controls."
+        return query, "", contexts, near, [], ["allowed without scope", "not allowed without scope"], []
+
+    if pattern == TaxonomyPattern.MULTI_SOURCE_CORROBORATION:
+        final = ["approved", "published", "cleared", "accepted", "confirmed"][idx % 5]
+        query = f"What final status is supported for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The {authority} register for {entity} record {record_id} under {variant} "
+            f"lists final status: {final}."
+        )
+        c2 = (
+            f"{tag}: An independent archive index for {entity} record {record_id} under "
+            f"{variant} repeats the same final status: {final}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, f"The source of record gives status {final}.", authority_score=0.90, authority_signal="official_primary", relevance=0.97, boundary_quality=0.90, anchor=anchor),
+            _ctx("ctx_002", c2, f"An independent index corroborates status {final}.", authority_score=0.82, authority_signal="domain_expert", relevance=0.94, boundary_quality=0.88, anchor=anchor),
+        ]
+        gold = f"The supported final status for {entity} record {record_id} under {variant} is {final}."
+        near = "Multiple independent sources converge on the same final status for the same record."
+        return query, gold, contexts, near, [final, record_id], ["a different final status", "the sources conflict"], []
+
+    if pattern == TaxonomyPattern.SINGLE_AUTHORITATIVE:
+        final = ["approved", "published", "cleared", "accepted", "confirmed"][idx % 5]
+        query = f"What final status does the source of record give for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The official {authority} source-of-record entry for {entity} record "
+            f"{record_id} under {variant} lists final status: {final}. This is the only "
+            f"retrieved source for this record and period, and it directly answers the query."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, f"The official source directly gives final status {final}.", authority_score=0.95, authority_signal="official_primary", relevance=0.98, boundary_quality=0.92, anchor=anchor),
+        ]
+        gold = f"The source of record gives final status {final} for {entity} record {record_id} under {variant}."
+        near = "A single authoritative source directly answers the query and there is no contrary evidence."
+        return query, gold, contexts, near, [final, record_id], ["the status is disputed", "there is no source-of-record answer"], []
+
+    if pattern == TaxonomyPattern.CONSISTENT_CHAIN:
+        final = ["approved", "published", "cleared", "accepted", "confirmed"][idx % 5]
+        query = f"What outcome follows for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The intake record for {entity} record {record_id} under {variant} "
+            f"says all required inputs were received and sent to final review."
+        )
+        c2 = (
+            f"{tag}: The final review note for the same {entity} record {record_id} says "
+            f"the completed intake led to outcome: {final}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, "The first source establishes the completed intake step.", authority_score=0.82, authority_signal="domain_expert", relevance=0.90, boundary_quality=0.84, anchor=anchor),
+            _ctx("ctx_002", c2, f"The second source completes the chain with outcome {final}.", authority_score=0.91, authority_signal="official_primary", relevance=0.97, boundary_quality=0.90, anchor=anchor),
+        ]
+        gold = f"The evidence chain supports outcome {final} for {entity} record {record_id} under {variant}."
+        near = "The answer is supported by combining the intake step with the final review note."
+        return query, gold, contexts, near, [final, "completed intake"], ["the chain is broken", "the outcome is disputed"], []
+
+    if pattern == TaxonomyPattern.QUANTITATIVE_CONSENSUS:
+        query = f"What numeric threshold is supported for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The {authority} table for {entity} record {record_id} under {variant} "
+            f"lists the threshold as {consensus_value} units."
+        )
+        c2 = (
+            f"{tag}: The independent validation summary for the same {entity} record {record_id} "
+            f"reports a matching threshold of {consensus_value} units."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, f"One source gives threshold {consensus_value}.", authority_score=0.90, authority_signal="official_primary", relevance=0.97, boundary_quality=0.90, anchor=anchor),
+            _ctx("ctx_002", c2, f"A second source gives the same threshold {consensus_value}.", authority_score=0.84, authority_signal="domain_expert", relevance=0.95, boundary_quality=0.88, anchor=anchor),
+        ]
+        gold = f"The supported numeric threshold for {entity} record {record_id} under {variant} is {consensus_value} units."
+        near = "The sources provide matching numeric values for the same entity, record, and attribute."
+        return query, gold, contexts, near, [str(consensus_value), "units", record_id], ["a different threshold", "the values conflict"], []
+
+    if pattern == TaxonomyPattern.EXPERT_CONSENSUS:
+        final = ["safe to proceed", "methodologically sound", "compliant", "valid", "ready for release"][idx % 5]
+        query = f"What conclusion do expert sources support for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: A specialist review panel concludes that {entity} record {record_id} "
+            f"under {variant} is {final}."
+        )
+        c2 = (
+            f"{tag}: An independent domain expert assessment reaches the same conclusion for "
+            f"{entity} record {record_id}: {final}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, f"One expert source concludes {final}.", authority_score=0.84, authority_signal="domain_expert", relevance=0.96, boundary_quality=0.88, anchor=anchor),
+            _ctx("ctx_002", c2, f"Another expert source reaches the same conclusion {final}.", authority_score=0.86, authority_signal="domain_expert", relevance=0.96, boundary_quality=0.88, anchor=anchor),
+        ]
+        gold = f"Expert sources support the conclusion that {entity} record {record_id} under {variant} is {final}."
+        near = "Independent expert sources converge on the same conclusion."
+        return query, gold, contexts, near, [final, record_id], ["experts disagree", "the conclusion is unsupported"], []
+
+    if pattern == TaxonomyPattern.DIRECT_ANSWER:
+        final = ["approved", "published", "cleared", "accepted", "confirmed"][idx % 5]
+        query = f"What final status is listed for {entity} record {record_id} under {variant}?"
+        c1 = (
+            f"{tag}: The retrieved record for {entity} record {record_id} under {variant} "
+            f"directly lists final status: {final}."
+        )
+        contexts = [
+            _ctx("ctx_001", c1, f"The context directly states final status {final}.", authority_score=0.88, authority_signal="official_primary", relevance=0.98, boundary_quality=0.90, anchor=anchor),
+        ]
+        gold = f"The listed final status for {entity} record {record_id} under {variant} is {final}."
+        near = "A single retrieved chunk directly and completely answers the query."
+        return query, gold, contexts, near, [final, record_id], ["a different status", "the answer is absent"], []
 
     if pattern == TaxonomyPattern.RESOLVED_CANDIDATE_SELECTION:
         if idx >= 5:
@@ -277,8 +623,8 @@ def _case_texts(
             final_record = f"record FINAL-{idx:02d}"
             final = ["PASS", "cleared", "approved", "accepted", "green"][idx % 5]
             query = (
-                f"What final result is supported for {entity} record {record_id} "
-                f"under {variant}?"
+                f"What final result does the source-of-record support for {entity} record {record_id} "
+                f"under {variant}, after resolving obsolete candidates?"
             )
             c1 = (
                 f"{tag}: The preliminary review extract for {entity} record {record_id} "
@@ -290,6 +636,11 @@ def _case_texts(
                 f"{tag}: The {authority} source-of-record for {entity} record {record_id} "
                 f"under {variant} closes {obsolete_candidate} and publishes {final_record}. "
                 f"{final_record} is the valid final entry and lists final result: {final}."
+            )
+            c3 = (
+                f"{tag}: A reconciliation note for {entity} record {record_id} says to ignore "
+                f"{obsolete_candidate} for final-result answers and to use {final_record}; "
+                f"the final result carried forward from {final_record} is {final}."
             )
             contexts = [
                 _ctx(
@@ -310,6 +661,16 @@ def _case_texts(
                     authority_signal="official_primary",
                     relevance=0.98,
                     boundary_quality=0.92,
+                    anchor=anchor,
+                ),
+                _ctx(
+                    "ctx_003",
+                    c3,
+                    f"The reconciliation note confirms {final_record} controls and carries final result {final}.",
+                    authority_score=0.88,
+                    authority_signal="official_primary",
+                    relevance=0.96,
+                    boundary_quality=0.90,
                     anchor=anchor,
                 ),
             ]
@@ -477,7 +838,7 @@ def _case_texts(
                 _ctx(
                     "ctx_002",
                     c2,
-                    f"The appendix repeats the neighboring build rather than the requested build.",
+                    "The appendix repeats the neighboring build rather than the requested build.",
                     authority_score=0.83,
                     authority_signal="domain_expert",
                     relevance=0.72,
@@ -589,9 +950,10 @@ def build_case(slot: dict[str, Any]) -> dict[str, Any]:
         },
     }
     if classification == "TRUSTWORTHY":
+        attribution = contexts[-1]["id"] if contexts else "ctx_001"
         case["meta"]["grounding_targets"] = {
             "gold_answer": gold,
-            "sentences": [{"text": gold, "attributions": ["ctx_002"]}],
+            "sentences": [{"text": gold, "attributions": [attribution]}],
         }
     return case
 

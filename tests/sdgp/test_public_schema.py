@@ -1,4 +1,4 @@
-"""Tests for the schema-clean public V7 export contract."""
+"""Tests for the schema-clean public SDGP export contract."""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ def test_public_schema_strips_legacy_report_axes() -> None:
         "id": "case_001",
         "domain": "finance",
         "query_type": "what",
+        "source_type": "multi_source",
         "meta": {
             "dataset_version": "v7",
             "difficulty": "hard",
@@ -30,6 +31,7 @@ def test_public_schema_strips_legacy_report_axes() -> None:
     assert clean["meta"] == {"dataset_version": "v7", "difficulty": "hard"}
     assert "domain" not in clean
     assert "query_type" not in clean
+    assert "source_type" not in clean
 
 
 def test_public_schema_does_not_mutate_source_row() -> None:

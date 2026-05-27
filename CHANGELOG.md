@@ -9,26 +9,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Clarified the Hugging Face dataset card language for V8.0.0 so the public README explains the benchmark in plain terms instead of using internal SDGP shorthand or pyrrho project cross-promo. Card-only HF commit: `be6bddaa39d6f87d0301e1358b9a1c4ab3329ca2`.
+
+---
+
+## [8.0.0] - 2026-05-26
+
 ### Added
 
 - Added `docs/V8_SCHEMA_CONTRACT.md` and `AGENTS.md` to pin the V8 data rule: keep the current V7.0.1 SDGP row shape, no legacy shims, no compatibility configs, no subpattern fields, and no `meta.introduced_in`.
 - Added five V8 taxonomy gaps as first-class primary patterns: `resolved_candidate_selection`, `verdict_conflict`, `authority_status_conflict`, `version_build_mismatch`, and `missing_execution_result`.
 - Added `docs/V8_TAXONOMY_EXPANSION_PLAN.md` and `scripts/sdgp_plan_v8_taxonomy_expansion.py`, enumerating 105 new primary cells across the existing 7 primary domains and 3 difficulties.
 - Added V8 generation/merge helpers: `scripts/sdgp_prepare_v8_generation_batches.py` and `scripts/sdgp_merge_v8_generation_jsonl.py`.
-- Added `scripts/sdgp_generate_v8_template_outputs.py` and generated the initial **525-row** V8 taxonomy-gap probe pack locally.
+- Added `scripts/sdgp_generate_v8_template_outputs.py` and used it for the V8 target-fill/template repair passes.
 - Added `docs/SDGP_TESTCASE_ADDITION_CYCLE.md`, the runbook for adding SDGP rows without poisoning the active vault or pyrrho training manifest.
 - Added `scripts/sdgp_build_blind_label_from_generation_jsonl.py` so generated candidate rows can be blind-label QAed before being merged into the active vault.
-- Added V8 blind-label QA artifacts under `data/sdgp_v8_qa/`, including the full Qwen 35B Q5 prediction files, invalid-retry predictions, repaired-pattern predictions, combined score summaries, validated rows, and ledgers.
+- Added `scripts/sdgp_upload_v8_hf.py`, which publishes the one-config V8 Hugging Face dataset as Parquet and checks the final V8 release gates before upload.
+- Added V8 blind-label QA artifacts under `data/sdgp_v8_qa/`, including the stopped LM Studio partial, all-Claude/Codex replacement predictions, repaired-row recheck, final full second-pass score, manifests, split assignments, and audit reports.
 - Updated the training-schema completeness gate so current rows and future V8 rows require the canonical `evaluation` block and accept `meta.dataset_version: "v8"`.
 
 ### Changed
 
-- Local enriched vault is now **11,025 rows** after merging the 525 V8 probe rows. V8 training-schema audit is **525/525 complete**, all 105 new cells are at 5 rows/cell, and the V8 QA audit writes artifacts under `data/sdgp_v8_qa/`.
-- Repaired the two ambiguous V8 templates surfaced by blind-label triage: `missing_execution_result` no longer states an explicit negative final outcome, and `authority_status_conflict` no longer phrases the query as asking specifically for source-of-record status.
-- V8 blind-label QA ran with LM Studio `qwen3.6-35b-a3b@q5_k_s`. The initial combined score was **502 validated / 23 triage**; after repairing all 210 affected-pattern rows and rerunning those rows at `max_tokens=2048`, the final combined score is **525/525 validated / 0 triage**, with **0 missing / 0 invalid / 0 error**.
+- Published Hugging Face dataset `yafitzdev/fitz-gov` **v8.0.0** at commit `56ec1016fbaf8f7a2c488eeb8952b28a75c111c3`, tag `v8.0.0`. The default public config is now `v8`.
+- Public V8.0.0 has **24,592 rows**: V6 **2,980**, V7 **7,520**, V8 **14,092**.
+- Default query-grouped splits are train **19,674**, validation **2,459**, test **2,459**, with **0 query-group leakage**.
+- Whole-dataset target **50/cell** coverage is complete across all **483/483** canonical generation cells with **0** remaining gap.
+- Strict V8 training-schema audit is **14,092/14,092 complete** with **0** issue paths.
+- Full all-Claude/Codex V8 second-pass blind-label QA is **14,092/14,092 agreement** with **0 missing / 0 invalid / 0 error / 0 triage** after repairing 87 false-trustworthy rows from the hard V8-gap slice.
+- Public rows strip local `_vault` provenance and the legacy report axes `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, `meta.evidence_pattern`, and `source_type`.
 - Changed blind-label runner defaults to `max_tokens=2048` and `request_timeout_s=300` for the current Qwen thinking-model QA path. A 2026-05-25 config probe reproduced the old failure (`max_tokens=128` -> **0/3 scored, 3 invalid**) and verified the corrected parse budget (`max_tokens=2048` -> **3/3 scored, 0 invalid**).
-- Ran the clean testcase addition cycle on the first repaired 210-row balanced-control candidate pack without merging it into the active vault. Structural dry-run passed and full blind-label QA parsed cleanly (**210/210 scored**, **0 missing / 0 invalid / 0 error**), but the candidate pack failed label agreement at **148/210**. The failures were concentrated in `version_build_mismatch` (**49/105** agreement), so that failed artifact was not merged or used for training.
-- Fixed the balanced-control candidate wording and reran the full clean cycle. The new 210-row pack passed structural dry-run (**210 accepted / 0 rejected**), blind-label QA (**210/210 agreement**, **0 missing / 0 invalid / 0 error**), and was merged into the local vault. The active local V8 cohort is now **840 rows** with combined clean score **840/840 agreement / 0 triage**.
+- Repaired and merged the Claude handoff, target-40, and target-50 packs into the active vault. The active V8 cohort is now **14,092** rows and supersedes the older 525-row, 840-row, and 4,200-row local V8 checkpoints.
 
 ---
 
@@ -787,7 +799,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v7.0.1...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v8.0.0...HEAD
+[8.0.0]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v8.0.0
 [7.0.1]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v7.0.1
 [7.0.0]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v7.0.0
 [6.0.0]: https://github.com/yafitzdev/fitz-gov/compare/v5.1.0...v6.0.0

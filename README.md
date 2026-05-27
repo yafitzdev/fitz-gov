@@ -9,7 +9,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI version](https://badge.fury.io/py/fitz-gov.svg)](https://pypi.org/project/fitz-gov/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-7.0.1-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-8.0.0-green.svg)](CHANGELOG.md)
 [![HuggingFace Dataset](https://img.shields.io/badge/🤗%20HuggingFace-yafitzdev%2Ffitz--gov-yellow)](https://huggingface.co/datasets/yafitzdev/fitz-gov)
 
 [The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov) • [🤗 HuggingFace](https://huggingface.co/datasets/yafitzdev/fitz-gov)
@@ -18,12 +18,12 @@
 
 <br />
 
-> **Now on HuggingFace** — V7 is the default query-grouped release:
+> **Now on HuggingFace** — V8 is the default query-grouped release:
 > ```python
 > from datasets import load_dataset
-> ds = load_dataset("yafitzdev/fitz-gov")                     # default: v7, train/validation/test
+> ds = load_dataset("yafitzdev/fitz-gov")                     # default: v8, train/validation/test
 > ```
-> See the dataset card for full schema, splits, and a working baseline at **95.24% accuracy** ([pyrrho-nano-g2](https://huggingface.co/yafitzdev/pyrrho-nano-g2)).
+> See the dataset card for full schema and splits.
 
 ---
 
@@ -38,7 +38,7 @@ result = evaluator.evaluate_tiered(tier0_cases, ..., tier1_cases, ...)
 print(result)
 ```
 
-10,500 benchmark rows. One score that tells you if your RAG system knows what it doesn't know.
+24,592 benchmark rows. One score that tells you if your RAG system knows what it doesn't know.
 
 ---
 
@@ -46,8 +46,8 @@ print(result)
 
 Solo project by Yan Fitzner ([LinkedIn](https://www.linkedin.com/in/yan-fitzner/), [GitHub](https://github.com/yafitzdev), [HuggingFace](https://huggingface.co/yafitzdev)).
 
-- ~4k lines of Python, 10,500 benchmark rows
-- 271 SDGP tests
+- ~4k lines of Python, 24,592 benchmark rows
+- 271 data-pipeline tests
 - Built for [fitz-sage](https://github.com/yafitzdev/fitz-sage) — used to train and validate its governance classifier (81.3% accuracy on 2,910 hard cases)
 
 ---
@@ -186,7 +186,7 @@ Any RAG system can be evaluated — fitz-gov is framework-agnostic:
 ```python
 from fitz_gov import FitzGovEvaluator, load_cases, AnswerMode
 
-cases = load_cases()  # packaged legacy cases; use HuggingFace for V7
+cases = load_cases()  # packaged legacy cases; use HuggingFace for V8
 evaluator = FitzGovEvaluator()
 
 responses, modes = [], []
@@ -284,24 +284,21 @@ flowchart TD
 
 <br>
 
-**10,500 V7.0.1 rows** on Hugging Face by default: 8,400 train / 1,050 validation / 1,050 test, query-grouped to prevent repeated-query split leakage. V7.0.1 is schema-clean: same rows/splits/labels as V7.0.0, with pre-SDGP report axes removed from public rows.
+**24,592 V8.0.0 rows** on Hugging Face by default: 19,674 train / 2,459 validation / 2,459 test, query-grouped to prevent repeated-query split leakage. V8.0.0 more than doubles the benchmark and publishes one default `v8` config.
 
-- **Mode split:** TRUSTWORTHY 3,944 (37.6%) / DISPUTED 3,325 (31.7%) / ABSTAIN 3,231 (30.8%)
-- **Difficulty:** hard 3,827 (36.4%) / medium 3,449 (32.8%) / easy 3,224 (30.7%)
-- **SDGP matrix:** 18 taxonomy patterns x 7 primary domains x 3 difficulties = 378 primary cells
-- **Coverage:** target 25/cell complete across all 378 cells; target 30/cell remains a stretch backlog with 1,575 rows remaining
-- **Primary domains:** science_medicine 1,823; general_commonsense 1,492; economics_finance 1,477; technology_computing 1,476; law_policy 1,441; culture_society 1,406; history_geography 1,385
-- **QA:** strict V6/V7 SDGP schema complete; blind-label QA is 7,520 / 7,520 V7 rows validated with 0 triage; cross-label exact-query semantic review has 0 unresolved pairs
+- **Cohorts:** V6 2,980 / V7 7,520 / V8 14,092
+- **Mode split:** ABSTAIN 8,400 / DISPUTED 8,440 / TRUSTWORTHY 7,752
+- **Difficulty:** hard 8,405 / medium 8,137 / easy 8,050
+- **Coverage grid:** 23 evidence patterns x 7 primary domains x 3 difficulties = 483 primary cells
+- **Coverage:** at least 50 examples in every cell; total gap 0
+- **Primary domains:** science_medicine 3,741; general_commonsense 3,508; economics_finance 3,491; technology_computing 3,488; law_policy 3,464; culture_society 3,450; history_geography 3,450
+- **QA:** required training/evaluation fields are complete for 14,092 / 14,092 V8 rows; independent blind-label QA is 14,092 / 14,092 validated with 0 triage; exact dedup and query-group leakage checks are clean
 
-**V8 dataset rule:** V8 keeps the current V7.0.1 SDGP row shape and adds the
-taxonomy gaps as first-class `taxonomy.pattern` values. No subpattern fields,
-no `meta.introduced_in`, no old report axes, and no compatibility configs. See
-[V8 schema contract](docs/V8_SCHEMA_CONTRACT.md). The initial V8 taxonomy-gap
-expansion is 105 new primary cells across the existing 7 primary domains,
-documented in [V8 taxonomy expansion plan](docs/V8_TAXONOMY_EXPANSION_PLAN.md).
-Locally, the 525-row V8 probe pack is generated, repaired, and blind-label
-clean: **525 / 525 validated with 0 triage** after Qwen 35B Q5 second-pass
-scoring. It is local-only until the next V8 publish/retrain decision.
+**V8 dataset rule:** V8 keeps the V7.0.1 row shape and adds taxonomy gaps
+as first-class `taxonomy.pattern` values. No subpattern fields, no
+`meta.introduced_in`, no old report axes, and no compatibility configs. See
+[V8 schema contract](docs/V8_SCHEMA_CONTRACT.md) and
+[V8 taxonomy expansion plan](docs/V8_TAXONOMY_EXPANSION_PLAN.md).
 
 </details>
 
@@ -316,14 +313,14 @@ scoring. It is local-only until the next V8 publish/retrain decision.
 Published Hugging Face config:
 
 ```
-v7/                 # default: train=8,400 / validation=1,050 / test=1,050
+v8/                 # default: train=19,674 / validation=2,459 / test=2,459
 ```
 
-Each public V7 row uses the SDGP schema:
+Each public V8 row uses the governance-evaluation schema:
 
 ```json
 {
-  "id": "sdgp_v7_wrong_entity__history_geography__easy__0",
+  "id": "sdgp_v8_wrong_entity__history_geography__easy__40",
   "label": "abstain",
   "tier": 1,
   "input": {
@@ -353,7 +350,7 @@ Each public V7 row uses the SDGP schema:
     "expert_fired": "history_geography"
   },
   "meta": {
-    "dataset_version": "v7",
+    "dataset_version": "v8",
     "difficulty": "easy",
     "confidence_level": "high",
     "near_miss_class": "TRUSTWORTHY",
@@ -367,7 +364,7 @@ Each public V7 row uses the SDGP schema:
 }
 ```
 
-The public V7.0.1 contract does not include the pre-SDGP report axes `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, or `meta.evidence_pattern`. Use `routing.expert_fired`, `taxonomy.pattern`, `taxonomy.cell_id`, and `meta.difficulty` for canonical breakdowns.
+The public V8.0.0 contract does not include old internal report fields: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, `meta.evidence_pattern`, or `source_type`. Use `routing.expert_fired`, `taxonomy.pattern`, `taxonomy.cell_id`, and `meta.difficulty` for canonical breakdowns.
 
 </details>
 
@@ -379,7 +376,7 @@ The public V7.0.1 contract does not include the pre-SDGP report axes `meta.domai
 
 <br>
 
-These tables describe the legacy V5.1/V6 `tier1_core` compatibility benchmark. V7's active release contract is the 378-cell SDGP matrix summarized above.
+These tables describe the legacy V5.1/V6 `tier1_core` compatibility benchmark. V8's active release contract is the 483-cell coverage grid summarized above.
 
 #### Categories (Tier 1)
 
@@ -457,8 +454,8 @@ These tables describe the legacy V5.1/V6 `tier1_core` compatibility benchmark. V
 <br>
 
 1. Fork this repo
-2. For V7+ work, add cases through the SDGP vault/generation workflow so `taxonomy.cell_id`, `routing.expert_fired`, and `evaluation` stay coherent
-3. Run the relevant SDGP audit before publishing
+2. For V7+ work, add cases through the structured generation workflow so `taxonomy.cell_id`, `routing.expert_fired`, and `evaluation` stay coherent
+3. Run the relevant data-quality audit before publishing
 4. Submit a PR
 
 → [Mode Decision Tree](docs/mode-decision-tree.md) — how expected modes are assigned

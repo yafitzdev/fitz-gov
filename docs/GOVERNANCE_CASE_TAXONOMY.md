@@ -2,7 +2,7 @@
 
 Complete taxonomy of governance case types for the fitz-gov benchmark.
 
-**Status**: Legacy V5.1/V6 category taxonomy, retained as historical reference. Current published dataset version is **v7.0.1** on Hugging Face: 10,500 query-grouped rows in the default `v7` config. Public V7 rows use the SDGP fields (`taxonomy.pattern`, `taxonomy.cell_id`, `routing.expert_fired`, `meta.difficulty`) rather than the old category/subcategory breakdown axes.
+**Status**: Legacy V5.1/V6 category taxonomy, retained as historical reference. Current published dataset version is **v8.0.0** on Hugging Face: 24,592 query-grouped rows in the default `v8` config. Public V8 rows use the SDGP fields (`taxonomy.pattern`, `taxonomy.cell_id`, `routing.expert_fired`, `meta.difficulty`) rather than the old category/subcategory breakdown axes.
 
 **Production mapping**: fitz-gov uses 3-mode labels (abstain/disputed/trustworthy) and 4 test categories: abstention, dispute, trustworthy_hedged, trustworthy_direct. Both trustworthy_hedged and trustworthy_direct map to TRUSTWORTHY mode — the category name describes the expected response behavior (hedged vs direct). Grounding and relevance are cross-cutting quality checks applied to all trustworthy cases.
 
@@ -19,7 +19,7 @@ fitz-gov/data/
 
 ## Dataset Overview
 
-V7 active contract: 10,500 rows, query-grouped splits (`train=8,400`, `validation=1,050`, `test=1,050`), target 25/cell complete across 378 SDGP primary cells, blind-label QA clean, and cross-label exact-query review clean.
+V8 active contract: 24,592 rows, query-grouped splits (`train=19,674`, `validation=2,459`, `test=2,459`), target 50/cell complete across 483 SDGP primary cells, strict V8 training-schema QA clean, blind-label QA clean, and split leakage / exact dedup blockers clean. V7.0.1 remains the historical `pyrrho-nano-g2` training/eval contract.
 
 Legacy V5.1/V6 compatibility benchmark:
 

@@ -25,7 +25,17 @@ patches and future taxonomy expansions.
 
 ## Required Local Blind-Label Settings
 
-The current local QA backend is LM Studio with Qwen 35B Q5:
+There are two supported offline blind-label paths:
+
+- **Codex subagents**: preferred when running parallel blind QA from Codex. Keep
+  the queue blind: pass only `row_index`, query, and contexts; do not expose case
+  IDs, gold labels, taxonomy cells, manifests, batch specs, or generated outputs
+  to worker agents. Materialize `row_index -> case_id` only after worker
+  predictions are written.
+- **LM Studio / Qwen**: acceptable when explicitly chosen, with the pinned
+  settings below.
+
+LM Studio healthcheck:
 
 ```powershell
 $env:PYTHONIOENCODING = "utf-8"
@@ -62,6 +72,18 @@ $QA = "data/sdgp_qa_$RUN"
 ```
 
 ## Step 2: Prepare Batch Specs
+
+For the whole-dataset V8 target-40 fill, use the V8 target-fill prep script.
+This adds new V8 rows into the older V6/V7 taxonomy cells while preserving the
+current SDGP row shape and `meta.dataset_version: "v8"` cohort marker:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\sdgp_prepare_v8_target40_batches.py `
+  --out-dir "$HANDOFF\subagent_batches" `
+  --target 40 `
+  --batch-size 30 `
+  --seed 20260525
+```
 
 For a full V8 gap pack:
 
@@ -106,13 +128,11 @@ For subagent generation, write one `batch_*.jsonl` file per batch spec under
 
 ### Current Candidate Handoff Snapshot
 
-The current Claude-generated V8 candidate handoff is:
+The latest Claude-generated V8 candidate handoff was:
 
 `data/sdgp_handoff_v8_candidate_20260525_claude_expand/`
 
-It is an **unvalidated candidate directory**, not active data. As of the
-2026-05-25 evening inspection, generation was still moving; the intake snapshot
-at 18:56 Europe/Berlin was:
+The raw intake snapshot at 18:56 Europe/Berlin was:
 
 - Planned batch specs: **113** files / **3,360** assigned slots
 - Main output files observed: **89** `batch_*.jsonl`
@@ -125,9 +145,115 @@ at 18:56 Europe/Berlin was:
 - Fast structural dry-run result: **1,915 accepted / 0 existing / 624
   rejected**
 
-These numbers are not an acceptance count. The candidate handoff must be
-normalized and pass Step 4 through Step 7 before any merge. The active clean
-vault remains **11,340 total rows / 840 V8 rows** until Step 8 succeeds.
+Those raw numbers were not an acceptance count. The 2026-05-25 evening repair
+normalized the handoff into:
+
+`data/sdgp_handoff_v8_candidate_20260525_claude_expand/subagent_outputs_normalized/`
+
+Normalized state:
+
+- Recovered candidate rows: **2,646** unique rows from the raw handoff.
+- Deterministic fallback rows for missing slots: **714**.
+- Output: **113** `batch_*.jsonl` files / **3,360** rows.
+- Step 4 dry-run result: **3,360 accepted / 0 existing / 0 rejected**.
+- Step 5 QA dir:
+  `data/sdgp_qa_v8_candidate_20260525_claude_expand_normalized/`
+- Step 6 pilot score: **10/10 agreement**, **0 missing / 0 invalid / 0 error**.
+
+Step 7 Codex subagent blind-label QA has run and is **not clean**:
+
+- First pass (`gpt-5.4-mini`): **3,013/3,360 agreement**, **347 triage**,
+  **0 missing / 0 invalid / 0 error**.
+- Policy retry on the 347 triage rows recovered **223** rows.
+- Combined score:
+  `data/sdgp_qa_v8_candidate_20260525_claude_expand_normalized/score_codex_subagents_combined/`
+  = **3,236/3,360 agreement** (**96.31%**), **124 triage**,
+  **0 missing / 0 invalid / 0 error**.
+
+Those 124 triage rows were replaced with deterministic V8 template rows in:
+
+`data/sdgp_handoff_v8_candidate_20260525_claude_expand/subagent_outputs_patched_124_template/`
+
+Final patched outcome:
+
+- Structural dry-run: **3,360 accepted / 0 existing / 0 rejected**.
+- Patched candidate QA:
+  `data/sdgp_qa_v8_candidate_20260525_claude_expand_patched_124_template/score_codex_subagents_combined/`
+  = **3,360/3,360 agreement**, **0 missing / 0 invalid / 0 error**,
+  **0 triage**.
+- Merge result: **3,360 added / 0 duplicate**, vault size **14,700**.
+- Full V8 audit:
+  `data/sdgp_v8_qa/clean_4200_score/` = **4,200/4,200 agreement**,
+  **0 missing / 0 invalid / 0 error**, **0 triage**.
+- Training-schema audit:
+  `data/sdgp_v8_qa/training_schema_summary.json` = **4,200/4,200**
+  complete.
+
+The latest whole-dataset target-40 V8 candidate handoff was:
+
+`data/sdgp_handoff_v8_target40/`
+
+Final target-40 outcome:
+
+- Batch specs: **174** files / **5,198** slots under `subagent_batches/`.
+- Generated outputs: **174** `batch_*.jsonl` files / **5,198** rows under
+  `subagent_outputs/`.
+- Structural dry-run: **5,198 accepted / 0 existing / 0 rejected**.
+- Codex subagent blind QA:
+  `data/sdgp_qa_v8_target40/score_codex_subagents_combined/` =
+  **5,198/5,198 agreement**, **0 missing / 0 invalid / 0 error**,
+  **0 triage**.
+- Merge result: batch `v8_target40_template_20260526`,
+  **5,198 added / 0 duplicate**, vault size **19,898**.
+- Full V8 audit: **9,398** V8 rows, **0** query-group split leakage.
+- Training-schema audit:
+  `data/sdgp_v8_qa/training_schema_summary.json` = **9,398/9,398**
+  complete.
+- Whole-dataset target-40 coverage:
+  `data/sdgp_v8_qa/full_dataset_gap_target40_after_merge.json` =
+  **483/483** primary cells at target, **0** total gap.
+
+The latest whole-dataset target-50 V8 handoff was:
+
+`data/sdgp_handoff_v8_target50/`
+
+Final target-50 outcome:
+
+- Batch specs: **157** files / **4,694** slots under `subagent_batches/`.
+- Generated outputs: **157** `batch_*.jsonl` files / **4,694** rows under
+  `subagent_outputs/`.
+- Structural dry-run: **4,694 accepted / 0 existing / 0 rejected**.
+- First Codex subagent blind score found **82** triage rows, isolated to
+  `factual_contradiction`, `numerical_conflict`, and
+  `resolved_candidate_selection` wording.
+- After tightening those template families, final Codex subagent blind score:
+  `data/sdgp_qa_v8_target50/score_codex_subagents_combined/` =
+  **4,694/4,694 agreement**, **0 missing / 0 invalid / 0 error**,
+  **0 triage**.
+- Merge result: batch `v8_target50_template_20260526`,
+  **4,694 added / 0 duplicate**, vault size **24,592**.
+- Full V8 audit: **14,092** V8 rows, **0** query-group split leakage.
+- Training-schema audit:
+  `data/sdgp_v8_qa/training_schema_summary.json` = **14,092/14,092**
+  complete.
+- Whole-dataset target-50 coverage:
+  `data/sdgp_v8_qa/full_dataset_gap_target50_after_merge.json` =
+  **483/483** primary cells at target, **0** total gap.
+
+Final stricter second-pass outcome:
+
+- A later all-Claude/Codex full V8 second pass initially found **87**
+  false-trustworthy triage rows in the hard V8-gap slice.
+- Those rows were repaired in-place with batch marker
+  `v8_second_pass_triage87_repair_20260526`; repair backup:
+  `data/sdgp_vault_v51_enriched/cases.before_v8_second_pass_triage87_repair_20260526_102013.jsonl`.
+- Narrow repaired-row blind recheck:
+  `data/sdgp_v8_qa/score_second_pass_triage87_repair_only_20260526/` =
+  **87/87 agreement**, **0 missing / 0 invalid / 0 error**, **0 triage**.
+- Final full all-Claude/Codex second-pass score:
+  `data/sdgp_v8_qa/score_claude_full_repaired87_combined_20260526/` =
+  **14,092/14,092 agreement**, **0 missing / 0 invalid / 0 error**,
+  **0 triage**.
 
 ## Step 4: Structural Dry Run
 
@@ -237,6 +363,41 @@ Candidate QA pass criteria:
 Any disagreement means the candidate pack is not clean. Fix the rows and rerun
 candidate QA from scratch. Do not merge partial or triaged candidate rows into
 the active vault.
+
+### Codex Subagent Blind-Label Path
+
+For Codex subagent QA, prepare blind shards from the candidate queue:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\sdgp_prepare_codex_blind_shards.py `
+  --qa-dir "$QA" `
+  --out-dir "$QA\codex_subagent_blind" `
+  --n-shards 12
+```
+
+Give each subagent exactly one `$QA\codex_subagent_blind\shards\shard_XX.jsonl`
+file and one disjoint output path under
+`$QA\codex_subagent_blind\predictions\shard_XX_predictions.jsonl`.
+The subagent prompt must forbid opening manifests, row-index maps, generated
+outputs, batch specs, taxonomy/gold metadata, score files, or backups.
+
+After all shard predictions return, materialize and score from the parent
+session:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\sdgp_materialize_codex_blind_predictions.py `
+  --blind-dir "$QA\codex_subagent_blind" `
+  --out "$QA\codex_subagent_blind\blind_label_predictions_codex_subagents_combined.jsonl"
+
+.\.venv\Scripts\python.exe scripts\sdgp_score_blind_labels.py `
+  --manifest "$QA\blind_label_manifest.jsonl" `
+  --predictions "$QA\codex_subagent_blind\blind_label_predictions_codex_subagents_combined.jsonl" `
+  --out-dir "$QA\score_codex_subagents_combined"
+```
+
+If the Codex score has any disagreement, treat it as a data-quality signal.
+Repair the candidate rows, rebuild the blind queue/shards, rerun affected
+subagent shards, and score cleanly before merging.
 
 ## Step 8: Merge Only Clean Candidates
 

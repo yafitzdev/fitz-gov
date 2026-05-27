@@ -1,7 +1,7 @@
-"""Public V7 schema helpers.
+"""Public SDGP schema helpers.
 
 The local vault may carry historical generation/reporting hints, but the
-published V7 contract is SDGP-native. These helpers strip pre-SDGP diagnostic
+published V7+ contract is SDGP-native. These helpers strip pre-SDGP diagnostic
 axes before Hugging Face export and provide a fail-fast audit so they cannot
 re-enter the public dataset silently.
 """
@@ -18,6 +18,7 @@ LEGACY_META_FIELDS: tuple[str, ...] = (
     "reasoning_type",
     "query_type",
     "evidence_pattern",
+    "source_type",
 )
 
 
