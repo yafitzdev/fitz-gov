@@ -35,7 +35,15 @@ ENV/
 generated_data/
 
 # Dataset corpus — distributed via HuggingFace (yafitzdev/fitz-gov), not git.
-data/
+# Keep only the tiny modality-probe seed datasets tracked for local comparisons.
+data/*
+!data/README.md
+!data/fitz-gov/
+data/fitz-gov/*
+!data/fitz-gov/README.md
+!data/fitz-gov/manifest.json
+!data/modality_probes/
+!data/modality_probes/**
 
 # Release artifacts
 *.zip

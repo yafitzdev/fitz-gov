@@ -1,0 +1,47 @@
+# fitz-gov Data Directory
+
+Use `data/fitz_gov/` as the human entry point for the actual dataset.
+
+Most other directories under `data/` are local build artifacts from generating,
+repairing, QA-scoring, or publishing SDGP rows. They are intentionally ignored
+by git and are not the public dataset contract.
+
+## Actual Data
+
+| Purpose | Path |
+|---|---|
+| Canonical local access point | `data/fitz-gov/` |
+| Active local data | `data/fitz-gov/cases.jsonl` |
+| Current clean V8 manifest | `data/fitz-gov/v8_manifest.jsonl` |
+| Current training-schema summary | `data/fitz-gov/training_schema_summary.json` |
+| Published dataset | Hugging Face `yafitzdev/fitz-gov`, config `v8`, revision `v8.0.0` |
+
+For normal consumers, prefer Hugging Face:
+
+```python
+from datasets import load_dataset
+
+ds = load_dataset("yafitzdev/fitz-gov", "v8", revision="v8.0.0")
+```
+
+For local generation, QA, or pyrrho prep, use the files listed in
+`data/fitz-gov/manifest.json`.
+
+## What The Other Directories Are
+
+| Directory pattern | Meaning | Canonical data? |
+|---|---|---|
+| `data/_workspaces/handoff/` | Candidate generation handoff workspaces: batch specs, subagent outputs, normalized rows, patched rows | No |
+| `data/_workspaces/qa/` | Offline blind-label QA workspaces and cohort QA outputs | No |
+| `data/_workspaces/hf_staging/` | Hugging Face packaging/export staging dirs | No |
+| `data/_workspaces/reports/` | Historical reports | No |
+| `data/_workspaces/vault_source/` | Pre-cleanup local vault directory with backups and cost reports | Historical source material |
+| `data/_workspaces/legacy/` | Legacy tiers, bootstrap corpus, query maps | Historical |
+| `modality_probes` | Tiny local structured/code/code-vs-unstructured comparison seed datasets | Experimental |
+
+## Rule
+
+Do not point model training, fitz-sage integration, or public export code at a
+random `sdgp_handoff*` or `sdgp_qa*` directory. Those are intermediate
+workspaces. Use `data/fitz-gov/` first, then follow its manifest to the exact
+local file needed.

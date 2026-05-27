@@ -1,0 +1,16 @@
+{
+  "name": "fitz-gov-structured-modality-probe",
+  "version": "fitz-gov-modality-probe-0.1",
+  "modality": "structured",
+  "row_shape": "sdgp_v8",
+  "rows": 10,
+  "label_counts": {
+    "TRUSTWORTHY": 3,
+    "DISPUTED": 3,
+    "ABSTAIN": 4
+  },
+  "description": "Tiny local SDGP seed dataset for comparing pyrrho governance behavior on structured evidence. Not merged into the active V8 vault.",
+  "files": [
+    "cases.jsonl"
+  ]
+}
