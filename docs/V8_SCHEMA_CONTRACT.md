@@ -78,35 +78,33 @@ See `docs/V8_TAXONOMY_EXPANSION_PLAN.md`.
 
 ## Current V8 State
 
-As of 2026-05-26 morning, the active local vault is clean and V8.0.0 is
-published to Hugging Face:
+As of 2026-05-27 evening, the active local vault is clean and V8.0.1 is
+published to Hugging Face as the modality-labeled patch over V8.0.0:
 
 - Canonical local data: `data/fitz-gov/cases.jsonl`
 - Current row modality: `meta.modality: "unstructured"`
 - Total rows: **24,592** = 10,500 V6/V7 rows + **14,092 V8 rows**
 - Hugging Face dataset: `yafitzdev/fitz-gov`
-- Public version/tag: **v8.0.0**
-- HF data/tag commit: `56ec1016fbaf8f7a2c488eeb8952b28a75c111c3`
-- Current HF main commit after public card wording cleanup:
-  `be6bddaa39d6f87d0301e1358b9a1c4ab3329ca2`
+- Public version/tag: **v8.0.1**
+- HF data/tag commit: `0d01bb999e80e4c6b01027763b054b4aa48d2334`
 - Public config: one default config, `v8`
 - Public splits: train **19,674** / validation **2,459** / test **2,459**
 - Clean V8 manifest:
-  `data/sdgp_v8_qa/blind_label_manifest.jsonl`
+  `data/fitz-gov/v8_manifest.jsonl`
 - Training-schema audit:
-  `data/sdgp_v8_qa/training_schema_summary.json` = **14,092/14,092**
+  `data/fitz-gov/training_schema_summary.json` = **14,092/14,092**
   complete
 - Whole-dataset target-50 report:
-  `data/sdgp_v8_qa/full_dataset_gap_target50_after_merge.json` =
+  `data/_workspaces/qa/sdgp_v8_qa/full_dataset_gap_target50_after_merge.json` =
   **483/483** primary cells at target, **0** total gap
 - Stricter full V8 second-pass blind QA:
-  `data/sdgp_v8_qa/score_claude_full_repaired87_combined_20260526/` =
+  `data/_workspaces/qa/sdgp_v8_qa/score_claude_full_repaired87_combined_20260526/` =
   **14,092/14,092 agreement**, **0 missing / 0 invalid / 0 error**,
   **0 triage**
 - Latest pre-merge backup:
-  `data/sdgp_vault_v51_enriched/cases.before_v8_target50_merge_20260526_013413.jsonl`
+  `data/_workspaces/vault_source/cases.before_v8_target50_merge_20260526_013413.jsonl`
 - Latest repair backup:
-  `data/sdgp_vault_v51_enriched/cases.before_v8_second_pass_triage87_repair_20260526_102013.jsonl`
+  `data/_workspaces/vault_source/cases.before_v8_second_pass_triage87_repair_20260526_102013.jsonl`
 
 A later Claude-generated candidate expansion was repaired and merged:
 

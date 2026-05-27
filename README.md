@@ -9,7 +9,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI version](https://badge.fury.io/py/fitz-gov.svg)](https://pypi.org/project/fitz-gov/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-8.0.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-8.0.1-green.svg)](CHANGELOG.md)
 [![HuggingFace Dataset](https://img.shields.io/badge/🤗%20HuggingFace-yafitzdev%2Ffitz--gov-yellow)](https://huggingface.co/datasets/yafitzdev/fitz-gov)
 
 [The Problem](#the-problem) • [Three Modes](#the-three-modes-) • [What Makes This Hard](#what-makes-this-hard-) • [Quick Start](#-quick-start) • [GitHub](https://github.com/yafitzdev/fitz-gov) • [🤗 HuggingFace](https://huggingface.co/datasets/yafitzdev/fitz-gov)
@@ -284,7 +284,7 @@ flowchart TD
 
 <br>
 
-**24,592 V8.0.0 rows** on Hugging Face by default: 19,674 train / 2,459 validation / 2,459 test, query-grouped to prevent repeated-query split leakage. V8.0.0 more than doubles the benchmark and publishes one default `v8` config.
+**24,592 V8.0.1 rows** on Hugging Face by default: 19,674 train / 2,459 validation / 2,459 test, query-grouped to prevent repeated-query split leakage. V8.0.1 keeps the V8.0.0 row set and adds row-level evidence modality metadata; V8.0.0 more than doubled the benchmark and publishes one default `v8` config.
 
 - **Cohorts:** V6 2,980 / V7 7,520 / V8 14,092
 - **Mode split:** ABSTAIN 8,400 / DISPUTED 8,440 / TRUSTWORTHY 7,752
@@ -365,7 +365,7 @@ Each public V8 row uses the governance-evaluation schema:
 }
 ```
 
-The public V8.0.0 contract does not include old internal report fields: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, `meta.evidence_pattern`, or `source_type`. Use `routing.expert_fired`, `taxonomy.pattern`, `taxonomy.cell_id`, `meta.difficulty`, and row-level `meta.modality` for canonical breakdowns. Current V8 rows are `meta.modality: "unstructured"`; structured-data and code rows remain future/candidate modality slices until QA passes.
+The public V8.0.1 contract does not include old internal report fields: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, `meta.evidence_pattern`, or `source_type`. Use `routing.expert_fired`, `taxonomy.pattern`, `taxonomy.cell_id`, `meta.difficulty`, and row-level `meta.modality` for canonical breakdowns. Current V8 rows are `meta.modality: "unstructured"`; structured-data and code rows remain future/candidate modality slices until QA passes.
 
 </details>
 

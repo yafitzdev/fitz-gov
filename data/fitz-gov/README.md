@@ -20,7 +20,7 @@ modality slices and must remain in candidate/probe workspaces until QA passes.
 
 - Hugging Face repo: `yafitzdev/fitz-gov`
 - Config: `v8`
-- Revision/tag: `v8.0.0`
+- Revision/tag: `v8.0.1`
 - Rows: `24,592`
 - Splits: train `19,674`, validation `2,459`, test `2,459`
 - Public row shape: SDGP V8 (`id`, `version`, `input`, `governance`,

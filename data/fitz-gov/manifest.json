@@ -14,15 +14,15 @@
   "public_dataset": {
     "repo_id": "yafitzdev/fitz-gov",
     "config": "v8",
-    "revision": "v8.0.0",
+    "revision": "v8.0.1",
     "rows": 24592,
     "splits": {
       "train": 19674,
       "validation": 2459,
       "test": 2459
     },
-    "hf_data_tag_commit": "56ec1016fbaf8f7a2c488eeb8952b28a75c111c3",
-    "hf_main_card_commit": "be6bddaa39d6f87d0301e1358b9a1c4ab3329ca2"
+    "hf_data_tag_commit": "0d01bb999e80e4c6b01027763b054b4aa48d2334",
+    "hf_main_card_commit": "0d01bb999e80e4c6b01027763b054b4aa48d2334"
   },
   "local_files": {
     "cases": {

@@ -14,7 +14,7 @@ by git and are not the public dataset contract.
 | Active local data | `data/fitz-gov/cases.jsonl` |
 | Current clean V8 manifest | `data/fitz-gov/v8_manifest.jsonl` |
 | Current training-schema summary | `data/fitz-gov/training_schema_summary.json` |
-| Published dataset | Hugging Face `yafitzdev/fitz-gov`, config `v8`, revision `v8.0.0` |
+| Published dataset | Hugging Face `yafitzdev/fitz-gov`, config `v8`, revision `v8.0.1` |
 
 All current rows are unstructured-text governance rows and should carry
 `meta.modality: "unstructured"` locally. Future structured-data and code rows
@@ -27,7 +27,7 @@ For normal consumers, prefer Hugging Face:
 ```python
 from datasets import load_dataset
 
-ds = load_dataset("yafitzdev/fitz-gov", "v8", revision="v8.0.0")
+ds = load_dataset("yafitzdev/fitz-gov", "v8", revision="v8.0.1")
 ```
 
 For local generation, QA, or pyrrho prep, use the files listed in

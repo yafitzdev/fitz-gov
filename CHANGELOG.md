@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [8.0.1] - 2026-05-27
+
 ### Added
 
 - Added row-level `meta.modality` support for future unstructured / structured / code governance splits, including validation, generator prompt constraints, and modality diagnostic batch prep.
@@ -16,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Backfilled the current local fitz-gov data bundle as `meta.modality: "unstructured"` and documented `data/fitz-gov/` as the canonical local data access point.
+- Published Hugging Face dataset `yafitzdev/fitz-gov` **v8.0.1** at commit `0d01bb999e80e4c6b01027763b054b4aa48d2334`, tag `v8.0.1`. The row set, labels, and query-grouped splits are unchanged from V8.0.0; the public rows now expose `meta.modality`.
 - Clarified the Hugging Face dataset card language for V8.0.0 so the public README explains the benchmark in plain terms instead of using internal SDGP shorthand or pyrrho project cross-promo. Card-only HF commit: `be6bddaa39d6f87d0301e1358b9a1c4ab3329ca2`.
 
 ---
@@ -804,7 +809,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v8.0.0...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v8.0.1...HEAD
+[8.0.1]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v8.0.1
 [8.0.0]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v8.0.0
 [7.0.1]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v7.0.1
 [7.0.0]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v7.0.0
