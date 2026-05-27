@@ -30,6 +30,7 @@ def test_modality_probe_rows_pass_sdgp_checker_and_training_schema() -> None:
             result = checker.check(row)
             assert result.errors == []
             assert audit_case_completeness(row) == []
+            assert row["meta"]["modality"] == modality
             assert "source_type" not in row
             assert "domain" not in row.get("meta", {})
 

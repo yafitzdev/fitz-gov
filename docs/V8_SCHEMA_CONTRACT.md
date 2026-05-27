@@ -33,13 +33,21 @@ shims, compatibility payloads, or version-specific public schemas.
    New V8 rows use `meta.dataset_version: "v8"` and `version:
    "fitz-gov-8.0"`. Older rows keep their existing values.
 
-6. **One public V8 config.**
+6. **Use row-level evidence modality.**
+   `meta.modality` is the canonical evidence-representation axis. Current V8
+   rows are unstructured-text governance rows and use `meta.modality:
+   "unstructured"`. Future structured-data and code candidates use
+   `meta.modality: "structured"` and `meta.modality: "code"` respectively.
+   This is separate from `routing.expert_fired`, which remains the semantic
+   expert/domain target.
+
+7. **One public V8 config.**
    The V8 Hugging Face export should expose one canonical config, `v8`, with
    query-grouped `train` / `validation` / `test` splits. Do not publish
    compatibility configs such as `tier1_core`, `tier0_sanity`, `validation`, or
    version-specific configs.
 
-7. **Old report axes stay forbidden.**
+8. **Old report axes stay forbidden.**
    Public rows must not contain pre-SDGP report axes or compatibility aliases:
 
    - `meta.domain`
@@ -73,7 +81,8 @@ See `docs/V8_TAXONOMY_EXPANSION_PLAN.md`.
 As of 2026-05-26 morning, the active local vault is clean and V8.0.0 is
 published to Hugging Face:
 
-- Active vault: `data/sdgp_vault_v51_enriched/cases.jsonl`
+- Canonical local data: `data/fitz-gov/cases.jsonl`
+- Current row modality: `meta.modality: "unstructured"`
 - Total rows: **24,592** = 10,500 V6/V7 rows + **14,092 V8 rows**
 - Hugging Face dataset: `yafitzdev/fitz-gov`
 - Public version/tag: **v8.0.0**

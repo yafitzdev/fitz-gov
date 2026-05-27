@@ -39,6 +39,7 @@ import textwrap
 from dataclasses import dataclass
 from typing import Any, Iterable
 
+from .modality import DEFAULT_MODALITY, validate_modality
 from .taxonomy import (
     PATTERN_DESCRIPTIONS,
     Cell,
@@ -277,6 +278,24 @@ DOMAIN_HINTS: dict[Domain, str] = {
 }
 
 
+MODALITY_HINTS: dict[str, str] = {
+    "unstructured": (
+        "Use retrieved prose evidence: documents, PDFs, policy pages, articles, "
+        "manual excerpts, reports, or other natural-language chunks."
+    ),
+    "structured": (
+        "Use retrieved structured evidence: table rows, CSV extracts, SQL query "
+        "results, schema excerpts, BI exports, reconciliation tables, or database "
+        "snapshots. The evidence should require row/column/scope/version care."
+    ),
+    "code": (
+        "Use retrieved code evidence: source files, tests, CI logs, configs, "
+        "versioned docs, migration logs, or release manifests. The evidence "
+        "should require code-aware source/test/doc/log reasoning."
+    ),
+}
+
+
 # ---------------------------------------------------------------------------
 # Difficulty hints
 # ---------------------------------------------------------------------------
@@ -384,6 +403,7 @@ OUTPUT_SCHEMA_HINT = textwrap.dedent("""\
       },
       "meta": {
         "dataset_version": "v8",
+        "modality": "<unstructured|structured|code>",
         "difficulty": "<easy|medium|hard, matching the cell spec>",
         "category": "<abstention | dispute | trustworthy_hedged | trustworthy_direct>",
         "confidence_level": "<high | medium | borderline>",
@@ -423,6 +443,7 @@ BASE_TEMPLATE = textwrap.dedent("""\
     - Pattern         : {pattern_name}
     - Governance class: {governance_class}
     - Expert domain   : {domain}
+    - Evidence modality: {modality}
     - Difficulty      : {difficulty}
     - cell_id         : {cell_id}
 
@@ -435,6 +456,10 @@ BASE_TEMPLATE = textwrap.dedent("""\
     ## Domain flavour
 
     {domain_hints}
+
+    ## Evidence modality
+
+    {modality_hints}
 
     ## Difficulty
 
@@ -453,6 +478,7 @@ BASE_TEMPLATE = textwrap.dedent("""\
     - `governance.classification` MUST equal {governance_class!r}.
     - `taxonomy.pattern` MUST equal {pattern_name!r}.
     - `routing.expert_fired` MUST equal {domain!r}.
+    - `meta.modality` MUST equal {modality!r}.
     - `meta.difficulty` MUST equal {difficulty!r}.
 
     ## Output format
@@ -578,6 +604,7 @@ class GeneratorPrompt:
     cell: Cell
     text: str
     n_few_shots: int
+    modality: str = DEFAULT_MODALITY
 
     def __str__(self) -> str:
         return self.text
@@ -587,23 +614,32 @@ def build_prompt(
     cell: Cell,
     *,
     few_shot_examples: Iterable[dict[str, Any]] = (),
+    modality: str = DEFAULT_MODALITY,
 ) -> GeneratorPrompt:
     """Render the full generator prompt for a cell + (optional) few-shots."""
+    modality = validate_modality(modality)
     examples = list(few_shot_examples)
     text = BASE_TEMPLATE.format(
         pattern_name=cell.pattern.value,
         governance_class=governance_class_of(cell.pattern).value,
         domain=cell.domain.value,
+        modality=modality,
         difficulty=cell.difficulty.value,
         cell_id=cell.cell_id,
         pattern_description=PATTERN_DESCRIPTIONS[cell.pattern],
         pattern_guidance=PATTERN_GUIDANCE[cell.pattern],
         domain_hints=DOMAIN_HINTS[cell.domain],
+        modality_hints=MODALITY_HINTS[modality],
         difficulty_hints=DIFFICULTY_HINTS[cell.difficulty],
         few_shot_block=_format_few_shot_block(examples),
         output_schema=OUTPUT_SCHEMA_HINT,
     )
-    return GeneratorPrompt(cell=cell, text=text, n_few_shots=len(examples))
+    return GeneratorPrompt(
+        cell=cell,
+        text=text,
+        n_few_shots=len(examples),
+        modality=modality,
+    )
 
 
 def build_prompt_for_cell(
@@ -612,10 +648,11 @@ def build_prompt_for_cell(
     *,
     n_few_shots: int = 2,
     seed: int | None = None,
+    modality: str = DEFAULT_MODALITY,
 ) -> GeneratorPrompt:
     """Convenience: build the prompt + auto-pull few-shots from the vault."""
     examples = few_shot_for_cell(vault, cell, n=n_few_shots, seed=seed)
-    return build_prompt(cell, few_shot_examples=examples)
+    return build_prompt(cell, few_shot_examples=examples, modality=modality)
 
 
 SYSTEM_MESSAGE = (

@@ -205,6 +205,7 @@ def _case(
         },
         "meta": {
             "dataset_version": DATASET_VERSION,
+            "modality": modality,
             "difficulty": difficulty,
             "category": _category(cls, direct=direct),
             "confidence_level": "high" if difficulty == "easy" else "medium",

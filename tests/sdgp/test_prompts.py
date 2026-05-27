@@ -4,11 +4,12 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from fitz_gov.sdgp.prompts import (
-    BASE_TEMPLATE,
     DIFFICULTY_HINTS,
     DOMAIN_HINTS,
-    OUTPUT_SCHEMA_HINT,
+    MODALITY_HINTS,
     PATTERN_GUIDANCE,
     SYSTEM_MESSAGE,
     GeneratorPrompt,
@@ -42,6 +43,10 @@ def test_every_difficulty_has_hints() -> None:
     assert set(DIFFICULTY_HINTS.keys()) == set(Difficulty)
 
 
+def test_every_modality_has_hints() -> None:
+    assert set(MODALITY_HINTS.keys()) == {"unstructured", "structured", "code"}
+
+
 # ---------------------------------------------------------------------------
 # build_prompt
 # ---------------------------------------------------------------------------
@@ -60,6 +65,7 @@ def test_build_prompt_returns_generator_prompt() -> None:
     assert isinstance(p, GeneratorPrompt)
     assert p.cell == _cell()
     assert p.n_few_shots == 0
+    assert p.modality == "unstructured"
 
 
 def test_prompt_contains_cell_id_and_pattern_name() -> None:
@@ -69,6 +75,7 @@ def test_prompt_contains_cell_id_and_pattern_name() -> None:
     assert cell.pattern.value in p.text
     assert cell.domain.value in p.text
     assert cell.difficulty.value in p.text
+    assert "unstructured" in p.text
 
 
 def test_prompt_contains_governance_class() -> None:
@@ -98,6 +105,19 @@ def test_prompt_contains_output_schema() -> None:
     assert "meta.domain" not in p.text
     assert "meta.subcategory" not in p.text
     assert "introduced_in" not in p.text
+
+
+def test_prompt_can_target_structured_modality() -> None:
+    p = build_prompt(_cell(), modality="structured")
+
+    assert p.modality == "structured"
+    assert "`meta.modality` MUST equal 'structured'" in p.text
+    assert "table rows" in p.text
+
+
+def test_prompt_rejects_unknown_modality() -> None:
+    with pytest.raises(ValueError):
+        build_prompt(_cell(), modality="spreadsheet")
 
 
 def test_prompt_constraints_hardcode_cell_values() -> None:

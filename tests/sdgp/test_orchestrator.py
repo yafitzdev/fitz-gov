@@ -7,11 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from fitz_gov.sdgp.checker import Checker
-from fitz_gov.sdgp.gap_detector import GapDetector
 from fitz_gov.sdgp.orchestrator import (
-    BatchReport,
-    GenerationResult,
     Orchestrator,
     Outcome,
     _patch_cell_metadata,
@@ -26,9 +22,7 @@ from fitz_gov.sdgp.taxonomy import (
     Cell,
     Difficulty,
     Domain,
-    GovernanceClass,
     TaxonomyPattern,
-    governance_class_of,
 )
 from fitz_gov.sdgp.vault import Vault
 
@@ -298,6 +292,7 @@ def test_patch_cell_metadata_fills_missing_fields() -> None:
     assert patched["taxonomy"]["cell_id"] == cell.cell_id
     assert patched["routing"]["expert_fired"] == "science_medicine"
     assert patched["meta"]["difficulty"] == "hard"
+    assert patched["meta"]["modality"] == "unstructured"
     assert patched["governance"]["classification"] == "DISPUTED"
 
 

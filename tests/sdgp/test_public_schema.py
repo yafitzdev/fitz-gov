@@ -16,6 +16,7 @@ def test_public_schema_strips_legacy_report_axes() -> None:
         "source_type": "multi_source",
         "meta": {
             "dataset_version": "v7",
+            "modality": "unstructured",
             "difficulty": "hard",
             "domain": "economics_finance",
             "subcategory": "wrong_entity",
@@ -28,7 +29,11 @@ def test_public_schema_strips_legacy_report_axes() -> None:
     clean = strip_legacy_public_fields(row)
 
     assert find_legacy_public_fields(clean) == []
-    assert clean["meta"] == {"dataset_version": "v7", "difficulty": "hard"}
+    assert clean["meta"] == {
+        "dataset_version": "v7",
+        "modality": "unstructured",
+        "difficulty": "hard",
+    }
     assert "domain" not in clean
     assert "query_type" not in clean
     assert "source_type" not in clean

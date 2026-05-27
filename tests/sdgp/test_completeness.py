@@ -69,6 +69,7 @@ def _complete_case() -> dict:
         },
         "meta": {
             "dataset_version": "v7",
+            "modality": "unstructured",
             "difficulty": "easy",
             "category": "trustworthy_direct",
             "confidence_level": "high",
@@ -98,6 +99,16 @@ def test_trustworthy_requires_grounding_targets() -> None:
     del case["meta"]["grounding_targets"]
     issues = audit_case_completeness(case)
     assert any(i.path == "meta.grounding_targets" for i in issues)
+    assert not is_training_complete(case)
+
+
+def test_training_schema_requires_valid_modality() -> None:
+    case = _complete_case()
+    case["meta"]["modality"] = "spreadsheet"
+
+    issues = audit_case_completeness(case)
+
+    assert any(i.path == "meta.modality" for i in issues)
     assert not is_training_complete(case)
 
 

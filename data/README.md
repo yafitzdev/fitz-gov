@@ -1,6 +1,6 @@
 # fitz-gov Data Directory
 
-Use `data/fitz_gov/` as the human entry point for the actual dataset.
+Use `data/fitz-gov/` as the human entry point for the actual dataset.
 
 Most other directories under `data/` are local build artifacts from generating,
 repairing, QA-scoring, or publishing SDGP rows. They are intentionally ignored
@@ -15,6 +15,12 @@ by git and are not the public dataset contract.
 | Current clean V8 manifest | `data/fitz-gov/v8_manifest.jsonl` |
 | Current training-schema summary | `data/fitz-gov/training_schema_summary.json` |
 | Published dataset | Hugging Face `yafitzdev/fitz-gov`, config `v8`, revision `v8.0.0` |
+
+All current rows are unstructured-text governance rows and should carry
+`meta.modality: "unstructured"` locally. Future structured-data and code rows
+use the same SDGP hierarchy with `meta.modality: "structured"` or
+`meta.modality: "code"` and stay outside the active vault until structural and
+blind-label QA pass.
 
 For normal consumers, prefer Hugging Face:
 

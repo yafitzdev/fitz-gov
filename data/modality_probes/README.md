@@ -14,8 +14,12 @@ The hierarchy is:
 The structured and code files keep the current SDGP V8 row shape:
 `id`, `version`, `input`, `governance`, `taxonomy`, `routing`, `meta`,
 `evaluation`, plus local `_vault` provenance. They are not merged into
-`data/sdgp_vault_v51_enriched/cases.jsonl` and are not part of the public
+`data/fitz-gov/cases.jsonl` and are not part of the public
 Hugging Face export.
+
+Every probe row carries row-level `meta.modality`. The unstructured pointer is
+`unstructured`; the structured probe rows are `structured`; the code probe rows
+are `code`.
 
 Regenerate them with:
 

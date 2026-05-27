@@ -351,6 +351,7 @@ Each public V8 row uses the governance-evaluation schema:
   },
   "meta": {
     "dataset_version": "v8",
+    "modality": "unstructured",
     "difficulty": "easy",
     "confidence_level": "high",
     "near_miss_class": "TRUSTWORTHY",
@@ -364,7 +365,7 @@ Each public V8 row uses the governance-evaluation schema:
 }
 ```
 
-The public V8.0.0 contract does not include old internal report fields: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, `meta.evidence_pattern`, or `source_type`. Use `routing.expert_fired`, `taxonomy.pattern`, `taxonomy.cell_id`, and `meta.difficulty` for canonical breakdowns.
+The public V8.0.0 contract does not include old internal report fields: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, `meta.evidence_pattern`, or `source_type`. Use `routing.expert_fired`, `taxonomy.pattern`, `taxonomy.cell_id`, `meta.difficulty`, and row-level `meta.modality` for canonical breakdowns. Current V8 rows are `meta.modality: "unstructured"`; structured-data and code rows remain future/candidate modality slices until QA passes.
 
 </details>
 

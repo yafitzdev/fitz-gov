@@ -9,7 +9,6 @@ parallel to a Sonnet-subagent enrichment wave.
 from __future__ import annotations
 
 import argparse
-import os
 import sys
 import time
 from pathlib import Path
@@ -24,7 +23,7 @@ from fitz_gov.sdgp.vault import Vault
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--vault", type=Path, default=Path("data/sdgp_vault_v51_enriched"))
+    p.add_argument("--vault", type=Path, default=Path("data/fitz-gov"))
     p.add_argument("--ids-file", type=Path, required=True)
     p.add_argument("--model", type=str, default="qwen3.6-35b-a3b@q5_k_s")
     p.add_argument("--url", type=str, default="http://localhost:1234")

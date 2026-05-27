@@ -20,7 +20,6 @@ from __future__ import annotations
 
 import json
 import re
-import time
 import uuid
 from dataclasses import dataclass, field
 from enum import Enum
@@ -29,7 +28,8 @@ from typing import Any, Iterable
 
 from .checker import CheckResult, Checker, case_dedup_hash, hashes_from
 from .cost import CostTracker
-from .gap_detector import Gap, GapDetector
+from .gap_detector import Gap
+from .modality import set_modality
 from .prompts import (
     SYSTEM_MESSAGE,
     GeneratorPrompt,
@@ -43,8 +43,6 @@ from .providers import (
 )
 from .taxonomy import (
     Cell,
-    GovernanceClass,
-    TaxonomyPattern,
     governance_class_of,
 )
 from .vault import Provenance, Vault, new_batch_id
@@ -492,6 +490,7 @@ def _patch_cell_metadata(case: dict[str, Any], cell: Cell) -> dict[str, Any]:
     case["routing"].setdefault("expert_fired", cell.domain.value)
     case.setdefault("meta", {})
     case["meta"].setdefault("difficulty", cell.difficulty.value)
+    set_modality(case, case["meta"].get("modality", "unstructured"))
     case.setdefault("governance", {})
     case["governance"].setdefault(
         "classification", governance_class_of(cell.pattern).value

@@ -9,8 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added row-level `meta.modality` support for future unstructured / structured / code governance splits, including validation, generator prompt constraints, and modality diagnostic batch prep.
+
 ### Changed
 
+- Backfilled the current local fitz-gov data bundle as `meta.modality: "unstructured"` and documented `data/fitz-gov/` as the canonical local data access point.
 - Clarified the Hugging Face dataset card language for V8.0.0 so the public README explains the benchmark in plain terms instead of using internal SDGP shorthand or pyrrho project cross-promo. Card-only HF commit: `be6bddaa39d6f87d0301e1358b9a1c4ab3329ca2`.
 
 ---

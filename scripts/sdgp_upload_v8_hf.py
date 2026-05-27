@@ -1,8 +1,8 @@
 """Upload the target-50 SDGP V8 vault to Hugging Face.
 
 V8 publishes the full local vault as Parquet with query-grouped splits from
-`data/sdgp_v8_qa/split_assignments.jsonl`. The public Hugging Face dataset has
-one canonical config: `v8`.
+`data/_workspaces/qa/sdgp_v8_qa/split_assignments.jsonl`. The public Hugging
+Face dataset has one canonical config: `v8`.
 
 Run from the fitz-gov project root:
     python scripts/sdgp_upload_v8_hf.py --dry-run --staging-dir data/hf_v8_staging
@@ -38,8 +38,8 @@ FINAL_BLIND_SCORE_DIR = "score_claude_full_repaired87_combined_20260526"
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--repo-id", type=str, default="yafitzdev/fitz-gov")
-    p.add_argument("--vault", type=Path, default=Path("data/sdgp_vault_v51_enriched"))
-    p.add_argument("--qa-dir", type=Path, default=Path("data/sdgp_v8_qa"))
+    p.add_argument("--vault", type=Path, default=Path("data/fitz-gov"))
+    p.add_argument("--qa-dir", type=Path, default=Path("data/_workspaces/qa/sdgp_v8_qa"))
     p.add_argument("--blind-score-dir", type=Path, default=None)
     p.add_argument("--version", type=str, default="8.0.0")
     p.add_argument("--dry-run", action="store_true")
@@ -224,6 +224,7 @@ Quality checks:
 - Query-grouped splits have **0 query-group leakage**.
 - Exact dedup is clean: **0 duplicate IDs**, **0 duplicate exact inputs**, **0 duplicate exact inputs with label**, **0 duplicate checker hashes**.
 - The public dataset exposes one default config, `v8`, with `train`, `validation`, and `test` splits.
+- Current rows are explicit unstructured-text governance rows via `meta.modality: "unstructured"`.
 - Public rows do not expose old internal reporting fields: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, `meta.evidence_pattern`, or `source_type`.
 
 ---
@@ -262,7 +263,7 @@ Rows use a structured governance-evaluation format with these top-level blocks:
 | `evaluation` | Evaluator constraints and config. |
 | `routing` | Expert routing metadata. |
 | `taxonomy` | Governance class, evidence pattern, and coverage-grid cell. |
-| `meta` | Dataset version, difficulty, confidence level, near-miss reason, and grounding targets for TRUSTWORTHY rows. |
+| `meta` | Dataset version, evidence modality, difficulty, confidence level, near-miss reason, and grounding targets for TRUSTWORTHY rows. |
 
 ## Citation
 

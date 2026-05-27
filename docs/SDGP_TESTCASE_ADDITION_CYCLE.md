@@ -10,12 +10,15 @@ patches and future taxonomy expansions.
   or training prep.
 - Candidate rows are not training rows. They become training rows only after
   structural checks and blind-label QA both pass.
-- Do not merge risky candidate rows into
-  `data/sdgp_vault_v51_enriched/cases.jsonl` just to score them.
+- Do not merge risky candidate rows into `data/fitz-gov/cases.jsonl` just to
+  score them.
 - Do not train pyrrho from a manifest unless every active local cohort row in
   the vault is represented by a clean split manifest. `pyrrho/scripts/prepare_data.py`
   appends all rows with `meta.dataset_version == "v8"` from the local vault; the
   manifest supplies splits, not filtering.
+- Every active or candidate row must carry `meta.modality`. Current unstructured
+  text rows use `unstructured`; future table/database rows use `structured`;
+  source/test/log/config rows use `code`.
 - Treat these as separate gates:
   - `structural clean`: schema, checker, forbidden fields, dedup, batch IDs pass.
   - `QA clean`: independent blind label agrees with gold label and has no missing,
@@ -83,6 +86,16 @@ current SDGP row shape and `meta.dataset_version: "v8"` cohort marker:
   --target 40 `
   --batch-size 30 `
   --seed 20260525
+```
+
+For modality diagnostic packs, use the modality-specific preparer. These rows
+are candidate-only until structural and blind-label QA pass:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\sdgp_prepare_modality_diagnostic_batches.py `
+  --modality structured `
+  --total-slots 300 `
+  --batch-size 30
 ```
 
 For a full V8 gap pack:

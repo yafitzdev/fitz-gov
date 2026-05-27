@@ -2,6 +2,15 @@
   "name": "fitz-gov canonical data access",
   "status": "current",
   "updated_at": "2026-05-27",
+  "modality": {
+    "current_rows": "unstructured",
+    "row_field": "meta.modality",
+    "allowed_values": [
+      "unstructured",
+      "structured",
+      "code"
+    ]
+  },
   "public_dataset": {
     "repo_id": "yafitzdev/fitz-gov",
     "config": "v8",
@@ -19,13 +28,13 @@
     "cases": {
       "path": "cases.jsonl",
       "rows": 24592,
-      "bytes": 91501102,
-      "description": "Active local dataset containing V6, V7, and V8 rows."
+      "bytes": 92165086,
+      "description": "Active local dataset containing V6, V7, and V8 rows. Current rows carry meta.modality=unstructured."
     },
     "v8_clean_manifest": {
       "path": "v8_manifest.jsonl",
       "rows": 14092,
-      "bytes": 4556600,
+      "bytes": 4937084,
       "description": "Clean V8 cohort manifest used for split assignment and pyrrho prep."
     },
     "v8_training_schema_summary": {

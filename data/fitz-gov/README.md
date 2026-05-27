@@ -12,6 +12,10 @@ It contains the current local data files directly:
 | `training_schema_summary.json` | V8 training-schema completeness summary |
 | `manifest.json` | Human/machine-readable description of this bundle |
 
+All rows in the current local bundle are unstructured-text governance rows and
+carry `meta.modality: "unstructured"`. Structured-data and code rows are future
+modality slices and must remain in candidate/probe workspaces until QA passes.
+
 ## Current Public Contract
 
 - Hugging Face repo: `yafitzdev/fitz-gov`

@@ -16,6 +16,7 @@ from typing import Any, Iterable
 
 from .completeness import audit_case_completeness
 from .llm_enrich import _clamp01, _strip_thinking
+from .modality import set_modality
 from .providers import GenerateRequest, Provider
 from .taxonomy import PATTERN_DESCRIPTIONS, GovernanceClass, TaxonomyPattern
 
@@ -118,6 +119,7 @@ _PROMPT_TEMPLATE = textwrap.dedent("""\
       }},
 
       "meta": {{
+        "modality": "unstructured",
         "category": "<abstention | dispute | trustworthy_hedged | trustworthy_direct>",
         "confidence_level": "<high | medium | borderline>",
         "near_miss_class": "<ABSTAIN|DISPUTED|TRUSTWORTHY, but not the actual class>",
@@ -305,6 +307,7 @@ def _fill_probability_triplet(gov: dict[str, Any], res: V7CompletionResult) -> N
 def _locked_defaults(case: dict[str, Any], res: V7CompletionResult) -> None:
     case["version"] = "fitz-gov-7.0"
     case.setdefault("meta", {})["dataset_version"] = "v7"
+    set_modality(case)
     _fill_probability_triplet(case.setdefault("governance", {}), res)
 
     evaluation = case.setdefault("evaluation", {})

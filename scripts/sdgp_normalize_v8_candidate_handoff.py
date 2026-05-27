@@ -65,7 +65,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--vault",
         type=Path,
-        default=Path("data/sdgp_vault_v51_enriched"),
+        default=Path("data/fitz-gov"),
         help="Active vault used only for duplicate-content checks.",
     )
     p.add_argument(

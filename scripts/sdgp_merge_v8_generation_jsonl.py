@@ -20,6 +20,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from fitz_gov.sdgp.checker import Checker, Severity, case_dedup_hash, hashes_from
+from fitz_gov.sdgp.modality import MODALITIES, set_modality
 from fitz_gov.sdgp.vault import Provenance, Vault, new_batch_id
 
 
@@ -38,7 +39,7 @@ FORBIDDEN_PATHS = (
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--vault", type=Path, default=Path("data/sdgp_vault_v51_enriched"))
+    p.add_argument("--vault", type=Path, default=Path("data/fitz-gov"))
     p.add_argument(
         "--out-dir",
         type=Path,
@@ -53,6 +54,12 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--provider", type=str, default="codex_subagent")
     p.add_argument("--provider-version", type=str, default="gpt-5.4")
     p.add_argument("--batch-id", type=str, default=None)
+    p.add_argument(
+        "--modality",
+        choices=MODALITIES,
+        default="unstructured",
+        help="Expected meta.modality for generated rows; missing values are backfilled.",
+    )
     p.add_argument("--dry-run", action="store_true")
     return p.parse_args()
 
@@ -160,6 +167,12 @@ def main() -> int:
             case["id"] = case_id
             case["version"] = "fitz-gov-8.0"
             case.setdefault("meta", {})["dataset_version"] = "v8"
+            try:
+                set_modality(case, args.modality)
+            except ValueError as exc:
+                print(f"CHECK FAIL {case_id}: {exc}", file=sys.stderr)
+                n_bad += 1
+                continue
 
             forbidden = _forbidden_present(case)
             if forbidden:
@@ -192,7 +205,7 @@ def main() -> int:
     provenance = Provenance(
         provider=args.provider,
         provider_version=args.provider_version,
-        prompt_version="sdgp-prompts-v8-primary-patterns",
+        prompt_version=f"sdgp-prompts-v8-primary-patterns-{args.modality}",
         batch_id=batch_id,
     )
     result = vault.add_many(accepted, provenance=provenance)

@@ -103,6 +103,7 @@ from .monitor import (
     report_for_vault,
     write_coverage_report,
 )
+from .modality import DEFAULT_MODALITY, MODALITIES, MODALITY_SET, set_modality, validate_modality
 from .near_miss import (
     PATTERN_NEIGHBORS,
     NearMissOrchestrator,
@@ -119,6 +120,7 @@ from .orchestrator import (
 from .prompts import (
     DIFFICULTY_HINTS,
     DOMAIN_HINTS,
+    MODALITY_HINTS,
     PATTERN_GUIDANCE,
     SYSTEM_MESSAGE,
     GeneratorPrompt,
@@ -215,6 +217,12 @@ __all__ = [
     "governance_class_of",
     "parse_cell_id",
     "patterns_of",
+    # modality
+    "DEFAULT_MODALITY",
+    "MODALITIES",
+    "MODALITY_SET",
+    "set_modality",
+    "validate_modality",
     # vault
     "CASES_FILE",
     "INDEX_FILE",
@@ -303,6 +311,7 @@ __all__ = [
     # prompts
     "DIFFICULTY_HINTS",
     "DOMAIN_HINTS",
+    "MODALITY_HINTS",
     "PATTERN_GUIDANCE",
     "SYSTEM_MESSAGE",
     "GeneratorPrompt",

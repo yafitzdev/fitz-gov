@@ -11,6 +11,8 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from typing import Any, Iterable
 
+from .modality import MODALITY_SET
+
 MISSING = "<missing>"
 
 GOVERNANCE_CLASSES = {"ABSTAIN", "DISPUTED", "TRUSTWORTHY"}
@@ -63,6 +65,7 @@ CASE_REQUIRED_PATHS: tuple[str, ...] = (
     "evaluation.forbidden_claims",
     "evaluation.forbidden_elements",
     "meta.dataset_version",
+    "meta.modality",
     "meta.difficulty",
     "meta.category",
     "meta.confidence_level",
@@ -192,6 +195,7 @@ def audit_case_completeness(case: dict[str, Any]) -> list[CompletenessIssue]:
 
     enum_checks = {
         "meta.dataset_version": DATASET_VERSIONS,
+        "meta.modality": MODALITY_SET,
         "meta.category": CATEGORIES,
         "meta.confidence_level": CONFIDENCE_LEVELS,
     }

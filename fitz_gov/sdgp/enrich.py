@@ -619,6 +619,7 @@ def enrich_case(v51: dict[str, Any]) -> dict[str, Any]:
 
     meta = {
         "difficulty": difficulty.value,
+        "modality": "unstructured",
         "subcategory": subcategory,
         "domain": domain_s,
         "query_type": v51.get("query_type"),

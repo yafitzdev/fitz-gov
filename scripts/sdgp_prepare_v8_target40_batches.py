@@ -34,7 +34,7 @@ from fitz_gov.sdgp.vault import Vault, drop_vault_fields
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--vault", type=Path, default=Path("data/sdgp_vault_v51_enriched"))
+    p.add_argument("--vault", type=Path, default=Path("data/fitz-gov"))
     p.add_argument(
         "--out-dir",
         type=Path,
@@ -219,6 +219,7 @@ def _slot_prompt(base_prompt: str, case_id: str) -> str:
         + f'- The top-level `"id"` MUST equal "{case_id}" exactly.\n'
         + '- The top-level `"version"` MUST equal "fitz-gov-8.0".\n'
         + '- `"meta.dataset_version"` MUST equal "v8".\n'
+        + '- `"meta.modality"` MUST equal "unstructured".\n'
         + "- Use the current SDGP row shape only.\n"
         + "- Do not add taxonomy subpattern fields, meta.introduced_in, source_type, "
         + "or old pre-SDGP report axes.\n"
@@ -304,9 +305,10 @@ def main() -> int:
                 "Generate exactly one complete V8 JSON case per slot. Write JSONL rows "
                 'with shape {"case_id":"...","case":{...}}. The output case_id '
                 "set must exactly equal slots[].case_id. Use the current SDGP row "
-                "shape with version fitz-gov-8.0 and meta.dataset_version v8. Do not "
-                "add taxonomy subpattern fields, compatibility shims, source_type, or "
-                "old pre-SDGP report axes. Do not edit the vault."
+                "shape with version fitz-gov-8.0, meta.dataset_version v8, and "
+                "meta.modality unstructured. Do not add taxonomy subpattern fields, "
+                "compatibility shims, source_type, or old pre-SDGP report axes. Do not "
+                "edit the vault."
             ),
             "slots": chunk,
         }

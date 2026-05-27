@@ -15,7 +15,7 @@ from fitz_gov.sdgp.vault import Vault
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--vault", type=Path, default=Path("data/sdgp_vault_v51_enriched"))
+    p.add_argument("--vault", type=Path, default=Path("data/fitz-gov"))
     p.add_argument("--cohort", type=str, default=None, help="Optional meta.dataset_version filter")
     p.add_argument("--top", type=int, default=25)
     p.add_argument("--json-out", type=Path, default=None)
