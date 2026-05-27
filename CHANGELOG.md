@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Removed `data/fitz-gov/v8_manifest.jsonl` as a canonical local artifact; `data/fitz-gov/cases.jsonl` is now the single row source, and V8-only indexes should be derived from it when needed.
+- Removed obsolete top-level `find_duplicate_queries.py`; duplicate-query audits now live in the SDGP QA tooling instead of a hardcoded legacy V5 helper.
 
 ---
 
