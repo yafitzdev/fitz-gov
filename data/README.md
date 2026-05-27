@@ -12,7 +12,6 @@ by git and are not the public dataset contract.
 |---|---|
 | Canonical local access point | `data/fitz-gov/` |
 | Active local data | `data/fitz-gov/cases.jsonl` |
-| Current clean V8 manifest | `data/fitz-gov/v8_manifest.jsonl` |
 | Current training-schema summary | `data/fitz-gov/training_schema_summary.json` |
 | Published dataset | Hugging Face `yafitzdev/fitz-gov`, config `v8`, revision `v8.0.1` |
 
@@ -30,8 +29,8 @@ from datasets import load_dataset
 ds = load_dataset("yafitzdev/fitz-gov", "v8", revision="v8.0.1")
 ```
 
-For local generation, QA, or pyrrho prep, use the files listed in
-`data/fitz-gov/manifest.json`.
+For local generation, QA, or pyrrho prep, start from `data/fitz-gov/cases.jsonl`
+and use `data/fitz-gov/manifest.json` for bundle metadata.
 
 ## What The Other Directories Are
 
@@ -49,5 +48,4 @@ For local generation, QA, or pyrrho prep, use the files listed in
 
 Do not point model training, fitz-sage integration, or public export code at a
 random `sdgp_handoff*` or `sdgp_qa*` directory. Those are intermediate
-workspaces. Use `data/fitz-gov/` first, then follow its manifest to the exact
-local file needed.
+workspaces. Use `data/fitz-gov/cases.jsonl` as the canonical local row source.

@@ -29,13 +29,7 @@
       "path": "cases.jsonl",
       "rows": 24592,
       "bytes": 92165086,
-      "description": "Active local dataset containing V6, V7, and V8 rows. Current rows carry meta.modality=unstructured."
-    },
-    "v8_clean_manifest": {
-      "path": "v8_manifest.jsonl",
-      "rows": 14092,
-      "bytes": 4937084,
-      "description": "Clean V8 cohort manifest used for split assignment and pyrrho prep."
+      "description": "Single canonical active local dataset containing V6, V7, and V8 rows. Current rows carry meta.modality=unstructured."
     },
     "v8_training_schema_summary": {
       "path": "training_schema_summary.json",

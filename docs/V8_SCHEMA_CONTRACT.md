@@ -89,8 +89,8 @@ published to Hugging Face as the modality-labeled patch over V8.0.0:
 - HF data/tag commit: `0d01bb999e80e4c6b01027763b054b4aa48d2334`
 - Public config: one default config, `v8`
 - Public splits: train **19,674** / validation **2,459** / test **2,459**
-- Clean V8 manifest:
-  `data/fitz-gov/v8_manifest.jsonl`
+- V8-only indexes should be derived from `data/fitz-gov/cases.jsonl`; there is
+  no separate canonical V8 manifest in the active data bundle.
 - Training-schema audit:
   `data/fitz-gov/training_schema_summary.json` = **14,092/14,092**
   complete

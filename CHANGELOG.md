@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Removed `data/fitz-gov/v8_manifest.jsonl` as a canonical local artifact; `data/fitz-gov/cases.jsonl` is now the single row source, and V8-only indexes should be derived from it when needed.
+
 ---
 
 ## [8.0.1] - 2026-05-27
