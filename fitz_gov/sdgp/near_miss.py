@@ -23,26 +23,25 @@ This module:
 from __future__ import annotations
 
 import textwrap
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any, Iterable
 
 from .orchestrator import GenerationResult, Orchestrator, Outcome
 from .prompts import (
     BASE_TEMPLATE,
+    DEFAULT_MODALITY,
     DIFFICULTY_HINTS,
     DOMAIN_HINTS,
+    MODALITY_HINTS,
     OUTPUT_SCHEMA_HINT,
     PATTERN_GUIDANCE,
     GeneratorPrompt,
     _format_few_shot_block,
-    few_shot_for_cell,
+    validate_modality,
 )
 from .providers import GenerateRequest
 from .taxonomy import (
     Cell,
-    Difficulty,
-    Domain,
-    GovernanceClass,
     PATTERN_DESCRIPTIONS,
     TaxonomyPattern,
     governance_class_of,
@@ -163,19 +162,23 @@ def build_near_miss_prompt(
     secondary_pattern: TaxonomyPattern,
     *,
     few_shot_examples: Iterable[dict[str, Any]] = (),
+    modality: str = DEFAULT_MODALITY,
 ) -> GeneratorPrompt:
     """Render a near-miss prompt: instantiate `primary_cell.pattern` but sit
     on the boundary with `secondary_pattern`."""
+    modality = validate_modality(modality)
     examples = list(few_shot_examples)
     base = BASE_TEMPLATE.format(
         pattern_name=primary_cell.pattern.value,
         governance_class=governance_class_of(primary_cell.pattern).value,
         domain=primary_cell.domain.value,
+        modality=modality,
         difficulty=primary_cell.difficulty.value,
         cell_id=primary_cell.cell_id,
         pattern_description=PATTERN_DESCRIPTIONS[primary_cell.pattern],
         pattern_guidance=PATTERN_GUIDANCE[primary_cell.pattern],
         domain_hints=DOMAIN_HINTS[primary_cell.domain],
+        modality_hints=MODALITY_HINTS[modality],
         difficulty_hints=DIFFICULTY_HINTS[primary_cell.difficulty],
         few_shot_block=_format_few_shot_block(examples),
         output_schema=OUTPUT_SCHEMA_HINT,
@@ -190,7 +193,12 @@ def build_near_miss_prompt(
         difficulty=primary_cell.difficulty.value,
     )
     text = base + "\n\n" + nm_block
-    return GeneratorPrompt(cell=primary_cell, text=text, n_few_shots=len(examples))
+    return GeneratorPrompt(
+        cell=primary_cell,
+        text=text,
+        n_few_shots=len(examples),
+        modality=modality,
+    )
 
 
 # ---------------------------------------------------------------------------

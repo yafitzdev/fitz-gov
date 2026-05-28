@@ -979,12 +979,15 @@ def b_struct_a_missing_grid(ctx: RowCtx) -> dict[str, Any]:
 def b_struct_a_empty_result(ctx: RowCtx) -> dict[str, Any]:
     flv = STRUCTURED_DOMAIN_FLAVOR[ctx.domain]
     asked = _entity(flv, ctx.seq)
+    period = _period(ctx.seq)
     text = (
-        f"Query result for {flv['table']} where {flv['id_field']}='{asked}': "
+        f"Query result for {flv['table']} where {flv['id_field']}='{asked}' "
+        f"and period='{period}': "
         "0 rows returned. The query executed successfully with an empty result set; "
-        "the table contains other entities but none matching this filter."
+        f"no row is present that reports a {flv['metric']} value for {asked} in {period}. "
+        "The empty result count is retrieval metadata, not the requested metric value."
     )
-    q = f"What does the warehouse report for {asked}?"
+    q = f"What was {asked}'s {flv['metric']} value for {period}?"
     return build_row(
         modality="structured",
         case_id="",
@@ -996,14 +999,17 @@ def b_struct_a_empty_result(ctx: RowCtx) -> dict[str, Any]:
         contexts=[
             _make_context(
                 1, text, authority_score=0.7, authority_signal="empty_query_result",
-                summary=f"The filtered query returned no rows for {asked}.",
+                summary=f"The filtered query returned no metric row for {asked} in {period}.",
                 relevance=0.4, boundary=0.5,
             )
         ],
         required_elements=[],
-        forbidden_claims=[f"{asked} has any {flv['metric']} value in the retrieved evidence"],
+        forbidden_claims=[
+            f"{asked}'s {period} {flv['metric']} value is 0",
+            f"{asked} has any {period} {flv['metric']} value in the retrieved evidence",
+        ],
         forbidden_elements=[],
-        near_miss_reason="The retrieved evidence is an empty result set, not a populated row.",
+        near_miss_reason="The retrieved evidence is an empty result set, not a populated metric row.",
         mechanism=ctx.mechanism,
         serialization=ctx.serialization,
     )
@@ -1417,19 +1423,20 @@ def b_struct_d_same_id_states(ctx: RowCtx) -> dict[str, Any]:
 def b_struct_d_stale_vs_current(ctx: RowCtx) -> dict[str, Any]:
     flv = STRUCTURED_DOMAIN_FLAVOR[ctx.domain]
     target = _entity(flv, ctx.seq)
-    val_old = 100 + (ctx.seq * 9) % 700
-    val_new = val_old + 50 + (ctx.seq % 7)
+    period = _period(ctx.seq)
+    val_a = 100 + (ctx.seq * 9) % 700
+    val_b = val_a + 50 + (ctx.seq % 7)
     a = _serialize_table(
-        ctx.serialization, "snapshot_2025_12",
-        [flv["id_field"], "snapshot_month", flv["metric"]],
-        [[target, "2025-12", str(val_old)]],
+        ctx.serialization, "current_snapshot_a",
+        [flv["id_field"], "snapshot_month", "snapshot_status", flv["metric"]],
+        [[target, period, "current", str(val_a)]],
     )
     b = _serialize_table(
-        ctx.serialization, "snapshot_2026_05",
-        [flv["id_field"], "snapshot_month", flv["metric"]],
-        [[target, "2026-05", str(val_new)]],
+        ctx.serialization, "current_snapshot_b",
+        [flv["id_field"], "snapshot_month", "snapshot_status", flv["metric"]],
+        [[target, period, "current", str(val_b)]],
     )
-    q = f"What is {target}'s {flv['metric']}?"
+    q = f"What is {target}'s current {flv['metric']} for {period}?"
     return build_row(
         modality="structured",
         case_id="",
@@ -1439,15 +1446,18 @@ def b_struct_d_stale_vs_current(ctx: RowCtx) -> dict[str, Any]:
         query=q,
         query_rewritten=None,
         contexts=[
-            _make_context(1, a, authority_score=0.83, authority_signal="snapshot_old",
-                          summary=f"Old snapshot shows {val_old}.", anchor="2025-12", stale="high"),
-            _make_context(2, b, authority_score=0.83, authority_signal="snapshot_current",
-                          summary=f"Current snapshot shows {val_new}.", anchor="2026-05"),
+            _make_context(1, a, authority_score=0.83, authority_signal="current_snapshot_a",
+                          summary=f"Current snapshot A shows {val_a}.", anchor=period),
+            _make_context(2, b, authority_score=0.83, authority_signal="current_snapshot_b",
+                          summary=f"Current snapshot B shows {val_b}.", anchor=period),
         ],
         required_elements=[],
-        forbidden_claims=[f"{target}'s {flv['metric']} is {val_old}", f"{target}'s {flv['metric']} is {val_new} (no temporal framing)"],
+        forbidden_claims=[
+            f"{target}'s current {period} {flv['metric']} is {val_a}",
+            f"{target}'s current {period} {flv['metric']} is {val_b}",
+        ],
         forbidden_elements=[],
-        near_miss_reason="The same row appears in two snapshots with different values and no temporal framing in the query.",
+        near_miss_reason="Two current snapshots for the same period report different values.",
         mechanism=ctx.mechanism,
         serialization=ctx.serialization,
     )
@@ -1465,14 +1475,14 @@ def b_struct_d_total_vs_rows(ctx: RowCtx) -> dict[str, Any]:
     )
     b = _serialize_table(
         ctx.serialization, f"{flv['table']}_rows",
-        ["period", flv["id_field"], flv["metric"]],
+        ["period", flv["id_field"], flv["metric"], "extract_status", "expected_row_count"],
         [
-            [period, "row_1", str(actual_sum // 3)],
-            [period, "row_2", str(actual_sum // 3)],
-            [period, "row_3", str(actual_sum - 2 * (actual_sum // 3))],
+            [period, "row_1", str(actual_sum // 3), "complete", "3"],
+            [period, "row_2", str(actual_sum // 3), "complete", "3"],
+            [period, "row_3", str(actual_sum - 2 * (actual_sum // 3)), "complete", "3"],
         ],
     )
-    q = f"What was the {period} total {flv['metric']}?"
+    q = f"What was the complete {period} total {flv['metric']}?"
     return build_row(
         modality="structured",
         case_id="",
@@ -1485,7 +1495,7 @@ def b_struct_d_total_vs_rows(ctx: RowCtx) -> dict[str, Any]:
             _make_context(1, a, authority_score=0.88, authority_signal="aggregate_table",
                           summary=f"Aggregate row says total={asked_total}."),
             _make_context(2, b, authority_score=0.9, authority_signal="row_level_table",
-                          summary=f"Row-level data sums to {actual_sum}."),
+                          summary=f"Complete row-level extract has 3 rows and sums to {actual_sum}."),
         ],
         required_elements=[],
         forbidden_claims=[f"the {period} total was {asked_total}", f"the {period} total was {actual_sum} without noting the conflict"],
@@ -2313,9 +2323,19 @@ def b_code_d_two_files_defaults(ctx: RowCtx) -> dict[str, Any]:
     val_b = val_a + 60 + (ctx.seq % 11)
     feature = _cfeat(ctx.seq)
     setting = f"{feature.upper()}_{_csetting(ctx.seq)}"
-    a = f"# {feature}/settings/base.py\n{setting} = {val_a}"
-    b = f"# {feature}/settings/overrides.py\n{setting} = {val_b}  # imported last"
-    q = f"What is the effective {setting} default in {feature}?"
+    a = (
+        f"# {feature}/settings/base.py\n"
+        f"{setting} = {val_a}  # production source-of-record default"
+    )
+    b = (
+        f"# {feature}/settings/runtime.py\n"
+        f"{setting} = {val_b}  # production source-of-record default"
+    )
+    c = (
+        f"# {feature}/docs/config_resolution.md\n"
+        f"No load-order or precedence rule for {setting} is included in the retrieved evidence."
+    )
+    q = f"What is the production source-of-record default for {setting} in {feature}?"
     return build_row(
         modality="code",
         case_id="",
@@ -2327,13 +2347,15 @@ def b_code_d_two_files_defaults(ctx: RowCtx) -> dict[str, Any]:
         contexts=[
             _make_context(1, a, authority_score=0.88, authority_signal="settings_base",
                           summary=f"Base sets {setting}={val_a}."),
-            _make_context(2, b, authority_score=0.88, authority_signal="settings_overrides",
-                          summary=f"Overrides sets {setting}={val_b}."),
+            _make_context(2, b, authority_score=0.88, authority_signal="settings_runtime",
+                          summary=f"Runtime settings set {setting}={val_b}."),
+            _make_context(3, c, authority_score=0.62, authority_signal="config_resolution_docs",
+                          summary="No retrieved precedence rule resolves the two defaults."),
         ],
         required_elements=[],
         forbidden_claims=[f"{setting} is {val_a}", f"{setting} is {val_b} without noting the conflict"],
         forbidden_elements=[],
-        near_miss_reason="Two files define incompatible defaults for the same constant.",
+        near_miss_reason="Two source-of-record files define incompatible defaults with no precedence rule.",
         mechanism=ctx.mechanism,
         serialization=None,
     )
@@ -2524,10 +2546,15 @@ def b_code_d_ci_vs_pkg(ctx: RowCtx) -> dict[str, Any]:
         f"    - name: tests\n      run: npm run {ci_script}"
     )
     b = (
-        f'# {repo}/package.json\n{{ "scripts": {{ "{defined}": "vitest run", "{other}": "playwright test" }} }}\n'
-        f"# Note: there is no '{ci_script}' script defined."
+        f'# {repo}/package.json\n{{ "scripts": {{ "{defined}": "vitest run", '
+        f'"{other}": "playwright test" }} }}'
     )
-    q = f"In the {repo} repo, does the CI step 'npm run {ci_script}' match a defined npm script?"
+    c = (
+        f"# {repo}/docs/ci.md\n"
+        f"The repository CI test command is npm run {defined}; this is the command maintainers "
+        "must use for CI-equivalent validation."
+    )
+    q = f"In the {repo} repo, which npm script is the CI test command?"
     return build_row(
         modality="code",
         case_id="",
@@ -2540,12 +2567,14 @@ def b_code_d_ci_vs_pkg(ctx: RowCtx) -> dict[str, Any]:
             _make_context(1, a, authority_score=0.85, authority_signal="ci_workflow",
                           summary=f"CI invokes npm run {ci_script}."),
             _make_context(2, b, authority_score=0.9, authority_signal="package_json",
-                          summary=f"package.json defines scripts but no {ci_script}."),
+                          summary=f"package.json defines {defined} and {other}."),
+            _make_context(3, c, authority_score=0.82, authority_signal="ci_docs",
+                          summary=f"CI docs say npm run {defined} is the CI test command."),
         ],
         required_elements=[],
         forbidden_claims=["the CI and package.json agree on the command"],
         forbidden_elements=[],
-        near_miss_reason="CI config and package.json scripts give incompatible commands.",
+        near_miss_reason="Workflow and maintainer CI docs give incompatible CI test commands.",
         mechanism=ctx.mechanism,
         serialization=None,
     )

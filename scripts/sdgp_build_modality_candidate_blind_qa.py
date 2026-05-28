@@ -46,6 +46,12 @@ def parse_args() -> argparse.Namespace:
         default=0,
         help="If >0, take a deterministic stratified sample per modality instead of all rows.",
     )
+    parser.add_argument(
+        "--include-mechanism",
+        action="append",
+        default=None,
+        help="Restrict the queue to this meta.mechanism value. Can be passed multiple times.",
+    )
     parser.add_argument("--seed", type=int, default=20260528)
     return parser.parse_args()
 
@@ -145,6 +151,16 @@ def stratified_sample(
     return sampled
 
 
+def filter_by_mechanism(
+    cases: list[dict[str, Any]],
+    include_mechanisms: list[str] | None,
+) -> list[dict[str, Any]]:
+    if not include_mechanisms:
+        return cases
+    allowed = set(include_mechanisms)
+    return [case for case in cases if mechanism_of(case) in allowed]
+
+
 def main() -> int:
     args = parse_args()
     inputs = args.input or DEFAULT_INPUTS
@@ -152,11 +168,14 @@ def main() -> int:
     for path in inputs:
         cases.extend(read_jsonl(path))
 
+    filtered = filter_by_mechanism(cases, args.include_mechanism)
     selected = stratified_sample(
-        cases,
+        filtered,
         sample_per_modality=args.sample_per_modality,
         seed=args.seed,
     )
+    if not selected:
+        raise ValueError("No cases selected for blind-label QA.")
     selected.sort(key=lambda case: (modality_of(case), label_of(case), pattern_of(case), case["id"]))
 
     case_rows = rows_from_cases(selected)
@@ -175,6 +194,9 @@ def main() -> int:
         args.qa_dir / "candidate_summary.json",
         {
             "source_files": [str(path) for path in inputs],
+            "source_rows": len(cases),
+            "filtered_rows": len(filtered),
+            "include_mechanism": args.include_mechanism or [],
             "sample_per_modality": args.sample_per_modality,
             "seed": args.seed,
             "summary": summarize_rows(case_rows),
