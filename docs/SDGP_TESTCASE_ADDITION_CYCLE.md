@@ -98,18 +98,20 @@ are candidate-only until structural and blind-label QA pass:
   --batch-size 30
 ```
 
-For the current code-modality local controls, two deterministic candidate patch
-generators exist:
+For the current code/structured modality local controls, three deterministic
+candidate patch generators exist:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\sdgp_generate_code_modality_patch.py
 .\.venv\Scripts\python.exe scripts\sdgp_generate_code_retry_conflict_patch.py
+.\.venv\Scripts\python.exe scripts\sdgp_generate_missing_evidence_patch.py
 ```
 
 They write candidate-only workspaces under `data/_workspaces/handoff/`:
 
 - `modality_code_patch_v1_20260528/` (**720** code rows)
 - `modality_code_retry_conflict_patch_v1_20260529/` (**360** code rows)
+- `modality_missing_evidence_patch_v1_20260529/` (**360** mixed code/structured rows)
 
 These patch rows must follow the same workflow as any other candidate patch:
 structural validation first, blind-label QA before merge, and no publication or
