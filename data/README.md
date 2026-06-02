@@ -13,20 +13,21 @@ by git and are not the public dataset contract.
 | Canonical local access point | `data/fitz-gov/` |
 | Active local data | `data/fitz-gov/cases.jsonl` |
 | Current training-schema summary | `data/fitz-gov/training_schema_summary.json` |
-| Published dataset | Hugging Face `yafitzdev/fitz-gov`, config `v8`, revision `v8.0.1` |
+| Published dataset | Hugging Face `yafitzdev/fitz-gov`, config `v8`, revision `v8.1.0` |
 
 All current rows are unstructured-text governance rows and should carry
-`meta.modality: "unstructured"` locally. Future structured-data and code rows
-use the same SDGP hierarchy with `meta.modality: "structured"` or
-`meta.modality: "code"` and stay outside the active vault until structural and
-blind-label QA pass.
+`meta.modality: "unstructured"` locally. All current rows also carry
+`routing.query_contract` for V8.1 pre-retrieval routing/governance work. Future
+structured-data and code rows use the same SDGP hierarchy with
+`meta.modality: "structured"` or `meta.modality: "code"` and stay outside the
+active vault until structural and blind-label QA pass.
 
 For normal consumers, prefer Hugging Face:
 
 ```python
 from datasets import load_dataset
 
-ds = load_dataset("yafitzdev/fitz-gov", "v8", revision="v8.0.1")
+ds = load_dataset("yafitzdev/fitz-gov", "v8", revision="v8.1.0")
 ```
 
 For local generation, QA, or pyrrho prep, start from `data/fitz-gov/cases.jsonl`

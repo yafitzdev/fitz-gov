@@ -1,7 +1,23 @@
 {
   "name": "fitz-gov canonical data access",
   "status": "current",
-  "updated_at": "2026-05-27",
+  "updated_at": "2026-06-02",
+  "query_contract_annotation": {
+    "name": "query_contract_v8_1",
+    "row_field": "routing.query_contract",
+    "labeler": "codex_subagent_v8_1",
+    "public_release": "v8.1.0",
+    "rows": 24592,
+    "counts_by_kind": {
+      "evidence_sufficiency": 11828,
+      "structured_lookup": 7048,
+      "temporal_grounding": 3249,
+      "exhaustive_coverage": 1657,
+      "comparison_coverage": 532,
+      "representative_overview": 278
+    },
+    "summary_path": "../_workspaces/query_contract_v8_1/summary.json"
+  },
   "modality": {
     "current_rows": "unstructured",
     "row_field": "meta.modality",
@@ -14,22 +30,22 @@
   "public_dataset": {
     "repo_id": "yafitzdev/fitz-gov",
     "config": "v8",
-    "revision": "v8.0.1",
+    "revision": "v8.1.0",
     "rows": 24592,
     "splits": {
       "train": 19674,
       "validation": 2459,
       "test": 2459
     },
-    "hf_data_tag_commit": "0d01bb999e80e4c6b01027763b054b4aa48d2334",
-    "hf_main_card_commit": "0d01bb999e80e4c6b01027763b054b4aa48d2334"
+    "hf_data_tag_commit": "8023af209379e5e07145f5ae748b9c8f6a80e0be",
+    "hf_main_card_commit": "8023af209379e5e07145f5ae748b9c8f6a80e0be"
   },
   "local_files": {
     "cases": {
       "path": "cases.jsonl",
       "rows": 24592,
-      "bytes": 92165086,
-      "description": "Single canonical active local dataset containing V6, V7, and V8 rows. Current rows carry meta.modality=unstructured."
+      "bytes": 95088554,
+      "description": "Single canonical active local dataset containing V6, V7, and V8 rows. Current rows carry meta.modality=unstructured and routing.query_contract."
     },
     "v8_training_schema_summary": {
       "path": "training_schema_summary.json",

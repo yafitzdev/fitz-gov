@@ -41,7 +41,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--vault", type=Path, default=Path("data/fitz-gov"))
     p.add_argument("--qa-dir", type=Path, default=Path("data/_workspaces/qa/sdgp_v8_qa"))
     p.add_argument("--blind-score-dir", type=Path, default=None)
-    p.add_argument("--version", type=str, default="8.0.1")
+    p.add_argument("--version", type=str, default="8.1.0")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--staging-dir", type=Path, default=None)
     p.add_argument("--commit-message", type=str, default=None)
@@ -201,7 +201,11 @@ Version: **{version}**. License: **CC BY-NC 4.0**. See the [source changelog](ht
 
 ---
 
-## What's new in V8.0.1
+## What's new in V8.1.0
+
+V8.1.0 keeps the V8.0.1 row set, labels, and query-grouped splits. It adds `routing.query_contract` to every row: a query-text contract annotation for pre-retrieval routing and governance experiments. The current contract labels are `evidence_sufficiency`, `structured_lookup`, `temporal_grounding`, `exhaustive_coverage`, `comparison_coverage`, and `representative_overview`.
+
+## V8.0.1 modality patch
 
 V8.0.1 keeps the V8.0.0 row set, labels, and query-grouped splits. It adds explicit row-level evidence modality metadata: current rows are unstructured-text governance cases via `meta.modality: "unstructured"`. This prepares future structured-data and code slices without mixing them into the current unstructured release.
 
@@ -265,7 +269,7 @@ Rows use a structured governance-evaluation format with these top-level blocks:
 | `input` | Query, rewritten query, retrieved contexts, and evidence chain when applicable. |
 | `governance` | Gold class, confidence/scores, hallucination/retrieval/evidence signals. |
 | `evaluation` | Evaluator constraints and config. |
-| `routing` | Expert routing metadata. |
+| `routing` | Expert routing metadata, including the V8.1 `query_contract` annotation. |
 | `taxonomy` | Governance class, evidence pattern, and coverage-grid cell. |
 | `meta` | Dataset version, evidence modality, difficulty, confidence level, near-miss reason, and grounding targets for TRUSTWORTHY rows. |
 
@@ -400,7 +404,7 @@ def main() -> int:
     from huggingface_hub import HfApi, create_repo
 
     create_repo(repo_id=args.repo_id, repo_type="dataset", exist_ok=True)
-    commit_msg = args.commit_message or f"fitz-gov v{args.version}: publish target-50 V8 SDGP vault"
+    commit_msg = args.commit_message or f"fitz-gov v{args.version}: publish query-contract V8 SDGP vault"
     print(f"Uploading with commit: {commit_msg!r}")
     api = HfApi()
     commit = api.upload_folder(

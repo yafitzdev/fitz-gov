@@ -16,6 +16,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [8.1.0] - 2026-06-02
+
+### Added
+
+- Added V8.1 query-contract annotations to all 24,592 canonical rows under `routing.query_contract`, labeled from query text by six Codex subagent shards. Counts: `evidence_sufficiency` 11,828; `structured_lookup` 7,048; `temporal_grounding` 3,249; `exhaustive_coverage` 1,657; `comparison_coverage` 532; `representative_overview` 278.
+- Published Hugging Face dataset `yafitzdev/fitz-gov` **v8.1.0** at commit `8023af209379e5e07145f5ae748b9c8f6a80e0be`, tag `v8.1.0`. The row set, labels, and query-grouped splits are unchanged from V8.0.1; public rows now expose `routing.query_contract`.
+
+---
+
 ## [8.0.1] - 2026-05-27
 
 ### Added
@@ -814,7 +823,8 @@ data/
 
 ---
 
-[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v8.0.1...HEAD
+[Unreleased]: https://github.com/yafitzdev/fitz-gov/compare/v8.1.0...HEAD
+[8.1.0]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v8.1.0
 [8.0.1]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v8.0.1
 [8.0.0]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v8.0.0
 [7.0.1]: https://huggingface.co/datasets/yafitzdev/fitz-gov/tree/v7.0.1
