@@ -84,6 +84,7 @@ Hugging Face as the query-contract patch over V8.0.1:
 - Canonical local data: `data/fitz-gov/cases.jsonl`
 - Current row modality: `meta.modality: "unstructured"`
 - Current query contract: `routing.query_contract`
+- Draft V8.2 retrieval-control enrichment: `docs/V8_2_RETRIEVAL_CONTROL_SCHEMA.md`
 - Total rows: **24,592** = 10,500 V6/V7 rows + **14,092 V8 rows**
 - Hugging Face dataset: `yafitzdev/fitz-gov`
 - Public version/tag: **v8.1.0**

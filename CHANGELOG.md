@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added draft V8.2 retrieval-control schema in `docs/V8_2_RETRIEVAL_CONTROL_SCHEMA.md`, defining `routing.retrieval_control` labels for retrieval action, gap type, answerability shape, preferred retrieval modality, and evidence failure severity.
+- Started the V8.2 subagent enrichment pilot with 18 gpt-5.4-labeled rows across ABSTAIN, DISPUTED, and TRUSTWORTHY examples. Pilot labels are staged locally at `data/_workspaces/retrieval_control_v8_2/pilot_subagent_labels.jsonl` and validate cleanly for enum/range/shape.
+
 ### Changed
 
 - Removed `data/fitz-gov/v8_manifest.jsonl` as a canonical local artifact; `data/fitz-gov/cases.jsonl` is now the single row source, and V8-only indexes should be derived from it when needed.
