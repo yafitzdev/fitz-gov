@@ -78,17 +78,17 @@ See `docs/V8_TAXONOMY_EXPANSION_PLAN.md`.
 
 ## Current V8 State
 
-As of 2026-06-02, the active local vault is clean and V8.1.0 is published to
-Hugging Face as the query-contract patch over V8.0.1:
+As of 2026-06-03, the active local vault is clean and V8.2.0 is published to
+Hugging Face as the retrieval-control enrichment over V8.1.0:
 
 - Canonical local data: `data/fitz-gov/cases.jsonl`
 - Current row modality: `meta.modality: "unstructured"`
 - Current query contract: `routing.query_contract`
-- Draft V8.2 retrieval-control enrichment: `docs/V8_2_RETRIEVAL_CONTROL_SCHEMA.md`
+- Current retrieval-control enrichment: `routing.retrieval_control`
 - Total rows: **24,592** = 10,500 V6/V7 rows + **14,092 V8 rows**
 - Hugging Face dataset: `yafitzdev/fitz-gov`
-- Public version/tag: **v8.1.0**
-- HF data/tag commit: `8023af209379e5e07145f5ae748b9c8f6a80e0be`
+- Public version/tag: **v8.2.0**
+- HF data/tag commit: `8a754bc97167bc928e6e950f4c4ec0ed71df4fa3`
 - Public config: one default config, `v8`
 - Public splits: train **19,674** / validation **2,459** / test **2,459**
 - V8-only indexes should be derived from `data/fitz-gov/cases.jsonl`; there is
@@ -97,6 +97,10 @@ Hugging Face as the query-contract patch over V8.0.1:
   `evidence_sufficiency` **11,828**, `structured_lookup` **7,048**,
   `temporal_grounding` **3,249**, `exhaustive_coverage` **1,657**,
   `comparison_coverage` **532**, `representative_overview` **278**.
+- Retrieval-control annotations cover all **24,592** rows. Retrieval-action
+  counts are `answer_now` **7,772**, `resolve_conflict` **7,612**,
+  `structured_lookup` **3,482**, `retrieve_more` **3,162**,
+  `broaden_search` **1,687**, and `ask_clarifying_question` **877**.
 - Training-schema audit:
   `data/fitz-gov/training_schema_summary.json` = **14,092/14,092**
   complete

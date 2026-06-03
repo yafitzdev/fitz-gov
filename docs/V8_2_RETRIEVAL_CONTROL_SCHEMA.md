@@ -1,6 +1,6 @@
 # V8.2 Retrieval-Control Enrichment Schema
 
-Status: draft contract for the next fitz-gov enrichment pass.
+Status: published in fitz-gov **v8.2.0** on 2026-06-03.
 
 V8.2 is a row-label enrichment over the published V8.1.0 dataset. It keeps the
 same row set, query-grouped splits, governance labels, taxonomy labels, and V8
@@ -199,6 +199,19 @@ Before publishing V8.2:
   `TRUSTWORTHY` with high severity, non-`none` gap types, `ABSTAIN` with
   `answer_now`, and `DISPUTED` without `resolve_conflict`.
 - Public export keeps one `v8` config and query-grouped splits.
+
+Published V8.2.0 gate result:
+
+- All **24,592/24,592** rows contain `routing.retrieval_control`.
+- Mechanical validation found **0** read errors and **0** enum/range/shape
+  errors.
+- No separate independent blind-label QA pass was run for the new
+  retrieval-control labels in this publish; the existing V8 governance
+  blind-label QA remains unchanged and clean.
+- Hugging Face upload passed the existing V8 release gates plus the V8.2
+  retrieval-control coverage gate.
+- Public dataset: `yafitzdev/fitz-gov`, tag `v8.2.0`, commit
+  `8a754bc97167bc928e6e950f4c4ec0ed71df4fa3`.
 
 ## Subagent Labeling Run
 

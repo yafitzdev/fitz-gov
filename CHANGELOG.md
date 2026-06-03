@@ -9,15 +9,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- Added draft V8.2 retrieval-control schema in `docs/V8_2_RETRIEVAL_CONTROL_SCHEMA.md`, defining `routing.retrieval_control` labels for retrieval action, gap type, answerability shape, preferred retrieval modality, and evidence failure severity.
-- Started the V8.2 subagent enrichment pilot with 18 gpt-5.4-labeled rows across ABSTAIN, DISPUTED, and TRUSTWORTHY examples. Pilot labels are staged locally at `data/_workspaces/retrieval_control_v8_2/pilot_subagent_labels.jsonl` and validate cleanly for enum/range/shape.
-
 ### Changed
 
 - Removed `data/fitz-gov/v8_manifest.jsonl` as a canonical local artifact; `data/fitz-gov/cases.jsonl` is now the single row source, and V8-only indexes should be derived from it when needed.
 - Removed obsolete top-level `find_duplicate_queries.py`; duplicate-query audits now live in the SDGP QA tooling instead of a hardcoded legacy V5 helper.
+
+---
+
+## [8.2.0] - 2026-06-03
+
+### Added
+
+- Added V8.2 retrieval-control annotations to all 24,592 canonical rows under `routing.retrieval_control`, labeled through gpt-5.4 Codex subagent shards. New fields cover retrieval action, gap type, answerability shape, preferred retrieval modality, and evidence failure severity.
+- Added `docs/V8_2_RETRIEVAL_CONTROL_SCHEMA.md`, defining the V8.2 row-label contract and the intended `pyrrho-nano-g3.2` training heads.
+- Added `scripts/sdgp_validate_retrieval_control_v8_2.py` and `scripts/sdgp_merge_retrieval_control_v8_2.py` for mechanical validation and vault merge of subagent retrieval-control labels.
+- Published Hugging Face dataset `yafitzdev/fitz-gov` **v8.2.0** at commit `8a754bc97167bc928e6e950f4c4ec0ed71df4fa3`, tag `v8.2.0`. The row set, governance labels, and query-grouped splits are unchanged from V8.1.0; public rows now expose `routing.retrieval_control`.
+
+### Validation
+
+- Retrieval-control validation passed with **24,592/24,592** labels, **0** missing rows, **0** duplicate active row indexes, **0** read errors, and **0** enum/range/shape errors.
+- Retrieval-action counts: `answer_now` 7,772; `resolve_conflict` 7,612; `structured_lookup` 3,482; `retrieve_more` 3,162; `broaden_search` 1,687; `ask_clarifying_question` 877.
+- Gap-type counts: `none` 7,772; `conflicting_values` 4,895; `missing_specific_fact` 3,108; `missing_source_authority` 2,333; `missing_timeframe` 1,864; `wrong_version_or_scope` 1,504; `wrong_entity` 1,188; `ambiguous_query` 806; `incomplete_enumeration` 576; `unsupported_inference` 445; `too_broad` 71; `missing_comparison_side` 30.
+- Upload dry-run and live upload both passed the existing V8 release gates plus the new V8.2 retrieval-control coverage gate.
 
 ---
 

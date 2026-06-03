@@ -22,6 +22,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from fitz_gov.sdgp.public_schema import find_legacy_public_fields
+from sdgp_validate_retrieval_control_v8_2 import validate_retrieval_control
 from sdgp_upload_v7_hf import (
     _class_counts,
     _version_counts,
@@ -41,7 +42,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--vault", type=Path, default=Path("data/fitz-gov"))
     p.add_argument("--qa-dir", type=Path, default=Path("data/_workspaces/qa/sdgp_v8_qa"))
     p.add_argument("--blind-score-dir", type=Path, default=None)
-    p.add_argument("--version", type=str, default="8.1.0")
+    p.add_argument("--version", type=str, default="8.2.0")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--staging-dir", type=Path, default=None)
     p.add_argument("--commit-message", type=str, default=None)
@@ -67,12 +68,56 @@ def _nested(data: dict[str, Any], *keys: str, default: Any = None) -> Any:
     return cur
 
 
+def _version_tuple(version: str) -> tuple[int, ...]:
+    return tuple(int(part) for part in version.split(".") if part.isdigit())
+
+
+def _require_retrieval_control(cases: list[dict[str, Any]]) -> dict[str, Any]:
+    labels: dict[int, dict[str, Any]] = {}
+    missing: list[int] = []
+    for row_index, case in enumerate(cases, start=1):
+        control = (case.get("routing") or {}).get("retrieval_control")
+        if not isinstance(control, dict):
+            missing.append(row_index)
+            continue
+        labels[row_index] = {
+            "row_index": row_index,
+            "case_id": case.get("id"),
+            "retrieval_control": control,
+            "_source_file": "cases.jsonl",
+            "_source_line": row_index,
+        }
+
+    errors, counts, high_risk = validate_retrieval_control(labels=labels, cases=cases)
+    failures: list[str] = []
+    if missing:
+        failures.append(f"missing routing.retrieval_control on {len(missing)} rows")
+    if errors:
+        failures.append(f"invalid retrieval-control labels on {len(errors)} rows/fields")
+    if failures:
+        print("ERROR: V8.2 retrieval-control gates failed:", file=sys.stderr)
+        for failure in failures:
+            print(f"  - {failure}", file=sys.stderr)
+        if missing:
+            print(f"  - first missing row indexes: {missing[:20]}", file=sys.stderr)
+        for error in errors[:20]:
+            print(f"  - {error}", file=sys.stderr)
+        raise SystemExit(1)
+
+    return {
+        "rows_labeled": len(labels),
+        "counts": dict(counts),
+        "high_risk": dict(high_risk),
+    }
+
+
 def require_release_gates(
     *,
     cases: list[dict[str, Any]],
     qa_dir: Path,
     blind_score_dir: Path,
     version_counts: dict[str, int],
+    version: str,
 ) -> dict[str, Any]:
     failures: list[str] = []
 
@@ -118,6 +163,10 @@ def require_release_gates(
     if blind.get("agree_rows") != v8_rows:
         failures.append(f"blind-label agree_rows={blind.get('agree_rows')} but V8 rows={v8_rows}")
 
+    retrieval_control = None
+    if _version_tuple(version) >= (8, 2, 0):
+        retrieval_control = _require_retrieval_control(cases)
+
     if failures:
         print("ERROR: V8 release gates failed:", file=sys.stderr)
         for failure in failures:
@@ -129,6 +178,7 @@ def require_release_gates(
         "gap": gap,
         "audit": audit,
         "blind": blind,
+        "retrieval_control": retrieval_control,
     }
 
 
@@ -155,6 +205,8 @@ def write_dataset_card(
     v7_rows = version_counts.get("v7", 0)
     cells = gates["gap"]["cells_considered"]
     blind_rows = gates["blind"]["agree_rows"]
+    retrieval_control = gates.get("retrieval_control") or {}
+    retrieval_control_rows = retrieval_control.get("rows_labeled", n_all)
 
     card = f"""---
 license: cc-by-nc-4.0
@@ -201,6 +253,10 @@ Version: **{version}**. License: **CC BY-NC 4.0**. See the [source changelog](ht
 
 ---
 
+## What's new in V8.2.0
+
+V8.2.0 keeps the V8.1.0 row set, governance labels, query-grouped splits, and public `v8` config. It adds `routing.retrieval_control` to every row for retrieval-loop supervision. The new labels teach a model whether to answer now, retrieve more, broaden search, resolve a conflict, ask a clarifying question, or use structured lookup. They also expose the evidence gap type, answerability shape, preferred retrieval modality, and an `evidence_failure_severity` score.
+
 ## What's new in V8.1.0
 
 V8.1.0 keeps the V8.0.1 row set, labels, and query-grouped splits. It adds `routing.query_contract` to every row: a query-text contract annotation for pre-retrieval routing and governance experiments. The current contract labels are `evidence_sufficiency`, `structured_lookup`, `temporal_grounding`, `exhaustive_coverage`, `comparison_coverage`, and `representative_overview`.
@@ -233,6 +289,7 @@ Quality checks:
 - Exact dedup is clean: **0 duplicate IDs**, **0 duplicate exact inputs**, **0 duplicate exact inputs with label**, **0 duplicate checker hashes**.
 - The public dataset exposes one default config, `v8`, with `train`, `validation`, and `test` splits.
 - Current rows are explicit unstructured-text governance rows via `meta.modality: "unstructured"`.
+- Retrieval-control enrichment covers **{retrieval_control_rows:,}/{n_all:,}** rows.
 - Public rows do not expose old internal reporting fields: `meta.domain`, `meta.subcategory`, `meta.reasoning_type`, `meta.query_type`, `meta.evidence_pattern`, or `source_type`.
 
 ---
@@ -269,7 +326,7 @@ Rows use a structured governance-evaluation format with these top-level blocks:
 | `input` | Query, rewritten query, retrieved contexts, and evidence chain when applicable. |
 | `governance` | Gold class, confidence/scores, hallucination/retrieval/evidence signals. |
 | `evaluation` | Evaluator constraints and config. |
-| `routing` | Expert routing metadata, including the V8.1 `query_contract` annotation. |
+| `routing` | Expert routing metadata, including `query_contract` and the V8.2 `retrieval_control` annotation. |
 | `taxonomy` | Governance class, evidence pattern, and coverage-grid cell. |
 | `meta` | Dataset version, evidence modality, difficulty, confidence level, near-miss reason, and grounding targets for TRUSTWORTHY rows. |
 
@@ -358,6 +415,7 @@ def main() -> int:
         qa_dir=args.qa_dir.resolve(),
         blind_score_dir=blind_score_dir,
         version_counts=version_counts,
+        version=args.version,
     )
     print("      release gates: clean")
 
@@ -404,7 +462,7 @@ def main() -> int:
     from huggingface_hub import HfApi, create_repo
 
     create_repo(repo_id=args.repo_id, repo_type="dataset", exist_ok=True)
-    commit_msg = args.commit_message or f"fitz-gov v{args.version}: publish query-contract V8 SDGP vault"
+    commit_msg = args.commit_message or f"fitz-gov v{args.version}: publish retrieval-control V8 SDGP vault"
     print(f"Uploading with commit: {commit_msg!r}")
     api = HfApi()
     commit = api.upload_folder(
