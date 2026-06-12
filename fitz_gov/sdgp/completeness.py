@@ -16,7 +16,7 @@ from .modality import MODALITY_SET
 MISSING = "<missing>"
 
 GOVERNANCE_CLASSES = {"ABSTAIN", "DISPUTED", "TRUSTWORTHY"}
-DATASET_VERSIONS = {"v6", "v7", "v8"}
+DATASET_VERSIONS = {"v6", "v7", "v8", "v9"}
 CATEGORIES = {"abstention", "dispute", "trustworthy_hedged", "trustworthy_direct"}
 CONFIDENCE_LEVELS = {"high", "medium", "borderline"}
 STALENESS_RISKS = {"none", "low", "medium", "high"}

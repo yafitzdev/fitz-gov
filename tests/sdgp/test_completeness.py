@@ -63,7 +63,9 @@ def _complete_case() -> dict:
         "evaluation": {
             "mode": "governance",
             "check_mode_match": True,
-            "required_elements": ["Answer must identify William Shakespeare as the credited author."],
+            "required_elements": [
+                "Answer must identify William Shakespeare as the credited author."
+            ],
             "forbidden_claims": [],
             "forbidden_elements": [],
         },
@@ -110,6 +112,15 @@ def test_training_schema_requires_valid_modality() -> None:
 
     assert any(i.path == "meta.modality" for i in issues)
     assert not is_training_complete(case)
+
+
+def test_training_schema_accepts_v9_dataset_version() -> None:
+    case = _complete_case()
+    case["version"] = "fitz-gov-9.0"
+    case["meta"]["dataset_version"] = "v9"
+
+    assert audit_case_completeness(case) == []
+    assert is_training_complete(case)
 
 
 def test_checker_can_require_training_schema() -> None:
